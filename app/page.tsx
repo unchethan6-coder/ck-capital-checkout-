@@ -13,7 +13,8 @@ import { PromoPopup } from '@/components/PromoPopup'
 import { FeaturedPayouts } from '@/components/FeaturedPayouts'
 import { InstantFundingBanner } from '@/components/InstantFundingBanner'
 import { CheckCircle2 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { sanityFetch } from '@/lib/sanity'
 
 // Dynamic imports for heavy components (lazy loading)
 const TradingPlatformsSection = dynamic(() => import('@/components/TradingPlatformsSection').then(mod => ({ default: mod.TradingPlatformsSection })), { ssr: false })
@@ -27,8 +28,8 @@ export default function Home() {
   const [selectedChallengeType, setSelectedChallengeType] = useState('standard')
   const [pricingView, setPricingView] = useState<'cards' | 'table'>('cards')
 
-    const SPLIT: Record<string, string> = { standard: 'Up to 100%', middleweight: 'Up to 100%', lightweight: 'Up to 100%', '1step': 'Up to 100%', instant: 'Bi-weekly 50%' }
-    const CHALLENGE_DATA: Record<string, Record<string, string[]>> = {
+    const [SPLIT, setSPLIT] = useState<Record<string, string>>({ standard: 'Up to 100%', middleweight: 'Up to 100%', lightweight: 'Up to 100%', '1step': 'Up to 100%', instant: 'Bi-weekly 50%' })
+    const [CHALLENGE_DATA, setCHALLENGE_DATA] = useState<Record<string, Record<string, string[]>>>({
       standard: {
         '$2.5K': ['$250','$125','$80','$200','N/A'],
         '$5K': ['$500','$250','$200','$400','N/A'],
@@ -67,16 +68,42 @@ export default function Home() {
         '$25K': ['$0','$0','$750','$1,250','20%'],
         '$50K': ['$0','$0','$1,500','$2,500','20%'],
       },
-    }
+    })
     const activeType = CHALLENGE_DATA[selectedChallengeType] ? selectedChallengeType : 'standard'
-    const BASE_CARDS: { size: string; price: string; oldPrice: string; badge: string | null }[] = [
+    const [BASE_CARDS, setBASE_CARDS] = useState<{ size: string; price: string; oldPrice: string; badge: string | null; coupon?: string }[]>([
       { size: '$2.5K', price: '$9', oldPrice: '$99', badge: null },
       { size: '$5K', price: '$13', oldPrice: '$99', badge: null },
       { size: '$10K', price: '$19', oldPrice: '$99', badge: 'MOST POPULAR' },
       { size: '$25K', price: '$68.40', oldPrice: '$274.50', badge: null },
       { size: '$50K', price: '$98.40', oldPrice: '$394.00', badge: null },
       { size: '$100K', price: '$176.40', oldPrice: '$705.60', badge: null },
-    ]
+    ])
+
+    useEffect(() => {
+      const Q = `{\n        "types": *[_type=="challengeType"]|order(order asc){key,profitSplit,tiers[]{size,phase1Target,phase2Target,maxDailyLoss,maxLoss,consistencyRule}},\n        "cards": *[_type=="pricingCard"]|order(order asc){size,price,oldPrice,badge,couponCode}\n      }`
+      sanityFetch<{ types?: Array<{ key?: string; profitSplit?: string; tiers?: Array<{ size?: string; phase1Target?: string; phase2Target?: string; maxDailyLoss?: string; maxLoss?: string; consistencyRule?: string }> }>; cards?: Array<{ size?: string; price?: string; oldPrice?: string; badge?: string; couponCode?: string }> }>(Q).then((data) => {
+        if (!data) return
+        if (Array.isArray(data.types) && data.types.length) {
+          const split: Record<string, string> = {}
+          const cd: Record<string, Record<string, string[]>> = {}
+          data.types.forEach((t) => {
+            if (!t || !t.key) return
+            split[t.key] = t.profitSplit || ''
+            cd[t.key] = {}
+            ;(t.tiers || []).forEach((tier) => {
+              if (!tier || !tier.size) return
+              cd[t.key as string][tier.size] = [tier.phase1Target || '', tier.phase2Target || '', tier.maxDailyLoss || '', tier.maxLoss || '', tier.consistencyRule || '']
+            })
+          })
+          setSPLIT(split)
+          setCHALLENGE_DATA(cd)
+        }
+        if (Array.isArray(data.cards) && data.cards.length) {
+          setBASE_CARDS(data.cards.map((c) => ({ size: c.size || '', price: c.price || '', oldPrice: c.oldPrice || '', badge: c.badge || null, coupon: c.couponCode || undefined })))
+        }
+      })
+    }, [])
+
     const cards = BASE_CARDS.filter((b) => CHALLENGE_DATA[activeType][b.size]).map((b) => {
       const f = CHALLENGE_DATA[activeType][b.size]
       return { ...b, type: activeType, features: { phase1: f[0], phase2: f[1], maxDaily: f[2], maxLoss: f[3], period: 'Unlimited', minDays: '1', profitSplit: SPLIT[activeType], consistency: f[4] } }
@@ -366,11 +393,11 @@ export default function Home() {
                         borderColor: '#4CAF50',
                       }}
                       onClick={() => {
-                        navigator.clipboard.writeText(`JUN70-${card.size.replace('$', '').replace('K', '')}`);
+                        navigator.clipboard.writeText(card.coupon || `JUN70-${card.size.replace('$', '').replace('K', '')}`);
                       }}
                       title="Click to copy code"
                     >
-                      <span className="text-white font-bold text-sm">{`JUN70-${card.size.replace('$', '').replace('K', '')}`}</span>
+                      <span className="text-white font-bold text-sm">{card.coupon || `JUN70-${card.size.replace('$', '').replace('K', '')}`}</span>
                       <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                       </svg>
