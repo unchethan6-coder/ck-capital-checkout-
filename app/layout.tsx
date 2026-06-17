@@ -3,7 +3,7 @@ import { Inter, DM_Sans, Karla, Rubik, Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { SupportChat } from '@/components/SupportChat'
-import { MetaPixel } from '@/components/MetaPixel'
+
 
 const _inter = Inter({ subsets: ['latin'], display: 'swap' })
 const _dmSans = DM_Sans({ subsets: ['latin'], display: 'swap' })
@@ -145,7 +145,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
         
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID ? (
@@ -208,17 +207,6 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* Meta Pixel Noscript - Fallback for users without JavaScript */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1102958381163703&ev=PageView&noscript=1"
-            alt="Meta Pixel"
-          />
-        </noscript>
 
         {/* Structured Data - Organization Schema */}
         <script
@@ -318,7 +306,6 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
-        <MetaPixel />
         <SupportChat />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
