@@ -50,11 +50,7 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
     return map;
   }, [articles]);
 
-  const availableCategories = useMemo(
-    () => CATEGORIES.filter((category) => latestByCategory[category.key]),
-    [latestByCategory]
-  );
-  const active = availableCategories[activeIdx] ?? availableCategories[0] ?? CATEGORIES[0];
+  const active = CATEGORIES[activeIdx] ?? CATEGORIES[0];
   const activeArticle = latestByCategory[active.key];
   const cover = activeArticle?.coverImage?.url ?? FALLBACK_IMAGES[active.key];
 
@@ -68,12 +64,10 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => {
       if (hoveredRef.current || pausedRef.current) return;
-      if (availableCategories.length > 1) {
-        setActiveIdx((i) => (i + 1) % availableCategories.length);
-      }
+      setActiveIdx((i) => (i + 1) % CATEGORIES.length);
     }, 3500);
     return () => window.clearInterval(id);
-  }, [availableCategories.length]);
+  }, []);
 
   const selectIdx = (i: number) => {
     setActiveIdx(i);
@@ -81,26 +75,28 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
     window.setTimeout(() => setPausedByClick(false), 5000);
   };
 
-  if (availableCategories.length === 0) return null;
-
   return (
     <section
-      className="relative overflow-hidden bg-white py-16 text-[#0A0A0C] md:py-24"
+      className="relative overflow-hidden bg-[#0A0A0C] py-16 text-white md:py-24"
       data-od-id="blog-categories"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
       onTouchEnd={() => setIsHovered(false)}
     >
-      <Container>
-        {/* Header — centered, tight, matching ProofShowcase / ChallengeComparison / TraderStories */}
+      {/* Ambient background glow matching dark theme */}
+      <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-[#894CEF]/15 blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-40 left-0 h-[500px] w-[500px] rounded-full bg-[#894CEF]/10 blur-[140px]" />
+
+      <Container className="relative z-10">
+        {/* Header — centered, white on dark background */}
         <SectionReveal className="text-center">
-          <h2 className="mx-auto max-w-2xl font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.02em] text-[#0A0A0C] sm:text-4xl md:text-5xl">
+          <h2 className="mx-auto max-w-2xl font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">
             {t("title1")}
             <br />
             {t("title2")}
           </h2>
-          <p className="mx-auto mt-4 max-w-[560px] text-[15px] leading-7 text-gray-500">
+          <p className="mx-auto mt-4 max-w-[560px] text-[15px] leading-7 text-gray-400">
             {t("subtitle")}
           </p>
         </SectionReveal>
@@ -108,7 +104,7 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
         {/* Featured slideshow panel — visible on sm+ (hidden on mobile) */}
         <SectionReveal delay={0.08} className="mt-8 sm:mt-10 hidden sm:block">
           <div
-            className="relative mx-auto max-w-[1100px] overflow-hidden rounded-[20px] border border-gray-800 bg-[#0A0A0C] shadow-lg"
+            className="relative mx-auto max-w-[1100px] overflow-hidden rounded-[20px] border border-white/10 bg-[#0A0A0C] shadow-2xl"
             data-od-id="blog-featured"
           >
             {/* Fixed heights to match reference */}
@@ -158,7 +154,7 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
 
         {/* Category selector cards — 1st full width on mobile (230px), 2nd & 3rd half width in one row (190px), 3 equal columns on desktop */}
         <div className="relative z-10 mx-auto mt-8 grid max-w-[980px] grid-cols-2 gap-3.5 px-2 sm:-mt-[68px] sm:grid-cols-3 sm:gap-4">
-          {availableCategories.map((cat, i) => {
+          {CATEGORIES.map((cat, i) => {
             const article = latestByCategory[cat.key];
             const cardCover = article?.coverImage?.url ?? FALLBACK_IMAGES[cat.key];
             const isActive = i === activeIdx;
@@ -170,13 +166,13 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
                 aria-pressed={isActive}
                 data-od-id={`blog-cat-${cat.key}`}
                 className={cn(
-                  "group relative w-full overflow-hidden rounded-2xl border bg-[#0A0A0C] text-white text-left shadow-[0_12px_28px_-16px_rgba(15,23,42,0.12)] transition-all",
+                  "group relative w-full overflow-hidden rounded-2xl border bg-[#0A0A0C] text-white text-left shadow-[0_12px_28px_-16px_rgba(0,0,0,0.5)] transition-all",
                   i === 0
                     ? "col-span-2 h-[230px] sm:h-[164px] sm:col-span-1"
                     : "col-span-1 h-[190px] sm:h-[164px]",
                   isActive
-                    ? "border-[#894CEF] ring-2 ring-[#894CEF] ring-offset-2 ring-offset-white"
-                    : "border-gray-200 hover:border-gray-300 hover:shadow-md"
+                    ? "border-[#894CEF] ring-2 ring-[#894CEF] ring-offset-2 ring-offset-[#0A0A0C]"
+                    : "border-white/10 hover:border-white/20 hover:shadow-md"
                 )}
               >
                 <Image
@@ -202,7 +198,7 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
 
         {/* Slide indicators — visible on sm+ */}
         <div className="mt-6 hidden sm:flex items-center justify-center gap-2">
-          {availableCategories.map((cat, i) => (
+          {CATEGORIES.map((cat, i) => (
             <button
               key={cat.key}
               type="button"
@@ -210,7 +206,7 @@ export function BlogCategories({ articles }: { articles: CmsArticle[] }) {
               aria-label={`${t(cat.labelKey)} slide`}
               className={cn(
                 "h-1 rounded-full transition-all",
-                i === activeIdx ? "w-7 bg-[#0A0A0C]" : "w-3.5 bg-[#E5E7EB] hover:bg-[#D1D5DB]"
+                i === activeIdx ? "w-7 bg-[#894CEF]" : "w-3.5 bg-white/20 hover:bg-white/40"
               )}
             />
           ))}
