@@ -124,7 +124,7 @@ export function LanguageSwitcher({
         </span>
         <ChevronDown
           size={14}
-          className={cn("shrink-0 text-foreground/50 transition-transform", open && "rotate-180")}
+          className={cn("shrink-0 text-foreground/65 transition-transform", open && "rotate-180")}
           aria-hidden="true"
         />
       </button>
@@ -148,7 +148,7 @@ export function LanguageSwitcher({
               className={cn(
                 "flex w-full items-center justify-between gap-2.5 rounded-lg px-3 py-2 text-left text-[13px] font-medium transition-colors",
                 code === locale
-                  ? "bg-primary/10 text-primary"
+                  ? "bg-primary/10 text-[#A98BFF]"
                   : "text-foreground/75 hover:bg-foreground/[0.06] hover:text-foreground"
               )}
             >
@@ -158,7 +158,7 @@ export function LanguageSwitcher({
                 </span>
                 <span className="truncate">{meta.label}</span>
               </span>
-              {code === locale && <Check size={14} className="shrink-0 text-primary" aria-hidden="true" />}
+              {code === locale && <Check size={14} className="shrink-0 text-[#A98BFF]" aria-hidden="true" />}
             </button>
           ))}
         </div>

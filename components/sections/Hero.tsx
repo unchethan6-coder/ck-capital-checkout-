@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ArrowRight, Play, BarChart2, Coins, Zap } from "lucide-react";
@@ -8,9 +9,24 @@ import { Link } from "@/i18n/navigation";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+
+  // Scroll-linked parallax: the artwork drifts up and fades slightly as the
+  // hero leaves the viewport, so the section feels layered rather than static.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const artY = useTransform(scrollYProgress, [0, 1], ["0%", reduceMotion ? "0%" : "-14%"]);
+  const artScale = useTransform(scrollYProgress, [0, 1], [1, reduceMotion ? 1 : 1.06]);
+  const artOpacity = useTransform(scrollYProgress, [0, 0.85], [1, reduceMotion ? 1 : 0.35]);
+  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", reduceMotion ? "0%" : "18%"]);
+  const copyOpacity = useTransform(scrollYProgress, [0, 0.7], [1, reduceMotion ? 1 : 0.2]);
 
   return (
     <section
+      ref={sectionRef}
       className="relative isolate overflow-hidden bg-[#030A1C] text-[#F8FAFC] pt-12 sm:pt-16 md:pt-20 pb-14 sm:pb-16 md:pb-20"
       data-od-id="hero"
     >
@@ -25,7 +41,10 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-6">
           {/* Left Column: Copy & Actions */}
-          <div className="relative z-10 lg:col-span-5 xl:col-span-5">
+          <motion.div
+            style={{ y: copyY, opacity: copyOpacity }}
+            className="relative z-10 lg:col-span-5 xl:col-span-5"
+          >
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -71,7 +90,7 @@ export function Hero() {
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
               >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#894CEF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
                   <BarChart2 size={15} strokeWidth={2.5} />
                 </div>
                 <div className="text-left leading-tight">
@@ -90,7 +109,7 @@ export function Hero() {
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
               >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#894CEF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
                   <Coins size={15} strokeWidth={2.5} />
                 </div>
                 <div className="text-left leading-tight">
@@ -109,7 +128,7 @@ export function Hero() {
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
               >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#894CEF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
                   <Zap size={15} strokeWidth={2.5} />
                 </div>
                 <div className="text-left leading-tight">
@@ -148,23 +167,31 @@ export function Hero() {
                 <span>{t("exploreObjectives")}</span>
               </a>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Right Column: CK mascot artwork */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
+            style={{ y: artY, scale: artScale, opacity: artOpacity }}
             className="relative isolate z-0 mt-6 -mb-14 flex min-h-[340px] w-full max-w-full items-end justify-center overflow-visible sm:-mb-16 sm:mt-8 sm:min-h-[470px] md:-mb-20 lg:col-span-7 lg:mt-0 lg:min-h-[610px] lg:justify-end xl:col-span-7"
           >
-            <div
+            <motion.div
               aria-hidden="true"
+              animate={reduceMotion ? undefined : { opacity: [0.75, 1, 0.75], scale: [1, 1.05, 1] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className="absolute left-1/2 top-1/2 -z-10 h-[72%] w-[76%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8B3DFF]/20 blur-[70px] sm:bg-[#8B3DFF]/18 sm:blur-[95px] lg:left-[58%] lg:h-[68%] lg:w-[72%] lg:blur-[120px]"
             />
             <div
               aria-hidden="true"
               className="absolute bottom-[8%] left-1/2 -z-10 h-[18%] w-[64%] -translate-x-1/2 rounded-full bg-[#B35CFF]/18 blur-[55px] lg:left-[58%]"
             />
+            <motion.div
+              animate={reduceMotion ? undefined : { y: [0, -12, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="flex w-full justify-center lg:justify-end"
+            >
             <Image
               src="/images/ck-purple-raccoon.png"
               alt="CK Capital futuristic raccoon mascot holding the CK emblem"
@@ -172,12 +199,13 @@ export function Hero() {
               height={1930}
               priority
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 72vw, 58vw"
-              className="hero-mascot relative h-auto w-full max-w-[390px] object-contain drop-shadow-[0_0_34px_rgba(139,76,239,0.28)] sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"
+              className="hero-mascot relative ml-auto h-auto w-full max-w-[390px] object-contain drop-shadow-[0_0_60px_rgba(139,76,239,0.22)] sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"
             />
+            </motion.div>
             {/* Bottom fade: blends the artwork's hard edge into the section background */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[38%] bg-gradient-to-t from-[#030A1C] via-[#030A1C]/85 to-transparent"
+              className="pointer-events-none absolute -inset-x-[8%] bottom-0 z-10 h-[30%] bg-gradient-to-t from-[#030A1C] via-[#030A1C]/70 to-transparent"
             />
           </motion.div>
         </div>

@@ -93,7 +93,7 @@
   },
   "howItWorks": {
     "title": "Cómo Funciona",
-    "subtitle": "Tres sencillos pasos desde tu primera operación simulada hasta recibir tus recompensas reales.",
+    "subtitle": "Cuatro pasos claros desde tu primera operación simulada hasta recibir tus recompensas.",
     "steps": {
       "step1": {
         "step": "01",
@@ -112,6 +112,12 @@
         "phase": "Fase 3",
         "title": "Trader Fondeado",
         "description": "Recibe tu cuenta simulada financiada, opera con confianza y retira hasta el 100% de tus ganancias simuladas."
+      },
+      "step4": {
+        "step": "04",
+        "phase": "Fase 4",
+        "title": "Cobra",
+        "description": "Solicita tu recompensa desde el panel y recíbela rápido: los traders elegibles conservan hasta el 100% de los beneficios simulados."
       }
     },
     "badge": "Proceso",
@@ -224,7 +230,8 @@
     "cards": "Tarjetas",
     "funded": "Fondeado",
     "revealSizes": "Mostrar todos los tamaños de cuenta",
-    "more": "+{count} más"
+    "more": "+{count} más",
+    "oneTimePaymentNotice": "Cada tarifa de evaluación es un pago único: sin suscripciones, sin cargos recurrentes y sin comisiones ocultas."
   },
   "platforms": {
     "eyebrow": "Plataformas",
@@ -312,7 +319,8 @@
     "country": "País",
     "amount": "Monto",
     "verifiedPending": "Los registros verificados aparecerán aquí a medida que se publiquen.",
-    "totalPayouts": "Total de Pagos"
+    "totalPayouts": "Total de Pagos",
+    "payoutsInFeed": "en el feed"
   },
   "reviews": {
     "eyebrow": "Reseñas de traders",
@@ -771,7 +779,23 @@
     "feature": "Característica",
     "instantCol": "Fondeo Instantáneo",
     "challengeCol": "Desafío de 1 Paso",
-    "getStarted": "Comenzar →"
+    "getStarted": "Comenzar →",
+    "headToHead": {
+      "eyebrow": "COMPARATIVA DIRECTA",
+      "title": "Instant vs Challenge",
+      "subtitle": "Compara las rutas de capital simulado en paralelo para elegir el modelo de riesgo y la velocidad de inicio que encajan con tu estrategia.",
+      "viewAll": "Comparativa lado a lado",
+      "viewInstant": "Instant Funding",
+      "viewChallenge": "Evaluation Challenge",
+      "instantBadge": "SIN EVALUACIÓN",
+      "instantTagline": "Acceso inmediato sin fases de evaluación",
+      "instantIdealFor": "Traders experimentados que buscan asignación simulada inmediata y recompensas quincenales sin superar objetivos de beneficio por fases.",
+      "challengeBadge": "MÁXIMO POTENCIAL DE ESCALA",
+      "challengeTagline": "Evaluación multifase para el máximo capital",
+      "challengeIdealFor": "Traders disciplinados que quieren saldos simulados mayores hasta 1,2 M$ y más margen de drawdown con cuotas de entrada más bajas.",
+      "instantCta": "Obtener cuenta Instant",
+      "challengeCta": "Explorar challenges"
+    }
   },
   "legal": {
     "badgeLegal": "Legal",

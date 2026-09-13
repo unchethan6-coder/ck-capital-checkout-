@@ -206,7 +206,7 @@ function GrowthChart({ liveData }: { liveData: ReturnType<typeof useLiveDashboar
 
       {/* Live tooltip card (tablet + laptop) */}
       <div className="absolute top-1 right-10 hidden sm:block rounded border border-[#894CEF]/40 bg-[#080E24] px-2 py-1 shadow-lg text-center transition-all duration-300">
-        <div className="text-[9px] font-bold text-[#894CEF] tabular-nums">
+        <div className="text-[9px] font-bold text-[#A98BFF] tabular-nums">
           {new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
@@ -306,7 +306,7 @@ export function LaptopMockup() {
               {/* Top Bar (phone + tablet) */}
               <div className="flex lg:hidden items-center justify-between mb-2">
                 <BrandMark />
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/40 bg-[#894CEF]/10 px-2 py-0.5 text-[8px] font-black uppercase tracking-[0.14em] text-[#894CEF]">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/40 bg-[#894CEF]/10 px-2 py-0.5 text-[8px] font-black uppercase tracking-[0.14em] text-[#A98BFF]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#894CEF]" />
                   Illustrative
                 </span>

@@ -35,7 +35,7 @@ function Inline({ node, index }: { node: any; index: number }): JSX.Element {
         href={node.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#0A0A0C] font-semibold underline underline-offset-4 transition-colors hover:text-[#7943E0]"
+        className="text-[#0A0A0C] font-semibold underline underline-offset-4 transition-colors hover:text-[#A98BFF]"
       >
         {Array.isArray(node.children) && node.children.map((c: any, i: number) => <Inline key={i} node={c} index={i} />)}
       </a>

@@ -114,10 +114,10 @@ export function TerminalCard({ className }: { className?: string }) {
             <span className="mr-1.5">{l.prefix}</span>
             {l.text}
             {i === shown - 1 && !staticMode && (
-              <span className="term-caret text-[#894CEF]">▊</span>
+              <span className="term-caret text-[#A98BFF]">▊</span>
             )}
             {i === lines.length - 1 && i < shown && (
-              <span className="term-spark text-[#894CEF]"> ✦</span>
+              <span className="term-spark text-[#A98BFF]"> ✦</span>
             )}
           </div>
         ))}

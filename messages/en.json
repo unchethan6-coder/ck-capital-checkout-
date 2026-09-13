@@ -92,7 +92,7 @@
   },
   "howItWorks": {
     "title": "How It Works",
-    "subtitle": "Three clear steps from your first simulated trade to receiving real reward payouts.",
+    "subtitle": "Four clear steps from your first simulated trade to receiving real reward payouts.",
     "steps": {
       "step1": {
         "step": "01",
@@ -111,6 +111,12 @@
         "phase": "Phase 3",
         "title": "Funded Trader",
         "description": "Get funded and trade with confidence. Keep up to 100% of your profits."
+      },
+      "step4": {
+        "step": "04",
+        "phase": "Phase 4",
+        "title": "Get Paid",
+        "description": "Request your reward from the dashboard and receive it fast — eligible traders keep up to 100% of simulated profits."
       }
     },
     "badge": "Process",
@@ -223,7 +229,8 @@
     "cards": "Cards",
     "funded": "Funded",
     "revealSizes": "Show all account sizes",
-    "more": "+{count} more"
+    "more": "+{count} more",
+    "oneTimePaymentNotice": "Every evaluation fee is a one-time payment — no subscriptions, no recurring charges, no hidden fees."
   },
   "platforms": {
     "eyebrow": "Platforms",
@@ -311,7 +318,8 @@
     "country": "Country",
     "amount": "Amount",
     "verifiedPending": "Verified records will appear here as they are published.",
-    "totalPayouts": "Total Payouts"
+    "totalPayouts": "Total Payouts",
+    "payoutsInFeed": "in feed"
   },
   "reviews": {
     "eyebrow": "Trader reviews",

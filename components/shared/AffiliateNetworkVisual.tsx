@@ -48,14 +48,14 @@ export function AffiliateNetworkVisual({
             <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
             <div className="ml-3 hidden sm:flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-mono text-[#6B7280]">
-              <Lock size={10} className="text-[#7943E0]" />
+              <Lock size={10} className="text-[#A98BFF]" />
               <span>app.ckcapital.co.uk/partners/vip-portal</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#7943E0]">
-              <Flame size={11} className="text-[#7943E0] fill-[#7943E0]" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#A98BFF]">
+              <Flame size={11} className="text-[#A98BFF] fill-[#7943E0]" />
               Tier 3 VIP Partner
             </span>
           </div>
@@ -70,7 +70,7 @@ export function AffiliateNetworkVisual({
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
                   Partner ID #AFF-VIP99
                 </p>
-                <span className="rounded bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold text-[#7943E0] border border-violet-200">
+                <span className="rounded bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold text-[#A98BFF] border border-violet-200">
                   15% COMMISSION
                 </span>
               </div>
@@ -83,9 +83,9 @@ export function AffiliateNetworkVisual({
             </div>
 
             <div className="flex items-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-3.5 py-2">
-              <Users size={15} className="text-[#7943E0] shrink-0" />
+              <Users size={15} className="text-[#A98BFF] shrink-0" />
               <div className="text-left">
-                <p className="text-[9px] font-bold uppercase tracking-widest text-[#7943E0]">
+                <p className="text-[9px] font-bold uppercase tracking-widest text-[#A98BFF]">
                   Active Network
                 </p>
                 <p className="text-sm font-extrabold text-[#0A0A0C]">
@@ -103,13 +103,13 @@ export function AffiliateNetworkVisual({
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#0A0A0C]">
                   Your Custom Partner Link
                 </p>
-                <span className="text-[11px] text-[#7943E0] font-semibold">
+                <span className="text-[11px] text-[#A98BFF] font-semibold">
                   Cookie Life: 60 Days
                 </span>
               </div>
               <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white p-2 sm:p-2.5 shadow-sm">
                 <div className="flex flex-1 items-center gap-2 px-2 overflow-hidden">
-                  <Share2 size={14} className="text-[#7943E0] shrink-0" />
+                  <Share2 size={14} className="text-[#A98BFF] shrink-0" />
                   <span className="font-mono text-xs text-[#0A0A0C] truncate">
                     https://ckcapital.co.uk/ref/VIP-PRO
                   </span>
@@ -117,7 +117,7 @@ export function AffiliateNetworkVisual({
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="flex items-center gap-1.5 rounded-lg border border-violet-300 bg-violet-50 px-3 py-1.5 text-xs font-bold text-[#7943E0] hover:bg-violet-100 transition-colors shrink-0"
+                  className="flex items-center gap-1.5 rounded-lg border border-violet-300 bg-violet-50 px-3 py-1.5 text-xs font-bold text-[#A98BFF] hover:bg-violet-100 transition-colors shrink-0"
                 >
                   {copied ? (
                     <>
@@ -142,7 +142,7 @@ export function AffiliateNetworkVisual({
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 text-center">
                 <p className="text-[10px] uppercase font-bold text-[#6B7280]">Conversion</p>
                 <p className="mt-1 font-mono text-base font-extrabold text-[#0A0A0C]">9.4%</p>
-                <p className="text-[9px] text-[#7943E0] font-semibold">High Alpha</p>
+                <p className="text-[9px] text-[#A98BFF] font-semibold">High Alpha</p>
               </div>
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 text-center">
                 <p className="text-[10px] uppercase font-bold text-[#6B7280]">Avg Reward</p>
@@ -159,7 +159,7 @@ export function AffiliateNetworkVisual({
               </div>
               <div className="flex items-center justify-between text-xs py-1">
                 <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded bg-violet-100 text-[#7943E0] flex items-center justify-center font-mono text-[10px] font-bold">
+                  <div className="h-6 w-6 rounded bg-violet-100 text-[#A98BFF] flex items-center justify-center font-mono text-[10px] font-bold">
                     #84
                   </div>
                   <div>
@@ -171,7 +171,7 @@ export function AffiliateNetworkVisual({
               </div>
               <div className="flex items-center justify-between text-xs py-1 border-t border-gray-200">
                 <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded bg-violet-100 text-[#7943E0] flex items-center justify-center font-mono text-[10px] font-bold">
+                  <div className="h-6 w-6 rounded bg-violet-100 text-[#A98BFF] flex items-center justify-center font-mono text-[10px] font-bold">
                     #79
                   </div>
                   <div>
@@ -179,7 +179,7 @@ export function AffiliateNetworkVisual({
                     <p className="text-[9px] text-[#6B7280]">14 mins ago · Sub-Affiliate Tier 2</p>
                   </div>
                 </div>
-                <span className="font-mono font-extrabold text-[#7943E0] text-xs">+$48.50</span>
+                <span className="font-mono font-extrabold text-[#A98BFF] text-xs">+$48.50</span>
               </div>
             </div>
           </div>
@@ -195,7 +195,7 @@ export function AffiliateNetworkVisual({
             <span className="text-[#0A0A0C] font-bold">Direct USDT (TRC20)</span>
             <span className="text-[#6B7280] hidden sm:inline">every Wednesday</span>
           </div>
-          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#7943E0]">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]">
             UP TO 15% RECURRING
           </span>
         </div>
@@ -207,11 +207,11 @@ export function AffiliateNetworkVisual({
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="absolute -bottom-5 left-2 sm:-bottom-8 sm:-left-6 z-20"
+          className="relative z-20 mt-4 w-fit max-w-full -ml-1 sm:-ml-4"
         >
           <div className="flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-white px-4 py-3 sm:px-5 sm:py-3.5 shadow-xl">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-violet-50 text-[#7943E0] border border-violet-200">
-              <Zap size={20} className="fill-[#7943E0] text-[#7943E0]" />
+            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-violet-50 text-[#A98BFF] border border-violet-200">
+              <Zap size={20} className="fill-[#7943E0] text-[#A98BFF]" />
             </div>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">

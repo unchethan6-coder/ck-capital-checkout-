@@ -49,10 +49,10 @@ const SOURCE_STYLE: Record<
   },
   reddit: {
     card: "border-gray-200/90 bg-white shadow-md",
-    tint: "text-[#7943E0]",
-    chip: "text-[#7943E0]",
+    tint: "text-[#A98BFF]",
+    chip: "text-[#A98BFF]",
     avatar: "border-violet-200",
-    avatarBg: "bg-violet-50 text-[#7943E0]",
+    avatarBg: "bg-violet-50 text-[#A98BFF]",
     cta: "View on Reddit",
   },
 };
@@ -141,7 +141,7 @@ export function TraderReviews({
     <section className="bg-white text-[#111827] py-16 md:py-24" data-od-id="trader-reviews">
       <Container>
         <SectionReveal className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
             {t("eyebrow")}
           </p>
           <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-black text-[#0A0A0C] md:text-4xl">
@@ -208,7 +208,7 @@ export function TraderReviews({
         </div>
 
         <p
-          className="mx-auto mt-10 max-w-lg text-center text-xs leading-6 text-foreground/30"
+          className="mx-auto mt-10 max-w-lg text-center text-xs leading-6 text-foreground/65"
           data-od-id="trader-reviews-disclaimer"
         >
           {t("disclaimer")}

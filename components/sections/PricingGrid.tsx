@@ -19,7 +19,7 @@ export function PricingGrid() {
     <section className="py-16 md:py-24" data-od-id="pricing">
       <Container>
         <SectionReveal className="text-center mb-10">
-          <p className="text-xs text-primary uppercase tracking-widest font-semibold mb-3">
+          <p className="text-xs text-[#A98BFF] uppercase tracking-widest font-semibold mb-3">
             Pricing
           </p>
           <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-4xl">
@@ -71,7 +71,7 @@ export function PricingGrid() {
               )}
 
               {!plan.popular && (
-                <span className="text-[10px] font-bold uppercase tracking-widest text-primary/70 mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]/70 mb-2">
                   {plan.label}
                 </span>
               )}
@@ -106,10 +106,10 @@ export function PricingGrid() {
                   <span className="font-mono text-3xl font-extrabold text-[#0A0A0C]">
                     {sym}{(plan.priceUSD * fx).toFixed(2)}
                   </span>
-                  <span className="text-sm text-foreground/30 line-through mb-1">
+                  <span className="text-sm text-foreground/65 line-through mb-1">
                     {sym}{(plan.originalPriceUSD * fx).toFixed(2)}
                   </span>
-                  <span className="ml-auto text-sm font-bold text-primary">
+                  <span className="ml-auto text-sm font-bold text-[#A98BFF]">
                     {plan.discount}
                   </span>
                 </div>
@@ -136,9 +136,9 @@ export function PricingGrid() {
         {/* Transparent conditions callout */}
         <SectionReveal delay={0.3} className="mt-8 text-center">
           <p className="flex items-center justify-center gap-2 text-sm text-gray-500 font-medium">
-            <TrendingUp size={14} className="text-primary" />
+            <TrendingUp size={14} className="text-[#A98BFF]" />
             Trade with transparent drawdown rules and keep up to{" "}
-            <span className="text-primary font-bold">100% simulated profit split</span>
+            <span className="text-[#A98BFF] font-bold">100% simulated profit split</span>
           </p>
         </SectionReveal>
       </Container>

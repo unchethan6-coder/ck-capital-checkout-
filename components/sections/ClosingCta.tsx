@@ -103,7 +103,7 @@ export function ClosingCta() {
             transition={{ duration: 0.5 }}
             className="mx-auto inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#F0F7FF] px-3 py-1 text-[11px] font-bold tracking-wide text-[#030A1C]"
           >
-            <Zap size={12} className="fill-[#894CEF] text-[#894CEF]" /> {t("eyebrow")}
+            <Zap size={12} className="fill-[#894CEF] text-[#A98BFF]" /> {t("eyebrow")}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 14 }}
@@ -221,9 +221,9 @@ export function ClosingCta() {
                     initial={{ scale: 0.8, rotate: -8 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                    className={active === 2 ? "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/10 text-[#894CEF] ring-1 ring-white/15" : "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#F0F7FF] text-[#030A1C] ring-1 ring-[#894CEF]/30"}
+                    className={active === 2 ? "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/10 text-[#A98BFF] ring-1 ring-white/15" : "grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#F0F7FF] text-[#030A1C] ring-1 ring-[#894CEF]/30"}
                   >
-                    <Icon size={18} className={active === 2 ? "fill-[#894CEF] text-[#894CEF]" : ""} />
+                    <Icon size={18} className={active === 2 ? "fill-[#894CEF] text-[#A98BFF]" : ""} />
                   </motion.span>
                   <div className="min-w-0">
                     <h3 className={active === 2 ? "font-[family-name:var(--font-jakarta)] text-lg font-extrabold leading-tight text-white" : "font-[family-name:var(--font-jakarta)] text-lg font-extrabold leading-tight text-[#0A0A0C]"}>
@@ -305,7 +305,7 @@ export function ClosingCta() {
                   ].map((s) => (
                     <li key={s.n} className="relative">
                       <span className="absolute -left-[29px] top-0 grid h-6 w-6 place-items-center rounded-full bg-[#0A0A0C] text-[11px] font-black text-white">{s.n}</span>
-                      <h4 className="text-sm font-extrabold text-[#0A0A0C]">{s.title}</h4>
+                      <h3 className="text-sm font-extrabold text-[#0A0A0C]">{s.title}</h3>
                       <p className="mt-1 text-sm leading-6 text-gray-500">{s.desc}</p>
                     </li>
                   ))}

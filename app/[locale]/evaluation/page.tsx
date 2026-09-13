@@ -90,7 +90,7 @@ export default async function EvaluationPage() {
       <section className="bg-white border-t border-[#E5E7EB] py-16 md:py-24 text-[#0A0A0C]" data-od-id="evaluation-faq">
         <Container>
           <SectionReveal className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
               {t("faqEyebrow")}
             </p>
             <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-5xl">
@@ -107,7 +107,7 @@ export default async function EvaluationPage() {
                     value={String(i)}
                     className="rounded-2xl border border-[#E5E7EB] bg-white px-6 shadow-sm transition-all hover:border-gray-300"
                   >
-                    <AccordionTrigger className="py-4 text-left text-sm font-semibold text-[#0A0A0C] hover:text-[#7943E0] hover:no-underline">
+                    <AccordionTrigger className="py-4 text-left text-sm font-semibold text-[#0A0A0C] hover:text-[#A98BFF] hover:no-underline">
                       {item.q}
                     </AccordionTrigger>
                     <AccordionContent className="pb-4 text-sm leading-relaxed text-[#4B5563]">

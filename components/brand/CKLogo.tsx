@@ -62,7 +62,7 @@ export function CKLogo({
     variant === "dark"
       ? "text-white"
       : variant === "gold"
-      ? "text-[#894CEF]"
+      ? "text-[#A98BFF]"
       : "text-[#0A0A0C]";
 
   return (

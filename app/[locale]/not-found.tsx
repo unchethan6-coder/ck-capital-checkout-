@@ -38,12 +38,12 @@ export default async function NotFound() {
           {t("backHome")}
         </Link>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-foreground/50">
-          <Link href="/trading-objectives" className="transition-colors hover:text-primary">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 text-sm text-foreground/65">
+          <Link href="/trading-objectives" className="transition-colors hover:text-[#A98BFF]">
             {tNav("tradingObjectives")}
           </Link>
           <span className="text-foreground/20">·</span>
-          <Link href="/payouts" className="transition-colors hover:text-primary">
+          <Link href="/payouts" className="transition-colors hover:text-[#A98BFF]">
             {tNav("payouts")}
           </Link>
           <span className="text-foreground/20">·</span>
@@ -51,12 +51,12 @@ export default async function NotFound() {
             href="https://intercom.help/ck-capital/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-primary"
+            className="transition-colors hover:text-[#A98BFF]"
           >
             {tNav("faq")}
           </a>
           <span className="text-foreground/20">·</span>
-          <Link href="/contact" className="transition-colors hover:text-primary">
+          <Link href="/contact" className="transition-colors hover:text-[#A98BFF]">
             {tNav("contact")}
           </Link>
         </div>

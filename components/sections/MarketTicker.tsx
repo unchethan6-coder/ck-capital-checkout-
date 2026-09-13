@@ -209,7 +209,7 @@ export function MarketTicker({
           )}
           aria-label={liveOk ? t("live") : t("reconnecting")}
         />
-        <span className="font-mono text-[11px] font-bold tracking-[0.22em] text-foreground/55 uppercase">
+        <span className="font-mono text-[11px] font-bold tracking-[0.22em] text-foreground/65 uppercase">
           {t("market")}
         </span>
       </div>

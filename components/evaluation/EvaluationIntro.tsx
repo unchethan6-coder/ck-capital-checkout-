@@ -80,8 +80,8 @@ export default function EvaluationIntro({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7943E0]">
-                  <Sparkles size={12} className="text-[#7943E0]" />
+                <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
+                  <Sparkles size={12} className="text-[#A98BFF]" />
                   {t("badge")}
                 </span>
               </motion.div>
@@ -123,7 +123,7 @@ export default function EvaluationIntro({
                 <a
                   href="#start-challenge"
                   data-od-id="evaluation-hero-cta-secondary"
-                  className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#7943E0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
+                  className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#A98BFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
                 >
                   {t("compareBtn")} <ArrowRight size={15} />
                 </a>
@@ -164,7 +164,7 @@ export default function EvaluationIntro({
       <section className="bg-white border-b border-[#E5E7EB] py-16 md:py-24 text-[#0A0A0C]" data-od-id="evaluation-steps">
         <Container>
           <div className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
               {t("pathEyebrow")}
             </p>
             <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-5xl">

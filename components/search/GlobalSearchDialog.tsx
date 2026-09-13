@@ -230,7 +230,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
           >
             {/* Input Header */}
             <div className="relative flex items-center border-b border-foreground/10 px-4 py-3.5 sm:px-5 sm:py-3.5 shrink-0 bg-[#121216] sm:bg-transparent">
-              <Search size={19} className="text-primary shrink-0 mr-3 opacity-90" />
+              <Search size={19} className="text-[#A98BFF] shrink-0 mr-3 opacity-90" />
               <input
                 ref={inputRef}
                 type="text"
@@ -238,7 +238,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={t("placeholder")}
-                className="w-full bg-transparent text-[15px] sm:text-[15.5px] font-medium text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-0"
+                className="w-full bg-transparent text-[15px] sm:text-[15.5px] font-medium text-foreground placeholder:text-foreground/65 focus:outline-none focus:ring-0"
               />
               {query ? (
                 <button
@@ -247,7 +247,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                     setQuery("");
                     inputRef.current?.focus();
                   }}
-                  className="p-1.5 rounded-md text-foreground/40 hover:text-foreground hover:bg-foreground/10 transition-colors mr-1 sm:mr-2 min-h-[36px] min-w-[36px] flex items-center justify-center"
+                  className="p-1.5 rounded-md text-foreground/65 hover:text-foreground hover:bg-foreground/10 transition-colors mr-1 sm:mr-2 min-h-[36px] min-w-[36px] flex items-center justify-center"
                   aria-label={t("clear")}
                 >
                   <X size={17} />
@@ -261,7 +261,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
               >
                 <X size={20} />
               </button>
-              <kbd className="hidden sm:inline-flex items-center gap-1 rounded border border-foreground/15 bg-foreground/[0.06] px-2 py-0.5 font-mono text-[10.5px] font-semibold text-foreground/50">
+              <kbd className="hidden sm:inline-flex items-center gap-1 rounded border border-foreground/15 bg-foreground/[0.06] px-2 py-0.5 font-mono text-[10.5px] font-semibold text-foreground/65">
                 ESC
               </kbd>
             </div>
@@ -275,16 +275,16 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                 <div className="py-12 px-4 text-center">
                   <Search size={32} className="mx-auto mb-3 text-foreground/20" />
                   <p className="text-sm font-semibold text-foreground/80">
-                    {t("noResults")} &ldquo;<span className="text-primary">{query}</span>&rdquo;
+                    {t("noResults")} &ldquo;<span className="text-[#A98BFF]">{query}</span>&rdquo;
                   </p>
-                  <p className="mt-1.5 text-xs text-foreground/45 max-w-sm mx-auto">
+                  <p className="mt-1.5 text-xs text-foreground/65 max-w-sm mx-auto">
                     {t("tryAnother")}
                   </p>
                 </div>
               ) : (
                 <div className="space-y-4">
                   {!query && (
-                    <div className="px-3 pt-1 pb-0 flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-[0.16em] text-primary/80">
+                    <div className="px-3 pt-1 pb-0 flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]/80">
                       <Sparkles size={11} /> {t("popularSearches")}
                     </div>
                   )}
@@ -295,7 +295,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
 
                     return (
                       <div key={category} className="space-y-1">
-                        <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-foreground/40">
+                        <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-foreground/65">
                           {getCategoryLabel(category)}
                         </div>
 
@@ -321,7 +321,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                                   className={cn(
                                     "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-colors",
                                     isSelected
-                                      ? "border-primary/50 bg-primary/20 text-primary"
+                                      ? "border-primary/50 bg-primary/20 text-[#A98BFF]"
                                       : "border-foreground/10 bg-foreground/[0.03] text-foreground/60 group-hover:text-foreground"
                                   )}
                                 >
@@ -332,7 +332,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                                     <span
                                       className={cn(
                                         "text-sm font-semibold truncate",
-                                        isSelected ? "text-primary" : "text-foreground"
+                                        isSelected ? "text-[#A98BFF]" : "text-foreground"
                                       )}
                                     >
                                       {item.title}
@@ -350,7 +350,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                                       </span>
                                     )}
                                   </div>
-                                  <p className="text-xs text-foreground/50 truncate max-w-md mt-0.5">
+                                  <p className="text-xs text-foreground/65 truncate max-w-md mt-0.5">
                                     {item.description}
                                   </p>
                                 </div>
@@ -358,12 +358,12 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
 
                               <div className="flex items-center gap-1.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
                                 {item.external ? (
-                                  <ExternalLink size={14} className="text-foreground/40" />
+                                  <ExternalLink size={14} className="text-foreground/65" />
                                 ) : (
                                   <CornerDownLeft
                                     size={14}
                                     className={cn(
-                                      isSelected ? "text-primary opacity-100" : "text-foreground/40"
+                                      isSelected ? "text-[#A98BFF] opacity-100" : "text-foreground/65"
                                     )}
                                   />
                                 )}
@@ -379,7 +379,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
             </div>
 
             {/* Modal Footer */}
-            <div className="hidden sm:flex items-center justify-between border-t border-foreground/10 bg-foreground/[0.02] px-4 py-2.5 text-[11px] text-foreground/45">
+            <div className="hidden sm:flex items-center justify-between border-t border-foreground/10 bg-foreground/[0.02] px-4 py-2.5 text-[11px] text-foreground/65">
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1.5">
                   <kbd className="rounded border border-foreground/15 bg-foreground/[0.06] px-1.5 py-0.5 font-mono text-[9.5px] font-semibold">
@@ -403,7 +403,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                   <span>{t("footer.close")}</span>
                 </span>
               </div>
-              <span className="font-semibold text-primary/80">CK Capital</span>
+              <span className="font-semibold text-[#A98BFF]/80">CK Capital</span>
             </div>
           </motion.div>
         </div>

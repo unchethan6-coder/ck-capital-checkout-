@@ -39,14 +39,14 @@ export function EvaluationPathVisual({
             <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
             <div className="ml-3 hidden sm:flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-mono text-[#6B7280]">
-              <Lock size={10} className="text-[#7943E0]" />
+              <Lock size={10} className="text-[#A98BFF]" />
               <span>app.ckcapital.co.uk/evaluation/phase-1</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#7943E0]">
-              <Target size={11} className="text-[#7943E0]" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#A98BFF]">
+              <Target size={11} className="text-[#A98BFF]" />
               Phase 1 · 80% Complete
             </span>
           </div>
@@ -61,7 +61,7 @@ export function EvaluationPathVisual({
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
                   Evaluation Account #CK-EVAL100
                 </p>
-                <span className="rounded bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold text-[#7943E0] border border-violet-200">
+                <span className="rounded bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold text-[#A98BFF] border border-violet-200">
                   $100K 2-STEP
                 </span>
               </div>
@@ -74,9 +74,9 @@ export function EvaluationPathVisual({
             </div>
 
             <div className="flex items-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-3.5 py-2">
-              <Trophy size={15} className="text-[#7943E0] shrink-0" />
+              <Trophy size={15} className="text-[#A98BFF] shrink-0" />
               <div className="text-left">
-                <p className="text-[9px] font-bold uppercase tracking-widest text-[#7943E0]">
+                <p className="text-[9px] font-bold uppercase tracking-widest text-[#A98BFF]">
                   Funded Goal
                 </p>
                 <p className="text-sm font-extrabold text-[#0A0A0C]">
@@ -92,7 +92,7 @@ export function EvaluationPathVisual({
             <div className="rounded-xl border border-gray-200 bg-white p-3.5 space-y-2 shadow-sm">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-bold text-[#0A0A0C]">Phase 1 Target Progress</span>
-                <span className="font-mono font-bold text-[#7943E0]">80.0% ($6,400 / $8,000)</span>
+                <span className="font-mono font-bold text-[#A98BFF]">80.0% ($6,400 / $8,000)</span>
               </div>
               <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
                 <div className="h-full rounded-full bg-gradient-to-r from-[#703AD7] to-[#894CEF] w-[80%]" />
@@ -108,9 +108,9 @@ export function EvaluationPathVisual({
               {/* Phase 1 */}
               <div className="rounded-xl border border-violet-300 bg-violet-50 p-3 text-center relative overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-0.5 bg-[#703AD7]" />
-                <p className="text-[9.5px] font-bold uppercase text-[#7943E0]">Phase 1</p>
+                <p className="text-[9.5px] font-bold uppercase text-[#A98BFF]">Phase 1</p>
                 <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">8% Goal</p>
-                <span className="mt-1.5 inline-block rounded bg-violet-100 px-1.5 py-0.5 text-[8.5px] font-bold text-[#7943E0]">
+                <span className="mt-1.5 inline-block rounded bg-violet-100 px-1.5 py-0.5 text-[8.5px] font-bold text-[#A98BFF]">
                   IN PROGRESS
                 </span>
               </div>
@@ -170,7 +170,7 @@ export function EvaluationPathVisual({
             </span>
             <span className="text-[#0A0A0C] font-bold">Unlimited Days</span>
           </div>
-          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#7943E0]">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]">
             PASS AT YOUR PACE
           </span>
         </div>
@@ -182,11 +182,11 @@ export function EvaluationPathVisual({
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="absolute -bottom-5 left-2 sm:-bottom-8 sm:-left-6 z-20"
+          className="relative z-20 mt-4 w-fit max-w-full -ml-1 sm:-ml-4"
         >
           <div className="flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-white px-4 py-3 sm:px-5 sm:py-3.5 shadow-xl">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-violet-50 text-[#7943E0] border border-violet-200">
-              <Award size={20} className="text-[#7943E0]" />
+            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-violet-50 text-[#A98BFF] border border-violet-200">
+              <Award size={20} className="text-[#A98BFF]" />
             </div>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">

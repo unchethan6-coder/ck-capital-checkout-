@@ -13,8 +13,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 
-const LIST_ITEM_CLASSES = 'ml-5 list-disc space-y-2 text-sm leading-relaxed text-foreground/55'
-const ORDERED_LIST_CLASSES = 'ml-5 list-decimal space-y-2 text-sm leading-relaxed text-foreground/55'
+const LIST_ITEM_CLASSES = 'ml-5 list-disc space-y-2 text-sm leading-relaxed text-foreground/65'
+const ORDERED_LIST_CLASSES = 'ml-5 list-decimal space-y-2 text-sm leading-relaxed text-foreground/65'
 
 export function FaqContent() {
   const t = useTranslations('faq')
@@ -83,10 +83,10 @@ export function FaqContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[10.5px] font-bold uppercase tracking-[0.16em] text-primary">
-                <Sparkles size={11} className="text-primary" />
+              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]">
+                <Sparkles size={11} className="text-[#A98BFF]" />
                 {t('eyebrow')}
-                <span className="text-primary/40">·</span>
+                <span className="text-[#A98BFF]/40">·</span>
                 {t('subtitle')}
               </span>
             </motion.div>
@@ -105,7 +105,7 @@ export function FaqContent() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="mt-5 max-w-xl text-[15px] leading-relaxed text-foreground/55"
+              className="mt-5 max-w-xl text-[15px] leading-relaxed text-foreground/65"
             >
               {t('subtitle')}
             </motion.p>
@@ -125,10 +125,10 @@ export function FaqContent() {
                     value={String(i)}
                     className="rounded-xl border border-foreground/10 bg-foreground/[0.03] px-5 transition-all data-[open]:border-primary/30 data-[open]:bg-foreground/[0.05]"
                   >
-                    <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground hover:text-primary hover:no-underline">
+                    <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground hover:text-[#A98BFF] hover:no-underline">
                       {item.q}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-4 text-foreground/55">
+                    <AccordionContent className="pb-4 text-foreground/65">
                       {item.a}
                     </AccordionContent>
                   </AccordionItem>
@@ -146,12 +146,12 @@ export function FaqContent() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.10),_transparent_60%)]" />
             <div className="relative">
               <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
-                <MessageCircle size={28} className="text-primary" />
+                <MessageCircle size={28} className="text-[#A98BFF]" />
               </div>
               <h2 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-foreground md:text-3xl">
                 {t('stillQuestions')}
               </h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-foreground/55">
+              <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-foreground/65">
                 {t('supportAvailable')}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

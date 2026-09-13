@@ -66,7 +66,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto max-w-3xl text-center" data-od-id={id}>
-      <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+      <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
         {eyebrow}
       </p>
       <h2
@@ -190,16 +190,16 @@ function PhaseCard({
             {badge}
           </span>
           <div className="min-w-0">
-            <h4 className="truncate font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-black leading-tight text-[#0A0A0C]">
+            <h3 className="truncate font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-black leading-tight text-[#0A0A0C]">
               {title}
-            </h4>
+            </h3>
             {subtitle ? (
               <p className="mt-0.5 text-xs font-semibold text-[#6B7280]">{subtitle}</p>
             ) : null}
           </div>
         </div>
         {accent && (
-          <span className="shrink-0 rounded-full bg-violet-100 px-2.5 py-1 text-[9.5px] sm:text-[10px] font-black uppercase tracking-wider text-[#7943E0]">
+          <span className="shrink-0 rounded-full bg-violet-100 px-2.5 py-1 text-[9.5px] sm:text-[10px] font-black uppercase tracking-wider text-[#A98BFF]">
             Target Destination
           </span>
         )}
@@ -261,9 +261,9 @@ function Step2Detail({
     return (
       <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-white p-12 text-center shadow-sm">
         <AlertCircle className="mb-3 text-[#8A5A00]" size={36} />
-        <h4 className="font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
+        <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
           2-Step Pro Specifications
-        </h4>
+        </h3>
         <p className="mt-2 max-w-md text-sm font-medium text-gray-600">
           {t("rows.twoStepProPending")}
         </p>
@@ -363,7 +363,7 @@ function Step2Detail({
         footer={
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0A0A0C]">
-              <Sparkles size={16} className="shrink-0 text-[#7943E0]" />
+              <Sparkles size={16} className="shrink-0 text-[#A98BFF]" />
               {t("phaseCards.qaFooter")}
             </p>
             <span className="font-mono text-xs font-semibold text-[#6B7280]">
@@ -390,7 +390,7 @@ function Step2Detail({
             key={cardTitle}
             className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#7943E0]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
               {cardTitle}
             </p>
             <p className="mt-3 text-xs sm:text-sm font-medium leading-relaxed text-[#4B5563]">
@@ -447,7 +447,7 @@ function Step1Detail({
           accent
           footer={
             <p className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0A0A0C]">
-              <Sparkles size={16} className="shrink-0 text-[#7943E0]" />
+              <Sparkles size={16} className="shrink-0 text-[#A98BFF]" />
               Progress immediately to Qualified Analyst upon target completion
             </p>
           }
@@ -457,12 +457,12 @@ function Step1Detail({
           data-od-id="objectives-1step-list"
         >
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-[10.5px] font-bold uppercase tracking-wider text-[#7943E0]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-[10.5px] font-bold uppercase tracking-wider text-[#A98BFF]">
               Accelerated Path
             </span>
-            <h4 className="mt-4 font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
+            <h3 className="mt-4 font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
               {t("phaseCards.afterEvalTitle")}
-            </h4>
+            </h3>
             <p className="mt-3 text-xs sm:text-sm font-medium leading-relaxed text-[#4B5563]">
               {t("phaseCards.afterEvalDesc")}
             </p>
@@ -537,7 +537,7 @@ function InstantDetail({
           accent
           footer={
             <p className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0A0A0C]">
-              <Sparkles size={16} className="shrink-0 text-[#7943E0]" />
+              <Sparkles size={16} className="shrink-0 text-[#A98BFF]" />
               Instant simulated capital allocation with bi-weekly payout cycles
             </p>
           }
@@ -550,9 +550,9 @@ function InstantDetail({
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#894CEF] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#030A1C]">
               Direct Funding
             </span>
-            <h4 className="mt-4 font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
+            <h3 className="mt-4 font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
               {t("phaseCards.beforeStartTitle")}
-            </h4>
+            </h3>
             <p className="mt-3 text-xs sm:text-sm font-medium leading-relaxed text-[#4B5563]">
               {t("phaseCards.beforeStartDesc")}
             </p>
@@ -616,10 +616,10 @@ function CompareModels({
     {
       id: "1step",
       badge: "Fast Track",
-      badgeClass: "bg-violet-50 text-[#7943E0] border border-violet-200/80",
+      badgeClass: "bg-violet-50 text-[#A98BFF] border border-violet-200/80",
       title: "1-Step Evaluation",
       description: "A streamlined single-phase challenge designed for traders seeking the fastest path to verified funding.",
-      icon: <Zap size={22} className="text-[#894CEF]" />,
+      icon: <Zap size={22} className="text-[#A98BFF]" />,
       targetLabel: "Profit Target",
       targetValue: "10%",
       dailyLoss: "4% Daily",
@@ -642,7 +642,7 @@ function CompareModels({
       isPopular: true,
       title: "2-Step Standard",
       description: "Our flagship two-phase evaluation offering our largest 8% static drawdown buffer and classic risk structure.",
-      icon: <Target size={22} className="text-[#7943E0]" />,
+      icon: <Target size={22} className="text-[#A98BFF]" />,
       targetLabel: "Phase 1 / Phase 2",
       targetValue: "10% / 5%",
       dailyLoss: "4% Daily",
@@ -766,7 +766,7 @@ function CompareModels({
                     <span className="text-[10px] font-bold uppercase text-gray-500">
                       Profit Split
                     </span>
-                    <p className="font-extrabold text-[#7943E0] text-sm mt-0.5">
+                    <p className="font-extrabold text-[#A98BFF] text-sm mt-0.5">
                       {m.profitSplit}
                     </p>
                   </div>
@@ -796,7 +796,7 @@ function CompareModels({
                   <ul className="space-y-2 text-xs font-medium text-gray-700">
                     {m.features.map((f) => (
                       <li key={f} className="flex items-center gap-2">
-                        <Check size={14} className="text-[#894CEF] shrink-0 stroke-[2.5]" />
+                        <Check size={14} className="text-[#A98BFF] shrink-0 stroke-[2.5]" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -814,7 +814,7 @@ function CompareModels({
                     "inline-flex w-full items-center justify-center gap-2 rounded-xl py-3 px-4 text-sm font-black transition-all duration-200 cursor-pointer",
                     isSelected || m.isPopular
                       ? "brand-gradient-btn text-[#1A1030] shadow-md hover:opacity-95 hover:-translate-y-0.5"
-                      : "border-2 border-gray-200 bg-white text-[#0A0A0C] hover:border-[#894CEF] hover:text-[#894CEF] hover:bg-[#F0F7FF] hover:-translate-y-0.5"
+                      : "border-2 border-gray-200 bg-white text-[#0A0A0C] hover:border-[#894CEF] hover:text-[#A98BFF] hover:bg-[#F0F7FF] hover:-translate-y-0.5"
                   )}
                 >
                   <span>{m.ctaText}</span>
@@ -851,7 +851,7 @@ function ObjectiveFaq() {
               value={String(i)}
               className="rounded-2xl border border-gray-200 bg-white px-6 transition-all data-[open]:border-gray-300 data-[open]:bg-white shadow-sm"
             >
-              <AccordionTrigger className="py-5 text-left text-sm sm:text-base font-bold text-[#0A0A0C] hover:text-[#7943E0] hover:no-underline">
+              <AccordionTrigger className="py-5 text-left text-sm sm:text-base font-bold text-[#0A0A0C] hover:text-[#A98BFF] hover:no-underline">
                 {item.q}
               </AccordionTrigger>
               <AccordionContent className="pb-5 text-sm sm:text-[14.5px] font-medium leading-relaxed text-[#4B5563]">
@@ -1041,7 +1041,7 @@ export function TradingObjectivesPageClient({
           <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
             <div className="lg:col-span-7 xl:col-span-6 min-w-0">
               <div
-                className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]"
                 data-od-id="objectives-hero-eyebrow"
               >
                 <Sparkles size={13} /> {t("heroBadge")}
@@ -1080,7 +1080,7 @@ export function TradingObjectivesPageClient({
                   {t("badgeSimulated")}
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <Target size={16} className="text-[#7943E0]" />
+                  <Target size={16} className="text-[#A98BFF]" />
                   {t("badgeProgression")}
                 </span>
                 <span className="inline-flex items-center gap-2">
@@ -1150,7 +1150,7 @@ export function TradingObjectivesPageClient({
             <div className="mt-10 rounded-2xl border border-gray-200 bg-gray-50/50 p-6 sm:p-8">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
                     {t("qaBenefitsTitle")}
                   </p>
                   <p className="mt-1 text-xs sm:text-sm text-[#4B5563] font-medium">
@@ -1256,7 +1256,7 @@ export function TradingObjectivesPageClient({
                 data-od-id="selector-evaltype"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#7943E0]">
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#A98BFF]">
                     2-Step Mode:
                   </span>
                   <span className="text-xs sm:text-sm text-gray-700 font-semibold">
@@ -1291,7 +1291,7 @@ export function TradingObjectivesPageClient({
             {/* Account Size Selector Pills */}
             <div className="mt-8">
               <div className="flex items-center justify-between mb-3.5">
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#7943E0]">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
                   Select Account Size
                 </span>
                 {size && (
@@ -1347,7 +1347,7 @@ export function TradingObjectivesPageClient({
             {/* Platform Selection Strip */}
             <div className="mt-8">
               <div className="flex items-center justify-between mb-3.5">
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#7943E0]">
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
                   Select Platform Preference
                 </span>
                 <span className="text-xs font-bold text-[#6B7280]">
@@ -1574,7 +1574,7 @@ export function TradingObjectivesPageClient({
               <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-[#0A0A0C]">
                 <Infinity size={24} />
               </div>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]">
+              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
                 {t("unlimitedEyebrow")}
               </p>
               <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-2xl font-black text-[#0A0A0C]">
@@ -1590,7 +1590,7 @@ export function TradingObjectivesPageClient({
               <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-[#0A0A0C]">
                 <RefreshCw size={24} />
               </div>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]">
+              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
                 {t("resetEyebrow")}
               </p>
               <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-2xl font-black text-[#0A0A0C]">
@@ -1601,7 +1601,7 @@ export function TradingObjectivesPageClient({
               </p>
               <a
                 href="/terms-conditions"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0A0A0C] hover:text-[#7943E0] underline"
+                className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0A0A0C] hover:text-[#A98BFF] underline"
               >
                 {t("viewTerms")} <ArrowRight size={13} />
               </a>
@@ -1612,7 +1612,7 @@ export function TradingObjectivesPageClient({
               <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-[#0A0A0C]">
                 <Zap size={24} />
               </div>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]">
+              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
                 TRADING FREEDOM
               </p>
               <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-2xl font-black text-[#0A0A0C]">
@@ -1628,7 +1628,7 @@ export function TradingObjectivesPageClient({
               <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-[#0A0A0C]">
                 <Coins size={24} />
               </div>
-              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#7943E0]">
+              <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
                 REWARD DISBURSEMENT
               </p>
               <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-2xl font-black text-[#0A0A0C]">
@@ -1760,13 +1760,13 @@ export function TradingObjectivesPageClient({
               <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm font-bold text-[#0A0A0C]">
                 <a
                   href="/terms-conditions"
-                  className="hover:text-[#7943E0] underline transition-colors"
+                  className="hover:text-[#A98BFF] underline transition-colors"
                 >
                   {t("viewTermsConditions")} <ArrowRight size={13} className="inline" />
                 </a>
                 <a
                   href="/risk-disclosure"
-                  className="hover:text-[#7943E0] underline transition-colors"
+                  className="hover:text-[#A98BFF] underline transition-colors"
                 >
                   {t("viewDisclaimer")} <ArrowRight size={13} className="inline" />
                 </a>

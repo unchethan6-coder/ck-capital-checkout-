@@ -14,7 +14,7 @@ export function CustomerSupportSection() {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <SectionReveal className="flex flex-col">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#7943E0]">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
               <span className="h-2 w-2 rounded-full bg-[#7943E0]" />
               {t("available247")}
             </div>
@@ -79,7 +79,7 @@ export function CustomerSupportSection() {
 
             <a
               href="/contact"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#0A0A0C] transition-colors hover:text-[#7943E0] underline"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#0A0A0C] transition-colors hover:text-[#A98BFF] underline"
               data-od-id="customer-support-contacts"
             >
               {t("showAll")} <ArrowUpRight size={15} />
@@ -98,9 +98,9 @@ export function CustomerSupportSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
             <div className="absolute bottom-7 left-7 right-7 flex items-end justify-between gap-4">
               <div>
-                <p className="rounded-full border border-secondary/35 bg-background/80 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-secondary backdrop-blur-sm">{t("supportBrand")}</p>
+                <p className="rounded-full border border-secondary/35 bg-background/80 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#A98BFF] backdrop-blur-sm">{t("supportBrand")}</p>
               </div>
-              <span className="rounded-full border border-secondary/35 bg-background/70 px-3 py-1.5 text-xs font-semibold text-secondary">
+              <span className="rounded-full border border-secondary/35 bg-background/70 px-3 py-1.5 text-xs font-semibold text-[#A98BFF]">
                 24/7
               </span>
             </div>

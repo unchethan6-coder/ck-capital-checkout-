@@ -119,9 +119,12 @@ export function SiteFooter() {
   ];
 
   const paymentMethods = [
-    { name: "Stripe", src: "/icons/payments/stripe.svg" },
-    { name: "PayPal", src: "/icons/payments/paypal.svg" },
-    { name: "USDT", src: "/icons/payments/tether.svg" },
+    { name: "Visa", src: "/payments/visa.svg" },
+    { name: "Mastercard", src: "/payments/mastercard.svg" },
+    { name: "Apple Pay", src: "/payments/apple-pay.svg" },
+    { name: "Google Pay", src: "/payments/google-pay.svg" },
+    { name: "PayPal", src: "/payments/paypal.svg" },
+    { name: "Crypto", src: "/payments/crypto.svg" },
   ];
 
   return (
@@ -137,7 +140,7 @@ export function SiteFooter() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
                 {t("newsletterTitle")}
               </h2>
-              <p className="mt-2 max-w-md text-[15px] leading-relaxed text-foreground/55">
+              <p className="mt-2 max-w-md text-[15px] leading-relaxed text-foreground/65">
                 {t("newsletterSubtitle")}
               </p>
             </div>
@@ -158,7 +161,7 @@ export function SiteFooter() {
                     if (status !== "idle") setStatus("idle");
                   }}
                   placeholder={t("emailPlaceholder")}
-                  className="h-11 w-full rounded-xl border border-white/10 bg-[#080E24] px-4 text-sm text-foreground outline-none placeholder:text-foreground/35 focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="h-11 w-full rounded-xl border border-white/10 bg-[#080E24] px-4 text-sm text-foreground outline-none placeholder:text-foreground/65 focus:border-primary focus:ring-2 focus:ring-primary/30"
                   aria-invalid={status === "error"}
                 />
                 <GoldButton
@@ -174,7 +177,7 @@ export function SiteFooter() {
                 <p className="mt-2 text-sm text-red-400">{t("errorEmail")}</p>
               )}
               {status === "success" && (
-                <p className="mt-2 text-sm text-primary">{t("successEmail")}</p>
+                <p className="mt-2 text-sm text-[#A98BFF]">{t("successEmail")}</p>
               )}
             </form>
           </div>
@@ -212,7 +215,7 @@ export function SiteFooter() {
                 <ul className="mt-4 space-y-2.5">
                   {column.links.map((link) => {
                     const linkClassName =
-                      "text-sm text-foreground/50 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
+                      "inline-flex min-h-11 items-center text-sm text-foreground/65 transition-colors hover:text-[#A98BFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:min-h-0 sm:py-1";
                     if (link.href.startsWith("http")) {
                       return (
                         <li key={link.label}>
@@ -256,20 +259,20 @@ export function SiteFooter() {
             <details className="group mt-4 rounded-xl border border-foreground/[0.08] bg-foreground/[0.02]">
               <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-foreground/65 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
                 {t("disclaimerImportantTitle")}
-                <span aria-hidden="true" className="text-lg leading-none text-primary transition-transform group-open:rotate-45">+</span>
+                <span aria-hidden="true" className="text-lg leading-none text-[#A98BFF] transition-transform group-open:rotate-45">+</span>
               </summary>
-              <div className="space-y-6 border-t border-foreground/[0.08] px-4 py-5 text-xs leading-relaxed text-foreground/45 sm:text-[12.5px]">
+              <div className="space-y-6 border-t border-foreground/[0.08] px-4 py-5 text-xs leading-relaxed text-foreground/65 sm:text-[12.5px]">
               <p className="font-medium text-foreground/65">
                 <strong>{t("disclaimerSimulated")}</strong>
               </p>
 
               <div className="space-y-2">
-                <h4 className="text-[12.5px] font-bold text-foreground/70">{t("simulatedEnvTitle")}</h4>
+                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("simulatedEnvTitle")}</h3>
                 <p>{t("simulatedEnvBody")}</p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-[12.5px] font-bold text-foreground/70">{t("noInvestmentTitle")}</h4>
+                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("noInvestmentTitle")}</h3>
                 <p>{t("noInvestmentIntro")}</p>
                 <ul className="list-disc space-y-1 pl-5">
                   {(t.raw("noInvestmentBullets") as string[]).map((b: string) => (
@@ -285,19 +288,19 @@ export function SiteFooter() {
               <p>{t("disclaimerPerformance")}</p>
 
               <div className="space-y-2">
-                <h4 className="text-[12.5px] font-bold text-foreground/70">{t("riskWarningTitle")}</h4>
+                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("riskWarningTitle")}</h3>
                 <p>{t("riskWarningBody")}</p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-[12.5px] font-bold text-foreground/70">{t("corporateTitle")}</h4>
+                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("corporateTitle")}</h3>
                 <p>{t("corporateBody")}</p>
                 <p>{t("corporateNote")}</p>
                 <p>{t("corporateRestrictions")}</p>
               </div>
 
               <div className="space-y-1">
-                <h4 className="text-[12.5px] font-bold text-foreground/70">{t("registeredAddressTitle")}</h4>
+                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("registeredAddressTitle")}</h3>
                 <p>{t("registeredAddressBody")}</p>
               </div>
 
@@ -312,17 +315,17 @@ export function SiteFooter() {
       <div className="border-b border-foreground/[0.06]" data-od-id="footer-payments">
         <Container>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 py-8 md:py-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-foreground/35">
+            <p className="text-xs font-bold uppercase tracking-widest text-foreground/65">
               {t("acceptedMethods")}
             </p>
             <div className="flex flex-wrap items-center gap-3">
               {paymentMethods.map((m) => (
                 <span
                   key={m.name}
-                  className="grid h-9 w-12 shrink-0 place-items-center overflow-hidden rounded-md border border-foreground/[0.08] bg-white/[0.04] p-2"
+                  className="grid h-9 w-14 shrink-0 place-items-center overflow-hidden rounded-md border border-foreground/[0.08] bg-white/[0.04] px-1.5"
                   title={m.name}
                 >
-                  <img src={m.src} alt={m.name} className="block h-5 w-5 max-h-full max-w-full object-contain" />
+                  <img src={m.src} alt={m.name} width={44} height={29} loading="lazy" decoding="async" className="block h-7 w-auto max-w-full object-contain" />
                 </span>
               ))}
             </div>
@@ -337,14 +340,14 @@ export function SiteFooter() {
           data-od-id="footer-utility"
         >
           <div className="space-y-3">
-            <p className="text-xs text-foreground/35">{t("copyright", { year })}</p>
+            <p className="text-xs text-foreground/65">{t("copyright", { year })}</p>
             <nav aria-label="Footer legal and product links" className="flex flex-wrap gap-x-4 gap-y-1.5">
               {legalLinks.map((link) => (
                 <span key={link.label}>
                   <Link
                     href={link.href as never}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-xs text-foreground/40 transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    className="inline-flex min-h-11 items-center text-xs text-foreground/65 transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:min-h-0 sm:py-1"
                   >
                     {link.label}
                   </Link>
