@@ -160,10 +160,10 @@ export default function AboutPage() {
                   variants={heroFadeDown}
                   initial="hidden"
                   animate="show"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3.5 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#7943E0]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3.5 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]"
                   data-od-id="about-hero-eyebrow"
                 >
-                  <Sparkles size={12} className="text-[#7943E0]" />
+                  <Sparkles size={12} className="text-[#A98BFF]" />
                   {t('badge')}
                 </motion.div>
 
@@ -222,10 +222,10 @@ export default function AboutPage() {
                   custom={0.38}
                   className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
                   <span className="inline-flex items-center gap-2">
-                    <ShieldCheck size={14} className="text-[#894CEF]" /> {t('badgeSimulated')}
+                    <ShieldCheck size={14} className="text-[#A98BFF]" /> {t('badgeSimulated')}
                   </span>
                   <span className="inline-flex items-center gap-2">
-                    <BadgeCheck size={14} className="text-[#7943E0]" /> {t('badgeVerifiedUk')}
+                    <BadgeCheck size={14} className="text-[#A98BFF]" /> {t('badgeVerifiedUk')}
                   </span>
                   <span className="inline-flex items-center gap-2">
                     <Users size={14} className="text-[#6B7280]" /> {t('badgeGlobalTraders')}
@@ -259,13 +259,13 @@ export default function AboutPage() {
                         />
                       </div>
                       <div>
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#894CEF]">
-                          <Star size={10} className="fill-[#894CEF] text-[#894CEF]" /> {t('founderRoleBadge')}
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
+                          <Star size={10} className="fill-[#894CEF] text-[#A98BFF]" /> {t('founderRoleBadge')}
                         </span>
                         <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-xl font-extrabold text-white sm:text-2xl">
                           Daniel Cheung
                         </h3>
-                        <p className="text-xs font-semibold text-[#894CEF]">
+                        <p className="text-xs font-semibold text-[#A98BFF]">
                           {t('founderRole')}
                         </p>
                       </div>
@@ -273,7 +273,7 @@ export default function AboutPage() {
 
                     {/* Philosophy Quote */}
                     <div className="relative rounded-2xl border border-white/[0.12] bg-white/[0.04] p-5">
-                      <Quote size={20} className="text-[#894CEF]/60 mb-2" />
+                      <Quote size={20} className="text-[#A98BFF]/60 mb-2" />
                       <p className="text-sm leading-relaxed text-white/90 italic">
                         &ldquo;{t('founderQuote')}&rdquo;
                       </p>
@@ -289,7 +289,7 @@ export default function AboutPage() {
                       {founderBadges.map((badge) => (
                         <span
                           key={badge}
-                          className="rounded-lg border border-primary/20 bg-primary/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-primary/90"
+                          className="rounded-lg border border-primary/20 bg-primary/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#A98BFF]/90"
                         >
                           {badge}
                         </span>
@@ -332,7 +332,7 @@ export default function AboutPage() {
         <section className="bg-white py-20 md:py-28 text-[#0A0A0C]" data-od-id="about-mission-vision">
           <Container>
             <SectionReveal className="mx-auto max-w-2xl text-center">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
                 {t('missionVisionHeadingEyebrow')}
               </p>
               <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.03em] text-[#0A0A0C] md:text-5xl">
@@ -357,10 +357,10 @@ export default function AboutPage() {
                     <div className="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#894CEF]/10 blur-2xl transition duration-500 group-hover:bg-[#894CEF]/20" />
 
                     <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#703AD7]/30 bg-[#703AD7]/10 transition-colors group-hover:bg-[#703AD7]/20">
-                      <Icon size={24} className="text-[#894CEF]" />
+                      <Icon size={24} className="text-[#A98BFF]" />
                     </div>
 
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#894CEF]">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
                       {item.eyebrow}
                     </span>
                     <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-white">
@@ -380,7 +380,7 @@ export default function AboutPage() {
         <section className="bg-white border-y border-[#E5E7EB] py-20 md:py-28 text-[#0A0A0C]" data-od-id="about-pillars">
           <Container>
             <SectionReveal className="mx-auto max-w-2xl text-center">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
                 {t('cultureEyebrow')}
               </p>
               <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.03em] text-[#0A0A0C] md:text-5xl">
@@ -421,7 +421,7 @@ export default function AboutPage() {
         <section className="bg-white py-20 md:py-28 text-[#0A0A0C]" data-od-id="about-values">
           <Container>
             <SectionReveal className="mx-auto max-w-2xl text-center">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
                 {t('valuesEyebrow')}
               </p>
               <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.03em] text-[#0A0A0C] md:text-5xl">

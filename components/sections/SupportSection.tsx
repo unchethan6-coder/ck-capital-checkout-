@@ -37,7 +37,7 @@ export function SupportSection() {
             id="support-youtube"
             visual={<VideoVisual />}
             eyebrow={t("youtubeEyebrow")}
-            eyebrowIcon={<Play size={14} fill="currentColor" className="text-primary" />}
+            eyebrowIcon={<Play size={14} fill="currentColor" className="text-[#A98BFF]" />}
             statLabel={t("subscriberCount")}
             statValue={t("pending")}
             title={t("youtubeTitle")}
@@ -80,14 +80,14 @@ function SupportCard({
         {visual}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs font-semibold text-foreground/55">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs font-semibold text-foreground/65">
         <div className="flex items-center gap-2">
           {eyebrowIcon}
           <span>{eyebrow}</span>
         </div>
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.12em]">
-          <span className="text-foreground/40">{statLabel}</span>
-          <span className="text-primary">{statValue}</span>
+          <span className="text-foreground/65">{statLabel}</span>
+          <span className="text-[#A98BFF]">{statValue}</span>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ function SupportCard({
         href={href}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-        className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 text-sm font-bold text-[#0A0A0C] shadow-sm transition-colors hover:border-[#703AD7] hover:bg-violet-50/50 hover:text-[#7943E0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 text-sm font-bold text-[#0A0A0C] shadow-sm transition-colors hover:border-[#703AD7] hover:bg-violet-50/50 hover:text-[#A98BFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         data-od-id={`${id}-cta`}
       >
         {action}

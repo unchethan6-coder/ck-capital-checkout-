@@ -155,7 +155,7 @@ function LoopingTerminal() {
         <div className="w-2 h-2 rounded-full bg-red-500/70" />
         <div className="w-2 h-2 rounded-full bg-yellow-500/70" />
         <div className="w-2 h-2 rounded-full bg-green-500/70" />
-        <span className="ml-2 text-[9px] text-foreground/30">~/strategies – zsh</span>
+        <span className="ml-2 text-[9px] text-foreground/65">~/strategies – zsh</span>
       </div>
       <div ref={termRef} className="p-3 min-h-[280px]">
         {currentLines.map((l, i) => (
@@ -207,7 +207,7 @@ export function InstrumentsShowcase() {
             className="rounded-3xl border border-foreground/10 bg-foreground/[0.03] p-6 sm:p-8 flex flex-col"
           >
             <h3 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-foreground mb-3">{t("cfdsTitle")}</h3>
-            <p className="text-sm text-foreground/50 leading-relaxed mb-6 max-w-md">
+            <p className="text-sm text-foreground/65 leading-relaxed mb-6 max-w-md">
               {t("cfdsDesc")}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -223,7 +223,7 @@ export function InstrumentsShowcase() {
                       </div>
                       <span className="text-xs font-semibold text-foreground">{inst.name}</span>
                     </div>
-                    <span className="text-[9px] text-foreground/30 font-mono">{inst.type}</span>
+                    <span className="text-[9px] text-foreground/65 font-mono">{inst.type}</span>
                   </div>
                   <p className="font-[family-name:var(--font-jakarta)] text-lg font-extrabold text-foreground">
                     <TickerPrice base={inst.base} decimals={inst.decimals} prefix={inst.prefix} />
@@ -245,7 +245,7 @@ export function InstrumentsShowcase() {
             className="rounded-3xl border border-foreground/10 bg-foreground/[0.03] p-6 sm:p-8 flex flex-col"
           >
             <h3 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-foreground mb-3">{t("futuresTitle")}</h3>
-            <p className="text-sm text-foreground/50 leading-relaxed mb-6 max-w-md">
+            <p className="text-sm text-foreground/65 leading-relaxed mb-6 max-w-md">
               {t("futuresDesc")}
             </p>
             <div className="flex-1 rounded-xl border border-foreground/10 bg-foreground/[0.02] p-4 flex flex-col">
@@ -262,10 +262,10 @@ export function InstrumentsShowcase() {
               <div className="flex-1 min-h-[160px] overflow-hidden">
                 <AnimatedChart />
               </div>
-              <div className="flex justify-between mt-4 text-[10px] font-mono text-foreground/40">
-                <div><span className="block text-foreground/30">{t("high24h")}</span><span className="text-foreground/60 font-bold">24,194</span></div>
-                <div><span className="block text-foreground/30">{t("low24h")}</span><span className="text-foreground/60 font-bold">23,745</span></div>
-                <div><span className="block text-foreground/30">{t("vol")}</span><span className="text-foreground/60 font-bold">1.3M</span></div>
+              <div className="flex justify-between mt-4 text-[10px] font-mono text-foreground/65">
+                <div><span className="block text-foreground/65">{t("high24h")}</span><span className="text-foreground/60 font-bold">24,194</span></div>
+                <div><span className="block text-foreground/65">{t("low24h")}</span><span className="text-foreground/60 font-bold">23,745</span></div>
+                <div><span className="block text-foreground/65">{t("vol")}</span><span className="text-foreground/60 font-bold">1.3M</span></div>
               </div>
             </div>
           </div>
@@ -289,19 +289,19 @@ export function InstrumentsShowcase() {
               <h3 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-foreground mb-2">
                 {t("trustTitle")}
               </h3>
-              <p className="text-sm text-foreground/50 leading-relaxed mb-4">
+              <p className="text-sm text-foreground/65 leading-relaxed mb-4">
                 {t("trustSubtitle")}
               </p>
               <div className="flex items-end gap-3">
                 <span className="font-[family-name:var(--font-jakarta)] text-5xl font-extrabold text-foreground">4.8</span>
-                <span className="text-lg text-foreground/40 mb-1">/5</span>
+                <span className="text-lg text-foreground/65 mb-1">/5</span>
                 <div className="ml-2 flex flex-col gap-0.5">
                   <div className="flex gap-0.5">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} size={16} fill="#f7d774" stroke="none" />
                     ))}
                   </div>
-                  <span className="text-[10px] text-foreground/30">{t("trustSummary")}</span>
+                  <span className="text-[10px] text-foreground/65">{t("trustSummary")}</span>
                 </div>
               </div>
             </div>
@@ -315,10 +315,10 @@ export function InstrumentsShowcase() {
                   transition={{ duration: 0.35 }}
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center text-xs font-bold text-primary">{r.initial}</div>
+                    <div className="w-8 h-8 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center text-xs font-bold text-[#A98BFF]">{r.initial}</div>
                     <span className="text-sm font-bold text-foreground">{r.name} {r.flag}</span>
                   </div>
-                  <p className="text-[10px] text-foreground/30 mb-1.5">{r.source}</p>
+                  <p className="text-[10px] text-foreground/65 mb-1.5">{r.source}</p>
                   <p className="text-sm text-foreground/70 leading-relaxed">&ldquo;{r.text}&rdquo;</p>
                   <div className="flex items-center gap-1.5 mt-2">
                     <div className="flex gap-0.5">
@@ -326,7 +326,7 @@ export function InstrumentsShowcase() {
                         <Star key={i} size={10} fill="#f7d774" stroke="none" />
                       ))}
                     </div>
-                    <span className="text-[10px] font-bold text-foreground/50">{t("verifiedBadge")}</span>
+                    <span className="text-[10px] font-bold text-foreground/65">{t("verifiedBadge")}</span>
                   </div>
                 </motion.div>
               </AnimatePresence>

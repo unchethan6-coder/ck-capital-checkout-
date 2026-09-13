@@ -31,11 +31,20 @@ export function CountUp({
   const decimals = numStr.includes(".") ? numStr.split(".")[1]!.length : 0;
   const isNumeric = Boolean(m && !isNaN(target) && !value.includes("/"));
 
+  // SSR (and the first client paint) renders the final value so the number is
+  // correct without JS; once mounted we drop to 0 and count up on scroll-in.
   const [display, setDisplay] = useState(isNumeric ? target : 0);
+  const [armed, setArmed] = useState(false);
   const animatedRef = useRef(false);
 
   useEffect(() => {
-    if (!isNumeric || !inView || animatedRef.current) return;
+    if (!isNumeric || reduceMotion) return;
+    setDisplay(0);
+    setArmed(true);
+  }, [isNumeric, reduceMotion]);
+
+  useEffect(() => {
+    if (!isNumeric || !inView || !armed || animatedRef.current) return;
     if (reduceMotion) {
       setDisplay(target);
       return;
@@ -51,7 +60,7 @@ export function CountUp({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [inView, target, duration, reduceMotion, isNumeric]);
+  }, [inView, armed, target, duration, reduceMotion, isNumeric]);
 
   if (!isNumeric) {
     return (

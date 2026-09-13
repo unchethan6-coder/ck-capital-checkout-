@@ -39,7 +39,7 @@ export function ObjectivesHUDVisual({
             <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
             <div className="ml-3 hidden sm:flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-mono text-[#6B7280]">
-              <Lock size={10} className="text-[#7943E0]" />
+              <Lock size={10} className="text-[#A98BFF]" />
               <span>app.ckcapital.co.uk/matrix/risk-engine</span>
             </div>
           </div>
@@ -61,7 +61,7 @@ export function ObjectivesHUDVisual({
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
                   Objectives HUD #CK-RULES
                 </p>
-                <span className="rounded bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold text-[#7943E0] border border-violet-200">
+                <span className="rounded bg-violet-50 px-1.5 py-0.5 text-[9px] font-bold text-[#A98BFF] border border-violet-200">
                   100% COMPLIANT
                 </span>
               </div>
@@ -93,7 +93,7 @@ export function ObjectivesHUDVisual({
                 Core Trading Parameters
               </p>
               <span className="flex items-center gap-1 text-[11px] font-semibold text-[#6B7280]">
-                <Activity size={12} className="text-[#7943E0]" /> Live Compliance Sync
+                <Activity size={12} className="text-[#A98BFF]" /> Live Compliance Sync
               </span>
             </div>
 
@@ -136,7 +136,7 @@ export function ObjectivesHUDVisual({
                   <Check size={12} className="text-emerald-700 stroke-[3]" />
                 </div>
                 <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">0 Days</p>
-                <p className="text-[9px] text-[#7943E0] font-semibold">Pass in 1 Day</p>
+                <p className="text-[9px] text-[#A98BFF] font-semibold">Pass in 1 Day</p>
               </div>
 
               {/* Rule 5 */}
@@ -163,10 +163,10 @@ export function ObjectivesHUDVisual({
             {/* Compliance Verified Banner */}
             <div className="flex items-center justify-between rounded-xl border border-violet-200 bg-violet-50 px-3.5 py-2.5 text-xs">
               <div className="flex items-center gap-2 text-[#0A0A0C]">
-                <ShieldCheck size={15} className="text-[#7943E0] shrink-0" />
+                <ShieldCheck size={15} className="text-[#A98BFF] shrink-0" />
                 <span className="text-[11px] font-semibold">Real-Time Risk Engine Active · Zero IP or Strategy Bans</span>
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#7943E0]">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#A98BFF]">
                 Verified
               </span>
             </div>
@@ -182,7 +182,7 @@ export function ObjectivesHUDVisual({
             </span>
             <span className="text-[#0A0A0C] font-bold">100% Rules Clarity</span>
           </div>
-          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#7943E0]">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]">
             NO TRICK CLAUSES
           </span>
         </div>
@@ -194,11 +194,11 @@ export function ObjectivesHUDVisual({
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="absolute -bottom-5 left-2 sm:-bottom-8 sm:-left-6 z-20"
+          className="relative z-20 mt-4 w-fit max-w-full -ml-1 sm:-ml-4"
         >
           <div className="flex items-center gap-3.5 rounded-2xl border border-gray-200 bg-white px-4 py-3 sm:px-5 sm:py-3.5 shadow-xl">
-            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-violet-50 text-[#7943E0] border border-violet-200">
-              <Sliders size={20} className="text-[#7943E0]" />
+            <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-violet-50 text-[#A98BFF] border border-violet-200">
+              <Sliders size={20} className="text-[#A98BFF]" />
             </div>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">

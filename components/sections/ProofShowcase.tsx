@@ -2,9 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { motion, useReducedMotion } from "framer-motion";
 import { Lock, RefreshCw, Wallet, ShieldCheck, DollarSign } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 import type { CmsPayout, CmsRewardsSummary } from "@/lib/cms";
 
 /* ------------------------------------------------------------------ */
@@ -72,7 +74,7 @@ export function ProofShowcase({
             new Date(b.approvedAt ?? 0).getTime() -
             new Date(a.approvedAt ?? 0).getTime()
         )
-        .slice(0, 4),
+        .slice(0, 48),
     [verified]
   );
 
@@ -201,13 +203,16 @@ function BrowserWindow({
   const t = useTranslations("proof");
   const [offset, setOffset] = useState(0);
   const baseList = rows.length >= 4 ? rows : SAMPLE_PROOF_ROWS;
+  const reduceMotion = useReducedMotion();
 
+  // Rolling feed: one row rotates in at a time so the panel reads as live.
   useEffect(() => {
+    if (reduceMotion || baseList.length <= 4) return;
     const timer = setInterval(() => {
       setOffset((prev) => (prev + 1) % baseList.length);
-    }, 7500);
+    }, 3200);
     return () => clearInterval(timer);
-  }, [baseList.length]);
+  }, [baseList.length, reduceMotion]);
 
   const activeRows = useMemo(() => {
     const combined = [...baseList.slice(offset), ...baseList.slice(0, offset)];
@@ -244,6 +249,15 @@ function BrowserWindow({
             <p className="mt-1.5 text-[11px] leading-5 text-gray-500">
               {t("readyRewardDesc")}
             </p>
+            <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+              <motion.span
+                aria-hidden="true"
+                animate={reduceMotion ? undefined : { opacity: [1, 0.25, 1] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                className="h-1.5 w-1.5 rounded-full bg-emerald-500"
+              />
+              {baseList.length} {t("payoutsInFeed")}
+            </span>
           </div>
 
           <div className="mt-5 overflow-hidden rounded-lg border border-gray-200">
@@ -254,9 +268,12 @@ function BrowserWindow({
               <span className="text-right">{t("amount")}</span>
             </div>
             {activeRows.length ? (
-              activeRows.map((row) => (
-                <div
+              activeRows.map((row, i) => (
+                <motion.div
                   key={row.id}
+                  initial={reduceMotion ? false : { opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
                   className="grid grid-cols-[1.2fr_0.8fr] gap-3 border-b border-gray-100 bg-white px-4 py-3.5 text-xs last:border-0 sm:grid-cols-[1.2fr_0.9fr_0.6fr_0.8fr]"
                   data-od-id={`proof-table-row-${row.id}`}
                 >
@@ -267,7 +284,8 @@ function BrowserWindow({
                     {formatDate(row.approvedAt)}
                   </span>
                   <span className="hidden sm:block">
-                    <span className="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-gray-500">
+                    <span className="inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-gray-500">
+                      <CountryFlag code={row.countryCode} name={row.countryName} size={14} />
                       {row.countryCode || "--"}
                     </span>
                   </span>
@@ -277,7 +295,7 @@ function BrowserWindow({
                       row.currency ?? undefined
                     )}
                   </span>
-                </div>
+                </motion.div>
               ))
             ) : (
               <div className="px-4 py-12 text-center text-xs text-gray-400">
@@ -295,52 +313,26 @@ function BrowserWindow({
       >
         <div className="relative overflow-hidden rounded-2xl border border-[#703AD7]/30 bg-[#0b1328]/95 backdrop-blur-md p-5 sm:p-6 shadow-[0_20px_50px_-15px_rgba(3,10,28,0.6)]">
           <div className="relative z-10 pr-16 sm:pr-20">
-            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-[#7943E0]">
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
               {t("totalPayouts")}
             </p>
             <p className="mt-1 font-[family-name:var(--font-jakarta)] text-2xl xs:text-3xl sm:text-[32px] font-black leading-none tracking-tight text-[#0A0A0C] tabular-nums">
               {formatMoney(total ?? 1200000)}
             </p>
           </div>
-          <GoldGem className="pointer-events-none absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 h-14 w-14 sm:h-16 sm:w-16 lg:h-18 lg:w-18 opacity-90 drop-shadow-[0_4px_12px_rgba(1,162,239,0.25)]" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/ck-mascot-medal.png"
+            alt=""
+            aria-hidden="true"
+            width={320}
+            height={315}
+            loading="lazy"
+            decoding="async"
+            className="pointer-events-none absolute right-3 sm:right-4 top-1/2 h-16 w-16 -translate-y-1/2 object-contain drop-shadow-[0_4px_14px_rgba(137,76,239,0.35)] sm:h-[72px] sm:w-[72px] lg:h-20 lg:w-20"
+          />
         </div>
       </div>
     </div>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* Angular sapphire gem — decorative, drawn from brand blue values    */
-/* ------------------------------------------------------------------ */
-
-function GoldGem({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 100 112"
-      fill="none"
-      className={className}
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient id="gem-hi" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#894CEF" />
-          <stop offset="1%" stopColor="#703AD7" />
-        </linearGradient>
-        <linearGradient id="gem-mid" x1="0" y1="0" x2="0.8" y2="1">
-          <stop offset="0%" stopColor="#703AD7" />
-          <stop offset="1%" stopColor="#1D4ED8" />
-        </linearGradient>
-        <linearGradient id="gem-lo" x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1D4ED8" />
-          <stop offset="1%" stopColor="#703AD7" />
-        </linearGradient>
-      </defs>
-      <polygon points="22,14 50,4 78,14 64,38 36,38" fill="url(#gem-hi)" />
-      <polygon points="22,14 36,38 10,44" fill="url(#gem-lo)" opacity="0.85" />
-      <polygon points="78,14 64,38 90,44" fill="url(#gem-mid)" opacity="0.9" />
-      <polygon points="10,44 36,38 50,106" fill="url(#gem-mid)" opacity="0.8" />
-      <polygon points="90,44 64,38 50,106" fill="url(#gem-lo)" opacity="0.75" />
-      <polygon points="36,38 64,38 50,106" fill="url(#gem-hi)" />
-    </svg>
   );
 }

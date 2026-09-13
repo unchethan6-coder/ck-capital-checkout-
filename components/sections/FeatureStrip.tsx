@@ -54,13 +54,13 @@ export function FeatureStrip() {
                 idx === 4 ? "sm:col-span-1" : ""
               }`}
             >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#894CEF]/25 bg-[#894CEF]/10 text-[#894CEF] group-hover:border-[#894CEF]/60 group-hover:bg-[#894CEF]/20 group-hover:shadow-[0_0_15px_rgba(1,162,239,0.25)] transition-all duration-200">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#894CEF]/25 bg-[#894CEF]/10 text-[#A98BFF] group-hover:border-[#894CEF]/60 group-hover:bg-[#894CEF]/20 group-hover:shadow-[0_0_15px_rgba(1,162,239,0.25)] transition-all duration-200">
                 <item.icon size={22} strokeWidth={1.75} />
               </div>
               <div className="text-left">
-                <h4 className="font-[family-name:var(--font-jakarta)] text-[14px] font-black text-white group-hover:text-[#894CEF] transition-colors duration-150">
+                <h3 className="font-[family-name:var(--font-jakarta)] text-[14px] font-black text-white group-hover:text-[#A98BFF] transition-colors duration-150">
                   {item.title}
-                </h4>
+                </h3>
                 <p className="mt-1 text-[11.5px] leading-relaxed text-[#999BA3]">
                   {item.description}
                 </p>

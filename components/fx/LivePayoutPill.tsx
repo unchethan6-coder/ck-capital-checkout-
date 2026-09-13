@@ -49,7 +49,7 @@ export function LivePayoutPill({
     >
       <span
         className={cn(
-          "inline-flex items-center gap-2.5 rounded-full border border-primary/25 bg-[color-mix(in_oklab,var(--background)_80%,transparent)] px-4 py-2 text-[12.5px] font-semibold text-primary backdrop-blur-md",
+          "inline-flex items-center gap-2.5 rounded-full border border-primary/25 bg-[color-mix(in_oklab,var(--background)_80%,transparent)] px-4 py-2 text-[12.5px] font-semibold text-[#A98BFF] backdrop-blur-md",
           className
         )}
       >

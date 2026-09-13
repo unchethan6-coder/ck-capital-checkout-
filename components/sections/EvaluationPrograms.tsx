@@ -76,7 +76,7 @@ export function EvaluationPrograms() {
           <div className="lg:col-span-3">
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="h-2 w-2 rounded-full bg-[#894CEF]" />
-              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#7943E0]">
+              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#A98BFF]">
                 {t("eyebrow")}
               </span>
             </div>
@@ -92,7 +92,7 @@ export function EvaluationPrograms() {
             <div className="mt-6 sm:mt-8">
               <Link
                 href="/trading-objectives"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[#030A1C] px-5 py-3 text-xs sm:text-sm font-extrabold text-white shadow-sm hover:bg-[#071328] hover:text-[#894CEF] hover:border-[#703AD7]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200"
+                className="group inline-flex items-center gap-2 rounded-xl bg-[#030A1C] px-5 py-3 text-xs sm:text-sm font-extrabold text-white shadow-sm hover:bg-[#071328] hover:text-[#A98BFF] hover:border-[#703AD7]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200"
               >
                 <span>{t("compareBtn")}</span>
                 <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
@@ -124,7 +124,7 @@ export function EvaluationPrograms() {
                   )}
 
                   {/* Card Header */}
-                  <h3 className="font-[family-name:var(--font-jakarta)] text-lg font-black tracking-tight text-[#0A0A0C] mb-5 group-hover:text-[#7943E0] transition-colors">
+                  <h3 className="font-[family-name:var(--font-jakarta)] text-lg font-black tracking-tight text-[#0A0A0C] mb-5 group-hover:text-[#A98BFF] transition-colors">
                     {challenge.name}
                   </h3>
 
@@ -163,7 +163,7 @@ export function EvaluationPrograms() {
                           {challenge.discountedPrice}
                         </span>
                       </div>
-                      <span className="rounded bg-violet-50 border border-violet-200 px-2 py-0.5 text-[10px] font-black text-[#7943E0] shadow-sm">
+                      <span className="rounded bg-violet-50 border border-violet-200 px-2 py-0.5 text-[10px] font-black text-[#A98BFF] shadow-sm">
                         {challenge.discountBadge}
                       </span>
                     </div>

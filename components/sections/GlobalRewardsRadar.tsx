@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Globe2,
@@ -377,7 +378,7 @@ export function GlobalRewardsRadar({
           </div>
           <div className="flex items-center gap-3 text-[11px] font-mono text-white/60">
             <span className="hidden sm:inline">DATASET: NATURAL EARTH 110M</span>
-            <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[#894CEF] font-bold">
+            <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[#A98BFF] font-bold">
               140+ COUNTRIES
             </span>
           </div>
@@ -567,7 +568,7 @@ export function GlobalRewardsRadar({
         {/* Radar Footer Telemetry Bar */}
         <div className="relative z-10 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] text-white/70 font-mono">
           <span className="flex items-center gap-2">
-            <Activity size={13} className="text-[#894CEF]" />
+            <Activity size={13} className="text-[#A98BFF]" />
             REAL-TIME PROP CLEARING NETWORK
           </span>
           <span className="text-white/50 hidden sm:inline">
@@ -590,7 +591,7 @@ export function GlobalRewardsRadar({
             {/* Top Identity Header */}
             <div>
               <div className="flex items-center justify-between gap-2 pb-3 border-b border-gray-100">
-                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#7943E0]">
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]">
                   <Sparkles size={13} />
                   <span>REGIONAL HUB #{activeHub.rank}</span>
                 </div>
@@ -602,9 +603,7 @@ export function GlobalRewardsRadar({
 
               {/* Country Name & Flag */}
               <div className="mt-3 flex items-center gap-3">
-                <span className="text-4xl drop-shadow-sm select-none">
-                  {activeHub.flag}
-                </span>
+                <CountryFlag code={activeHub.code} name={activeHub.name} size={46} className="drop-shadow-sm" />
                 <div>
                   <h3 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-[#0A0A0C] leading-tight">
                     {activeHub.name}
@@ -620,7 +619,7 @@ export function GlobalRewardsRadar({
             <div className="grid grid-cols-2 gap-2.5">
               <div className="rounded-2xl border border-gray-100 bg-[#F8FAFC] p-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 flex items-center gap-1">
-                  <TrendingUp size={11} className="text-[#7943E0]" />
+                  <TrendingUp size={11} className="text-[#A98BFF]" />
                   Total Volume
                 </span>
                 <p className="mt-1 text-lg sm:text-xl font-extrabold text-[#0A0A0C]">
@@ -650,7 +649,7 @@ export function GlobalRewardsRadar({
 
               <div className="rounded-2xl border border-gray-100 bg-[#F8FAFC] p-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 flex items-center gap-1">
-                  <Activity size={11} className="text-[#7943E0]" />
+                  <Activity size={11} className="text-[#A98BFF]" />
                   Top Asset
                 </span>
                 <p className="mt-1 text-xs font-extrabold text-[#0A0A0C] line-clamp-1">
@@ -667,7 +666,7 @@ export function GlobalRewardsRadar({
             <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
               Select Regional Hub
             </span>
-            <span className="text-[10px] font-semibold text-[#7943E0]">
+            <span className="text-[10px] font-semibold text-[#A98BFF]">
               12 Published Hubs
             </span>
           </div>
@@ -686,7 +685,7 @@ export function GlobalRewardsRadar({
                       : "border-gray-100 bg-gray-50/60 hover:bg-gray-100 text-gray-700"
                   }`}
                 >
-                  <span className="text-lg leading-none">{h.flag}</span>
+                  <CountryFlag code={h.code} name={h.name} size={22} className="leading-none" />
                   <span className="text-[11px] font-extrabold mt-1 truncate max-w-full">
                     {h.shortName}
                   </span>

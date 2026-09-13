@@ -53,8 +53,8 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7943E0]">
-                  <Sparkles size={12} className="text-[#7943E0]" /> {t('badge')}
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
+                  <Sparkles size={12} className="text-[#A98BFF]" /> {t('badge')}
                 </span>
               </motion.div>
 
@@ -97,8 +97,8 @@ export default function ContactPage() {
               </motion.div>
 
               <div className="mt-14 flex flex-wrap gap-x-7 gap-y-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
-                <span className="inline-flex items-center gap-2"><ShieldCheck size={14} className="text-[#894CEF]" /> 24/7 Dedicated Support</span>
-                <span className="inline-flex items-center gap-2"><Mail size={14} className="text-[#7943E0]" /> Fast Response Times</span>
+                <span className="inline-flex items-center gap-2"><ShieldCheck size={14} className="text-[#A98BFF]" /> 24/7 Dedicated Support</span>
+                <span className="inline-flex items-center gap-2"><Mail size={14} className="text-[#A98BFF]" /> Fast Response Times</span>
               </div>
             </div>
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
       <section id="contact-cards" className="scroll-mt-24 bg-white border-b border-[#E5E7EB] py-16 md:py-24 text-[#0A0A0C]" data-od-id="contact-cards">
         <Container>
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">
               CHANNELS & HOURS
             </p>
             <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-5xl">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       href={card.action.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#0A0A0C] hover:text-[#7943E0] underline transition-colors"
+                      className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#0A0A0C] hover:text-[#A98BFF] underline transition-colors"
                     >
                       {card.action.label} <ArrowRight size={13} />
                     </a>
@@ -168,9 +168,9 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-white border-t border-gray-200 py-20 md:py-28 text-[#0A0A0C]" data-od-id="contact-discord-cta">
         <Container className="relative text-center">
           <SectionReveal>
-            <MessageCircle className="mx-auto text-[#7943E0]" size={32} />
+            <MessageCircle className="mx-auto text-[#A98BFF]" size={32} />
             <h2 className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-jakarta)] text-4xl font-extrabold tracking-[-0.04em] text-[#0A0A0C] md:text-6xl">
-              Connect with 10,000+ Analysts
+              Connect with 20,000+ Traders
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#4B5563]">
               Join our global Discord trader community for market discussions, announcement drops, support ticketing, and weekly giveaways.

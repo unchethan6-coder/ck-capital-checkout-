@@ -27,7 +27,7 @@ const MAILTO = "service@ckcapital.co.uk";
 const EmailLink = (
   <a
     href={`mailto:${MAILTO}`}
-    className="font-semibold text-[#0A0A0C] underline decoration-[#7943E0]/40 underline-offset-4 transition-colors hover:text-[#7943E0]"
+    className="font-semibold text-[#0A0A0C] underline decoration-[#7943E0]/40 underline-offset-4 transition-colors hover:text-[#A98BFF]"
   >
     {MAILTO}
   </a>
@@ -47,7 +47,7 @@ export default async function ReturnPolicyPage() {
         </div>
         <Container className="relative z-10">
           <div className="max-w-3xl">
-            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#7943E0]">
+            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]">
               {t("badgeLegal")}
               <span className="text-violet-400">·</span>
               {t("returnBadge")}

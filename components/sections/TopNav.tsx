@@ -346,8 +346,8 @@ export function TopNav() {
                   className={cn(
                     "whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors flex items-center gap-1",
                     isProgramsActive
-                      ? "bg-primary/10 text-primary font-bold"
-                      : "text-white/75 hover:text-[#894CEF] hover:bg-white/[0.04]"
+                      ? "bg-primary/10 text-[#A98BFF] font-bold"
+                      : "text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
                   )}
                 >
                   <span>{t("tradingObjectives" as any)}</span>
@@ -355,7 +355,7 @@ export function TopNav() {
                     size={14}
                     className={cn(
                       "opacity-50 transition-transform duration-200",
-                      activeMegaMenu === "programs" ? "rotate-180 text-[#894CEF]" : ""
+                      activeMegaMenu === "programs" ? "rotate-180 text-[#A98BFF]" : ""
                     )}
                   />
                 </Link>
@@ -397,25 +397,25 @@ export function TopNav() {
                                   className="group/citem flex items-center justify-between p-2.5 xl:p-3 rounded-xl hover:bg-white/[0.04] transition-colors"
                                 >
                                   <div className="flex items-center gap-3.5 min-w-0">
-                                    <div className="w-9 h-9 xl:w-10 xl:h-10 rounded-lg bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0 group-hover/citem:bg-primary group-hover/citem:text-primary-foreground transition-all duration-200">
+                                    <div className="w-9 h-9 xl:w-10 xl:h-10 rounded-lg bg-primary/10 border border-primary/20 text-[#A98BFF] flex items-center justify-center shrink-0 group-hover/citem:bg-primary group-hover/citem:text-primary-foreground transition-all duration-200">
                                       <IconComponent size={17} />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                      <div className="text-[13px] xl:text-[13.5px] font-bold text-foreground group-hover/citem:text-primary transition-colors flex items-center gap-1">
+                                      <div className="text-[13px] xl:text-[13.5px] font-bold text-foreground group-hover/citem:text-[#A98BFF] transition-colors flex items-center gap-1">
                                         <span>{t(item.titleKey as any)}</span>
                                       </div>
-                                      <div className="text-[11px] xl:text-[11.5px] text-foreground/55 line-clamp-1 mt-0.5">
+                                      <div className="text-[11px] xl:text-[11.5px] text-foreground/65 line-clamp-1 mt-0.5">
                                         {t(item.descKey as any)}
                                       </div>
                                     </div>
                                   </div>
                                   <div className="flex items-center gap-1.5 pl-2 shrink-0">
                                     {item.priceKey && (
-                                      <span className="text-[11px] xl:text-[11.5px] font-bold text-foreground/75 group-hover/citem:text-primary">
+                                      <span className="text-[11px] xl:text-[11.5px] font-bold text-foreground/75 group-hover/citem:text-[#A98BFF]">
                                         {t(item.priceKey as any)}
                                       </span>
                                     )}
-                                    <ArrowUpRight size={13} className="text-foreground/40 group-hover/citem:text-primary transition-colors" />
+                                    <ArrowUpRight size={13} className="text-foreground/65 group-hover/citem:text-[#A98BFF] transition-colors" />
                                   </div>
                                 </Link>
                               );
@@ -438,7 +438,7 @@ export function TopNav() {
                         </div>
 
                         {/* Text Details */}
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[9.5px] font-extrabold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30 mb-1.5">
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[9.5px] font-extrabold uppercase tracking-wider bg-primary/20 text-[#A98BFF] border border-primary/30 mb-1.5">
                           {t("featuredEvalBadge" as any)}
                         </span>
                         <div className="font-bold text-white text-[14.5px] leading-tight mt-0.5">
@@ -453,7 +453,7 @@ export function TopNav() {
                         href="/trading-objectives"
                         data-od-id="desktop-featured-cta-tradingObjectives"
                         onClick={(e) => handleNavClick(e, "/trading-objectives")}
-                        className="inline-flex items-center gap-1.5 text-[12px] font-bold text-primary group-hover/featured:underline mt-4 pt-3 border-t border-white/[0.08]"
+                        className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#A98BFF] group-hover/featured:underline mt-4 pt-3 border-t border-white/[0.08]"
                       >
                         <span>{t("viewAllPrograms" as any)}</span>
                         <ArrowRight size={13} className="group-hover/featured:translate-x-1 transition-transform" />
@@ -471,8 +471,8 @@ export function TopNav() {
                 className={cn(
                   "whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors",
                   pathname === "/payouts"
-                    ? "bg-primary/10 text-primary font-bold"
-                    : "text-white/75 hover:text-[#894CEF] hover:bg-white/[0.04]"
+                    ? "bg-primary/10 text-[#A98BFF] font-bold"
+                    : "text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
                 )}
               >
                 {t("payouts" as any)}
@@ -500,8 +500,8 @@ export function TopNav() {
                   className={cn(
                     "whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors flex items-center gap-1",
                     isCompanyActive
-                      ? "bg-primary/10 text-primary font-bold"
-                      : "text-white/75 hover:text-[#894CEF] hover:bg-white/[0.04]"
+                      ? "bg-primary/10 text-[#A98BFF] font-bold"
+                      : "text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
                   )}
                 >
                   <span>{t("company" as any)}</span>
@@ -509,7 +509,7 @@ export function TopNav() {
                     size={14}
                     className={cn(
                       "opacity-50 transition-transform duration-200",
-                      activeMegaMenu === "company" ? "rotate-180 text-[#894CEF]" : ""
+                      activeMegaMenu === "company" ? "rotate-180 text-[#A98BFF]" : ""
                     )}
                   />
                 </button>
@@ -546,15 +546,15 @@ export function TopNav() {
 
                               const content = (
                                 <>
-                                  <div className="w-9 h-9 xl:w-10 xl:h-10 rounded-lg bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0 group-hover/citem:bg-primary group-hover/citem:text-primary-foreground transition-all duration-200">
+                                  <div className="w-9 h-9 xl:w-10 xl:h-10 rounded-lg bg-primary/10 border border-primary/20 text-[#A98BFF] flex items-center justify-center shrink-0 group-hover/citem:bg-primary group-hover/citem:text-primary-foreground transition-all duration-200">
                                     <IconComponent size={17} />
                                   </div>
                                   <div className="flex-1 min-w-0">
-                                    <div className="text-[13px] xl:text-[13.5px] font-bold text-foreground group-hover/citem:text-primary transition-colors flex items-center gap-1">
+                                    <div className="text-[13px] xl:text-[13.5px] font-bold text-foreground group-hover/citem:text-[#A98BFF] transition-colors flex items-center gap-1">
                                       <span>{t(item.titleKey as any)}</span>
                                       {isExt && <ArrowUpRight size={13} className="opacity-50" />}
                                     </div>
-                                    <div className="text-[11px] xl:text-[11.5px] text-foreground/55 line-clamp-1 mt-0.5">
+                                    <div className="text-[11px] xl:text-[11.5px] text-foreground/65 line-clamp-1 mt-0.5">
                                       {t(item.descKey as any)}
                                     </div>
                                   </div>
@@ -610,7 +610,7 @@ export function TopNav() {
                         </div>
 
                         {/* Text Details */}
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[9.5px] font-extrabold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30 mb-1.5">
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[9.5px] font-extrabold uppercase tracking-wider bg-primary/20 text-[#A98BFF] border border-primary/30 mb-1.5">
                           {t("featuredCommunityBadge" as any)}
                         </span>
                         <div className="font-bold text-white text-[14.5px] leading-tight mt-0.5">
@@ -629,7 +629,7 @@ export function TopNav() {
                           setActiveMegaMenu(null);
                           setOpen(false);
                         }}
-                        className="inline-flex items-center gap-1.5 text-[12px] font-bold text-primary group-hover/comm:underline mt-4 pt-3 border-t border-white/[0.08]"
+                        className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#A98BFF] group-hover/comm:underline mt-4 pt-3 border-t border-white/[0.08]"
                       >
                         <span>{t("joinDiscord" as any)}</span>
                         <ArrowRight size={13} className="group-hover/comm:translate-x-1 transition-transform" />
@@ -647,8 +647,8 @@ export function TopNav() {
                 className={cn(
                   "whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors",
                   pathname === "/affiliates"
-                    ? "bg-primary/10 text-primary font-bold"
-                    : "text-white/75 hover:text-[#894CEF] hover:bg-white/[0.04]"
+                    ? "bg-primary/10 text-[#A98BFF] font-bold"
+                    : "text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
                 )}
               >
                 {t("affiliates" as any)}
@@ -664,7 +664,7 @@ export function TopNav() {
                   setActiveMegaMenu(null);
                   setOpen(false);
                 }}
-                className="whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors text-white/75 hover:text-[#894CEF] hover:bg-white/[0.04]"
+                className="whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
               >
                 {t("faq" as any)}
               </a>
@@ -679,7 +679,7 @@ export function TopNav() {
                 aria-label={tSearch("searchAria")}
                 data-od-id="nav-search-trigger"
               >
-                <Search size={14} className="text-[#894CEF] opacity-90 shrink-0" />
+                <Search size={14} className="text-[#A98BFF] opacity-90 shrink-0" />
                 <span className="hidden xl:inline text-[11.5px]">{tSearch("buttonLabel")}</span>
                 <kbd className="hidden 2xl:inline-flex items-center rounded border border-white/20 bg-white/[0.08] px-1.5 py-0.5 font-mono text-[9px] text-white/50">
                   ⌘K
@@ -690,7 +690,7 @@ export function TopNav() {
                 href="https://app.ckcapital.co.uk/signin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="whitespace-nowrap inline-flex items-center h-10 min-h-10 px-2.5 xl:px-3.5 rounded-lg border border-white/20 text-[11.5px] xl:text-[12.5px] font-bold text-white hover:border-[#894CEF] hover:text-[#894CEF] hover:bg-[#894CEF]/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shrink-0"
+                className="whitespace-nowrap inline-flex items-center h-10 min-h-10 px-2.5 xl:px-3.5 rounded-lg border border-white/20 text-[11.5px] xl:text-[12.5px] font-bold text-white hover:border-[#894CEF] hover:text-[#A98BFF] hover:bg-[#894CEF]/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shrink-0"
               >
                 {t("signIn" as any)}
               </a>
@@ -713,7 +713,7 @@ export function TopNav() {
                 className="inline-flex items-center justify-center h-10 w-10 min-h-10 min-w-10 text-foreground/80 hover:text-foreground rounded-lg border border-foreground/10 shrink-0 active:bg-white/10 transition-colors"
                 aria-label={tSearch("searchAria")}
               >
-                <Search size={16} className="text-primary" />
+                <Search size={16} className="text-[#A98BFF]" />
               </button>
               <LanguageSwitcher compact />
               <button
@@ -753,10 +753,10 @@ export function TopNav() {
                   className="flex items-center justify-between w-full h-11 px-3.5 rounded-lg border border-foreground/10 bg-foreground/[0.03] text-sm text-foreground/60 mb-2"
                 >
                   <span className="flex items-center gap-2">
-                    <Search size={16} className="text-primary" />
+                    <Search size={16} className="text-[#A98BFF]" />
                     <span>{tSearch("placeholder")}</span>
                   </span>
-                  <kbd className="rounded border border-foreground/15 bg-foreground/[0.06] px-1.5 py-0.5 font-mono text-[10px] text-foreground/40">
+                  <kbd className="rounded border border-foreground/15 bg-foreground/[0.06] px-1.5 py-0.5 font-mono text-[10px] text-foreground/65">
                     ⌘K
                   </kbd>
                 </button>
@@ -770,7 +770,7 @@ export function TopNav() {
                     className={cn(
                       "flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors w-full",
                       isProgramsActive
-                        ? "bg-primary/10 text-primary font-semibold"
+                        ? "bg-primary/10 text-[#A98BFF] font-semibold"
                         : "text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05]"
                     )}
                   >
@@ -806,18 +806,18 @@ export function TopNav() {
                             className={cn(
                               "flex items-center justify-between py-2 px-3 text-sm rounded-lg transition-colors",
                               pathname === item.href
-                                ? "text-primary font-semibold bg-primary/5"
+                                ? "text-[#A98BFF] font-semibold bg-primary/5"
                                 : "text-foreground/75 hover:text-foreground hover:bg-white/5"
                             )}
                           >
                             <div className="flex items-center gap-2.5">
-                              <div className="w-6 h-6 rounded-md bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                              <div className="w-6 h-6 rounded-md bg-primary/10 text-[#A98BFF] flex items-center justify-center shrink-0">
                                 <IconComponent size={13} />
                               </div>
                               <span>{t(item.titleKey as any)}</span>
                             </div>
                             {item.priceKey ? (
-                              <span className="text-xs font-semibold text-foreground/50">{t(item.priceKey as any)}</span>
+                              <span className="text-xs font-semibold text-foreground/65">{t(item.priceKey as any)}</span>
                             ) : (
                               <ArrowRight size={13} className="opacity-40" />
                             )}
@@ -836,7 +836,7 @@ export function TopNav() {
                   className={cn(
                     "flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
                     pathname === "/payouts"
-                      ? "bg-primary/10 text-primary font-semibold"
+                      ? "bg-primary/10 text-[#A98BFF] font-semibold"
                       : "text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05]"
                   )}
                 >
@@ -853,7 +853,7 @@ export function TopNav() {
                     className={cn(
                       "flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors w-full",
                       isCompanyActive
-                        ? "bg-primary/10 text-primary font-semibold"
+                        ? "bg-primary/10 text-[#A98BFF] font-semibold"
                         : "text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05]"
                     )}
                   >
@@ -895,7 +895,7 @@ export function TopNav() {
                             className={cn(
                               "flex items-center justify-between py-2 px-3 text-sm rounded-lg transition-colors",
                               pathname === item.href
-                                ? "text-primary font-semibold bg-primary/5"
+                                ? "text-[#A98BFF] font-semibold bg-primary/5"
                                 : "text-foreground/75 hover:text-foreground hover:bg-white/5"
                             )}
                           >
@@ -916,7 +916,7 @@ export function TopNav() {
                   className={cn(
                     "flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
                     pathname === "/affiliates"
-                      ? "bg-primary/10 text-primary font-semibold"
+                      ? "bg-primary/10 text-[#A98BFF] font-semibold"
                       : "text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05]"
                   )}
                 >
@@ -943,7 +943,7 @@ export function TopNav() {
                     href="https://app.ckcapital.co.uk/signin"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center min-h-11 px-4 py-2.5 rounded-xl border border-white/20 text-sm font-bold text-white hover:border-[#894CEF] hover:text-[#894CEF] hover:bg-[#894CEF]/10 transition-colors"
+                    className="flex items-center justify-center min-h-11 px-4 py-2.5 rounded-xl border border-white/20 text-sm font-bold text-white hover:border-[#894CEF] hover:text-[#A98BFF] hover:bg-[#894CEF]/10 transition-colors"
                   >
                     {t("signIn" as any)}
                   </a>

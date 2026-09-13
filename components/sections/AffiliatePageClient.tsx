@@ -27,7 +27,7 @@ const TIERS = [
 function SectionHeading({ eyebrow, title, children, id, dark = false }: { eyebrow: string; title: string; children?: React.ReactNode; id: string; dark?: boolean }) {
   return (
     <SectionReveal className="mx-auto max-w-3xl text-center" data-od-id={id}>
-      <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7943E0]">{eyebrow}</p>
+      <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#A98BFF]">{eyebrow}</p>
       <h2 className={`font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.04em] md:text-5xl ${dark ? "text-[#0A0A0C]" : "text-[#0A0A0C]"}`}>{title}</h2>
       {children ? <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#4B5563]">{children}</p> : null}
     </SectionReveal>
@@ -52,7 +52,7 @@ function CommissionCalculator() {
     <SectionReveal className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-sm" data-od-id="affiliate-calculator">
       <div className="grid gap-8 p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7943E0]">{t("yourNumbers")}</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">{t("yourNumbers")}</p>
           <div className="mt-7 space-y-7">
             <label className="block" data-od-id="affiliate-referrals-control">
               <span className="flex items-center justify-between gap-4 text-sm font-semibold text-[#0A0A0C]"><span>{t("referralsLabel")}</span><output className="text-[#0A0A0C] font-extrabold">{referrals}</output></span>
@@ -68,7 +68,7 @@ function CommissionCalculator() {
           </div>
         </div>
         <div className="flex flex-col justify-between rounded-xl border border-gray-200 bg-gray-50/50 p-6 md:p-8">
-          <div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7943E0]">{t("estimatedMonthly")}</p><p className="mt-3 font-[family-name:var(--font-jakarta)] text-4xl sm:text-5xl font-extrabold tracking-[-0.05em] text-[#0A0A0C] md:text-6xl">{money(monthly)}</p><p className="mt-2 text-xs text-[#6B7280]">Estimated based on the selected inputs.</p><div className="mt-6 border-t border-[#E5E7EB] pt-4"><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#6B7280]">{t("estimatedAnnual")}</p><p className="mt-1.5 text-xl sm:text-2xl font-extrabold text-[#0A0A0C]">{money(yearly)}</p></div></div>
+          <div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">{t("estimatedMonthly")}</p><p className="mt-3 font-[family-name:var(--font-jakarta)] text-4xl sm:text-5xl font-extrabold tracking-[-0.05em] text-[#0A0A0C] md:text-6xl">{money(monthly)}</p><p className="mt-2 text-xs text-[#6B7280]">Estimated based on the selected inputs.</p><div className="mt-6 border-t border-[#E5E7EB] pt-4"><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#6B7280]">{t("estimatedAnnual")}</p><p className="mt-1.5 text-xl sm:text-2xl font-extrabold text-[#0A0A0C]">{money(yearly)}</p></div></div>
           <div className="mt-6 rounded-lg border border-[#E5E7EB] bg-white p-4 text-sm text-[#4B5563] shadow-sm"><p className="font-semibold text-[#0A0A0C]">Example</p><p className="mt-2 text-xs sm:text-sm leading-6">{referrals} qualified referrals<br />× ${orderValue} average qualifying purchase<br />× {rate === null ? "current tier rate" : `${rate * 100}% affiliate commission`}<br />= <strong className="text-[#0A0A0C] font-bold">{money(monthly)} Estimated Commission</strong></p></div>
         </div>
       </div>
@@ -101,7 +101,7 @@ export function AffiliatePageClient() {
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 pb-10 pt-20 sm:px-6 md:pb-10 md:pt-24 lg:px-8">
           <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
             <div className="lg:col-span-7 xl:col-span-6 min-w-0">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#7943E0]"><Sparkles size={12} /> {t("badge")}</div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]"><Sparkles size={12} /> {t("badge")}</div>
               <h1 className="mt-6 font-[family-name:var(--font-jakarta)] text-[clamp(38px,7vw,44px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-[#0A0A0C] sm:text-[52px] md:text-[60px] lg:text-[54px] xl:text-[68px]" data-od-id="affiliates-hero-title">{t("title")}</h1>
               <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-[#4B5563] sm:text-[15px]">{t("subtitle")}</p>
               <div className="mt-9 flex flex-wrap items-center gap-5">
@@ -157,7 +157,7 @@ export function AffiliatePageClient() {
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((item) => (
               <article key={item.title} className="rounded-2xl border border-[#E5E7EB] bg-white p-7 shadow-sm transition-all hover:border-gray-300 hover:shadow-md">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#7943E0]">{item.value}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#A98BFF]">{item.value}</p>
                 <h3 className="mt-8 font-[family-name:var(--font-jakarta)] text-xl font-bold text-[#0A0A0C]">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-[#4B5563]">{item.desc}</p>
               </article>
@@ -181,7 +181,7 @@ export function AffiliatePageClient() {
           <div className="mt-14 rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-sm">
             <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-center">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7943E0]">{t("channelsEyebrow")}</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">{t("channelsEyebrow")}</p>
                 <h2 className="mt-3 font-[family-name:var(--font-jakarta)] text-2xl md:text-3xl font-extrabold text-[#0A0A0C]">{t("channelsTitle")}</h2>
               </div>
               <div>
@@ -203,14 +203,14 @@ export function AffiliatePageClient() {
         <Container>
           <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-white p-8 md:p-10 shadow-sm">
             <div className="flex items-start gap-5">
-              <ShieldCheck className="mt-1 shrink-0 text-[#7943E0]" size={26} />
+              <ShieldCheck className="mt-1 shrink-0 text-[#A98BFF]" size={26} />
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#7943E0]">{t("complianceEyebrow")}</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">{t("complianceEyebrow")}</p>
                 <h2 className="mt-2 font-[family-name:var(--font-jakarta)] text-2xl font-bold text-[#0A0A0C]">{t("complianceTitle")}</h2>
                 <p className="mt-3 text-sm leading-7 text-[#4B5563]">{t("complianceDesc")}</p>
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#E5E7EB] pt-5">
                   <p className="text-xs text-[#6B7280]">{t("payoutsDesc")}</p>
-                  <a href="/terms-conditions" className="inline-flex min-h-10 items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#0A0A0C] hover:text-[#7943E0] underline transition-colors">{t("viewAffiliateTerms")} <ArrowRight size={14} /></a>
+                  <a href="/terms-conditions" className="inline-flex min-h-10 items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#0A0A0C] hover:text-[#A98BFF] underline transition-colors">{t("viewAffiliateTerms")} <ArrowRight size={14} /></a>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@ export function AffiliatePageClient() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7943E0]">{t("communityEyebrow")}</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">{t("communityEyebrow")}</p>
               <h2 className="mt-3 font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-5xl">{t("communityTitle")}</h2>
               <p className="mt-5 text-sm leading-7 text-[#4B5563]">{t("communityDesc")}</p>
             </div>
@@ -243,7 +243,7 @@ export function AffiliatePageClient() {
       <section className="relative overflow-hidden bg-white border-t border-[#E5E7EB] py-20 md:py-28 text-[#0A0A0C]" data-od-id="affiliate-final-cta">
         <Container className="relative text-center">
           <SectionReveal>
-            <HandCoins className="mx-auto text-[#7943E0]" size={32} />
+            <HandCoins className="mx-auto text-[#A98BFF]" size={32} />
             <h2 className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-jakarta)] text-4xl font-extrabold tracking-[-0.05em] text-[#0A0A0C] md:text-6xl">{t("readyTitle")}</h2>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#4B5563]">{t("readySubtitle")}</p>
             <div className="mx-auto mt-9 grid max-w-3xl gap-3 sm:grid-cols-4">
@@ -271,10 +271,10 @@ export function AffiliatePageClient() {
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4B5563]">{t("disclaimerTitle")}</p>
               <p className="mt-3 max-w-4xl text-xs leading-6 text-[#6B7280]">{t("disclaimerDesc")}</p>
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-[#0A0A0C]">
-                <a href="/terms-conditions" className="hover:text-[#7943E0] underline transition-colors">{t("linkTerms")}</a>
-                <a href="/terms-conditions" className="hover:text-[#7943E0] underline transition-colors">{t("linkGeneralTerms")}</a>
-                <a href="/risk-disclosure" className="hover:text-[#7943E0] underline transition-colors">{t("linkDisclaimer")}</a>
-                <a href="/privacy-policy" className="hover:text-[#7943E0] underline transition-colors">{t("linkPrivacy")}</a>
+                <a href="/terms-conditions" className="hover:text-[#A98BFF] underline transition-colors">{t("linkTerms")}</a>
+                <a href="/terms-conditions" className="hover:text-[#A98BFF] underline transition-colors">{t("linkGeneralTerms")}</a>
+                <a href="/risk-disclosure" className="hover:text-[#A98BFF] underline transition-colors">{t("linkDisclaimer")}</a>
+                <a href="/privacy-policy" className="hover:text-[#A98BFF] underline transition-colors">{t("linkPrivacy")}</a>
               </div>
             </div>
           </div>

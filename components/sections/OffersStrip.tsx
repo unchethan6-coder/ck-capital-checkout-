@@ -31,7 +31,7 @@ export function OffersStrip({ promo }: { promo?: PromoData | null }) {
 
         {/* Subtitle chip — sits below the H2, outside the card */}
         <SectionReveal delay={0.05}>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/30 px-3 py-1 text-[11px] font-semibold text-primary mb-6">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/30 px-3 py-1 text-[11px] font-semibold text-[#A98BFF] mb-6">
             <span className="w-1 h-1 rounded-full bg-primary" />
             {t("badge")}
           </span>
@@ -47,7 +47,7 @@ export function OffersStrip({ promo }: { promo?: PromoData | null }) {
               {/* Content column */}
               <div className="flex-1 min-w-0">
                 {/* "hot offer" pill */}
-                <span className="inline-flex items-center rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-primary">
+                <span className="inline-flex items-center rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
                   {t("hotOffer")}
                 </span>
 
@@ -58,7 +58,7 @@ export function OffersStrip({ promo }: { promo?: PromoData | null }) {
                   ) : (
                     <>
                       Your First Challenge,{" "}
-                      <span className="text-primary">{discount} Off</span>
+                      <span className="text-[#A98BFF]">{discount} Off</span>
                     </>
                   )}
                 </h3>

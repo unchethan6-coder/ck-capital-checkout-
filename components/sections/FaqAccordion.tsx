@@ -32,7 +32,7 @@ export function FaqAccordion() {
     <section id="faqs" className="bg-white text-[#0A0A0C] py-16 md:py-24" data-od-id="faq">
       <Container>
         <SectionReveal className="text-center mb-10 md:mb-14">
-          <p className="text-xs text-[#7943E0] uppercase tracking-widest font-bold mb-3">
+          <p className="text-xs text-[#A98BFF] uppercase tracking-widest font-bold mb-3">
             {t("eyebrow")}
           </p>
           <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-4xl">
@@ -52,7 +52,7 @@ export function FaqAccordion() {
                   value={String(i)}
                   className="rounded-2xl border border-gray-200 bg-white px-6 shadow-sm transition-all hover:border-gray-300"
                 >
-                  <AccordionTrigger className="text-left text-sm font-bold text-[#0A0A0C] hover:text-[#7943E0] hover:no-underline py-4">
+                  <AccordionTrigger className="text-left text-sm font-bold text-[#0A0A0C] hover:text-[#A98BFF] hover:no-underline py-4">
                     {t(`items.${key}.q` as any)}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm font-medium text-[#4B5563] pb-4 leading-relaxed">
@@ -67,7 +67,7 @@ export function FaqAccordion() {
           <SectionReveal delay={0.1} className="mt-10 md:mt-12 rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 text-center shadow-[0_20px_50px_-20px_rgba(15,23,42,0.12)]">
             <div className="flex justify-center mb-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <MessageCircle size={20} className="text-primary" />
+                <MessageCircle size={20} className="text-[#A98BFF]" />
               </div>
             </div>
             <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-extrabold text-[#0A0A0C] mb-2">

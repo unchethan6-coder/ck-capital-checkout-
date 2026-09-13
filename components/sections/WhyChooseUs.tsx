@@ -43,13 +43,13 @@ export function WhyChooseUs() {
 
       <Container>
         <SectionReveal className="text-center mb-10 md:mb-14">
-          <p className="text-xs text-primary uppercase tracking-widest font-semibold mb-3">
+          <p className="text-xs text-[#A98BFF] uppercase tracking-widest font-semibold mb-3">
             {t("advantages")}
           </p>
           <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-foreground md:text-4xl">
             {t("title")}
           </h2>
-          <p className="mt-3 text-foreground/50 max-w-xl mx-auto">
+          <p className="mt-3 text-foreground/65 max-w-xl mx-auto">
             {t("subtitle")}
           </p>
         </SectionReveal>
@@ -64,19 +64,19 @@ export function WhyChooseUs() {
           >
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-primary/70 mb-2">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]/70 mb-2">
                   {t("upTo")}
                 </p>
                 <CountUp
                   value="100%"
-                  className="font-[family-name:var(--font-jakarta)] text-5xl md:text-6xl font-extrabold text-primary tabular-nums"
+                  className="font-[family-name:var(--font-jakarta)] text-5xl md:text-6xl font-extrabold text-[#A98BFF] tabular-nums"
                 />
                 <p className="mt-2 text-[13px] font-semibold text-foreground/60">
                   {t("items.split.title")}
                 </p>
               </div>
               <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center">
-                <TrendingUp size={22} className="text-primary" />
+                <TrendingUp size={22} className="text-[#A98BFF]" />
               </div>
             </div>
 
@@ -84,7 +84,7 @@ export function WhyChooseUs() {
             <div className="mt-6">
               <div className="flex items-center justify-between text-[11.5px] font-semibold mb-2">
                 <span className="text-foreground/80">{t("youKeep")}</span>
-                <span className="text-primary tabular-nums">100%</span>
+                <span className="text-[#A98BFF] tabular-nums">100%</span>
               </div>
               <div className="h-2.5 w-full overflow-hidden rounded-full bg-foreground/[0.07]">
                 <div
@@ -92,20 +92,20 @@ export function WhyChooseUs() {
                   className="h-full rounded-full bg-primary transition-all duration-500"
                 />
               </div>
-              <div className="mt-2 flex items-center justify-between text-[11px] text-foreground/40">
+              <div className="mt-2 flex items-center justify-between text-[11px] text-foreground/65">
                 <span>{t("firmEarns")}</span>
                 <span className="tabular-nums">0%</span>
               </div>
             </div>
 
-            <p className="mt-5 max-w-md text-sm text-foreground/50 leading-relaxed">
+            <p className="mt-5 max-w-md text-sm text-foreground/65 leading-relaxed">
               {t("items.split.description")}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {splitChips.map((chip) => (
                 <span
                   key={chip}
-                  className="rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-[12.5px] font-semibold text-primary"
+                  className="rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-[12.5px] font-semibold text-[#A98BFF]"
                 >
                   {chip}
                 </span>
@@ -130,19 +130,19 @@ export function WhyChooseUs() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center shrink-0">
-                  <Activity size={22} className="text-primary" />
+                  <Activity size={22} className="text-[#A98BFF]" />
                 </div>
                 <div>
                   <h3 className="font-[family-name:var(--font-jakarta)] text-lg font-bold text-foreground">
                     {t("items.conditions.title")}
                   </h3>
-                  <p className="mt-0.5 text-[11px] font-mono text-foreground/40">
+                  <p className="mt-0.5 text-[11px] font-mono text-foreground/65">
                     {t("rawSpreadsMT5")}
                   </p>
                 </div>
               </div>
             </div>
-            <p className="mt-4 max-w-md text-sm text-foreground/50 leading-relaxed">
+            <p className="mt-4 max-w-md text-sm text-foreground/65 leading-relaxed">
               {t("items.conditions.description")}
             </p>
 
@@ -155,14 +155,14 @@ export function WhyChooseUs() {
                 >
                   <div className="flex items-center justify-between text-[12px] mb-1.5">
                     <span className="flex items-center gap-2 font-semibold text-foreground/85">
-                      <span className="text-foreground/40 font-mono text-[10.5px] uppercase tracking-wider">
+                      <span className="text-foreground/65 font-mono text-[10.5px] uppercase tracking-wider">
                         {s.type}
                       </span>
                       {s.symbol}
                     </span>
                     <span className="font-mono font-bold text-foreground tabular-nums">
                       {s.spread}
-                      <span className="text-foreground/40 font-normal"> {t("pips")}</span>
+                      <span className="text-foreground/65 font-normal"> {t("pips")}</span>
                     </span>
                   </div>
                   <div className="h-1.5 w-full overflow-hidden rounded-full bg-foreground/[0.06]">
@@ -232,7 +232,7 @@ function BentoCard({
       {/* Index + icon */}
       <div className="mb-4 flex items-center justify-between">
         <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-          {Icon && <Icon size={18} className="text-primary" />}
+          {Icon && <Icon size={18} className="text-[#A98BFF]" />}
         </div>
         <span className="font-mono text-[11px] font-bold text-foreground/25 tabular-nums">
           {index}
@@ -241,7 +241,7 @@ function BentoCard({
       <h3 className="font-[family-name:var(--font-jakarta)] text-base font-bold text-foreground mb-2">
         {title}
       </h3>
-      <p className="text-sm text-foreground/50 leading-relaxed">{desc}</p>
+      <p className="text-sm text-foreground/65 leading-relaxed">{desc}</p>
     </motion.div>
   );
 }

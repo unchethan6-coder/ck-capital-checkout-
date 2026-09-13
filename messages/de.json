@@ -93,7 +93,7 @@
   },
   "howItWorks": {
     "title": "So Funktioniert Es",
-    "subtitle": "Drei klare Schritte von deinem ersten simulierten Trade bis zum Erhalt echter Belohnungsauszahlungen.",
+    "subtitle": "Vier klare Schritte von deinem ersten simulierten Trade bis zur Auszahlung.",
     "steps": {
       "step1": {
         "step": "01",
@@ -112,6 +112,12 @@
         "phase": "Phase 3",
         "title": "Geförderter Trader",
         "description": "Werden Sie finanziert und handeln Sie mit Selbstvertrauen. Behalten Sie bis zu 100% Ihrer Gewinne."
+      },
+      "step4": {
+        "step": "04",
+        "phase": "Phase 4",
+        "title": "Auszahlung",
+        "description": "Fordere deine Auszahlung im Dashboard an und erhalte sie schnell – berechtigte Trader behalten bis zu 100 % der simulierten Gewinne."
       }
     },
     "badge": "Ablauf",
@@ -228,7 +234,8 @@
     "cards": "Karten",
     "funded": "Funded",
     "revealSizes": "Alle Kontogrößen anzeigen",
-    "more": "+{count} mehr"
+    "more": "+{count} mehr",
+    "oneTimePaymentNotice": "Jede Evaluierungsgebühr ist eine einmalige Zahlung – kein Abo, keine wiederkehrenden Kosten, keine versteckten Gebühren."
   },
   "platforms": {
     "eyebrow": "Plattformen",
@@ -316,7 +323,8 @@
     "country": "Land",
     "amount": "Betrag",
     "verifiedPending": "Verifizierte Nachweise werden hier nach Veröffentlichung angezeigt.",
-    "totalPayouts": "Gesamtauszahlungen"
+    "totalPayouts": "Gesamtauszahlungen",
+    "payoutsInFeed": "im Feed"
   },
   "reviews": {
     "eyebrow": "Trader-Bewertungen",
@@ -801,7 +809,23 @@
     "feature": "Funktion",
     "instantCol": "Sofort-Finanzierung",
     "challengeCol": "1-Schritt Challenge",
-    "getStarted": "Jetzt Starten →"
+    "getStarted": "Jetzt Starten →",
+    "headToHead": {
+      "eyebrow": "DIREKTVERGLEICH",
+      "title": "Instant vs. Challenge",
+      "subtitle": "Vergleichen Sie die Wege zu simuliertem Kapital nebeneinander und wählen Sie das Risikomodell und Starttempo, das zu Ihrer Strategie passt.",
+      "viewAll": "Direkter Vergleich",
+      "viewInstant": "Instant Funding",
+      "viewChallenge": "Evaluation Challenge",
+      "instantBadge": "OHNE EVALUATION",
+      "instantTagline": "Sofortiger Zugang ohne Evaluationsphasen",
+      "instantIdealFor": "Erfahrene Trader, die sofortige simulierte Allokation und zweiwöchentliche Belohnungen wollen, ohne mehrstufige Gewinnziele zu erfüllen.",
+      "challengeBadge": "MAXIMALES SKALIERUNGSPOTENZIAL",
+      "challengeTagline": "Mehrstufige Evaluation für maximales Kapital",
+      "challengeIdealFor": "Disziplinierte Trader, die größere simulierte Guthaben bis 1,2 Mio. $ und mehr Drawdown-Spielraum zu niedrigeren Einstiegsgebühren wollen.",
+      "instantCta": "Instant-Konto sichern",
+      "challengeCta": "Challenges entdecken"
+    }
   },
   "legal": {
     "badgeLegal": "Rechtliches",

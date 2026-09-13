@@ -50,11 +50,11 @@ export default async function Home() {
       {/* S2 — Stats Strip: Light (was Jet Black) */}
       <StatsStrip />
 
-      {/* S3 — Trade with Peace of Mind (proof): Light + warm glow */}
-      <ProofShowcase payouts={payouts} summary={rewardsSummary} />
-
-      {/* S4 — Challenge Selector (evals): Light */}
+      {/* S3 — Challenge Selector (evals) */}
       <ChallengeComparison config={challengeConfig} />
+
+      {/* S4 — Trade with Peace of Mind (proof): sits below the challenges */}
+      <ProofShowcase payouts={payouts} summary={rewardsSummary} />
 
       {/* S5 — Trading Platforms: Light (was Jet Black) */}
       <TradingPlatforms />
