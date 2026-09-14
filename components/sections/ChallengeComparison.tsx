@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect, useRef } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Check, LayoutGrid, Percent, Table2 } from "lucide-react";
@@ -200,7 +201,34 @@ export function ChallengeComparison({
       data-od-id="challenge-comparison"
     >
       <Container>
-        <div className="max-w-[1200px] mx-auto flex flex-col gap-6">
+        <div className="max-w-[1200px] mx-auto flex flex-col gap-6 sm:gap-8">
+          {/* Promo Banner: 70% Off */}
+          <SectionReveal className="w-full">
+            <a
+              href="#pricing-calculator"
+              onClick={(e) => {
+                e.preventDefault();
+                const el =
+                  document.getElementById("pricing-calculator") ||
+                  document.querySelector('[data-od-id="challenge-title"]');
+                el?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group block relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-500/30 bg-[#070913] shadow-[0_10px_40px_rgba(234,179,8,0.12)] transition-all duration-300 hover:border-amber-400/60 hover:shadow-[0_15px_50px_rgba(234,179,8,0.22)]"
+              data-od-id="promo-70-off-banner"
+            >
+              <div className="relative w-full aspect-[1981/793]">
+                <Image
+                  src="/images/banners/promo-70-off-banner.png"
+                  alt="CK Propfirm 70% Off Promo - Get Started"
+                  fill
+                  priority
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
+                />
+              </div>
+            </a>
+          </SectionReveal>
+
           {/* Header */}
           <SectionReveal className="text-center">
             <h2
@@ -215,13 +243,16 @@ export function ChallengeComparison({
             <p className={cn("mx-auto mt-2 max-w-xl text-sm font-normal md:text-base", viewMode === "cards" ? "text-white/70" : "text-gray-500")}>
               {t("subtitle") || "Select your preferred account size and evaluation model to begin."}
             </p>
-          </SectionReveal>
 
-          {/* Currency Toolbar */}
-          <SectionReveal delay={0.06}>
-            <div className="flex flex-wrap justify-end items-center gap-2.5">
+            {/* Currency Toolbar & View Mode: Centered directly below subtitle */}
+            <div className="mt-4 sm:mt-5 flex flex-wrap justify-center items-center gap-2.5">
               <div
-                className="inline-flex items-center rounded-full border border-[#D9D9D9] bg-white p-1 shadow-sm"
+                className={cn(
+                  "inline-flex items-center rounded-full border p-1 shadow-sm",
+                  viewMode === "cards"
+                    ? "border-white/15 bg-white/10 backdrop-blur-md"
+                    : "border-[#D9D9D9] bg-white"
+                )}
                 role="group"
                 aria-label="Challenge display view"
               >
@@ -230,8 +261,10 @@ export function ChallengeComparison({
                   onClick={() => setViewMode("cards")}
                   aria-pressed={viewMode === "cards"}
                   className={cn(
-                    "inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1.5 sm:min-h-0 text-xs font-bold transition-colors",
-                    viewMode === "cards" ? "bg-[#703AD7] text-white" : "text-gray-600 hover:bg-violet-50"
+                    "inline-flex min-h-9 items-center gap-1.5 rounded-full px-3.5 py-1 text-xs font-bold transition-colors",
+                    viewMode === "cards"
+                      ? "bg-[#703AD7] text-white"
+                      : "text-gray-600 hover:bg-violet-50"
                   )}
                 >
                   <LayoutGrid className="h-3.5 w-3.5" /> Cards
@@ -241,8 +274,10 @@ export function ChallengeComparison({
                   onClick={() => setViewMode("table")}
                   aria-pressed={viewMode === "table"}
                   className={cn(
-                    "inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1.5 sm:min-h-0 text-xs font-bold transition-colors",
-                    viewMode === "table" ? "bg-[#703AD7] text-white" : "text-gray-600 hover:bg-violet-50"
+                    "inline-flex min-h-9 items-center gap-1.5 rounded-full px-3.5 py-1 text-xs font-bold transition-colors",
+                    viewMode === "table"
+                      ? "bg-[#703AD7] text-white"
+                      : "text-gray-600 hover:bg-violet-50"
                   )}
                 >
                   <Table2 className="h-3.5 w-3.5" /> Table
@@ -256,13 +291,19 @@ export function ChallengeComparison({
                   onClick={() => setIsCurrencyOpen((open) => !open)}
                   aria-expanded={isCurrencyOpen}
                   aria-haspopup="listbox"
-                  className="flex items-center gap-2 rounded-full border border-[#D9D9D9] bg-white px-4 py-2 text-sm font-bold text-[#0A0A0C] shadow-sm transition-all hover:border-[#703AD7]"
+                  className={cn(
+                    "flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-bold shadow-sm transition-all hover:border-[#703AD7]",
+                    viewMode === "cards"
+                      ? "border-white/15 bg-white/10 text-white backdrop-blur-md"
+                      : "border-[#D9D9D9] bg-white text-[#0A0A0C]"
+                  )}
                 >
-                  <span aria-hidden="true" className="text-base leading-none">{currency.flag}</span>
+                  <span aria-hidden="true" className="text-sm leading-none">{currency.flag}</span>
                   <span>{currency.code}</span>
                   <ChevronDown
                     className={cn(
-                      "h-4 w-4 text-gray-500 transition-transform duration-200",
+                      "h-3.5 w-3.5 transition-transform duration-200",
+                      viewMode === "cards" ? "text-white/60" : "text-gray-500",
                       isCurrencyOpen ? "rotate-180" : ""
                     )}
                   />
@@ -272,7 +313,7 @@ export function ChallengeComparison({
                   <div
                     role="listbox"
                     aria-label="Choose currency"
-                    className="absolute right-0 top-full mt-2 min-w-40 overflow-hidden rounded-xl border border-[#D9D9D9] bg-white p-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.16)] animate-in fade-in zoom-in-95 duration-150"
+                    className="absolute right-0 top-full mt-2 min-w-40 overflow-hidden rounded-xl border border-[#D9D9D9] bg-white p-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.16)] animate-in fade-in zoom-in-95 duration-150 z-50 text-left"
                   >
                     {currencies.map((item) => (
                       <button
@@ -303,20 +344,15 @@ export function ChallengeComparison({
             </div>
           </SectionReveal>
 
-          {/* Challenge Types Row */}
-          <SectionReveal delay={0.1}>
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={{ show: { transition: { staggerChildren: 0.06 } } }}
-              className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
+          {/* Unified Plan Selector Matrix: Challenge Types & Account Sizes */}
+          <div className="flex flex-col gap-3 sm:gap-4">
+            {/* Challenge Types Row - Guaranteed 100% visible, zero initial hidden delay */}
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
               {challengeTypes.map((tItem) => {
                 const isSelected = selectedType === tItem.id;
                 return (
-                  <motion.div
+                  <div
                     key={tItem.id}
-                    variants={CAROUSEL_ITEM}
                     onClick={() => handleTypeSelect(tItem.id)}
                     role="button"
                     tabIndex={0}
@@ -326,11 +362,11 @@ export function ChallengeComparison({
                       }
                     }}
                     className={cn(
-                      "rounded-xl border px-4 py-3 text-left sm:p-4 transition-all duration-300 ease-out cursor-pointer hover:-translate-y-0.5 sm:min-w-0",
+                      "rounded-xl border px-4 py-3 text-left sm:p-4 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 sm:min-w-0",
                       isSelected && "scale-[1.015]",
                       viewMode === "cards"
                         ? isSelected
-                          ? "border-[#894CEF] bg-[#21184F] shadow-[0_0_18px_rgba(137,76,239,0.22)] ring-1 ring-[#894CEF]"
+                          ? "border-[#894CEF] bg-[#21184F] shadow-[0_0_18px_rgba(137,76,239,0.3)] ring-1 ring-[#894CEF]"
                           : "border-white/10 bg-[#171820] hover:border-[#703AD7]/60 hover:bg-[#1D1E29]"
                         : isSelected
                           ? "border-[#703AD7] bg-[#EBF5FF]/60 shadow-[0_0_16px_rgba(112,58,215,0.2)] ring-1 ring-[#703AD7]"
@@ -343,29 +379,21 @@ export function ChallengeComparison({
                     <p className={cn("text-xs leading-relaxed", viewMode === "cards" ? (isSelected ? "text-white/85" : "text-white/70") : "text-gray-600")}>
                       {tItem.desc}
                     </p>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </motion.div>
-          </SectionReveal>
+            </div>
 
-          {/* Account Sizes Row */}
-          <SectionReveal delay={0.14} className={viewMode === "cards" ? "" : "hidden"}>
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={{ show: { transition: { staggerChildren: 0.05 } } }}
-              className="grid grid-cols-2 gap-2.5 pb-16 sm:grid-cols-4 sm:gap-3 sm:pb-0 lg:grid-cols-7">
+            {/* Account Sizes Row - Guaranteed 100% visible, zero initial hidden delay */}
+            <div className={cn("grid grid-cols-2 gap-2.5 pb-16 sm:grid-cols-4 sm:gap-3 sm:pb-0 lg:grid-cols-7", viewMode === "cards" ? "" : "hidden")}>
               {accountSizes.map((size) => {
                 const data = rawData[size]?.[selectedType];
                 const isSelected = size === selectedSize;
                 const isDisabled = !data;
 
                 return (
-                  <motion.div
+                  <div
                     key={size}
-                    variants={CAROUSEL_ITEM}
                     onClick={() => !isDisabled && setSelectedSize(size)}
                     role="button"
                     aria-disabled={isDisabled}
@@ -409,11 +437,11 @@ export function ChallengeComparison({
                         </span>
                       )}
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </motion.div>
-          </SectionReveal>
+            </div>
+          </div>
 
           {viewMode === "cards" && activePlan && (
             <div className="sticky bottom-3 z-40 -mt-14 mb-2 flex items-center justify-between gap-3 rounded-2xl sm:mx-1 sm:mt-0 sm:mb-0 border border-white/15 bg-[#080B18]/95 p-3 shadow-[0_14px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:hidden">

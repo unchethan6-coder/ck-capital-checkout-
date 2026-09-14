@@ -338,7 +338,19 @@
     "avgProcessing": "Délai moyen de paiement",
     "processingPending": "Les données de traitement vérifiées s'afficheront ici.",
     "disclaimer": "Les avis reflètent des expériences individuelles et ne garantissent pas les résultats futurs.",
-    "placeholdersNote": " Les citations affichées sont des espaces réservés en attente d'avis publiés."
+    "placeholdersNote": " Les citations affichées sont des espaces réservés en attente d'avis publiés.",
+    "filterAll": "All Reviews",
+    "filterDiscord": "Discord Payouts & Proof",
+    "filterTrustpilot": "Trustpilot Reviews",
+    "showMore": "Show More Reviews",
+    "showLess": "Show Less",
+    "inspectProof": "Inspect Discord Proof",
+    "verifiedPayout": "Verified Payout",
+    "joinDiscord": "Join Discord Community",
+    "trustpilotRating": "4.8 / 5.0",
+    "trustpilotRatingDesc": "Based on authentic trader ratings",
+    "discordMembers": "15,000+ Members",
+    "discordMembersDesc": "Active Discord community with live payouts"
   },
   "support": {
     "eyebrow247": "SUPPORT TRADER 24/7",

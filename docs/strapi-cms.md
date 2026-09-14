@@ -18,6 +18,7 @@ types below exist.
 | Promo (offers strip, promo-code chip) | `promo` | ✅ live (JUN70) |
 | Announcement banner (top) | `banner` | ✅ live |
 | Challenge rules / prices / splits | `challenge-config` (single type) | ✅ live — seeded via API (2026-08-06) |
+| Trader Feedback (Discord & testimonials) | `feedback` | ⏳ pending creation in CMS |
 
 ---
 
@@ -219,6 +220,31 @@ so you can also start with a partial object and override a little at a time.
 
 > Rules of thumb: `phase2` set to `"$0"` hides Phase 2 (used by `one-step`).
 > `instant` has **no** `$300K` size. Consistency values: `N/A`, `30%`, or `20%`.
+
+---
+
+## 5. Feedback — collection type
+
+Dedicated collection for CK Propfirm trader feedback and Discord proof screenshots (isolated from FPT).
+
+| Setting | Value |
+|---|---|
+| Display name | `Feedback` |
+| Singular (API) name | `feedback` |
+| Plural (API) name | `feedbacks` |
+| Draft & publish | **On** |
+
+Fields:
+
+| Name (exact) | Type | Required | Notes |
+|---|---|---|---|
+| `username` | Text (short) | yes | Discord handle / trader username (e.g. `doksab`, `Pedro Perez`, `George`) |
+| `message` | Text (long) | yes | Feedback comment or testimonial text |
+| `image` | Media (single) | no | Screenshot of the feedback/payout proof from Discord |
+| `rating` | Number (integer) | no | 1–5 stars (default 5) |
+| `source` | Text (short) | no | e.g. `Discord` |
+| `amount` | Text (short) | no | Payout amount if mentioned (e.g. `$6,578.00`) |
+| `date` | Text (short) | no | e.g. `2025-06-24` |
 
 ---
 

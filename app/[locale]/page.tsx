@@ -7,7 +7,7 @@ import { TradingPlatforms } from "@/components/sections/TradingPlatforms";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { ProofShowcase } from "@/components/sections/ProofShowcase";
 import { TraderStories } from "@/components/sections/TraderStories";
-import { BlogCategories } from "@/components/sections/BlogCategories";
+import { TraderReviews } from "@/components/sections/TraderReviews";
 import { CustomerSupportSection } from "@/components/sections/CustomerSupportSection";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { ClosingCta } from "@/components/sections/ClosingCta";
@@ -17,20 +17,38 @@ import {
   getPayouts,
   getRewardsSummary,
   getArticles,
+  getFeedbacks,
 } from "@/lib/cms";
 import type { VideoItem } from "@/components/sections/Testimonials";
+import type { ReviewCard } from "@/components/sections/TraderReviews";
 
 export const revalidate = 300;
 
 export default async function Home() {
-  const [videos, challengeConfig, payouts, rewardsSummary, articles] =
+  const [videos, challengeConfig, payouts, rewardsSummary, articles, feedbacks] =
     await Promise.all([
       getVideoReviews(),
       getChallengeConfig(),
       getPayouts(),
       getRewardsSummary(),
       getArticles(),
+      getFeedbacks(),
     ]);
+
+  const reviewCards: ReviewCard[] | undefined = feedbacks.length
+    ? feedbacks.map((f) => ({
+        text: f.message,
+        name: f.username,
+        location: f.amount ? `Payout: ${f.amount}` : "Discord Member",
+        source: f.source || "Discord",
+        rating: f.rating || 5,
+        image: f.image?.url ?? null,
+        imageWidth: f.image?.width ?? null,
+        imageHeight: f.image?.height ?? null,
+        date: f.date ?? null,
+        amount: f.amount ?? null,
+      }))
+    : undefined;
 
   const videoItems: VideoItem[] | undefined = videos.length
     ? videos.map((v) => ({
@@ -65,8 +83,8 @@ export default async function Home() {
       {/* S7 — Trader Stories: Light */}
       <TraderStories videos={videoItems} />
 
-      {/* S8 — Blog Categories: Light */}
-      <BlogCategories articles={articles} />
+      {/* S8 — Trader Reviews & Feedbacks: Light */}
+      <TraderReviews reviews={reviewCards} />
 
       {/* S9 — Customer Support: Light */}
       <CustomerSupportSection />

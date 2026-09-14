@@ -334,7 +334,19 @@
     "avgProcessing": "Tempo médio de processamento de recompensas",
     "processingPending": "Dados verificados aparecerão aqui assim que uma fonte aprovada for conectada.",
     "disclaimer": "As avaliações refletem experiências individuais e não garantem resultados futuros. A CK Propfirm oferece apenas avaliações simuladas.",
-    "placeholdersNote": " As citações exibidas são provisórias até que avaliações publicadas estejam disponíveis."
+    "placeholdersNote": " As citações exibidas são provisórias até que avaliações publicadas estejam disponíveis.",
+    "filterAll": "All Reviews",
+    "filterDiscord": "Discord Payouts & Proof",
+    "filterTrustpilot": "Trustpilot Reviews",
+    "showMore": "Show More Reviews",
+    "showLess": "Show Less",
+    "inspectProof": "Inspect Discord Proof",
+    "verifiedPayout": "Verified Payout",
+    "joinDiscord": "Join Discord Community",
+    "trustpilotRating": "4.8 / 5.0",
+    "trustpilotRatingDesc": "Based on authentic trader ratings",
+    "discordMembers": "15,000+ Members",
+    "discordMembersDesc": "Active Discord community with live payouts"
   },
   "support": {
     "eyebrow247": "SUPORTE AO TRADER 24/7",

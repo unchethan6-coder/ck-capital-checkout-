@@ -256,6 +256,44 @@ export async function getVideoReviews(): Promise<CmsVideoReview[]> {
     .filter((r: CmsVideoReview) => r.youtubeVideoId);
 }
 
+/* ─────────────────────────────── feedback (Discord / site) ─────────────────────────────── */
+
+export interface CmsFeedback {
+  id: number;
+  documentId: string;
+  username: string;
+  message: string;
+  rating?: number;
+  source?: string;
+  date?: string | null;
+  amount?: string | null;
+  image?: CmsMedia | null;
+  publishedAt: string;
+}
+
+export async function getFeedbacks(): Promise<CmsFeedback[]> {
+  const params = new URLSearchParams();
+  params.set("pagination[pageSize]", "100");
+  params.set("sort", "createdAt:desc");
+  params.set("populate[image]", "true");
+  const res = await cmsFetch<any>(`feedbacks?${params.toString()}`);
+  if (!res?.data) return [];
+  return res.data
+    .map((item: any) => ({
+      id: item.id,
+      documentId: item.documentId,
+      username: item.username ?? item.authorName ?? "Trader",
+      message: item.message ?? item.summary ?? item.text ?? "",
+      rating: typeof item.rating === "number" ? item.rating : 5,
+      source: item.source ?? "Discord",
+      date: item.date ?? null,
+      amount: item.amount ?? null,
+      image: toMedia(item.image),
+      publishedAt: item.publishedAt,
+    }))
+    .filter((f: CmsFeedback) => f.message);
+}
+
 /* ─────────────────────────────── promos ─────────────────────────────── */
 
 export interface CmsPromo {

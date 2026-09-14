@@ -322,18 +322,30 @@
     "payoutsInFeed": "in feed"
   },
   "reviews": {
-    "eyebrow": "Trader reviews",
+    "eyebrow": "The Trusted Choice For Traders",
     "title": "The trusted choice for CK traders",
-    "subtitle": "Published experiences from traders using CK Propfirm's simulated evaluation programmes — across Trustpilot, X, and Reddit.",
+    "subtitle": "Real feedback, authenticated Discord payout receipts, and stories from funded community members.",
     "readOnTrustpilot": "Read reviews on Trustpilot",
     "viewOnTrustpilot": "View on Trustpilot",
     "readOnX": "Read on X",
     "viewOnReddit": "View on Reddit",
+    "joinDiscord": "Join Discord Community",
     "traderStory": "Trader story",
     "avgProcessing": "Avg. reward processing",
     "processingPending": "Verified processing-time data will appear here once an approved source is connected.",
     "disclaimer": "Reviews reflect individual experiences and do not guarantee future results. CK Propfirm provides simulated trading evaluations only.",
-    "placeholdersNote": " Quotes shown are clearly labeled placeholders pending published, consented reviews."
+    "placeholdersNote": " Quotes shown are clearly labeled placeholders pending published, consented reviews.",
+    "filterAll": "All Reviews",
+    "filterDiscord": "Discord Payouts & Proof",
+    "filterTrustpilot": "Trustpilot Reviews",
+    "showMore": "Show More Reviews",
+    "showLess": "Show Less",
+    "inspectProof": "Inspect Discord Proof",
+    "verifiedPayout": "Verified Payout",
+    "trustpilotRating": "4.8 / 5.0",
+    "trustpilotRatingDesc": "Based on authentic trader ratings",
+    "discordMembers": "15,000+ Members",
+    "discordMembersDesc": "Active Discord community with live payouts"
   },
   "support": {
     "eyebrow247": "24/7 TRADER SUPPORT",

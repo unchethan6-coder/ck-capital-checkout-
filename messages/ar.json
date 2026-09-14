@@ -338,7 +338,19 @@
     "avgProcessing": "متوسط وقت المعالجة",
     "processingPending": "ستظهر بيانات المعالجة الموثقة هنا بمجرد ربط مصدر معتمد.",
     "disclaimer": "تعكس المراجعات تجارب فردية ولا تضمن النتائج المستقبلية.",
-    "placeholdersNote": " الاقتباسات المعروضة هي نصوص مؤقتة في انتظار نشر تقييمات معتمدة."
+    "placeholdersNote": " الاقتباسات المعروضة هي نصوص مؤقتة في انتظار نشر تقييمات معتمدة.",
+    "filterAll": "All Reviews",
+    "filterDiscord": "Discord Payouts & Proof",
+    "filterTrustpilot": "Trustpilot Reviews",
+    "showMore": "Show More Reviews",
+    "showLess": "Show Less",
+    "inspectProof": "Inspect Discord Proof",
+    "verifiedPayout": "Verified Payout",
+    "joinDiscord": "Join Discord Community",
+    "trustpilotRating": "4.8 / 5.0",
+    "trustpilotRatingDesc": "Based on authentic trader ratings",
+    "discordMembers": "15,000+ Members",
+    "discordMembersDesc": "Active Discord community with live payouts"
   },
   "support": {
     "eyebrow247": "دعم المتداولين 24/7",
