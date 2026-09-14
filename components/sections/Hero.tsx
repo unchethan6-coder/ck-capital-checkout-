@@ -194,7 +194,7 @@ export function Hero() {
             >
             <Image
               src="/images/ck-purple-raccoon.png"
-              alt="CK Capital futuristic raccoon mascot holding the CK emblem"
+              alt="CK Propfirm futuristic raccoon mascot holding the CK emblem"
               width={1930}
               height={1930}
               priority

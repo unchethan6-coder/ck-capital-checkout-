@@ -12,7 +12,7 @@ export async function generateMetadata({
   const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   return pageSeo({
     title: "About Us — Our Story & Mission",
-    description: "Learn about CK Capital, our mission, leadership, and commitment to providing fair, transparent simulated funded accounts up to $1.2M with up to 100% profit splits.",
+    description: "Learn about CK Propfirm, our mission, leadership, and commitment to providing fair, transparent simulated funded accounts up to $1.2M with up to 100% profit splits.",
     path: "/about-us",
     locale: resolved,
   });

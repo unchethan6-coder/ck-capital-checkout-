@@ -32,7 +32,7 @@ export function CustomerSupportSection() {
             <div className="relative mt-7 h-[260px] sm:h-[340px] overflow-hidden rounded-[24px] border border-gray-200 bg-[#07070B] lg:hidden" data-od-id="customer-support-image-mobile">
               <Image
                 src="/images/support/discord-community.jpg"
-                alt="CK Capital Discord community"
+                alt="CK Propfirm Discord community"
                 fill
                 sizes="100vw"
                 className="object-cover object-left-top"
@@ -90,7 +90,7 @@ export function CustomerSupportSection() {
           <div className="relative hidden h-full min-h-[400px] overflow-hidden rounded-[28px] border border-foreground/10 bg-[#07070B] lg:block" data-od-id="customer-support-image">
             <Image
               src="/images/support/discord-community.jpg"
-              alt="CK Capital Discord community"
+              alt="CK Propfirm Discord community"
               fill
               sizes="55vw"
               className="object-cover object-left-top"

@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "CK Capital — Prop Trading Firm",
-    short_name: "CK Capital",
+    name: "CK Propfirm — Prop Trading Firm",
+    short_name: "CK Propfirm",
     description:
       "Funded accounts up to $1.2M with up to 100% profit split. Trade Forex, Crypto, and Commodities with no restrictions.",
     start_url: "/",

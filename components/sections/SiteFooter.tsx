@@ -196,7 +196,7 @@ export function SiteFooter() {
             >
               <img
                 src="/images/brand/CKLogo.png"
-                alt="CK Capital"
+                alt="CK Propfirm"
                 width={696}
                 height={100}
                 className="h-7 sm:h-8 w-auto object-contain"

@@ -126,7 +126,7 @@ function mapArticle(raw: any): CmsArticle | null {
     slug: raw.slug,
     excerpt: raw.excerpt ?? null,
     coverImage: toMedia(raw.cover_image),
-    author: raw.author ?? "CK Capital Editorial",
+    author: raw.author ?? "CK Propfirm Editorial",
     category: raw.category ?? "news",
     isFeatured: Boolean(raw.is_featured),
     seoTitle: raw.seo_title ?? null,

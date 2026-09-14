@@ -399,7 +399,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     id: "action-start-challenge",
     category: "actions",
     title: "Start Challenge / Checkout",
-    description: "Configure and launch your CK Capital evaluation account.",
+    description: "Configure and launch your CK Propfirm evaluation account.",
     keywords: ["start challenge", "buy", "checkout", "signup", "register", "join", "get funded"],
     href: "/#start-challenge",
     iconName: "Zap",

@@ -119,7 +119,7 @@ function CertificateCard({
       <button type="button" onClick={() => onOpen(payout)} className="block w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset">
         <div className="relative aspect-[1.34] overflow-hidden bg-gray-50">
           {payout.image?.url ? (
-            <Image src={payout.image.url} alt={payout.title || "CK Capital reward certificate"} fill className="object-cover object-top transition duration-500 group-hover:scale-[1.03]" sizes="(max-width: 768px) 92vw, 25vw" />
+            <Image src={payout.image.url} alt={payout.title || "CK Propfirm reward certificate"} fill className="object-cover object-top transition duration-500 group-hover:scale-[1.03]" sizes="(max-width: 768px) 92vw, 25vw" />
           ) : (
             <div className="flex h-full flex-col items-center justify-center gap-3 text-[#6B7280]">
               <FileCheck2 size={28} strokeWidth={1.5} />
@@ -362,9 +362,9 @@ export function RewardsPageClient({
         <Container>
           <SectionHeading id="reward-benefits-heading" eyebrow={t("benefitsEyebrow")} title={t("benefitsTitle")} dark>{t("benefitsSubtitle")}</SectionHeading>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{[
-            ["UP TO 100%", "Simulated Profit Rewards", "Keep up to the applicable percentage of eligible simulated profits according to your CK Capital account terms."],
+            ["UP TO 100%", "Simulated Profit Rewards", "Keep up to the applicable percentage of eligible simulated profits according to your CK Propfirm account terms."],
             ["FLEXIBLE", "Reward Cycles", "Eligible Qualified Analysts can request rewards according to the payout conditions applicable to their selected account."],
-            ["UP TO $1.2M", "Total Simulated Account Allocation", "Progress within the CK Capital programme and access larger simulated account allocations subject to applicable programme rules."],
+            ["UP TO $1.2M", "Total Simulated Account Allocation", "Progress within the CK Propfirm programme and access larger simulated account allocations subject to applicable programme rules."],
             ["NEWS TRADING", "More Trading Flexibility", "Trade around news events where permitted under the rules of your selected account."],
           ].map(([value, title, copy]) => (
             <div key={title} className="min-h-56 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-all">
@@ -381,10 +381,10 @@ export function RewardsPageClient({
         <Container>
           <SectionHeading id="reward-process-heading" eyebrow={t("processEyebrow")} title={t("processTitle")}>{t("processSubtitle")}</SectionHeading>
           <div className="mx-auto mt-12 max-w-4xl">{[
-            ["01", "Complete Your Evaluation", "Meet the objectives of your selected CK Capital evaluation while respecting the applicable risk parameters."],
-            ["02", "Become a Qualified Analyst", "After successfully completing the required evaluation stages and account review, eligible traders progress to a CK Capital Qualified Analyst Account."],
+            ["01", "Complete Your Evaluation", "Meet the objectives of your selected CK Propfirm evaluation while respecting the applicable risk parameters."],
+            ["02", "Become a Qualified Analyst", "After successfully completing the required evaluation stages and account review, eligible traders progress to a CK Propfirm Qualified Analyst Account."],
             ["03", "Demonstrate Your Performance", "Continue trading within the applicable account rules and requirements."],
-            ["04", "Request Your Reward", "Once eligible, submit your reward request through your CK Capital dashboard."],
+            ["04", "Request Your Reward", "Once eligible, submit your reward request through your CK Propfirm dashboard."],
             ["05", "Celebrate Your Achievement", "Approved rewards are processed according to the terms applicable to your account."],
           ].map(([number, title, copy]) => (
             <div key={number} className="group grid grid-cols-[52px_1fr] gap-5 border-b border-[#E5E7EB] py-6 first:border-t md:grid-cols-[80px_0.8fr_1.2fr] md:items-center md:gap-8">

@@ -3,13 +3,13 @@ import { getLocaleMeta } from "@/i18n/locales";
 import type { AppLocale } from "@/i18n/routing";
 
 export const SITE_URL = "https://ckcapital.co.uk";
-export const SITE_NAME = "CK Capital";
+export const SITE_NAME = "CK Propfirm";
 
 export const DEFAULT_OG_IMAGE = {
   url: "/og-image.jpg",
   width: 1200,
   height: 630,
-  alt: "CK Capital — Prop Trading Firm. Simulated funded accounts up to $1.2M with up to 100% profit split.",
+  alt: "CK Propfirm — Prop Trading Firm. Simulated funded accounts up to $1.2M with up to 100% profit split.",
 };
 
 interface PageSeoOptions {

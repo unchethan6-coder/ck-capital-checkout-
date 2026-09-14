@@ -115,7 +115,7 @@ function CommunityVisual() {
     <div className="absolute inset-0 overflow-hidden bg-[#030A1C]">
       <Image
         src={DISCORD_COMMUNITY_IMG}
-        alt="CK Capital Discord community"
+        alt="CK Propfirm Discord community"
         fill
         sizes="(max-width: 1024px) 100vw, 50vw"
         className="z-[1] object-cover object-left-top"

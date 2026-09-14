@@ -105,7 +105,7 @@ function BrandMark() {
         <polyline points="19 18 13 12 19 6" />
       </svg>
       <span className="text-[11px] font-black tracking-wider text-white">
-        CK CAPITAL
+        CK PROPFIRM
       </span>
     </div>
   );

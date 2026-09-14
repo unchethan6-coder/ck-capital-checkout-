@@ -12,7 +12,7 @@ export async function generateMetadata({
   const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   return pageSeo({
     title: "Contact & 24/7 Trader Support",
-    description: "Get in touch with the CK Capital support team. 24/7 live assistance via chat and Discord for trading, account, and payout inquiries.",
+    description: "Get in touch with the CK Propfirm support team. 24/7 live assistance via chat and Discord for trading, account, and payout inquiries.",
     path: "/contact",
     locale: resolved,
   });

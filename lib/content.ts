@@ -1,7 +1,7 @@
 // All site copy — verbatim from ck-website-2.vercel.app
 
 export const SITE_META = {
-  name: "CK Capital",
+  name: "CK Propfirm",
   tagline: "Prop Trading Firm",
   promoCode: "JUN70",
   promoDiscount: "70%",
@@ -412,21 +412,21 @@ export const TESTIMONIALS = [
     location: "Spain",
     avatar: "/avatars/maria.jpg",
     rating: 5,
-    text: "I tried three other prop firms before CK Capital. The difference in execution quality and payout speed is night and day.",
+    text: "I tried three other prop firms before CK Propfirm. The difference in execution quality and payout speed is night and day.",
   },
   {
-    name: "Chen W.",
-    location: "Singapore",
-    avatar: "/avatars/chen.jpg",
+    name: "Thomas B.",
+    location: "Germany",
+    avatar: "/avatars/thomas.jpg",
     rating: 5,
-    text: "The rules are clear and transparent without any hidden tricks. Payouts arrive in my wallet within hours.",
+    text: "The no-time-limit rule completely changed how I trade. No rushing, no revenge trading, just clean setups. Highly recommend.",
   },
 ];
 
 export const FAQ_ITEMS = [
   {
-    q: "What is CK Capital?",
-    a: "CK Capital is a proprietary trading firm that provides qualified traders with funded accounts. We offer a path to becoming a CK Trader through our challenge evaluation process, where you can demonstrate your trading skills and consistency.",
+    q: "What is CK Propfirm?",
+    a: "CK Propfirm is a proprietary trading firm that provides qualified traders with funded accounts. We offer a path to becoming a CK Trader through our challenge evaluation process, where you can demonstrate your trading skills and consistency.",
   },
   {
     q: "How do I get started?",

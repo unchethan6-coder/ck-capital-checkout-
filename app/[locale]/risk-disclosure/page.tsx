@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata = pageSeo({
   title: "Risk Disclosure & Trading Warnings",
   description:
-    "Important risk disclosure for trading. Understand the risks and market volatility considerations before participating in CK Capital evaluation programs.",
+    "Important risk disclosure for trading. Understand the risks and market volatility considerations before participating in CK Propfirm evaluation programs.",
   path: "/risk-disclosure",
 });
 
@@ -242,7 +242,7 @@ export default async function RiskDisclosurePage() {
 
             <RiskSection num="15" title="Acknowledgment">
               <p>
-                By using CK Capital&apos;s funded trading accounts, you acknowledge that:
+                By using CK Propfirm&apos;s funded trading accounts, you acknowledge that:
               </p>
               <List
                 items={[

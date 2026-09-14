@@ -60,11 +60,11 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `CK Capital — Get Funded Up to $1.2M | Up to 100% Profit Split`,
+      default: `CK Propfirm — Get Funded Up to $1.2M | Up to 100% Profit Split`,
       template: `%s | ${SITE_NAME}`,
     },
     description:
-      "CK Capital provides proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits, fast payouts, and 24/7 support.",
+      "CK Propfirm provides proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits, fast payouts, and 24/7 support.",
     applicationName: SITE_NAME,
     alternates: {
       canonical: url,
@@ -93,14 +93,14 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       url,
       locale: meta.ogLocale,
-      title: `CK Capital — Get Funded Up to $1.2M | Up to 100% Profit Split`,
+      title: `CK Propfirm — Get Funded Up to $1.2M | Up to 100% Profit Split`,
       description:
         "Proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits.",
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
-      title: `CK Capital — Get Funded Up to $1.2M | Up to 100% Profit Split`,
+      title: `CK Propfirm — Get Funded Up to $1.2M | Up to 100% Profit Split`,
       description:
         "Proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits.",
       images: ["/og-image.jpg"],
@@ -166,7 +166,7 @@ export default async function LocaleLayout({
                     url: SITE_URL,
                     logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-192x192.png` },
                     description:
-                      "CK Capital is a proprietary trading firm offering simulated funded accounts up to $1.2M with up to 100% profit splits.",
+                      "CK Propfirm is a proprietary trading firm offering simulated funded accounts up to $1.2M with up to 100% profit splits.",
                   },
                   {
                     "@type": "WebSite",

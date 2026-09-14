@@ -253,7 +253,7 @@ export default function AboutPage() {
                         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#703AD7] to-[#894CEF] opacity-60 blur-sm" />
                         <img
                           src="/images/about/dan.jpg"
-                          alt="Daniel Cheung — Founder of CK Capital"
+                          alt="Daniel Cheung — Founder of CK Propfirm"
                           className="relative h-20 w-20 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-lg sm:h-24 sm:w-24"
                           data-od-id="about-founder-photo"
                         />

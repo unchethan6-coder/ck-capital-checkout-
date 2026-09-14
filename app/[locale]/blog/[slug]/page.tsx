@@ -42,7 +42,7 @@ export async function generateMetadata({
   if (!article) return { title: "Article Not Found" };
 
   const url = `${SITE_URL}/blog/${article.slug}`;
-  const title = article.seoTitle ?? `${article.title} | CK Capital`;
+  const title = article.seoTitle ?? `${article.title} | CK Propfirm`;
   const description = article.seoDescription ?? article.excerpt ?? "";
   const image = articleOgImage(article);
 
@@ -155,7 +155,7 @@ export default async function ArticlePage({
       <section className="relative overflow-hidden bg-white border-t border-gray-200 py-20 md:py-28 text-[#0A0A0C]" data-od-id="article-closing-cta">
         <Container className="relative text-center">
           <h2 className="mx-auto max-w-3xl font-[family-name:var(--font-jakarta)] text-4xl font-extrabold tracking-[-0.04em] text-[#0A0A0C] md:text-6xl">
-            Start Trading with CK Capital
+            Start Trading with CK Propfirm
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#4B5563]">
             Take your trading strategy to the next level with our simulated evaluation accounts.

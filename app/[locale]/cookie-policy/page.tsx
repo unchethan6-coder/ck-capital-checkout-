@@ -5,7 +5,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata = pageSeo({
   title: "Cookie Policy",
   description:
-    "CK Capital Cookie Policy — Information about cookies and how they are used on our platform.",
+    "CK Propfirm Cookie Policy — Information about cookies and how they are used on our platform.",
   path: "/cookie-policy",
 });
 

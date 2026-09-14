@@ -73,7 +73,7 @@
       "رأس مال 100 ألف دولار",
       "بدون حدود زمنية"
     ],
-    "badge": "شركة CK CAPITAL للتداول الممكّن",
+    "badge": "شركة CK PROPFIRM للتداول الممكّن",
     "headlineLine1": "نحوّل المتداولين",
     "headlineHighlight": "100 ألف دولار.",
     "headlineLine2": "إلى فائزين حول العالم.",
@@ -240,7 +240,7 @@
   "platforms": {
     "eyebrow": "المنصات",
     "title": "تداول على المنصة التي تناسب أسلوبك",
-    "subtitle": "منصتا MT5 وTradeLocker متاحتان في جميع تحديات CK Capital.",
+    "subtitle": "منصتا MT5 وTradeLocker متاحتان في جميع تحديات CK Propfirm.",
     "mt5Desc": "المنصة الرائدة عالمياً المعتمدة من المحترفين برسم بياني متقدم وتنفيذ فوري.",
     "tradelockerDesc": "منصة ويب عصرية فائقة السرعة مع أدوات متكاملة لإدارة المخاطر.",
     "getPlatform": "احصل على {name}",
@@ -261,8 +261,8 @@
     "badge": "المدفوعات المباشرة",
     "rewardsDistributed": "إجمالي المدفوعات",
     "awaiting": "بانتظار السجلات الموثقة",
-    "desc": "إجمالي المكافآت المحاكاة الموزعة الموثقة لدى CK Capital.",
-    "verifiedText": "سجلات أرباح موثقة ومنشورة من قبل CK Capital.",
+    "desc": "إجمالي المكافآت المحاكاة الموزعة الموثقة لدى CK Propfirm.",
+    "verifiedText": "سجلات أرباح موثقة ومنشورة من قبل CK Propfirm.",
     "viewRewards": "عرض الأرباح",
     "recentSettlements": "أحدث التسويات",
     "empty": "ستظهر الأرباح الموثقة هنا فور نشرها.",
@@ -274,28 +274,28 @@
     "countriesWorldwide": "متداولون حول العالم",
     "simulatedRewards": "مكافآت أرباح محاكاة",
     "subjectToTerms": "تخضع لشروط الحساب",
-    "provenEyebrow": "مكافآت مثبتة من محللي CK CAPITAL",
+    "provenEyebrow": "مكافآت مثبتة من محللي CK PROPFIRM",
     "provenTitle": "أداء يستحق الاحتفال.",
-    "provenSubtitle": "ترتبط كل مكافأة معروضة هنا بشهادة مكافأة يمكن التحقق منها من CK Capital.",
+    "provenSubtitle": "ترتبط كل مكافأة معروضة هنا بشهادة مكافأة يمكن التحقق منها من CK Propfirm.",
     "amountLabel": "المبلغ",
     "certificatesEmpty": "ستظهر شهادات المكافآت المنشورة هنا",
     "benefitsEyebrow": "أداؤك. مكافأتك.",
     "benefitsTitle": "مسار أكثر وضوحاً من المهارة إلى التوسع.",
-    "benefitsSubtitle": "تم تصميم CK Capital لتقدير الأداء المنضبط داخل بيئة التداول التجريبية.",
-    "processEyebrow": "كيف تعمل مكافآت CK CAPITAL",
+    "benefitsSubtitle": "تم تصميم CK Propfirm لتقدير الأداء المنضبط داخل بيئة التداول التجريبية.",
+    "processEyebrow": "كيف تعمل مكافآت CK PROPFIRM",
     "processTitle": "خمس خطوات. بدون تعقيد.",
     "processSubtitle": "المسار من التقييم إلى المكافأة واضح وموثق ويخضع لشروط حسابك.",
     "worldEyebrow": "مكافآت حول العالم",
-    "worldTitle": "مجتمع عالمي واحد في CK Capital.",
-    "worldSubtitle": "اختر دولة منشورة لمعرفة أين حصل محللو CK Capital على المكافآت.",
+    "worldTitle": "مجتمع عالمي واحد في CK Propfirm.",
+    "worldSubtitle": "اختر دولة منشورة لمعرفة أين حصل محللو CK Propfirm على المكافآت.",
     "reviewsEyebrow": "آراء مجتمع CK",
-    "reviewsTitle": "تجارب حقيقية من متداولي CK Capital.",
+    "reviewsTitle": "تجارب حقيقية من متداولي CK Propfirm.",
     "reviewsSubtitle": "تقييمات منشورة تصف تجربة التقييم والدعم والمكافآت.",
-    "readyTitle": "هل أنت مستعد لبدء رحلتك مع CK CAPITAL؟",
+    "readyTitle": "هل أنت مستعد لبدء رحلتك مع CK PROPFIRM؟",
     "readySubtitle": "اختر التقييم المناسب لك واعمل لتصبح محللاً مؤهلاً.",
     "exploreEvaluations": "استكشف التقييمات",
     "importantInfo": "معلومات هامة",
-    "legalDisclaimer": "تقدم CK Capital برامج تقييم تداول داخل بيئات محاكاة تجريبية.",
+    "legalDisclaimer": "تقدم CK Propfirm برامج تقييم تداول داخل بيئات محاكاة تجريبية.",
     "viewTerms": "عرض الشروط والأحكام",
     "viewRisk": "عرض إفصاح المخاطر"
   },
@@ -317,7 +317,7 @@
     "benefitStarting": "تبدأ من 58 دولاراً",
     "viewEvaluations": "عرض التقييمات",
     "readyReward": "هل أنت مستعد لطلب أرباحك؟",
-    "readyRewardDesc": "افتح لوحة التحكم الخاصة بك في CK Capital، واضغط على طلب ثم املأ البيانات المطلوبة.",
+    "readyRewardDesc": "افتح لوحة التحكم الخاصة بك في CK Propfirm، واضغط على طلب ثم املأ البيانات المطلوبة.",
     "trader": "المتداول",
     "requested": "تاريخ الطلب",
     "country": "الدولة",
@@ -329,7 +329,7 @@
   "reviews": {
     "eyebrow": "آراء المتداولين",
     "title": "الخيار الموثوق لمتداولي CK",
-    "subtitle": "تجارب حقيقية من متداولين يستخدمون برامج التقييم الافتراضية الخاصة بـ CK Capital على Trustpilot و X و Reddit.",
+    "subtitle": "تجارب حقيقية من متداولين يستخدمون برامج التقييم الافتراضية الخاصة بـ CK Propfirm على Trustpilot و X و Reddit.",
     "readOnTrustpilot": "اقرأ التقييمات على Trustpilot",
     "viewOnTrustpilot": "عرض على Trustpilot",
     "readOnX": "اقرأ على X",
@@ -343,19 +343,19 @@
   "support": {
     "eyebrow247": "دعم المتداولين 24/7",
     "discordTitle": "اطرح أسئلة أفضل. وتداول بذكاء معاً.",
-    "discordDesc": "انضم إلى مجتمع CK Capital للحصول على إجابات سريعة ونقاشات تداول عملية ودعم من متداولين في نفس رحلتك.",
+    "discordDesc": "انضم إلى مجتمع CK Propfirm للحصول على إجابات سريعة ونقاشات تداول عملية ودعم من متداولين في نفس رحلتك.",
     "discordAction": "انضم إلى مجتمع CK",
-    "youtubeEyebrow": "CK CAPITAL على يوتيوب",
+    "youtubeEyebrow": "CK PROPFIRM على يوتيوب",
     "youtubeTitle": "شاهد. تعلم. تداول.",
     "youtubeDesc": "تابع قصص المتداولين، وشروحات المنصات والتوضيحات الشاملة لتجربة التقييم.",
-    "youtubeAction": "شاهد CK Capital",
+    "youtubeAction": "شاهد CK Propfirm",
     "customerTitle": "خدمة عملاء مصممة خصيصاً للمتداولين.",
     "customerDesc": "فريق الدعم المتخصص لدينا جاهز لمساعدتك في أسئلة التقييم والحسابات والمنصات وتوجيهات السحب.",
     "discordBtn": "دعم ديسكورد",
     "emailBtn": "البريد الإلكتروني للدعم",
     "showAll": "عرض جميع جهات الاتصال",
     "available247": "متاح 24/7",
-    "supportBrand": "دعم CK Capital",
+    "supportBrand": "دعم CK Propfirm",
     "imagePlaceholder": "Image placeholder",
     "memberCount": "عدد الأعضاء",
     "subscriberCount": "عدد المشتركين",
@@ -365,7 +365,7 @@
   "faq": {
     "eyebrow": "الأسئلة الشائعة",
     "title": "الأسئلة الأكثر تكراراً",
-    "subtitle": "كل ما تحتاج معرفته حول قواعد التحديات والحسابات والمدفوعات في CK Capital.",
+    "subtitle": "كل ما تحتاج معرفته حول قواعد التحديات والحسابات والمدفوعات في CK Propfirm.",
     "stillQuestions": "هل لديك أسئلة أخرى؟",
     "supportAvailable": "فريق الدعم لدينا متاح 24/7 بمتوسط وقت رد أقل من دقيقتين.",
     "chatSupport": "تحدث مع الدعم",
@@ -376,15 +376,15 @@
       },
       "timeLimit": {
         "q": "هل هناك أي حدود زمنية للتحديات؟",
-        "a": "لا! لا توجد حدود زمنية على تقييمات التحدي في CK Capital. تداول بالسرعة التي تناسبك دون أي ضغوط."
+        "a": "لا! لا توجد حدود زمنية على تقييمات التحدي في CK Propfirm. تداول بالسرعة التي تناسبك دون أي ضغوط."
       },
       "platforms": {
         "q": "ما هي المنصات المدعومة؟",
-        "a": "تدعم CK Capital كلاً من MetaTrader 5 (MT5) و TradeLocker مع رسوم بيانية متقدمة وتنفيذ فائق السرعة."
+        "a": "تدعم CK Propfirm كلاً من MetaTrader 5 (MT5) و TradeLocker مع رسوم بيانية متقدمة وتنفيذ فائق السرعة."
       },
       "profitSplit": {
         "q": "ما هي نسبة تقسيم الأرباح التي تقدمونها؟",
-        "a": "تقدم CK Capital نسبة مشاركة أرباح تصل إلى 100% للمتداولين المؤهلين في الحسابات الممولة."
+        "a": "تقدم CK Propfirm نسبة مشاركة أرباح تصل إلى 100% للمتداولين المؤهلين في الحسابات الممولة."
       },
       "drawdown": {
         "q": "ما هي قواعد التراجع (Drawdown)؟",
@@ -427,7 +427,7 @@
     "stage1Title": "Prove your edge",
     "stage1Desc": "On Sim & grow with CK",
     "stage2Label": "Stage 2",
-    "stage2Title": "Scale CK capital",
+    "stage2Title": "Scale CK propfirm",
     "stage2Desc": "Scale all the way to $1.2M.",
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
@@ -437,7 +437,7 @@
     "primary": "Get Started",
     "secondary": "See roadmap",
     "drawerTitle": "Your path to CK Funded",
-    "drawerDesc": "Three clear stages from evaluation to funded. Each stage validates your edge before you scale with CK capital.",
+    "drawerDesc": "Three clear stages from evaluation to funded. Each stage validates your edge before you scale with CK propfirm.",
     "drawerStage1Title": "Evaluation",
     "drawerStage1Desc": "Prove your edge in a timed or untimed sim. Hit the profit target without breaking the rules.",
     "drawerStage2Title": "Verification",
@@ -483,9 +483,9 @@
     "successEmail": "Thank you for subscribing!",
     "disclaimerImportantTitle": "Important Information & Disclaimer",
     "simulatedEnvTitle": "Simulated Trading Environment",
-    "simulatedEnvBody": "All accounts provided by CK Capital are demo accounts operating exclusively in a simulated trading environment. No actual trades are executed on live financial markets. The services we offer are designed for educational and evaluation purposes only.",
+    "simulatedEnvBody": "All accounts provided by CK Propfirm are demo accounts operating exclusively in a simulated trading environment. No actual trades are executed on live financial markets. The services we offer are designed for educational and evaluation purposes only.",
     "noInvestmentTitle": "No Investment Services",
-    "noInvestmentIntro": "The simulated trading services are provided by CK Capital Group LTD. All content published and distributed by CK Capital and its related entities (collectively, the \"Company\") is for general informational purposes only.",
+    "noInvestmentIntro": "The simulated trading services are provided by CK Capital Group LTD. All content published and distributed by CK Propfirm and its related entities (collectively, the \"Company\") is for general informational purposes only.",
     "noInvestmentBullets": [
       "The Company does not provide investment advice.",
       "The Company does not solicit or recommend the purchase or sale of any financial instruments, securities, or funds.",
@@ -500,7 +500,7 @@
     "corporateBody": "CK Capital Group LTD is a company incorporated under the laws of the United Kingdom, having its registered address at 6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom.",
     "corporateNote": "Note: CK Capital Group LTD does not conduct brokerage services or offer real trading accounts on this website. Its services are limited to simulated trading programmes.",
     "corporateRestrictions": "Restrictions: Services are not offered to residents of certain jurisdictions, including countries on sanctions lists and other restricted territories as described in our Terms & Conditions.",
-    "registeredAddressTitle": "Registered Address of CK Capital:",
+    "registeredAddressTitle": "Registered Address of CK Propfirm:",
     "registeredAddressBody": "6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom"
   },
   "ticker": {
@@ -517,15 +517,15 @@
     "backHome": "العودة للرئيسية"
   },
   "meta": {
-    "homeTitle": "CK Capital - شركة تداول | تداول حتى 100 ألف دولار مع نسبة أرباح 100%",
-    "homeDescription": "انضم إلى CK Capital. اجتز تقييمنا لتتداول برأس مال محاكى يصل إلى 100 ألف دولار مع سحب أرباح خلال 12 ساعة."
+    "homeTitle": "CK Propfirm - شركة تداول | تداول حتى 100 ألف دولار مع نسبة أرباح 100%",
+    "homeDescription": "انضم إلى CK Propfirm. اجتز تقييمنا لتتداول برأس مال محاكى يصل إلى 100 ألف دولار مع سحب أرباح خلال 12 ساعة."
   },
   "about": {
     "badge": "من نحن · التداول الممول",
-    "title": "تعرف على فريق CK Capital",
+    "title": "تعرف على فريق CK Propfirm",
     "storyEyebrow": "قصتنا",
     "storyTitle": "بُنيت بأيدي متداولين من أجل المتداولين",
-    "storyDesc": "تأسست CK Capital لدعم المتداولين الطموحين من خلال توفير بيئة متطورة وتكنولوجيا خاصة ودعم استثنائي.",
+    "storyDesc": "تأسست CK Propfirm لدعم المتداولين الطموحين من خلال توفير بيئة متطورة وتكنولوجيا خاصة ودعم استثنائي.",
     "missionTitle": "مهمتنا",
     "missionDesc": "توفير أدوات مبتكرة وتقييمات محاكاة لبناء الانضباط وتحقيق الربحية المستمرة.",
     "visionTitle": "رؤيتنا",
@@ -549,7 +549,7 @@
     "statsCapital": "أعلى رأس مال محاكى",
     "statsSplit": "نسبة تقاسم الأرباح",
     "statsSupport": "دعم المجتمع",
-    "ctaTitle": "انضم إلى مجتمع CK Capital",
+    "ctaTitle": "انضم إلى مجتمع CK Propfirm",
     "ctaDesc": "كن جزءاً من مجتمع عالمي متنامٍ من المتداولين الناجحين.",
     "ctaStart": "ابدأ التداول",
     "ctaDiscord": "انضم إلى ديسكورد",
@@ -594,10 +594,10 @@
       }
     ],
     "valuesSubtitle": "المبادئ الأساسية التي تقود تقنياتنا ودعمنا ومجتمعنا كل يوم.",
-    "heroEyebrow": "عن CK CAPITAL",
+    "heroEyebrow": "عن CK PROPFIRM",
     "heroTitle": "إعادة تعريف التداول الممكّن.",
     "heroSubtitle": "تأسست في المملكة المتحدة برؤية واضحة لتزويد المتداولين الموهوبين بقواعد عادلة وتكنولوجيا متطورة وسحوبات سريعة.",
-    "storyP1": "انطلقت CK Capital من إيمان راسخ بأن المتداولين الماهرين يستحقون فرصة حقيقية للوصول إلى رأس المال دون شروط مجحفة.",
+    "storyP1": "انطلقت CK Propfirm من إيمان راسخ بأن المتداولين الماهرين يستحقون فرصة حقيقية للوصول إلى رأس المال دون شروط مجحفة.",
     "storyP2": "تخلصنا من القيود الزمنية غير الواقعية لبناء مسار مستدام وموثوق للوصول إلى الحسابات الممولة.",
     "pillarsEyebrow": "ركائزنا الأساسية",
     "pillarsTitle": "المبادئ التي تقودنا",
@@ -609,7 +609,7 @@
     "pillar3Desc": "بنية تحتية قوية على MT5 و TradeLocker مع سرعة تنفيذ فائقة."
   },
   "affiliates": {
-    "badge": "برنامج شركاء CK CAPITAL",
+    "badge": "برنامج شركاء CK PROPFIRM",
     "title": "برنامج الشركاء للمتداولين وصناع المحتوى",
     "subtitle": "احصل على عمولات متكررة تصل إلى 25% على جميع مشتريات التحديات.",
     "becomeAffiliate": "كن شريكاً مع CK",
@@ -626,7 +626,7 @@
     "step2Title": "احصل على الموافقة",
     "step2Desc": "احصل على رابط الإحالة ولوحة التحكم الخاصة بك فور الموافقة.",
     "step3Title": "ابدأ بالإحالة",
-    "step3Desc": "شارك CK Capital مع جمهورك ومجتمعك عبر روابطك المخصصة.",
+    "step3Desc": "شارك CK Propfirm مع جمهورك ومجتمعك عبر روابطك المخصصة.",
     "step4Title": "اكسب العمولات",
     "step4Desc": "احصل على عمولات مجزية عن كل عملية شراء مؤهلة من إحالاتك.",
     "applyNow": "قدم الآن",
@@ -639,11 +639,11 @@
     "estimatedMonthly": "العمولة الشهرية التقديرية",
     "estimatedAnnual": "العمولة السنوية المحتملة",
     "calculatorDisclaimer": "نتائج الحاسبة هي للأغراض التوضيحية فقط. تعتمد الأرباح الفعلية على الأداء.",
-    "readyTitle": "جاهز لتصبح شريكاً مع CK CAPITAL؟",
+    "readyTitle": "جاهز لتصبح شريكاً مع CK PROPFIRM؟",
     "readySubtitle": "رحلتك تبدأ هنا. انضم إلى الشركاء اليوم.",
     "login": "هل أنت شريك بالفعل؟ تسجيل الدخول",
     "benefitsEyebrow": "المزايا",
-    "benefitsTitle": "لماذا يفضل الشركاء CK Capital",
+    "benefitsTitle": "لماذا يفضل الشركاء CK Propfirm",
     "benefits": [
       {
         "value": "UP TO 25%",
@@ -658,31 +658,31 @@
       {
         "value": "GLOBAL BRAND",
         "title": "Reach Traders Worldwide",
-        "desc": "Promote CK Capital's simulated evaluation programmes to relevant audiences around the world, subject to local requirements and programme terms."
+        "desc": "Promote CK Propfirm's simulated evaluation programmes to relevant audiences around the world, subject to local requirements and programme terms."
       },
       {
         "value": "MULTIPLE EVALUATIONS",
         "title": "More Choices to Promote",
-        "desc": "Promote CK Capital's range of evaluation options including: 1 Step, 2 Step, Instant. Available account structures and products are subject to current CK Capital offerings."
+        "desc": "Promote CK Propfirm's range of evaluation options including: 1 Step, 2 Step, Instant. Available account structures and products are subject to current CK Propfirm offerings."
       },
       {
         "value": "UP TO $1.2M",
         "title": "Simulated Account Allocation",
-        "desc": "CK Capital Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
+        "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
         "value": "UP TO 100%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Capital Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Propfirm Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
-    "contentTitle": "Tell the CK Capital story your way.",
-    "contentSubtitle": "Build content around the parts of CK Capital your audience actually cares about.",
+    "contentTitle": "Tell the CK Propfirm story your way.",
+    "contentSubtitle": "Build content around the parts of CK Propfirm your audience actually cares about.",
     "contentTopics": [
       {
         "title": "Evaluation Options",
-        "desc": "Explain CK Capital's different evaluation structures."
+        "desc": "Explain CK Propfirm's different evaluation structures."
       },
       {
         "title": "Trading Objectives",
@@ -690,36 +690,36 @@
       },
       {
         "title": "Offers",
-        "desc": "Promote approved CK Capital offers and campaigns."
+        "desc": "Promote approved CK Propfirm offers and campaigns."
       },
       {
         "title": "Platform Experience",
-        "desc": "Show the CK Capital user journey and available platform options."
+        "desc": "Show the CK Propfirm user journey and available platform options."
       },
       {
         "title": "Community",
-        "desc": "Introduce your audience to the CK Capital community."
+        "desc": "Introduce your audience to the CK Propfirm community."
       },
       {
         "title": "Reward Stories",
-        "desc": "Share approved CK Capital Qualified Analyst achievements and verified reward stories."
+        "desc": "Share approved CK Propfirm Qualified Analyst achievements and verified reward stories."
       }
     ],
     "channelsEyebrow": "القنوات",
     "channelsTitle": "مناسب لجميع المنصات",
-    "channelsDesc": "Partners may promote CK Capital through approved channels including:",
-    "channelsDisclaimer": "All promotional activity must comply with CK Capital's Affiliate Program Terms, advertising requirements and applicable laws.",
+    "channelsDesc": "Partners may promote CK Propfirm through approved channels including:",
+    "channelsDisclaimer": "All promotional activity must comply with CK Propfirm's Affiliate Program Terms, advertising requirements and applicable laws.",
     "complianceEyebrow": "الامتثال والقواعد",
     "complianceTitle": "شراكة قائمة على النزاهة والوضوح",
     "complianceDesc": "نلتزم بأعلى معايير الشفافية التسويقية ونوفر لك كافة المواد الدعائية الاحترافية.",
     "payoutsEyebrow": "GET PAID FOR YOUR PERFORMANCE",
     "payoutsTitle": "Minimum affiliate payout: $250",
-    "payoutsDesc": "Affiliate commission becomes eligible for payout according to CK Capital's current affiliate payout schedule and programme terms. A minimum affiliate commission balance of $250 is required before a payout can be requested or processed.",
+    "payoutsDesc": "Affiliate commission becomes eligible for payout according to CK Propfirm's current affiliate payout schedule and programme terms. A minimum affiliate commission balance of $250 is required before a payout can be requested or processed.",
     "viewAffiliateTerms": "VIEW AFFILIATE TERMS",
     "storiesEyebrow": "AFFILIATE SUCCESS STORIES",
-    "storiesTitle": "Meet the CK Capital partners growing with us.",
+    "storiesTitle": "Meet the CK Propfirm partners growing with us.",
     "storiesEmpty": "Approved affiliate stories will appear here once real testimonials and publication consent are available.",
-    "communityEyebrow": "CK CAPITAL COMMUNITY",
+    "communityEyebrow": "CK PROPFIRM COMMUNITY",
     "communityTitle": "Promote more than an evaluation.",
     "communityDesc": "Introduce your audience to a growing community built around skill development, trading discipline and simulated evaluation programmes.",
     "communityList": [
@@ -753,7 +753,7 @@
       }
     ],
     "disclaimerTitle": "AFFILIATE DISCLAIMER",
-    "disclaimerDesc": "Participation in the CK Capital Affiliate Program is subject to application approval and the applicable Affiliate Program Terms. Commission is earned only on eligible qualified referrals and may vary according to affiliate tier, performance and programme requirements. CK Capital does not guarantee any level of affiliate income. Any earnings examples, calculators or projections displayed on this page are illustrative only and should not be interpreted as guaranteed results. Affiliate accounts may be reviewed, suspended or terminated where programme requirements are not met or prohibited activity occurs. CK Capital reserves the right to update affiliate commission rates, requirements, benefits and programme terms. CK Capital provides proprietary trading evaluation programmes operating within simulated/demo environments. CK Capital does not provide investment advice, financial advice or brokerage services.",
+    "disclaimerDesc": "Participation in the CK Propfirm Affiliate Program is subject to application approval and the applicable Affiliate Program Terms. Commission is earned only on eligible qualified referrals and may vary according to affiliate tier, performance and programme requirements. CK Propfirm does not guarantee any level of affiliate income. Any earnings examples, calculators or projections displayed on this page are illustrative only and should not be interpreted as guaranteed results. Affiliate accounts may be reviewed, suspended or terminated where programme requirements are not met or prohibited activity occurs. CK Propfirm reserves the right to update affiliate commission rates, requirements, benefits and programme terms. CK Propfirm provides proprietary trading evaluation programmes operating within simulated/demo environments. CK Propfirm does not provide investment advice, financial advice or brokerage services.",
     "linkTerms": "AFFILIATE TERMS & CONDITIONS →",
     "linkGeneralTerms": "GENERAL TERMS & CONDITIONS →",
     "linkDisclaimer": "DISCLAIMER →",
@@ -763,7 +763,7 @@
     "tier2": "شريك فضي",
     "tier3": "شريك ذهبي VIP",
     "heroEyebrow": "برنامج الشركاء",
-    "heroTitle": "احصل على عمولات تصل إلى 25% كشريك لـ CK Capital",
+    "heroTitle": "احصل على عمولات تصل إلى 25% كشريك لـ CK Propfirm",
     "heroSubtitle": "روّج لشركة التمويل الأسرع نمواً واحصل على أعلى العمولات في هذا المجال.",
     "benefit1Title": "عمولات تصل إلى 25%",
     "benefit1Desc": "نسب تحويل عالية وعمولات متكررة على جميع مشتريات التحديات.",
@@ -841,10 +841,10 @@
     "riskTitle": "بيان الإفصاح عن المخاطر"
   },
   "tradingObjectives": {
-    "heroBadge": "CK CAPITAL TRADING OBJECTIVES",
+    "heroBadge": "CK PROPFIRM TRADING OBJECTIVES",
     "heroTitlePrefix": "اعثر على التقييم الذي يناسب استراتيجيتك.",
     "heroTitleShimmer": "بدون قيود زمنية. قواعد شفافة.",
-    "heroDesc": "Different traders need different paths. Choose between 1 Step, 2 Step or Instant and compare the objectives, risk limits and conditions before starting your CK Capital evaluation.",
+    "heroDesc": "Different traders need different paths. Choose between 1 Step, 2 Step or Instant and compare the objectives, risk limits and conditions before starting your CK Propfirm evaluation.",
     "chooseEvaluation": "Choose Your Evaluation",
     "understandObjectives": "Understand the objectives",
     "badgeSimulated": "Simulated evaluation environments",
@@ -896,11 +896,11 @@
       "qaSub": "Programme destination",
       "qaFooter": "Up to 100% simulated profit rewards",
       "evaluationTitle": "Evaluation",
-      "evaluationSub": "Single stage — complete the objective under CK Capital's risk parameters.",
+      "evaluationSub": "Single stage — complete the objective under CK Propfirm's risk parameters.",
       "instantTitle": "Instant Account",
       "instantSub": "Your dashboard clearly displays your:",
       "afterEvalTitle": "After the evaluation",
-      "afterEvalDesc": "Complete the evaluation objectives and applicable account review to progress to the next CK Capital stage.",
+      "afterEvalDesc": "Complete the evaluation objectives and applicable account review to progress to the next CK Propfirm stage.",
       "beforeStartTitle": "Before you start",
       "beforeStartDesc": "Always review the exact objectives for your selected Instant account before checkout."
     },
@@ -926,19 +926,19 @@
     },
     "twoStepSection": {
       "title": "Two stages. Clear objectives. One goal.",
-      "desc": "Demonstrate your ability to follow structured risk parameters across two simulated evaluation phases before progressing to a CK Capital Qualified Analyst Account.",
+      "desc": "Demonstrate your ability to follow structured risk parameters across two simulated evaluation phases before progressing to a CK Propfirm Qualified Analyst Account.",
       "phase1ExplTitle": "Phase 1 — Evaluation",
-      "phase1ExplDesc": "Show that you can reach the required objective while respecting CK Capital's risk parameters. Complete the profit target, minimum trading-day requirement and all applicable account rules.",
+      "phase1ExplDesc": "Show that you can reach the required objective while respecting CK Propfirm's risk parameters. Complete the profit target, minimum trading-day requirement and all applicable account rules.",
       "phase2ExplTitle": "Phase 2 — Verification",
-      "phase2ExplDesc": "Confirm the consistency and risk management demonstrated during Phase 1. Once all objectives are completed and the account passes review, you can progress to the CK Capital Qualified Analyst stage."
+      "phase2ExplDesc": "Confirm the consistency and risk management demonstrated during Phase 1. Once all objectives are completed and the account passes review, you can progress to the CK Propfirm Qualified Analyst stage."
     },
     "oneStepSection": {
       "title": "One evaluation. One clear path.",
-      "desc": "Designed for traders who prefer a shorter evaluation structure. Complete one simulated evaluation while following CK Capital's risk-management requirements."
+      "desc": "Designed for traders who prefer a shorter evaluation structure. Complete one simulated evaluation while following CK Propfirm's risk-management requirements."
     },
     "instantSection": {
       "title": "Skip the traditional multi-stage evaluation.",
-      "desc": "CK Capital Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
+      "desc": "CK Propfirm Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
       "notOffered": "Instant is not currently offered at {size}. Available sizes: $5K – $200K."
     },
     "glossaryHeadingEyebrow": "UNDERSTAND YOUR OBJECTIVES",
@@ -962,15 +962,15 @@
       },
       {
         "title": "Consistency",
-        "desc": "Certain CK Capital models may include a consistency requirement designed to encourage sustainable and disciplined simulated trading behaviour. Always check the requirements associated with your selected evaluation."
+        "desc": "Certain CK Propfirm models may include a consistency requirement designed to encourage sustainable and disciplined simulated trading behaviour. Always check the requirements associated with your selected evaluation."
       }
     ],
     "unlimitedEyebrow": "UNLIMITED TRADING PERIOD",
     "unlimitedTitle": "Trade at your own pace.",
-    "unlimitedDesc": "CK Capital evaluation programmes currently provide unlimited trading periods, allowing you to focus on following the objectives rather than racing against an expiry date.",
+    "unlimitedDesc": "CK Propfirm evaluation programmes currently provide unlimited trading periods, allowing you to focus on following the objectives rather than racing against an expiry date.",
     "resetEyebrow": "RESET & TOP-UP",
     "resetTitle": "Another opportunity to continue.",
-    "resetDesc": "Eligible CK Capital accounts may have access to Reset or Top-Up options. If an account breaches applicable rules, check your dashboard for available reset or top-up options and their current terms.",
+    "resetDesc": "Eligible CK Propfirm accounts may have access to Reset or Top-Up options. If an account breaches applicable rules, check your dashboard for available reset or top-up options and their current terms.",
     "viewTerms": "View terms",
     "progressionEyebrow": "FROM EVALUATION TO QUALIFIED ANALYST",
     "progressionTitle": "Three steps. One destination.",
@@ -987,8 +987,8 @@
       },
       {
         "step": "Step 3",
-        "title": "CK Capital Qualified Analyst",
-        "desc": "After successful completion and account review, eligible traders can progress to a CK Capital Qualified Analyst Account in CK Capital's simulated environment."
+        "title": "CK Propfirm Qualified Analyst",
+        "desc": "After successful completion and account review, eligible traders can progress to a CK Propfirm Qualified Analyst Account in CK Propfirm's simulated environment."
       }
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
@@ -999,8 +999,8 @@
       "Multiple account sizes",
       "MT5 & TradeLocker"
     ],
-    "compareEyebrow": "COMPARE CK CAPITAL MODELS",
-    "compareTitle": "Compare CK Capital models.",
+    "compareEyebrow": "COMPARE CK PROPFIRM MODELS",
+    "compareTitle": "Compare CK Propfirm models.",
     "compareTableHeader": "Compare",
     "selectedBadge": "SELECTED",
     "compareRows": {
@@ -1022,34 +1022,34 @@
     "faqs": [
       {
         "q": "Is there a time limit?",
-        "a": "CK Capital's current standard evaluation structure provides unlimited trading periods."
+        "a": "CK Propfirm's current standard evaluation structure provides unlimited trading periods."
       },
       {
         "q": "What happens after I complete an evaluation?",
-        "a": "Accounts that meet the required objectives proceed through CK Capital's applicable review process before progressing to the next stage."
+        "a": "Accounts that meet the required objectives proceed through CK Propfirm's applicable review process before progressing to the next stage."
       },
       {
         "q": "Can I trade news?",
-        "a": "CK Capital supports news trading subject to the rules associated with the selected account."
+        "a": "CK Propfirm supports news trading subject to the rules associated with the selected account."
       },
       {
         "q": "What platforms are available?",
-        "a": "CK Capital currently provides MetaTrader 5 and TradeLocker options."
+        "a": "CK Propfirm currently provides MetaTrader 5 and TradeLocker options."
       },
       {
         "q": "Can I reset an account?",
-        "a": "Eligible accounts may have access to CK Capital Reset or Top-Up options. Availability and pricing depend on the selected account and current terms."
+        "a": "Eligible accounts may have access to CK Propfirm Reset or Top-Up options. Availability and pricing depend on the selected account and current terms."
       },
       {
-        "q": "Are CK Capital accounts live-money accounts?",
-        "a": "No. CK Capital states that its evaluation and account environments are simulated/demo environments using virtual funds."
+        "q": "Are CK Propfirm accounts live-money accounts?",
+        "a": "No. CK Propfirm states that its evaluation and account environments are simulated/demo environments using virtual funds."
       }
     ],
-    "finalCtaTitle": "Choose Your CK Capital Evaluation",
+    "finalCtaTitle": "Choose Your CK Propfirm Evaluation",
     "finalCtaDesc": "Compare the objectives. Select your account size. Start your evaluation.",
     "finalCtaBtn": "VIEW EVALUATIONS",
     "legalEyebrow": "IMPORTANT INFORMATION",
-    "legalDesc": "CK Capital provides proprietary trading evaluation programmes operating within simulated/demo trading environments. Accounts use virtual funds and do not represent customer deposits or live brokerage accounts. Objectives, risk limits and eligibility vary by selected model, account size and current programme terms — always review the exact objectives for your selected account before checkout. Objective values shown here are drawn from the live CK Capital challenge configuration where available; any value not yet confirmed by that source is marked as account-specific or pending publication. Individual results vary and past performance does not guarantee future results. CK Capital does not provide investment advice, financial advice, asset management or brokerage services.",
+    "legalDesc": "CK Propfirm provides proprietary trading evaluation programmes operating within simulated/demo trading environments. Accounts use virtual funds and do not represent customer deposits or live brokerage accounts. Objectives, risk limits and eligibility vary by selected model, account size and current programme terms — always review the exact objectives for your selected account before checkout. Objective values shown here are drawn from the live CK Propfirm challenge configuration where available; any value not yet confirmed by that source is marked as account-specific or pending publication. Individual results vary and past performance does not guarantee future results. CK Propfirm does not provide investment advice, financial advice, asset management or brokerage services.",
     "viewTermsConditions": "VIEW TERMS & CONDITIONS",
     "viewDisclaimer": "VIEW DISCLAIMER",
     "exploreRules": "استكشف القواعد",
@@ -1198,7 +1198,7 @@
   "insights": {
     "title1": "بناة من المتداولين، للمتداولين.",
     "title2": "نموك هو مهمتنا",
-    "subtitle": "في CK Capital نحن لا نكتفي برفع مستوى المتداولين. نحن نبنيهم.",
+    "subtitle": "في CK Propfirm نحن لا نكتفي برفع مستوى المتداولين. نحن نبنيهم.",
     "readLatest": "اقرأ أحدث مقال",
     "visitBlog": "زيارة المدونة",
     "comingSoon": "مقالات جديدة قريباً",

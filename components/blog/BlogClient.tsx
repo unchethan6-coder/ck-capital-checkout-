@@ -63,7 +63,7 @@ export default function BlogClient({ articles }: { articles: CmsArticle[] }) {
                 className="mt-6 max-w-3xl font-[family-name:var(--font-jakarta)] text-[clamp(38px,7vw,44px)] font-extrabold leading-[1.02] tracking-[-0.02em] text-[#0A0A0C] sm:text-[52px] md:text-[60px] lg:text-[54px] xl:text-[68px]"
                 data-od-id="blog-hero-title"
               >
-                CK Capital <span className="shimmer-text">Blog</span>
+                CK Propfirm <span className="shimmer-text">Blog</span>
               </motion.h1>
 
               <motion.p

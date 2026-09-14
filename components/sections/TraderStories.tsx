@@ -25,7 +25,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
       ...v,
       title: meta?.title || v.title || "Trader Success Story",
       reward: v.reward || meta?.reward || null,
-      desc: meta?.desc || v.desc || "Verified Trader • CK Capital",
+      desc: meta?.desc || v.desc || "Verified Trader • CK Propfirm",
       thumbnail: meta?.thumbnail || v.thumbnail || fallbackThumb,
     };
   });
@@ -134,7 +134,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
                     {/* Idle State: Clean view with subtle top tag */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 group-hover:opacity-0" />
                     <p className="absolute left-4 top-3.5 text-[11px] font-black tracking-[0.18em] text-white/90 drop-shadow transition-opacity duration-300 group-hover:opacity-0">
-                      CK CAPITAL
+                      CK PROPFIRM
                     </p>
 
                     {/* Hover State: Full-card Frosted Glass Overlay (Backdrop Blur) */}
@@ -145,7 +145,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
                           {t("successStory")}
                         </span>
                         <span className="text-[10.5px] font-black tracking-[0.18em] text-white/90">
-                          CK CAPITAL
+                          CK PROPFIRM
                         </span>
                       </div>
 
@@ -162,7 +162,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
                           {v.title}
                         </p>
                         <p className="mt-1 text-[11px] font-medium text-white/70 line-clamp-1">
-                          {v.desc || "Verified Trader • CK Capital"}
+                          {v.desc || "Verified Trader • CK Propfirm"}
                         </p>
                       </div>
                     </div>

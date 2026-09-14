@@ -45,11 +45,11 @@ const HOMEPAGE_ORDER = [
 
 test.describe("light-theme QA — all public routes", () => {
   for (const route of ROUTES) {
-    test(`GET ${route} — 200 and contains CK Capital`, async ({ request }) => {
+    test(`GET ${route} — 200 and contains CK Propfirm`, async ({ request }) => {
       const res = await request.get(route);
       expect(res.status()).toBe(200);
       const body = await res.text();
-      expect(body).toContain("CK Capital");
+      expect(body).toContain("CK Propfirm");
     });
   }
 

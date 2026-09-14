@@ -5,7 +5,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata = pageSeo({
   title: "Terms & Conditions",
   description:
-    "CK Capital Terms and Conditions — Please review our rules and terms before purchasing or using our services.",
+    "CK Propfirm Terms and Conditions — Please review our rules and terms before purchasing or using our services.",
   path: "/terms-conditions",
 });
 

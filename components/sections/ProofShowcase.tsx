@@ -248,7 +248,7 @@ function BrowserWindow({
           <div className="w-full max-w-[200px] shrink-0 overflow-hidden rounded-lg border border-gray-200 bg-[#0B0620] shadow-sm sm:max-w-[190px]">
             <Image
               src="/images/payout-certificate.jpg"
-              alt="Sample CK Capital reward certificate: $10,000 reward split on a 100K challenge"
+              alt="Sample CK Propfirm reward certificate: $10,000 reward split on a 100K challenge"
               width={760}
               height={570}
               loading="lazy"

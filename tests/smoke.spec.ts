@@ -10,7 +10,7 @@ test.describe("staging smoke", () => {
       const res = await request.get(route);
       expect(res.status()).toBe(200);
       const body = await res.text();
-      expect(body).toContain("CK Capital");
+      expect(body).toContain("CK Propfirm");
     });
   }
 

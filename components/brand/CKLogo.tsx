@@ -72,7 +72,7 @@ export function CKLogo({
         <span
           className={`font-[family-name:var(--font-jakarta)] font-black tracking-[0.08em] text-[15px] sm:text-[16px] leading-none ${textColor}`}
         >
-          CK CAPITAL
+          CK PROPFIRM
         </span>
       )}
     </div>

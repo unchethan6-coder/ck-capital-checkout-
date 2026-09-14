@@ -5,7 +5,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata = pageSeo({
   title: "Privacy Policy",
   description:
-    "CK Capital Privacy Policy — Learn how we collect, handle, and safeguard your personal data.",
+    "CK Propfirm Privacy Policy — Learn how we collect, handle, and safeguard your personal data.",
   path: "/privacy-policy",
 });
 

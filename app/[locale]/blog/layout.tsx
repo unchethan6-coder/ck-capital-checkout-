@@ -12,7 +12,7 @@ export async function generateMetadata({
   const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   return pageSeo({
     title: "Trading Insights & Market Blog",
-    description: "Trading strategies, risk management guides, market analysis, and trader interviews from CK Capital.",
+    description: "Trading strategies, risk management guides, market analysis, and trader interviews from CK Propfirm.",
     path: "/blog",
     locale: resolved,
   });

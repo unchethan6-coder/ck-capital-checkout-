@@ -403,7 +403,7 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
                   <span>{t("footer.close")}</span>
                 </span>
               </div>
-              <span className="font-semibold text-[#A98BFF]/80">CK Capital</span>
+              <span className="font-semibold text-[#A98BFF]/80">CK Propfirm</span>
             </div>
           </motion.div>
         </div>

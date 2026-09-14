@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/seo";
 export const metadata = pageSeo({
   title: "Return & Dispute Policy",
   description:
-    "CK Capital Return and Dispute Policy — Information regarding refund guidelines and dispute processes.",
+    "CK Propfirm Return and Dispute Policy — Information regarding refund guidelines and dispute processes.",
   path: "/return-policy",
 });
 

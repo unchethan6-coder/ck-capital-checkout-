@@ -12,7 +12,7 @@ export async function generateMetadata({
   const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   return pageSeo({
     title: "Trader Payouts & Proof",
-    description: "Explore verified CK Capital payout certificates, qualified trader achievements, and historical payout records.",
+    description: "Explore verified CK Propfirm payout certificates, qualified trader achievements, and historical payout records.",
     path: "/payouts",
     locale: resolved,
   });
