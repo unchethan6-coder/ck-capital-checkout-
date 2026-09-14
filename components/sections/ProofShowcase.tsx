@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { Lock, RefreshCw, Wallet, ShieldCheck, DollarSign } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
@@ -242,7 +243,21 @@ function BrowserWindow({
         </div>
 
         <div className="relative flex-1 p-5 pb-16 sm:p-7 sm:pb-7">
-          <div className="sm:ml-auto sm:max-w-[320px]">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+          {/* Sample reward certificate fills the space beside the copy */}
+          <div className="w-full max-w-[200px] shrink-0 overflow-hidden rounded-lg border border-gray-200 bg-[#0B0620] shadow-sm sm:max-w-[190px]">
+            <Image
+              src="/images/payout-certificate.jpg"
+              alt="Sample CK Capital reward certificate: $10,000 reward split on a 100K challenge"
+              width={760}
+              height={570}
+              loading="lazy"
+              sizes="(max-width: 640px) 200px, 190px"
+              className="h-auto w-full object-cover"
+            />
+          </div>
+
+          <div className="sm:max-w-[320px]">
             <p className="text-sm font-bold text-gray-900">
               {t("readyReward")}
             </p>
@@ -258,6 +273,7 @@ function BrowserWindow({
               />
               {baseList.length} {t("payoutsInFeed")}
             </span>
+          </div>
           </div>
 
           <div className="mt-5 overflow-hidden rounded-lg border border-gray-200">
