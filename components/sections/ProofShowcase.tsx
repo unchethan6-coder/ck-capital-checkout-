@@ -34,17 +34,6 @@ function formatMoney(value: number | null, currency = "USD") {
   }).format(value);
 }
 
-function formatDate(value?: string | null) {
-  if (!value) return "—";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "—";
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
 export function ProofShowcase({
   payouts,
   summary,
@@ -277,9 +266,8 @@ function BrowserWindow({
           </div>
 
           <div className="mt-5 overflow-hidden rounded-lg border border-gray-200">
-            <div className="grid grid-cols-[1.2fr_0.8fr] gap-3 border-b border-gray-200 bg-gray-50 px-4 py-2.5 text-[9px] font-bold uppercase tracking-wider text-gray-400 sm:grid-cols-[1.2fr_0.9fr_0.6fr_0.8fr]">
+            <div className="grid grid-cols-[1.2fr_0.8fr] gap-3 border-b border-gray-200 bg-gray-50 px-4 py-2.5 text-[9px] font-bold uppercase tracking-wider text-gray-400 sm:grid-cols-[1.4fr_0.8fr_0.8fr]">
               <span>{t("trader")}</span>
-              <span className="hidden sm:block">{t("requested")}</span>
               <span className="hidden sm:block">{t("country")}</span>
               <span className="text-right">{t("amount")}</span>
             </div>
@@ -290,14 +278,11 @@ function BrowserWindow({
                   initial={reduceMotion ? false : { opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="grid grid-cols-[1.2fr_0.8fr] gap-3 border-b border-gray-100 bg-white px-4 py-3.5 text-xs last:border-0 sm:grid-cols-[1.2fr_0.9fr_0.6fr_0.8fr]"
+                  className="grid grid-cols-[1.2fr_0.8fr] gap-3 border-b border-gray-100 bg-white px-4 py-3.5 text-xs last:border-0 sm:grid-cols-[1.4fr_0.8fr_0.8fr]"
                   data-od-id={`proof-table-row-${row.id}`}
                 >
                   <span className="min-w-0 truncate font-semibold text-gray-900">
                     {row.title || "Trader"}
-                  </span>
-                  <span className="hidden text-gray-500 sm:block">
-                    {formatDate(row.approvedAt)}
                   </span>
                   <span className="hidden sm:block">
                     <span className="inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-gray-500">
