@@ -2,14 +2,14 @@
 
 Hosting: Coolify 4.x at `https://coolify.fundedproptraders.com`
 Server: single host `178.105.229.60` (Traefik proxy, Let's Encrypt TLS)
-Repo: `https://github.com/kimjoshuadr/ck-capital` (private)
+Repo: `https://github.com/kimjoshuadr/ck-capital-website` (private)
 
 ## Environments
 
-| Env | Branch | Coolify app | URL | Access |
-|---|---|---|---|---|
-| Production | `main` | `ck-capital:main` | `https://ckcapital.co.uk` | public |
-| Staging | `staging` | `ck-capital:staging` | `https://staging.ckcapital.co.uk` | HTTP Basic Auth (`ckstaging` / see Coolify) |
+| Env | Branch | Coolify app | UUID | URL | Access |
+|---|---|---|---|---|---|
+| Production | `main` | `ckcapital-production` | `lde1gmseo79pejezzekzbiw0` | `https://ckpropfirm.com` | public |
+| Staging | `staging` | `ckcapital-staging` | `ls2g8t0l5oulspny65epyvxx` | `https://staging.ckpropfirm.com` | HTTP Basic Auth (`ckstaging` / see Coolify) |
 
 Both apps: build pack **dockerfile**, port `3000`, auto-deploy enabled (push to the branch deploys).
 
@@ -44,8 +44,9 @@ test uses `STAGING_BASIC_AUTH` (format `user:pass`) from GitHub secrets.
 ## DNS / TLS
 
 A records (set at the DNS provider):
-- `ckcapital.co.uk` → `178.105.229.60`
-- `staging.ckcapital.co.uk` → `178.105.229.60`
+- `ckpropfirm.com` → `178.105.229.60`
+- `www.ckpropfirm.com` → `178.105.229.60`
+- `staging.ckpropfirm.com` → `178.105.229.60`
 
 Traefik issues Let's Encrypt certificates automatically once DNS resolves. If the
 domain sits behind Cloudflare, either proxy through Cloudflare to the origin IP or
