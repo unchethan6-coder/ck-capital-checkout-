@@ -170,6 +170,12 @@
     "rawSpreadsMT5": "Spreads directos en MT5 · TradeLocker",
     "pips": "pips"
   },
+  "whatsNew": {
+    "title": "Novedades",
+    "tabPromo": "CK Propfirm • 70% Descuento",
+    "tabLeverage": "Apalancamiento 1:100 • Máxima Exposición",
+    "tabLabs": "CK Labs • Próximamente"
+  },
   "challenge": {
     "title": "Elige tu próximo desafío",
     "subtitle": "Completa los Objetivos de Trading para ser elegible para tu Cuenta CK.",

@@ -169,6 +169,12 @@
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
     "pips": "pips"
   },
+  "whatsNew": {
+    "title": "What's New",
+    "tabPromo": "CK Propfirm • 70% Off",
+    "tabLeverage": "1:100 Leverage • Max Exposure",
+    "tabLabs": "CK Labs • Coming Soon"
+  },
   "challenge": {
     "title": "Choose your next challenge",
     "subtitle": "Complete the Trading Objectives to become eligible for your CK Account.",

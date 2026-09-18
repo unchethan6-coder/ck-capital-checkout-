@@ -17,6 +17,7 @@ import {
 } from "@/lib/content";
 import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
+import { WhatsNewBanner } from "@/components/sections/WhatsNewBanner";
 
 const accountSizes = ["5K", "10K", "25K", "50K", "100K", "200K", "300K"];
 
@@ -201,32 +202,10 @@ export function ChallengeComparison({
       data-od-id="challenge-comparison"
     >
       <Container>
-        <div className="max-w-[1200px] mx-auto flex flex-col gap-6 sm:gap-8">
-          {/* Promo Banner: 70% Off */}
+        <div className="max-w-[1200px] mx-auto flex flex-col gap-10 sm:gap-14 md:gap-16">
+          {/* What's New Tabbed Promo Carousel */}
           <SectionReveal className="w-full">
-            <a
-              href="#pricing-calculator"
-              onClick={(e) => {
-                e.preventDefault();
-                const el =
-                  document.getElementById("pricing-calculator") ||
-                  document.querySelector('[data-od-id="challenge-title"]');
-                el?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="group block relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-500/30 bg-[#070913] shadow-[0_10px_40px_rgba(234,179,8,0.12)] transition-all duration-300 hover:border-amber-400/60 hover:shadow-[0_15px_50px_rgba(234,179,8,0.22)]"
-              data-od-id="promo-70-off-banner"
-            >
-              <div className="relative w-full aspect-[1981/793]">
-                <Image
-                  src="/images/banners/promo-70-off-banner.png"
-                  alt="CK Propfirm 70% Off Promo - Get Started"
-                  fill
-                  priority
-                  sizes="(max-width: 1200px) 100vw, 1200px"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
-                />
-              </div>
-            </a>
+            <WhatsNewBanner viewMode={viewMode} />
           </SectionReveal>
 
           {/* Header */}
