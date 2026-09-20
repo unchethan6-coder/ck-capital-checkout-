@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Geist } from 'next/font/google';
 import './globals.css';
@@ -7,6 +8,11 @@ const geist = Geist({
   subsets: ['latin'],
   display: 'swap',
 });
+
+export const metadata: Metadata = {
+  title: 'CK Propfirm Challenge Configurator',
+  description: 'Configure your CK Propfirm challenge, account size, platform, and trading extras.',
+};
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
