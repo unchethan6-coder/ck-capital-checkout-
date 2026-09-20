@@ -119,7 +119,7 @@ export function ConfiguratorClient() {
         <div className="mx-auto flex h-[68px] max-w-[1240px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-2.5" aria-label="CK Propfirm home">
 <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%201000002783%20%281%29-vhPuYaAJgJxi0ybybuP8Uf6k6glzPA.png"
+            src="/brand/ck-propfirm-logo-white-text.svg"
             alt="CK Propfirm"
             className="h-9 w-auto max-w-[220px] object-contain sm:h-10"
           />
