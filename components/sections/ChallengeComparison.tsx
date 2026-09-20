@@ -21,6 +21,13 @@ import { WhatsNewBanner } from "@/components/sections/WhatsNewBanner";
 
 const accountSizes = ["5K", "10K", "25K", "50K", "100K", "200K", "300K"];
 
+/** Multi-account pricing: buying more than one evaluation discounts each one. */
+const QUANTITY_TIERS = [
+  { n: 1, off: 0, label: "1st account" },
+  { n: 2, off: 10, label: "2nd account" },
+  { n: 3, off: 15, label: "3rd account" },
+] as const;
+
 /** Stagger variant for the horizontal card rows. The parent row drives the
  *  timing: per-item whileInView would leave every card that starts outside
  *  the viewport horizontally stuck at opacity 0 on phones. */
@@ -52,6 +59,7 @@ export function ChallengeComparison({
   const [selectedSize, setSelectedSize] = useState<string>("100K");
   const [isPercentage, setIsPercentage] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<"cards" | "table">("cards");
+  const [quantity, setQuantity] = useState<number>(1);
 
   const currencyDropdownRef = useRef<HTMLDivElement>(null);
 
@@ -132,6 +140,24 @@ export function ChallengeComparison({
     })}`;
   };
 
+  const formatAmount = (value: number) =>
+    `${currency.symbol}${(value * currency.rate).toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+
+  /** Per-account price for a quantity tier, before currency conversion. */
+  const tierPrice = (tier: number) => {
+    const base = parseFloat((activePlan?.disc || "$0").replace(/[$,]/g, ""));
+    if (!Number.isFinite(base)) return 0;
+    const off = QUANTITY_TIERS.find((q) => q.n === tier)?.off ?? 0;
+    return base * (1 - off / 100);
+  };
+
+  /** Order total: every account up to the chosen quantity, each at its tier price. */
+  const orderTotal = (qty: number) =>
+    QUANTITY_TIERS.filter((q) => q.n <= qty).reduce((sum, q) => sum + tierPrice(q.n), 0);
+
   const discountPercent = (plan?: PlanDetails | null) => {
     if (!plan) return 0;
     const original = Number(plan.orig.replace(/[$,]/g, ""));
@@ -162,9 +188,10 @@ export function ChallengeComparison({
       plan: selectedType,
       size: selectedSize,
       currency: selectedCurrency,
+      qty: String(quantity),
     });
     return `https://app.ckcapital.co.uk/signup?${params.toString()}`;
-  }, [selectedType, selectedSize, selectedCurrency]);
+  }, [selectedType, selectedSize, selectedCurrency, quantity]);
 
   const signupUrlForSize = (size: string) => {
     const params = new URLSearchParams({
@@ -343,19 +370,15 @@ export function ChallengeComparison({
                     className={cn(
                       "rounded-xl border px-4 py-3 text-left sm:p-4 transition-all duration-200 cursor-pointer hover:-translate-y-0.5 sm:min-w-0",
                       isSelected && "scale-[1.015]",
-                      viewMode === "cards"
-                        ? isSelected
-                          ? "border-[#894CEF] bg-[#21184F] shadow-[0_0_18px_rgba(137,76,239,0.3)] ring-1 ring-[#894CEF]"
-                          : "border-white/10 bg-[#171820] hover:border-[#703AD7]/60 hover:bg-[#1D1E29]"
-                        : isSelected
-                          ? "border-[#703AD7] bg-[#EBF5FF]/60 shadow-[0_0_16px_rgba(112,58,215,0.2)] ring-1 ring-[#703AD7]"
-                          : "border-[#D9D9D9] bg-white hover:bg-[#F9FAFB] hover:border-gray-300"
+                      isSelected
+                        ? "border-[#894CEF] bg-[#21184F] shadow-[0_0_18px_rgba(137,76,239,0.3)] ring-1 ring-[#894CEF]"
+                        : "border-white/10 bg-[#171820] hover:border-[#703AD7]/60 hover:bg-[#1D1E29]"
                     )}
                   >
-                    <h3 className={cn("mb-1 text-sm font-bold", viewMode === "cards" ? "text-white" : "text-[#0A0A0C]")}>
+                    <h3 className="mb-1 text-sm font-bold text-white">
                       {tItem.name}
                     </h3>
-                    <p className={cn("text-xs leading-relaxed", viewMode === "cards" ? (isSelected ? "text-white/85" : "text-white/70") : "text-gray-600")}>
+                    <p className={cn("text-xs leading-relaxed", isSelected ? "text-white/85" : "text-white/70")}>
                       {tItem.desc}
                     </p>
                   </div>
@@ -427,7 +450,7 @@ export function ChallengeComparison({
               <div className="min-w-0">
                 <p className="truncate text-[10px] font-bold uppercase tracking-wider text-white/80">Selected plan</p>
                 <p className="truncate text-sm font-extrabold text-white">{activeTypeName} ${selectedSize}</p>
-                <p className="text-sm font-black text-emerald-400">{formatMoney(activePlan.disc)}</p>
+                <p className="text-sm font-black text-emerald-400">{formatAmount(orderTotal(quantity))}<span className="ml-1 text-[10px] font-bold text-white/65">{quantity > 1 ? `· ${quantity} accounts` : ""}</span></p>
               </div>
               <a href={signupUrl} target="_blank" rel="noopener noreferrer" className="brand-gradient-btn inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl px-4 text-xs font-bold text-[#1A1030]">
                 Start challenge <ArrowRight className="ml-1.5 h-4 w-4" />
@@ -541,10 +564,17 @@ export function ChallengeComparison({
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-extrabold text-emerald-400 sm:text-3xl">
-                        {formatMoney(activePlan?.disc || "$0.00")}
+                        {formatAmount(orderTotal(quantity))}
                       </div>
-                      <div className="text-xs text-white/55 line-through font-normal">
-                        {formatMoney(activePlan?.orig)}
+                      <div className="text-xs text-white/55 font-normal">
+                        <span className="line-through">
+                          {formatAmount(
+                            parseFloat((activePlan?.orig || "$0").replace(/[$,]/g, "")) * quantity
+                          )}
+                        </span>
+                        {quantity > 1 && (
+                          <span className="ml-1.5 font-bold text-white/80">{quantity} accounts</span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -560,21 +590,92 @@ export function ChallengeComparison({
                       <span className="font-bold text-white">Up to $1,200,000</span>
                     </div>
                   </div>
+
+                  {/* Quantity — each additional account is discounted */}
+                  <div className="mt-3 border-t border-white/10 pt-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white/65">
+                      {t("quantity") || "Quantity"}
+                    </span>
+                    <div className="mt-1.5 flex flex-col gap-0.5" aria-label="Number of accounts">
+                      {QUANTITY_TIERS.map((tier) => {
+                        const isActive = tier.n <= quantity;
+                        return (
+                          <button
+                            key={tier.n}
+                            type="button"
+                            aria-pressed={isActive}
+                            onClick={() => setQuantity(tier.n)}
+                            className={cn(
+                              "flex min-h-9 w-full items-center gap-2 rounded-lg px-2 py-1 text-left transition-colors",
+                              isActive ? "bg-white/[0.07]" : "hover:bg-white/[0.04]"
+                            )}
+                          >
+                            <Check
+                              size={12}
+                              strokeWidth={3}
+                              className={cn("shrink-0", isActive ? "text-emerald-400" : "text-white/30")}
+                            />
+                            <span className={cn("text-xs font-bold", isActive ? "text-white" : "text-white/55")}>
+                              {tier.label}
+                            </span>
+                            <span className="ml-auto flex items-center gap-2">
+                              {tier.off > 0 && (
+                                <span className="rounded bg-amber-400/15 px-1.5 py-px text-[9px] font-bold uppercase tracking-wider text-amber-300">
+                                  {tier.off}% off
+                                </span>
+                              )}
+                              <span className={cn("text-xs font-bold tabular-nums", isActive ? "text-white" : "text-white/55")}>
+                                {formatAmount(tierPrice(tier.n))}
+                              </span>
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <p className="mt-1.5 text-[9px] leading-[1.4] text-white/55">
+                      Discount applies per account when you buy more than one in the same order.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="space-y-4">
-                  {/* CTA Button */}
-                  <a
-                    href={signupUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full"
-                  >
-                    <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-lg hover:shadow-cyan-500/25">
-                      <span>{t("startChallenge") || "Start Challenge"}</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </a>
+                  {/* Quantity stepper + CTA */}
+                  <div className="flex items-stretch gap-2.5">
+                    <div className="flex shrink-0 items-center rounded-full border border-[#E7C66B]/60 bg-white/[0.04]">
+                      <button
+                        type="button"
+                        aria-label="Decrease quantity"
+                        disabled={quantity <= 1}
+                        onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                        className="grid h-11 w-9 place-items-center rounded-l-full text-lg font-bold text-white/80 transition-colors hover:text-white disabled:cursor-not-allowed disabled:text-white/25"
+                      >
+                        −
+                      </button>
+                      <span aria-live="polite" className="w-6 text-center text-sm font-extrabold tabular-nums text-white">
+                        {quantity}
+                      </span>
+                      <button
+                        type="button"
+                        aria-label="Increase quantity"
+                        disabled={quantity >= QUANTITY_TIERS.length}
+                        onClick={() => setQuantity((q) => Math.min(QUANTITY_TIERS.length, q + 1))}
+                        className="grid h-11 w-9 place-items-center rounded-r-full text-lg font-bold text-white/80 transition-colors hover:text-white disabled:cursor-not-allowed disabled:text-white/25"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <a
+                      href={signupUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block min-w-0 flex-1"
+                    >
+                      <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-lg hover:shadow-cyan-500/25">
+                        <span>{t("startChallenge") || "Start Challenge"}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </a>
+                  </div>
 
                   {/* Add-ons */}
                   <div className="flex flex-col gap-2">
@@ -653,11 +754,11 @@ export function ChallengeComparison({
                           <span className="text-[9px] font-bold uppercase tracking-wider text-gray-500">Account</span>
                           <strong className="mt-0.5 block text-lg text-[#0A0A0C]">${size}</strong>
                           <span className="mt-1.5 block text-[8px] font-bold uppercase tracking-wider text-gray-400">Today</span>
-                          <span className="block text-xs font-extrabold text-[#A98BFF]">{plan ? formatMoney(plan.disc) : "N/A"}</span>
+                          <span className="block text-xs font-extrabold text-white">{plan ? formatMoney(plan.disc) : "N/A"}</span>
                           {plan && (
                             <span className="block text-[9px] text-gray-400">
                               was <span className="line-through">{formatMoney(plan.orig)}</span>
-                              {discountPercent(plan) > 0 && <span className="ml-1 font-bold text-[#9A6B14]">Save {discountPercent(plan)}%</span>}
+                              {discountPercent(plan) > 0 && <span className="ml-1 font-bold text-amber-300">Save {discountPercent(plan)}%</span>}
                             </span>
                           )}
                         </button>

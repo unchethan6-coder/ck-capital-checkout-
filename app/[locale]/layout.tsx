@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { AnnouncementBar } from "@/components/sections/AnnouncementBar";
 import { TopNav } from "@/components/sections/TopNav";
 import { SiteFooter } from "@/components/sections/SiteFooter";
+import { CookieConsent } from "@/components/shared/CookieConsent";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { getActiveBanners } from "@/lib/cms";
 import { routing } from "@/i18n/routing";
@@ -153,6 +154,7 @@ export default async function LocaleLayout({
           <AnnouncementBar banners={bannerTexts} />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <CookieConsent />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

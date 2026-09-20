@@ -236,7 +236,8 @@
     "funded": "Funded",
     "revealSizes": "Show all account sizes",
     "more": "+{count} more",
-    "oneTimePaymentNotice": "Every evaluation fee is a one-time payment — no subscriptions, no recurring charges, no hidden fees."
+    "oneTimePaymentNotice": "Every evaluation fee is a one-time payment — no subscriptions, no recurring charges, no hidden fees.",
+    "quantity": "Quantity"
   },
   "platforms": {
     "eyebrow": "Platforms",

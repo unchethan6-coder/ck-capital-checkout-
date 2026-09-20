@@ -237,7 +237,8 @@
     "funded": "Fondeado",
     "revealSizes": "Mostrar todos los tamaños de cuenta",
     "more": "+{count} más",
-    "oneTimePaymentNotice": "Cada tarifa de evaluación es un pago único: sin suscripciones, sin cargos recurrentes y sin comisiones ocultas."
+    "oneTimePaymentNotice": "Cada tarifa de evaluación es un pago único: sin suscripciones, sin cargos recurrentes y sin comisiones ocultas.",
+    "quantity": "Cantidad"
   },
   "platforms": {
     "eyebrow": "Plataformas",

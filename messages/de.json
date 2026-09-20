@@ -241,7 +241,8 @@
     "funded": "Funded",
     "revealSizes": "Alle Kontogrößen anzeigen",
     "more": "+{count} mehr",
-    "oneTimePaymentNotice": "Jede Evaluierungsgebühr ist eine einmalige Zahlung – kein Abo, keine wiederkehrenden Kosten, keine versteckten Gebühren."
+    "oneTimePaymentNotice": "Jede Evaluierungsgebühr ist eine einmalige Zahlung – kein Abo, keine wiederkehrenden Kosten, keine versteckten Gebühren.",
+    "quantity": "Anzahl"
   },
   "platforms": {
     "eyebrow": "Plattformen",
