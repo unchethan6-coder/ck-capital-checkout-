@@ -1,30 +1,36 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
+  ArrowRight,
+  BadgeCheck,
+  Check,
   ChevronDown,
   ChevronUp,
-  Check,
-  ArrowRight,
-  Volume2,
-  Zap,
-  Shield,
+  CreditCard,
   Gauge,
+  Globe2,
+  Minus,
+  Plus,
+  ShieldCheck,
+  Sparkles,
+  WalletCards,
+  Zap,
 } from 'lucide-react';
 import {
-  ChallengeType,
-  AccountSize,
-  Platform,
-  AddOnType,
+  ADDONS,
   CHALLENGE_META,
   PRICING,
-  ADDONS,
-  getPrice,
-  getOriginalPrice,
-  getSavingsPercent,
-  getRules,
   calculateTotal,
   getAvailableAccountSizes,
+  getOriginalPrice,
+  getPrice,
+  getRules,
+  getSavingsPercent,
+  type AccountSize,
+  type AddOnType,
+  type ChallengeType,
+  type Platform,
 } from '@/lib/configurator';
 
 interface ConfiguratorState {
@@ -33,13 +39,20 @@ interface ConfiguratorState {
   platform: Platform;
   selectedAddOns: AddOnType[];
   quantity: number;
-  couponCode: string;
-  couponApplied: boolean;
   couponDiscount: number;
 }
 
-const DEMO_COUPON = '10KFOR19';
-const DEMO_COUPON_DISCOUNT = 0.15; // 15% off
+const COUPON = '10KFOR19';
+const ADDON_ICONS: Record<AddOnType, typeof Zap> = {
+  lifetime90: WalletCards,
+  reward95: Sparkles,
+  doubleLeverage: Gauge,
+  eaSupport: Zap,
+  weekendHolding: Globe2,
+  newsTrading: ShieldCheck,
+};
+const currency = (value: number) => `$${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+const balanceLabel = (size: number) => `$${size / 1000}K`;
 
 export function ConfiguratorClient() {
   const [state, setState] = useState<ConfiguratorState>({
@@ -48,543 +61,136 @@ export function ConfiguratorClient() {
     platform: 'mt5',
     selectedAddOns: [],
     quantity: 1,
-    couponCode: '',
-    couponApplied: false,
     couponDiscount: 0,
   });
-
-  const [couponInput, setCouponInput] = useState('');
+  const [coupon, setCoupon] = useState('');
+  const [couponApplied, setCouponApplied] = useState(false);
   const [couponError, setCouponError] = useState('');
-
-  // Memoized calculations
-  const rules = useMemo(() => getRules(state.challengeType, state.accountSize), [
-    state.challengeType,
-    state.accountSize,
-  ]);
-
-  const challengePrice = useMemo(
-    () => getPrice(state.challengeType, state.accountSize),
-    [state.challengeType, state.accountSize]
-  );
-
-  const originalPrice = useMemo(
-    () => getOriginalPrice(state.challengeType, state.accountSize),
-    [state.challengeType, state.accountSize]
-  );
-
-  const savingsPercent = useMemo(
-    () => getSavingsPercent(state.challengeType, state.accountSize),
-    [state.challengeType, state.accountSize]
-  );
-
-  const totals = useMemo(
-    () =>
-      calculateTotal(
-        challengePrice * state.quantity,
-        state.selectedAddOns,
-        state.couponDiscount
-      ),
-    [challengePrice, state.quantity, state.selectedAddOns, state.couponDiscount]
-  );
-
-  const handleChallengeChange = (type: ChallengeType) => {
-    setState((prev) => ({ ...prev, challengeType: type }));
-  };
-
-  const handleAccountSizeChange = (size: AccountSize) => {
-    setState((prev) => ({ ...prev, accountSize: size }));
-  };
-
-  const handlePlatformChange = (platform: Platform) => {
-    setState((prev) => ({ ...prev, platform }));
-  };
-
-  const toggleAddOn = (addOnId: AddOnType) => {
-    setState((prev) => ({
-      ...prev,
-      selectedAddOns: prev.selectedAddOns.includes(addOnId)
-        ? prev.selectedAddOns.filter((id) => id !== addOnId)
-        : [...prev.selectedAddOns, addOnId],
-    }));
-  };
-
-  const handleQuantityChange = (delta: number) => {
-    setState((prev) => ({
-      ...prev,
-      quantity: Math.max(1, prev.quantity + delta),
-    }));
-  };
-
-  const handleApplyCoupon = () => {
-    setCouponError('');
-    if (!couponInput.trim()) {
-      setCouponError('Enter a coupon code');
-      return;
-    }
-    if (couponInput.toUpperCase() === DEMO_COUPON) {
-      setState((prev) => ({
-        ...prev,
-        couponCode: DEMO_COUPON,
-        couponApplied: true,
-        couponDiscount: DEMO_COUPON_DISCOUNT,
-      }));
-      setCouponInput('');
-    } else {
-      setCouponError('Invalid coupon code');
-    }
-  };
-
-  const clearCoupon = () => {
-    setState((prev) => ({
-      ...prev,
-      couponCode: '',
-      couponApplied: false,
-      couponDiscount: 0,
-    }));
-    setCouponInput('');
-    setCouponError('');
-  };
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const availableSizes = getAvailableAccountSizes(state.challengeType);
-  const selectedChallengeMeta = CHALLENGE_META[state.challengeType];
+  const price = getPrice(state.challengeType, state.accountSize);
+  const original = getOriginalPrice(state.challengeType, state.accountSize);
+  const rules = useMemo(() => getRules(state.challengeType, state.accountSize), [state.challengeType, state.accountSize]);
+  const selectedChallenge = CHALLENGE_META[state.challengeType];
+  const addonTotal = state.selectedAddOns.reduce((sum, id) => sum + ADDONS[id].surcharge, 0);
+  const totals = calculateTotal(price * state.quantity, state.selectedAddOns, state.couponDiscount);
+  const subtotal = totals.subtotal;
+  const discount = totals.discount;
+  const total = totals.total;
+
+  const chooseChallenge = (challengeType: ChallengeType) => {
+    const nextSizes = getAvailableAccountSizes(challengeType);
+    const keepsSize = nextSizes.some((item) => item.size === state.accountSize);
+    setState((current) => ({ ...current, challengeType, accountSize: keepsSize ? current.accountSize : nextSizes[0].size }));
+  };
+  const toggleAddon = (id: AddOnType) => setState((current) => ({
+    ...current,
+    selectedAddOns: current.selectedAddOns.includes(id) ? current.selectedAddOns.filter((item) => item !== id) : [...current.selectedAddOns, id],
+  }));
+  const applyCoupon = () => {
+    if (coupon.trim().toUpperCase() === COUPON) {
+      setCouponApplied(true);
+      setCouponError('');
+      setState((current) => ({ ...current, couponDiscount: 0.15 }));
+    } else {
+      setCouponApplied(false);
+      setCouponError('Try the visible code: 10KFOR19');
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#050914] via-[#080B17] to-[#050914]">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-[#25283F] bg-[#050914]/95 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#D946EF]">
-                <Zap size={20} className="text-white" />
-              </div>
-              <span className="font-[family-name:var(--font-jakarta)] text-lg font-bold text-white">
-                CK PROPFIRM
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
-              <button
-                className="rounded-lg px-4 py-2 text-sm font-medium text-[#999BA3] transition-colors hover:text-white"
-                onClick={() => (window.location.href = '/')}
-              >
-                ← Back to website
-              </button>
-              <a
-                href="https://app.ckcapital.co.uk/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg px-4 py-2 text-sm font-medium text-[#999BA3] transition-colors hover:text-white"
-              >
-                Sign in
-              </a>
-              <button className="flex items-center gap-2 rounded-lg bg-[#F6C94C] px-4 py-2 font-medium text-[#050914] transition-all hover:shadow-lg hover:shadow-[#F6C94C]/20">
-                Start Challenge <ArrowRight size={16} />
-              </button>
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#0D1024] text-white pb-24 lg:pb-10">
+      <header className="sticky top-0 z-40 border-b border-[#292E50] bg-[#11142B]/95 backdrop-blur-xl">
+        <div className="mx-auto flex h-[68px] max-w-[1240px] items-center justify-between px-4 sm:px-6 lg:px-8">
+          <a href="/" className="flex items-center gap-2.5" aria-label="CK Propfirm home">
+            <img src="/favicon-32x32.png" alt="CK Propfirm" className="size-8 rounded-md" />
+            <span className="text-[15px] font-bold tracking-[0.18em] text-white">CK PROPFIRM</span>
+          </a>
+          <nav className="flex items-center gap-5 text-[13px] font-medium text-[#A7ABC3]">
+            <a href="https://app.ckcapital.co.uk/login" target="_blank" rel="noreferrer" className="transition-colors hover:text-white">Go to Dashboard</a>
+            <a href="/pricing" className="hidden transition-colors hover:text-white sm:block">Pricing Plan</a>
+          </nav>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:py-12">
-        {/* Page Title & Step Indicator */}
-        <div className="mb-12 text-center">
-          <h1 className="font-[family-name:var(--font-jakarta)] text-4xl font-bold text-white md:text-5xl">
-            Configure your challenge
-          </h1>
-          <p className="mt-2 text-[#999BA3]">4 simple steps to get funded</p>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm">
-            <span className="rounded-full bg-[#7C3AED] px-3 py-1 text-white">1. Challenge</span>
-            <span className="text-[#525867]">→</span>
-            <span className="rounded-full border border-[#25283F] px-3 py-1 text-[#999BA3]">
-              2. Account
-            </span>
-            <span className="text-[#525867]">→</span>
-            <span className="rounded-full border border-[#25283F] px-3 py-1 text-[#999BA3]">
-              3. Platform
-            </span>
-            <span className="text-[#525867]">→</span>
-            <span className="rounded-full border border-[#25283F] px-3 py-1 text-[#999BA3]">
-              4. Extras
-            </span>
+      <main className="mx-auto max-w-[1240px] px-4 py-7 sm:px-6 lg:px-8 lg:py-10">
+        <div className="mb-7 flex flex-col gap-5 border-b border-[#292E50] pb-7 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#756AFF]">CK Propfirm · Challenge builder</p>
+            <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-[30px]">Configure your plan</h1>
+            <p className="mt-2 text-sm text-[#A7ABC3]">Build the account that fits your trading style.</p>
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium text-[#A7ABC3]">
+            {['Challenge', 'Account', 'Platform', 'Extras'].map((step, index) => (
+              <div key={step} className="flex items-center gap-2">
+                <span className={`flex size-6 items-center justify-center rounded-full border text-[10px] ${index === 0 ? 'border-[#675BFF] bg-[#5B4CFF] text-white' : 'border-[#3A3F68] text-[#7F84A3]'}`}>{index + 1}</span>
+                <span className="hidden sm:inline">{step}</span>
+                {index < 3 && <span className="text-[#4A4F73]">/</span>}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Two-Column Layout */}
-        <div className="grid gap-8 lg:grid-cols-3">
-          {/* Left Column - Configuration Controls (lg:col-span-2) */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Challenge Type Selection */}
-            <section className="space-y-4">
-              <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-white">
-                Select Your Challenge
-              </h2>
+        <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="flex flex-col gap-7">
+            <section>
+              <div className="mb-3 flex items-center justify-between"><h2 className="text-sm font-semibold text-white">Challenge Type</h2><button className="text-xs font-medium text-[#8D84FF] hover:text-white">Compare</button></div>
               <div className="grid gap-3 sm:grid-cols-2">
-                {(Object.values(CHALLENGE_META) as Array<typeof CHALLENGE_META.standard>).map(
-                  (meta) => (
-                    <button
-                      key={meta.id}
-                      onClick={() => handleChallengeChange(meta.id)}
-                      className={`group rounded-xl border p-4 transition-all ${
-                        state.challengeType === meta.id
-                          ? 'border-[#7C3AED] bg-[#15182A]/80 shadow-lg shadow-[#7C3AED]/20'
-                          : 'border-[#25283F] bg-[#101425]/40 hover:border-[#7C3AED]/50 hover:bg-[#101425]/60'
-                      }`}
-                    >
-                      <div className="flex items-start justify-between">
-                        <div className="text-left">
-                          <h3 className="font-semibold text-white group-hover:text-[#D946EF]">
-                            {meta.name}
-                          </h3>
-                          <p className="text-xs text-[#999BA3]">{meta.subtitle}</p>
-                          <p className="mt-1 text-xs text-[#7C3AED]">{meta.description}</p>
-                        </div>
-                        {state.challengeType === meta.id && (
-                          <Check size={18} className="text-[#7C3AED]" />
-                        )}
-                      </div>
-                    </button>
-                  )
-                )}
+                {(Object.values(CHALLENGE_META) as (typeof CHALLENGE_META)[ChallengeType][]).map((item) => {
+                  const selected = state.challengeType === item.id;
+                  return <button key={item.id} onClick={() => chooseChallenge(item.id)} className={`relative min-h-[92px] rounded-[15px] border p-4 text-left transition duration-200 ${selected ? 'border-[#675BFF] bg-gradient-to-br from-[#4E46C8]/60 to-[#202443] shadow-[inset_0_0_0_1px_rgba(103,91,255,.25)]' : 'border-[#33385E] bg-[#1A1D38] hover:border-[#575D91]'}`}>
+                    {selected && <span className="absolute right-3 top-3 flex size-5 items-center justify-center rounded-full bg-[#47D597] text-[#11251E]"><Check className="size-3.5" strokeWidth={3} /></span>}
+                    <span className="block text-sm font-semibold text-white">{item.name}</span><span className="mt-1 block text-xs text-[#A7ABC3]">{item.subtitle}</span><span className="mt-2 block text-[11px] text-[#7E84A7]">{item.description}</span>
+                  </button>;
+                })}
               </div>
             </section>
 
-            {/* Account Size Selection */}
-            <section className="space-y-4">
-              <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-white">
-                Account Size
-              </h2>
+            <section>
+              <div className="mb-3 flex items-center justify-between"><h2 className="text-sm font-semibold text-white">Account Balance</h2><span className="text-xs text-[#7E84A7]">Choose your starting capital</span></div>
+              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 lg:grid-cols-7">
+                {availableSizes.map((tier) => { const selected = state.accountSize === tier.size; return <button key={tier.size} disabled={tier.enabled === false} onClick={() => setState((current) => ({ ...current, accountSize: tier.size }))} className={`relative min-h-[92px] rounded-[14px] border px-2 py-3 text-center transition duration-200 disabled:cursor-not-allowed disabled:opacity-35 ${selected ? 'border-[#675BFF] bg-[#4E46C8]/55' : 'border-[#33385E] bg-[#1A1D38] hover:border-[#575D91]'}`}>
+                  {tier.popular && <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#F46C8E] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#281522]">Popular</span>}
+                  {selected && <span className="absolute right-2 top-2 flex size-4 items-center justify-center rounded-full bg-[#47D597] text-[#11251E]"><Check className="size-3" strokeWidth={3} /></span>}
+                  <span className="block text-sm font-semibold text-white">{balanceLabel(tier.size)}</span><span className="mt-2 block text-[13px] font-bold text-[#D7D9E8]">{tier.enabled === false ? 'Unavailable' : currency(tier.current)}</span><span className="mt-0.5 block text-[10px] text-[#7E84A7] line-through">{tier.enabled === false ? '' : currency(tier.original)}</span><span className="mt-1 block text-[10px] text-[#47D597]">{tier.enabled === false ? '' : `Save ${getSavingsPercent(state.challengeType, tier.size)}%`}</span>
+                </button>; })}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="mb-3 text-sm font-semibold text-white">Trading Platform</h2>
+              <div className="grid grid-cols-2 gap-3">
+                {([['mt5', 'MetaTrader 5', 'Industry-standard execution'], ['tradelocker', 'TradeLocker', 'Modern web-based trading']] as [Platform, string, string][]).map(([id, title, desc]) => { const selected = state.platform === id; return <button key={id} onClick={() => setState((current) => ({ ...current, platform: id }))} className={`relative flex items-center gap-3 rounded-[14px] border p-3.5 text-left transition ${selected ? 'border-[#675BFF] bg-[#4E46C8]/45' : 'border-[#33385E] bg-[#1A1D38] hover:border-[#575D91]'}`}>{selected && <span className="absolute right-3 top-3 flex size-5 items-center justify-center rounded-full bg-[#47D597] text-[#11251E]"><Check className="size-3.5" strokeWidth={3} /></span>}<span className="flex size-9 items-center justify-center rounded-lg bg-[#202443] text-[#8D84FF]"><Gauge className="size-4" /></span><span><span className="block text-sm font-semibold text-white">{title}</span><span className="block text-[11px] text-[#A7ABC3]">{desc}</span></span></button>; })}
+              </div>
+            </section>
+
+            <section>
+              <div className="mb-3 flex items-end justify-between"><div><h2 className="text-sm font-semibold text-white">Add-ons</h2><p className="mt-1 text-xs text-[#7E84A7]">Optional upgrades for more flexibility.</p></div><span className="text-xs text-[#7E84A7]">{state.selectedAddOns.length} selected</span></div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {availableSizes.map((tier) => (
-                  <button
-                    key={tier.size}
-                    onClick={() => handleAccountSizeChange(tier.size)}
-                    className={`group relative rounded-xl border p-4 transition-all ${
-                      state.accountSize === tier.size
-                        ? 'border-[#7C3AED] bg-[#15182A]/80 shadow-lg shadow-[#7C3AED]/20'
-                        : 'border-[#25283F] bg-[#101425]/40 hover:border-[#7C3AED]/50 hover:bg-[#101425]/60'
-                    }`}
-                  >
-                    {tier.popular && (
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#D946EF] px-2 py-0.5 text-xs font-medium text-white">
-                        Popular
-                      </div>
-                    )}
-                    <div className="flex flex-col gap-2">
-                      <div>
-                        <h3 className="font-semibold text-white group-hover:text-[#D946EF]">
-                          ${tier.size.toLocaleString()}
-                        </h3>
-                      </div>
-                      <div className="flex flex-col gap-1 text-xs">
-                        <span className="text-base font-bold text-[#F6C94C]">
-                          ${tier.current.toFixed(2)}
-                        </span>
-                        <span className="text-[#999BA3] line-through">
-                          ${tier.original.toFixed(2)}
-                        </span>
-                        <span className="text-[#7C3AED]">Save {getSavingsPercent(state.challengeType, tier.size)}%</span>
-                      </div>
-                    </div>
-                    {state.accountSize === tier.size && (
-                      <div className="absolute top-2 right-2">
-                        <Check size={18} className="text-[#7C3AED]" />
-                      </div>
-                    )}
-                  </button>
-                ))}
+                {(Object.values(ADDONS) as (typeof ADDONS)[AddOnType][]).map((addon) => { const selected = state.selectedAddOns.includes(addon.id); const Icon = ADDON_ICONS[addon.id]; return <div key={addon.id} className={`rounded-[14px] border p-3.5 transition ${selected ? 'border-[#675BFF] bg-[#4E46C8]/35' : 'border-[#33385E] bg-[#1A1D38]'}`}><div className="flex items-start justify-between"><span className="flex size-8 items-center justify-center rounded-lg bg-[#262A4A] text-[#8D84FF]"><Icon className="size-4" /></span>{selected && <Check className="size-4 text-[#47D597]" />}</div><p className="mt-3 text-xs font-semibold text-white">{addon.name}</p><p className="mt-1 min-h-8 text-[11px] leading-4 text-[#A7ABC3]">{addon.description}</p><button onClick={() => toggleAddon(addon.id)} className={`mt-3 flex h-8 w-full items-center justify-center rounded-lg text-xs font-semibold transition ${selected ? 'bg-[#33385E] text-white' : 'bg-[#252A4A] text-[#D4D7E8] hover:bg-[#5B4CFF] hover:text-white'}`}>{selected ? 'Added' : `+ Add · ${currency(addon.surcharge)}`}</button></div>; })}
               </div>
-            </section>
-
-            {/* Platform Selection */}
-            <section className="space-y-4">
-              <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-white">
-                Trading Platform
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {(['mt5', 'tradelocker'] as const).map((plat) => (
-                  <button
-                    key={plat}
-                    onClick={() => handlePlatformChange(plat)}
-                    className={`group rounded-xl border p-4 transition-all ${
-                      state.platform === plat
-                        ? 'border-[#7C3AED] bg-[#15182A]/80 shadow-lg shadow-[#7C3AED]/20'
-                        : 'border-[#25283F] bg-[#101425]/40 hover:border-[#7C3AED]/50 hover:bg-[#101425]/60'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="text-left">
-                        <h3 className="font-semibold text-white group-hover:text-[#D946EF]">
-                          {plat === 'mt5' ? 'MetaTrader 5' : 'TradeLocker'}
-                        </h3>
-                        <p className="text-xs text-[#999BA3]">
-                          {plat === 'mt5'
-                            ? 'Industry standard platform'
-                            : 'Modern web-based trading'}
-                        </p>
-                      </div>
-                      {state.platform === plat && (
-                        <Check size={18} className="text-[#7C3AED]" />
-                      )}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </section>
-
-            {/* Add-Ons Selection */}
-            <section className="space-y-4">
-              <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-white">
-                Optional Add-Ons
-              </h2>
-              <div className="space-y-3">
-                {Object.values(ADDONS).map((addon) => (
-                  <button
-                    key={addon.id}
-                    onClick={() => toggleAddOn(addon.id)}
-                    className={`group flex w-full rounded-lg border p-4 transition-all ${
-                      state.selectedAddOns.includes(addon.id)
-                        ? 'border-[#7C3AED] bg-[#15182A]/60 shadow-lg shadow-[#7C3AED]/10'
-                        : 'border-[#25283F] bg-[#101425]/40 hover:border-[#7C3AED]/30 hover:bg-[#101425]/60'
-                    }`}
-                  >
-                    <div
-                      className={`mr-3 flex h-5 w-5 items-center justify-center rounded border transition-all ${
-                        state.selectedAddOns.includes(addon.id)
-                          ? 'border-[#7C3AED] bg-[#7C3AED]'
-                          : 'border-[#525867] bg-transparent group-hover:border-[#7C3AED]/50'
-                      }`}
-                    >
-                      {state.selectedAddOns.includes(addon.id) && (
-                        <Check size={14} className="text-white" />
-                      )}
-                    </div>
-                    <div className="flex-1 text-left">
-                      <h3 className="font-semibold text-white group-hover:text-[#D946EF]">
-                        {addon.name}
-                      </h3>
-                      <p className="text-xs text-[#999BA3]">{addon.description}</p>
-                    </div>
-                    <span className="ml-2 whitespace-nowrap font-semibold text-[#F6C94C]">
-                      +${addon.surcharge.toFixed(2)}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </section>
-
-            {/* Coupon Input */}
-            <section className="space-y-4">
-              <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-white">
-                Promo Code
-              </h2>
-              {state.couponApplied ? (
-                <div className="flex items-center justify-between rounded-lg border border-[#7C3AED] bg-[#15182A]/60 px-4 py-3">
-                  <div>
-                    <p className="text-sm font-semibold text-[#7C3AED]">
-                      ✓ Coupon Applied: {state.couponCode}
-                    </p>
-                    <p className="text-xs text-[#999BA3]">15% discount active</p>
-                  </div>
-                  <button
-                    onClick={clearCoupon}
-                    className="text-xs font-medium text-[#D946EF] hover:text-[#F6C94C]"
-                  >
-                    Remove
-                  </button>
-                </div>
-              ) : (
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={couponInput}
-                    onChange={(e) => {
-                      setCouponInput(e.target.value.toUpperCase());
-                      setCouponError('');
-                    }}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-                        handleApplyCoupon();
-                      }
-                    }}
-                    placeholder={`Try: ${DEMO_COUPON}`}
-                    className="flex-1 rounded-lg border border-[#25283F] bg-[#101425]/40 px-3 py-2.5 text-sm text-white placeholder-[#525867] transition-all focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED]/20"
-                  />
-                  <button
-                    onClick={handleApplyCoupon}
-                    className="rounded-lg bg-[#F6C94C] px-4 py-2 font-medium text-[#050914] transition-all hover:shadow-lg hover:shadow-[#F6C94C]/20"
-                  >
-                    Apply
-                  </button>
-                </div>
-              )}
-              {couponError && <p className="text-xs text-red-500">{couponError}</p>}
             </section>
           </div>
 
-          {/* Right Column - Sticky Summary (lg:col-span-1) */}
-          <div className="lg:sticky lg:top-20 lg:h-fit">
-            <div className="space-y-4 rounded-2xl border border-[#25283F] bg-gradient-to-b from-[#15182A]/80 to-[#101425]/60 p-6 backdrop-blur-sm lg:col-span-1">
-              {/* Summary Header */}
-              <div className="pb-4 border-b border-[#25283F]">
-                <h3 className="font-[family-name:var(--font-jakarta)] text-lg font-bold text-white">
-                  Order Summary
-                </h3>
-              </div>
-
-              {/* Challenge & Account Display */}
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-[#999BA3]">Challenge</span>
-                  <span className="font-semibold text-white">
-                    {selectedChallengeMeta.name}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#999BA3]">Account Size</span>
-                  <span className="font-semibold text-white">
-                    ${state.accountSize.toLocaleString()}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#999BA3]">Platform</span>
-                  <span className="font-semibold text-white">
-                    {state.platform === 'mt5' ? 'MetaTrader 5' : 'TradeLocker'}
-                  </span>
-                </div>
-              </div>
-
-              {/* Key Rules */}
-              <div className="space-y-2 rounded-lg border border-[#25283F] bg-[#0B1122]/50 p-3">
-                <p className="text-xs font-semibold text-[#D946EF]">Key Rules</p>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  {rules.phase1Target && (
-                    <div className="flex items-center gap-1 text-[#999BA3]">
-                      <span className="text-[#7C3AED]">✓</span>
-                      <span>Phase 1: {rules.phase1Target}%</span>
-                    </div>
-                  )}
-                  <div className="flex items-center gap-1 text-[#999BA3]">
-                    <span className="text-[#7C3AED]">✓</span>
-                    <span>Daily Loss: {rules.maxDailyLoss}%</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-[#999BA3]">
-                    <span className="text-[#7C3AED]">✓</span>
-                    <span>Max Loss: {rules.maxTotalLoss}%</span>
-                  </div>
-                  {rules.consistency && (
-                    <div className="flex items-center gap-1 text-[#999BA3]">
-                      <span className="text-[#7C3AED]">✓</span>
-                      <span>Consistency: {rules.consistency}%</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Quantity Stepper */}
-              <div className="flex items-center justify-between rounded-lg border border-[#25283F] bg-[#0B1122]/50 px-3 py-2">
-                <span className="text-xs font-medium text-[#999BA3]">Quantity</span>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => handleQuantityChange(-1)}
-                    disabled={state.quantity <= 1}
-                    className="p-1 disabled:opacity-50 disabled:cursor-not-allowed text-[#999BA3] hover:text-[#7C3AED] transition-colors"
-                  >
-                    <ChevronDown size={16} />
-                  </button>
-                  <span className="w-6 text-center font-semibold text-white">
-                    {state.quantity}
-                  </span>
-                  <button
-                    onClick={() => handleQuantityChange(1)}
-                    className="p-1 text-[#999BA3] hover:text-[#7C3AED] transition-colors"
-                  >
-                    <ChevronUp size={16} />
-                  </button>
-                </div>
-              </div>
-
-              {/* Selected Add-Ons Display */}
-              {state.selectedAddOns.length > 0 && (
-                <div className="space-y-1 text-xs">
-                  <p className="font-medium text-[#999BA3]">Add-Ons:</p>
-                  {state.selectedAddOns.map((id) => (
-                    <p key={id} className="text-[#D946EF]">
-                      • {ADDONS[id].name}
-                    </p>
-                  ))}
-                </div>
-              )}
-
-              {/* Pricing Breakdown */}
-              <div className="space-y-2 border-t border-[#25283F] pt-4 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-[#999BA3]">Subtotal</span>
-                  <span className="font-semibold text-white">
-                    ${totals.subtotal.toFixed(2)}
-                  </span>
-                </div>
-                {state.couponApplied && totals.discount > 0 && (
-                  <div className="flex justify-between text-[#7C3AED]">
-                    <span>Discount ({Math.round(state.couponDiscount * 100)}%)</span>
-                    <span className="font-semibold">-${totals.discount.toFixed(2)}</span>
-                  </div>
-                )}
-                <div className="flex justify-between border-t border-[#25283F] pt-2">
-                  <span className="font-semibold text-white">Total</span>
-                  <span className="text-xl font-bold text-[#F6C94C]">
-                    ${totals.total.toFixed(2)}
-                  </span>
-                </div>
-              </div>
-
-              {/* Main CTA */}
-              <button className="w-full rounded-lg bg-gradient-to-r from-[#D4A03E] to-[#F6C94C] py-3 font-bold text-[#050914] transition-all hover:shadow-lg hover:shadow-[#F6C94C]/30 flex items-center justify-center gap-2">
-                Continue to Checkout <ArrowRight size={16} />
-              </button>
-
-              {/* Trust Chips */}
-              <div className="space-y-2 rounded-lg border border-[#25283F] bg-[#0B1122]/50 p-3">
-                <div className="grid gap-2 text-xs">
-                  <div className="flex items-center gap-2 text-[#999BA3]">
-                    <Shield size={14} className="text-[#7C3AED]" />
-                    <span>Up to 100% profit split</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[#999BA3]">
-                    <Gauge size={14} className="text-[#7C3AED]" />
-                    <span>1:100 leverage</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[#999BA3]">
-                    <Volume2 size={14} className="text-[#7C3AED]" />
-                    <span>Payouts in ~12 hours</span>
-                  </div>
-                </div>
-                <p className="text-xs text-[#525867] pt-2 border-t border-[#25283F]">
-                  We accept VISA, Mastercard, Stripe &amp; Crypto
-                </p>
+          <aside className="lg:sticky lg:top-[88px]">
+            <div className="rounded-[16px] border border-[#3B4070] bg-[#1A1D38] shadow-[0_18px_60px_rgba(5,7,28,.3)]">
+              <div className="border-b border-[#33385E] p-5"><div className="flex items-start justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D84FF]">Your challenge</p><h2 className="mt-1 text-lg font-semibold text-white">{selectedChallenge.name} · {balanceLabel(state.accountSize)}</h2></div><span className="rounded-lg bg-[#282D4D] px-2 py-1 text-[11px] font-medium text-[#A7ABC3]">{state.platform === 'mt5' ? 'MT5' : 'TradeLocker'}</span></div><div className="mt-4 flex items-end justify-between"><div><span className="text-2xl font-bold text-white">{currency(price)}</span><span className="ml-2 text-xs text-[#7E84A7] line-through">{currency(original)}</span></div><span className="text-xs font-semibold text-[#47D597]">Save {getSavingsPercent(state.challengeType, state.accountSize)}%</span></div></div>
+              <div className="border-b border-[#33385E] px-5 py-3"><button onClick={() => setDetailsOpen((open) => !open)} className="flex w-full items-center justify-between text-xs font-semibold text-[#D7D9E8]"><span>View Plan Details</span>{detailsOpen ? <ChevronUp className="size-4 text-[#8D84FF]" /> : <ChevronDown className="size-4 text-[#8D84FF]" />}</button>{detailsOpen && <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 border-t border-[#33385E] pt-3 text-[11px] text-[#A7ABC3]"><span>Phase 1 target <b className="float-right text-white">{rules.phase1Target ? `${rules.phase1Target}%` : '—'}</b></span><span>Phase 2 target <b className="float-right text-white">{rules.phase2Target ? `${rules.phase2Target}%` : '—'}</b></span><span>Daily loss <b className="float-right text-white">{rules.maxDailyLoss}%</b></span><span>Max loss <b className="float-right text-white">{rules.maxTotalLoss}%</b></span><span>Min trading days <b className="float-right text-white">{rules.minTradingDays}</b></span><span>Trading period <b className="float-right text-white">{rules.unlimitedPeriod ? 'Unlimited' : 'Bi-weekly'}</b></span>{rules.consistency && <span>Consistency <b className="float-right text-white">{rules.consistency}%</b></span>}</div>}</div>
+              <div className="flex flex-col gap-4 p-5">
+                <div className="flex items-center justify-between"><span className="text-xs font-medium text-[#A7ABC3]">Number of accounts</span><div className="flex items-center gap-3 rounded-lg border border-[#3B4070] bg-[#202443] p-1"><button onClick={() => setState((current) => ({ ...current, quantity: Math.max(1, current.quantity - 1) }))} className="flex size-6 items-center justify-center rounded text-[#A7ABC3] hover:bg-[#33385E] hover:text-white" aria-label="Decrease quantity"><Minus className="size-3" /></button><span className="w-4 text-center text-sm font-semibold text-white">{state.quantity}</span><button onClick={() => setState((current) => ({ ...current, quantity: Math.min(10, current.quantity + 1) }))} className="flex size-6 items-center justify-center rounded text-[#A7ABC3] hover:bg-[#33385E] hover:text-white" aria-label="Increase quantity"><Plus className="size-3" /></button></div></div>
+                {state.quantity > 1 && <div className="rounded-lg border border-[#33385E] bg-[#202443] p-3 text-[11px] text-[#A7ABC3]">Bulk order: {state.quantity} × {balanceLabel(state.accountSize)} accounts</div>}
+                <div className="flex gap-2"><input value={coupon} onChange={(event) => setCoupon(event.target.value)} placeholder="Promo code" aria-label="Promo code" className="min-w-0 flex-1 rounded-lg border border-[#33385E] bg-[#11142B] px-3 text-xs text-white outline-none placeholder:text-[#6F7598] focus:border-[#675BFF]" /><button onClick={applyCoupon} className="rounded-lg border border-[#575D91] px-3 text-xs font-semibold text-[#D7D9E8] hover:border-[#8D84FF]">{couponApplied ? 'Applied' : 'Apply'}</button></div><p className="-mt-2 text-[10px] text-[#7E84A7]">Use <button onClick={() => setCoupon(COUPON)} className="font-semibold text-[#8D84FF]">10KFOR19</button> for 15% off.</p>{couponError && <p className="-mt-2 text-[10px] text-[#F48B9D]">{couponError}</p>}
+                <div className="flex flex-col gap-2 border-t border-[#33385E] pt-4 text-xs"><div className="flex justify-between text-[#A7ABC3]"><span>Subtotal</span><span className="text-white">{currency(subtotal)}</span></div>{state.couponDiscount > 0 && <div className="flex justify-between text-[#47D597]"><span>Discount (15%)</span><span>-{currency(discount)}</span></div>}<div className="flex justify-between pt-1 text-base font-bold text-white"><span>Total</span><span>{currency(total)}</span></div></div>
+                <button className="flex h-12 items-center justify-center gap-2 rounded-xl bg-[#5B4CFF] text-sm font-bold text-white transition hover:bg-[#6F62FF] focus:outline-none focus:ring-2 focus:ring-[#8D84FF] focus:ring-offset-2 focus:ring-offset-[#1A1D38]">Continue <ArrowRight className="size-4" /></button>
               </div>
             </div>
-          </div>
+            <div className="mt-3 rounded-[14px] border border-[#33385E] bg-[#151832] p-4"><p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7E84A7]">Why traders choose CK</p><div className="grid grid-cols-3 gap-2 text-center"><div><BadgeCheck className="mx-auto size-4 text-[#47D597]" /><p className="mt-1 text-[10px] leading-3 text-[#A7ABC3]">Up to 100%<br />profit split</p></div><div><ShieldCheck className="mx-auto size-4 text-[#8D84FF]" /><p className="mt-1 text-[10px] leading-3 text-[#A7ABC3]">1:100<br />leverage</p></div><div><CreditCard className="mx-auto size-4 text-[#F46C8E]" /><p className="mt-1 text-[10px] leading-3 text-[#A7ABC3]">Payouts in<br />~12 hours</p></div></div><div className="mt-4 border-t border-[#33385E] pt-3 text-center text-[10px] text-[#7E84A7]">Secure checkout · Visa · Mastercard · Crypto</div></div>
+          </aside>
         </div>
       </main>
 
-      {/* Mobile Sticky Summary */}
-      <div className="fixed bottom-0 left-0 right-0 lg:hidden border-t border-[#25283F] bg-gradient-to-t from-[#050914] to-[#080B17] p-4">
-        <div className="space-y-2">
-          <div className="flex justify-between text-sm">
-            <span className="text-[#999BA3]">Total:</span>
-            <span className="text-xl font-bold text-[#F6C94C]">
-              ${totals.total.toFixed(2)}
-            </span>
-          </div>
-          <button className="w-full rounded-lg bg-gradient-to-r from-[#D4A03E] to-[#F6C94C] py-3 font-bold text-[#050914] transition-all hover:shadow-lg hover:shadow-[#F6C94C]/30 flex items-center justify-center gap-2">
-            Continue to Checkout <ArrowRight size={16} />
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Bottom Padding */}
-      <div className="h-24 lg:hidden" />
+      <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between border-t border-[#3B4070] bg-[#11142B]/95 px-4 py-3 backdrop-blur-xl lg:hidden"><div><p className="text-[10px] text-[#A7ABC3]">Total</p><p className="text-lg font-bold text-white">{currency(total)}</p></div><button className="flex h-11 items-center gap-2 rounded-xl bg-[#5B4CFF] px-5 text-sm font-bold text-white">Continue <ArrowRight className="size-4" /></button></div>
     </div>
   );
 }
