@@ -40,9 +40,19 @@ interface ConfiguratorState {
   selectedAddOns: AddOnType[];
   quantity: number;
   couponDiscount: number;
+  currencyCode: (typeof CURRENCIES)[number]['code'];
 }
 
 const COUPON = '10KFOR19';
+const CURRENCIES = [
+  { code: 'USD', flag: '🇺🇸', rate: 1 },
+  { code: 'EUR', flag: '🇪🇺', rate: 0.92 },
+  { code: 'CZK', flag: '🇨🇿', rate: 23.1 },
+  { code: 'GBP', flag: '🇬🇧', rate: 0.79 },
+  { code: 'AUD', flag: '🇦🇺', rate: 1.52 },
+  { code: 'CAD', flag: '🇨🇦', rate: 1.39 },
+  { code: 'CHF', flag: '🇨🇭', rate: 0.86 },
+] as const;
 const ADDON_ICONS: Record<AddOnType, typeof Zap> = {
   lifetime90: WalletCards,
   reward95: Sparkles,
@@ -51,8 +61,8 @@ const ADDON_ICONS: Record<AddOnType, typeof Zap> = {
   weekendHolding: Globe2,
   newsTrading: ShieldCheck,
 };
-const currency = (value: number) => `$${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-const balanceLabel = (size: number) => `$${size / 1000}K`;
+const currency = (value: number, code: string, rate: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: code, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value * rate);
+const balanceLabel = (size: number, code: string, rate: number) => `${new Intl.NumberFormat('en-US', { style: 'currency', currency: code, minimumFractionDigits: 0, maximumFractionDigits: 0 }).format((size / 1000) * rate)}K`;
 
 export function ConfiguratorClient() {
   const [state, setState] = useState<ConfiguratorState>({
@@ -62,12 +72,16 @@ export function ConfiguratorClient() {
     selectedAddOns: [],
     quantity: 1,
     couponDiscount: 0,
+    currencyCode: 'USD',
   });
   const [coupon, setCoupon] = useState('');
   const [couponApplied, setCouponApplied] = useState(false);
   const [couponError, setCouponError] = useState('');
   const [detailsOpen, setDetailsOpen] = useState(false);
 
+  const selectedCurrency = CURRENCIES.find((item) => item.code === state.currencyCode) ?? CURRENCIES[0];
+  const displayCurrency = (value: number) => currency(value, selectedCurrency.code, selectedCurrency.rate);
+  const displayBalance = (size: number) => balanceLabel(size, selectedCurrency.code, selectedCurrency.rate);
   const availableSizes = getAvailableAccountSizes(state.challengeType);
   const price = getPrice(state.challengeType, state.accountSize);
   const original = getOriginalPrice(state.challengeType, state.accountSize);
@@ -151,12 +165,15 @@ export function ConfiguratorClient() {
             </section>
 
             <section>
-              <div className="mb-3 flex items-center justify-between"><h2 className="text-sm font-semibold text-white">Account Balance</h2><span className="text-xs text-[#7E84A7]">Choose your starting capital</span></div>
+              <div className="mb-3 flex items-center justify-between"><div><h2 className="text-sm font-semibold text-white">Account Balance</h2><p className="mt-1 text-xs text-[#7E84A7]">Choose your starting capital</p></div><span className="text-xs text-[#7E84A7]">Trading account currency</span></div>
+              <div className="mb-4 flex max-w-full gap-2 overflow-x-auto pb-1" aria-label="Trading account currency">
+                {CURRENCIES.map((item) => <button key={item.code} type="button" aria-pressed={state.currencyCode === item.code} aria-label={`Use ${item.code} currency`} onClick={() => setState((current) => ({ ...current, currencyCode: item.code }))} className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition ${state.currencyCode === item.code ? 'border-[#675BFF] bg-[#5B4CFF] text-white' : 'border-[#33385E] bg-[#1A1D38] text-[#A7ABC3] hover:border-[#575D91] hover:text-white'}`}><span aria-hidden="true">{item.flag}</span>{item.code}</button>)}
+              </div>
               <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 lg:grid-cols-7">
                 {availableSizes.map((tier) => { const selected = state.accountSize === tier.size; return <button key={tier.size} disabled={tier.enabled === false} onClick={() => setState((current) => ({ ...current, accountSize: tier.size }))} className={`relative min-h-[92px] rounded-[14px] border px-2 py-3 text-center transition duration-200 disabled:cursor-not-allowed disabled:opacity-35 ${selected ? 'border-[#675BFF] bg-[#4E46C8]/55' : 'border-[#33385E] bg-[#1A1D38] hover:border-[#575D91]'}`}>
                   {tier.popular && <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-transparent bg-[linear-gradient(90deg,#D49F3E_0%,#E9BE57_28%,#FFF494_50%,#E9BE57_72%,#D49F3E_100%)] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-[#281522]">Popular</span>}
                   {selected && <span className="absolute right-2 top-2 flex size-4 items-center justify-center rounded-full bg-[#47D597] text-[#11251E]"><Check className="size-3" strokeWidth={3} /></span>}
-                  <span className="block text-[15px] font-bold text-white">{balanceLabel(tier.size)}</span><span className="mt-2 block text-[15px] font-bold text-[#D7D9E8]">{tier.enabled === false ? 'Unavailable' : currency(tier.current)}</span><span className="mt-0.5 block text-[10px] text-[#7E84A7] line-through">{tier.enabled === false ? '' : currency(tier.original)}</span><span className="mt-1 block text-[10px] text-[#47D597]">{tier.enabled === false ? '' : `Save ${getSavingsPercent(state.challengeType, tier.size)}%`}</span>
+                  <span className="block text-[15px] font-bold text-white">{displayBalance(tier.size)}</span><span className="mt-2 block text-[15px] font-bold text-[#D7D9E8]">{tier.enabled === false ? 'Unavailable' : displayCurrency(tier.current)}</span><span className="mt-0.5 block text-[10px] text-[#7E84A7] line-through">{tier.enabled === false ? '' : displayCurrency(tier.original)}</span><span className="mt-1 block text-[10px] text-[#47D597]">{tier.enabled === false ? '' : `Save ${getSavingsPercent(state.challengeType, tier.size)}%`}</span>
                 </button>; })}
               </div>
             </section>
@@ -171,20 +188,20 @@ export function ConfiguratorClient() {
             <section>
               <div className="mb-3 flex items-end justify-between"><div><h2 className="text-sm font-semibold text-white">Add-ons</h2><p className="mt-1 text-xs text-[#7E84A7]">Optional upgrades for more flexibility.</p></div><span className="text-xs text-[#7E84A7]">{state.selectedAddOns.length} selected</span></div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {(Object.values(ADDONS) as (typeof ADDONS)[AddOnType][]).map((addon) => { const selected = state.selectedAddOns.includes(addon.id); const Icon = ADDON_ICONS[addon.id]; return <div key={addon.id} className={`rounded-[14px] border p-3.5 transition ${selected ? 'border-[#675BFF] bg-[#4E46C8]/35' : 'border-[#33385E] bg-[#1A1D38]'}`}><div className="flex items-start justify-between"><span className="flex size-8 items-center justify-center rounded-lg bg-[#262A4A] text-[#8D84FF]"><Icon className="size-4" /></span>{selected && <Check className="size-4 text-[#47D597]" />}</div><p className="mt-3 text-xs font-semibold text-white">{addon.name}</p><p className="mt-1 min-h-8 text-[11px] leading-4 text-[#A7ABC3]">{addon.description}</p><button onClick={() => toggleAddon(addon.id)} className={`mt-3 flex h-8 w-full items-center justify-center rounded-lg text-xs font-semibold transition ${selected ? 'bg-[#33385E] text-white' : 'bg-[#252A4A] text-[#D4D7E8] hover:bg-[#5B4CFF] hover:text-white'}`}>{selected ? 'Added' : `+ Add · ${currency(addon.surcharge)}`}</button></div>; })}
+                {(Object.values(ADDONS) as (typeof ADDONS)[AddOnType][]).map((addon) => { const selected = state.selectedAddOns.includes(addon.id); const Icon = ADDON_ICONS[addon.id]; return <div key={addon.id} className={`rounded-[14px] border p-3.5 transition ${selected ? 'border-[#675BFF] bg-[#4E46C8]/35' : 'border-[#33385E] bg-[#1A1D38]'}`}><div className="flex items-start justify-between"><span className="flex size-8 items-center justify-center rounded-lg bg-[#262A4A] text-[#8D84FF]"><Icon className="size-4" /></span>{selected && <Check className="size-4 text-[#47D597]" />}</div><p className="mt-3 text-xs font-semibold text-white">{addon.name}</p><p className="mt-1 min-h-8 text-[11px] leading-4 text-[#A7ABC3]">{addon.description}</p><button onClick={() => toggleAddon(addon.id)} className={`mt-3 flex h-8 w-full items-center justify-center rounded-lg text-xs font-semibold transition ${selected ? 'bg-[#33385E] text-white' : 'bg-[#252A4A] text-[#D4D7E8] hover:bg-[#5B4CFF] hover:text-white'}`}>{selected ? 'Added' : `+ Add · ${displayCurrency(addon.surcharge)}`}</button></div>; })}
               </div>
             </section>
           </div>
 
           <aside className="lg:sticky lg:top-[88px]">
             <div className="rounded-[16px] border border-[#3B4070] bg-[#1A1D38] shadow-[0_18px_60px_rgba(5,7,28,.3)]">
-              <div className="border-b border-[#33385E] p-5"><div className="flex items-start justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.10em] text-[#8D84FF]">Your challenge</p><h2 className="mt-1 text-lg font-semibold text-white">{selectedChallenge.name} · {balanceLabel(state.accountSize)}</h2></div><span className="rounded-lg bg-[#282D4D] px-2 py-1 text-[11px] font-medium text-[#A7ABC3]">{state.platform === 'mt5' ? 'MT5' : 'TradeLocker'}</span></div><div className="mt-4 flex items-end justify-between"><div><span className="text-2xl font-bold text-white">{currency(price)}</span><span className="ml-2 text-xs text-[#7E84A7] line-through">{currency(original)}</span></div><span className="text-xs font-semibold text-[#47D597]">Save {getSavingsPercent(state.challengeType, state.accountSize)}%</span></div></div>
+              <div className="border-b border-[#33385E] p-5"><div className="flex items-start justify-between"><div><p className="text-[10px] font-semibold uppercase tracking-[0.10em] text-[#8D84FF]">Your challenge</p><h2 className="mt-1 text-lg font-semibold text-white">{selectedChallenge.name} · {displayBalance(state.accountSize)}</h2></div><span className="rounded-lg bg-[#282D4D] px-2 py-1 text-[11px] font-medium text-[#A7ABC3]">{state.platform === 'mt5' ? 'MT5' : 'TradeLocker'}</span></div><div className="mt-4 flex items-end justify-between"><div><span className="text-2xl font-bold text-white">{displayCurrency(price)}</span><span className="ml-2 text-xs text-[#7E84A7] line-through">{displayCurrency(original)}</span></div><span className="text-xs font-semibold text-[#47D597]">Save {getSavingsPercent(state.challengeType, state.accountSize)}%</span></div></div>
               <div className="border-b border-[#33385E] px-5 py-3"><button onClick={() => setDetailsOpen((open) => !open)} className="flex w-full items-center justify-between text-xs font-semibold text-[#D7D9E8]"><span>View Plan Details</span>{detailsOpen ? <ChevronUp className="size-4 text-[#8D84FF]" /> : <ChevronDown className="size-4 text-[#8D84FF]" />}</button>{detailsOpen && <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 border-t border-[#33385E] pt-3 text-[11px] text-[#A7ABC3]"><span>Phase 1 target <b className="float-right text-white">{rules.phase1Target ? `${rules.phase1Target}%` : '—'}</b></span><span>Phase 2 target <b className="float-right text-white">{rules.phase2Target ? `${rules.phase2Target}%` : '—'}</b></span><span>Daily loss <b className="float-right text-white">{rules.maxDailyLoss}%</b></span><span>Max loss <b className="float-right text-white">{rules.maxTotalLoss}%</b></span><span>Min trading days <b className="float-right text-white">{rules.minTradingDays}</b></span><span>Trading period <b className="float-right text-white">{rules.unlimitedPeriod ? 'Unlimited' : 'Bi-weekly'}</b></span>{rules.consistency && <span>Consistency <b className="float-right text-white">{rules.consistency}%</b></span>}</div>}</div>
               <div className="flex flex-col gap-4 p-5">
                 <div className="flex items-center justify-between"><span className="text-xs font-medium text-[#A7ABC3]">Number of accounts</span><div className="flex items-center gap-3 rounded-lg border border-[#3B4070] bg-[#202443] p-1"><button onClick={() => setState((current) => ({ ...current, quantity: Math.max(1, current.quantity - 1) }))} className="flex size-6 items-center justify-center rounded text-[#A7ABC3] hover:bg-[#33385E] hover:text-white" aria-label="Decrease quantity"><Minus className="size-3" /></button><span className="w-4 text-center text-sm font-semibold text-white">{state.quantity}</span><button onClick={() => setState((current) => ({ ...current, quantity: Math.min(10, current.quantity + 1) }))} className="flex size-6 items-center justify-center rounded text-[#A7ABC3] hover:bg-[#33385E] hover:text-white" aria-label="Increase quantity"><Plus className="size-3" /></button></div></div>
-                {state.quantity > 1 && <div className="rounded-lg border border-[#33385E] bg-[#202443] p-3 text-[11px] text-[#A7ABC3]">Bulk order: {state.quantity} × {balanceLabel(state.accountSize)} accounts</div>}
+                {state.quantity > 1 && <div className="rounded-lg border border-[#33385E] bg-[#202443] p-3 text-[11px] text-[#A7ABC3]">Bulk order: {state.quantity} × {displayBalance(state.accountSize)} accounts</div>}
                 <div className="flex gap-2"><input value={coupon} onChange={(event) => setCoupon(event.target.value)} placeholder="Promo code" aria-label="Promo code" className="min-w-0 flex-1 rounded-lg border border-[#33385E] bg-[#11142B] px-3 text-xs text-white outline-none placeholder:text-[#6F7598] focus:border-[#675BFF]" /><button onClick={applyCoupon} className="rounded-lg border border-[#575D91] px-3 text-xs font-semibold text-[#D7D9E8] hover:border-[#8D84FF]">{couponApplied ? 'Applied' : 'Apply'}</button></div><p className="-mt-2 text-[10px] text-[#7E84A7]">Use <button onClick={() => setCoupon(COUPON)} className="font-semibold text-[#8D84FF]">10KFOR19</button> for 15% off.</p>{couponError && <p className="-mt-2 text-[10px] text-[#F48B9D]">{couponError}</p>}
-                <div className="flex flex-col gap-2 border-t border-[#33385E] pt-4 text-xs"><div className="flex justify-between text-[#A7ABC3]"><span>Subtotal</span><span className="text-white">{currency(subtotal)}</span></div>{state.couponDiscount > 0 && <div className="flex justify-between text-[#47D597]"><span>Discount (15%)</span><span>-{currency(discount)}</span></div>}<div className="flex justify-between pt-1 text-[23px] font-bold leading-tight text-white"><span>Total</span><span>{currency(total)}</span></div></div>
+                <div className="flex flex-col gap-2 border-t border-[#33385E] pt-4 text-xs"><div className="flex justify-between text-[#A7ABC3]"><span>Subtotal</span><span className="text-white">{displayCurrency(subtotal)}</span></div>{state.couponDiscount > 0 && <div className="flex justify-between text-[#47D597]"><span>Discount (15%)</span><span>-{displayCurrency(discount)}</span></div>}<div className="flex justify-between pt-1 text-[23px] font-bold leading-tight text-white"><span>Total</span><span>{displayCurrency(total)}</span></div></div>
                 <button className="flex h-12 items-center justify-center gap-2 rounded-xl bg-[#5B4CFF] text-sm font-bold text-white transition hover:bg-[#6F62FF] focus:outline-none focus:ring-2 focus:ring-[#8D84FF] focus:ring-offset-2 focus:ring-offset-[#1A1D38]">Continue <ArrowRight className="size-4" /></button>
               </div>
             </div>
@@ -193,7 +210,7 @@ export function ConfiguratorClient() {
         </div>
       </main>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between border-t border-[#3B4070] bg-[#11142B]/95 px-4 py-3 backdrop-blur-xl lg:hidden"><div><p className="text-[10px] text-[#A7ABC3]">Total</p><p className="text-lg font-bold text-white">{currency(total)}</p></div><button className="flex h-11 items-center gap-2 rounded-xl bg-[#5B4CFF] px-5 text-sm font-bold text-white">Continue <ArrowRight className="size-4" /></button></div>
+      <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between border-t border-[#3B4070] bg-[#11142B]/95 px-4 py-3 backdrop-blur-xl lg:hidden"><div><p className="text-[10px] text-[#A7ABC3]">Total</p><p className="text-lg font-bold text-white">{displayCurrency(total)}</p></div><button className="flex h-11 items-center gap-2 rounded-xl bg-[#5B4CFF] px-5 text-sm font-bold text-white">Continue <ArrowRight className="size-4" /></button></div>
     </div>
   );
 }
