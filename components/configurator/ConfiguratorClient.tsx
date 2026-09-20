@@ -17,6 +17,7 @@ import {
   WalletCards,
   Zap,
 } from 'lucide-react';
+import { CKLogo } from '@/components/brand/CKLogo';
 import {
   ADDONS,
   CHALLENGE_META,
@@ -104,7 +105,7 @@ export function ConfiguratorClient() {
       <header className="sticky top-0 z-40 border-b border-[#292E50] bg-[#11142B]/95 backdrop-blur-xl">
         <div className="mx-auto flex h-[68px] max-w-[1240px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="/" className="flex items-center gap-2.5" aria-label="CK Propfirm home">
-            <img src="/favicon-32x32.png" alt="CK Propfirm" className="size-8 rounded-md" />
+            <CKLogo variant="dark" showWordmark={false} className="h-8 w-8" />
             <span className="text-[15px] font-bold tracking-[0.18em] text-white">CK PROPFIRM</span>
           </a>
           <nav className="flex items-center gap-5 text-[13px] font-medium text-[#A7ABC3]">
