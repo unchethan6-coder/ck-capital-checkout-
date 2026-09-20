@@ -65,6 +65,12 @@ function countryToLocale(country: string | null | undefined): string {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // The challenge configurator is a standalone checkout-style surface and
+  // intentionally does not use the marketing locale shell.
+  if (pathname === '/configure' || pathname.startsWith('/configure/')) {
+    return NextResponse.next();
+  }
+
   // Prefixed paths (explicit user intent) go straight to next-intl.
   const hasPrefix = locales.some(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
