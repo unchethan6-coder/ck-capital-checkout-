@@ -551,22 +551,22 @@ export function ChallengeComparison({
               </div>
 
               {/* Checkout Panel */}
-              <div className="flex flex-col justify-between gap-5 rounded-xl border border-white/10 bg-black/10 p-5 text-white shadow-inner lg:col-span-4">
+              <div className="flex flex-col justify-between gap-5 rounded-2xl border border-white/10 bg-[#0B0F22]/70 p-5 text-white shadow-xl backdrop-blur-md lg:col-span-4">
                 <div>
                   <div className="flex justify-between items-baseline border-b border-white/10 pb-4">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-white/65">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-white/60">
                         Selected Plan
                       </span>
-                      <div className="mt-0.5 text-lg font-extrabold text-white">
+                      <div className="mt-0.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
                         {activeTypeName} ${selectedSize}
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-extrabold text-emerald-400 sm:text-3xl">
+                      <div className="text-3xl font-extrabold text-emerald-400 sm:text-4xl">
                         {formatAmount(orderTotal(quantity))}
                       </div>
-                      <div className="text-xs text-white/55 font-normal">
+                      <div className="text-xs text-white/45 font-normal">
                         <span className="line-through">
                           {formatAmount(
                             parseFloat((activePlan?.orig || "$0").replace(/[$,]/g, "")) * quantity
@@ -606,8 +606,8 @@ export function ChallengeComparison({
                             aria-pressed={isActive}
                             onClick={() => setQuantity(tier.n)}
                             className={cn(
-                              "flex min-h-9 w-full items-center gap-2 rounded-lg px-2 py-1 text-left transition-colors",
-                              isActive ? "bg-white/[0.07]" : "hover:bg-white/[0.04]"
+                              "flex min-h-9 w-full items-center gap-2 rounded-lg px-2.5 py-1 text-left transition-colors",
+                              isActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"
                             )}
                           >
                             <Check
@@ -670,7 +670,7 @@ export function ChallengeComparison({
                       rel="noopener noreferrer"
                       className="block min-w-0 flex-1"
                     >
-                      <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-lg hover:shadow-cyan-500/25">
+                      <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-[0_4px_22px_rgba(231,198,107,0.4)] hover:shadow-amber-400/50 hover:brightness-105 transition-all">
                         <span>{t("startChallenge") || "Start Challenge"}</span>
                         <ArrowRight className="w-4 h-4" />
                       </button>
