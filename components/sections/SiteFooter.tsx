@@ -256,25 +256,23 @@ export function SiteFooter() {
             <p className="max-w-4xl text-xs font-medium leading-relaxed text-foreground/65 sm:text-[12.5px]">
               {t("disclaimerSimulated")}
             </p>
-            <section
-              aria-label={t("disclaimerImportantTitle")}
-              className="mt-4 rounded-xl border border-foreground/[0.08] bg-foreground/[0.02]"
-            >
-              <h2 className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-foreground/65">
+            <details className="group mt-4 rounded-xl border border-foreground/[0.08] bg-foreground/[0.02]">
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-foreground/65 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
                 {t("disclaimerImportantTitle")}
-              </h2>
+                <span aria-hidden="true" className="text-lg font-bold leading-none text-[#A98BFF] transition-transform duration-200 group-open:rotate-45">+</span>
+              </summary>
               <div className="space-y-6 border-t border-foreground/[0.08] px-4 py-5 text-xs leading-relaxed text-foreground/65 sm:text-[12.5px]">
-              <p className="font-medium text-foreground/65">
-                <strong>{t("disclaimerSimulated")}</strong>
+              <p className="font-bold text-foreground/80 sm:text-[13px] leading-relaxed">
+                {t("disclaimerSimulated")}
               </p>
 
               <div className="space-y-2">
-                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("simulatedEnvTitle")}</h3>
+                <h3 className="text-[12.5px] font-bold text-foreground/75">{t("simulatedEnvTitle")}</h3>
                 <p>{t("simulatedEnvBody")}</p>
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("noInvestmentTitle")}</h3>
+                <h3 className="text-[12.5px] font-bold text-foreground/75">{t("noInvestmentTitle")}</h3>
                 <p>{t("noInvestmentIntro")}</p>
                 <ul className="list-disc space-y-1 pl-5">
                   {(t.raw("noInvestmentBullets") as string[]).map((b: string) => (
@@ -290,25 +288,25 @@ export function SiteFooter() {
               <p>{t("disclaimerPerformance")}</p>
 
               <div className="space-y-2">
-                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("riskWarningTitle")}</h3>
+                <h3 className="text-[12.5px] font-bold text-foreground/75">{t("riskWarningTitle")}</h3>
                 <p>{t("riskWarningBody")}</p>
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("corporateTitle")}</h3>
+                <h3 className="text-[12.5px] font-bold text-foreground/75">{t("corporateTitle")}</h3>
                 <p>{t("corporateBody")}</p>
                 <p>{t("corporateNote")}</p>
                 <p>{t("corporateRestrictions")}</p>
               </div>
 
               <div className="space-y-1">
-                <h3 className="text-[12.5px] font-bold text-foreground/70">{t("registeredAddressTitle")}</h3>
+                <h3 className="text-[12.5px] font-bold text-foreground/75">{t("registeredAddressTitle")}</h3>
                 <p>{t("registeredAddressBody")}</p>
               </div>
 
               <p>{t("disclaimerJurisdiction")}</p>
               </div>
-            </section>
+            </details>
           </div>
         </Container>
       </div>
