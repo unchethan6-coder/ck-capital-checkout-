@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import {
   AlertCircle,
@@ -885,7 +885,24 @@ export function TradingObjectivesPageClient({
   const [path, setPath] = useState<Path>(initial.path);
   const [evalType, setEvalType] = useState<EvalType>(initial.evalType);
   const [platform, setPlatform] = useState<Platform>(initial.platform);
-  const [size, setSize] = useState<string | null>(initial.size ?? "$100K");
+  const [size, setSize] = useState<string | null>(() => {
+    if (initial.path === "instant" && (initial.size === "$300K" || initial.size === "300K")) {
+      return "$100K";
+    }
+    return initial.size ?? "$100K";
+  });
+
+  const visibleSizes = useMemo(() => {
+    return path === "instant"
+      ? sizes.filter((s) => s !== "$300K" && s !== "300K")
+      : sizes;
+  }, [path, sizes]);
+
+  useEffect(() => {
+    if (path === "instant" && (size === "$300K" || size === "300K")) {
+      setSize("$100K");
+    }
+  }, [path, size]);
 
   const pathsList: { id: Path; label: string; sub: string; badge: string }[] = [
     {
@@ -979,7 +996,10 @@ export function TradingObjectivesPageClient({
     setPath(id);
     if (id !== "2step" && evalType !== "standard") setEvalType("standard");
     const type = pathToType(id, id !== "2step" ? "standard" : evalType);
-    const nextSize = size && !rules[type]?.[size] ? "$100K" : size;
+    let nextSize = size && !rules[type]?.[size] ? "$100K" : size;
+    if (id === "instant" && (nextSize === "$300K" || nextSize === "300K")) {
+      nextSize = "$100K";
+    }
     if (nextSize !== size) setSize(nextSize);
     syncUrl({
       path: id,
@@ -1301,12 +1321,17 @@ export function TradingObjectivesPageClient({
               </div>
 
               <div
-                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5 sm:gap-3"
+                className={cn(
+                  "grid gap-2.5 sm:gap-3",
+                  path === "instant"
+                    ? "grid-cols-3 sm:grid-cols-3 md:grid-cols-6"
+                    : "grid-cols-3 sm:grid-cols-4 md:grid-cols-7"
+                )}
                 role="group"
                 aria-label="Account size"
                 data-od-id="selector-size"
               >
-                {sizes.map((s) => {
+                {visibleSizes.map((s) => {
                   const isSelected = size === s;
                   return (
                     <button

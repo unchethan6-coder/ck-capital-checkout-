@@ -84,10 +84,12 @@ export function ChallengeComparison({
     if (typeof window === "undefined") return;
     const searchParams = new URLSearchParams(window.location.search);
     const rawType = searchParams.get("type") || searchParams.get("plan");
+    let currentType = "standard";
     if (rawType) {
       const normalizedType = rawType === "one-step" ? "1step" : rawType;
       if (["standard", "1step", "instant"].includes(normalizedType)) {
         setSelectedType(normalizedType);
+        currentType = normalizedType;
       }
     }
 
@@ -95,7 +97,11 @@ export function ChallengeComparison({
     if (rawSize) {
       const cleanSize = rawSize.replace("$", "").toUpperCase();
       if (accountSizes.includes(cleanSize)) {
-        setSelectedSize(cleanSize);
+        if (currentType === "instant" && cleanSize === "300K") {
+          setSelectedSize("100K");
+        } else {
+          setSelectedSize(cleanSize);
+        }
       }
     }
 
@@ -107,6 +113,19 @@ export function ChallengeComparison({
       }
     }
   }, []);
+
+  // Filter out 300K completely when instant funding is active
+  const visibleSizes = useMemo(() => {
+    return selectedType === "instant"
+      ? accountSizes.filter((s) => s !== "300K")
+      : accountSizes;
+  }, [selectedType]);
+
+  useEffect(() => {
+    if (selectedType === "instant" && selectedSize === "300K") {
+      setSelectedSize("100K");
+    }
+  }, [selectedType, selectedSize]);
 
   // Data matrix from CMS or static fallback
   const rawData: Record<string, Record<string, PlanDetails | null>> = useMemo(() => {
@@ -178,7 +197,9 @@ export function ChallengeComparison({
 
   const handleTypeSelect = (typeId: string) => {
     setSelectedType(typeId);
-    if (!rawData[selectedSize]?.[typeId]) {
+    if (typeId === "instant" && selectedSize === "300K") {
+      setSelectedSize("100K");
+    } else if (!rawData[selectedSize]?.[typeId]) {
       setSelectedSize("100K");
     }
   };
@@ -387,8 +408,16 @@ export function ChallengeComparison({
             </div>
 
             {/* Account Sizes Row - Guaranteed 100% visible, zero initial hidden delay */}
-            <div className={cn("grid grid-cols-2 gap-2.5 pb-16 sm:grid-cols-4 sm:gap-3 sm:pb-0 lg:grid-cols-7", viewMode === "cards" ? "" : "hidden")}>
-              {accountSizes.map((size) => {
+            <div
+              className={cn(
+                "grid grid-cols-2 gap-2.5 pb-16 sm:gap-3 sm:pb-0",
+                selectedType === "instant"
+                  ? "sm:grid-cols-3 lg:grid-cols-6"
+                  : "sm:grid-cols-4 lg:grid-cols-7",
+                viewMode === "cards" ? "" : "hidden"
+              )}
+            >
+              {visibleSizes.map((size) => {
                 const data = rawData[size]?.[selectedType];
                 const isSelected = size === selectedSize;
                 const isDisabled = !data;
@@ -736,12 +765,19 @@ export function ChallengeComparison({
                 </div>
 
                 <div className="overflow-x-auto overscroll-x-contain [scrollbar-width:thin] [scrollbar-color:#894CEF_#F2F0F8]">
-                  <div className="grid min-w-[1120px] grid-cols-[190px_repeat(7,minmax(124px,1fr))] gap-x-2 bg-[#F8F8FA] p-3">
+                  <div
+                    className={cn(
+                      "grid gap-x-2 bg-[#F8F8FA] p-3",
+                      selectedType === "instant"
+                        ? "min-w-[980px] grid-cols-[190px_repeat(6,minmax(124px,1fr))]"
+                        : "min-w-[1120px] grid-cols-[190px_repeat(7,minmax(124px,1fr))]"
+                    )}
+                  >
                     <div className="rounded-t-xl border-x border-t border-[#D9D9D9] bg-[#F2F0F8] p-4 shadow-sm">
                       <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500">Account</span>
                       <p className="mt-1 text-sm font-extrabold text-[#0A0A0C]">Key features</p>
                     </div>
-                    {accountSizes.map((size) => {
+                    {visibleSizes.map((size) => {
                       const plan = rawData[size]?.[selectedType];
                       return (
                         <button
@@ -772,7 +808,7 @@ export function ChallengeComparison({
                     {comparisonRows.map((row, rowIndex) => (
                       <React.Fragment key={row.label}>
                         <div className={cn("border-x border-b border-[#D9D9D9] px-4 py-3 text-[11px] font-semibold text-gray-600", rowIndex % 2 ? "bg-white" : "bg-[#F8F8FA]")}>{row.label}</div>
-                        {accountSizes.map((size) => {
+                        {visibleSizes.map((size) => {
                           const plan = rawData[size]?.[selectedType];
                           return (
                             <div
@@ -791,7 +827,7 @@ export function ChallengeComparison({
                     ))}
 
                     <div className="rounded-b-xl border-x border-b border-[#D9D9D9] bg-[#F2F0F8] px-4 py-4 text-[11px] font-bold text-gray-600 shadow-sm">Choose account</div>
-                    {accountSizes.map((size) => {
+                    {visibleSizes.map((size) => {
                       const plan = rawData[size]?.[selectedType];
                       return (
                         <div key={`cta-${size}`} className={cn("rounded-b-xl border-x border-b border-[#D9D9D9] bg-white p-2.5 shadow-sm", selectedSize === size && "bg-violet-50")}>
