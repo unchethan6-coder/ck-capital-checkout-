@@ -14,42 +14,80 @@ export const config = {
 const LOCALE_COOKIE = "NEXT_LOCALE";
 const DETECTED_COOKIE = "ck-geo-detected";
 
-// Public geolocation endpoints, tried in order when the host injects no country
-// header (Vercel/Cloudflare). Each is called at most once per visitor.
-const GEO_ENDPOINTS: Array<{ url: string; field: string }> = [
-  { url: "https://ipapi.co/json/", field: "country_code" },
-  { url: "https://ip-api.com/json/?fields=countryCode,status", field: "countryCode" },
-  { url: "https://cloudflare.com/cdn-cgi/trace", field: "loc" },
-];
+function getClientIp(request: NextRequest): string | null {
+  const cfIp = request.headers.get("cf-connecting-ip");
+  if (cfIp) return cfIp.trim();
 
-async function detectCountryFromIp(): Promise<string | null> {
-  for (const endpoint of GEO_ENDPOINTS) {
+  const realIp = request.headers.get("x-real-ip");
+  if (realIp) return realIp.trim();
+
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    const first = forwardedFor.split(",")[0]?.trim();
+    if (first) return first;
+  }
+
+  return null;
+}
+
+function isPublicIp(ip: string): boolean {
+  if (!ip) return false;
+  if (ip === "127.0.0.1" || ip === "::1" || ip === "localhost") return false;
+  if (/^10\./.test(ip)) return false;
+  if (/^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(ip)) return false;
+  if (/^192\.168\./.test(ip)) return false;
+  if (/^100\.(6[4-9]|[7-9][0-9]|1[0-1][0-9]|12[0-7])\./.test(ip)) return false;
+  if (/^169\.254\./.test(ip)) return false;
+  if (/^(fc00|fe80)/i.test(ip)) return false;
+  return true;
+}
+
+async function detectCountryFromIp(clientIp: string): Promise<string | null> {
+  if (!clientIp || !isPublicIp(clientIp)) return null;
+
+  const endpoints = [
+    { url: `https://ipwho.is/${encodeURIComponent(clientIp)}`, field: "country_code" },
+    { url: `https://freeipapi.com/api/json/${encodeURIComponent(clientIp)}`, field: "countryCode" },
+  ];
+
+  for (const endpoint of endpoints) {
     try {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3000);
+      const timer = setTimeout(() => controller.abort(), 1800);
       const res = await fetch(endpoint.url, {
         signal: controller.signal,
-        headers: { Accept: "text/plain" },
+        headers: { Accept: "application/json" },
         cache: "no-store",
       });
       clearTimeout(timer);
       if (!res.ok) continue;
-      const text = await res.text();
-
-      if (endpoint.url.includes("cloudflare.com")) {
-        const match = text.match(/^loc=([A-Z]{2})$/m);
-        if (match) return match[1];
-      } else {
-        try {
-          const data = JSON.parse(text);
-          const value = data[endpoint.field];
-          if (typeof value === "string" && /^[A-Z]{2}$/.test(value)) return value;
-        } catch {
-          /* try next endpoint */
-        }
+      const data = await res.json();
+      const value = data[endpoint.field];
+      if (typeof value === "string" && /^[A-Z]{2}$/i.test(value)) {
+        return value.toUpperCase();
       }
     } catch {
       /* try next endpoint */
+    }
+  }
+  return null;
+}
+
+function getLocaleFromAcceptLanguage(acceptLanguage: string | null): string | null {
+  if (!acceptLanguage) return null;
+  const preferences = acceptLanguage
+    .split(",")
+    .map((part) => {
+      const [lang, qVal] = part.trim().split(";");
+      const q = qVal ? parseFloat(qVal.replace("q=", "")) : 1.0;
+      const code = lang.split("-")[0].toLowerCase();
+      return { code, q: isNaN(q) ? 0 : q };
+    })
+    .sort((a, b) => b.q - a.q);
+
+  for (const pref of preferences) {
+    if ((locales as readonly string[]).includes(pref.code)) {
+      return pref.code;
     }
   }
   return null;
@@ -82,15 +120,40 @@ export async function middleware(request: NextRequest) {
   }
 
   if (!detectedLocale) {
+    // 1. Check edge / reverse-proxy country headers
     const country =
-      request.headers.get("x-vercel-ip-country") ||
       request.headers.get("cf-ipcountry") ||
+      request.headers.get("x-vercel-ip-country") ||
+      request.headers.get("x-country-code") ||
+      request.headers.get("geoip-country-code") ||
       null;
-    if (country) {
-      detectedLocale = countryToLocale(country);
+
+    if (
+      country &&
+      /^[A-Z]{2}$/i.test(country) &&
+      country.toUpperCase() !== "XX" &&
+      country.toUpperCase() !== "T1"
+    ) {
+      detectedLocale = countryToLocale(country.toUpperCase());
     } else if (!alreadyDetected) {
-      const resolved = await detectCountryFromIp();
-      detectedLocale = countryToLocale(resolved);
+      // 2. Fall back to visitor's public IP geolocation
+      const clientIp = getClientIp(request);
+      if (clientIp && isPublicIp(clientIp)) {
+        const resolvedCountry = await detectCountryFromIp(clientIp);
+        if (resolvedCountry) {
+          detectedLocale = countryToLocale(resolvedCountry);
+        }
+      }
+    }
+
+    // 3. Fall back to visitor browser's Accept-Language header
+    if (!detectedLocale) {
+      const browserLocale = getLocaleFromAcceptLanguage(
+        request.headers.get("accept-language")
+      );
+      if (browserLocale) {
+        detectedLocale = browserLocale;
+      }
     }
   }
 
