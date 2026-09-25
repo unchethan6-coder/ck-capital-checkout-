@@ -41,7 +41,7 @@ import {
 import { cn } from "@/lib/utils";
 
 type Path = "1step" | "2step" | "instant";
-type EvalType = "standard" | "middle" | "pro";
+type EvalType = "standard" | "pro";
 type Platform = "both" | "mt5" | "tradelocker";
 
 export interface TradingObjectivesInitial {
@@ -254,7 +254,7 @@ function Step2Detail({
   rule: ChallengeSizeRule | undefined;
 }) {
   const t = useTranslations("tradingObjectives");
-  const middle = evalType === "middle";
+  const middle = false;
   const showDollar = Boolean(size && rule);
 
   if (evalType === "pro") {
@@ -867,7 +867,7 @@ function ObjectiveFaq() {
 
 function pathToType(path: Path, evalType: EvalType): ChallengeType {
   if (path === "1step") return "one-step";
-  if (path === "2step") return evalType === "middle" ? "middleweight" : "standard";
+  if (path === "2step") return "standard";
   return "instant";
 }
 
@@ -910,7 +910,6 @@ export function TradingObjectivesPageClient({
 
   const evalTypesList: { id: EvalType; label: string }[] = [
     { id: "standard", label: t("evalTypes.standard") },
-    { id: "middle", label: t("evalTypes.middle") },
     { id: "pro", label: t("evalTypes.pro") },
   ];
 
@@ -1005,7 +1004,7 @@ export function TradingObjectivesPageClient({
     syncUrl({ size: id });
   };
 
-  const modelKey = evalType === "middle" ? "middleweight" : "standard";
+  const modelKey = "standard";
   const step2Rule = size ? rules[modelKey]?.[size] : undefined;
   const step1Rule = size ? rules["one-step"]?.[size] : undefined;
   const instantRule = size ? rules["instant"]?.[size] : undefined;
@@ -1013,7 +1012,7 @@ export function TradingObjectivesPageClient({
 
   // Dynamic pricing calculation for sticky summary
   const priceData = size ? CHALLENGE_PRICES[typeParam]?.[size] : undefined;
-  const activePrice = priceData ? priceData.price : "$19.20";
+  const activePrice = priceData ? priceData.price : "$18.20";
   const activeOldPrice = priceData ? priceData.oldPrice : "$64.00";
   const activeRule =
     path === "2step" ? step2Rule : path === "1step" ? step1Rule : instantRule;

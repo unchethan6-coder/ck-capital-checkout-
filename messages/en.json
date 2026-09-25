@@ -16,14 +16,14 @@
     "evaluationDesc": "1-Step & 2-Step Challenges",
     "oneStepTitle": "1-Step Evaluation",
     "oneStepDesc": "Single-stage objective, fast-track to funded trader.",
-    "oneStepPrice": "From $32",
+    "oneStepPrice": "From $18",
     "twoStepTitle": "2-Step Evaluation",
     "twoStepDesc": "Traditional two-phase verification with max profit split.",
-    "twoStepPrice": "From $49",
+    "twoStepPrice": "From $18",
     "instantFunding": "Instant Funding",
     "instantTitle": "Instant Funding",
     "instantDesc": "Direct simulated capital with no evaluation phase.",
-    "instantPrice": "From $55",
+    "instantPrice": "From $39",
     "compareAllTitle": "Compare All Programs",
     "compareAllDesc": "Side-by-side comparison of drawdown, profit targets & fees",
     "tradingObjectivesTitle": "Trading Objectives",
@@ -91,32 +91,32 @@
     "supportVal": "24/7"
   },
   "howItWorks": {
-    "title": "How It Works",
+    "title": "From challenge to funded in days",
     "subtitle": "Four clear steps from your first simulated trade to receiving real reward payouts.",
     "steps": {
       "step1": {
         "step": "01",
         "phase": "Phase 1",
-        "title": "Evaluation",
-        "description": "Trade your way and hit the profit target with no consistency rules and no time pressure."
+        "title": "Pick your programme",
+        "description": "Choose a challenge type and an account size from $5K to $300K. One evaluation fee, paid once — no subscription."
       },
       "step2": {
         "step": "02",
         "phase": "Phase 2",
-        "title": "Verification",
-        "description": "Show your trading skills with the same simple rules. No unnecessary restrictions holding you back."
+        "title": "Hit the profit target",
+        "description": "Trade on MT5 or TradeLocker, reach the profit target and stay inside the drawdown limits. No minimum trading days and no time limit."
       },
       "step3": {
         "step": "03",
         "phase": "Phase 3",
-        "title": "Funded Trader",
-        "description": "Get funded and trade with confidence. Keep up to 100% of your profits."
+        "title": "Receive your funded account",
+        "description": "Once your evaluation is verified, your CK Qualified Analyst account is activated and you start building your track record."
       },
       "step4": {
         "step": "04",
         "phase": "Phase 4",
-        "title": "Get Paid",
-        "description": "Request your reward from the dashboard and receive it fast — eligible traders keep up to 100% of simulated profits."
+        "title": "Request your reward",
+        "description": "Ask for a reward on demand once the eligibility criteria are met. Settlement averages around 12 hours, and eligible analysts keep up to 100% of simulated profits."
       }
     },
     "badge": "Process",
@@ -126,7 +126,33 @@
     "profitSplit": "UP TO 100% PROFIT SPLIT",
     "readyFunded": "Ready to get funded?",
     "startJourney": "Start your journey today.",
-    "startChallenge": "Start Challenge"
+    "startChallenge": "Start Challenge",
+    "compareAll": "Compare all programmes",
+    "ctaFunded": "Get funded — up to 70% off",
+    "programsBadge": "Account programmes",
+    "viewPlans": "View plans",
+    "railFunded": "Funded",
+    "programs": {
+      "oneStep": {
+        "title": "1 Step Programmes",
+        "description": "Reach one profit target with no time limit. For traders who want a faster route to a funded account.",
+        "tag": "Most popular",
+        "railStart": "Eval"
+      },
+      "twoStep": {
+        "title": "2 Step Programmes",
+        "description": "The classic two-phase evaluation: the lowest entry fees, more drawdown room and a steady path to funding.",
+        "tag": "Classic",
+        "railStart": "Phase 01",
+        "railMid": "Phase 02"
+      },
+      "instant": {
+        "title": "Instant Programmes",
+        "description": "Skip the evaluation and start trading a simulated funded account right away. No phases, no waiting.",
+        "tag": "Fastest funding",
+        "railStart": "Now"
+      }
+    }
   },
   "whyChooseUs": {
     "title": "Everything you need to trade funded",
@@ -237,7 +263,8 @@
     "revealSizes": "Show all account sizes",
     "more": "+{count} more",
     "oneTimePaymentNotice": "Every evaluation fee is a one-time payment — no subscriptions, no recurring charges, no hidden fees.",
-    "quantity": "Quantity"
+    "quantity": "Quantity",
+    "showAmounts": "Show $ Amounts"
   },
   "platforms": {
     "eyebrow": "Platforms",
@@ -316,7 +343,7 @@
     "benefitFlexible": "Flexible Reward Cycles",
     "benefitAllocation": "Up to $1.2M Allocation",
     "benefitNoHidden": "No Hidden Fees",
-    "benefitStarting": "Starting at $58",
+    "benefitStarting": "Starting at $18",
     "viewEvaluations": "Compare Plans",
     "readyReward": "Ready to request your reward?",
     "readyRewardDesc": "Open your CK Propfirm dashboard, click request, then complete the required details.",

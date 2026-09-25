@@ -138,16 +138,6 @@ export const SEARCH_INDEX: SearchItem[] = [
     badge: "Popular",
   },
   {
-    id: "challenge-2step-middleweight",
-    category: "challenges",
-    title: "2-Step Middleweight Challenge",
-    description: "Lower profit target (8% Phase 1) designed for consistent, disciplined execution.",
-    keywords: ["middleweight", "2 step", "8%", "consistency", "disciplined"],
-    href: "/#start-challenge?type=middleweight",
-    iconName: "Gauge",
-    badge: "8% Target",
-  },
-  {
     id: "challenge-instant",
     category: "challenges",
     title: "Instant Funding",

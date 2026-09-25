@@ -19,7 +19,7 @@ export default async function TradingObjectivesPage({
   const path = rawPath === "1step" || rawPath === "instant" ? rawPath : "2step";
 
   const rawEval = typeof params.evalType === "string" ? params.evalType : "standard";
-  const evalType = rawEval === "middle" || rawEval === "pro" ? rawEval : "standard";
+  const evalType = rawEval === "pro" ? rawEval : "standard";
 
   const rawPlatform = typeof params.platform === "string" ? params.platform : "mt5";
   const platform = rawPlatform === "tradelocker" ? "tradelocker" : "mt5";

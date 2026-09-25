@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Regeln & Richtlinien",
     "oneStepTitle": "1-Stufen Evaluierung",
     "oneStepDesc": "Einphasiges Ziel, Schnellüberholspur zum geförderten Trader.",
-    "oneStepPrice": "Ab $32",
+    "oneStepPrice": "Ab $18",
     "twoStepTitle": "2-Stufen Evaluierung",
     "twoStepDesc": "Traditionelle 2-Phasen-Verifizierung mit maximaler Gewinnbeteiligung.",
-    "twoStepPrice": "Ab $49",
+    "twoStepPrice": "Ab $18",
     "instantTitle": "Sofort-Finanzierung",
-    "instantPrice": "Ab $55",
+    "instantPrice": "Ab $39",
     "compareAllTitle": "Alle Programme Vergleichen",
     "compareAllDesc": "Direkter Vergleich von Drawdown, Gewinnzielen und Gebühren",
     "tradingObjectivesTitle": "Handelsziele",
@@ -92,32 +92,32 @@
     "supportVal": "24/7"
   },
   "howItWorks": {
-    "title": "So Funktioniert Es",
+    "title": "Von der Challenge zum Funding in Tagen",
     "subtitle": "Vier klare Schritte von deinem ersten simulierten Trade bis zur Auszahlung.",
     "steps": {
       "step1": {
         "step": "01",
         "phase": "Phase 1",
-        "title": "Evaluierung",
-        "description": "Handeln Sie nach Ihrem eigenen Stil und erreichen Sie das Gewinnziel ohne Konsistenzregeln und ohne Zeitdruck."
+        "title": "Programm wählen",
+        "description": "Wählen Sie Challenge-Typ und Kontogröße von $5K bis $300K. Eine einmalige Evaluationsgebühr, kein Abo."
       },
       "step2": {
         "step": "02",
         "phase": "Phase 2",
-        "title": "Verifizierung",
-        "description": "Beweisen Sie Ihre Handelsfähigkeiten mit denselben einfachen Regeln. Keine unnötigen Einschränkungen."
+        "title": "Gewinnziel erreichen",
+        "description": "Handeln Sie auf MT5 oder TradeLocker, erreichen Sie das Gewinnziel und bleiben Sie in den Drawdown-Grenzen. Keine Mindesthandelstage, kein Zeitlimit."
       },
       "step3": {
         "step": "03",
         "phase": "Phase 3",
-        "title": "Geförderter Trader",
-        "description": "Werden Sie finanziert und handeln Sie mit Selbstvertrauen. Behalten Sie bis zu 100% Ihrer Gewinne."
+        "title": "Funded-Konto erhalten",
+        "description": "Sobald Ihre Evaluation verifiziert ist, wird Ihr CK Qualified Analyst Konto aktiviert und Sie bauen Ihren Track Record auf."
       },
       "step4": {
         "step": "04",
         "phase": "Phase 4",
-        "title": "Auszahlung",
-        "description": "Fordere deine Auszahlung im Dashboard an und erhalte sie schnell – berechtigte Trader behalten bis zu 100 % der simulierten Gewinne."
+        "title": "Auszahlung anfordern",
+        "description": "Fordern Sie Ihre Belohnung an, sobald die Kriterien erfüllt sind. Die Abwicklung dauert im Schnitt rund 12 Stunden, berechtigte Analysten behalten bis zu 100% der simulierten Gewinne."
       }
     },
     "badge": "Ablauf",
@@ -127,7 +127,33 @@
     "profitSplit": "BIS ZU 100% GEWINNBETEILIGUNG",
     "readyFunded": "Bereit für Ihr gefördertes Konto?",
     "startJourney": "Starten Sie noch heute Ihre Reise.",
-    "startChallenge": "Challenge Starten"
+    "startChallenge": "Challenge Starten",
+    "compareAll": "Alle Programme vergleichen",
+    "ctaFunded": "Funding sichern — bis zu 70% Rabatt",
+    "programsBadge": "Kontoprogramme",
+    "viewPlans": "Pläne ansehen",
+    "railFunded": "Funded",
+    "programs": {
+      "oneStep": {
+        "title": "1-Step-Programme",
+        "description": "Ein Gewinnziel, kein Zeitlimit. Für Trader, die schneller zum Funded-Konto wollen.",
+        "tag": "Am beliebtesten",
+        "railStart": "Eval"
+      },
+      "twoStep": {
+        "title": "2-Step-Programme",
+        "description": "Die klassische zweistufige Evaluation: die niedrigsten Gebühren, mehr Drawdown-Spielraum und ein ruhiger Weg zum Funding.",
+        "tag": "Klassisch",
+        "railStart": "Phase 01",
+        "railMid": "Phase 02"
+      },
+      "instant": {
+        "title": "Instant-Programme",
+        "description": "Überspringen Sie die Evaluation und handeln Sie sofort ein simuliertes Funded-Konto. Keine Phasen, kein Warten.",
+        "tag": "Schnellstes Funding",
+        "railStart": "Jetzt"
+      }
+    }
   },
   "whyChooseUs": {
     "title": "Alles, was Sie für gefördertes Trading benötigen",
@@ -242,7 +268,8 @@
     "revealSizes": "Alle Kontogrößen anzeigen",
     "more": "+{count} mehr",
     "oneTimePaymentNotice": "Jede Evaluierungsgebühr ist eine einmalige Zahlung – kein Abo, keine wiederkehrenden Kosten, keine versteckten Gebühren.",
-    "quantity": "Anzahl"
+    "quantity": "Anzahl",
+    "showAmounts": "Beträge in $ anzeigen"
   },
   "platforms": {
     "eyebrow": "Plattformen",
@@ -321,7 +348,7 @@
     "benefitFlexible": "Flexible Auszahlungszyklen",
     "benefitAllocation": "Bis zu $1.2M Zuteilung",
     "benefitNoHidden": "Keine Versteckten Gebühren",
-    "benefitStarting": "Ab 58 $",
+    "benefitStarting": "Ab $18",
     "viewEvaluations": "Evaluierungen Ansehen",
     "readyReward": "Bereit für Ihre Auszahlung?",
     "readyRewardDesc": "Öffnen Sie Ihr CK Propfirm Dashboard, fordern Sie Ihre Auszahlung an und geben Sie Ihre Daten ein.",

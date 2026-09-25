@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Regras e Diretrizes",
     "oneStepTitle": "Avaliação de 1 Etapa",
     "oneStepDesc": "Objetivo de fase única, via rápida para trader financiado.",
-    "oneStepPrice": "A partir de $32",
+    "oneStepPrice": "A partir de $18",
     "twoStepTitle": "Avaliação de 2 Etapas",
     "twoStepDesc": "Verificação tradicional em 2 fases com divisão máxima de lucros.",
-    "twoStepPrice": "A partir de $49",
+    "twoStepPrice": "A partir de $18",
     "instantTitle": "Financiamento Instantâneo",
-    "instantPrice": "A partir de $55",
+    "instantPrice": "A partir de $39",
     "compareAllTitle": "Comparar Todos os Programas",
     "compareAllDesc": "Comparação de drawdown, metas de lucro e taxas",
     "tradingObjectivesTitle": "Objetivos de Trading",
@@ -92,32 +92,32 @@
     "supportVal": "24/7"
   },
   "howItWorks": {
-    "title": "Como Funciona",
+    "title": "Do desafio à conta financiada em dias",
     "subtitle": "Quatro passos claros desde a sua primeira operação simulada até receber as recompensas.",
     "steps": {
       "step1": {
         "step": "01",
         "phase": "Fase 1",
-        "title": "Avaliação",
-        "description": "Opere em um ambiente simulado, siga as regras de gerenciamento de risco e atinja a meta de lucro no seu próprio ritmo, sem pressão de tempo."
+        "title": "Escolha o seu programa",
+        "description": "Escolha o tipo de desafio e o tamanho da conta, de US$5K a US$300K. Taxa de avaliação única, sem assinatura."
       },
       "step2": {
         "step": "02",
         "phase": "Fase 2",
-        "title": "Verificação",
-        "description": "Confirme sua consistência na fase de verificação com metas de lucro mais baixas e as mesmas regras transparentes de risco."
+        "title": "Atinja a meta de lucro",
+        "description": "Opere no MT5 ou TradeLocker, atinja a meta e respeite os limites de drawdown. Sem dias mínimos e sem prazo."
       },
       "step3": {
         "step": "03",
         "phase": "Fase 3",
-        "title": "Trader Financiado",
-        "description": "Receba sua conta simulada financiada, opere com total confiança e retire até 100% dos seus lucros simulados."
+        "title": "Receba a sua conta financiada",
+        "description": "Assim que a avaliação for verificada, a sua conta de Analista Qualificado CK é ativada e você começa a construir o seu histórico."
       },
       "step4": {
         "step": "04",
         "phase": "Fase 4",
-        "title": "Receba",
-        "description": "Solicite a sua recompensa no painel e receba rapidamente — traders elegíveis ficam com até 100% dos lucros simulados."
+        "title": "Solicite a sua recompensa",
+        "description": "Peça a recompensa quando cumprir os critérios de elegibilidade. A liquidação leva em média cerca de 12 horas e analistas elegíveis ficam com até 100% dos lucros simulados."
       }
     },
     "badge": "Processo",
@@ -127,7 +127,33 @@
     "profitSplit": "ATÉ 100% DE DIVISÃO DE LUCROS",
     "readyFunded": "Pronto para ser financiado?",
     "startJourney": "Comece a sua jornada hoje.",
-    "startChallenge": "Iniciar Desafio"
+    "startChallenge": "Iniciar Desafio",
+    "compareAll": "Comparar todos os programas",
+    "ctaFunded": "Seja financiado — até 70% de desconto",
+    "programsBadge": "Programas de conta",
+    "viewPlans": "Ver planos",
+    "railFunded": "Financiada",
+    "programs": {
+      "oneStep": {
+        "title": "Programas de 1 fase",
+        "description": "Uma única meta de lucro, sem prazo. Para quem quer chegar mais rápido a uma conta financiada.",
+        "tag": "Mais popular",
+        "railStart": "Aval"
+      },
+      "twoStep": {
+        "title": "Programas de 2 fases",
+        "description": "A avaliação clássica em duas fases: taxas mais baixas, mais margem de drawdown e um caminho estável até o financiamento.",
+        "tag": "Clássico",
+        "railStart": "Fase 01",
+        "railMid": "Fase 02"
+      },
+      "instant": {
+        "title": "Programas Instant",
+        "description": "Pule a avaliação e comece a operar uma conta simulada financiada na hora. Sem fases, sem espera.",
+        "tag": "Financiamento mais rápido",
+        "railStart": "Agora"
+      }
+    }
   },
   "whyChooseUs": {
     "title": "Tudo o que você precisa para operar financiado",
@@ -238,7 +264,8 @@
     "revealSizes": "Mostrar todos os tamanhos de conta",
     "more": "+{count} mais",
     "oneTimePaymentNotice": "Cada taxa de avaliação é um pagamento único — sem assinaturas, sem cobranças recorrentes e sem taxas ocultas.",
-    "quantity": "Quantidade"
+    "quantity": "Quantidade",
+    "showAmounts": "Mostrar valores em $"
   },
   "platforms": {
     "eyebrow": "Plataformas",
@@ -317,7 +344,7 @@
     "benefitFlexible": "Ciclos de Pagamento Flexíveis",
     "benefitAllocation": "Até $1.2M em Alocação",
     "benefitNoHidden": "Zero Taxas Ocultas",
-    "benefitStarting": "A partir de 58 $",
+    "benefitStarting": "A partir de $18",
     "viewEvaluations": "Ver Avaliações",
     "readyReward": "Pronto para solicitar a sua recompensa?",
     "readyRewardDesc": "Abra o seu painel CK Propfirm, clique em solicitar e preencha os detalhes necessários.",

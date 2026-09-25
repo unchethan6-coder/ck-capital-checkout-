@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Reglas y Directrices",
     "oneStepTitle": "Evaluación de 1 Paso",
     "oneStepDesc": "Objetivo de una sola fase, vía rápida a cuenta financiada.",
-    "oneStepPrice": "Desde $32",
+    "oneStepPrice": "Desde $18",
     "twoStepTitle": "Evaluación de 2 Pasos",
     "twoStepDesc": "Verificación tradicional en 2 fases con máximo reparto de beneficios.",
-    "twoStepPrice": "Desde $49",
+    "twoStepPrice": "Desde $18",
     "instantTitle": "Financiación Instantánea",
-    "instantPrice": "Desde $55",
+    "instantPrice": "Desde $39",
     "compareAllTitle": "Comparar Todos los Programas",
     "compareAllDesc": "Comparativa de drawdown, objetivos de beneficio y tarifas",
     "tradingObjectivesTitle": "Objetivos de Trading",
@@ -92,32 +92,32 @@
     "supportVal": "24/7"
   },
   "howItWorks": {
-    "title": "Cómo Funciona",
+    "title": "Del desafío a la cuenta fondeada en días",
     "subtitle": "Cuatro pasos claros desde tu primera operación simulada hasta recibir tus recompensas.",
     "steps": {
       "step1": {
         "step": "01",
         "phase": "Fase 1",
-        "title": "Evaluación",
-        "description": "Opera en un entorno simulado, cumple las reglas de riesgo y alcanza el objetivo de ganancias a tu propio ritmo, sin presión de tiempo."
+        "title": "Elige tu programa",
+        "description": "Elige un tipo de desafío y un tamaño de cuenta de $5K a $300K. Una única cuota de evaluación, sin suscripción."
       },
       "step2": {
         "step": "02",
         "phase": "Fase 2",
-        "title": "Verificación",
-        "description": "Confirma tu consistencia en la etapa de verificación con objetivos de beneficio más bajos y las mismas reglas transparentes de riesgo."
+        "title": "Alcanza el objetivo de beneficio",
+        "description": "Opera en MT5 o TradeLocker, alcanza el objetivo y respeta los límites de drawdown. Sin días mínimos ni límite de tiempo."
       },
       "step3": {
         "step": "03",
         "phase": "Fase 3",
-        "title": "Trader Fondeado",
-        "description": "Recibe tu cuenta simulada financiada, opera con confianza y retira hasta el 100% de tus ganancias simuladas."
+        "title": "Recibe tu cuenta fondeada",
+        "description": "Una vez verificada tu evaluación, se activa tu cuenta de Analista Cualificado CK y empiezas a construir tu historial."
       },
       "step4": {
         "step": "04",
         "phase": "Fase 4",
-        "title": "Cobra",
-        "description": "Solicita tu recompensa desde el panel y recíbela rápido: los traders elegibles conservan hasta el 100% de los beneficios simulados."
+        "title": "Solicita tu recompensa",
+        "description": "Pide tu recompensa cuando cumplas los criterios de elegibilidad. La liquidación media es de unas 12 horas y los analistas elegibles conservan hasta el 100% de los beneficios simulados."
       }
     },
     "badge": "Proceso",
@@ -127,7 +127,33 @@
     "profitSplit": "HASTA EL 100% DE REPARTO DE BENEFICIOS",
     "readyFunded": "¿Listo para fondearte?",
     "startJourney": "Comienza tu viaje hoy.",
-    "startChallenge": "Comenzar Desafío"
+    "startChallenge": "Comenzar Desafío",
+    "compareAll": "Comparar todos los programas",
+    "ctaFunded": "Consigue fondeo — hasta 70% de descuento",
+    "programsBadge": "Programas de cuenta",
+    "viewPlans": "Ver planes",
+    "railFunded": "Fondeada",
+    "programs": {
+      "oneStep": {
+        "title": "Programas de 1 fase",
+        "description": "Un solo objetivo de beneficio y sin límite de tiempo. Para quienes quieren llegar antes a una cuenta fondeada.",
+        "tag": "Más popular",
+        "railStart": "Eval"
+      },
+      "twoStep": {
+        "title": "Programas de 2 fases",
+        "description": "La evaluación clásica en dos fases: las cuotas más bajas, más margen de drawdown y un camino estable al fondeo.",
+        "tag": "Clásico",
+        "railStart": "Fase 01",
+        "railMid": "Fase 02"
+      },
+      "instant": {
+        "title": "Programas Instant",
+        "description": "Sáltate la evaluación y empieza a operar una cuenta simulada fondeada al momento. Sin fases ni esperas.",
+        "tag": "Fondeo más rápido",
+        "railStart": "Ya"
+      }
+    }
   },
   "whyChooseUs": {
     "title": "Todo lo que necesitas para operar fondeado",
@@ -238,7 +264,8 @@
     "revealSizes": "Mostrar todos los tamaños de cuenta",
     "more": "+{count} más",
     "oneTimePaymentNotice": "Cada tarifa de evaluación es un pago único: sin suscripciones, sin cargos recurrentes y sin comisiones ocultas.",
-    "quantity": "Cantidad"
+    "quantity": "Cantidad",
+    "showAmounts": "Mostrar importes en $"
   },
   "platforms": {
     "eyebrow": "Plataformas",
@@ -317,7 +344,7 @@
     "benefitFlexible": "Ciclos de Pago Flexibles",
     "benefitAllocation": "Hasta $1.2M de Asignación",
     "benefitNoHidden": "Sin Tarifas Ocultas",
-    "benefitStarting": "Desde 58 $",
+    "benefitStarting": "Desde $18",
     "viewEvaluations": "Ver Evaluaciones",
     "readyReward": "¿Listo para solicitar tu recompensa?",
     "readyRewardDesc": "Abre tu panel de control de CK Propfirm, haz clic en solicitar y completa los datos requeridos.",

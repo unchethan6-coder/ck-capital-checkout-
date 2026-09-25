@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Règles & Directives",
     "oneStepTitle": "Évaluation en 1 Étape",
     "oneStepDesc": "Objectif en phase unique, voie rapide vers le compte financé.",
-    "oneStepPrice": "À partir de 32 $",
+    "oneStepPrice": "À partir de 18 $",
     "twoStepTitle": "Évaluation en 2 Étapes",
     "twoStepDesc": "Vérification classique en 2 phases avec partage maximal des profits.",
-    "twoStepPrice": "À partir de 49 $",
+    "twoStepPrice": "À partir de 18 $",
     "instantTitle": "Financement Instantané",
-    "instantPrice": "À partir de 55 $",
+    "instantPrice": "À partir de 39 $",
     "compareAllTitle": "Comparer Tous les Programmes",
     "compareAllDesc": "Comparaison des drawdowns, objectifs de profit et tarifs",
     "tradingObjectivesTitle": "Objectifs de Trading",
@@ -92,32 +92,32 @@
     "supportVal": "24/7"
   },
   "howItWorks": {
-    "title": "Comment Ça Fonctionne",
+    "title": "Du challenge au financement en quelques jours",
     "subtitle": "Quatre étapes claires, de votre premier trade simulé au versement de vos récompenses.",
     "steps": {
       "step1": {
         "step": "01",
         "phase": "Phase 1",
-        "title": "Évaluation",
-        "description": "Tradez à votre manière et atteignez l'objectif de profit sans règles de constance ni pression temporelle."
+        "title": "Choisissez votre programme",
+        "description": "Choisissez un type de challenge et une taille de compte de 5 000 $ à 300 000 $. Des frais d'évaluation uniques, sans abonnement."
       },
       "step2": {
         "step": "02",
         "phase": "Phase 2",
-        "title": "Vérification",
-        "description": "Confirmez vos compétences de trading avec les mêmes règles simples et sans restrictions inutiles."
+        "title": "Atteignez l'objectif de gain",
+        "description": "Tradez sur MT5 ou TradeLocker, atteignez l'objectif et restez dans les limites de drawdown. Aucun jour minimum, aucune limite de temps."
       },
       "step3": {
         "step": "03",
         "phase": "Phase 3",
-        "title": "Trader Financé",
-        "description": "Obtenez votre compte financé et tradez en toute confiance en conservant jusqu'à 100 % de vos bénéfices."
+        "title": "Recevez votre compte financé",
+        "description": "Une fois votre évaluation vérifiée, votre compte CK Qualified Analyst est activé et vous commencez à bâtir votre historique."
       },
       "step4": {
         "step": "04",
         "phase": "Phase 4",
-        "title": "Soyez payé",
-        "description": "Demandez votre récompense depuis le tableau de bord et recevez-la rapidement : les traders éligibles conservent jusqu'à 100 % des profits simulés."
+        "title": "Demandez votre récompense",
+        "description": "Demandez votre récompense dès que les critères d'éligibilité sont remplis. Le règlement prend en moyenne 12 heures et les analystes éligibles conservent jusqu'à 100% des gains simulés."
       }
     },
     "badge": "Processus",
@@ -127,7 +127,33 @@
     "profitSplit": "JUSQU'À 100 % DE PARTAGE DES PROFITS",
     "readyFunded": "Prêt à être financé ?",
     "startJourney": "Commencez votre parcours aujourd'hui.",
-    "startChallenge": "Démarrer le Challenge"
+    "startChallenge": "Démarrer le Challenge",
+    "compareAll": "Comparer tous les programmes",
+    "ctaFunded": "Être financé — jusqu'à 70% de remise",
+    "programsBadge": "Programmes de compte",
+    "viewPlans": "Voir les offres",
+    "railFunded": "Financé",
+    "programs": {
+      "oneStep": {
+        "title": "Programmes en 1 phase",
+        "description": "Un seul objectif de gain, sans limite de temps. Pour aller plus vite vers un compte financé.",
+        "tag": "Le plus choisi",
+        "railStart": "Éval"
+      },
+      "twoStep": {
+        "title": "Programmes en 2 phases",
+        "description": "L'évaluation classique en deux phases : les frais les plus bas, plus de marge de drawdown et un parcours régulier.",
+        "tag": "Classique",
+        "railStart": "Phase 01",
+        "railMid": "Phase 02"
+      },
+      "instant": {
+        "title": "Programmes Instant",
+        "description": "Passez l'évaluation et tradez immédiatement un compte financé simulé. Aucune phase, aucune attente.",
+        "tag": "Financement le plus rapide",
+        "railStart": "Maintenant"
+      }
+    }
   },
   "whyChooseUs": {
     "title": "Tout ce dont vous avez besoin pour trader financé",
@@ -242,7 +268,8 @@
     "revealSizes": "Afficher toutes les tailles de compte",
     "more": "+{count} de plus",
     "oneTimePaymentNotice": "Chaque frais d'évaluation est un paiement unique : aucun abonnement, aucun prélèvement récurrent, aucuns frais cachés.",
-    "quantity": "Quantité"
+    "quantity": "Quantité",
+    "showAmounts": "Afficher les montants en $"
   },
   "platforms": {
     "eyebrow": "Plateformes",
@@ -321,7 +348,7 @@
     "benefitFlexible": "Cycles de Retrait Flexibles",
     "benefitAllocation": "Jusqu'à 1.2M $ d'Allocation",
     "benefitNoHidden": "Aucun Frais Caché",
-    "benefitStarting": "À partir de 58 $",
+    "benefitStarting": "À partir de 18 $",
     "viewEvaluations": "Voir les Évaluations",
     "readyReward": "Prêt à demander votre récompense ?",
     "readyRewardDesc": "Ouvrez votre tableau de bord CK Propfirm, cliquez sur demander et complétez les informations requises.",

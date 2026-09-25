@@ -57,7 +57,7 @@ export function ChallengeComparison({
   const [isCurrencyOpen, setIsCurrencyOpen] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string>("standard");
   const [selectedSize, setSelectedSize] = useState<string>("100K");
-  const [isPercentage, setIsPercentage] = useState<boolean>(false);
+  const [isPercentage, setIsPercentage] = useState<boolean>(true);
   const [viewMode, setViewMode] = useState<"cards" | "table">("cards");
   const [quantity, setQuantity] = useState<number>(1);
 
@@ -86,7 +86,7 @@ export function ChallengeComparison({
     const rawType = searchParams.get("type") || searchParams.get("plan");
     if (rawType) {
       const normalizedType = rawType === "one-step" ? "1step" : rawType;
-      if (["standard", "1step", "instant", "middleweight"].includes(normalizedType)) {
+      if (["standard", "1step", "instant"].includes(normalizedType)) {
         setSelectedType(normalizedType);
       }
     }
@@ -210,7 +210,7 @@ export function ChallengeComparison({
     { label: t("phase2Target") || "Phase 2 Target", value: (plan, size) => formatValue(plan.p2, size) },
     { label: t("maxDailyLoss") || "Max Daily Loss", value: (plan, size) => formatValue(plan.dailyLoss, size) },
     { label: t("maxLoss") || "Max Loss", value: (plan, size) => formatValue(plan.maxLoss, size) },
-    { label: t("minTradingDays") || "Min. Trading Days", value: (plan) => `${plan.minDays} ${t("day") || "Day"}` },
+    { label: t("minTradingDays") || "Min. Trading Days", value: (plan) => (/^\d+$/.test(plan.minDays) ? `${plan.minDays} ${t("day") || "Day"}` : plan.minDays) },
     { label: t("consistencyRule") || "Consistency", value: (plan) => plan.consistency || "-" },
     { label: t("tradingPeriod") || "Trading Period", value: (plan) => plan.period || "-" },
     { label: t("profitSplit1") || "Profit Split (1–13 Days)", value: (plan) => plan.split1 || "-" },
@@ -469,12 +469,12 @@ export function ChallengeComparison({
                 <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-white">
                     <Percent className="w-4 h-4 text-[#A98BFF]" />
-                    <span>{t("showPercentage") || "Show Percentage"}</span>
+                    <span>{t("showAmounts") || "Show $ Amounts"}</span>
                     <label className="relative inline-block w-9 h-5 cursor-pointer ml-1">
                       <input
                         type="checkbox"
-                        checked={isPercentage}
-                        onChange={(e) => setIsPercentage(e.target.checked)}
+                        checked={!isPercentage}
+                        onChange={(e) => setIsPercentage(!e.target.checked)}
                         className="sr-only peer"
                       />
                       <span className="absolute inset-0 bg-[#E5E5E5] peer-checked:bg-[#703AD7] rounded-full transition-all duration-300"></span>
@@ -509,7 +509,11 @@ export function ChallengeComparison({
                       <li className="flex justify-between items-center border-b border-gray-100 pb-2">
                         <span className="text-gray-600 font-normal">{t("minTradingDays") || "Min. Trading Days"}</span>
                         <span className="font-bold text-[#0A0A0C]">
-                          {activePlan?.minDays ? `${activePlan.minDays} ${t("day") || "Day"}` : "-"}
+                          {!activePlan?.minDays
+                            ? "-"
+                            : /^\d+$/.test(activePlan.minDays)
+                              ? `${activePlan.minDays} ${t("day") || "Day"}`
+                              : activePlan.minDays}
                         </span>
                       </li>
                       <li className="flex justify-between items-center">
@@ -683,7 +687,7 @@ export function ChallengeComparison({
                       {t("addOnsAvailable") || "Add-Ons Available"}
                     </span>
                     <div className="flex flex-wrap gap-1.5">
-                      {["Lifetime Reward 90%", "Reward 95%", "Double Lev", "+4 more"].map(
+                      {["24 Hour Payout +25%", "No Consistency Score (2-Step) +70%"].map(
                         (addon) => (
                           <span
                             key={addon}
@@ -725,8 +729,8 @@ export function ChallengeComparison({
                   </div>
                   <label className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-[#0A0A0C]">
                     <Percent className="h-4 w-4 text-[#A98BFF]" />
-                    <span>{t("showPercentage") || "Show Percentage"}</span>
-                    <input type="checkbox" checked={isPercentage} onChange={(event) => setIsPercentage(event.target.checked)} className="peer sr-only" />
+                    <span>{t("showAmounts") || "Show $ Amounts"}</span>
+                    <input type="checkbox" checked={!isPercentage} onChange={(event) => setIsPercentage(!event.target.checked)} className="peer sr-only" />
                     <span className="relative h-5 w-9 rounded-full bg-[#E5E5E5] transition-colors peer-checked:bg-[#703AD7] after:absolute after:bottom-[3px] after:left-[3px] after:h-3.5 after:w-3.5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:after:translate-x-4" />
                   </label>
                 </div>
