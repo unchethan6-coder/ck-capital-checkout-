@@ -255,16 +255,18 @@ export function TopNav() {
         (normTarget === "/trading-objectives" &&
           normCurrent.startsWith("/trading-objectives"));
 
-      if (isTargetPage && hash) {
-        e.preventDefault();
-        const el = document.getElementById(hash);
+      const el = hash ? document.getElementById(hash) : null;
+
+      if ((isTargetPage || el) && hash) {
         if (el) {
+          e.preventDefault();
           el.scrollIntoView({ behavior: "smooth", block: "start" });
           window.history.replaceState(
             null,
             "",
             `${window.location.pathname}#${hash}`
           );
+          return;
         }
       }
     } else {

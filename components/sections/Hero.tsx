@@ -151,6 +151,14 @@ export function Hero() {
             >
               <Link
                 href="/#start-challenge"
+                onClick={(e) => {
+                  const el = document.getElementById("start-challenge");
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    window.history.replaceState(null, "", `${window.location.pathname}#start-challenge`);
+                  }
+                }}
                 className="group inline-flex items-center justify-center gap-2 rounded-xl brand-gradient-btn px-6 py-3.5 text-sm sm:text-base font-bold text-[#1A1030] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 text-center shadow-lg hover:shadow-cyan-500/25"
               >
                 <span>{t("startChallenge")}</span>
@@ -159,6 +167,14 @@ export function Hero() {
 
               <a
                 href="#how-it-works"
+                onClick={(e) => {
+                  const el = document.getElementById("how-it-works");
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    window.history.replaceState(null, "", `${window.location.pathname}#how-it-works`);
+                  }
+                }}
                 className="group inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/20 bg-white/[0.04] px-4 py-3 text-sm sm:text-base font-extrabold text-white hover:border-[#894CEF] hover:bg-white/[0.08] hover:text-white active:translate-y-0 active:scale-[0.98] transition-all duration-200 shadow-sm text-center"
               >
                 <div className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-white/80 text-white group-hover:border-[#894CEF] group-hover:bg-[#894CEF] group-hover:text-black transition-all duration-200 shrink-0">

@@ -11,6 +11,69 @@ export function ScrollHandler() {
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      if (e.defaultPrevented) return;
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      const target = e.target as HTMLElement | null;
+      const anchor = target?.closest("a");
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+      if (!href) return;
+
+      if (
+        href.startsWith("http://") ||
+        href.startsWith("https://") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        anchor.target === "_blank"
+      ) {
+        return;
+      }
+
+      if (href.includes("#")) {
+        const [path, hash] = href.split("#");
+        if (!hash) return;
+
+        // Determine if target path is the same as current page
+        const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+        const normalizedCurrent = currentPath.replace(/^\/(?:en|es|fr|de|it|pt|ja|zh|ar)(?=\/|$)/, "") || "/";
+        
+        // Strip query string from path if present (e.g. /path?foo=bar)
+        const pathWithoutQuery = (path || "").split("?")[0].replace(/\/$/, "") || "/";
+        const normalizedPath = pathWithoutQuery.replace(/^\/(?:en|es|fr|de|it|pt|ja|zh|ar)(?=\/|$)/, "") || "/";
+
+        const isSamePage = !path || normalizedPath === normalizedCurrent;
+
+        if (isSamePage) {
+          const el = document.getElementById(hash);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.history.replaceState(null, "", `${window.location.pathname}#${hash}`);
+          }
+        }
+      }
+    };
+
+    const handleHashChange = () => {
+      const h = window.location.hash.replace("#", "");
+      if (h) {
+        const el = document.getElementById(h);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick, { capture: true });
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      document.removeEventListener("click", handleAnchorClick, { capture: true });
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   useEffect(() => {

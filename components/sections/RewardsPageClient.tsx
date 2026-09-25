@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
@@ -277,7 +278,7 @@ export function RewardsPageClient({
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.24 }} className="mt-5 max-w-xl text-[14px] leading-relaxed text-[#4B5563] sm:text-[15px]">{t("desc")}</motion.p>
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.36 }} className="mt-9 flex flex-wrap items-center gap-5">
                 <a href="#reward-certificates" data-od-id="rewards-hero-primary"><GoldButton size="lg">{t("viewRewards")} <ArrowRight size={16} /></GoldButton></a>
-                <a href="/#start-challenge" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#0A0A0C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-od-id="rewards-hero-secondary">{tChallenge("startNow")} <ArrowRight size={15} /></a>
+                <Link href="/#start-challenge" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#0A0A0C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-od-id="rewards-hero-secondary">{tChallenge("startNow")} <ArrowRight size={15} /></Link>
               </motion.div>
               <div className="mt-14 flex flex-wrap gap-x-7 gap-y-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#6B7280]"><span className="inline-flex items-center gap-2"><ShieldCheck size={14} className="text-secondary" /> {t("verifiedText")}</span><span className="inline-flex items-center gap-2"><FileCheck2 size={14} className="text-[#A98BFF]" /> {t("certificateProof")}</span></div>
             </div>

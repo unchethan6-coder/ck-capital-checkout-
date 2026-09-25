@@ -122,6 +122,14 @@ export default function EvaluationIntro({
                 </a>
                 <a
                   href="#start-challenge"
+                  onClick={(e) => {
+                    const el = document.getElementById("start-challenge");
+                    if (el) {
+                      e.preventDefault();
+                      el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      window.history.replaceState(null, "", `${window.location.pathname}#start-challenge`);
+                    }
+                  }}
                   data-od-id="evaluation-hero-cta-secondary"
                   className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#A98BFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
                 >

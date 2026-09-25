@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { X } from "lucide-react";
 
 export function AnnouncementBar({ banners }: { banners?: string[] } = {}) {
@@ -23,12 +24,20 @@ export function AnnouncementBar({ banners }: { banners?: string[] } = {}) {
         <span className="inline-flex items-center rounded border border-[#894CEF]/40 bg-[#894CEF]/10 px-2 py-0.5 font-mono text-[11px] sm:text-xs font-bold text-[#A98BFF]">
           {t("codeLabel")}: 10KFOR19
         </span>
-        <a
+        <Link
           href="/#start-challenge"
+          onClick={(e) => {
+            const el = document.getElementById("start-challenge");
+            if (el) {
+              e.preventDefault();
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+              window.history.replaceState(null, "", `${window.location.pathname}#start-challenge`);
+            }
+          }}
           className="inline-flex min-h-11 items-center gap-1 py-1 font-bold text-[#A98BFF] hover:underline sm:min-h-0 sm:py-0"
         >
           {t("claimOffer")} <span>→</span>
-        </a>
+        </Link>
       </div>
 
       <button

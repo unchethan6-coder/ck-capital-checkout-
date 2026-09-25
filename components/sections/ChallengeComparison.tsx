@@ -259,9 +259,10 @@ export function ChallengeComparison({
           {/* Header */}
           <SectionReveal className="text-center">
             <h2
+              id="pricing-calculator"
               data-od-id="challenge-title"
               className={cn(
-                "font-[family-name:var(--font-jakarta)] text-3xl font-bold not-italic tracking-tight sm:text-4xl md:text-[46px] md:leading-[1.15] lg:text-[48px]",
+                "scroll-mt-24 font-[family-name:var(--font-jakarta)] text-3xl font-bold not-italic tracking-tight sm:text-4xl md:text-[46px] md:leading-[1.15] lg:text-[48px]",
                 viewMode === "cards" ? "text-white" : "text-[#0A0A0C]"
               )}
             >

@@ -103,14 +103,22 @@ export function HowItWorks() {
                 <ArrowUpRight size={14} />
               </Link>
 
-              <a
+              <Link
                 href="/#start-challenge"
+                onClick={(e) => {
+                  const el = document.getElementById("start-challenge");
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    window.history.replaceState(null, "", `${window.location.pathname}#start-challenge`);
+                  }
+                }}
                 className="group inline-flex items-center justify-center gap-2 rounded-xl brand-gradient-btn px-6 py-3.5 text-sm font-bold text-[#1A1030] shadow-md transition-all duration-200 hover:shadow-cyan-500/25"
                 data-od-id="how-it-works-cta"
               >
                 <span>{t("ctaFunded")}</span>
                 <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </div>
           </SectionReveal>
 

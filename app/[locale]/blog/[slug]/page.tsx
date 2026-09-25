@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Calendar, ChevronLeft, User, ArrowRight } from "lucide-react";
@@ -161,11 +161,11 @@ export default async function ArticlePage({
             Take your trading strategy to the next level with our simulated evaluation accounts.
           </p>
           <div className="mt-8">
-            <a href="/#start-challenge">
+            <Link href="/#start-challenge">
               <GoldButton size="lg">
                 Start Your Evaluation <ArrowRight size={16} />
               </GoldButton>
-            </a>
+            </Link>
           </div>
         </Container>
       </section>

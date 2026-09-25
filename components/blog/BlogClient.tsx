@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Calendar, FileText, Sparkles, User, ShieldCheck, Newspaper } from "lucide-react";
@@ -86,12 +86,12 @@ export default function BlogClient({ articles }: { articles: CmsArticle[] }) {
                     Browse Articles <ArrowRight size={16} />
                   </GoldButton>
                 </a>
-                <a
+                <Link
                   href="/#start-challenge"
                   className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] hover:text-[#0A0A0C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors"
                 >
                   Start Evaluation <ArrowRight size={15} />
-                </a>
+                </Link>
               </motion.div>
 
               <div className="mt-14 flex flex-wrap gap-x-7 gap-y-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
@@ -284,11 +284,11 @@ export default function BlogClient({ articles }: { articles: CmsArticle[] }) {
               Put proven market analysis into action with a simulated evaluation account on MT5 or TradeLocker.
             </p>
             <div className="mt-8">
-              <a href="/#start-challenge">
+              <Link href="/#start-challenge">
                 <GoldButton size="lg">
                   Start Challenge <ArrowRight size={16} />
                 </GoldButton>
-              </a>
+              </Link>
             </div>
           </SectionReveal>
         </Container>
