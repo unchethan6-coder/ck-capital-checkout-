@@ -30,7 +30,8 @@ function formatMoney(value: number | null, currency = "USD") {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(value);
 }
 
@@ -54,7 +55,7 @@ export function ProofShowcase({
   const total =
     summary?.totalRewards && summary.totalRewards >= 1000000
       ? summary.totalRewards
-      : 1200000;
+      : 1385127.63;
   const rows = useMemo(
     () =>
       verified
@@ -317,8 +318,8 @@ function BrowserWindow({
             <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]">
               {t("totalPayouts")}
             </p>
-            <p className="mt-1 font-[family-name:var(--font-jakarta)] text-2xl xs:text-3xl sm:text-[32px] font-black leading-none tracking-tight text-[#0A0A0C] tabular-nums">
-              {formatMoney(total ?? 1200000)}
+            <p className="mt-1 font-[family-name:var(--font-jakarta)] text-xl xs:text-2xl sm:text-[26px] lg:text-[28px] font-black leading-tight tracking-tight text-white tabular-nums whitespace-nowrap">
+              {formatMoney(total ?? 1385127.63)}
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { CountryFlag } from "@/components/shared/CountryFlag";
+import { cn } from "@/lib/utils";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
@@ -250,7 +251,7 @@ export function RewardsPageClient({
 
   const highlights = useMemo(() => {
     return [
-      { value: "$1.2M+", label: "Total Payouts", note: t("verifiedText") },
+      { value: "$1,385,127.63", label: "Total Payouts", note: t("verifiedText") },
       { value: "20K+", label: "Active Traders", note: t("verifiedText") },
       { value: "Worldwide Traders", label: "Global Reach", note: t("verifiedText") },
       { value: summary?.maxRewardPercent == null ? "UP TO 100%" : `UP TO ${summary.maxRewardPercent}%`, label: t("simulatedRewards"), note: t("subjectToTerms") },
@@ -299,13 +300,29 @@ export function RewardsPageClient({
       <section className="bg-white border-b border-[#E5E7EB] py-12 md:py-16 text-[#0A0A0C]" data-od-id="reward-highlights">
         <Container>
           <div className="grid grid-cols-2 divide-x divide-y divide-[#E5E7EB] border-y border-[#E5E7EB] md:grid-cols-4 md:divide-y-0">
-            {highlights.map((metric) => (
-              <div key={metric.label} className="min-h-36 px-4 py-7 first:pl-0 md:px-7 md:first:pl-0">
-                <p className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-[-0.04em] text-[#0A0A0C] md:text-4xl">{metric.value ?? <Unavailable />}</p>
-                <p className="mt-2 max-w-[12rem] text-xs font-semibold uppercase tracking-[0.12em] text-[#4B5563]">{metric.label}</p>
-                <p className="mt-3 text-[10px] text-[#6B7280]">{metric.note}</p>
-              </div>
-            ))}
+            {highlights.map((metric) => {
+              const isLong = typeof metric.value === "string" && metric.value.length > 8;
+              return (
+                <div key={metric.label} className="min-h-32 md:min-h-36 px-3 sm:px-4 md:px-3.5 lg:px-6 py-6 md:py-7 flex flex-col justify-center">
+                  <p
+                    className={cn(
+                      "font-[family-name:var(--font-jakarta)] font-extrabold tracking-tight text-[#0A0A0C] whitespace-nowrap",
+                      isLong
+                        ? "text-lg xs:text-xl sm:text-2xl md:text-[17px] lg:text-2xl xl:text-3xl"
+                        : "text-2xl xs:text-3xl md:text-2xl lg:text-3xl xl:text-4xl"
+                    )}
+                  >
+                    {metric.value ?? <Unavailable />}
+                  </p>
+                  <p className="mt-2 max-w-[12rem] text-[11px] sm:text-xs font-semibold uppercase tracking-[0.12em] text-[#4B5563] leading-snug">
+                    {metric.label}
+                  </p>
+                  <p className="mt-2 text-[10px] text-[#6B7280]">
+                    {metric.note}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>

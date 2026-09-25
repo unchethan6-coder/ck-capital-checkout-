@@ -486,7 +486,7 @@ export async function getRewardsSummary(): Promise<CmsRewardsSummary | null> {
   const raw = res?.data?.attributes ?? res?.data;
   if (!raw || typeof raw !== "object") {
     return {
-      totalRewards: 1200000,
+      totalRewards: 1385127.63,
       analystsRewarded: 20000,
       countries: 120,
       maxRewardPercent: 100,
@@ -497,7 +497,7 @@ export async function getRewardsSummary(): Promise<CmsRewardsSummary | null> {
     typeof value === "number" && Number.isFinite(value) ? value : null;
   const parsedTotal = numberOrNull(raw.totalRewards ?? raw.total_rewards);
   return {
-    totalRewards: parsedTotal && parsedTotal >= 1000000 ? parsedTotal : 1200000,
+    totalRewards: parsedTotal && parsedTotal >= 1000000 ? parsedTotal : 1385127.63,
     analystsRewarded: numberOrNull(raw.analystsRewarded ?? raw.analysts_rewarded) ?? 20000,
     countries: numberOrNull(raw.countries) ?? 120,
     maxRewardPercent: numberOrNull(raw.maxRewardPercent ?? raw.max_reward_percent) ?? 100,
