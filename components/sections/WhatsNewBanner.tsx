@@ -24,7 +24,7 @@ const SLIDES: BannerSlide[] = [
     tabLabelKey: "tabPromo",
     defaultTabLabel: "CK Propfirm • 70% Off",
     shortTabLabel: "70% Off",
-    imageSrc: "/images/banners/whats-new-promo-70.jpeg",
+    imageSrc: "/images/banners/whats-new-promo-70-v2.jpeg",
     alt: "CK Propfirm 70% Off Promo - Get Started",
     targetId: "pricing-calculator",
     glowColor: "amber",
