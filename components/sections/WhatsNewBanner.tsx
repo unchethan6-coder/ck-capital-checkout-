@@ -193,7 +193,7 @@ export function WhatsNewBanner({
                 fill
                 priority
                 sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.012]"
+                className="object-cover object-left md:object-center transition-transform duration-500 group-hover:scale-[1.012]"
               />
             </motion.div>
           </AnimatePresence>
