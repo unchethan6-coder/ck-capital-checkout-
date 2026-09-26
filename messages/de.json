@@ -255,7 +255,7 @@
     "conditions": [
       "Profit split up to 100%",
       "Leverage 1:100",
-      "Payouts in ~12 hours"
+      "Payouts in 24-48 hours"
     ],
     "scalingPlan": "Skalierungsplan",
     "maxTotalLoss": "Maximaler Gesamtverlust",

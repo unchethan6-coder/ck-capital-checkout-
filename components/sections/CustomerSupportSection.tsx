@@ -31,7 +31,7 @@ export function CustomerSupportSection() {
             {/* Mobile Image (placed above buttons on mobile view, hidden on lg+) */}
             <div className="relative mt-7 h-[260px] sm:h-[340px] overflow-hidden rounded-[24px] border border-gray-200 bg-[#07070B] lg:hidden" data-od-id="customer-support-image-mobile">
               <Image
-                src="/images/support/discord-community.jpg"
+                src="/images/support/discord-community-v2.jpg"
                 alt="CK Propfirm Discord community"
                 fill
                 sizes="100vw"
@@ -89,7 +89,7 @@ export function CustomerSupportSection() {
           {/* Desktop Image (visible on lg+) */}
           <div className="relative hidden h-full min-h-[400px] overflow-hidden rounded-[28px] border border-foreground/10 bg-[#07070B] lg:block" data-od-id="customer-support-image">
             <Image
-              src="/images/support/discord-community.jpg"
+              src="/images/support/discord-community-v2.jpg"
               alt="CK Propfirm Discord community"
               fill
               sizes="55vw"

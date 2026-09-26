@@ -149,7 +149,7 @@ export function InstantFundingVisual({
                   <ShieldAlert size={16} className="text-[#A98BFF]" />
                   <span className="text-xs font-bold text-[#0A0A0C]">Max Loss Shield</span>
                 </div>
-                <p className="mt-1.5 font-mono text-base font-extrabold text-[#0A0A0C]">6% Static Max</p>
+                <p className="mt-1.5 font-mono text-base font-extrabold text-[#0A0A0C]">6% Max Loss</p>
                 <p className="text-[10px] text-[#6B7280]">Trailing lock protection enabled</p>
               </div>
             </div>

@@ -855,7 +855,7 @@ export function ChallengeComparison({
               {((t.raw("conditions") as string[]) || [
                 "Profit split up to 100%",
                 "Leverage 1:100",
-                "Payouts in ~12 hours",
+                "Payouts in 24-48 hours",
               ]).map((c: string) => (
                 <span
                   key={c}

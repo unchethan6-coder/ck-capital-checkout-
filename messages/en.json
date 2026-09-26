@@ -67,7 +67,7 @@
   },
   "hero": {
     "features": [
-      "12H Payouts",
+      "24-48H Payouts",
       "100% Profit Split",
       "$100K Capital",
       "No Time Limits"
@@ -82,7 +82,7 @@
   },
   "stats": {
     "payoutTime": "Average Payout Time",
-    "payoutTimeVal": "12 Hours",
+    "payoutTimeVal": "24-48 Hours",
     "rewardSplit": "Max Profit Split",
     "rewardSplitVal": "100%",
     "accountSize": "Max Simulated Capital",
@@ -116,7 +116,7 @@
         "step": "04",
         "phase": "Phase 4",
         "title": "Request your reward",
-        "description": "Ask for a reward on demand once the eligibility criteria are met. Settlement averages around 12 hours, and eligible analysts keep up to 100% of simulated profits."
+        "description": "Ask for a reward on demand once the eligibility criteria are met. Settlement averages 24-48 hours, and eligible analysts keep up to 100% of simulated profits."
       }
     },
     "badge": "Process",
@@ -175,8 +175,8 @@
         "description": "Breached a rule? Reset your evaluation account at a discounted rate and get right back on track."
       },
       "flexible": {
-        "title": "12-Hour Fast Payouts",
-        "description": "Request your profit split payout on demand and receive your funds in as little as 12 hours via crypto or bank transfer."
+        "title": "Fast 24-48hr Payouts",
+        "description": "Request your profit split payout on demand and receive your funds within 24-48 hours via crypto or bank transfer."
       },
       "support": {
         "title": "24/7 Dedicated Support",
@@ -254,7 +254,7 @@
     "conditions": [
       "Profit split up to 100%",
       "Leverage 1:100",
-      "Payouts in ~12 hours"
+      "Payouts in 24-48 hours"
     ],
     "avgFirstRewards": "Traders earn {amount} avg first rewards",
     "phases": "Phases",
@@ -413,7 +413,7 @@
     "items": {
       "payoutTime": {
         "q": "How fast are payouts processed?",
-        "a": "We offer industry-leading ~12 hour payout processing for qualified traders. Once requested, simulated profit withdrawals are typically approved and dispatched within 12 hours."
+        "a": "We offer fast 24-48 hour payout processing for qualified traders. Once requested, simulated profit withdrawals are typically approved and dispatched within 24-48 hours."
       },
       "timeLimit": {
         "q": "Are there any time limits on challenges?",

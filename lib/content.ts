@@ -3,7 +3,7 @@
 export const SITE_META = {
   name: "CK Propfirm",
   tagline: "Prop Trading Firm",
-  promoCode: "JUN70",
+  promoCode: "SEP70",
   promoDiscount: "70%",
 };
 
@@ -60,7 +60,7 @@ export const PRICING_PLANS = [
 ];
 
 export const TRUST_STATS = [
-  { value: "12H",    label: "Average Payout Time" },
+  { value: "24-48H", label: "Average Payout Time" },
   { value: "100%",   label: "Max Reward Split" },
   { value: "$100K",  label: "Max Account Size" },
   { value: "24/7",   label: "Support Available" },

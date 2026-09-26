@@ -256,19 +256,6 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     source: "Discord",
     url: "https://discord.com/invite/hGSVx9CmS2",
   },
-  {
-    sourceKey: "discord",
-    sourceLabel: "Discord",
-    rating: 5,
-    text: "To whosoever is behind the design of all the pictures that CKCAPITAL uses, be it in announcements, giveaways, promotions and so, your creativity is top notch and you are absolutely doing a great job.",
-    name: "doksab",
-    location: "Discord Community",
-    imageWidth: 1386,
-    imageHeight: 200,
-    date: "2025-12-02",
-    source: "Discord",
-    url: "https://discord.com/invite/hGSVx9CmS2",
-  },
 ];
 
 function safeT(t: any, key: string, fallback: string): string {
@@ -300,6 +287,28 @@ export function getCardEstimatedHeight(card: WallCard, colWidth = 380): number {
   return 280;
 }
 
+/**
+ * Detect cards with low height (panoramic banners, short screenshots, or cramped aspect ratios).
+ * Hides them from display whether they originate from CMS or static fallback.
+ */
+export function isLowHeightCard(card: ReviewCard | WallCard): boolean {
+  // If it has image dimensions specified:
+  if (card.imageWidth && card.imageHeight && card.imageHeight > 0 && card.imageWidth > 0) {
+    // 1. Raw image height is too small to be a legible payout proof or card
+    if (card.imageHeight < 280) return true;
+    // 2. Extreme panoramic / low height aspect ratio (e.g. width / height > 2.1)
+    // A standard certificate is ~1.84 (1400 / 760) which renders at ~206px height.
+    // Anything above 2.1 renders under 180px in desktop columns, squishing review text and actions.
+    if (card.imageWidth / card.imageHeight > 2.1) return true;
+  }
+
+  // 3. Check estimated rendered height in standard column (minimum 180px required for full card content)
+  const estHeight = getCardEstimatedHeight(card as WallCard, 380);
+  if (estHeight < 180) return true;
+
+  return false;
+}
+
 export function TraderReviews({
   reviews = [],
   video,
@@ -313,27 +322,31 @@ export function TraderReviews({
   const [activeTab, setActiveTab] = useState<"all" | "discord" | "trustpilot">("all");
   const [showAll, setShowAll] = useState(false);
 
-  // Use CMS reviews if provided, else fallback
+  // Use CMS reviews if provided, else fallback — filter out invalid names and low-height cards
   const realReviews = reviews.filter(
-    (r) => r.name && r.name.trim().length > 0 && !/^verified trader$/i.test(r.name.trim())
+    (r) =>
+      r.name &&
+      r.name.trim().length > 0 &&
+      !/^verified trader$/i.test(r.name.trim()) &&
+      !isLowHeightCard(r)
   );
 
   const wallCards: WallCard[] = useMemo(() => {
-    if (realReviews.length > 0) {
-      return realReviews.map((r) => {
-        const { key, label } = normalizeSource(r.source);
-        return {
-          ...r,
-          sourceKey: key,
-          sourceLabel: label,
-          url:
-            key === "discord"
-              ? "https://discord.com/invite/hGSVx9CmS2"
-              : "https://www.trustpilot.com/review/ckcapital.co.uk",
-        };
-      });
-    }
-    return TRUSTPILOT_FALLBACK;
+    const rawList = realReviews.length > 0 ? realReviews : TRUSTPILOT_FALLBACK;
+    // Ensure all cards (CMS or fallback) exclude low-height items
+    const filteredList = rawList.filter((r) => !isLowHeightCard(r));
+    return filteredList.map((r) => {
+      const { key, label } = normalizeSource(r.source);
+      return {
+        ...r,
+        sourceKey: key,
+        sourceLabel: label,
+        url:
+          key === "discord"
+            ? "https://discord.com/invite/hGSVx9CmS2"
+            : "https://www.trustpilot.com/review/ckcapital.co.uk",
+      };
+    });
   }, [realReviews]);
 
   // Tab filtering
@@ -669,7 +682,7 @@ function WallMasonryCard({
       : undefined;
 
   const cardStyle: React.CSSProperties = ratio
-    ? { aspectRatio: ratio }
+    ? { aspectRatio: ratio, minHeight: "180px" }
     : { minHeight: "200px" };
 
   return (

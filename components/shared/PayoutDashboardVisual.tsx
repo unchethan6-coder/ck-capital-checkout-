@@ -38,7 +38,7 @@ const PAYOUT_SCENARIOS = [
     settlementTime: "processed in 4.2 hours",
     countryFlag: "🇬🇧",
     countryName: "United Kingdom",
-    speedText: "12H Guaranteed",
+    speedText: "24-48H Guaranteed",
   },
   {
     accountId: "CK-67104",
@@ -89,7 +89,7 @@ const PAYOUT_SCENARIOS = [
     settlementTime: "processed in 3.1 hours",
     countryFlag: "🇺🇸",
     countryName: "United States",
-    speedText: "12H Guaranteed",
+    speedText: "24-48H Guaranteed",
   },
   {
     accountId: "CK-83021",
@@ -123,7 +123,7 @@ const PAYOUT_SCENARIOS = [
     settlementTime: "processed in 2.1 hours",
     countryFlag: "🇦🇺",
     countryName: "Australia",
-    speedText: "12H Guaranteed",
+    speedText: "24-48H Guaranteed",
   },
 ];
 
@@ -223,7 +223,7 @@ export function PayoutDashboardVisual({
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-ping" />
                   </div>
                   <span className="flex items-center gap-1 text-[11px] font-semibold text-[#6B7280]">
-                    <Clock size={12} className="text-[#A98BFF]" /> ~12 Hours Processing
+                    <Clock size={12} className="text-[#A98BFF]" /> 24-48 Hours Processing
                   </span>
                 </div>
 
@@ -411,7 +411,7 @@ export function PayoutDashboardVisual({
                 Speed Guarantee
               </p>
               <p className="font-[family-name:var(--font-jakarta)] text-sm sm:text-base font-extrabold text-[#0A0A0C]">
-                Average 12-Hour Settlement
+                Average 24-48 Hour Settlement
               </p>
             </div>
           </div>

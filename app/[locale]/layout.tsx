@@ -134,7 +134,6 @@ export default async function LocaleLayout({
   const dir = meta.dir;
 
   const banners = await getActiveBanners();
-  const bannerTexts = banners.length ? banners.map((b) => b.text) : undefined;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
@@ -151,7 +150,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ScrollHandler />
           <TopNav />
-          <AnnouncementBar banners={bannerTexts} />
+          <AnnouncementBar banners={banners.length ? banners : undefined} />
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <CookieConsent />

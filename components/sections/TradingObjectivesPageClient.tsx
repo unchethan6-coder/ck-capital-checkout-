@@ -1659,7 +1659,7 @@ export function TradingObjectivesPageClient({
                 Fast Payouts in Crypto & Fiat
               </h3>
               <p className="mt-3 text-sm sm:text-base font-medium leading-relaxed text-[#4B5563]">
-                Receive simulated trading profit disbursements processed in under 12 hours via Crypto (USDT) or direct Bank Wire.
+                Receive simulated trading profit disbursements processed in 24-48 hours via Crypto (USDT) or direct Bank Wire.
               </p>
             </div>
           </div>

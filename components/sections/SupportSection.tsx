@@ -9,7 +9,7 @@ import { SectionReveal } from "@/components/shared/SectionReveal";
 import { fadeUp, stagger } from "@/components/fx/reveal";
 
 const SUPPORT_PLACEHOLDER = "/images/support/image-placeholder.svg";
-const DISCORD_COMMUNITY_IMG = "/images/support/discord-community.jpg";
+const DISCORD_COMMUNITY_IMG = "/images/support/discord-community-v2.jpg";
 
 export function SupportSection() {
   const t = useTranslations("support");

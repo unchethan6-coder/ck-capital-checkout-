@@ -1,27 +1,42 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import { Link } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
-
 import { ArrowRight, ArrowUpRight, Layers, Rocket, Zap } from "lucide-react";
 
 export function HowItWorks() {
   const t = useTranslations("howItWorks");
 
   const steps = [
-    { title: t("steps.step1.title"), description: t("steps.step1.description") },
-    { title: t("steps.step2.title"), description: t("steps.step2.description") },
-    { title: t("steps.step3.title"), description: t("steps.step3.description") },
-    { title: t("steps.step4.title"), description: t("steps.step4.description") },
+    {
+      phase: t("steps.step1.phase"),
+      title: t("steps.step1.title"),
+      description: t("steps.step1.description"),
+    },
+    {
+      phase: t("steps.step2.phase"),
+      title: t("steps.step2.title"),
+      description: t("steps.step2.description"),
+    },
+    {
+      phase: t("steps.step3.phase"),
+      title: t("steps.step3.title"),
+      description: t("steps.step3.description"),
+    },
+    {
+      phase: t("steps.step4.phase"),
+      title: t("steps.step4.title"),
+      description: t("steps.step4.description"),
+    },
   ];
 
   const programs = [
     {
       icon: Layers,
-      accent: "#A98BFF",
+      accent: "#894CEF",
       title: t("programs.oneStep.title"),
       description: t("programs.oneStep.description"),
       tag: t("programs.oneStep.tag"),
@@ -39,7 +54,7 @@ export function HowItWorks() {
     },
     {
       icon: Zap,
-      accent: "#34D399",
+      accent: "#703AD7",
       title: t("programs.instant.title"),
       description: t("programs.instant.description"),
       tag: t("programs.instant.tag"),
@@ -55,54 +70,64 @@ export function HowItWorks() {
       data-od-id="how-it-works"
     >
       <Container>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-14">
-          {/* ───────────── Left: the process ───────────── */}
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+          {/* ───────────── Left: The Process Timeline ───────────── */}
           <SectionReveal>
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
-              [ // {t("badge")} ]
-            </p>
-            <h2 className="mt-4 max-w-md font-[family-name:var(--font-jakarta)] text-3xl font-black leading-[1.1] tracking-tight text-[#0A0A0C] sm:text-[40px]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#894CEF]/25 bg-[#894CEF]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#703AD7] dark:text-[#A98BFF]">
+              <span className="h-2 w-2 rounded-full bg-[#894CEF] shadow-[0_0_8px_#894CEF]" />
+              {t("badge")}
+            </div>
+
+            <h2 className="mt-4 font-[family-name:var(--font-jakarta)] text-3xl font-extrabold tracking-tight text-[#0A0A0C] sm:text-4xl lg:text-[42px] leading-[1.12]">
               {t("title")}
             </h2>
 
-            <ol className="mt-9 space-y-0" data-od-id="how-it-works-steps">
-              {steps.map((step, i) => (
-                <motion.li
-                  key={step.title}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.45, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                  className={cn(
-                    "flex gap-4 py-5 sm:gap-6",
-                    i > 0 && "border-t border-gray-200/70"
-                  )}
-                  data-od-id={`how-step-${i + 1}`}
-                >
-                  <span className="shrink-0 pt-0.5 font-mono text-sm font-bold tabular-nums text-[#A98BFF]">
-                    0{i + 1}
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="font-[family-name:var(--font-jakarta)] text-lg font-bold tracking-tight text-[#0A0A0C]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-1.5 max-w-md text-sm font-medium leading-relaxed text-[#4B5563]">
-                      {step.description}
-                    </p>
-                  </div>
-                </motion.li>
-              ))}
-            </ol>
+            <p className="mt-3.5 max-w-lg text-base font-medium leading-relaxed text-[#4B5563]">
+              {t("subtitle")}
+            </p>
 
-            <div className="mt-9 flex flex-col items-start gap-5">
-              <Link
-                href="/trading-objectives"
-                className="inline-flex min-h-11 items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#0A0A0C] underline-offset-4 hover:text-[#A98BFF] hover:underline"
-              >
-                {t("compareAll")}
-                <ArrowUpRight size={14} />
-              </Link>
+            {/* Steps Timeline with connected vertical rail */}
+            <div className="relative mt-9" data-od-id="how-it-works-steps">
+              {/* Vertical connector line */}
+              <div
+                aria-hidden="true"
+                className="absolute left-[19px] top-6 bottom-8 w-px bg-gradient-to-b from-[#894CEF]/35 via-gray-200 to-gray-200 hidden sm:block"
+              />
 
+              <div className="space-y-6 sm:space-y-7">
+                {steps.map((step, i) => (
+                  <motion.div
+                    key={step.title}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative flex items-start gap-4 sm:gap-5 group"
+                    data-od-id={`how-step-${i + 1}`}
+                  >
+                    {/* Step number node */}
+                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#894CEF]/25 bg-white font-mono text-xs font-extrabold text-[#703AD7] shadow-sm transition-all duration-200 group-hover:border-[#894CEF] group-hover:bg-[#894CEF]/10 group-hover:scale-105">
+                      0{i + 1}
+                    </div>
+
+                    <div className="min-w-0 pt-0.5">
+                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#894CEF]">
+                        {step.phase}
+                      </span>
+                      <h3 className="font-[family-name:var(--font-jakarta)] text-base sm:text-lg font-bold tracking-tight text-[#0A0A0C] group-hover:text-[#703AD7] transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1 max-w-md text-sm font-medium leading-relaxed text-[#4B5563]">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="/#start-challenge"
                 onClick={(e) => {
@@ -113,22 +138,38 @@ export function HowItWorks() {
                     window.history.replaceState(null, "", `${window.location.pathname}#start-challenge`);
                   }
                 }}
-                className="group inline-flex items-center justify-center gap-2 rounded-xl brand-gradient-btn px-6 py-3.5 text-sm font-bold text-[#1A1030] shadow-md transition-all duration-200 hover:shadow-cyan-500/25"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl brand-gradient-btn px-6 py-3.5 text-sm font-bold text-[#1A1030] shadow-[0_4px_20px_rgba(231,198,107,0.35)] transition-all duration-200 hover:shadow-[0_6px_28px_rgba(231,198,107,0.5)] hover:brightness-105"
                 data-od-id="how-it-works-cta"
               >
                 <span>{t("ctaFunded")}</span>
                 <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
+
+              <Link
+                href="/trading-objectives"
+                className="inline-flex min-h-11 items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#703AD7] hover:text-[#5B21B6] transition-colors py-2 px-1"
+              >
+                <span>{t("compareAll")}</span>
+                <ArrowUpRight size={14} />
+              </Link>
             </div>
           </SectionReveal>
 
-          {/* ───────────── Right: the three programmes ───────────── */}
+          {/* ───────────── Right: The Three Programmes (Bug-free hover cards) ───────────── */}
           <SectionReveal delay={0.1}>
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
-              [ // {t("programsBadge")} ]
+            <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50/90 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#4B5563]">
+              <span className="h-2 w-2 rounded-full bg-[#E7C66B]" />
+              {t("programsBadge")}
+            </div>
+
+            <h3 className="mt-3.5 font-[family-name:var(--font-jakarta)] text-2xl sm:text-[28px] font-extrabold tracking-tight text-[#0A0A0C]">
+              {t("readyFunded")}
+            </h3>
+            <p className="mt-1 text-sm font-medium text-[#4B5563] mb-6">
+              {t("startJourney")}
             </p>
 
-            <div className="mt-4 flex flex-col gap-4" data-od-id="how-it-works-programs">
+            <div className="flex flex-col gap-4" data-od-id="how-it-works-programs">
               {programs.map((p, i) => {
                 const Icon = p.icon;
                 return (
@@ -136,67 +177,79 @@ export function HowItWorks() {
                     key={p.title}
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative overflow-hidden rounded-2xl border border-gray-200/80 bg-white p-5 transition-colors sm:p-6"
-                    data-od-id={`how-program-${i + 1}`}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    {/* corner glow in the programme's accent */}
-                    <div
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -left-10 -top-12 h-40 w-40 rounded-full opacity-45 blur-3xl transition-opacity duration-300 group-hover:opacity-70"
-                      style={{ background: p.accent }}
-                    />
+                    <Link
+                      href={p.href as never}
+                      className="group relative block overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#894CEF]/50 hover:shadow-[0_14px_36px_rgba(112,58,215,0.12)] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#894CEF]"
+                      data-od-id={`how-program-${i + 1}`}
+                    >
+                      {/* Subtle corner aura — GPU isolated, no layer thrashing */}
+                      <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -left-12 -top-12 h-36 w-36 rounded-full opacity-20 blur-2xl transition-opacity duration-300 group-hover:opacity-45 transform-gpu"
+                        style={{ background: p.accent }}
+                      />
 
-                    <div className="relative">
-                      <span
-                        className="inline-flex h-11 w-11 items-center justify-center rounded-xl"
-                        style={{ background: `${p.accent}1F`, color: p.accent }}
-                      >
-                        <Icon size={20} strokeWidth={2.2} />
-                      </span>
+                      <div className="relative z-10">
+                        {/* Icon */}
+                        <div
+                          className="flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105"
+                          style={{ background: `${p.accent}16`, color: p.accent }}
+                        >
+                          <Icon size={20} strokeWidth={2.2} />
+                        </div>
 
-                      <div className="mt-5 flex items-start justify-between gap-4">
-                        <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-bold tracking-tight text-[#0A0A0C]">
-                          {p.title}
-                        </h3>
-                        {/* phase rail — decorative, mirrors the programme shape */}
-                        <div aria-hidden="true" className="hidden shrink-0 items-center gap-1.5 pt-2 sm:flex">
-                          {p.rail.map((label, ri) => (
-                            <span key={label} className="flex items-center gap-1.5">
-                              {ri > 0 && <span className="h-px w-8 bg-gray-300" />}
-                              <span className="flex flex-col items-center gap-1">
-                                <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-gray-400">
-                                  {label}
+                        {/* Title and Phase Rail */}
+                        <div className="mt-4 flex items-start justify-between gap-4">
+                          <h4 className="font-[family-name:var(--font-jakarta)] text-lg sm:text-xl font-bold tracking-tight text-[#0A0A0C] group-hover:text-[#703AD7] transition-colors duration-200">
+                            {p.title}
+                          </h4>
+
+                          {/* Phase rail badge */}
+                          <div aria-hidden="true" className="hidden shrink-0 items-center gap-1.5 pt-1 sm:flex">
+                            {p.rail.map((label, ri) => (
+                              <span key={label} className="flex items-center gap-1.5">
+                                {ri > 0 && (
+                                  <span className="h-px w-6 sm:w-8 bg-gray-200 group-hover:bg-gray-300 transition-colors" />
+                                )}
+                                <span className="flex flex-col items-center gap-0.5">
+                                  <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-gray-400 group-hover:text-gray-600 transition-colors">
+                                    {label}
+                                  </span>
+                                  <span
+                                    className="h-2 w-2 rounded-full transition-transform duration-300 group-hover:scale-125"
+                                    style={{ background: p.accent, boxShadow: `0 0 0 3px ${p.accent}24` }}
+                                  />
                                 </span>
-                                <span
-                                  className="h-2 w-2 rounded-full ring-2"
-                                  style={{ background: p.accent, boxShadow: `0 0 0 3px ${p.accent}24` }}
-                                />
                               </span>
-                            </span>
-                          ))}
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Description */}
+                        <p className="mt-2 text-sm font-medium leading-relaxed text-[#4B5563]">
+                          {p.description}
+                        </p>
+
+                        {/* Footer / Meta info */}
+                        <div className="mt-5 flex items-center justify-between gap-4 pt-3 border-t border-gray-100">
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-[#374151] group-hover:bg-[#894CEF]/10 group-hover:text-[#703AD7] transition-colors">
+                            <span className="h-1.5 w-1.5 rounded-full" style={{ background: p.accent }} />
+                            {p.tag}
+                          </span>
+
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#703AD7] group-hover:text-[#5B21B6] transition-colors">
+                            <span>{t("viewPlans")}</span>
+                            <ArrowUpRight
+                              size={14}
+                              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            />
+                          </span>
                         </div>
                       </div>
-
-                      <p className="mt-2 max-w-md text-sm font-medium leading-relaxed text-[#4B5563]">
-                        {p.description}
-                      </p>
-
-                      <div className="mt-5 flex items-center justify-between gap-4">
-                        <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#374151]">
-                          <span className="h-1.5 w-1.5 rounded-full" style={{ background: p.accent }} />
-                          {p.tag}
-                        </span>
-                        <Link
-                          href={p.href as never}
-                          className="inline-flex min-h-11 items-center gap-1.5 text-xs font-bold text-[#0A0A0C] underline-offset-4 hover:text-[#A98BFF] hover:underline"
-                        >
-                          {t("viewPlans")}
-                          <ArrowUpRight size={14} />
-                        </Link>
-                      </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 );
               })}

@@ -209,13 +209,13 @@ export function Hero() {
               className="flex w-full justify-center lg:justify-end"
             >
             <Image
-              src="/images/ck-purple-raccoon.png"
+              src="/images/ck-purple-raccoon-v2.png"
               alt="CK Propfirm futuristic raccoon mascot holding the CK emblem"
               width={1930}
               height={1930}
               priority
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 72vw, 58vw"
-              className="hero-mascot relative ml-auto h-auto w-full max-w-[390px] object-contain drop-shadow-[0_0_60px_rgba(139,76,239,0.22)] sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"
+              className="hero-mascot relative ml-auto h-auto w-full max-w-[390px] object-contain sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"
             />
             </motion.div>
             {/* Bottom fade: blends the artwork's hard edge into the section background */}

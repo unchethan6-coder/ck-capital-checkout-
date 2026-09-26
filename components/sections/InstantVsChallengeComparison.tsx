@@ -59,7 +59,7 @@ export function InstantVsChallengeComparison() {
     },
     {
       label: "Max Daily Drawdown",
-      instantValue: "3% Static",
+      instantValue: "3%",
       challengeValue: "4% - 5%",
       challengeBadge: "Higher Buffer",
     },
@@ -95,8 +95,8 @@ export function InstantVsChallengeComparison() {
     },
     {
       feature: "Payout Processing SLA",
-      instant: "~12-Hour SLA Guaranteed",
-      challenge: "~12-Hour SLA Guaranteed",
+      instant: "24-48hr SLA Guaranteed",
+      challenge: "24-48hr SLA Guaranteed",
     },
     {
       feature: "Trading Platforms",
