@@ -187,9 +187,6 @@ export function Hero() {
 
           {/* Right Column: CK mascot artwork */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
             style={{ y: artY, scale: artScale, opacity: artOpacity }}
             className="relative isolate z-0 mt-6 -mb-14 flex min-h-[340px] w-full max-w-full items-end justify-center overflow-visible sm:-mb-16 sm:mt-8 sm:min-h-[470px] md:-mb-20 lg:col-span-7 lg:mt-0 lg:min-h-[610px] lg:justify-end xl:col-span-7"
           >
@@ -209,12 +206,12 @@ export function Hero() {
               className="flex w-full justify-center lg:justify-end"
             >
             <Image
-              src="/images/ck-purple-raccoon-v2.png"
+              src="/images/ck-purple-raccoon-v2.webp"
               alt="CK Propfirm futuristic raccoon mascot holding the CK emblem"
               width={1930}
               height={1930}
               priority
-              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 72vw, 58vw"
+              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 560px, (max-width: 1280px) 720px, 790px"
               className="hero-mascot relative ml-auto h-auto w-full max-w-[390px] object-contain sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"
             />
             </motion.div>
