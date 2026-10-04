@@ -19,13 +19,13 @@ import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
 import { WhatsNewBanner } from "@/components/sections/WhatsNewBanner";
 
-const accountSizes = ["5K", "10K", "25K", "50K", "100K", "200K", "300K"];
+const accountSizes = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
 /** Multi-account pricing: buying more than one evaluation discounts each one. */
 const QUANTITY_TIERS = [
   { n: 1, off: 0, label: "1st account" },
-  { n: 2, off: 10, label: "2nd account" },
-  { n: 3, off: 15, label: "3rd account" },
+  { n: 2, off: 5, label: "2nd account" },
+  { n: 3, off: 5, label: "3rd account" },
 ] as const;
 
 /** Stagger variant for the horizontal card rows. The parent row drives the
@@ -87,7 +87,7 @@ export function ChallengeComparison({
     let currentType = "standard";
     if (rawType) {
       const normalizedType = rawType === "one-step" ? "1step" : rawType;
-      if (["standard", "1step", "instant"].includes(normalizedType)) {
+      if (["standard", "1step", "pro", "instant"].includes(normalizedType)) {
         setSelectedType(normalizedType);
         currentType = normalizedType;
       }
@@ -97,7 +97,7 @@ export function ChallengeComparison({
     if (rawSize) {
       const cleanSize = rawSize.replace("$", "").toUpperCase();
       if (accountSizes.includes(cleanSize)) {
-        if (currentType === "instant" && cleanSize === "300K") {
+        if (currentType === "instant" && (cleanSize === "200K" || cleanSize === "300K")) {
           setSelectedSize("100K");
         } else {
           setSelectedSize(cleanSize);
@@ -114,15 +114,15 @@ export function ChallengeComparison({
     }
   }, []);
 
-  // Filter out 300K completely when instant funding is active
+  // Filter out 200K and 300K completely when instant funding is active
   const visibleSizes = useMemo(() => {
     return selectedType === "instant"
-      ? accountSizes.filter((s) => s !== "300K")
+      ? accountSizes.filter((s) => s !== "200K" && s !== "300K")
       : accountSizes;
   }, [selectedType]);
 
   useEffect(() => {
-    if (selectedType === "instant" && selectedSize === "300K") {
+    if (selectedType === "instant" && (selectedSize === "200K" || selectedSize === "300K")) {
       setSelectedSize("100K");
     }
   }, [selectedType, selectedSize]);
@@ -413,8 +413,8 @@ export function ChallengeComparison({
               className={cn(
                 "grid grid-cols-2 gap-2.5 pb-16 sm:gap-3 sm:pb-0",
                 selectedType === "instant"
-                  ? "sm:grid-cols-3 lg:grid-cols-6"
-                  : "sm:grid-cols-4 lg:grid-cols-7",
+                  ? "sm:grid-cols-4 lg:grid-cols-4"
+                  : "sm:grid-cols-3 lg:grid-cols-6",
                 viewMode === "cards" ? "" : "hidden"
               )}
             >
@@ -717,7 +717,7 @@ export function ChallengeComparison({
                       {t("addOnsAvailable") || "Add-Ons Available"}
                     </span>
                     <div className="flex flex-wrap gap-1.5">
-                      {["24 Hour Payout +25%", "No Consistency Score (2-Step) +70%"].map(
+                      {["24 Hour Payout +25%"].map(
                         (addon) => (
                           <span
                             key={addon}
@@ -770,8 +770,8 @@ export function ChallengeComparison({
                     className={cn(
                       "grid gap-x-2 bg-[#F8F8FA] p-3",
                       selectedType === "instant"
-                        ? "min-w-[980px] grid-cols-[190px_repeat(6,minmax(124px,1fr))]"
-                        : "min-w-[1120px] grid-cols-[190px_repeat(7,minmax(124px,1fr))]"
+                        ? "min-w-[800px] grid-cols-[190px_repeat(4,minmax(124px,1fr))]"
+                        : "min-w-[1000px] grid-cols-[190px_repeat(6,minmax(124px,1fr))]"
                     )}
                   >
                     <div className="rounded-t-xl border-x border-t border-[#D9D9D9] bg-[#F2F0F8] p-4 shadow-sm">
@@ -795,7 +795,7 @@ export function ChallengeComparison({
                           <span className="text-[9px] font-bold uppercase tracking-wider text-gray-500">Account</span>
                           <strong className="mt-0.5 block text-lg text-[#0A0A0C]">${size}</strong>
                           <span className="mt-1.5 block text-[8px] font-bold uppercase tracking-wider text-gray-400">Today</span>
-                          <span className="block text-xs font-extrabold text-white">{plan ? formatMoney(plan.disc) : "N/A"}</span>
+                          <span className="block text-xs font-extrabold text-[#0A0A0C]">{plan ? formatMoney(plan.disc) : "N/A"}</span>
                           {plan && (
                             <span className="block text-[9px] text-gray-400">
                               was <span className="line-through">{formatMoney(plan.orig)}</span>

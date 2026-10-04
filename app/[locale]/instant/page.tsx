@@ -23,19 +23,17 @@ export default function InstantPage() {
   const benefits = [
     { title: 'No Evaluation', description: 'Skip the multi-phase challenge. Access your simulated account in minutes.' },
     { title: 'Immediate Access', description: 'Start executing trading strategies right away with zero waiting periods.' },
-    { title: 'Flexible Funding', description: 'Choose account sizes from $5K up to $200K with instant account setup.' },
+    { title: 'Flexible Funding', description: 'Choose account sizes from $10K up to $100K with instant account setup.' },
     { title: 'Generous Rules', description: 'Balanced profit parameters and realistic loss limits designed for long-term consistency.' },
     { title: 'Lower Consistency', description: 'Only 20% consistency requirement to build your simulated track record quickly.' },
     { title: 'Up to 100% Profit Split', description: 'Eligible Qualified Analysts keep up to 100% of eligible simulated profits.' },
   ]
 
   const pricing = [
-    { amount: '$5K', price: '$39.20', orig: '$130.67', urlCode: '29' },
-    { amount: '$10K', price: '$69.20', orig: '$230.67', urlCode: '30' },
-    { amount: '$25K', price: '$139.20', orig: '$464.00', urlCode: '31' },
-    { amount: '$50K', price: '$249.20', orig: '$830.67', urlCode: '32' },
-    { amount: '$100K', price: '$449.20', orig: '$1,497.33', urlCode: '33' },
-    { amount: '$200K', price: '$898.40', orig: '$2,994.67', urlCode: '34' },
+    { amount: '$10K', price: '$38.20', orig: '$127.33', urlCode: '30' },
+    { amount: '$25K', price: '$78.20', orig: '$260.67', urlCode: '31' },
+    { amount: '$50K', price: '$198.20', orig: '$660.67', urlCode: '32' },
+    { amount: '$100K', price: '$389.20', orig: '$1,297.33', urlCode: '33' },
   ]
 
   const instantFaqs = [

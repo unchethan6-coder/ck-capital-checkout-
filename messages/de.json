@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Regeln & Richtlinien",
     "oneStepTitle": "1-Stufen Evaluierung",
     "oneStepDesc": "Einphasiges Ziel, Schnellüberholspur zum geförderten Trader.",
-    "oneStepPrice": "Ab $18",
+    "oneStepPrice": "Ab $28",
     "twoStepTitle": "2-Stufen Evaluierung",
     "twoStepDesc": "Traditionelle 2-Phasen-Verifizierung mit maximaler Gewinnbeteiligung.",
     "twoStepPrice": "Ab $18",
     "instantTitle": "Sofort-Finanzierung",
-    "instantPrice": "Ab $39",
+    "instantPrice": "Ab $38",
     "compareAllTitle": "Alle Programme Vergleichen",
     "compareAllDesc": "Direkter Vergleich von Drawdown, Gewinnzielen und Gebühren",
     "tradingObjectivesTitle": "Handelsziele",
@@ -117,7 +117,7 @@
         "step": "04",
         "phase": "Phase 4",
         "title": "Auszahlung anfordern",
-        "description": "Fordern Sie Ihre Belohnung an, sobald die Kriterien erfüllt sind. Die Abwicklung dauert im Schnitt rund 12 Stunden, berechtigte Analysten behalten bis zu 100% der simulierten Gewinne."
+        "description": "Fordern Sie Ihre Belohnung an, sobald die Kriterien erfüllt sind — jede genehmigte Auszahlung hat unsere 48-Stunden-Garantie, und ab der vierten Auszahlung können Sie das gesamte Guthaben über Ihrem Puffer abheben."
       }
     },
     "badge": "Ablauf",

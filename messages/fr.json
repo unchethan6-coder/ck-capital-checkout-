@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Règles & Directives",
     "oneStepTitle": "Évaluation en 1 Étape",
     "oneStepDesc": "Objectif en phase unique, voie rapide vers le compte financé.",
-    "oneStepPrice": "À partir de 18 $",
+    "oneStepPrice": "À partir de 28 $",
     "twoStepTitle": "Évaluation en 2 Étapes",
     "twoStepDesc": "Vérification classique en 2 phases avec partage maximal des profits.",
     "twoStepPrice": "À partir de 18 $",
     "instantTitle": "Financement Instantané",
-    "instantPrice": "À partir de 39 $",
+    "instantPrice": "À partir de 38 $",
     "compareAllTitle": "Comparer Tous les Programmes",
     "compareAllDesc": "Comparaison des drawdowns, objectifs de profit et tarifs",
     "tradingObjectivesTitle": "Objectifs de Trading",
@@ -117,7 +117,7 @@
         "step": "04",
         "phase": "Phase 4",
         "title": "Demandez votre récompense",
-        "description": "Demandez votre récompense dès que les critères d'éligibilité sont remplis. Le règlement prend en moyenne 12 heures et les analystes éligibles conservent jusqu'à 100% des gains simulés."
+        "description": "Demandez votre récompense dès que les critères d'éligibilité sont remplis : chaque paiement approuvé bénéficie de notre garantie de règlement sous 48 heures, et à partir du quatrième paiement vous pouvez retirer tout le solde au-dessus de votre buffer."
       }
     },
     "badge": "Processus",

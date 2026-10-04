@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import {
-  AlertCircle,
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
@@ -256,20 +255,6 @@ function Step2Detail({
   const t = useTranslations("tradingObjectives");
   const middle = false;
   const showDollar = Boolean(size && rule);
-
-  if (evalType === "pro") {
-    return (
-      <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-white p-12 text-center shadow-sm">
-        <AlertCircle className="mb-3 text-[#8A5A00]" size={36} />
-        <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
-          2-Step Pro Specifications
-        </h3>
-        <p className="mt-2 max-w-md text-sm font-medium text-gray-600">
-          {t("rows.twoStepProPending")}
-        </p>
-      </div>
-    );
-  }
 
   const platformRow: CardRow = {
     label: t("rows.platform"),
@@ -867,7 +852,7 @@ function ObjectiveFaq() {
 
 function pathToType(path: Path, evalType: EvalType): ChallengeType {
   if (path === "1step") return "one-step";
-  if (path === "2step") return "standard";
+  if (path === "2step") return evalType === "pro" ? "two-step-pro" : "standard";
   return "instant";
 }
 
@@ -886,7 +871,7 @@ export function TradingObjectivesPageClient({
   const [evalType, setEvalType] = useState<EvalType>(initial.evalType);
   const [platform, setPlatform] = useState<Platform>(initial.platform);
   const [size, setSize] = useState<string | null>(() => {
-    if (initial.path === "instant" && (initial.size === "$300K" || initial.size === "300K")) {
+    if (initial.path === "instant" && (initial.size === "$200K" || initial.size === "200K" || initial.size === "$300K" || initial.size === "300K")) {
       return "$100K";
     }
     return initial.size ?? "$100K";
@@ -894,7 +879,7 @@ export function TradingObjectivesPageClient({
 
   const visibleSizes = useMemo(() => {
     return path === "instant"
-      ? sizes.filter((s) => s !== "$300K" && s !== "300K")
+      ? sizes.filter((s) => s !== "$200K" && s !== "200K" && s !== "$300K" && s !== "300K")
       : sizes;
   }, [path, sizes]);
 
@@ -997,7 +982,7 @@ export function TradingObjectivesPageClient({
     if (id !== "2step" && evalType !== "standard") setEvalType("standard");
     const type = pathToType(id, id !== "2step" ? "standard" : evalType);
     let nextSize = size && !rules[type]?.[size] ? "$100K" : size;
-    if (id === "instant" && (nextSize === "$300K" || nextSize === "300K")) {
+    if (id === "instant" && (nextSize === "$200K" || nextSize === "200K" || nextSize === "$300K" || nextSize === "300K")) {
       nextSize = "$100K";
     }
     if (nextSize !== size) setSize(nextSize);
@@ -1024,7 +1009,7 @@ export function TradingObjectivesPageClient({
     syncUrl({ size: id });
   };
 
-  const modelKey = "standard";
+  const modelKey: ChallengeType = evalType === "pro" ? "two-step-pro" : "standard";
   const step2Rule = size ? rules[modelKey]?.[size] : undefined;
   const step1Rule = size ? rules["one-step"]?.[size] : undefined;
   const instantRule = size ? rules["instant"]?.[size] : undefined;
@@ -1032,8 +1017,8 @@ export function TradingObjectivesPageClient({
 
   // Dynamic pricing calculation for sticky summary
   const priceData = size ? CHALLENGE_PRICES[typeParam]?.[size] : undefined;
-  const activePrice = priceData ? priceData.price : "$18.20";
-  const activeOldPrice = priceData ? priceData.oldPrice : "$64.00";
+  const activePrice = priceData ? priceData.price : "$18.80";
+  const activeOldPrice = priceData ? priceData.oldPrice : "$62.67";
   const activeRule =
     path === "2step" ? step2Rule : path === "1step" ? step1Rule : instantRule;
 
