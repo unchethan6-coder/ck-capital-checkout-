@@ -680,7 +680,7 @@ export function ChallengeComparison({
                       {t("addOnsAvailable") || "Add-Ons Available"}
                     </span>
                     <div className="flex flex-wrap gap-1.5">
-                      {["24 Hour Payout +25%", "No Consistency Score (2-Step) +70%"].map(
+                      {["24 Hour Payout +25%"].map(
                         (addon) => (
                           <span
                             key={addon}

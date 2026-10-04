@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "OFERTA POR TIEMPO LIMITADO",
-    "discount": "70% DE DESCUENTO",
+    "discount": "75% DE DESCUENTO",
     "allEvaluations": "TODAS LAS EVALUACIONES",
     "codeLabel": "USA EL CÓDIGO",
     "expiresIn": "TERMINA EN",
-    "claimOffer": "OBTENER 70% DTO"
+    "claimOffer": "OBTENER 75% DTO"
   },
   "nav": {
     "evaluation": "Evaluación",
@@ -129,7 +129,7 @@
     "startJourney": "Comienza tu viaje hoy.",
     "startChallenge": "Comenzar Desafío",
     "compareAll": "Comparar todos los programas",
-    "ctaFunded": "Consigue fondeo — hasta 70% de descuento",
+    "ctaFunded": "Consigue fondeo — hasta 75% de descuento",
     "programsBadge": "Programas de cuenta",
     "viewPlans": "Ver planes",
     "railFunded": "Fondeada",
@@ -783,10 +783,10 @@
     "hoursDesc": "Lunes a Viernes: 8am - 8pm GMT. Soporte comunitario 24/7."
   },
   "evaluation": {
-    "badge": "Oferta Limitada · 70% Dto en Evaluaciones",
+    "badge": "Oferta Limitada · 75% Dto en Evaluaciones",
     "title": "Evaluaciones de Trading para traders serios.",
     "subtitle": "Demuestra tus habilidades en entorno simulado y desbloquea cuentas fondeadas de hasta $1.2M.",
-    "claimOffer": "Reclamar 70% DTO",
+    "claimOffer": "Reclamar 75% DTO",
     "compareBtn": "Comparar Desafíos",
     "pathEyebrow": "Cómo Funciona",
     "pathTitle": "Tu Camino al Éxito",
@@ -1073,7 +1073,7 @@
     "badge": "iniciar desafío · Desde $9",
     "hotOffer": "oferta destacada",
     "defaultHeadline": "Tu Primer Desafío, {discount} de Descuento",
-    "defaultSubcopy": "Disfruta de un 70% de descuento en modelos seleccionados hasta $100K. Solo nuevos usuarios.",
+    "defaultSubcopy": "Disfruta de un 75% de descuento en modelos seleccionados hasta $100K. Solo nuevos usuarios.",
     "useCode": "Usar Código: {code}"
   },
   "search": {

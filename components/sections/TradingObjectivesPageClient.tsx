@@ -1484,7 +1484,7 @@ export function TradingObjectivesPageClient({
                         {activePrice}
                       </span>
                       <span className="rounded bg-[#894CEF] px-2 py-0.5 text-[10.5px] font-black text-[#030A1C]">
-                        70% OFF
+                        75% OFF
                       </span>
                     </div>
                     <p className="mt-1.5 text-xs font-medium text-[#6B7280]">
