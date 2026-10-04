@@ -22,8 +22,8 @@ const accountSizes = ["10K", "25K", "50K", "100K", "200K", "300K"];
 /** Multi-account pricing: buying more than one evaluation discounts each one. */
 const QUANTITY_TIERS = [
   { n: 1, off: 0, label: "1st account" },
-  { n: 2, off: 10, label: "2nd account" },
-  { n: 3, off: 15, label: "3rd account" },
+  { n: 2, off: 5, label: "2nd account" },
+  { n: 3, off: 5, label: "3rd account" },
 ] as const;
 
 /** Stagger variant for the horizontal card rows. The parent row drives the
