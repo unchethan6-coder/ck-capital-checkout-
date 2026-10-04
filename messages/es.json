@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Reglas y Directrices",
     "oneStepTitle": "Evaluación de 1 Paso",
     "oneStepDesc": "Objetivo de una sola fase, vía rápida a cuenta financiada.",
-    "oneStepPrice": "Desde $18",
+    "oneStepPrice": "Desde $28",
     "twoStepTitle": "Evaluación de 2 Pasos",
     "twoStepDesc": "Verificación tradicional en 2 fases con máximo reparto de beneficios.",
     "twoStepPrice": "Desde $18",
     "instantTitle": "Financiación Instantánea",
-    "instantPrice": "Desde $39",
+    "instantPrice": "Desde $38",
     "compareAllTitle": "Comparar Todos los Programas",
     "compareAllDesc": "Comparativa de drawdown, objetivos de beneficio y tarifas",
     "tradingObjectivesTitle": "Objetivos de Trading",
@@ -117,7 +117,7 @@
         "step": "04",
         "phase": "Fase 4",
         "title": "Solicita tu recompensa",
-        "description": "Pide tu recompensa cuando cumplas los criterios de elegibilidad. La liquidación media es de unas 12 horas y los analistas elegibles conservan hasta el 100% de los beneficios simulados."
+        "description": "Pide tu recompensa cuando cumplas los criterios de elegibilidad: cada pago aprobado tiene nuestra garantía de liquidación en 48 horas y, a partir del cuarto pago, puedes retirar todo el saldo por encima de tu colchón."
       }
     },
     "badge": "Proceso",

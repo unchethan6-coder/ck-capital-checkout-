@@ -17,7 +17,7 @@ import {
 import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
 
-const accountSizes = ["5K", "10K", "25K", "50K", "100K", "200K", "300K"];
+const accountSizes = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
 /** Multi-account pricing: buying more than one evaluation discounts each one. */
 const QUANTITY_TIERS = [
@@ -84,7 +84,7 @@ export function ChallengeComparison({
     const rawType = searchParams.get("type") || searchParams.get("plan");
     if (rawType) {
       const normalizedType = rawType === "one-step" ? "1step" : rawType;
-      if (["standard", "1step", "instant"].includes(normalizedType)) {
+      if (["standard", "1step", "pro", "instant"].includes(normalizedType)) {
         setSelectedType(normalizedType);
       }
     }
@@ -379,7 +379,7 @@ export function ChallengeComparison({
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
               variants={{ show: { transition: { staggerChildren: 0.05 } } }}
-              className="grid grid-cols-2 gap-2.5 pb-16 sm:grid-cols-4 sm:gap-3 sm:pb-0 lg:grid-cols-7">
+              className="grid grid-cols-2 gap-2.5 pb-16 sm:grid-cols-3 sm:gap-3 sm:pb-0 lg:grid-cols-6">
               {accountSizes.map((size) => {
                 const data = rawData[size]?.[selectedType];
                 const isSelected = size === selectedSize;
@@ -729,7 +729,7 @@ export function ChallengeComparison({
                 </div>
 
                 <div className="overflow-x-auto overscroll-x-contain [scrollbar-width:thin] [scrollbar-color:#894CEF_#F2F0F8]">
-                  <div className="grid min-w-[1120px] grid-cols-[190px_repeat(7,minmax(124px,1fr))] gap-x-2 bg-[#F8F8FA] p-3">
+                  <div className="grid min-w-[1000px] grid-cols-[190px_repeat(6,minmax(124px,1fr))] gap-x-2 bg-[#F8F8FA] p-3">
                     <div className="rounded-t-xl border-x border-t border-[#D9D9D9] bg-[#F2F0F8] p-4 shadow-sm">
                       <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-gray-500">Account</span>
                       <p className="mt-1 text-sm font-extrabold text-[#0A0A0C]">Key features</p>

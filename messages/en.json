@@ -16,14 +16,14 @@
     "evaluationDesc": "1-Step & 2-Step Challenges",
     "oneStepTitle": "1-Step Evaluation",
     "oneStepDesc": "Single-stage objective, fast-track to funded trader.",
-    "oneStepPrice": "From $18",
+    "oneStepPrice": "From $28",
     "twoStepTitle": "2-Step Evaluation",
     "twoStepDesc": "Traditional two-phase verification with max profit split.",
     "twoStepPrice": "From $18",
     "instantFunding": "Instant Funding",
     "instantTitle": "Instant Funding",
     "instantDesc": "Direct simulated capital with no evaluation phase.",
-    "instantPrice": "From $39",
+    "instantPrice": "From $38",
     "compareAllTitle": "Compare All Programs",
     "compareAllDesc": "Side-by-side comparison of drawdown, profit targets & fees",
     "tradingObjectivesTitle": "Trading Objectives",
@@ -116,7 +116,7 @@
         "step": "04",
         "phase": "Phase 4",
         "title": "Request your reward",
-        "description": "Ask for a reward on demand once the eligibility criteria are met. Settlement averages around 12 hours, and eligible analysts keep up to 100% of simulated profits."
+        "description": "Ask for a reward on demand once the eligibility criteria are met — every approved payout carries our 48-hour settlement guarantee, and from your fourth payout you can withdraw the full balance above your buffer."
       }
     },
     "badge": "Process",

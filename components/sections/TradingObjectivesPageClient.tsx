@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import {
-  AlertCircle,
   ArrowRight,
   ArrowUpRight,
   CalendarDays,
@@ -257,19 +256,6 @@ function Step2Detail({
   const middle = false;
   const showDollar = Boolean(size && rule);
 
-  if (evalType === "pro") {
-    return (
-      <div className="flex min-h-72 flex-col items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-white p-12 text-center shadow-sm">
-        <AlertCircle className="mb-3 text-[#8A5A00]" size={36} />
-        <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-black text-[#0A0A0C]">
-          2-Step Pro Specifications
-        </h3>
-        <p className="mt-2 max-w-md text-sm font-medium text-gray-600">
-          {t("rows.twoStepProPending")}
-        </p>
-      </div>
-    );
-  }
 
   const platformRow: CardRow = {
     label: t("rows.platform"),
@@ -867,7 +853,7 @@ function ObjectiveFaq() {
 
 function pathToType(path: Path, evalType: EvalType): ChallengeType {
   if (path === "1step") return "one-step";
-  if (path === "2step") return "standard";
+  if (path === "2step") return evalType === "pro" ? "two-step-pro" : "standard";
   return "instant";
 }
 
@@ -1004,7 +990,7 @@ export function TradingObjectivesPageClient({
     syncUrl({ size: id });
   };
 
-  const modelKey = "standard";
+  const modelKey: ChallengeType = evalType === "pro" ? "two-step-pro" : "standard";
   const step2Rule = size ? rules[modelKey]?.[size] : undefined;
   const step1Rule = size ? rules["one-step"]?.[size] : undefined;
   const instantRule = size ? rules["instant"]?.[size] : undefined;
@@ -1012,7 +998,7 @@ export function TradingObjectivesPageClient({
 
   // Dynamic pricing calculation for sticky summary
   const priceData = size ? CHALLENGE_PRICES[typeParam]?.[size] : undefined;
-  const activePrice = priceData ? priceData.price : "$18.20";
+  const activePrice = priceData ? priceData.price : "$18.80";
   const activeOldPrice = priceData ? priceData.oldPrice : "$64.00";
   const activeRule =
     path === "2step" ? step2Rule : path === "1step" ? step1Rule : instantRule;
