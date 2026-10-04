@@ -199,7 +199,7 @@ export function SiteFooter() {
               <img
                 src="/images/brand/logo.svg"
                 alt="CK Propfirm"
-                width={1095}
+                width={886}
                 height={198}
                 className="h-7 sm:h-8 w-auto object-contain"
               />

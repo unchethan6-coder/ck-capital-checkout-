@@ -1,94 +1,18 @@
-import React from "react";
-
-export function CKEmblem({
-  className = "h-6 w-auto",
-  fill = "gradient",
-}: {
-  className?: string;
-  fill?: "gradient" | string;
-}) {
-  return (
-    <svg
-      viewBox="0 0 246 198"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient
-          id="ck-emblem-grad"
-          x1="170.695"
-          y1="-168.242"
-          x2="-156.902"
-          y2="28.4842"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0.21" stopColor="#7A40EE" />
-          <stop offset="0.498174" stopColor="#B595FF" />
-          <stop offset="0.727589" stopColor="#9440EE" />
-          <stop offset="0.988589" stopColor="#7717DE" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M141.758 97.0725L245.61 197.788H198.9L161.067 161.061L160.259 160.282L95.1982 97.1399L194.557 0.0236908H240.324L141.758 97.0725ZM165.404 197.785H97.2129C82.8171 197.819 68.5957 194.605 55.585 188.379C49.611 185.527 43.9379 182.072 38.6523 178.067C33.849 174.418 29.3828 170.336 25.3096 165.872H132.553L165.404 197.785ZM106.334 142.503H9.37012C4.4616 132.486 1.2917 121.692 0 110.591H73.4277L106.334 142.503ZM69.7773 87.219H0.0185547C1.30665 76.1171 4.47577 65.3215 9.3877 55.3059H102.424L69.7773 87.219ZM161.105 0.0227142L128.465 31.9348H25.2881C29.3657 27.4652 33.8399 23.3821 38.6533 19.7356C43.9384 15.7212 49.6114 12.2566 55.5859 9.39478C68.5987 3.17638 82.8193 -0.0328354 97.2139 0.000253291L161.105 0.0227142Z"
-        fill={fill === "gradient" ? "url(#ck-emblem-grad)" : fill}
-      />
-    </svg>
-  );
-}
-
-export function CKLogo({
-  variant = "dark",
-  className = "h-7 w-auto",
-  showWordmark = true,
-}: {
-  variant?: "light" | "dark" | "gold";
-  className?: string;
-  showWordmark?: boolean;
-}) {
-  const wordmarkColor =
-    variant === "light"
-      ? "#0A0A0C"
-      : variant === "gold"
-      ? "#A98BFF"
-      : "#FFFFFF";
-
-  if (!showWordmark) {
-    return <CKEmblem className={className} fill="gradient" />;
-  }
-
-  return (
-    <svg
-      viewBox="0 0 886 198"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-label="CK Propfirm"
-    >
-      <defs>
-        <linearGradient
-          id="ck-logo-grad"
-          x1="170.695"
-          y1="-168.242"
-          x2="-156.902"
-          y2="28.4842"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0.21" stopColor="#7A40EE" />
-          <stop offset="0.498174" stopColor="#B595FF" />
-          <stop offset="0.727589" stopColor="#9440EE" />
-          <stop offset="0.988589" stopColor="#7717DE" />
-        </linearGradient>
-      </defs>
-      {/* CK Emblem */}
-      <path
-        d="M141.758 97.0725L245.61 197.788H198.9L161.067 161.061L160.259 160.282L95.1982 97.1399L194.557 0.0236908H240.324L141.758 97.0725ZM165.404 197.785H97.2129C82.8171 197.819 68.5957 194.605 55.585 188.379C49.611 185.527 43.9379 182.072 38.6523 178.067C33.849 174.418 29.3828 170.336 25.3096 165.872H132.553L165.404 197.785ZM106.334 142.503H9.37012C4.4616 132.486 1.2917 121.692 0 110.591H73.4277L106.334 142.503ZM69.7773 87.219H0.0185547C1.30665 76.1171 4.47577 65.3215 9.3877 55.3059H102.424L69.7773 87.219ZM161.105 0.0227142L128.465 31.9348H25.2881C29.3657 27.4652 33.8399 23.3821 38.6533 19.7356C43.9384 15.7212 49.6114 12.2566 55.5859 9.39478C68.5987 3.17638 82.8193 -0.0328354 97.2139 0.000253291L161.105 0.0227142Z"
-        fill="url(#ck-logo-grad)"
-      />
-      {/* CKPropFirm Wordmark */}
-      <g transform="translate(0, 198) scale(0.025, -0.025)" fill={wordmarkColor}>
-        <path d="M28760 5500 c-6 -12 -21 -20 -36 -20 -35 0 -164 -129 -164 -164 0
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="886" height="198" viewBox="0 0 886 198" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ck-brand-gradient" x1="170.695" y1="-168.242" x2="-156.902" y2="28.4842" gradientUnits="userSpaceOnUse">
+      <stop offset="0.21" stop-color="#7A40EE"/>
+      <stop offset="0.498174" stop-color="#B595FF"/>
+      <stop offset="0.727589" stop-color="#9440EE"/>
+      <stop offset="0.988589" stop-color="#7717DE"/>
+    </linearGradient>
+  </defs>
+  <!-- CK Emblem -->
+  <path d="M141.758 97.0725L245.61 197.788H198.9L161.067 161.061L160.259 160.282L95.1982 97.1399L194.557 0.0236908H240.324L141.758 97.0725ZM165.404 197.785H97.2129C82.8171 197.819 68.5957 194.605 55.585 188.379C49.611 185.527 43.9379 182.072 38.6523 178.067C33.849 174.418 29.3828 170.336 25.3096 165.872H132.553L165.404 197.785ZM106.334 142.503H9.37012C4.4616 132.486 1.2917 121.692 0 110.591H73.4277L106.334 142.503ZM69.7773 87.219H0.0185547C1.30665 76.1171 4.47577 65.3215 9.3877 55.3059H102.424L69.7773 87.219ZM161.105 0.0227142L128.465 31.9348H25.2881C29.3657 27.4652 33.8399 23.3821 38.6533 19.7356C43.9384 15.7212 49.6114 12.2566 55.5859 9.39478C68.5987 3.17638 82.8193 -0.0328354 97.2139 0.000253291L161.105 0.0227142Z" fill="url(#ck-brand-gradient)"/>
+  <!-- CKPropFirm Wordmark -->
+  <g transform="translate(0.000000,198.000000) scale(0.025000,-0.025000)" fill="#0A0A0C">
+    <path d="M28760 5500 c-6 -12 -21 -20 -36 -20 -35 0 -164 -129 -164 -164 0
 -15 -8 -30 -20 -36 -18 -9 -20 -21 -20 -100 0 -79 2 -91 20 -100 12 -6 20 -21
 20 -36 0 -35 129 -164 164 -164 15 0 30 -8 36 -20 10 -18 21 -20 140 -20 119
 0 130 2 140 20 6 12 21 20 36 20 34 0 124 90 124 124 0 15 8 30 20 36 18 10
@@ -274,7 +198,5 @@ l212 3 0 295 0 295 -172 3 c-164 2 -173 2 -183 -18z"/>
 -10 19 -21 20 -160 20 -139 0 -150 -1 -160 -20z"/>
     <path d="M28565 4508 c-3 -7 -4 -555 -3 -1218 l3 -1205 335 0 335 0 0 1215 0
 1215 -333 3 c-261 2 -334 0 -337 -10z"/>
-      </g>
-    </svg>
-  );
-}
+  </g>
+</svg>
