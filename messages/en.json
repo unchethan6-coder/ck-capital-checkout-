@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "LIMITED TIME SALE",
-    "discount": "70% OFF",
+    "discount": "75% OFF",
     "allEvaluations": "ALL EVALUATIONS",
     "codeLabel": "USE CODE",
     "expiresIn": "EXPIRES IN",
-    "claimOffer": "CLAIM 70% OFF"
+    "claimOffer": "CLAIM 75% OFF"
   },
   "nav": {
     "programs": "Programs",
@@ -128,7 +128,7 @@
     "startJourney": "Start your journey today.",
     "startChallenge": "Start Challenge",
     "compareAll": "Compare all programmes",
-    "ctaFunded": "Get funded — up to 70% off",
+    "ctaFunded": "Get funded — up to 75% off",
     "programsBadge": "Account programmes",
     "viewPlans": "View plans",
     "railFunded": "Funded",
@@ -800,10 +800,10 @@
     "hoursDesc": "Monday - Friday: 8am - 8pm GMT. 24/7 Community Support."
   },
   "evaluation": {
-    "badge": "Limited Time · 70% Off All Evaluations",
+    "badge": "Limited Time · 75% Off All Evaluations",
     "title": "Trading Evaluations built for serious traders.",
     "subtitle": "Prove your skills in a simulated environment, unlock funded accounts up to $1.2M, and keep up to 100% of your profits. Transparent rules, no hidden fees, no time limits.",
-    "claimOffer": "Claim 70% OFF",
+    "claimOffer": "Claim 75% OFF",
     "compareBtn": "Compare Challenges",
     "pathEyebrow": "How It Works",
     "pathTitle": "Your Path to Success",
@@ -1090,7 +1090,7 @@
     "badge": "start challenge · From $9",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 70% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 75% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
     "useCode": "Use Code: {code}"
   },
   "search": {

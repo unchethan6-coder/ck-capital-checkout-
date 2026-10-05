@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "OFERTA POR TEMPO LIMITADO",
-    "discount": "70% DE DESCONTO",
+    "discount": "75% DE DESCONTO",
     "allEvaluations": "TODAS AS AVALIAÇÕES",
     "codeLabel": "USE O CÓDIGO",
     "expiresIn": "TERMINA EM",
-    "claimOffer": "OBTER 70% DE DESCONTO"
+    "claimOffer": "OBTER 75% DE DESCONTO"
   },
   "nav": {
     "evaluation": "Avaliação",
@@ -129,7 +129,7 @@
     "startJourney": "Comece a sua jornada hoje.",
     "startChallenge": "Iniciar Desafio",
     "compareAll": "Comparar todos os programas",
-    "ctaFunded": "Seja financiado — até 70% de desconto",
+    "ctaFunded": "Seja financiado — até 75% de desconto",
     "programsBadge": "Programas de conta",
     "viewPlans": "Ver planos",
     "railFunded": "Financiada",
@@ -801,10 +801,10 @@
     "hoursDesc": "Segunda a Sexta: 8h às 20h GMT. Suporte comunitário 24/7."
   },
   "evaluation": {
-    "badge": "Oferta Limitada · 70% Off em Avaliações",
+    "badge": "Oferta Limitada · 75% Off em Avaliações",
     "title": "Avaliações de Trading feitas para traders sérios.",
     "subtitle": "Mostre suas habilidades em ambiente simulado e desbloqueie contas de até $1.2M.",
-    "claimOffer": "Garantir 70% OFF",
+    "claimOffer": "Garantir 75% OFF",
     "compareBtn": "Comparar Desafios",
     "pathEyebrow": "Como Funciona",
     "pathTitle": "Seu Caminho para o Sucesso",
@@ -1096,7 +1096,7 @@
     "badge": "iniciar desafio · A partir de $9",
     "hotOffer": "oferta imperdível",
     "defaultHeadline": "Seu Primeiro Desafio, {discount} de Desconto",
-    "defaultSubcopy": "Aproveite 70% de desconto em contas selecionadas de até $100K. Apenas novos usuários.",
+    "defaultSubcopy": "Aproveite 75% de desconto em contas selecionadas de até $100K. Apenas novos usuários.",
     "useCode": "Usar Cupom: {code}"
   },
   "search": {

@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "عرض لفترة محدودة",
-    "discount": "خصم 70%",
+    "discount": "خصم 75%",
     "allEvaluations": "جميع التقييمات",
     "codeLabel": "استخدم الرمز",
     "expiresIn": "ينتهي خلال",
-    "claimOffer": "احصل على خصم 70%"
+    "claimOffer": "احصل على خصم 75%"
   },
   "nav": {
     "evaluation": "التقييم",
@@ -129,7 +129,7 @@
     "startJourney": "ابدأ رحلتك اليوم.",
     "startChallenge": "ابدأ التحدي",
     "compareAll": "قارن كل البرامج",
-    "ctaFunded": "احصل على التمويل — خصم حتى 70%",
+    "ctaFunded": "احصل على التمويل — خصم حتى 75%",
     "programsBadge": "برامج الحسابات",
     "viewPlans": "عرض الخطط",
     "railFunded": "ممول",
@@ -831,10 +831,10 @@
     "hoursDesc": "من الإثنين إلى الجمعة: 8ص - 8م بتوقيت غرينتش. دعم المجتمع 24/7."
   },
   "evaluation": {
-    "badge": "عرض محدود · خصم 70% على التقييمات",
+    "badge": "عرض محدود · خصم 75% على التقييمات",
     "title": "تقييمات تداول مصممة للمحترفين.",
     "subtitle": "أثبت مهاراتك في بيئة محاكاة واحصل على حسابات ممولة حتى 1.2 مليون دولار.",
-    "claimOffer": "احصل على خصم 70%",
+    "claimOffer": "احصل على خصم 75%",
     "compareBtn": "قارن التحديات",
     "pathEyebrow": "كيف يعمل التقييم",
     "pathTitle": "طريقك نحو النجاح",
@@ -1168,7 +1168,7 @@
     "badge": "start challenge · From $9",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 70% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 75% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
     "useCode": "استخدم الرمز",
     "bannerTitle": "عرض ترويجي حصري",
     "discountBadge": "خصم 75%",

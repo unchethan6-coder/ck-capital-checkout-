@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "सीमित समय की सेल",
-    "discount": "70% छूट",
+    "discount": "75% छूट",
     "allEvaluations": "सभी मूल्यांकन पर",
     "codeLabel": "कोड का उपयोग करें",
     "expiresIn": "समाप्त होने में",
-    "claimOffer": "70% छूट प्राप्त करें"
+    "claimOffer": "75% छूट प्राप्त करें"
   },
   "nav": {
     "evaluation": "मूल्यांकन (इवैल्यूएशन)",
@@ -129,7 +129,7 @@
     "startJourney": "आज ही अपनी यात्रा शुरू करें।",
     "startChallenge": "चैलेंज शुरू करें",
     "compareAll": "सभी प्रोग्राम की तुलना करें",
-    "ctaFunded": "फंडिंग पाएं — 70% तक की छूट",
+    "ctaFunded": "फंडिंग पाएं — 75% तक की छूट",
     "programsBadge": "अकाउंट प्रोग्राम",
     "viewPlans": "प्लान देखें",
     "railFunded": "फंडेड",
@@ -831,10 +831,10 @@
     "hoursDesc": "सोमवार - शुक्रवार: सुबह 8 बजे से रात 8 बजे GMT। 24/7 समुदाय सहायता।"
   },
   "evaluation": {
-    "badge": "सीमित समय · सभी मूल्यांकन पर 70% छूट",
+    "badge": "सीमित समय · सभी मूल्यांकन पर 75% छूट",
     "title": "गंभीर ट्रेडर्स के लिए निर्मित ट्रेडिंग मूल्यांकन।",
     "subtitle": "सिम्युलेटेड वातावरण में अपने कौशल को साबित करें और $1.2M तक के फंडेड खाते अनलॉक करें।",
-    "claimOffer": "70% छूट प्राप्त करें",
+    "claimOffer": "75% छूट प्राप्त करें",
     "compareBtn": "चैलेंज की तुलना करें",
     "pathEyebrow": "यह कैसे काम करता है",
     "pathTitle": "सफलता का आपका मार्ग",
@@ -1168,7 +1168,7 @@
     "badge": "start challenge · From $9",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 70% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 75% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
     "useCode": "कोड का उपयोग करें",
     "bannerTitle": "विशेष सीमित ऑफर",
     "discountBadge": "75% छूट",

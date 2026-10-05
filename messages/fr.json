@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "OFFRE À DURÉE LIMITÉE",
-    "discount": "70% DE RÉDUCTION",
+    "discount": "75% DE RÉDUCTION",
     "allEvaluations": "TOUTES LES ÉVALUATIONS",
     "codeLabel": "UTILISER LE CODE",
     "expiresIn": "EXPIRE DANS",
-    "claimOffer": "PROFITER DE 70% DE RÉDUCTION"
+    "claimOffer": "PROFITER DE 75% DE RÉDUCTION"
   },
   "nav": {
     "evaluation": "Évaluation",
@@ -129,7 +129,7 @@
     "startJourney": "Commencez votre parcours aujourd'hui.",
     "startChallenge": "Démarrer le Challenge",
     "compareAll": "Comparer tous les programmes",
-    "ctaFunded": "Être financé — jusqu'à 70% de remise",
+    "ctaFunded": "Être financé — jusqu'à 75% de remise",
     "programsBadge": "Programmes de compte",
     "viewPlans": "Voir les offres",
     "railFunded": "Financé",
@@ -831,10 +831,10 @@
     "hoursDesc": "Du lundi au vendredi : 8h00 - 20h00 GMT. Support communautaire 24/7."
   },
   "evaluation": {
-    "badge": "Offre Limitée · 70% de Réduction sur les Évaluations",
+    "badge": "Offre Limitée · 75% de Réduction sur les Évaluations",
     "title": "Des évaluations de trading taillées pour les experts.",
     "subtitle": "Prouvez vos compétences et débloquez des comptes financés jusqu'à 1.2M$.",
-    "claimOffer": "Profiter de 70% OFF",
+    "claimOffer": "Profiter de 75% OFF",
     "compareBtn": "Comparer les Challenges",
     "pathEyebrow": "Comment Ça Fonctionne",
     "pathTitle": "Votre Chemin Vers le Succès",
@@ -1168,7 +1168,7 @@
     "badge": "start challenge · From $9",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 70% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 75% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
     "useCode": "UTILISER LE CODE",
     "bannerTitle": "Offre Exclusive Printemps",
     "discountBadge": "75 % de Réduction",
