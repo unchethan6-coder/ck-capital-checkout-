@@ -35,6 +35,9 @@ const STALE_AFTER_MS = 60 * 60_000;
 
 type Listener = (changed: Quote[]) => void;
 
+/** The three upstreams, tracked separately for freshness. */
+type Feed = "crypto" | "yahoo" | "fx";
+
 interface HubState {
   quotes: Map<string, Quote>;
   /** When we last successfully read each symbol from upstream. */
@@ -45,8 +48,13 @@ interface HubState {
   running: boolean;
   /** Resolves once an in-flight refresh completes; shared by concurrent callers. */
   primed: Promise<void> | null;
-  /** When the last full refresh finished, for on-demand freshness checks. */
-  lastRefreshAt: number;
+  /**
+   * When each upstream last completed, keyed by feed. These are per-feed on
+   * purpose: a single shared timestamp let a healthy feed mask a stale one —
+   * crypto refreshing every second kept it current, so an on-demand read
+   * believed the slower feeds were fresh and never retried them.
+   */
+  lastRefreshAt: Record<Feed, number>;
 }
 
 /**
@@ -64,7 +72,7 @@ const state: HubState =
     idleTimer: null,
     running: false,
     primed: null,
-    lastRefreshAt: 0,
+    lastRefreshAt: { crypto: 0, yahoo: 0, fx: 0 },
   });
 
 function round(value: number, digits: number): number {
@@ -194,17 +202,17 @@ function emit(changed: Quote[]) {
 
 async function refreshCrypto() {
   emit(applyTicks(await fetchCrypto(), CRYPTO_SPECS));
-  state.lastRefreshAt = Date.now();
+  state.lastRefreshAt.crypto = Date.now();
 }
 
 async function refreshYahoo() {
   emit(applyTicks(await fetchYahoo(), YAHOO_SPECS));
-  state.lastRefreshAt = Date.now();
+  state.lastRefreshAt.yahoo = Date.now();
 }
 
 async function refreshFxRates() {
   emit(applyTicks(await fetchFxRates(), FXRATES_SPECS));
-  state.lastRefreshAt = Date.now();
+  state.lastRefreshAt.fx = Date.now();
 }
 
 function startPolling() {
@@ -241,10 +249,15 @@ const ON_DEMAND_MAX_AGE_MS = 5_000;
  * be. Concurrent callers share a single in-flight refresh.
  */
 export function prime(): Promise<void> {
-  const fresh = state.quotes.size > 0 && Date.now() - state.lastRefreshAt < ON_DEMAND_MAX_AGE_MS;
-  if (fresh) return Promise.resolve();
+  const now = Date.now();
+  const cold = state.quotes.size === 0;
+  const due: Promise<void>[] = [];
+  if (cold || now - state.lastRefreshAt.crypto >= ON_DEMAND_MAX_AGE_MS) due.push(refreshCrypto());
+  if (cold || now - state.lastRefreshAt.yahoo >= ON_DEMAND_MAX_AGE_MS) due.push(refreshYahoo());
+  if (cold || now - state.lastRefreshAt.fx >= ON_DEMAND_MAX_AGE_MS) due.push(refreshFxRates());
+  if (due.length === 0) return Promise.resolve();
 
-  state.primed ??= Promise.all([refreshCrypto(), refreshYahoo(), refreshFxRates()])
+  state.primed ??= Promise.all(due)
     .then(() => undefined)
     .finally(() => {
       state.primed = null;
@@ -271,27 +284,6 @@ export async function primeWithin(ms: number): Promise<void> {
   } finally {
     clearTimeout(timer);
   }
-}
-
-/** Internal state, for the temporary feed diagnostic only. */
-export function debugState() {
-  const now = Date.now();
-  return {
-    pollerRunning: state.running,
-    timers: state.timers.length,
-    subscribers: state.listeners.size,
-    msSinceLastRefresh: now - state.lastRefreshAt,
-    quoteCount: state.quotes.size,
-    samples: ["AAPL", "MSFT", "US30", "EURUSD", "BTCUSD"].map((s) => {
-      const q = state.quotes.get(s);
-      return {
-        symbol: s,
-        bid: q?.bid ?? null,
-        upstreamAgeMin: q ? Math.round((now - q.ts) / 60000) : null,
-        lastFetchOkMsAgo: state.lastFetchOk.has(s) ? now - state.lastFetchOk.get(s)! : null,
-      };
-    }),
-  };
 }
 
 /** Current quotes for every instrument we have seen, in catalogue order. */
