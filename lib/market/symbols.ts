@@ -50,12 +50,18 @@ export const SYMBOL_SPECS: SymbolSpec[] = [
   { symbol: "XCUUSD", name: "Copper",              category: "commodities", digits: 4, contractSize: 25000, spread: 0.0030, leverage: 50, source: { kind: "yahoo", ticker: "HG=F" } },
 
   /* ──────────────────────────────────────────────── Crypto (real bid/ask) */
+  /*
+   * `spread: 0` means "quote the venue's real book" rather than deriving one.
+   * Precision therefore has to be fine enough to express that book: DOGE's
+   * venue spread is ~1e-7, so at five decimals it rounded away to a spread of
+   * zero, which reads as free execution.
+   */
   { symbol: "BTCUSD",  name: "Bitcoin / US Dollar",   category: "crypto", mostTraded: true, digits: 2, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "BTCUSDT", krakenPair: "XBTUSD", krakenKey: "XXBTZUSD" } },
   { symbol: "ETHUSD",  name: "Ethereum / US Dollar",  category: "crypto", mostTraded: true, digits: 2, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "ETHUSDT", krakenPair: "ETHUSD", krakenKey: "XETHZUSD" } },
   { symbol: "SOLUSD",  name: "Solana / US Dollar",    category: "crypto", digits: 3, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "SOLUSDT", krakenPair: "SOLUSD", krakenKey: "SOLUSD" } },
   { symbol: "XRPUSD",  name: "XRP / US Dollar",       category: "crypto", digits: 4, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "XRPUSDT", krakenPair: "XRPUSD", krakenKey: "XXRPZUSD" } },
   { symbol: "ADAUSD",  name: "Cardano / US Dollar",   category: "crypto", digits: 4, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "ADAUSDT", krakenPair: "ADAUSD", krakenKey: "ADAUSD" } },
-  { symbol: "DOGEUSD", name: "Dogecoin / US Dollar",  category: "crypto", digits: 5, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "DOGEUSDT", krakenPair: "XDGUSD", krakenKey: "XDGUSD" } },
+  { symbol: "DOGEUSD", name: "Dogecoin / US Dollar",  category: "crypto", digits: 7, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "DOGEUSDT", krakenPair: "XDGUSD", krakenKey: "XDGUSD" } },
   { symbol: "LTCUSD",  name: "Litecoin / US Dollar",  category: "crypto", digits: 2, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "LTCUSDT", krakenPair: "LTCUSD", krakenKey: "XLTCZUSD" } },
   { symbol: "BNBUSD",  name: "BNB / US Dollar",       category: "crypto", digits: 2, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "BNBUSDT", krakenPair: "BNBUSD", krakenKey: "BNBUSD" } },
   { symbol: "AVAXUSD", name: "Avalanche / US Dollar", category: "crypto", digits: 3, contractSize: 1,   spread: 0, leverage: 5, source: { kind: "crypto", binanceTicker: "AVAXUSDT", krakenPair: "AVAXUSD", krakenKey: "AVAXUSD" } },
