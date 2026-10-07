@@ -524,7 +524,8 @@
     "registeredAddressBody": "6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom",
     "acceptedMethods": "Accepted Methods",
     "errorEmail": "Please enter a valid email address.",
-    "successEmail": "Thank you for subscribing!"
+    "successEmail": "Thank you for subscribing!",
+    "calculators": "Trading Calculators"
   },
   "ticker": {
     "market": "Market",
