@@ -21,6 +21,7 @@ import {
   Scale,
   Target,
   TrendingUp,
+  CandlestickChart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -98,6 +99,12 @@ export function TopNav() {
           titleKey: "rulesFaqTitle",
           descKey: "rulesFaqDesc",
           href: "/trading-objectives#objectives-faq",
+        },
+        {
+          icon: CandlestickChart,
+          titleKey: "symbolSpecs",
+          descKey: "symbolSpecsDesc",
+          href: "/symbols",
         },
       ],
     },
@@ -795,6 +802,8 @@ export function TopNav() {
                             ? "compare"
                             : item.titleKey === "tradingObjectivesTitle"
                             ? "tradingObjectives"
+                            : item.titleKey === "symbolSpecs"
+                            ? "symbolSpecs"
                             : "rulesFaq";
 
                         return (

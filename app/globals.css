@@ -1079,3 +1079,32 @@ main :where(h1, h2, h3, h4, h5, h6) {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+
+/* ============================================================= */
+/* Symbol specifications — price tick highlight.                 */
+/* A short flash marks the direction of the most recent change   */
+/* without moving anything, so the table never shifts layout.    */
+/* ============================================================= */
+@keyframes ck-tick-up {
+  0%   { background-color: rgba(52, 211, 153, 0.28); }
+  100% { background-color: rgba(52, 211, 153, 0); }
+}
+@keyframes ck-tick-down {
+  0%   { background-color: rgba(248, 113, 113, 0.28); }
+  100% { background-color: rgba(248, 113, 113, 0); }
+}
+
+.ck-tick-up,
+.ck-tick-down {
+  /* Keeps the flash off the text baseline so digits never reflow. */
+  border-radius: 0.25rem;
+  padding-inline: 0.25rem;
+  margin-inline: -0.25rem;
+}
+.ck-tick-up  { animation: ck-tick-up 0.6s ease-out; }
+.ck-tick-down { animation: ck-tick-down 0.6s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-tick-up,
+  .ck-tick-down { animation: none; }
+}

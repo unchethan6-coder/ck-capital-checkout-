@@ -64,7 +64,9 @@
     "featuredCommunityDesc": "Análises de trading ao vivo, comprovativos de pagamento e suporte VIP no Discord.",
     "featuredCommunityCta": "Entrar no Discord Oficial",
     "viewAllPrograms": "Ver Todos os Programas",
-    "joinDiscord": "Entrar no Discord Oficial"
+    "joinDiscord": "Entrar no Discord Oficial",
+    "symbolSpecs": "Especificações de Símbolos",
+    "symbolSpecsDesc": "Spreads ao vivo, tamanhos de contrato e condições"
   },
   "hero": {
     "features": [
@@ -1159,5 +1161,42 @@
     "catNews": "Notícias",
     "catTips": "Dicas de trading",
     "catEducation": "Educação"
+  },
+  "symbols": {
+    "heroTitle": "Especificações de Símbolos",
+    "heroSubtitle": "Temos o compromisso de oferecer as melhores condições de negociação e os spreads mais competitivos em toda a nossa gama de instrumentos. Explore todos os mercados que pode negociar na CK Capital, com preços ao vivo.",
+    "tab_most": "Mais Negociados",
+    "tab_fx": "Pares de Moedas",
+    "tab_indices": "Índices",
+    "tab_commodities": "Commodities",
+    "tab_crypto": "Cripto",
+    "tab_stocks": "Ações",
+    "tab_custom": "Personalizado",
+    "symbol": "Símbolo",
+    "bidPrice": "Preço de Venda",
+    "askPrice": "Preço de Compra",
+    "spread": "Spread",
+    "contractSize": "Tamanho do Contrato",
+    "leverage": "Alavancagem",
+    "bid": "Venda",
+    "ask": "Compra",
+    "searchPlaceholder": "Pesquisar instrumentos…",
+    "searchLabel": "Pesquisar instrumentos",
+    "clearSearch": "Limpar pesquisa",
+    "categoriesLabel": "Categorias de instrumentos",
+    "tableCaption": "Preço de venda, compra, spread e tamanho de contrato ao vivo de cada instrumento da CK Capital.",
+    "statusConnecting": "A ligar…",
+    "statusLive": "Ao vivo",
+    "statusReconnecting": "A reconectar…",
+    "statusDelayed": "Feed atrasado",
+    "addToWatchlist": "Adicionar à lista",
+    "removeFromWatchlist": "Remover da lista",
+    "emptyWatchlist": "Marque qualquer instrumento para criar a sua lista personalizada.",
+    "noResults": "Nenhum instrumento corresponde a \"{query}\".",
+    "disclaimer": "Os preços são indicativos e fornecidos apenas para informação. As cotações de cripto são ao vivo; os restantes preços são construídos a partir do preço médio de mercado com o spread publicado pela CK Capital. Os preços de execução numa conta real podem diferir.",
+    "rowClosed": "Fechado",
+    "rowClosedTitle": "Mercado fechado — a mostrar o último preço negociado",
+    "rowNoFeed": "Sem dados",
+    "rowNoFeedTitle": "Feed indisponível — a mostrar o último preço conhecido"
   }
 }
