@@ -50,6 +50,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     badge: "Rules",
   },
   {
+    id: "page-symbols",
+    category: "pages",
+    title: "Symbol Specifications",
+    description: "Live bid/ask prices, spreads, contract sizes and leverage for every tradable instrument.",
+    keywords: ["symbols", "instruments", "spreads", "bid", "ask", "contract size", "leverage", "forex", "indices", "commodities", "crypto", "stocks", "pairs"],
+    href: "/symbols",
+    iconName: "CandlestickChart",
+    badge: "Live",
+  },
+  {
     id: "page-payouts",
     category: "pages",
     title: "Live Rewards & Payouts",

@@ -88,6 +88,7 @@ export function SiteFooter() {
         { label: "TradeLocker", href: "/#platforms" },
         { label: t("payouts"), href: "/payouts" },
         { label: t("calculators"), href: "/calculators" },
+        { label: tNav("symbolSpecs"), href: "/symbols" },
       ],
     },
     {

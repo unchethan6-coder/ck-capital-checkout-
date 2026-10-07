@@ -14,6 +14,7 @@ const ROUTES = [
   "/en/evaluation",
   "/en/trading-objectives",
   "/en/payouts",
+  "/en/symbols",
   "/en/blog",
   "/en/about-us",
 ] as const;

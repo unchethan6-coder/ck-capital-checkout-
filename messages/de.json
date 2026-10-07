@@ -66,7 +66,9 @@
     "viewAllPrograms": "Alle Programme Anzeigen",
     "joinDiscord": "Offiziellem Discord Beitreten",
     "calculatorsTitle": "Trading-Rechner",
-    "calculatorsDesc": "Margin, P/L, Lotgröße und Swap, geprüft an Ihren CK-Limits"
+    "calculatorsDesc": "Margin, P/L, Lotgröße und Swap, geprüft an Ihren CK-Limits",
+    "symbolSpecs": "Symbol-Spezifikationen",
+    "symbolSpecsDesc": "Live-Spreads, Kontraktgrößen & Handelsbedingungen"
   },
   "hero": {
     "features": [
@@ -1236,5 +1238,42 @@
     "catNews": "News",
     "catTips": "Trading-Tipps",
     "catEducation": "Bildung"
+  },
+  "symbols": {
+    "heroTitle": "Symbol-Spezifikationen",
+    "heroSubtitle": "Wir bieten Ihnen die besten Handelsbedingungen und die wettbewerbsfähigsten Spreads über unsere gesamte Produktpalette hinweg. Entdecken Sie alle Märkte, die Sie bei CK Capital handeln können — mit Live-Kursen.",
+    "tab_most": "Meistgehandelt",
+    "tab_fx": "Währungspaare",
+    "tab_indices": "Indizes",
+    "tab_commodities": "Rohstoffe",
+    "tab_crypto": "Krypto",
+    "tab_stocks": "Aktien",
+    "tab_custom": "Eigene Liste",
+    "symbol": "Symbol",
+    "bidPrice": "Geldkurs",
+    "askPrice": "Briefkurs",
+    "spread": "Spread",
+    "contractSize": "Kontraktgröße",
+    "leverage": "Hebel",
+    "bid": "Geld",
+    "ask": "Brief",
+    "searchPlaceholder": "Instrumente suchen…",
+    "searchLabel": "Instrumente suchen",
+    "clearSearch": "Suche löschen",
+    "categoriesLabel": "Instrumentenkategorien",
+    "tableCaption": "Live-Geldkurs, Briefkurs, Spread und Kontraktgröße für jedes CK-Capital-Instrument.",
+    "statusConnecting": "Verbinden…",
+    "statusLive": "Live",
+    "statusReconnecting": "Neu verbinden…",
+    "statusDelayed": "Verzögerter Feed",
+    "addToWatchlist": "Zur eigenen Liste hinzufügen",
+    "removeFromWatchlist": "Aus eigener Liste entfernen",
+    "emptyWatchlist": "Markieren Sie Instrumente mit einem Stern, um Ihre eigene Liste aufzubauen.",
+    "noResults": "Keine Instrumente passen zu \"{query}\".",
+    "disclaimer": "Die Kurse sind indikativ und dienen nur zur Information. Krypto-Kurse sind Live-Orderbuchkurse; alle anderen Geld-/Briefkurse werden aus dem Live-Marktmittelkurs mit dem veröffentlichten Spread von CK Capital gebildet. Ausführungskurse auf einem Live-Konto können abweichen.",
+    "rowClosed": "Geschlossen",
+    "rowClosedTitle": "Markt geschlossen — letzter gehandelter Kurs",
+    "rowNoFeed": "Kein Feed",
+    "rowNoFeedTitle": "Feed nicht verfügbar — letzter bekannter Kurs"
   }
 }

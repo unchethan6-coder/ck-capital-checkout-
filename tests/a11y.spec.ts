@@ -8,6 +8,7 @@ const ROUTES = [
   "/en/about-us",
   "/en/trading-objectives",
   "/en/payouts",
+  "/en/symbols",
   "/en/affiliates",
   "/en/blog",
   "/en/contact",

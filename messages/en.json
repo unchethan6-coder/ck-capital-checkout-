@@ -65,7 +65,9 @@
     "viewAllPrograms": "View All Programs",
     "joinDiscord": "Join Official Discord",
     "calculatorsTitle": "Trading Calculators",
-    "calculatorsDesc": "Margin, P/L, lot size and swap, checked against your CK limits"
+    "calculatorsDesc": "Margin, P/L, lot size and swap, checked against your CK limits",
+    "symbolSpecs": "Symbol Specifications",
+    "symbolSpecsDesc": "Live spreads, contract sizes & trading conditions"
   },
   "hero": {
     "features": [
@@ -1155,5 +1157,42 @@
     "catNews": "News",
     "catTips": "Trading Tips",
     "catEducation": "Education"
+  },
+  "symbols": {
+    "heroTitle": "Symbol Specifications",
+    "heroSubtitle": "We're committed to offering you the best trading conditions and the most competitive spreads across our range of instruments. Explore every market you can trade at CK Capital, with live pricing.",
+    "tab_most": "Most Traded",
+    "tab_fx": "Currency Pairs",
+    "tab_indices": "Indices",
+    "tab_commodities": "Commodities",
+    "tab_crypto": "Crypto",
+    "tab_stocks": "Stocks",
+    "tab_custom": "Custom",
+    "symbol": "Symbol",
+    "bidPrice": "Bid Price",
+    "askPrice": "Ask Price",
+    "spread": "Spread",
+    "contractSize": "Contract Size",
+    "leverage": "Leverage",
+    "bid": "Bid",
+    "ask": "Ask",
+    "searchPlaceholder": "Search instruments…",
+    "searchLabel": "Search instruments",
+    "clearSearch": "Clear search",
+    "categoriesLabel": "Instrument categories",
+    "tableCaption": "Live bid, ask, spread and contract size for every CK Capital instrument.",
+    "statusConnecting": "Connecting…",
+    "statusLive": "Live",
+    "statusReconnecting": "Reconnecting…",
+    "statusDelayed": "Delayed feed",
+    "addToWatchlist": "Add to custom list",
+    "removeFromWatchlist": "Remove from custom list",
+    "emptyWatchlist": "Star any instrument to build your custom list.",
+    "noResults": "No instruments match \"{query}\".",
+    "disclaimer": "Prices are indicative and provided for information only. Crypto quotes are live top-of-book; all other bid/ask prices are built from the live market mid using CK Capital's published spread. Execution prices on a live account may differ.",
+    "rowClosed": "Closed",
+    "rowClosedTitle": "Market closed — showing the last traded price",
+    "rowNoFeed": "No feed",
+    "rowNoFeedTitle": "Feed unavailable — showing the last known price"
   }
 }

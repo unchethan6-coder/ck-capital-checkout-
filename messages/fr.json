@@ -66,7 +66,9 @@
     "viewAllPrograms": "Voir Tous les Programmes",
     "joinDiscord": "Rejoindre le Discord Officiel",
     "calculatorsTitle": "Calculatrices de trading",
-    "calculatorsDesc": "Marge, P/L, taille de lot et swap, comparés à vos limites CK"
+    "calculatorsDesc": "Marge, P/L, taille de lot et swap, comparés à vos limites CK",
+    "symbolSpecs": "Spécifications des Symboles",
+    "symbolSpecsDesc": "Spreads en direct, tailles de contrat et conditions"
   },
   "hero": {
     "features": [
@@ -1236,5 +1238,42 @@
     "catNews": "Actualités",
     "catTips": "Conseils de trading",
     "catEducation": "Éducation"
+  },
+  "symbols": {
+    "heroTitle": "Spécifications des Symboles",
+    "heroSubtitle": "Nous nous engageons à vous offrir les meilleures conditions de trading et les spreads les plus compétitifs sur toute notre gamme d'instruments. Découvrez tous les marchés négociables chez CK Capital, avec des prix en direct.",
+    "tab_most": "Les Plus Traités",
+    "tab_fx": "Paires de Devises",
+    "tab_indices": "Indices",
+    "tab_commodities": "Matières Premières",
+    "tab_crypto": "Crypto",
+    "tab_stocks": "Actions",
+    "tab_custom": "Personnalisé",
+    "symbol": "Symbole",
+    "bidPrice": "Prix Vente",
+    "askPrice": "Prix Achat",
+    "spread": "Spread",
+    "contractSize": "Taille du Contrat",
+    "leverage": "Levier",
+    "bid": "Vente",
+    "ask": "Achat",
+    "searchPlaceholder": "Rechercher des instruments…",
+    "searchLabel": "Rechercher des instruments",
+    "clearSearch": "Effacer la recherche",
+    "categoriesLabel": "Catégories d'instruments",
+    "tableCaption": "Prix de vente, d'achat, spread et taille de contrat en direct pour chaque instrument CK Capital.",
+    "statusConnecting": "Connexion…",
+    "statusLive": "En direct",
+    "statusReconnecting": "Reconnexion…",
+    "statusDelayed": "Flux différé",
+    "addToWatchlist": "Ajouter à ma liste",
+    "removeFromWatchlist": "Retirer de ma liste",
+    "emptyWatchlist": "Ajoutez une étoile à un instrument pour créer votre liste personnalisée.",
+    "noResults": "Aucun instrument ne correspond à \"{query}\".",
+    "disclaimer": "Les prix sont indicatifs et fournis à titre informatif uniquement. Les cotations crypto sont en direct ; tous les autres prix sont construits à partir du cours moyen du marché avec le spread publié par CK Capital. Les prix d'exécution sur un compte réel peuvent différer.",
+    "rowClosed": "Fermé",
+    "rowClosedTitle": "Marché fermé — dernier cours traité affiché",
+    "rowNoFeed": "Pas de flux",
+    "rowNoFeedTitle": "Flux indisponible — dernier cours connu affiché"
   }
 }
