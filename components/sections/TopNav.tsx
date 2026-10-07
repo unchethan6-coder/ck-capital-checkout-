@@ -21,6 +21,7 @@ import {
   Scale,
   Target,
   TrendingUp,
+  Calculator,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -98,6 +99,12 @@ export function TopNav() {
           titleKey: "rulesFaqTitle",
           descKey: "rulesFaqDesc",
           href: "/trading-objectives#objectives-faq",
+        },
+        {
+          icon: Calculator,
+          titleKey: "calculatorsTitle",
+          descKey: "calculatorsDesc",
+          href: "/calculators",
         },
       ],
     },

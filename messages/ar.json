@@ -64,7 +64,9 @@
     "featuredCommunityDesc": "تحليلات تداول حية، إثباتات سحب ودعم VIP مباشر على ديسكورد.",
     "featuredCommunityCta": "انضم إلى ديسكورد الرسمي",
     "viewAllPrograms": "عرض جميع البرامج",
-    "joinDiscord": "انضم إلى ديسكورد الرسمي"
+    "joinDiscord": "انضم إلى ديسكورد الرسمي",
+    "calculatorsTitle": "حاسبات التداول",
+    "calculatorsDesc": "الهامش والأرباح وحجم اللوت والسواب، مقارنة بحدود حسابك في CK"
   },
   "hero": {
     "features": [

@@ -64,7 +64,9 @@
     "featuredCommunityDesc": "लाइव ट्रेडिंग विश्लेषण, पेआउट प्रमाण और डिस्कॉर्ड पर सीधा VIP सपोर्ट।",
     "featuredCommunityCta": "आधिकारिक डिस्कॉर्ड से जुड़ें",
     "viewAllPrograms": "सभी प्रोग्राम देखें",
-    "joinDiscord": "आधिकारिक डिस्कॉर्ड से जुड़ें"
+    "joinDiscord": "आधिकारिक डिस्कॉर्ड से जुड़ें",
+    "calculatorsTitle": "ट्रेडिंग कैलकुलेटर",
+    "calculatorsDesc": "मार्जिन, P/L, लॉट साइज़ और स्वैप — आपकी CK सीमाओं के विरुद्ध जाँचे गए"
   },
   "hero": {
     "features": [

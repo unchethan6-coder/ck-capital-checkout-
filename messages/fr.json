@@ -64,7 +64,9 @@
     "featuredCommunityDesc": "Analyses de trading en direct, preuves de paiement et support VIP sur Discord.",
     "featuredCommunityCta": "Rejoindre le Discord Officiel",
     "viewAllPrograms": "Voir Tous les Programmes",
-    "joinDiscord": "Rejoindre le Discord Officiel"
+    "joinDiscord": "Rejoindre le Discord Officiel",
+    "calculatorsTitle": "Calculatrices de trading",
+    "calculatorsDesc": "Marge, P/L, taille de lot et swap, comparés à vos limites CK"
   },
   "hero": {
     "features": [

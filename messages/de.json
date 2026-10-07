@@ -64,7 +64,9 @@
     "featuredCommunityDesc": "Live-Trading-Analysen, Auszahlungsnachweise und direkter VIP-Support auf Discord.",
     "featuredCommunityCta": "Offiziellem Discord Beitreten",
     "viewAllPrograms": "Alle Programme Anzeigen",
-    "joinDiscord": "Offiziellem Discord Beitreten"
+    "joinDiscord": "Offiziellem Discord Beitreten",
+    "calculatorsTitle": "Trading-Rechner",
+    "calculatorsDesc": "Margin, P/L, Lotgröße und Swap, geprüft an Ihren CK-Limits"
   },
   "hero": {
     "features": [
