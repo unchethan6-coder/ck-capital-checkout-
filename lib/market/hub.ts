@@ -72,6 +72,18 @@ function round(value: number, digits: number): number {
   return Math.round(value * factor) / factor;
 }
 
+/** Round towards negative infinity at the instrument's precision. */
+function floorTo(value: number, digits: number): number {
+  const factor = 10 ** digits;
+  return Math.floor(value * factor) / factor;
+}
+
+/** Round towards positive infinity at the instrument's precision. */
+function ceilTo(value: number, digits: number): number {
+  const factor = 10 ** digits;
+  return Math.ceil(value * factor) / factor;
+}
+
 /**
  * Turn an upstream tick into a displayable quote.
  *
@@ -82,11 +94,21 @@ function round(value: number, digits: number): number {
 function toQuote(spec: SymbolSpec, tick: Tick, previous: Quote | undefined): Quote {
   const derived = tick.bid === undefined || tick.ask === undefined;
 
-  // For derived quotes the ask is anchored to the rounded bid rather than
-  // rounded independently, otherwise an odd-width spread rounds outward on both
-  // sides and the row shows a wider spread than the one we publish.
-  const bid = round(derived ? tick.mid - spec.spread / 2 : tick.bid!, spec.digits);
-  const ask = derived ? round(bid + spec.spread, spec.digits) : round(tick.ask!, spec.digits);
+  // Derived quotes anchor the ask to the rounded bid rather than rounding it
+  // independently, otherwise an odd-width spread rounds outward on both sides
+  // and the row shows a wider spread than the one we publish.
+  //
+  // Real order books instead round the bid down and the ask out, because
+  // rounding both to nearest can collapse a book that is tighter than our
+  // display precision into bid === ask — a row advertising free execution.
+  // Rounding outward can only ever overstate the cost by one tick, never
+  // understate it.
+  const bid = derived
+    ? round(tick.mid - spec.spread / 2, spec.digits)
+    : floorTo(tick.bid!, spec.digits);
+  const ask = derived
+    ? round(bid + spec.spread, spec.digits)
+    : ceilTo(tick.ask!, spec.digits);
   const spread = round(ask - bid, spec.digits);
 
   const mid = (bid + ask) / 2;
