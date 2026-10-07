@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { fetchYahoo } from "@/lib/market/providers";
+import { debugState, prime } from "@/lib/market/hub";
 
 /**
  * TEMPORARY diagnostic — reports what the Yahoo endpoints return as seen from
@@ -21,6 +23,15 @@ async function get(url: string) {
 
 export async function GET() {
   const now = Date.now();
+
+  // What the provider itself returns, and what the hub is holding.
+  await prime();
+  const direct = await fetchYahoo();
+  const providerSaw = ["AAPL", "MSFT", "US30"].map((s) => {
+    const t = direct.get(s);
+    return { symbol: s, mid: t?.mid ?? null, upstreamAgeMin: t ? Math.round((now - t.ts) / 60000) : null };
+  });
+  const hub = debugState();
   const age = (t?: number) => (t ? Math.round((now - t * 1000) / 60000) : null);
 
   const spark = await get(
@@ -39,6 +50,9 @@ export async function GET() {
   return NextResponse.json(
     {
       serverTime: new Date(now).toISOString(),
+      providerReturned: direct.size,
+      providerSaw,
+      hub,
       region: process.env.VERCEL_REGION ?? null,
       sparkStatus: spark.status,
       spark: sparkRows.map((r) => ({

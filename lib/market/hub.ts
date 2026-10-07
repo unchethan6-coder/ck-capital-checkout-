@@ -273,6 +273,27 @@ export async function primeWithin(ms: number): Promise<void> {
   }
 }
 
+/** Internal state, for the temporary feed diagnostic only. */
+export function debugState() {
+  const now = Date.now();
+  return {
+    pollerRunning: state.running,
+    timers: state.timers.length,
+    subscribers: state.listeners.size,
+    msSinceLastRefresh: now - state.lastRefreshAt,
+    quoteCount: state.quotes.size,
+    samples: ["AAPL", "MSFT", "US30", "EURUSD", "BTCUSD"].map((s) => {
+      const q = state.quotes.get(s);
+      return {
+        symbol: s,
+        bid: q?.bid ?? null,
+        upstreamAgeMin: q ? Math.round((now - q.ts) / 60000) : null,
+        lastFetchOkMsAgo: state.lastFetchOk.has(s) ? now - state.lastFetchOk.get(s)! : null,
+      };
+    }),
+  };
+}
+
 /** Current quotes for every instrument we have seen, in catalogue order. */
 export function getSnapshot(): Quote[] {
   const now = Date.now();
