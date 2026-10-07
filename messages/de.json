@@ -1269,7 +1269,7 @@
     "removeFromWatchlist": "Aus eigener Liste entfernen",
     "emptyWatchlist": "Markieren Sie Instrumente mit einem Stern, um Ihre eigene Liste aufzubauen.",
     "noResults": "Keine Instrumente passen zu \"{query}\".",
-    "disclaimer": "Die Kurse sind indikativ und dienen nur zur Information. Krypto-Kurse sind Live-Orderbuchkurse; alle anderen Geld-/Briefkurse werden aus dem Live-Marktmittelkurs mit dem veröffentlichten Spread von CK Capital gebildet. Ausführungskurse auf einem Live-Konto können abweichen.",
+    "disclaimer": "Die Kurse sind indikativ und dienen nur zur Information. Krypto zeigt echte Orderbuchkurse, Währungen aktualisieren etwa einmal pro Minute; Indizes, Rohstoffe und Aktien stammen aus einem verzögerten Feed und können bis zu 15 Minuten hinter dem Markt liegen. Außer bei Krypto werden Geld- und Briefkurs aus dem Marktmittelkurs mit dem veröffentlichten Spread von CK Capital gebildet. Ausführungskurse auf einem Live-Konto weichen ab.",
     "rowClosed": "Geschlossen",
     "rowClosedTitle": "Markt geschlossen — letzter gehandelter Kurs",
     "rowNoFeed": "Kein Feed",

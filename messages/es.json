@@ -1189,7 +1189,7 @@
     "removeFromWatchlist": "Quitar de mi lista",
     "emptyWatchlist": "Marca cualquier instrumento para crear tu lista personalizada.",
     "noResults": "Ningún instrumento coincide con \"{query}\".",
-    "disclaimer": "Los precios son indicativos y se ofrecen solo con fines informativos. Las cotizaciones de cripto son en vivo; el resto de precios se construyen a partir del precio medio de mercado con el spread publicado por CK Capital. Los precios de ejecución en una cuenta real pueden diferir.",
+    "disclaimer": "Los precios son indicativos y se ofrecen solo con fines informativos. Las criptomonedas son precios reales del libro de órdenes y las divisas se actualizan aproximadamente cada minuto; los índices, materias primas y acciones proceden de un feed con retardo y pueden ir hasta 15 minutos por detrás del mercado. Salvo en cripto, la compra y la venta se construyen a partir del precio medio de mercado con el spread publicado por CK Capital. Los precios de ejecución en una cuenta real serán distintos.",
     "rowClosed": "Cerrado",
     "rowClosedTitle": "Mercado cerrado — se muestra el último precio negociado",
     "rowNoFeed": "Sin datos",

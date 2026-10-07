@@ -28,14 +28,21 @@ export const SYMBOL_SPECS: SymbolSpec[] = [
   { symbol: "USDMXN", name: "US Dollar / Mexican Peso", category: "fx", digits: 4, contractSize: 100000, spread: 0.0085, leverage: 50, source: { kind: "fxrates", base: "USD", quote: "MXN" } },
   { symbol: "USDZAR", name: "US Dollar / South African Rand", category: "fx", digits: 4, contractSize: 100000, spread: 0.0090, leverage: 50, source: { kind: "fxrates", base: "USD", quote: "ZAR" } },
 
+  /*
+   * Indices quote the futures where a liquid one exists. The cash index only
+   * prints during its own session, so outside it a row would show a price many
+   * hours old; the future tracks the same market nearly 24/5, which is what an
+   * index CFD follows. European and Asian cash indices have no usable futures
+   * on this feed, so they stay on cash and are labelled closed out of hours.
+   */
   /* ──────────────────────────────────────────────── Indices */
-  { symbol: "US30",   name: "Dow Jones 30",      category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 2.34,  leverage: 50, source: { kind: "yahoo", ticker: "^DJI" } },
-  { symbol: "NDX100", name: "Nasdaq 100",        category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 1.84,  leverage: 50, source: { kind: "yahoo", ticker: "^NDX" } },
-  { symbol: "SPX500", name: "S&P 500",           category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 0.73,  leverage: 50, source: { kind: "yahoo", ticker: "^GSPC" } },
+  { symbol: "US30",   name: "Dow Jones 30",      category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 2.34,  leverage: 50, source: { kind: "yahoo", ticker: "YM=F" } },
+  { symbol: "NDX100", name: "Nasdaq 100",        category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 1.84,  leverage: 50, source: { kind: "yahoo", ticker: "NQ=F" } },
+  { symbol: "SPX500", name: "S&P 500",           category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 0.73,  leverage: 50, source: { kind: "yahoo", ticker: "ES=F" } },
   { symbol: "GER30",  name: "DAX 40",            category: "indices", mostTraded: true, digits: 2, contractSize: 10, spread: 2.00,  leverage: 50, source: { kind: "yahoo", ticker: "^GDAXI" } },
   { symbol: "UK100",  name: "FTSE 100",          category: "indices", digits: 2, contractSize: 10, spread: 1.80, leverage: 50, source: { kind: "yahoo", ticker: "^FTSE" } },
   { symbol: "FRA40",  name: "CAC 40",            category: "indices", digits: 2, contractSize: 10, spread: 1.50, leverage: 50, source: { kind: "yahoo", ticker: "^FCHI" } },
-  { symbol: "JPN225", name: "Nikkei 225",        category: "indices", digits: 2, contractSize: 10, spread: 7.00, leverage: 50, source: { kind: "yahoo", ticker: "^N225" } },
+  { symbol: "JPN225", name: "Nikkei 225",        category: "indices", digits: 2, contractSize: 10, spread: 7.00, leverage: 50, source: { kind: "yahoo", ticker: "NKD=F" } },
   { symbol: "AUS200", name: "ASX 200",           category: "indices", digits: 2, contractSize: 10, spread: 2.20, leverage: 50, source: { kind: "yahoo", ticker: "^AXJO" } },
   { symbol: "HK50",   name: "Hang Seng 50",      category: "indices", digits: 2, contractSize: 10, spread: 6.00, leverage: 50, source: { kind: "yahoo", ticker: "^HSI" } },
   { symbol: "ESP35",  name: "IBEX 35",           category: "indices", digits: 2, contractSize: 10, spread: 4.00, leverage: 50, source: { kind: "yahoo", ticker: "^IBEX" } },

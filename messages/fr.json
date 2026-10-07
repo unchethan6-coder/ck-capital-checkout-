@@ -1269,7 +1269,7 @@
     "removeFromWatchlist": "Retirer de ma liste",
     "emptyWatchlist": "Ajoutez une étoile à un instrument pour créer votre liste personnalisée.",
     "noResults": "Aucun instrument ne correspond à \"{query}\".",
-    "disclaimer": "Les prix sont indicatifs et fournis à titre informatif uniquement. Les cotations crypto sont en direct ; tous les autres prix sont construits à partir du cours moyen du marché avec le spread publié par CK Capital. Les prix d'exécution sur un compte réel peuvent différer.",
+    "disclaimer": "Les prix sont indicatifs et fournis à titre informatif uniquement. Les cryptos affichent de vrais cours du carnet d'ordres et les devises se rafraîchissent environ une fois par minute ; les indices, matières premières et actions proviennent d'un flux différé et peuvent accuser jusqu'à 15 minutes de retard. Hors crypto, les cours acheteur et vendeur sont construits à partir du cours moyen du marché avec le spread publié par CK Capital. Les prix d'exécution sur un compte réel seront différents.",
     "rowClosed": "Fermé",
     "rowClosedTitle": "Marché fermé — dernier cours traité affiché",
     "rowNoFeed": "Pas de flux",

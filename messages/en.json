@@ -1188,7 +1188,7 @@
     "removeFromWatchlist": "Remove from custom list",
     "emptyWatchlist": "Star any instrument to build your custom list.",
     "noResults": "No instruments match \"{query}\".",
-    "disclaimer": "Prices are indicative and provided for information only. Crypto quotes are live top-of-book; all other bid/ask prices are built from the live market mid using CK Capital's published spread. Execution prices on a live account may differ.",
+    "disclaimer": "Prices are indicative and provided for information only. Crypto is live top-of-book and currencies refresh about once a minute; index, commodity and share prices come from a delayed feed and can run up to 15 minutes behind the market. Except for crypto, bid and ask are built from the market mid using CK Capital's published spread. Execution prices on a live account will differ.",
     "rowClosed": "Closed",
     "rowClosedTitle": "Market closed — showing the last traded price",
     "rowNoFeed": "No feed",
