@@ -9,7 +9,7 @@ export const DEFAULT_OG_IMAGE = {
   url: "/og-image.jpg",
   width: 1200,
   height: 630,
-  alt: "CK Capital — Prop Trading Firm. Simulated funded accounts up to $1.2M with up to 100% profit split.",
+  alt: "CK Capital — Prop Trading Firm. Simulated funded accounts up to $1.2M with an 80% profit split.",
 };
 
 interface PageSeoOptions {

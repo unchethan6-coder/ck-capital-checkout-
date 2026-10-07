@@ -57,7 +57,7 @@ export function WhyChooseUs() {
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-5"
         >
-          {/* Large — 100% split with count-up */}
+          {/* Large — 80% split with count-up */}
           <div
             className="glow-card relative overflow-hidden flex flex-col md:col-span-2 lg:col-span-4"
             data-od-id="feature-card-split"
@@ -65,10 +65,10 @@ export function WhyChooseUs() {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]/70 mb-2">
-                  {t("upTo")}
+                  {t("splitEyebrow")}
                 </p>
                 <CountUp
-                  value="100%"
+                  value="80%"
                   className="font-[family-name:var(--font-jakarta)] text-5xl md:text-6xl font-extrabold text-[#A98BFF] tabular-nums"
                 />
                 <p className="mt-2 text-[13px] font-semibold text-foreground/60">

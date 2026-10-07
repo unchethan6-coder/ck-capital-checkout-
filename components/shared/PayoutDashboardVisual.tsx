@@ -28,7 +28,7 @@ const PAYOUT_SCENARIOS = [
     accountTier: "$100K MASTER",
     profit: "$14,850.00",
     profitPct: "+14.85% Profit",
-    splitRate: "100% Payout Rate",
+    splitRate: "80% Payout Rate",
     isCrypto: true,
     method: "USDT / Crypto",
     methodSub: "TRC20 / ERC20",
@@ -45,7 +45,7 @@ const PAYOUT_SCENARIOS = [
     accountTier: "$200K MASTER",
     profit: "$23,400.00",
     profitPct: "+11.70% Profit",
-    splitRate: "100% Payout Rate",
+    splitRate: "80% Payout Rate",
     isCrypto: false,
     method: "Bank Wire / Rise",
     methodSub: "Direct Wire Clearing",
@@ -62,7 +62,7 @@ const PAYOUT_SCENARIOS = [
     accountTier: "$50K MASTER",
     profit: "$6,890.00",
     profitPct: "+13.78% Profit",
-    splitRate: "100% Payout Rate",
+    splitRate: "80% Payout Rate",
     isCrypto: true,
     method: "USDC / Crypto",
     methodSub: "Solana / Arbitrum",
@@ -79,7 +79,7 @@ const PAYOUT_SCENARIOS = [
     accountTier: "$100K MASTER",
     profit: "$11,200.00",
     profitPct: "+11.20% Profit",
-    splitRate: "100% Payout Rate",
+    splitRate: "80% Payout Rate",
     isCrypto: true,
     method: "USDT / Crypto",
     methodSub: "TRC20 Network",
@@ -96,7 +96,7 @@ const PAYOUT_SCENARIOS = [
     accountTier: "$150K MASTER",
     profit: "$19,650.00",
     profitPct: "+13.10% Profit",
-    splitRate: "100% Payout Rate",
+    splitRate: "80% Payout Rate",
     isCrypto: false,
     method: "Direct Wire / Rise",
     methodSub: "Swift Clearing Node",
@@ -113,7 +113,7 @@ const PAYOUT_SCENARIOS = [
     accountTier: "$100K MASTER",
     profit: "$8,940.00",
     profitPct: "+8.94% Profit",
-    splitRate: "100% Payout Rate",
+    splitRate: "80% Payout Rate",
     isCrypto: true,
     method: "USDT / Crypto",
     methodSub: "TRC20 Network",
@@ -388,7 +388,7 @@ export function PayoutDashboardVisual({
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse" />
             <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]">
-              100% PROFIT RETAINED
+              80% PROFIT RETAINED
             </span>
           </div>
         </div>

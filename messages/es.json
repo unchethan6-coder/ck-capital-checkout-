@@ -57,7 +57,7 @@
     "blogTitle": "Ideas de Trading y Blog",
     "featuredEvalBadge": "OFERTA LIMITADA · 75% DTO",
     "featuredEvalTitle": "Opera con hasta $300K de Capital",
-    "featuredEvalDesc": "Opera con herramientas institucionales, spreads reducidos y hasta un 100% de reparto de beneficios en cuentas simuladas.",
+    "featuredEvalDesc": "Opera con herramientas institucionales, spreads reducidos y 80% de reparto de beneficios en cuentas simuladas.",
     "featuredEvalCta": "Reclamar 75% DTO",
     "featuredCommunityBadge": "COMUNIDAD DE TRADERS",
     "featuredCommunityTitle": "Únete a más de 20.000 Traders Activos",
@@ -73,7 +73,7 @@
   "hero": {
     "features": [
       "Pagos en 12H",
-      "100% de Ganancias",
+      "80% de Ganancias",
       "Capital de $100K",
       "Sin Límite de Tiempo"
     ],
@@ -89,7 +89,7 @@
     "payoutTime": "Tiempo Medio de Pago",
     "payoutTimeVal": "12 Horas",
     "rewardSplit": "Reparto Máximo de Beneficios",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "Capital Simulado Máximo",
     "accountSizeVal": "$100K+",
     "support": "Soporte en Vivo para Traders",
@@ -128,7 +128,7 @@
     "noConsistency": "SIN REGLAS DE CONSISTENCIA",
     "newsAllowed": "TRADING EN NOTICIAS PERMITIDO",
     "noTimePressure": "SIN PRESIÓN DE TIEMPO",
-    "profitSplit": "HASTA EL 100% DE REPARTO DE BENEFICIOS",
+    "profitSplit": "80% DE REPARTO DE BENEFICIOS",
     "readyFunded": "¿Listo para fondearte?",
     "startJourney": "Comienza tu viaje hoy.",
     "startChallenge": "Comenzar Desafío",
@@ -165,7 +165,7 @@
     "items": {
       "split": {
         "title": "Reparto de Ganancias",
-        "description": "Quédate con hasta el 100% de los beneficios simulados que generes. Sin deducciones complejas ni costos ocultos."
+        "description": "Quédate con el 80% de los beneficios simulados que generes. Sin deducciones complejas ni costos ocultos."
       },
       "news": {
         "title": "Trading de Noticias Permitido",
@@ -194,7 +194,7 @@
       "Sin cargos ocultos",
       "Pagos bajo demanda"
     ],
-    "upTo": "Hasta",
+    "splitEyebrow": "Te quedas con",
     "youKeep": "Te quedas con",
     "firmEarns": "Solo ganamos cuando tú escalas",
     "rawSpreadsMT5": "Spreads directos en MT5 · TradeLocker",
@@ -215,9 +215,6 @@
     "startChallenge": "Comenzar Desafío",
     "addOnsAvailable": "Complementos Disponibles",
     "popular": "Popular",
-    "profitSplit1": "Reparto de Beneficio (1–13 Días)",
-    "profitSplit2": "Reparto de Beneficio (14–30 Días)",
-    "profitSplit3": "Reparto de Beneficio (31+ Días)",
     "fundedConsistency": "Consistencia en Fondeada",
     "showNumbers": "Mostrar en números",
     "showPhases": "Mostrar fases",
@@ -251,7 +248,8 @@
     "accessTitle": "Todos los modelos incluyen:",
     "disclaimer": "Todo el trading involucra capital simulado en entornos demo. El rendimiento en trading simulado no garantiza resultados reales de mercado.",
     "conditions": [
-      "Reparto de beneficios hasta 100%",
+      "80% de reparto de beneficios",
+      "Ciclo de pagos flexible",
       "Apalancamiento 1:100",
       "Pagos en ~12 horas"
     ],
@@ -263,7 +261,8 @@
     "more": "+{count} más",
     "oneTimePaymentNotice": "Cada tarifa de evaluación es un pago único: sin suscripciones, sin cargos recurrentes y sin comisiones ocultas.",
     "quantity": "Cantidad",
-    "showAmounts": "Mostrar importes en $"
+    "showAmounts": "Mostrar importes en $",
+    "profitSplitRow": "Reparto de Beneficios"
   },
   "platforms": {
     "eyebrow": "Plataformas",
@@ -412,7 +411,7 @@
       },
       "profitSplit": {
         "q": "¿Qué porcentaje de beneficios ofrecen?",
-        "a": "CK Capital ofrece una división de beneficios de hasta el 100% para operadores verificados en cuentas financiadas."
+        "a": "CK Capital ofrece una división de beneficios del 80% para operadores verificados en cuentas financiadas."
       },
       "drawdown": {
         "q": "¿Cuáles son las reglas de reducción (drawdown)?",
@@ -447,7 +446,7 @@
   "closingCta": {
     "eyebrow": "Tu próxima operación podría ser fondeada",
     "title": "¿Listo para operar el capital de CK?",
-    "subtitle": "Elige un desafío, supera los objetivos a tu ritmo y escala cuentas simuladas quedándote con hasta el 100% de los beneficios.",
+    "subtitle": "Elige un desafío, supera los objetivos a tu ritmo y escala cuentas simuladas quedándote con el 80% de los beneficios.",
     "button": "Comienza tu Desafío",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -460,7 +459,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -471,12 +470,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "Empoderando a traders de todo el mundo con capital simulado, reglas transparentes y hasta el 100% de reparto de beneficios.",
+    "tagline": "Empoderando a traders de todo el mundo con capital simulado, reglas transparentes y 80% de reparto de beneficios.",
     "newsletterTitle": "Recibe Análisis de Trading",
     "newsletterSubtitle": "Actualizaciones de mercado, noticias sobre firmas de fondeo y promociones exclusivas cada semana.",
     "emailPlaceholder": "Ingresa tu correo electrónico",
@@ -546,7 +545,7 @@
     "backHome": "Volver al Inicio"
   },
   "meta": {
-    "homeTitle": "CK Capital - Empresa de Fondeo | Opera hasta $100K con 100% de Ganancias",
+    "homeTitle": "CK Capital - Empresa de Fondeo | Opera hasta $100K con 80% de Ganancias",
     "homeDescription": "Únete a CK Capital. Supera nuestra evaluación de 1 o 2 pasos para operar hasta $100K de capital simulado con pagos en 12h y trading de noticias permitido."
   },
   "about": {
@@ -598,7 +597,7 @@
     ],
     "statsTradersNote": "Traders en todo el mundo",
     "statsCapitalNote": "Asignación máxima escalable",
-    "statsSplitNote": "Conserva hasta el 100% de ganancias",
+    "statsSplitNote": "Conserva el 80% de ganancias",
     "statsSupportNote": "Respuesta promedio en menos de 2 min",
     "missionEyebrow": "PROPÓSITO",
     "visionEyebrow": "FUTURO",
@@ -687,9 +686,9 @@
         "desc": "Los Analistas Cualificados pueden acceder a asignaciones acumuladas de hasta $1.2M."
       },
       {
-        "value": "HASTA 100%",
+        "value": "80%",
         "title": "Recompensas de Ganancias",
-        "desc": "Recibe hasta el 100% de las ganancias simuladas elegibles según las reglas de cuenta."
+        "desc": "Recibe el 80% de las ganancias simuladas elegibles según las reglas de cuenta."
       }
     ],
     "contentEyebrow": "CREA CONTENIDO QUE CONVIERTE",
@@ -747,7 +746,7 @@
       "Períodos de Trading Ilimitados",
       "Opciones de Reinicio y Recarga",
       "Trading de Noticias según reglas",
-      "Hasta 100% de reparto de beneficios",
+      "80% de reparto de beneficios",
       "Asignación simulada total de hasta $1.2M"
     ],
     "ctaStats": [
@@ -897,7 +896,7 @@
       "phase2Sub": "Etapa de verificación",
       "qaTitle": "Analista Cualificado CK",
       "qaSub": "Destino del programa",
-      "qaFooter": "Hasta 100% de recompensas de ganancias simuladas",
+      "qaFooter": "80% de recompensas de ganancias simuladas",
       "evaluationTitle": "Evaluación",
       "evaluationSub": "Fase única — completa el objetivo bajo los parámetros de riesgo de CK Capital.",
       "instantTitle": "Cuenta Instantánea",
@@ -996,7 +995,7 @@
     ],
     "qaBenefitsTitle": "Los beneficios de Analista Cualificado pueden incluir:",
     "qaBenefits": [
-      "Hasta 100% de recompensas de ganancias simuladas",
+      "80% de recompensas de ganancias simuladas",
       "Ciclos de pago flexibles",
       "Trading de noticias según reglas aplicables",
       "Múltiples tamaños de cuenta",
@@ -1121,7 +1120,7 @@
     "profitTarget": "Objetivo de Beneficio",
     "maxLoss": "Pérdida Máxima",
     "profitSplit": "Reparto de Beneficios",
-    "profitSplitValue": "Hasta el 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "Pagos Rápidos",

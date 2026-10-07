@@ -57,7 +57,7 @@
     "blogTitle": "Trading-Einblicke & Blog",
     "featuredEvalBadge": "LIMITIERTES ANGEBOT · 75% RABATT",
     "featuredEvalTitle": "Handeln Sie mit bis zu $300K Kapital",
-    "featuredEvalDesc": "Nutzen Sie professionelle Tools, enge Spreads und bis zu 100% Gewinnbeteiligung auf simulierten Konten.",
+    "featuredEvalDesc": "Nutzen Sie professionelle Tools, enge Spreads und 80% Gewinnbeteiligung auf simulierten Konten.",
     "featuredEvalCta": "75% Rabatt Sichern",
     "featuredCommunityBadge": "TRADER-COMMUNITY",
     "featuredCommunityTitle": "Über 20.000 Aktiven Tradern Beitreten",
@@ -73,7 +73,7 @@
   "hero": {
     "features": [
       "12-Stunden-Auszahlungen",
-      "100% Gewinnbeteiligung",
+      "80% Gewinnbeteiligung",
       "$100K Kapital",
       "Keine Zeitlimits"
     ],
@@ -89,7 +89,7 @@
     "payoutTime": "Durchschn. Auszahlungszeit",
     "payoutTimeVal": "12 Stunden",
     "rewardSplit": "Max. Gewinnbeteiligung",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "Max. Simuliertes Kapital",
     "accountSizeVal": "$100K+",
     "support": "Live Trader-Support",
@@ -128,7 +128,7 @@
     "noConsistency": "KEINE KONSISTENZREGELN",
     "newsAllowed": "NEWS-TRADING ERLAUBT",
     "noTimePressure": "KEIN ZEITDRUCK",
-    "profitSplit": "BIS ZU 100% GEWINNBETEILIGUNG",
+    "profitSplit": "80% GEWINNBETEILIGUNG",
     "readyFunded": "Bereit für Ihr gefördertes Konto?",
     "startJourney": "Starten Sie noch heute Ihre Reise.",
     "startChallenge": "Challenge Starten",
@@ -165,7 +165,7 @@
     "items": {
       "split": {
         "title": "Gewinnbeteiligung",
-        "description": "Behalten Sie bis zu 100% der simulierten Gewinne. Keine komplizierten Abzüge, keine versteckten Kosten."
+        "description": "Behalten Sie 80% der simulierten Gewinne. Keine komplizierten Abzüge, keine versteckten Kosten."
       },
       "news": {
         "title": "News-Trading Erlaubt",
@@ -194,7 +194,7 @@
       "No hidden fees",
       "On-demand payouts"
     ],
-    "upTo": "Up to",
+    "splitEyebrow": "Du behältst",
     "youKeep": "Sie behalten",
     "firmEarns": "Firma behält",
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
@@ -215,9 +215,6 @@
     "startChallenge": "Challenge starten",
     "addOnsAvailable": "Verfügbare Add-Ons",
     "popular": "Beliebt",
-    "profitSplit1": "Gewinnbeteiligung (1–13 Tage)",
-    "profitSplit2": "Gewinnbeteiligung (14–30 Tage)",
-    "profitSplit3": "Gewinnbeteiligung (31+ Tage)",
     "fundedConsistency": "Geförderte Konsistenz",
     "showNumbers": "In Zahlen anzeigen",
     "showPhases": "Phasen anzeigen",
@@ -251,7 +248,8 @@
     "accessTitle": "Alle Modelle enthalten:",
     "disclaimer": "Der gesamte Handel beinhaltet simuliertes Kapital in Demoumgebungen. Frühere Wertentwicklungen garantieren keine zukünftigen Ergebnisse.",
     "conditions": [
-      "Profit split up to 100%",
+      "80% profit split",
+      "Flexibler Auszahlungszyklus",
       "Leverage 1:100",
       "Payouts in ~12 hours"
     ],
@@ -267,7 +265,8 @@
     "more": "+{count} mehr",
     "oneTimePaymentNotice": "Jede Evaluierungsgebühr ist eine einmalige Zahlung – kein Abo, keine wiederkehrenden Kosten, keine versteckten Gebühren.",
     "quantity": "Anzahl",
-    "showAmounts": "Beträge in $ anzeigen"
+    "showAmounts": "Beträge in $ anzeigen",
+    "profitSplitRow": "Gewinnbeteiligung"
   },
   "platforms": {
     "eyebrow": "Plattformen",
@@ -416,7 +415,7 @@
       },
       "profitSplit": {
         "q": "Welche Gewinnbeteiligungen bieten Sie an?",
-        "a": "CK Capital bietet bis zu 100% Gewinnbeteiligung für verifizierte Händler auf finanzierten Konten."
+        "a": "CK Capital bietet 80% Gewinnbeteiligung für verifizierte Händler auf finanzierten Konten."
       },
       "drawdown": {
         "q": "Wie lauten die Drawdown-Regeln?",
@@ -451,7 +450,7 @@
   "closingCta": {
     "eyebrow": "Dein nächster Trade könnte finanziert sein",
     "title": "Bereit, mit CKs Kapital zu handeln?",
-    "subtitle": "Wähle eine Challenge, erfülle die Ziele in deinem Tempo und behalte bis zu 100% deiner Gewinne.",
+    "subtitle": "Wähle eine Challenge, erfülle die Ziele in deinem Tempo und behalte 80% deiner Gewinne.",
     "button": "Starte deine Challenge",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -464,7 +463,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -475,12 +474,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "Wir unterstützen Trader weltweit mit virtuellem Kapital, transparenten Regeln und bis zu 100% Gewinnbeteiligung.",
+    "tagline": "Wir unterstützen Trader weltweit mit virtuellem Kapital, transparenten Regeln und 80% Gewinnbeteiligung.",
     "newsletterTitle": "Trading-Einblicke Erhalten",
     "newsletterSubtitle": "Markt-Updates, Prop-Firm-News und exklusive Angebote wöchentlich in Ihrem Postfach.",
     "emailPlaceholder": "Ihre E-Mail eingeben",
@@ -550,7 +549,7 @@
     "backHome": "Zurück zur Startseite"
   },
   "meta": {
-    "homeTitle": "CK Capital - Prop Trading Firma | Bis zu $100K Kapital mit 100% Split",
+    "homeTitle": "CK Capital - Prop Trading Firma | Bis zu $100K Kapital mit 80% Split",
     "homeDescription": "Werde Teil von CK Capital. Bestehe unsere Evaluierung und handle bis zu $100K simuliertes Kapital mit Auszahlungen in 12h."
   },
   "about": {
@@ -602,7 +601,7 @@
     ],
     "statsTradersNote": "Trader in über 140 Ländern",
     "statsCapitalNote": "Maximal skalierbare Zuteilung",
-    "statsSplitNote": "Behalte bis zu 100% der Gewinne",
+    "statsSplitNote": "Behalte 80% der Gewinne",
     "statsSupportNote": "Unter 2 Minuten durchschnittliche Antwortzeit",
     "missionEyebrow": "ZWECK",
     "visionEyebrow": "ZUKUNFT",
@@ -704,9 +703,9 @@
         "desc": "CK Capital Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
-        "value": "UP TO 100%",
+        "value": "80%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Capital Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Capital Qualified Analysts may receive 80% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
@@ -764,7 +763,7 @@
       "Unlimited Trading Periods on applicable evaluations",
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Total simulated account allocation up to $1.2M"
     ],
     "ctaStats": [
@@ -927,7 +926,7 @@
       "phase2Sub": "Verification stage",
       "qaTitle": "CK Qualified Analyst",
       "qaSub": "Programme destination",
-      "qaFooter": "Up to 100% simulated profit rewards",
+      "qaFooter": "80% simulated profit rewards",
       "evaluationTitle": "Evaluation",
       "evaluationSub": "Single stage — complete the objective under CK Capital's risk parameters.",
       "instantTitle": "Instant Account",
@@ -1026,7 +1025,7 @@
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
     "qaBenefits": [
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Flexible reward cycles",
       "News trading according to applicable rules",
       "Multiple account sizes",
@@ -1201,7 +1200,7 @@
     "profitTarget": "Gewinnziel",
     "maxLoss": "Max. Gesamtverlust",
     "profitSplit": "Gewinnbeteiligung",
-    "profitSplitValue": "Bis zu 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "Schnelle Auszahlungen",

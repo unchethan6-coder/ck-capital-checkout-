@@ -56,7 +56,7 @@
     "startChallenge": "Start Challenge",
     "featuredEvalBadge": "LIMITED OFFER · 75% OFF",
     "featuredEvalTitle": "Trade Up to $300K Capital",
-    "featuredEvalDesc": "Trade with institutional tools, tight spreads, and earn up to 100% profit split on simulated accounts.",
+    "featuredEvalDesc": "Trade with institutional tools, tight spreads, and earn an 80% profit split on simulated accounts.",
     "featuredEvalCta": "Claim 75% Off",
     "featuredCommunityBadge": "TRADER COMMUNITY",
     "featuredCommunityTitle": "Join 20,000+ Active Traders",
@@ -72,7 +72,7 @@
   "hero": {
     "features": [
       "12H Payouts",
-      "100% Profit Split",
+      "80% Profit Split",
       "$100K Capital",
       "No Time Limits"
     ],
@@ -87,8 +87,8 @@
   "stats": {
     "payoutTime": "Average Payout Time",
     "payoutTimeVal": "12 Hours",
-    "rewardSplit": "Max Profit Split",
-    "rewardSplitVal": "100%",
+    "rewardSplit": "Profit Split",
+    "rewardSplitVal": "80%",
     "accountSize": "Max Simulated Capital",
     "accountSizeVal": "$100K+",
     "support": "Live Trader Support",
@@ -127,7 +127,7 @@
     "noConsistency": "NO CONSISTENCY RULES",
     "newsAllowed": "NEWS TRADING ALLOWED",
     "noTimePressure": "NO TIME PRESSURE",
-    "profitSplit": "UP TO 100% PROFIT SPLIT",
+    "profitSplit": "80% PROFIT SPLIT",
     "readyFunded": "Ready to get funded?",
     "startJourney": "Start your journey today.",
     "startChallenge": "Start Challenge",
@@ -164,7 +164,7 @@
     "items": {
       "split": {
         "title": "Reward Split",
-        "description": "Keep up to 100% of the simulated trading profits you generate. No complex deductions, no hidden costs."
+        "description": "Keep 80% of the simulated trading profits you generate. No complex deductions, no hidden costs."
       },
       "news": {
         "title": "News Trading Allowed",
@@ -193,7 +193,7 @@
       "No hidden fees",
       "On-demand payouts"
     ],
-    "upTo": "Up to",
+    "splitEyebrow": "You keep",
     "youKeep": "You keep",
     "firmEarns": "We only earn when you scale",
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
@@ -214,9 +214,6 @@
     "startChallenge": "Start Challenge",
     "addOnsAvailable": "Add-Ons Available",
     "popular": "Popular",
-    "profitSplit1": "Profit Split (1–13 Days)",
-    "profitSplit2": "Profit Split (14–30 Days)",
-    "profitSplit3": "Profit Split (31+ Days)",
     "fundedConsistency": "Funded Consistency",
     "showNumbers": "Show in numbers",
     "showPhases": "Show phases",
@@ -250,7 +247,8 @@
     "accessTitle": "All models include:",
     "disclaimer": "All trading involves simulated capital in demo environments. Performance in simulated trading does not guarantee real-market results.",
     "conditions": [
-      "Profit split up to 100%",
+      "80% profit split",
+      "Flexible payout cycle",
       "Leverage 1:100",
       "Payouts in ~12 hours"
     ],
@@ -262,7 +260,8 @@
     "more": "+{count} more",
     "oneTimePaymentNotice": "Every evaluation fee is a one-time payment — no subscriptions, no recurring charges, no hidden fees.",
     "quantity": "Quantity",
-    "showAmounts": "Show $ Amounts"
+    "showAmounts": "Show $ Amounts",
+    "profitSplitRow": "Profit Split"
   },
   "platforms": {
     "eyebrow": "Platforms",
@@ -411,7 +410,7 @@
       },
       "profitSplit": {
         "q": "What profit splits do you offer?",
-        "a": "CK Capital offers up to 100% profit splits for verified traders on funded accounts. You keep up to 100% of your trading profits."
+        "a": "CK Capital offers an 80% profit split for verified traders on funded accounts. You keep 80% of your trading profits."
       },
       "drawdown": {
         "q": "What are the drawdown rules?",
@@ -446,7 +445,7 @@
   "closingCta": {
     "eyebrow": "Your next trade could be funded",
     "title": "Ready to trade CK's capital?",
-    "subtitle": "Pick a challenge, pass the objectives on your timetable, and trade simulated accounts with up to 100% of the profits you keep.",
+    "subtitle": "Pick a challenge, pass the objectives on your timetable, and trade simulated accounts keeping 80% of the profits.",
     "button": "Start Challenge",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -459,7 +458,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Start Challenge",
     "secondary": "Compare Plans",
@@ -470,12 +469,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "Empowering traders worldwide with simulated capital, transparent rules, and up to 100% profit splits.",
+    "tagline": "Empowering traders worldwide with simulated capital, transparent rules, and an 80% profit split.",
     "newsletterTitle": "Get Trading Insights",
     "newsletterSubtitle": "Market updates, prop firm news, and exclusive promotional offers delivered weekly.",
     "emailPlaceholder": "Enter your email",
@@ -545,8 +544,8 @@
     "backHome": "Back to Home"
   },
   "meta": {
-    "homeTitle": "CK Capital - Prop Trading Firm | Trade up to $100K with 100% Profit Split",
-    "homeDescription": "Join CK Capital prop firm. Pass our 1-step or 2-step evaluation to trade up to $100K simulated capital with 12h payouts, news trading allowed, and up to 100% profit split."
+    "homeTitle": "CK Capital - Prop Trading Firm | Trade up to $100K with 80% Profit Split",
+    "homeDescription": "Join CK Capital prop firm. Pass our 1-step or 2-step evaluation to trade up to $100K simulated capital with 12h payouts, news trading allowed, and an 80% profit split."
   },
   "about": {
     "badge": "Who We Are · Prop Trading",
@@ -597,7 +596,7 @@
     ],
     "statsTradersNote": "Worldwide Traders",
     "statsCapitalNote": "Max scalable allocation",
-    "statsSplitNote": "Keep up to 100% of profits",
+    "statsSplitNote": "Keep 80% of profits",
     "statsSupportNote": "Under 2 min average response",
     "missionEyebrow": "PURPOSE",
     "visionEyebrow": "FUTURE",
@@ -686,9 +685,9 @@
         "desc": "CK Capital Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
-        "value": "UP TO 100%",
+        "value": "80%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Capital Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Capital Qualified Analysts may receive 80% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
@@ -746,7 +745,7 @@
       "Unlimited Trading Periods on applicable evaluations",
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Total simulated account allocation up to $1.2M"
     ],
     "ctaStats": [
@@ -789,7 +788,7 @@
   "evaluation": {
     "badge": "Limited Time · 75% Off All Evaluations",
     "title": "Trading Evaluations built for serious traders.",
-    "subtitle": "Prove your skills in a simulated environment, unlock funded accounts up to $1.2M, and keep up to 100% of your profits. Transparent rules, no hidden fees, no time limits.",
+    "subtitle": "Prove your skills in a simulated environment, unlock funded accounts up to $1.2M, and keep 80% of your profits. Transparent rules, no hidden fees, no time limits.",
     "claimOffer": "Claim 75% OFF",
     "compareBtn": "Compare Challenges",
     "pathEyebrow": "How It Works",
@@ -821,7 +820,7 @@
       "viewChallenge": "Evaluation Challenge",
       "instantBadge": "ZERO EVALUATION",
       "instantTagline": "Immediate access without evaluation phases",
-      "instantIdealFor": "Experienced traders seeking instant simulated allocation and immediate bi-weekly rewards without passing multi-stage profit targets.",
+      "instantIdealFor": "Experienced traders seeking instant simulated allocation and a flexible reward cycle without passing multi-stage profit targets.",
       "challengeBadge": "MAX SCALE POTENTIAL",
       "challengeTagline": "Multi-phase evaluation for maximum capital",
       "challengeIdealFor": "Disciplined traders who want larger simulated balances up to $1.2M and higher drawdown room at lower entry fees.",
@@ -896,7 +895,7 @@
       "phase2Sub": "Verification stage",
       "qaTitle": "CK Qualified Analyst",
       "qaSub": "Programme destination",
-      "qaFooter": "Up to 100% simulated profit rewards",
+      "qaFooter": "80% simulated profit rewards",
       "evaluationTitle": "Evaluation",
       "evaluationSub": "Single stage — complete the objective under CK Capital's risk parameters.",
       "instantTitle": "Instant Account",
@@ -922,7 +921,7 @@
       "none": "None",
       "accordingToRules": "According to selected account rules",
       "checkConditions": "Check account conditions",
-      "upToSplit": "Up to applicable split",
+      "upToSplit": "80% profit split",
       "consistencyWhereApplicable": "40% where applicable",
       "twoStepProPending": "The Pro evaluation structure — current rates pending publication."
     },
@@ -995,7 +994,7 @@
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
     "qaBenefits": [
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Flexible reward cycles",
       "News trading according to applicable rules",
       "Multiple account sizes",
@@ -1112,7 +1111,7 @@
     "profitTarget": "Profit Target",
     "maxLoss": "Max Loss",
     "profitSplit": "Profit Split",
-    "profitSplitValue": "Up to 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "Fast Payouts",

@@ -96,7 +96,7 @@ export function PricingGrid() {
                   <Check size={12} /> News trading allowed
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-[#14b8a6]">
-                  <Check size={12} /> Up to 100% reward split
+                  <Check size={12} /> 80% reward split
                 </div>
               </div>
 
@@ -138,7 +138,7 @@ export function PricingGrid() {
           <p className="flex items-center justify-center gap-2 text-sm text-gray-500 font-medium">
             <TrendingUp size={14} className="text-[#A98BFF]" />
             Trade with transparent drawdown rules and keep up to{" "}
-            <span className="text-[#A98BFF] font-bold">100% simulated profit split</span>
+            <span className="text-[#A98BFF] font-bold">80% simulated profit split</span>
           </p>
         </SectionReveal>
       </Container>

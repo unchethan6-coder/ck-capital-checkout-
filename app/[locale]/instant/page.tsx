@@ -26,7 +26,7 @@ export default function InstantPage() {
     { title: 'Flexible Funding', description: 'Choose account sizes from $5K up to $200K with instant account setup.' },
     { title: 'Generous Rules', description: 'Balanced profit parameters and realistic loss limits designed for long-term consistency.' },
     { title: 'Lower Consistency', description: 'Only 20% consistency requirement to build your simulated track record quickly.' },
-    { title: 'Up to 100% Profit Split', description: 'Eligible Qualified Analysts keep up to 100% of eligible simulated profits.' },
+    { title: '80% Profit Split', description: 'Eligible Qualified Analysts keep 80% of eligible simulated profits.' },
   ]
 
   const pricing = [

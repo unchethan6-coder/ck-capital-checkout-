@@ -57,7 +57,7 @@
     "blogTitle": "ट्रेडिंग इनसाइट्स और ब्लॉग",
     "featuredEvalBadge": "सीमित ऑफर · 75% छूट",
     "featuredEvalTitle": "$300K तक के कैपिटल के साथ ट्रेड करें",
-    "featuredEvalDesc": "सिमुलेटेड खातों पर संस्थागत टूल, कम स्प्रेड और 100% तक लाभ विभाजन के साथ ट्रेड करें।",
+    "featuredEvalDesc": "सिमुलेटेड खातों पर संस्थागत टूल, कम स्प्रेड और 80% लाभ विभाजन के साथ ट्रेड करें।",
     "featuredEvalCta": "75% छूट पाएं",
     "featuredCommunityBadge": "ट्रेडर समुदाय",
     "featuredCommunityTitle": "20,000+ सक्रिय ट्रेडर्स से जुड़ें",
@@ -73,7 +73,7 @@
   "hero": {
     "features": [
       "12 घंटे में भुगतान",
-      "100% लाभ विभाजन",
+      "80% लाभ विभाजन",
       "$100K पूंजी",
       "कोई समय सीमा नहीं"
     ],
@@ -89,7 +89,7 @@
     "payoutTime": "औसत पेआउट समय",
     "payoutTimeVal": "12 घंटे",
     "rewardSplit": "अधिकतम लाभ विभाजन",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "अधिकतम सिमुलेटेड कैपिटल",
     "accountSizeVal": "$100K+",
     "support": "लाइव ट्रेडर सपोर्ट",
@@ -128,7 +128,7 @@
     "noConsistency": "कोई कंसिस्टेंसी नियम नहीं",
     "newsAllowed": "न्यूज ट्रेडिंग की अनुमति है",
     "noTimePressure": "समय का कोई दबाव नहीं",
-    "profitSplit": "100% तक लाभ विभाजन",
+    "profitSplit": "80% लाभ विभाजन",
     "readyFunded": "फंडेड होने के लिए तैयार हैं?",
     "startJourney": "आज ही अपनी यात्रा शुरू करें।",
     "startChallenge": "चैलेंज शुरू करें",
@@ -165,7 +165,7 @@
     "items": {
       "split": {
         "title": "लाभ विभाजन",
-        "description": "अपने द्वारा उत्पन्न सिमुलेटेड ट्रेडिंग लाभ का 100% तक रखें। कोई जटिल कटौती नहीं, कोई छिपा हुआ शुल्क नहीं।"
+        "description": "अपने द्वारा उत्पन्न सिमुलेटेड ट्रेडिंग लाभ का 80% रखें। कोई जटिल कटौती नहीं, कोई छिपा हुआ शुल्क नहीं।"
       },
       "news": {
         "title": "न्यूज ट्रेडिंग की अनुमति है",
@@ -194,7 +194,7 @@
       "No hidden fees",
       "On-demand payouts"
     ],
-    "upTo": "Up to",
+    "splitEyebrow": "आप रखते हैं",
     "youKeep": "आप रखते हैं",
     "firmEarns": "फर्म रखती है",
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
@@ -215,9 +215,6 @@
     "startChallenge": "चैलेंज शुरू करें",
     "addOnsAvailable": "उपलब्ध ऐड-ऑन",
     "popular": "लोकप्रिय",
-    "profitSplit1": "लाभ विभाजन (1–13 दिन)",
-    "profitSplit2": "लाभ विभाजन (14–30 दिन)",
-    "profitSplit3": "लाभ विभाजन (31+ दिन)",
     "fundedConsistency": "फंडेड निरंतरता",
     "showNumbers": "संख्याओं में दिखाएं",
     "showPhases": "चरण दिखाएं",
@@ -251,7 +248,8 @@
     "accessTitle": "सभी मॉडलों में शामिल हैं:",
     "disclaimer": "सभी ट्रेडिंग डेमो वातावरण में सिम्युलेटेड पूंजी के साथ होती है। पिछला प्रदर्शन भविष्य के परिणामों की गारंटी नहीं देता है।",
     "conditions": [
-      "Profit split up to 100%",
+      "80% profit split",
+      "लचीला भुगतान चक्र",
       "Leverage 1:100",
       "Payouts in ~12 hours"
     ],
@@ -267,7 +265,8 @@
     "more": "+{count} अधिक",
     "oneTimePaymentNotice": "हर मूल्यांकन शुल्क एक बार का भुगतान है — कोई सब्सक्रिप्शन, कोई आवर्ती शुल्क, कोई छिपी फीस नहीं।",
     "quantity": "मात्रा",
-    "showAmounts": "$ राशि दिखाएँ"
+    "showAmounts": "$ राशि दिखाएँ",
+    "profitSplitRow": "लाभ विभाजन"
   },
   "platforms": {
     "eyebrow": "प्लेटफ़ॉर्म",
@@ -416,7 +415,7 @@
       },
       "profitSplit": {
         "q": "आप क्या लाभ विभाजन (Profit Split) प्रदान करते हैं?",
-        "a": "CK Capital फंडेड खातों पर सत्यापित ट्रेडर्स के लिए 100% तक का लाभ विभाजन प्रदान करता है।"
+        "a": "CK Capital फंडेड खातों पर सत्यापित ट्रेडर्स के लिए 80% लाभ विभाजन प्रदान करता है।"
       },
       "drawdown": {
         "q": "ड्रॉडडाउन (Drawdown) के नियम क्या हैं?",
@@ -451,7 +450,7 @@
   "closingCta": {
     "eyebrow": "आपका अगला ट्रेड वित्तपोषित हो सकता है",
     "title": "क्या आप CK की पूंजी के साथ ट्रेड करने के लिए तैयार हैं?",
-    "subtitle": "एक चैलेंज चुनें, अपने समय पर लक्ष्यों को पूरा करें और 100% तक लाभ अपने पास रखें।",
+    "subtitle": "एक चैलेंज चुनें, अपने समय पर लक्ष्यों को पूरा करें और 80% लाभ अपने पास रखें।",
     "button": "अपना चैलेंज शुरू करें",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -464,7 +463,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -475,12 +474,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "सिमुलेटेड कैपिटल, पारदर्शी नियमों और 100% तक लाभ विभाजन के साथ दुनिया भर के ट्रेडर्स को सशक्त बनाना।",
+    "tagline": "सिमुलेटेड कैपिटल, पारदर्शी नियमों और 80% लाभ विभाजन के साथ दुनिया भर के ट्रेडर्स को सशक्त बनाना।",
     "newsletterTitle": "ट्रेडिंग इनसाइट्स प्राप्त करें",
     "newsletterSubtitle": "बाजार अपडेट, प्रॉप फर्म समाचार और विशेष प्रचार ऑफर हर हफ्ते अपने इनबॉक्स में पाएं।",
     "emailPlaceholder": "अपना ईमेल दर्ज करें",
@@ -550,7 +549,7 @@
     "backHome": "मुखपृष्ठ पर वापस जाएं"
   },
   "meta": {
-    "homeTitle": "CK Capital - प्रॉप ट्रेडिंग फर्म | 100% लाभ विभाजन के साथ $100K तक ट्रेड करें",
+    "homeTitle": "CK Capital - प्रॉप ट्रेडिंग फर्म | 80% लाभ विभाजन के साथ $100K तक ट्रेड करें",
     "homeDescription": "CK Capital से जुड़ें। $100K तक सिम्युलेटेड पूंजी के साथ 12 घंटे में भुगतान पाने के लिए हमारे मूल्यांकन को पास करें।"
   },
   "about": {
@@ -602,7 +601,7 @@
     ],
     "statsTradersNote": "दुनिया भर में ट्रेडर्स",
     "statsCapitalNote": "अधिकतम स्केलेबल आवंटन",
-    "statsSplitNote": "100% तक लाभ अपने पास रखें",
+    "statsSplitNote": "80% लाभ अपने पास रखें",
     "statsSupportNote": "2 मिनट से कम औसत प्रतिक्रिया समय",
     "missionEyebrow": "उद्देश्य",
     "visionEyebrow": "भविष्य",
@@ -704,9 +703,9 @@
         "desc": "CK Capital Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
-        "value": "UP TO 100%",
+        "value": "80%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Capital Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Capital Qualified Analysts may receive 80% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
@@ -764,7 +763,7 @@
       "Unlimited Trading Periods on applicable evaluations",
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Total simulated account allocation up to $1.2M"
     ],
     "ctaStats": [
@@ -927,7 +926,7 @@
       "phase2Sub": "Verification stage",
       "qaTitle": "CK Qualified Analyst",
       "qaSub": "Programme destination",
-      "qaFooter": "Up to 100% simulated profit rewards",
+      "qaFooter": "80% simulated profit rewards",
       "evaluationTitle": "Evaluation",
       "evaluationSub": "Single stage — complete the objective under CK Capital's risk parameters.",
       "instantTitle": "Instant Account",
@@ -1026,7 +1025,7 @@
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
     "qaBenefits": [
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Flexible reward cycles",
       "News trading according to applicable rules",
       "Multiple account sizes",
@@ -1201,7 +1200,7 @@
     "profitTarget": "लाभ लक्ष्य",
     "maxLoss": "अधिकतम कुल नुकसान",
     "profitSplit": "लाभ विभाजन",
-    "profitSplitValue": "100% तक"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "त्वरित पेआउट",

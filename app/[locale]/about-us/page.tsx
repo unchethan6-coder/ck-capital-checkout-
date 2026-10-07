@@ -62,7 +62,7 @@ export default function AboutPage() {
   const aboutStats = [
     { stat: '20K+', label: t('statsTraders'), note: t('statsTradersNote') },
     { stat: '$1.2M', label: t('statsCapital'), note: t('statsCapitalNote') },
-    { stat: '100%', label: t('statsSplit'), note: t('statsSplitNote') },
+    { stat: '80%', label: t('statsSplit'), note: t('statsSplitNote') },
     { stat: '24/7', label: t('statsSupport'), note: t('statsSupportNote') },
   ]
 

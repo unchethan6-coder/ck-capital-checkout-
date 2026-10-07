@@ -127,7 +127,7 @@ export function EvaluationPathVisual({
               {/* Funded Master */}
               <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-3 text-center relative overflow-hidden">
                 <p className="text-[9.5px] font-bold uppercase text-emerald-700">Master Trader</p>
-                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">100% Split</p>
+                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">80% Split</p>
                 <span className="mt-1.5 inline-block rounded bg-emerald-100 px-1.5 py-0.5 text-[8.5px] font-bold text-emerald-700">
                   REWARD
                 </span>

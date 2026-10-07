@@ -90,8 +90,8 @@ export function InstantVsChallengeComparison() {
     },
     {
       feature: "Simulated Profit Split",
-      instant: "Up to 100% Payout Rate",
-      challenge: "Up to 100% Payout Rate",
+      instant: "80% Payout Rate",
+      challenge: "80% Payout Rate",
     },
     {
       feature: "Payout Processing SLA",
@@ -195,7 +195,7 @@ export function InstantVsChallengeComparison() {
                     </span>
                   </div>
                   <p className="mt-1.5 text-xs text-[#4B5563]">
-                    Immediate simulated allocation with bi-weekly reward eligibility.
+                    Immediate simulated allocation with a flexible reward cycle.
                   </p>
                 </div>
                 <div className="mt-3.5 pt-3 border-t border-violet-200/60 flex items-center justify-between gap-3">

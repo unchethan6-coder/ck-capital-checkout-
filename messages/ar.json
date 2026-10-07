@@ -57,7 +57,7 @@
     "blogTitle": "رؤى التداول والمدونة",
     "featuredEvalBadge": "عرض محدود · خصم 75%",
     "featuredEvalTitle": "تداول برأس مال يصل إلى 300 ألف دولار",
-    "featuredEvalDesc": "تداول بأدوات احترافية وفروق أسعار ضيقة ونسبة أرباح تصل إلى 100% في الحسابات الافتراضية.",
+    "featuredEvalDesc": "تداول بأدوات احترافية وفروق أسعار ضيقة ونسبة أرباح 80% في الحسابات الافتراضية.",
     "featuredEvalCta": "احصل على خصم 75%",
     "featuredCommunityBadge": "مجتمع المتداولين",
     "featuredCommunityTitle": "انضم إلى أكثر من 20,000 متداول نشط",
@@ -73,7 +73,7 @@
   "hero": {
     "features": [
       "سحب خلال 12 ساعة",
-      "نسبة أرباح 100%",
+      "نسبة أرباح 80%",
       "رأس مال 100 ألف دولار",
       "بدون حدود زمنية"
     ],
@@ -89,7 +89,7 @@
     "payoutTime": "متوسط وقت السحب",
     "payoutTimeVal": "12 ساعة",
     "rewardSplit": "أعلى نسبة أرباح",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "أقصى رأس مال افتراضي",
     "accountSizeVal": "+100 ألف دولار",
     "support": "دعم المتداولين المباشر",
@@ -128,7 +128,7 @@
     "noConsistency": "بدون قواعد اتساق معقدة",
     "newsAllowed": "التداول أثناء الأخبار مسموح",
     "noTimePressure": "بدون ضغط زمني",
-    "profitSplit": "نسبة أرباح تصل إلى 100%",
+    "profitSplit": "نسبة أرباح 80%",
     "readyFunded": "هل أنت مستعد للحصول على التمويل؟",
     "startJourney": "ابدأ رحلتك اليوم.",
     "startChallenge": "ابدأ التحدي",
@@ -165,7 +165,7 @@
     "items": {
       "split": {
         "title": "تقسيم الأرباح",
-        "description": "احتفظ بما يصل إلى 100% من أرباح التداول الافتراضية التي تحققها. بدون خصومات معقدة أو رسوم مخفية."
+        "description": "احتفظ بـ 80% من أرباح التداول الافتراضية التي تحققها. بدون خصومات معقدة أو رسوم مخفية."
       },
       "news": {
         "title": "التداول وقت الأخبار مسموح",
@@ -194,7 +194,7 @@
       "No hidden fees",
       "On-demand payouts"
     ],
-    "upTo": "Up to",
+    "splitEyebrow": "تحتفظ بـ",
     "youKeep": "أنت تحتفظ بـ",
     "firmEarns": "الشركة تحصل على",
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
@@ -215,9 +215,6 @@
     "startChallenge": "ابدأ التحدي",
     "addOnsAvailable": "الإضافات المتاحة",
     "popular": "شائع",
-    "profitSplit1": "تقاسم الأرباح (1–13 يوم)",
-    "profitSplit2": "تقاسم الأرباح (14–30 يوم)",
-    "profitSplit3": "تقاسم الأرباح (31+ يوم)",
     "fundedConsistency": "الاستمرارية الممولة",
     "showNumbers": "عرض بالأرقام",
     "showPhases": "عرض المراحل",
@@ -251,7 +248,8 @@
     "accessTitle": "تتضمن جميع النماذج:",
     "disclaimer": "جميع التداولات تتم باستخدام رأس مال محاكى في بيئات تجريبية. الأداء السابق لا يضمن نتائج مستقبلية.",
     "conditions": [
-      "Profit split up to 100%",
+      "80% profit split",
+      "دورة سحب مرنة",
       "Leverage 1:100",
       "Payouts in ~12 hours"
     ],
@@ -267,7 +265,8 @@
     "more": "+{count} المزيد",
     "oneTimePaymentNotice": "رسوم التقييم تُدفع مرة واحدة فقط — بدون اشتراكات أو رسوم متكررة أو رسوم خفية.",
     "quantity": "الكمية",
-    "showAmounts": "عرض المبالغ بالدولار"
+    "showAmounts": "عرض المبالغ بالدولار",
+    "profitSplitRow": "نسبة الأرباح"
   },
   "platforms": {
     "eyebrow": "المنصات",
@@ -416,7 +415,7 @@
       },
       "profitSplit": {
         "q": "ما هي نسبة تقسيم الأرباح التي تقدمونها؟",
-        "a": "تقدم CK Capital نسبة مشاركة أرباح تصل إلى 100% للمتداولين المؤهلين في الحسابات الممولة."
+        "a": "تقدم CK Capital نسبة مشاركة أرباح 80% للمتداولين المؤهلين في الحسابات الممولة."
       },
       "drawdown": {
         "q": "ما هي قواعد التراجع (Drawdown)؟",
@@ -451,7 +450,7 @@
   "closingCta": {
     "eyebrow": "صفقتك القادمة قد تكون بحساب ممول",
     "title": "جاهز للتداول برأس مال CK؟",
-    "subtitle": "اختر التحدي المناسب، وحقق الأهداف وفق جدولك واحتفظ بما يصل إلى 100% من الأرباح.",
+    "subtitle": "اختر التحدي المناسب، وحقق الأهداف وفق جدولك واحتفظ بـ 80% من الأرباح.",
     "button": "ابدأ التحدي الآن",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -464,7 +463,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -475,12 +474,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "نمكّن المتداولين حول العالم برأس مال افتراضي، وقواعد واضحة ونسب أرباح تصل إلى 100%.",
+    "tagline": "نمكّن المتداولين حول العالم برأس مال افتراضي، وقواعد واضحة ونسبة أرباح 80%.",
     "newsletterTitle": "احصل على رؤى التداول",
     "newsletterSubtitle": "تحديثات السوق وأخبار شركات التمويل والعروض الحصرية أسبوعياً في بريدك.",
     "emailPlaceholder": "أدخل بريدك الإلكتروني",
@@ -550,7 +549,7 @@
     "backHome": "العودة للرئيسية"
   },
   "meta": {
-    "homeTitle": "CK Capital - شركة تداول | تداول حتى 100 ألف دولار مع نسبة أرباح 100%",
+    "homeTitle": "CK Capital - شركة تداول | تداول حتى 100 ألف دولار مع نسبة أرباح 80%",
     "homeDescription": "انضم إلى CK Capital. اجتز تقييمنا لتتداول برأس مال محاكى يصل إلى 100 ألف دولار مع سحب أرباح خلال 12 ساعة."
   },
   "about": {
@@ -602,7 +601,7 @@
     ],
     "statsTradersNote": "متداولون حول العالم",
     "statsCapitalNote": "الحد الأقصى للتخصيص القابل للترقية",
-    "statsSplitNote": "احتفظ بما يصل إلى 100% من الأرباح",
+    "statsSplitNote": "احتفظ بـ 80% من الأرباح",
     "statsSupportNote": "متوسط وقت الاستجابة أقل من دقيقتين",
     "missionEyebrow": "الهدف",
     "visionEyebrow": "المستقبل",
@@ -704,9 +703,9 @@
         "desc": "CK Capital Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
-        "value": "UP TO 100%",
+        "value": "80%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Capital Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Capital Qualified Analysts may receive 80% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
@@ -764,7 +763,7 @@
       "Unlimited Trading Periods on applicable evaluations",
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Total simulated account allocation up to $1.2M"
     ],
     "ctaStats": [
@@ -927,7 +926,7 @@
       "phase2Sub": "Verification stage",
       "qaTitle": "CK Qualified Analyst",
       "qaSub": "Programme destination",
-      "qaFooter": "Up to 100% simulated profit rewards",
+      "qaFooter": "80% simulated profit rewards",
       "evaluationTitle": "Evaluation",
       "evaluationSub": "Single stage — complete the objective under CK Capital's risk parameters.",
       "instantTitle": "Instant Account",
@@ -1026,7 +1025,7 @@
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
     "qaBenefits": [
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Flexible reward cycles",
       "News trading according to applicable rules",
       "Multiple account sizes",
@@ -1201,7 +1200,7 @@
     "profitTarget": "الهدف الربحي",
     "maxLoss": "أقصى خسارة إجمالية",
     "profitSplit": "نسبة الأرباح",
-    "profitSplitValue": "تصل إلى 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "سحب أرباح سريع",

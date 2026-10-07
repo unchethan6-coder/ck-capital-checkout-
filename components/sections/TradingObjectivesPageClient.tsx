@@ -353,7 +353,7 @@ function Step2Detail({
               {t("phaseCards.qaFooter")}
             </p>
             <span className="font-mono text-xs font-semibold text-[#6B7280]">
-              Reward Cycle: Bi-weekly payouts
+              Reward Cycle: Flexible payout cycle
             </span>
           </div>
         }
@@ -456,7 +456,7 @@ function Step1Detail({
               {[
                 "Single phase target — no second verification stage",
                 "Minimum 1 trading day requirement",
-                "Up to 100% simulated profit payouts upon funding",
+                "80% simulated profit payouts upon funding",
               ].map((bullet) => (
                 <li key={bullet} className="flex items-start gap-2.5 text-xs sm:text-[13.5px] font-bold text-[#0A0A0C]">
                   <CheckCircle2 size={16} className="shrink-0 text-emerald-600 mt-0.5" />
@@ -524,7 +524,7 @@ function InstantDetail({
           footer={
             <p className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0A0A0C]">
               <Sparkles size={16} className="shrink-0 text-[#A98BFF]" />
-              Instant simulated capital allocation with bi-weekly payout cycles
+              Instant simulated capital allocation with a flexible payout cycle
             </p>
           }
         />
@@ -610,7 +610,7 @@ function CompareModels({
       targetValue: "10%",
       dailyLoss: "4% Daily",
       maxLoss: "6% Trailing",
-      profitSplit: "Up to 100%",
+      profitSplit: "80%",
       features: [
         "1 single evaluation phase",
         "Unlimited trading period",
@@ -633,7 +633,7 @@ function CompareModels({
       targetValue: "10% / 5%",
       dailyLoss: "4% Daily",
       maxLoss: "8% Static",
-      profitSplit: "Up to 100%",
+      profitSplit: "80%",
       features: [
         "2 structured evaluation phases",
         "8% static maximum loss buffer",
@@ -649,17 +649,17 @@ function CompareModels({
       badge: "Direct Funding",
       badgeClass: "bg-emerald-50 text-emerald-700 border border-emerald-200/80",
       title: "Instant Funding",
-      description: "Skip evaluation phases completely and begin trading simulated capital immediately with direct bi-weekly rewards.",
+      description: "Skip evaluation phases completely and begin trading simulated capital immediately with direct flexible rewards.",
       icon: <Sparkles size={22} className="text-emerald-600" />,
       targetLabel: "Profit Target",
       targetValue: "None (0%)",
       dailyLoss: "3% Daily",
       maxLoss: "5% Static",
-      profitSplit: "Bi-Weekly 50%",
+      profitSplit: "Flexible 50%",
       features: [
         "Zero evaluation phases",
         "Immediate trading credentials",
-        "14-day first payout cycle",
+        "Flexible first payout cycle",
         "News & weekend holding allowed",
         "20% consistency rule",
         "MT5 & TradeLocker platforms",
@@ -1453,7 +1453,7 @@ export function TradingObjectivesPageClient({
                     <div className="flex justify-between font-semibold text-gray-700">
                       <span>Profit Split</span>
                       <span className="font-black text-[#0A0A0C]">
-                        {CHALLENGE_SPLITS[typeParam] || "Up to 100%"}
+                        {CHALLENGE_SPLITS[typeParam] || "80%"}
                       </span>
                     </div>
                     {activeRule && (

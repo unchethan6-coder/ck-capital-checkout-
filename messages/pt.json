@@ -57,7 +57,7 @@
     "blogTitle": "Insights de Trading e Blog",
     "featuredEvalBadge": "OFERTA LIMITADA · 75% OFF",
     "featuredEvalTitle": "Negocie até $300K de Capital",
-    "featuredEvalDesc": "Negocie com ferramentas institucionais, spreads apertados e até 100% de divisão de lucros em contas simuladas.",
+    "featuredEvalDesc": "Negocie com ferramentas institucionais, spreads apertados e 80% de divisão de lucros em contas simuladas.",
     "featuredEvalCta": "Resgatar 75% OFF",
     "featuredCommunityBadge": "COMUNIDADE DE TRADERS",
     "featuredCommunityTitle": "Junte-se a mais de 20.000 Traders Ativos",
@@ -73,7 +73,7 @@
   "hero": {
     "features": [
       "Pagamentos em 12H",
-      "100% de Lucro",
+      "80% de Lucro",
       "Capital de $100K",
       "Sem Limite de Tempo"
     ],
@@ -89,7 +89,7 @@
     "payoutTime": "Tempo Médio de Pagamento",
     "payoutTimeVal": "12 Horas",
     "rewardSplit": "Divisão Máxima de Lucros",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "Capital Simulado Máximo",
     "accountSizeVal": "$100K+",
     "support": "Suporte ao Trader ao Vivo",
@@ -128,7 +128,7 @@
     "noConsistency": "SEM REGRAS DE CONSISTÊNCIA",
     "newsAllowed": "TRADING DE NOTÍCIAS PERMITIDO",
     "noTimePressure": "SEM PRESSÃO DE TEMPO",
-    "profitSplit": "ATÉ 100% DE DIVISÃO DE LUCROS",
+    "profitSplit": "80% DE DIVISÃO DE LUCROS",
     "readyFunded": "Pronto para ser financiado?",
     "startJourney": "Comece a sua jornada hoje.",
     "startChallenge": "Iniciar Desafio",
@@ -165,7 +165,7 @@
     "items": {
       "split": {
         "title": "Divisão de Lucros",
-        "description": "Fique com até 100% dos lucros simulados gerados. Sem deduções complexas nem taxas ocultas."
+        "description": "Fique com 80% dos lucros simulados gerados. Sem deduções complexas nem taxas ocultas."
       },
       "news": {
         "title": "Trading de Notícias Permitido",
@@ -194,7 +194,7 @@
       "Sem taxas ocultas",
       "Saques sob demanda"
     ],
-    "upTo": "Até",
+    "splitEyebrow": "Você fica com",
     "youKeep": "Você fica com",
     "firmEarns": "Só ganhamos quando você escala",
     "rawSpreadsMT5": "Spreads puros no MT5 · TradeLocker",
@@ -215,9 +215,6 @@
     "startChallenge": "Começar Desafio",
     "addOnsAvailable": "Adicionais Disponíveis",
     "popular": "Popular",
-    "profitSplit1": "Divisão de Lucros (1–13 Dias)",
-    "profitSplit2": "Divisão de Lucros (14–30 Dias)",
-    "profitSplit3": "Divisão de Lucros (31+ Dias)",
     "fundedConsistency": "Consistência Financiada",
     "showNumbers": "Mostrar em números",
     "showPhases": "Mostrar fases",
@@ -251,7 +248,8 @@
     "accessTitle": "Todos os modelos incluem:",
     "disclaimer": "Todas as operações envolvem capital simulado em contas demo. O desempenho passado não garante resultados futuros.",
     "conditions": [
-      "Divisão de lucros de até 100%",
+      "80% de divisão de lucros",
+      "Ciclo de pagamentos flexível",
       "Alavancagem 1:100",
       "Saques em aproximadamente 12 horas"
     ],
@@ -263,7 +261,8 @@
     "more": "+{count} mais",
     "oneTimePaymentNotice": "Cada taxa de avaliação é um pagamento único — sem assinaturas, sem cobranças recorrentes e sem taxas ocultas.",
     "quantity": "Quantidade",
-    "showAmounts": "Mostrar valores em $"
+    "showAmounts": "Mostrar valores em $",
+    "profitSplitRow": "Divisão de Lucros"
   },
   "platforms": {
     "eyebrow": "Plataformas",
@@ -412,7 +411,7 @@
       },
       "profitSplit": {
         "q": "Qual divisão de lucros vocês oferecem?",
-        "a": "A CK Capital oferece até 100% de divisão de lucros para traders verificados em contas financiadas."
+        "a": "A CK Capital oferece 80% de divisão de lucros para traders verificados em contas financiadas."
       },
       "drawdown": {
         "q": "Quais são as regras de rebaixamento (drawdown)?",
@@ -447,7 +446,7 @@
   "closingCta": {
     "eyebrow": "Sua próxima operação pode ser financiada",
     "title": "Pronto para operar o capital da CK?",
-    "subtitle": "Escolha um desafio, cumpra as metas no seu tempo e fique com até 100% dos lucros simulados.",
+    "subtitle": "Escolha um desafio, cumpra as metas no seu tempo e fique com 80% dos lucros simulados.",
     "button": "Comece seu Desafio",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -460,7 +459,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -471,12 +470,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "Capacitando traders em todo o mundo com capital simulado, regras transparentes e até 100% de divisão de lucros.",
+    "tagline": "Capacitando traders em todo o mundo com capital simulado, regras transparentes e 80% de divisão de lucros.",
     "newsletterTitle": "Receba Análises de Mercado",
     "newsletterSubtitle": "Atualizações semanais, novidades do setor e ofertas exclusivas.",
     "emailPlaceholder": "Digite seu e-mail",
@@ -546,7 +545,7 @@
     "backHome": "Voltar ao Início"
   },
   "meta": {
-    "homeTitle": "CK Capital - Mesa Proprietária | Opere até $100K com 100% de Lucro",
+    "homeTitle": "CK Capital - Mesa Proprietária | Opere até $100K com 80% de Lucro",
     "homeDescription": "Junte-se à CK Capital. Supere nossa avaliação para operar até $100K em capital simulado com saques em 12h e notícias permitidas."
   },
   "about": {
@@ -598,7 +597,7 @@
     ],
     "statsTradersNote": "Traders em mais de 140 países",
     "statsCapitalNote": "Alocação máxima escalável",
-    "statsSplitNote": "Fique com até 100% dos lucros",
+    "statsSplitNote": "Fique com 80% dos lucros",
     "statsSupportNote": "Resposta média em menos de 2 minutos",
     "missionEyebrow": "PROPÓSITO",
     "visionEyebrow": "FUTURO",
@@ -687,9 +686,9 @@
         "desc": "Analistas Qualificados podem acumular até $1.2M em saldo simulado."
       },
       {
-        "value": "ATÉ 100%",
+        "value": "80%",
         "title": "Divisão de Lucros Simulados",
-        "desc": "Receba até 100% dos lucros simulados elegíveis de acordo com o plano."
+        "desc": "Receba 80% dos lucros simulados elegíveis de acordo com o plano."
       }
     ],
     "contentEyebrow": "CRIE CONTEÚDO QUE CONVERTE",
@@ -747,7 +746,7 @@
       "Períodos ilimitados de trading",
       "Opções de Reinício e Recarga",
       "Operação durante notícias",
-      "Divisão de lucros de até 100%",
+      "80% de divisão de lucros",
       "Alocação total simulada de até $1.2M"
     ],
     "ctaStats": [
@@ -897,7 +896,7 @@
       "phase2Sub": "Etapa de verificação",
       "qaTitle": "Analista Qualificado CK",
       "qaSub": "Destino do programa",
-      "qaFooter": "Até 100% de recompensas de lucro simulado",
+      "qaFooter": "80% de recompensas de lucro simulado",
       "evaluationTitle": "Avaliação",
       "evaluationSub": "Etapa única — cumpra o objetivo sob os parâmetros de risco da CK Capital.",
       "instantTitle": "Conta Instantânea",
@@ -996,7 +995,7 @@
     ],
     "qaBenefitsTitle": "Benefícios do Analista Qualificado:",
     "qaBenefits": [
-      "Até 100% de divisão de lucros simulados",
+      "80% de divisão de lucros simulados",
       "Ciclos flexíveis de saque",
       "Operações durante notícias permitidas",
       "Vários tamanhos de conta",
@@ -1126,7 +1125,7 @@
     "profitTarget": "Meta de Lucro",
     "maxLoss": "Perda Máxima",
     "profitSplit": "Divisão de Lucros",
-    "profitSplitValue": "Até 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "Pagamentos Rápidos",

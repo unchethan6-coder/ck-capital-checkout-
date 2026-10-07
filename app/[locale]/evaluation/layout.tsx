@@ -12,7 +12,7 @@ export async function generateMetadata({
   const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   return pageSeo({
     title: "Evaluation Programs & Challenges",
-    description: "Pass our 1-Step or 2-Step trading evaluation to unlock a simulated funded CK Account. Clear objectives, no time limits, and up to 100% profit split.",
+    description: "Pass our 1-Step or 2-Step trading evaluation to unlock a simulated funded CK Account. Clear objectives, no time limits, and an 80% profit split.",
     path: "/evaluation",
     locale: resolved,
   });
