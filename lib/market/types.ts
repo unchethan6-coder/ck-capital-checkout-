@@ -10,8 +10,15 @@ export type AssetCategory = "fx" | "indices" | "commodities" | "crypto" | "stock
 
 /** Where a symbol's price is fetched from. */
 export type QuoteSource =
-  /** Binance public book ticker — real top-of-book bid/ask, no API key. */
-  | { kind: "binance"; ticker: string }
+  /**
+   * Crypto with real top-of-book bid/ask and no API key.
+   *
+   * Two venues are carried because Binance answers 451 to US IPs, which is
+   * where most serverless regions live; Kraken has no such restriction and is
+   * used as the fallback. Kraken echoes its own canonical pair name rather
+   * than the one requested, so both are recorded.
+   */
+  | { kind: "crypto"; binanceTicker: string; krakenPair: string; krakenKey: string }
   /** Yahoo batched spark feed — last traded price only, bid/ask derived. */
   | { kind: "yahoo"; ticker: string }
   /**

@@ -1,4 +1,4 @@
-import { BINANCE_SPECS, FXRATES_SPECS, YAHOO_SPECS } from "./symbols";
+import { CRYPTO_SPECS, FXRATES_SPECS, YAHOO_SPECS } from "./symbols";
 import type { SymbolSpec } from "./types";
 
 /**
@@ -46,7 +46,7 @@ async function fetchJson<T>(url: string, init?: RequestInit): Promise<T | null> 
   }
 }
 
-/* ────────────────────────────────────────────────────────────────── Binance */
+/* ─────────────────────────────────────────────────────────────────── Crypto */
 
 interface BinanceBookTicker {
   symbol: string;
@@ -56,20 +56,34 @@ interface BinanceBookTicker {
 
 interface Binance24h {
   symbol: string;
-  lastPrice: string;
   prevClosePrice: string;
 }
 
-/**
- * Crypto via Binance's public endpoints — genuine top-of-book bid/ask with no
- * API key. Book and 24h stats are fetched together so the change percentage
- * lines up with the quote it is displayed next to.
- */
-export async function fetchBinance(specs: SymbolSpec[] = BINANCE_SPECS): Promise<Map<string, Tick>> {
-  const out = new Map<string, Tick>();
-  if (specs.length === 0) return out;
+interface KrakenTicker {
+  /** [price, wholeLotVolume, lotVolume] */
+  a: string[];
+  b: string[];
+  /** Today's opening price. */
+  o: string;
+}
 
-  const tickers = specs.map((s) => (s.source as { ticker: string }).ticker);
+interface KrakenResponse {
+  error?: string[];
+  result?: Record<string, KrakenTicker>;
+}
+
+/**
+ * Binance refuses US IPs with a 451, and most serverless regions are in the US.
+ * Rather than burn a timeout on every poll once that is established, the venue
+ * is parked for a while and Kraken is used directly.
+ */
+const BINANCE_COOLDOWN_MS = 10 * 60_000;
+let binanceBlockedUntil = 0;
+
+/** Binance public book ticker — tightest spreads, but geo-restricted. */
+async function fetchFromBinance(specs: SymbolSpec[]): Promise<Map<string, Tick>> {
+  const out = new Map<string, Tick>();
+  const tickers = specs.map((s) => (s.source as { binanceTicker: string }).binanceTicker);
   const query = encodeURIComponent(JSON.stringify(tickers));
 
   const [books, stats] = await Promise.all([
@@ -84,7 +98,7 @@ export async function fetchBinance(specs: SymbolSpec[] = BINANCE_SPECS): Promise
     if (Number.isFinite(prev) && prev > 0) prevByTicker.set(row.symbol, prev);
   }
 
-  const specByTicker = new Map(specs.map((s) => [(s.source as { ticker: string }).ticker, s]));
+  const specByTicker = new Map(specs.map((s) => [(s.source as { binanceTicker: string }).binanceTicker, s]));
   const ts = Date.now();
 
   for (const row of books) {
@@ -96,6 +110,62 @@ export async function fetchBinance(specs: SymbolSpec[] = BINANCE_SPECS): Promise
     out.set(spec.symbol, { bid, ask, mid: (bid + ask) / 2, prevClose: prevByTicker.get(row.symbol), ts });
   }
   return out;
+}
+
+/**
+ * Kraken public ticker — same shape of data, no geo restriction.
+ *
+ * Kraken answers with its own canonical pair names (XBTUSD comes back as
+ * XXBTZUSD), so each spec records the key to read as well as the one to ask
+ * for. `o` is the session open, which stands in for the previous close.
+ */
+async function fetchFromKraken(specs: SymbolSpec[]): Promise<Map<string, Tick>> {
+  const out = new Map<string, Tick>();
+  const pairs = specs.map((s) => (s.source as { krakenPair: string }).krakenPair).join(",");
+
+  const data = await fetchJson<KrakenResponse>(
+    `https://api.kraken.com/0/public/Ticker?pair=${encodeURIComponent(pairs)}`
+  );
+  const result = data?.result;
+  if (!result) return out;
+
+  const ts = Date.now();
+  for (const spec of specs) {
+    const { krakenKey, krakenPair } = spec.source as { krakenKey: string; krakenPair: string };
+    const row = result[krakenKey] ?? result[krakenPair];
+    if (!row) continue;
+    const bid = Number(row.b?.[0]);
+    const ask = Number(row.a?.[0]);
+    if (!Number.isFinite(bid) || !Number.isFinite(ask) || bid <= 0 || ask <= 0) continue;
+    const open = Number(row.o);
+    out.set(spec.symbol, {
+      bid,
+      ask,
+      mid: (bid + ask) / 2,
+      prevClose: Number.isFinite(open) && open > 0 ? open : undefined,
+      ts,
+    });
+  }
+  return out;
+}
+
+/**
+ * Crypto quotes, preferring Binance and falling back to Kraken.
+ *
+ * Both venues publish a real order book, so either way the bid/ask shown are
+ * genuine rather than derived from a mid.
+ */
+export async function fetchCrypto(specs: SymbolSpec[] = CRYPTO_SPECS): Promise<Map<string, Tick>> {
+  if (specs.length === 0) return new Map();
+
+  if (Date.now() >= binanceBlockedUntil) {
+    const fromBinance = await fetchFromBinance(specs);
+    if (fromBinance.size > 0) return fromBinance;
+    // Empty means blocked or down — stop asking for a while.
+    binanceBlockedUntil = Date.now() + BINANCE_COOLDOWN_MS;
+  }
+
+  return fetchFromKraken(specs);
 }
 
 /* ──────────────────────────────────────────────────────────────────── Yahoo */

@@ -1,5 +1,5 @@
-import { fetchBinance, fetchFxRates, fetchYahoo, type Tick } from "./providers";
-import { BINANCE_SPECS, FXRATES_SPECS, SYMBOL_SPECS, YAHOO_SPECS } from "./symbols";
+import { fetchCrypto, fetchFxRates, fetchYahoo, type Tick } from "./providers";
+import { CRYPTO_SPECS, FXRATES_SPECS, SYMBOL_SPECS, YAHOO_SPECS } from "./symbols";
 import type { Quote, QuoteStatus, SymbolSpec } from "./types";
 
 /**
@@ -15,8 +15,8 @@ import type { Quote, QuoteStatus, SymbolSpec } from "./types";
  * identical upstream.
  */
 
-/** Binance publishes a real book, so it can be polled aggressively. */
-const BINANCE_INTERVAL_MS = 1_000;
+/** Crypto venues publish a real book, so they can be polled aggressively. */
+const CRYPTO_INTERVAL_MS = 1_000;
 /** Yahoo is rate-limited and only moves on trades; 4s keeps us well inside it. */
 const YAHOO_INTERVAL_MS = 4_000;
 /** The FX table is republished about once a minute; polling faster just burns quota. */
@@ -170,8 +170,8 @@ function emit(changed: Quote[]) {
   }
 }
 
-async function refreshBinance() {
-  emit(applyTicks(await fetchBinance(), BINANCE_SPECS));
+async function refreshCrypto() {
+  emit(applyTicks(await fetchCrypto(), CRYPTO_SPECS));
   state.lastRefreshAt = Date.now();
 }
 
@@ -192,7 +192,7 @@ function startPolling() {
   stopPolling();
   state.running = true;
   state.timers = [
-    setInterval(() => void refreshBinance(), BINANCE_INTERVAL_MS),
+    setInterval(() => void refreshCrypto(), CRYPTO_INTERVAL_MS),
     setInterval(() => void refreshYahoo(), YAHOO_INTERVAL_MS),
     setInterval(() => void refreshFxRates(), FXRATES_INTERVAL_MS),
   ];
@@ -222,7 +222,7 @@ export function prime(): Promise<void> {
   const fresh = state.quotes.size > 0 && Date.now() - state.lastRefreshAt < ON_DEMAND_MAX_AGE_MS;
   if (fresh) return Promise.resolve();
 
-  state.primed ??= Promise.all([refreshBinance(), refreshYahoo(), refreshFxRates()])
+  state.primed ??= Promise.all([refreshCrypto(), refreshYahoo(), refreshFxRates()])
     .then(() => undefined)
     .finally(() => {
       state.primed = null;
