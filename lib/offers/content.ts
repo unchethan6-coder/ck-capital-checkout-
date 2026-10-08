@@ -31,12 +31,12 @@ export const BUNDLED_NEWS: NewsItem[] = [
   {
     id: "ck-october-starter-offer",
     tags: ["Offer", "New"],
-    title: "What is the CK Capital October Starter Offer?",
-    author: "CK Capital",
+    title: "What is the ckpropfirm October Starter Offer?",
+    author: "ckpropfirm",
     summary:
       "Everything you need to know about our October offer — 75% off every 2-Step Standard evaluation, from $10K through to $300K.",
     body: [
-      "CK Capital is offering 75% off our 2-Step Standard evaluations. The offer is open to new and existing traders worldwide.",
+      "ckpropfirm is offering 75% off our 2-Step Standard evaluations. The offer is open to new and existing traders worldwide.",
       "Use the code at checkout to claim your discount. There is no announced closing date — this is a limited-time offer and may close at any point without advance notice, so redeem it while it is live.",
     ],
     image: null,
@@ -65,9 +65,9 @@ export const BUNDLED_NEWS: NewsItem[] = [
     id: "ck-symbol-specs-launch",
     tags: ["Product"],
     title: "Live symbol specifications are now available",
-    author: "CK Capital",
+    author: "ckpropfirm",
     summary:
-      "Every instrument you can trade at CK Capital, with live bid and ask prices, spreads, contract sizes and leverage.",
+      "Every instrument you can trade at ckpropfirm, with live bid and ask prices, spreads, contract sizes and leverage.",
     body: [
       "The new symbol specifications page lists all 53 instruments across currencies, indices, commodities, crypto and shares, with prices streaming live.",
       "Search any instrument, sort by spread or contract size, and star the ones you trade to build your own watchlist.",
