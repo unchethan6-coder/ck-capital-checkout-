@@ -39,6 +39,13 @@ export function EconomicCalendarClient({ initial }: Props) {
   const [impacts, setImpacts] = useState<EventImpact[]>([]);
   const [upcomingOnly, setUpcomingOnly] = useState(false);
   const [page, setPage] = useState(1);
+  /**
+   * True once the reader has chosen a page themselves. Until then the calendar
+   * follows the clock: the week runs from Sunday, so by midweek the first page
+   * is several days in the past, which is the opposite of what someone
+   * checking what is coming needs.
+   */
+  const [pagePinned, setPagePinned] = useState(false);
 
   // Resolve the viewer's zone after mount: reading it during render would
   // produce different markup on server and client.
@@ -93,12 +100,27 @@ export function EconomicCalendarClient({ initial }: Props) {
     });
   }, [payload.events, currency, impacts, days, zone, upcomingOnly]);
 
+  useEffect(() => {
+    if (pagePinned) return;
+    const now = Date.now();
+    const next = filtered.findIndex((e) => Date.parse(e.date) >= now);
+    setPage(next === -1 ? Math.max(1, Math.ceil(filtered.length / PAGE_SIZE)) : Math.floor(next / PAGE_SIZE) + 1);
+  }, [filtered, pagePinned]);
+
   const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const safePage = Math.min(page, pageCount);
   // Only the current page is rendered — a whole week of rows would be wasted work.
   const visible = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
-  const resetPage = () => setPage(1);
+  const resetPage = () => {
+    setPage(1);
+    setPagePinned(false);
+  };
+
+  const goToPage = (next: number) => {
+    setPage(next);
+    setPagePinned(true);
+  };
 
   return (
     <div className="overflow-hidden rounded-2xl border border-[var(--ck-line)] bg-[var(--ck-surface-2)]/80 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-sm">
@@ -253,7 +275,7 @@ export function EconomicCalendarClient({ initial }: Props) {
 
       {pageCount > 1 && (
         <nav aria-label={t("pagination")} className="flex items-center justify-center gap-1.5 border-t border-[var(--ck-line)] p-4">
-          <PageButton onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={safePage === 1} label={t("previousPage")}>
+          <PageButton onClick={() => goToPage(Math.max(1, safePage - 1))} disabled={safePage === 1} label={t("previousPage")}>
             <ChevronLeft size={15} aria-hidden />
           </PageButton>
           {pageWindow(safePage, pageCount).map((n, i) =>
@@ -265,7 +287,7 @@ export function EconomicCalendarClient({ initial }: Props) {
                 key={n}
                 type="button"
                 aria-current={n === safePage ? "page" : undefined}
-                onClick={() => setPage(n)}
+                onClick={() => goToPage(n)}
                 className={cn(
                   "h-8 min-w-8 rounded-lg border px-2 text-xs font-semibold transition-colors",
                   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]",
@@ -278,7 +300,7 @@ export function EconomicCalendarClient({ initial }: Props) {
               </button>
             )
           )}
-          <PageButton onClick={() => setPage((p) => Math.min(pageCount, p + 1))} disabled={safePage === pageCount} label={t("nextPage")}>
+          <PageButton onClick={() => goToPage(Math.min(pageCount, safePage + 1))} disabled={safePage === pageCount} label={t("nextPage")}>
             <ChevronRight size={15} aria-hidden />
           </PageButton>
         </nav>
