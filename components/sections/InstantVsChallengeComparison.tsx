@@ -95,8 +95,8 @@ export function InstantVsChallengeComparison() {
     },
     {
       feature: "Payout Processing SLA",
-      instant: "~12-Hour SLA Guaranteed",
-      challenge: "~12-Hour SLA Guaranteed",
+      instant: "48-Hour Payout Guarantee",
+      challenge: "48-Hour Payout Guarantee",
     },
     {
       feature: "Trading Platforms",

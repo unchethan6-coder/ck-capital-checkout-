@@ -74,7 +74,7 @@
   },
   "hero": {
     "features": [
-      "12 घंटे में भुगतान",
+      "48 घंटे में भुगतान",
       "80% लाभ विभाजन",
       "$100K पूंजी",
       "कोई समय सीमा नहीं"
@@ -88,8 +88,8 @@
     "exploreObjectives": "देखें यह कैसे काम करता है"
   },
   "stats": {
-    "payoutTime": "औसत पेआउट समय",
-    "payoutTimeVal": "12 घंटे",
+    "payoutTime": "गारंटीड भुगतान",
+    "payoutTimeVal": "48 घंटे",
     "rewardSplit": "अधिकतम लाभ विभाजन",
     "rewardSplitVal": "80%",
     "accountSize": "अधिकतम सिमुलेटेड कैपिटल",
@@ -182,8 +182,8 @@
         "description": "क्या कोई नियम टूट गया? रियायती दर पर अपना मूल्यांकन खाता रीसेट करें और तुरंत फिर से शुरू करें।"
       },
       "flexible": {
-        "title": "12 घंटे में तेज़ पेआउट",
-        "description": "मांग पर अपना लाभ पेआउट अनुरोध करें और क्रिप्टो या बैंक ट्रांसफर के माध्यम से 12 घंटे के भीतर फंड प्राप्त करें।"
+        "title": "48-घंटे भुगतान गारंटी",
+        "description": "अपना प्रॉफ़िट स्प्लिट कभी भी माँगें। स्वीकृत भुगतान 48 घंटे में गारंटीड हैं — 24 Hour Payout ऐड-ऑन के साथ 24 घंटे में।"
       },
       "support": {
         "title": "24/7 समर्पित सहायता",
@@ -253,7 +253,7 @@
       "80% profit split",
       "लचीला भुगतान चक्र",
       "Leverage 1:100",
-      "Payouts in ~12 hours"
+      "48-घंटे भुगतान गारंटी"
     ],
     "scalingPlan": "स्केलिंग प्लान",
     "maxTotalLoss": "अधिकतम कुल नुकसान",
@@ -405,7 +405,7 @@
     "items": {
       "payoutTime": {
         "q": "भुगतान कितनी जल्दी प्रोसेस होते हैं?",
-        "a": "हम योग्य ट्रेडर्स के लिए ~12 घंटे में भुगतान प्रोसेसिंग प्रदान करते हैं। अनुरोध के बाद 12 घंटे में भुगतान स्वीकृत और भेजा जाता है।"
+        "a": "हर स्वीकृत भुगतान 48 घंटे के भीतर गारंटीड है। 24 Hour Payout विकल्प जोड़ने पर यह गारंटी 24 घंटे हो जाती है। स्वीकृति के कुछ मिनटों में राशि आपके ट्रेडिंग बैलेंस से निकल जाती है और क्रिप्टो या बैंक ट्रांसफ़र से पहुँचती है।"
       },
       "timeLimit": {
         "q": "क्या मूल्यांकन में कोई समय सीमा है?",
@@ -446,6 +446,30 @@
       "instantPayouts": {
         "q": "इंस्टेंट फंडिंग के साथ मैं कितनी जल्दी ट्रेडिंग शुरू कर सकता हूँ?",
         "a": "आप खरीदारी के कुछ ही मिनटों में ट्रेडिंग शुरू कर सकते हैं। खाते तुरंत सक्रिय हो जाते हैं।"
+      },
+      "minProfit": {
+        "q": "Is there a minimum profit before I can request a payout?",
+        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+      },
+      "buffer": {
+        "q": "What is the protected account buffer?",
+        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+      },
+      "payoutCaps": {
+        "q": "Is there a limit on how much I can withdraw?",
+        "a": "The global minimum request is $500. Your first five withdrawals may not exceed 3% of the initial account balance; after the fifth that cap is removed. After your third approved payout you may withdraw all remaining profits, though a profit cycle still applies between withdrawals."
+      },
+      "consistencyScore": {
+        "q": "How does the consistency rule work on a funded account?",
+        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+      },
+      "trailingDrawdown": {
+        "q": "How does the trailing drawdown work?",
+        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+      },
+      "pendingPayout": {
+        "q": "Can I trade while a payout is pending?",
+        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
       }
     }
   },
@@ -552,7 +576,7 @@
   },
   "meta": {
     "homeTitle": "CK Capital - प्रॉप ट्रेडिंग फर्म | 80% लाभ विभाजन के साथ $100K तक ट्रेड करें",
-    "homeDescription": "CK Capital से जुड़ें। $100K तक सिम्युलेटेड पूंजी के साथ 12 घंटे में भुगतान पाने के लिए हमारे मूल्यांकन को पास करें।"
+    "homeDescription": "CK Capital से जुड़ें। $100K तक सिम्युलेटेड पूंजी के साथ 48 घंटे की भुगतान गारंटी पाने के लिए हमारे मूल्यांकन को पास करें।"
   },
   "about": {
     "badge": "हम कौन हैं · प्रॉप ट्रेडिंग",
@@ -638,7 +662,7 @@
     "pillar1Title": "पारदर्शिता",
     "pillar1Desc": "बिना किसी छुपे हुए नियम या अप्रत्याशित शर्तों के बिल्कुल स्पष्ट दिशानिर्देश।",
     "pillar2Title": "गति",
-    "pillar2Desc": "क्रिप्टो या बैंक ट्रांसफर के माध्यम से 12 घंटे से कम समय में एक्सप्रेस पेआउट।",
+    "pillar2Desc": "क्रिप्टो या बैंक ट्रांसफर के माध्यम से 48 घंटे की गारंटी के साथ पेआउट — ऐड-ऑन के साथ 24 घंटे।",
     "pillar3Title": "विश्वसनीयता",
     "pillar3Desc": "अल्ट्रा-लो लेटेंसी के साथ MT5 और TradeLocker पर अत्यधिक स्थिर प्लेटफॉर्म।"
   },

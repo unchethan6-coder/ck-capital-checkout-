@@ -804,7 +804,7 @@ export function ChallengeComparison({
                 "80% profit split",
                 "Flexible payout cycle",
                 "Leverage 1:100",
-                "Payouts in ~12 hours",
+                "48-hour payout guarantee",
               ]).map((c: string) => (
                 <span
                   key={c}

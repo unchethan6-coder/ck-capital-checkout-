@@ -25,12 +25,18 @@ export const FAQ_COLLECTIONS: FaqCollection[] = [
   {
     id: "payouts",
     titleKey: "payouts",
-    entries: [{ key: "payoutTime" }, { key: "profitSplit" }, { key: "instantPayouts" }, { key: "cryptoFunding" }],
+    entries: [
+      { key: "payoutTime" }, { key: "profitSplit" }, { key: "minProfit" }, { key: "buffer" },
+      { key: "payoutCaps" }, { key: "pendingPayout" }, { key: "instantPayouts" }, { key: "cryptoFunding" },
+    ],
   },
   {
     id: "rules",
     titleKey: "rules",
-    entries: [{ key: "drawdown" }, { key: "consistency" }, { key: "newsTrading" }, { key: "expertAdvisors" }],
+    entries: [
+      { key: "drawdown" }, { key: "trailingDrawdown" }, { key: "consistency" }, { key: "consistencyScore" },
+      { key: "newsTrading" }, { key: "expertAdvisors" },
+    ],
   },
   {
     id: "programmes",

@@ -74,7 +74,7 @@
   },
   "hero": {
     "features": [
-      "Paiements en 12H",
+      "Paiements en 48H",
       "80 % de Partage de Profit",
       "Capital de 100K$",
       "Aucune Limite de Temps"
@@ -88,8 +88,8 @@
     "exploreObjectives": "Voir le fonctionnement"
   },
   "stats": {
-    "payoutTime": "Délai Moyen de Paiement",
-    "payoutTimeVal": "12 Heures",
+    "payoutTime": "Paiement Garanti",
+    "payoutTimeVal": "48 Heures",
     "rewardSplit": "Partage de Profit Max.",
     "rewardSplitVal": "80 %",
     "accountSize": "Capital Simulé Max.",
@@ -182,8 +182,8 @@
         "description": "Règle enfreinte ? Réinitialisez votre compte d'évaluation à tarif réduit et repartez directement du bon pied."
       },
       "flexible": {
-        "title": "Paiements Express en 12 Heures",
-        "description": "Demandez vos gains à la demande et recevez vos fonds en 12 heures via crypto ou virement bancaire."
+        "title": "Garantie de Paiement sous 48 Heures",
+        "description": "Demandez votre partage de profit quand vous le souhaitez. Les paiements approuvés sont garantis sous 48 heures, ou sous 24 avec l’option Paiement 24 Heures."
       },
       "support": {
         "title": "Support Dédié 24/7",
@@ -253,7 +253,7 @@
       "80% profit split",
       "Cycle de paiement flexible",
       "Leverage 1:100",
-      "Payouts in ~12 hours"
+      "Garantie de paiement sous 48 heures"
     ],
     "scalingPlan": "Plan de mise à l'échelle",
     "maxTotalLoss": "Perte totale max.",
@@ -405,7 +405,7 @@
     "items": {
       "payoutTime": {
         "q": "À quelle vitesse les paiements sont-ils traités ?",
-        "a": "Nous proposons un traitement des paiements en ~12 heures pour les traders qualifiés. Une fois demandés, les retraits sont approuvés et expédiés en 12 heures."
+        "a": "Chaque paiement approuvé est garanti sous 48 heures. Avec l’option Paiement 24 Heures, la garantie passe à 24 heures. Les fonds quittent votre solde quelques minutes après approbation, par crypto ou virement bancaire."
       },
       "timeLimit": {
         "q": "Y a-t-il des limites de temps sur les défis ?",
@@ -446,6 +446,30 @@
       "instantPayouts": {
         "q": "À quelle vitesse puis-je commencer à trader avec le Financement Instantané ?",
         "a": "Vous pouvez commencer à trader en quelques minutes. Les comptes de financement instantané sont activés immédiatement."
+      },
+      "minProfit": {
+        "q": "Is there a minimum profit before I can request a payout?",
+        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+      },
+      "buffer": {
+        "q": "What is the protected account buffer?",
+        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+      },
+      "payoutCaps": {
+        "q": "Is there a limit on how much I can withdraw?",
+        "a": "The global minimum request is $500. Your first five withdrawals may not exceed 3% of the initial account balance; after the fifth that cap is removed. After your third approved payout you may withdraw all remaining profits, though a profit cycle still applies between withdrawals."
+      },
+      "consistencyScore": {
+        "q": "How does the consistency rule work on a funded account?",
+        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+      },
+      "trailingDrawdown": {
+        "q": "How does the trailing drawdown work?",
+        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+      },
+      "pendingPayout": {
+        "q": "Can I trade while a payout is pending?",
+        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
       }
     }
   },

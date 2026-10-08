@@ -61,7 +61,7 @@ export const PRICING_PLANS = [
 ];
 
 export const TRUST_STATS = [
-  { value: "12H",    label: "Average Payout Time" },
+  { value: "48H",    label: "Guaranteed Payout" },
   { value: "80%",    label: "Profit Split" },
   { value: "$100K",  label: "Max Account Size" },
   { value: "24/7",   label: "Support Available" },
@@ -194,7 +194,7 @@ export const FUNDING_PLAN_RAW_DATA: Record<string, Record<string, PlanDetails | 
     instant: { orig: "$792.80", disc: "$198.20", p1: "$0.00", p2: "$0.00", dailyLoss: "$1,500.00", maxLoss: "$2,500.00", period: "Unlimited", minDays: "NA", split1: "Flexible 50%", split2: "-", split3: "-", consistency: "NA", fundedConsistency: "20%" },
   },
   "100K": {
-    standard: { orig: "$752.80", disc: "$188.20", p1: "$10,000.00", p2: "$5,000.00", dailyLoss: "$4,000.00", maxLoss: "$8,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "50%" },
+    standard: { orig: "$752.80", disc: "$178.20", p1: "$10,000.00", p2: "$5,000.00", dailyLoss: "$4,000.00", maxLoss: "$8,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "50%" },
     "1step": { orig: "$919.20", disc: "$229.80", p1: "$10,000.00", p2: "$0.00", dailyLoss: "$3,000.00", maxLoss: "$6,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "30%" },
     pro: { orig: "$1,505.60", disc: "$376.40", p1: "$10,000.00", p2: "$5,000.00", dailyLoss: "$4,000.00", maxLoss: "$8,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "NA" },
     instant: { orig: "$1,556.80", disc: "$389.20", p1: "$0.00", p2: "$0.00", dailyLoss: "$3,000.00", maxLoss: "$5,000.00", period: "Unlimited", minDays: "NA", split1: "Flexible 50%", split2: "-", split3: "-", consistency: "NA", fundedConsistency: "20%" },
