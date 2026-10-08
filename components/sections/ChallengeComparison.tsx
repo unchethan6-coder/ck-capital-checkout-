@@ -234,9 +234,9 @@ export function ChallengeComparison({
     { label: t("minTradingDays") || "Min. Trading Days", value: (plan) => (/^\d+$/.test(plan.minDays) ? `${plan.minDays} ${t("day") || "Day"}` : plan.minDays) },
     { label: t("consistencyRule") || "Consistency", value: (plan) => plan.consistency || "-" },
     { label: t("tradingPeriod") || "Trading Period", value: (plan) => plan.period || "-" },
-    { label: t("profitSplit1") || "Profit Split (1–13 Days)", value: (plan) => plan.split1 || "-" },
-    { label: t("profitSplit2") || "Profit Split (14–30 Days)", value: (plan) => plan.split2 || "-" },
-    { label: t("profitSplit3") || "Profit Split (31+ Days)", value: (plan) => plan.split3 || "-" },
+    // The split no longer steps up with account tenure, so the three day-banded
+    // rows would all read 80%. One row carries the same information.
+    { label: t("profitSplitRow") || "Profit Split", value: (plan) => plan.split1 || "-" },
     { label: t("fundedConsistency") || "Funded Consistency", value: (plan) => plan.fundedConsistency || "-" },
   ];
 
@@ -564,16 +564,8 @@ export function ChallengeComparison({
                         <span className="font-bold text-[#0A0A0C]">{activePlan?.period || "-"}</span>
                       </li>
                       <li className="flex justify-between items-center border-b border-gray-100 pb-2">
-                        <span className="text-gray-600 font-normal">{t("profitSplit1") || "Profit Split (1–13 Days)"}</span>
+                        <span className="text-gray-600 font-normal">{t("profitSplitRow") || "Profit Split"}</span>
                         <span className="font-bold text-[#0A0A0C]">{activePlan?.split1 || "-"}</span>
-                      </li>
-                      <li className="flex justify-between items-center border-b border-gray-100 pb-2">
-                        <span className="text-gray-600 font-normal">{t("profitSplit2") || "Profit Split (14–30 Days)"}</span>
-                        <span className="font-bold text-[#0A0A0C]">{activePlan?.split2 || "-"}</span>
-                      </li>
-                      <li className="flex justify-between items-center border-b border-gray-100 pb-2">
-                        <span className="text-gray-600 font-normal">{t("profitSplit3") || "Profit Split (31+ Days)"}</span>
-                        <span className="font-bold text-[#0A0A0C]">{activePlan?.split3 || "-"}</span>
                       </li>
                       <li className="flex justify-between items-center">
                         <span className="text-gray-600 font-normal">{t("fundedConsistency") || "Funded Consistency"}</span>
@@ -853,9 +845,10 @@ export function ChallengeComparison({
           <SectionReveal delay={0.22}>
             <div className="flex flex-wrap justify-center gap-2 pt-4">
               {((t.raw("conditions") as string[]) || [
-                "Profit split up to 100%",
+                "80% profit split",
+                "Flexible payout cycle",
                 "Leverage 1:100",
-                "Payouts in 24-48 hours",
+                "48-hour payout guarantee",
               ]).map((c: string) => (
                 <span
                   key={c}

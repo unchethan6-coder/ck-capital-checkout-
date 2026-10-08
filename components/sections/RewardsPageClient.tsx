@@ -254,7 +254,7 @@ export function RewardsPageClient({
       { value: "$1,385,127.63", label: "Total Payouts", note: t("verifiedText") },
       { value: "20K+", label: "Active Traders", note: t("verifiedText") },
       { value: "Worldwide Traders", label: "Global Reach", note: t("verifiedText") },
-      { value: summary?.maxRewardPercent == null ? "UP TO 100%" : `UP TO ${summary.maxRewardPercent}%`, label: t("simulatedRewards"), note: t("subjectToTerms") },
+      { value: summary?.maxRewardPercent == null ? "80%" : `UP TO ${summary.maxRewardPercent}%`, label: t("simulatedRewards"), note: t("subjectToTerms") },
     ];
   }, [summary, t]);
 
@@ -380,7 +380,7 @@ export function RewardsPageClient({
         <Container>
           <SectionHeading id="reward-benefits-heading" eyebrow={t("benefitsEyebrow")} title={t("benefitsTitle")} dark>{t("benefitsSubtitle")}</SectionHeading>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{[
-            ["UP TO 100%", "Simulated Profit Rewards", "Keep up to the applicable percentage of eligible simulated profits according to your CK Propfirm account terms."],
+            ["80%", "Simulated Profit Rewards", "Keep up to the applicable percentage of eligible simulated profits according to your CK Propfirm account terms."],
             ["FLEXIBLE", "Reward Cycles", "Eligible Qualified Analysts can request rewards according to the payout conditions applicable to their selected account."],
             ["UP TO $1.2M", "Total Simulated Account Allocation", "Progress within the CK Propfirm programme and access larger simulated account allocations subject to applicable programme rules."],
             ["NEWS TRADING", "More Trading Flexibility", "Trade around news events where permitted under the rules of your selected account."],

@@ -8,6 +8,7 @@ import { AnnouncementBar } from "@/components/sections/AnnouncementBar";
 import { TopNav } from "@/components/sections/TopNav";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 import { CookieConsent } from "@/components/shared/CookieConsent";
+import { SupportWidget } from "@/components/support/SupportWidget";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { getActiveBanners } from "@/lib/cms";
 import { routing } from "@/i18n/routing";
@@ -61,11 +62,11 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `CK Propfirm — Get Funded Up to $1.2M | Up to 100% Profit Split`,
+      default: `CK Propfirm — Get Funded Up to $1.2M | 80% Profit Split`,
       template: `%s | ${SITE_NAME}`,
     },
     description:
-      "CK Propfirm provides proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits, fast payouts, and 24/7 support.",
+      "CK Propfirm provides proprietary trading evaluations and simulated funded accounts up to $1.2M with an 80% profit split, fast payouts, and 24/7 support.",
     applicationName: SITE_NAME,
     alternates: {
       canonical: url,
@@ -94,16 +95,16 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       url,
       locale: meta.ogLocale,
-      title: `CK Propfirm — Get Funded Up to $1.2M | Up to 100% Profit Split`,
+      title: `CK Propfirm — Get Funded Up to $1.2M | 80% Profit Split`,
       description:
-        "Proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits.",
+        "Proprietary trading evaluations and simulated funded accounts up to $1.2M with an 80% profit split.",
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
-      title: `CK Propfirm — Get Funded Up to $1.2M | Up to 100% Profit Split`,
+      title: `CK Propfirm — Get Funded Up to $1.2M | 80% Profit Split`,
       description:
-        "Proprietary trading evaluations and simulated funded accounts up to $1.2M with up to 100% profit splits.",
+        "Proprietary trading evaluations and simulated funded accounts up to $1.2M with an 80% profit split.",
       images: ["/og-image.jpg"],
     },
     robots: {
@@ -154,6 +155,7 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <CookieConsent />
+          <SupportWidget />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -167,7 +169,7 @@ export default async function LocaleLayout({
                     url: SITE_URL,
                     logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-192x192.png` },
                     description:
-                      "CK Propfirm is a proprietary trading firm offering simulated funded accounts up to $1.2M with up to 100% profit splits.",
+                      "CK Propfirm is a proprietary trading firm offering simulated funded accounts up to $1.2M with an 80% profit split.",
                   },
                   {
                     "@type": "WebSite",

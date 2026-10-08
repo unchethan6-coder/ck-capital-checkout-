@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 export function LivePayoutPill({
   baseAmount,
   prefix = "Payouts processed in",
-  suffix = "24-48 hours",
+  suffix = "~48 hours",
   className,
 }: {
   baseAmount?: number;

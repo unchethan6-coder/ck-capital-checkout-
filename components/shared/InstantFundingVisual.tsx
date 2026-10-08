@@ -174,7 +174,7 @@ export function InstantFundingVisual({
             <span className="font-semibold text-[#0A0A0C]">
               Live Trader Split:
             </span>
-            <span className="text-[#0A0A0C] font-bold">Up to 100% Payouts</span>
+            <span className="text-[#0A0A0C] font-bold">80% Payouts</span>
           </div>
           <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]">
             ZERO WAITING PERIOD

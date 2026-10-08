@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "CK Propfirm — Prop Trading Firm",
     short_name: "CK Propfirm",
     description:
-      "Funded accounts up to $1.2M with up to 100% profit split. Trade Forex, Crypto, and Commodities with no restrictions.",
+      "Funded accounts up to $1.2M with an 80% profit split. Trade Forex, Crypto, and Commodities with no restrictions.",
     start_url: "/",
     display: "standalone",
     background_color: "#0b0a07",

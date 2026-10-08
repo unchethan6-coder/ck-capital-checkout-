@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 
 /**
- * Count-up stat — parses a formatted value ("12H", "100%", "$100K", "4.8")
+ * Count-up stat — parses a formatted value ("48H", "100%", "$100K", "4.8")
  * and animates the numeric part 0→target once when scrolled into view.
  * SSR renders the final value (correct without JS); reduced motion shows it
  * immediately.

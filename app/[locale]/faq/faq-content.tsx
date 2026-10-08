@@ -26,6 +26,30 @@ export function FaqContent() {
       a: <p>{t('items.payoutTime.a')}</p>,
     },
     {
+      q: t('items.minProfit.q'),
+      a: <p>{t('items.minProfit.a')}</p>,
+    },
+    {
+      q: t('items.buffer.q'),
+      a: <p>{t('items.buffer.a')}</p>,
+    },
+    {
+      q: t('items.payoutCaps.q'),
+      a: <p>{t('items.payoutCaps.a')}</p>,
+    },
+    {
+      q: t('items.consistencyScore.q'),
+      a: <p>{t('items.consistencyScore.a')}</p>,
+    },
+    {
+      q: t('items.trailingDrawdown.q'),
+      a: <p>{t('items.trailingDrawdown.a')}</p>,
+    },
+    {
+      q: t('items.pendingPayout.q'),
+      a: <p>{t('items.pendingPayout.a')}</p>,
+    },
+    {
       q: t('items.timeLimit.q'),
       a: <p>{t('items.timeLimit.a')}</p>,
     },

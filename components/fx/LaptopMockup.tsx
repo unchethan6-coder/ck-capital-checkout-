@@ -333,7 +333,7 @@ export function LaptopMockup() {
                   subTone={liveData.profitPercent >= 0 ? "up" : "down"}
                 />
                 <MetricCard label="Equity" value={formatCurrency(liveData.equity)} />
-                <MetricCard label="Profit Split" value="100%" sub="Your Share" subTone="muted" />
+                <MetricCard label="Profit Split" value="80%" sub="Your Share" subTone="muted" />
               </div>
 
               {/* Middle Section: Live Chart & Trading Objectives */}

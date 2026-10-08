@@ -57,19 +57,25 @@
     "blogTitle": "Trading-Einblicke & Blog",
     "featuredEvalBadge": "LIMITIERTES ANGEBOT · 75% RABATT",
     "featuredEvalTitle": "Handeln Sie mit bis zu $300K Kapital",
-    "featuredEvalDesc": "Nutzen Sie professionelle Tools, enge Spreads und bis zu 100% Gewinnbeteiligung auf simulierten Konten.",
+    "featuredEvalDesc": "Nutzen Sie professionelle Tools, enge Spreads und 80% Gewinnbeteiligung auf simulierten Konten.",
     "featuredEvalCta": "75% Rabatt Sichern",
     "featuredCommunityBadge": "TRADER-COMMUNITY",
     "featuredCommunityTitle": "Über 20.000 Aktiven Tradern Beitreten",
     "featuredCommunityDesc": "Live-Trading-Analysen, Auszahlungsnachweise und direkter VIP-Support auf Discord.",
     "featuredCommunityCta": "Offiziellem Discord Beitreten",
     "viewAllPrograms": "Alle Programme Anzeigen",
-    "joinDiscord": "Offiziellem Discord Beitreten"
+    "joinDiscord": "Offiziellem Discord Beitreten",
+    "calculatorsTitle": "Trading-Rechner",
+    "calculatorsDesc": "Margin, P/L, Lotgröße und Swap, geprüft an Ihren CK-Limits",
+    "symbolSpecs": "Symbol-Spezifikationen",
+    "symbolSpecsDesc": "Live-Spreads, Kontraktgrößen & Handelsbedingungen",
+    "economicCalendar": "Wirtschaftskalender",
+    "economicCalendarDesc": "Marktbewegende Termine in Ihrer Zeitzone"
   },
   "hero": {
     "features": [
-      "12-Stunden-Auszahlungen",
-      "100% Gewinnbeteiligung",
+      "48-Stunden-Auszahlungen",
+      "80% Gewinnbeteiligung",
       "$100K Kapital",
       "Keine Zeitlimits"
     ],
@@ -82,10 +88,10 @@
     "exploreObjectives": "Ablauf ansehen"
   },
   "stats": {
-    "payoutTime": "Durchschn. Auszahlungszeit",
-    "payoutTimeVal": "12 Stunden",
+    "payoutTime": "Garantierte Auszahlung",
+    "payoutTimeVal": "48 Stunden",
     "rewardSplit": "Max. Gewinnbeteiligung",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "Max. Simuliertes Kapital",
     "accountSizeVal": "$100K+",
     "support": "Live Trader-Support",
@@ -124,7 +130,7 @@
     "noConsistency": "KEINE KONSISTENZREGELN",
     "newsAllowed": "NEWS-TRADING ERLAUBT",
     "noTimePressure": "KEIN ZEITDRUCK",
-    "profitSplit": "BIS ZU 100% GEWINNBETEILIGUNG",
+    "profitSplit": "80% GEWINNBETEILIGUNG",
     "readyFunded": "Bereit für Ihr gefördertes Konto?",
     "startJourney": "Starten Sie noch heute Ihre Reise.",
     "startChallenge": "Challenge Starten",
@@ -161,7 +167,7 @@
     "items": {
       "split": {
         "title": "Gewinnbeteiligung",
-        "description": "Behalten Sie bis zu 100% der simulierten Gewinne. Keine komplizierten Abzüge, keine versteckten Kosten."
+        "description": "Behalten Sie 80% der simulierten Gewinne. Keine komplizierten Abzüge, keine versteckten Kosten."
       },
       "news": {
         "title": "News-Trading Erlaubt",
@@ -176,8 +182,8 @@
         "description": "Regel verletzt? Setzen Sie Ihr Evaluierungskonto mit hohem Rabatt zurück und starten Sie direkt neu."
       },
       "flexible": {
-        "title": "12-Stunden Express-Auszahlungen",
-        "description": "Fordern Sie Ihre Auszahlung jederzeit an und erhalten Sie Ihre Gelder innerhalb von 12 Stunden per Krypto oder Banküberweisung."
+        "title": "48-Stunden-Auszahlungsgarantie",
+        "description": "Fordern Sie Ihre Gewinnbeteiligung jederzeit an. Genehmigte Auszahlungen sind innerhalb von 48 Stunden garantiert — mit dem Add-on 24-Stunden-Auszahlung innerhalb von 24."
       },
       "support": {
         "title": "24/7 Dedizierter Support",
@@ -190,7 +196,7 @@
       "No hidden fees",
       "On-demand payouts"
     ],
-    "upTo": "Up to",
+    "splitEyebrow": "Du behältst",
     "youKeep": "Sie behalten",
     "firmEarns": "Firma behält",
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
@@ -217,9 +223,6 @@
     "startChallenge": "Challenge starten",
     "addOnsAvailable": "Verfügbare Add-Ons",
     "popular": "Beliebt",
-    "profitSplit1": "Gewinnbeteiligung (1–13 Tage)",
-    "profitSplit2": "Gewinnbeteiligung (14–30 Tage)",
-    "profitSplit3": "Gewinnbeteiligung (31+ Tage)",
     "fundedConsistency": "Geförderte Konsistenz",
     "showNumbers": "In Zahlen anzeigen",
     "showPhases": "Phasen anzeigen",
@@ -253,9 +256,10 @@
     "accessTitle": "Alle Modelle enthalten:",
     "disclaimer": "Der gesamte Handel beinhaltet simuliertes Kapital in Demoumgebungen. Frühere Wertentwicklungen garantieren keine zukünftigen Ergebnisse.",
     "conditions": [
-      "Profit split up to 100%",
+      "80% profit split",
+      "Flexibler Auszahlungszyklus",
       "Leverage 1:100",
-      "Payouts in 24-48 hours"
+      "48-Stunden-Auszahlungsgarantie"
     ],
     "scalingPlan": "Skalierungsplan",
     "maxTotalLoss": "Maximaler Gesamtverlust",
@@ -269,7 +273,8 @@
     "more": "+{count} mehr",
     "oneTimePaymentNotice": "Jede Evaluierungsgebühr ist eine einmalige Zahlung – kein Abo, keine wiederkehrenden Kosten, keine versteckten Gebühren.",
     "quantity": "Anzahl",
-    "showAmounts": "Beträge in $ anzeigen"
+    "showAmounts": "Beträge in $ anzeigen",
+    "profitSplitRow": "Gewinnbeteiligung"
   },
   "platforms": {
     "eyebrow": "Plattformen",
@@ -418,7 +423,7 @@
     "items": {
       "payoutTime": {
         "q": "Wie schnell werden Auszahlungen bearbeitet?",
-        "a": "Wir bieten branchenführende Auszahlungszeiten von ca. 12 Stunden für qualifizierte Händler. Einmal angefordert, werden Auszahlungen innerhalb von 12 Stunden bearbeitet."
+        "a": "Jede genehmigte Auszahlung ist innerhalb von 48 Stunden garantiert. Mit dem Add-on 24-Stunden-Auszahlung verkürzt sich die Garantie auf 24 Stunden. Die Mittel verlassen Ihr Handelskonto wenige Minuten nach der Genehmigung, per Krypto oder Banküberweisung."
       },
       "timeLimit": {
         "q": "Gibt es Zeitlimits für die Challenges?",
@@ -430,7 +435,7 @@
       },
       "profitSplit": {
         "q": "Welche Gewinnbeteiligungen bieten Sie an?",
-        "a": "CK Propfirm bietet bis zu 100% Gewinnbeteiligung für verifizierte Händler auf finanzierten Konten."
+        "a": "CK Propfirm bietet 80% Gewinnbeteiligung für verifizierte Händler auf finanzierten Konten."
       },
       "drawdown": {
         "q": "Wie lauten die Drawdown-Regeln?",
@@ -459,13 +464,37 @@
       "instantPayouts": {
         "q": "Wie schnell kann ich mit Instant Funding starten?",
         "a": "Sie können innerhalb von Minuten nach dem Kauf mit dem Trading beginnen. Sofort-Finanzierungskonten werden direkt aktiviert."
+      },
+      "minProfit": {
+        "q": "Is there a minimum profit before I can request a payout?",
+        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+      },
+      "buffer": {
+        "q": "What is the protected account buffer?",
+        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+      },
+      "payoutCaps": {
+        "q": "Is there a limit on how much I can withdraw?",
+        "a": "The global minimum request is $500. Your first five withdrawals may not exceed 3% of the initial account balance; after the fifth that cap is removed. After your third approved payout you may withdraw all remaining profits, though a profit cycle still applies between withdrawals."
+      },
+      "consistencyScore": {
+        "q": "How does the consistency rule work on a funded account?",
+        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+      },
+      "trailingDrawdown": {
+        "q": "How does the trailing drawdown work?",
+        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+      },
+      "pendingPayout": {
+        "q": "Can I trade while a payout is pending?",
+        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
       }
     }
   },
   "closingCta": {
     "eyebrow": "Dein nächster Trade könnte finanziert sein",
     "title": "Bereit, mit CKs Kapital zu handeln?",
-    "subtitle": "Wähle eine Challenge, erfülle die Ziele in deinem Tempo und behalte bis zu 100% deiner Gewinne.",
+    "subtitle": "Wähle eine Challenge, erfülle die Ziele in deinem Tempo und behalte 80% deiner Gewinne.",
     "button": "Starte deine Challenge",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -478,7 +507,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -489,12 +518,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "Wir unterstützen Trader weltweit mit virtuellem Kapital, transparenten Regeln und bis zu 100% Gewinnbeteiligung.",
+    "tagline": "Wir unterstützen Trader weltweit mit virtuellem Kapital, transparenten Regeln und 80% Gewinnbeteiligung.",
     "newsletterTitle": "Trading-Einblicke Erhalten",
     "newsletterSubtitle": "Markt-Updates, Prop-Firm-News und exklusive Angebote wöchentlich in Ihrem Postfach.",
     "emailPlaceholder": "Ihre E-Mail eingeben",
@@ -547,7 +576,8 @@
     "corporateNote": "Note: CK Capital Group LTD does not conduct brokerage services or offer real trading accounts on this website. Its services are limited to simulated trading programmes.",
     "corporateRestrictions": "Restrictions: Services are not offered to residents of certain jurisdictions, including countries on sanctions lists and other restricted territories as described in our Terms & Conditions.",
     "registeredAddressTitle": "Registered Address of CK Propfirm:",
-    "registeredAddressBody": "6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom"
+    "registeredAddressBody": "6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom",
+    "calculators": "Handelsrechner"
   },
   "ticker": {
     "market": "Markt",
@@ -563,7 +593,7 @@
     "backHome": "Zurück zur Startseite"
   },
   "meta": {
-    "homeTitle": "CK Propfirm - Prop Trading Firma | Bis zu $100K Kapital mit 100% Split",
+    "homeTitle": "CK Propfirm - Prop Trading Firma | Bis zu $100K Kapital mit 80% Split",
     "homeDescription": "Werde Teil von CK Propfirm. Bestehe unsere Evaluierung und handle bis zu $100K simuliertes Kapital mit Auszahlungen in 12h."
   },
   "about": {
@@ -615,7 +645,7 @@
     ],
     "statsTradersNote": "Trader in über 140 Ländern",
     "statsCapitalNote": "Maximal skalierbare Zuteilung",
-    "statsSplitNote": "Behalte bis zu 100% der Gewinne",
+    "statsSplitNote": "Behalte 80% der Gewinne",
     "statsSupportNote": "Unter 2 Minuten durchschnittliche Antwortzeit",
     "missionEyebrow": "ZWECK",
     "visionEyebrow": "ZUKUNFT",
@@ -717,9 +747,9 @@
         "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
-        "value": "UP TO 100%",
+        "value": "80%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Propfirm Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Propfirm Qualified Analysts may receive 80% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
@@ -777,7 +807,7 @@
       "Unlimited Trading Periods on applicable evaluations",
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Total simulated account allocation up to $1.2M"
     ],
     "ctaStats": [
@@ -940,7 +970,7 @@
       "phase2Sub": "Verification stage",
       "qaTitle": "CK Qualified Analyst",
       "qaSub": "Programme destination",
-      "qaFooter": "Up to 100% simulated profit rewards",
+      "qaFooter": "80% simulated profit rewards",
       "evaluationTitle": "Evaluation",
       "evaluationSub": "Single stage — complete the objective under CK Propfirm's risk parameters.",
       "instantTitle": "Instant Account",
@@ -1039,7 +1069,7 @@
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
     "qaBenefits": [
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Flexible reward cycles",
       "News trading according to applicable rules",
       "Multiple account sizes",
@@ -1214,7 +1244,7 @@
     "profitTarget": "Gewinnziel",
     "maxLoss": "Max. Gesamtverlust",
     "profitSplit": "Gewinnbeteiligung",
-    "profitSplitValue": "Bis zu 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "Schnelle Auszahlungen",
@@ -1251,5 +1281,151 @@
     "catNews": "News",
     "catTips": "Trading-Tipps",
     "catEducation": "Bildung"
+  },
+  "symbols": {
+    "heroTitle": "Symbol-Spezifikationen",
+    "heroSubtitle": "Wir bieten Ihnen die besten Handelsbedingungen und die wettbewerbsfähigsten Spreads über unsere gesamte Produktpalette hinweg. Entdecken Sie alle Märkte, die Sie bei CK Capital handeln können — mit Live-Kursen.",
+    "tab_most": "Meistgehandelt",
+    "tab_fx": "Währungspaare",
+    "tab_indices": "Indizes",
+    "tab_commodities": "Rohstoffe",
+    "tab_crypto": "Krypto",
+    "tab_stocks": "Aktien",
+    "tab_custom": "Eigene Liste",
+    "symbol": "Symbol",
+    "bidPrice": "Geldkurs",
+    "askPrice": "Briefkurs",
+    "spread": "Spread",
+    "contractSize": "Kontraktgröße",
+    "leverage": "Hebel",
+    "bid": "Geld",
+    "ask": "Brief",
+    "searchPlaceholder": "Instrumente suchen…",
+    "searchLabel": "Instrumente suchen",
+    "clearSearch": "Suche löschen",
+    "categoriesLabel": "Instrumentenkategorien",
+    "tableCaption": "Live-Geldkurs, Briefkurs, Spread und Kontraktgröße für jedes CK-Capital-Instrument.",
+    "statusConnecting": "Verbinden…",
+    "statusLive": "Live",
+    "statusReconnecting": "Neu verbinden…",
+    "statusDelayed": "Verzögerter Feed",
+    "addToWatchlist": "Zur eigenen Liste hinzufügen",
+    "removeFromWatchlist": "Aus eigener Liste entfernen",
+    "emptyWatchlist": "Markieren Sie Instrumente mit einem Stern, um Ihre eigene Liste aufzubauen.",
+    "noResults": "Keine Instrumente passen zu \"{query}\".",
+    "disclaimer": "Die Kurse sind indikativ und dienen nur zur Information. Krypto zeigt echte Orderbuchkurse, Währungen aktualisieren etwa einmal pro Minute; Indizes, Rohstoffe und Aktien stammen aus einem verzögerten Feed und können bis zu 15 Minuten hinter dem Markt liegen. Außer bei Krypto werden Geld- und Briefkurs aus dem Marktmittelkurs mit dem veröffentlichten Spread von CK Capital gebildet. Ausführungskurse auf einem Live-Konto weichen ab.",
+    "rowClosed": "Geschlossen",
+    "rowClosedTitle": "Markt geschlossen — letzter gehandelter Kurs",
+    "rowNoFeed": "Kein Feed",
+    "rowNoFeedTitle": "Feed nicht verfügbar — letzter bekannter Kurs"
+  },
+  "calendar": {
+    "heroTitle": "Wirtschaftskalender",
+    "heroSubtitle": "Alle geplanten Veröffentlichungen, die Ihre Märkte bewegen — in Ihrer eigenen Zeitzone. Filtern Sie nach Währung, Tag und Wirkung, damit Sie wissen, was ansteht, bevor Sie eine Position eröffnen.",
+    "all": "Alle",
+    "currencyFilter": "Nach Währung filtern",
+    "timezoneLabel": "Zeitzone",
+    "timezoneSearch": "Zeitzone suchen",
+    "days": "Tage",
+    "impact": "Wirkung",
+    "show": "Anzeigen",
+    "upcomingOnly": "Nur bevorstehende",
+    "source": "Quelle:",
+    "updatedAt": "Aktualisiert um {time}",
+    "feedStale": "Letzte bekannte Daten",
+    "event": "Ereignis",
+    "currency": "Währung",
+    "date": "Datum",
+    "forecast": "Prognose",
+    "previous": "Vorher",
+    "tableCaption": "Geplante Wirtschaftsdaten dieser Woche, mit Prognose und vorherigem Wert.",
+    "noEvents": "Keine Ereignisse passen zu diesen Filtern.",
+    "pagination": "Kalenderseiten",
+    "previousPage": "Vorherige Seite",
+    "nextPage": "Nächste Seite",
+    "newsPolicy": "CK Capital erlaubt News-Trading — es gibt kein gesperrtes Zeitfenster rund um diese Veröffentlichungen. Dieser Kalender dient der Planung und dem Risikobewusstsein, er ist keine Liste gesperrter Zeiten.",
+    "whatIsTitle": "Was ist der Wirtschaftskalender von CK Capital?",
+    "whatIsBody": "Ein Wirtschaftskalender ist der Terminplan der Ankündigungen, Konjunkturdaten und Notenbankereignisse, die die globalen Märkte bewegen. Er zeigt, wann eine Veröffentlichung ansteht, welche Währung sie betrifft, wie stark sie üblicherweise wirkt und was Analysten im Vergleich zum Vorwert erwarten.",
+    "whyTitle": "Warum ist das für finanzierte Trader wichtig?",
+    "whyBody": "Die Volatilität rund um wichtige Veröffentlichungen kann Spreads ausweiten und den Kurs in Sekunden weiter bewegen als gewohnt. Wer den Terminplan kennt, kann Positionsgrößen bewusst wählen, nicht mitten im Trade überrascht werden und Einstiege um die relevanten Daten herum planen.",
+    "weekday": {
+      "sunday": "Sonntag",
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag"
+    },
+    "impactLevel": {
+      "high": "Hoch",
+      "medium": "Mittel",
+      "low": "Niedrig",
+      "holiday": "Feiertag"
+    }
+  },
+  "offersCentre": {
+    "title": "Neuigkeiten",
+    "launcherLabel": "Angebote und Neuigkeiten",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "share": "Teilen",
+    "minimise": "Minimieren",
+    "close": "Schließen",
+    "sharedBy": "Geteilt von {author}",
+    "ageDays": "vor {count}T",
+    "ageHours": "vor {count}Std",
+    "ageNow": "gerade eben",
+    "rating": "Bewertung",
+    "couponLabel": "Gutscheincode",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "limitedTime": "Zeitlich begrenztes Angebot — kann jederzeit ohne Vorankündigung enden.",
+    "endsAt": "Angebot endet am {date}",
+    "pricingGlobal": "Rabattierte Preise",
+    "pricingUsa": "Rabattierte Preise (USA)",
+    "pricingCaption": "Planpreise vor und nach dem Rabatt.",
+    "plan": "Plan",
+    "wasPrice": "Vorher",
+    "nowPrice": "Jetzt",
+    "saving": "Ersparnis",
+    "importantRules": "Wichtige Regeln",
+    "joinNow": "Jetzt starten",
+    "copyManual": "⌘C drücken"
+  },
+  "supportWidget": {
+    "launcher": "Hilfe und Support",
+    "panel": "ckpropfirm Support",
+    "greeting": "Hallo! 👋",
+    "greetingSub": "Wie kann ich helfen?",
+    "home": "Start",
+    "messages": "Nachrichten",
+    "news": "Neuigkeiten",
+    "help": "Hilfe",
+    "close": "Schließen",
+    "minimise": "Minimieren",
+    "back": "Zurück",
+    "sendMessage": "Schreiben Sie uns",
+    "sendMessageSub": "Unser Team antwortet rund um die Uhr",
+    "searchHelp": "Hilfe durchsuchen",
+    "noResults": "Keine Artikel zu „{query}“.",
+    "collectionsCount": "{count, plural, one {# Sammlung} other {# Sammlungen}}",
+    "articlesCount": "{count, plural, one {# Artikel} other {# Artikel}}",
+    "recentTitle": "Letzte Nachricht",
+    "recentFrom": "ckpropfirm Support",
+    "recentPreview": "Ich helfe bei Evaluierungen, Regeln und Auszahlungen.",
+    "liveOffer": "Aktuelles Angebot",
+    "viewOffer": "Angebot ansehen",
+    "noNews": "Derzeit nichts Neues.",
+    "talkToHuman": "Mit einem Menschen sprechen",
+    "talkToHumanSub": "Öffnet unser Hilfecenter in einem neuen Tab",
+    "helpIntro": "Antworten auf die häufigsten Fragen von Tradern.",
+    "collections": {
+      "payouts": "Auszahlungen und Rewards",
+      "rules": "Handelsregeln",
+      "programmes": "Evaluierungen und Gebühren",
+      "platforms": "Plattformen"
+    },
+    "ratingLabel": "Trustpilot-Bewertung"
   }
 }

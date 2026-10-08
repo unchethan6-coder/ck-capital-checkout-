@@ -57,19 +57,25 @@
     "blogTitle": "رؤى التداول والمدونة",
     "featuredEvalBadge": "عرض محدود · خصم 75%",
     "featuredEvalTitle": "تداول برأس مال يصل إلى 300 ألف دولار",
-    "featuredEvalDesc": "تداول بأدوات احترافية وفروق أسعار ضيقة ونسبة أرباح تصل إلى 100% في الحسابات الافتراضية.",
+    "featuredEvalDesc": "تداول بأدوات احترافية وفروق أسعار ضيقة ونسبة أرباح 80% في الحسابات الافتراضية.",
     "featuredEvalCta": "احصل على خصم 75%",
     "featuredCommunityBadge": "مجتمع المتداولين",
     "featuredCommunityTitle": "انضم إلى أكثر من 20,000 متداول نشط",
     "featuredCommunityDesc": "تحليلات تداول حية، إثباتات سحب ودعم VIP مباشر على ديسكورد.",
     "featuredCommunityCta": "انضم إلى ديسكورد الرسمي",
     "viewAllPrograms": "عرض جميع البرامج",
-    "joinDiscord": "انضم إلى ديسكورد الرسمي"
+    "joinDiscord": "انضم إلى ديسكورد الرسمي",
+    "calculatorsTitle": "حاسبات التداول",
+    "calculatorsDesc": "الهامش والأرباح وحجم اللوت والسواب، مقارنة بحدود حسابك في CK",
+    "symbolSpecs": "مواصفات الرموز",
+    "symbolSpecsDesc": "سبريد مباشر وأحجام العقود وشروط التداول",
+    "economicCalendar": "المفكرة الاقتصادية",
+    "economicCalendarDesc": "إصدارات تحرّك السوق بتوقيتك"
   },
   "hero": {
     "features": [
-      "سحب خلال 12 ساعة",
-      "نسبة أرباح 100%",
+      "سحب خلال 48 ساعة",
+      "نسبة أرباح 80%",
       "رأس مال 100 ألف دولار",
       "بدون حدود زمنية"
     ],
@@ -82,10 +88,10 @@
     "exploreObjectives": "شاهد كيف يعمل"
   },
   "stats": {
-    "payoutTime": "متوسط وقت السحب",
-    "payoutTimeVal": "12 ساعة",
+    "payoutTime": "سحب مضمون",
+    "payoutTimeVal": "48 ساعة",
     "rewardSplit": "أعلى نسبة أرباح",
-    "rewardSplitVal": "100%",
+    "rewardSplitVal": "80%",
     "accountSize": "أقصى رأس مال افتراضي",
     "accountSizeVal": "+100 ألف دولار",
     "support": "دعم المتداولين المباشر",
@@ -124,7 +130,7 @@
     "noConsistency": "بدون قواعد اتساق معقدة",
     "newsAllowed": "التداول أثناء الأخبار مسموح",
     "noTimePressure": "بدون ضغط زمني",
-    "profitSplit": "نسبة أرباح تصل إلى 100%",
+    "profitSplit": "نسبة أرباح 80%",
     "readyFunded": "هل أنت مستعد للحصول على التمويل؟",
     "startJourney": "ابدأ رحلتك اليوم.",
     "startChallenge": "ابدأ التحدي",
@@ -161,7 +167,7 @@
     "items": {
       "split": {
         "title": "تقسيم الأرباح",
-        "description": "احتفظ بما يصل إلى 100% من أرباح التداول الافتراضية التي تحققها. بدون خصومات معقدة أو رسوم مخفية."
+        "description": "احتفظ بـ 80% من أرباح التداول الافتراضية التي تحققها. بدون خصومات معقدة أو رسوم مخفية."
       },
       "news": {
         "title": "التداول وقت الأخبار مسموح",
@@ -176,8 +182,8 @@
         "description": "هل خالفت قاعدة؟ أعد تعيين حساب التقييم الخاص بك بسعر مخفض وتابع رحلتك مباشرة."
       },
       "flexible": {
-        "title": "سحوبات سريعة خلال 12 ساعة",
-        "description": "اطلب أرباحك عند الطلب واستلم أموالك في أقل من 12 ساعة عبر العملات الرقمية أو التحويل البنكي."
+        "title": "ضمان السحب خلال 48 ساعة",
+        "description": "اطلب حصتك من الأرباح وقتما تشاء. السحوبات المعتمدة مضمونة خلال 48 ساعة، أو خلال 24 ساعة مع إضافة السحب خلال 24 ساعة."
       },
       "support": {
         "title": "دعم مخصص على مدار 24/7",
@@ -190,7 +196,7 @@
       "No hidden fees",
       "On-demand payouts"
     ],
-    "upTo": "Up to",
+    "splitEyebrow": "تحتفظ بـ",
     "youKeep": "أنت تحتفظ بـ",
     "firmEarns": "الشركة تحصل على",
     "rawSpreadsMT5": "Raw spreads on MT5 · TradeLocker",
@@ -217,9 +223,6 @@
     "startChallenge": "ابدأ التحدي",
     "addOnsAvailable": "الإضافات المتاحة",
     "popular": "شائع",
-    "profitSplit1": "تقاسم الأرباح (1–13 يوم)",
-    "profitSplit2": "تقاسم الأرباح (14–30 يوم)",
-    "profitSplit3": "تقاسم الأرباح (31+ يوم)",
     "fundedConsistency": "الاستمرارية الممولة",
     "showNumbers": "عرض بالأرقام",
     "showPhases": "عرض المراحل",
@@ -253,9 +256,10 @@
     "accessTitle": "تتضمن جميع النماذج:",
     "disclaimer": "جميع التداولات تتم باستخدام رأس مال محاكى في بيئات تجريبية. الأداء السابق لا يضمن نتائج مستقبلية.",
     "conditions": [
-      "Profit split up to 100%",
+      "80% profit split",
+      "دورة سحب مرنة",
       "Leverage 1:100",
-      "Payouts in 24-48 hours"
+      "ضمان السحب خلال 48 ساعة"
     ],
     "scalingPlan": "خطة توسيع رأس المال",
     "maxTotalLoss": "أقصى خسارة إجمالية",
@@ -269,7 +273,8 @@
     "more": "+{count} المزيد",
     "oneTimePaymentNotice": "رسوم التقييم تُدفع مرة واحدة فقط — بدون اشتراكات أو رسوم متكررة أو رسوم خفية.",
     "quantity": "الكمية",
-    "showAmounts": "عرض المبالغ بالدولار"
+    "showAmounts": "عرض المبالغ بالدولار",
+    "profitSplitRow": "نسبة الأرباح"
   },
   "platforms": {
     "eyebrow": "المنصات",
@@ -418,7 +423,7 @@
     "items": {
       "payoutTime": {
         "q": "ما مدى سرعة معالجة المدفوعات؟",
-        "a": "نقدم معالجة للمدفوعات في غضون 12 ساعة تقريباً للمتداولين المؤهلين. بمجرد الطلب، تتم معالجة السحوبات وإرسالها خلال 12 ساعة."
+        "a": "كل سحب معتمد مضمون خلال 48 ساعة. وبإضافة خيار السحب خلال 24 ساعة يصبح الضمان 24 ساعة. تُخصم الأموال من رصيد التداول خلال دقائق من الاعتماد وتصل عبر العملات الرقمية أو التحويل البنكي."
       },
       "timeLimit": {
         "q": "هل هناك أي حدود زمنية للتحديات؟",
@@ -430,7 +435,7 @@
       },
       "profitSplit": {
         "q": "ما هي نسبة تقسيم الأرباح التي تقدمونها؟",
-        "a": "تقدم CK Propfirm نسبة مشاركة أرباح تصل إلى 100% للمتداولين المؤهلين في الحسابات الممولة."
+        "a": "تقدم CK Propfirm نسبة مشاركة أرباح 80% للمتداولين المؤهلين في الحسابات الممولة."
       },
       "drawdown": {
         "q": "ما هي قواعد التراجع (Drawdown)؟",
@@ -459,13 +464,37 @@
       "instantPayouts": {
         "q": "ما مدى سرعة بدء التداول مع التمويل الفوري؟",
         "a": "يمكنك بدء التداول في غضون دقائق بعد الشراء، حيث يتم تفعيل حسابات التمويل الفوري على الفور."
+      },
+      "minProfit": {
+        "q": "Is there a minimum profit before I can request a payout?",
+        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+      },
+      "buffer": {
+        "q": "What is the protected account buffer?",
+        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+      },
+      "payoutCaps": {
+        "q": "Is there a limit on how much I can withdraw?",
+        "a": "The global minimum request is $500. Your first five withdrawals may not exceed 3% of the initial account balance; after the fifth that cap is removed. After your third approved payout you may withdraw all remaining profits, though a profit cycle still applies between withdrawals."
+      },
+      "consistencyScore": {
+        "q": "How does the consistency rule work on a funded account?",
+        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+      },
+      "trailingDrawdown": {
+        "q": "How does the trailing drawdown work?",
+        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+      },
+      "pendingPayout": {
+        "q": "Can I trade while a payout is pending?",
+        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
       }
     }
   },
   "closingCta": {
     "eyebrow": "صفقتك القادمة قد تكون بحساب ممول",
     "title": "جاهز للتداول برأس مال CK؟",
-    "subtitle": "اختر التحدي المناسب، وحقق الأهداف وفق جدولك واحتفظ بما يصل إلى 100% من الأرباح.",
+    "subtitle": "اختر التحدي المناسب، وحقق الأهداف وفق جدولك واحتفظ بـ 80% من الأرباح.",
     "button": "ابدأ التحدي الآن",
     "titleNew": "Your skill is our capital",
     "subtitleNew": "A structured path from proving your edge in sim to trading CK funded capital.",
@@ -478,7 +507,7 @@
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
-    "pill1": "Up to 100% Rewards",
+    "pill1": "80% Profit Split",
     "pill2": "No Time Limits",
     "primary": "Get Started",
     "secondary": "See roadmap",
@@ -489,12 +518,12 @@
     "drawerStage2Title": "Verification",
     "drawerStage2Desc": "Confirm consistency. Scale with tighter risk and unlock higher allocation.",
     "drawerStage3Title": "CK Funded",
-    "drawerStage3Desc": "Trade funded, keep up to 100% of the profits you generate. Payouts on demand.",
+    "drawerStage3Desc": "Trade funded, keep 80% of the profits you generate. Payouts on demand.",
     "drawerCta": "Explore objectives",
     "drawerClose": "Close"
   },
   "footer": {
-    "tagline": "نمكّن المتداولين حول العالم برأس مال افتراضي، وقواعد واضحة ونسب أرباح تصل إلى 100%.",
+    "tagline": "نمكّن المتداولين حول العالم برأس مال افتراضي، وقواعد واضحة ونسبة أرباح 80%.",
     "newsletterTitle": "احصل على رؤى التداول",
     "newsletterSubtitle": "تحديثات السوق وأخبار شركات التمويل والعروض الحصرية أسبوعياً في بريدك.",
     "emailPlaceholder": "أدخل بريدك الإلكتروني",
@@ -547,7 +576,8 @@
     "corporateNote": "Note: CK Capital Group LTD does not conduct brokerage services or offer real trading accounts on this website. Its services are limited to simulated trading programmes.",
     "corporateRestrictions": "Restrictions: Services are not offered to residents of certain jurisdictions, including countries on sanctions lists and other restricted territories as described in our Terms & Conditions.",
     "registeredAddressTitle": "Registered Address of CK Propfirm:",
-    "registeredAddressBody": "6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom"
+    "registeredAddressBody": "6–7 Waterside Station Road, Harpenden, AL5 4US, United Kingdom",
+    "calculators": "حاسبات التداول"
   },
   "ticker": {
     "market": "السوق",
@@ -563,8 +593,8 @@
     "backHome": "العودة للرئيسية"
   },
   "meta": {
-    "homeTitle": "CK Propfirm - شركة تداول | تداول حتى 100 ألف دولار مع نسبة أرباح 100%",
-    "homeDescription": "انضم إلى CK Propfirm. اجتز تقييمنا لتتداول برأس مال محاكى يصل إلى 100 ألف دولار مع سحب أرباح خلال 12 ساعة."
+    "homeTitle": "CK Propfirm - شركة تداول | تداول حتى 100 ألف دولار مع نسبة أرباح 80%",
+    "homeDescription": "انضم إلى CK Propfirm. اجتز تقييمنا لتتداول برأس مال محاكى يصل إلى 100 ألف دولار مع ضمان سحب خلال 48 ساعة."
   },
   "about": {
     "badge": "من نحن · التداول الممول",
@@ -615,7 +645,7 @@
     ],
     "statsTradersNote": "متداولون حول العالم",
     "statsCapitalNote": "الحد الأقصى للتخصيص القابل للترقية",
-    "statsSplitNote": "احتفظ بما يصل إلى 100% من الأرباح",
+    "statsSplitNote": "احتفظ بـ 80% من الأرباح",
     "statsSupportNote": "متوسط وقت الاستجابة أقل من دقيقتين",
     "missionEyebrow": "الهدف",
     "visionEyebrow": "المستقبل",
@@ -650,7 +680,7 @@
     "pillar1Title": "الشفافية التامة",
     "pillar1Desc": "قواعد واضحة بدون أي بنود خفية أو مفاجآت غير متوقعة.",
     "pillar2Title": "السرعة الفائقة",
-    "pillar2Desc": "معالجة المدفوعات في أقل من 12 ساعة عبر العملات الرقمية أو التحويلات البنكية.",
+    "pillar2Desc": "سحوبات مضمونة خلال 48 ساعة — و24 ساعة مع الإضافة عبر العملات الرقمية أو التحويلات البنكية.",
     "pillar3Title": "الموثوقية",
     "pillar3Desc": "بنية تحتية قوية على MT5 و TradeLocker مع سرعة تنفيذ فائقة."
   },
@@ -717,9 +747,9 @@
         "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
       },
       {
-        "value": "UP TO 100%",
+        "value": "80%",
         "title": "Simulated Profit Rewards",
-        "desc": "Eligible CK Propfirm Qualified Analysts may receive up to 100% of applicable simulated profits according to their account rules."
+        "desc": "Eligible CK Propfirm Qualified Analysts may receive 80% of applicable simulated profits according to their account rules."
       }
     ],
     "contentEyebrow": "CREATE CONTENT THAT CONVERTS",
@@ -777,7 +807,7 @@
       "Unlimited Trading Periods on applicable evaluations",
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Total simulated account allocation up to $1.2M"
     ],
     "ctaStats": [
@@ -940,7 +970,7 @@
       "phase2Sub": "Verification stage",
       "qaTitle": "CK Qualified Analyst",
       "qaSub": "Programme destination",
-      "qaFooter": "Up to 100% simulated profit rewards",
+      "qaFooter": "80% simulated profit rewards",
       "evaluationTitle": "Evaluation",
       "evaluationSub": "Single stage — complete the objective under CK Propfirm's risk parameters.",
       "instantTitle": "Instant Account",
@@ -1039,7 +1069,7 @@
     ],
     "qaBenefitsTitle": "Qualified Analyst benefits may include:",
     "qaBenefits": [
-      "Up to 100% simulated profit rewards",
+      "80% simulated profit rewards",
       "Flexible reward cycles",
       "News trading according to applicable rules",
       "Multiple account sizes",
@@ -1214,7 +1244,7 @@
     "profitTarget": "الهدف الربحي",
     "maxLoss": "أقصى خسارة إجمالية",
     "profitSplit": "نسبة الأرباح",
-    "profitSplitValue": "تصل إلى 100%"
+    "profitSplitValue": "80%"
   },
   "featureStrip": {
     "fastPayouts": "سحب أرباح سريع",
@@ -1251,5 +1281,151 @@
     "catNews": "أخبار",
     "catTips": "نصائح التداول",
     "catEducation": "تعليم"
+  },
+  "symbols": {
+    "heroTitle": "مواصفات الرموز",
+    "heroSubtitle": "نلتزم بتقديم أفضل شروط التداول وأكثر فروق الأسعار تنافسية عبر مجموعة أدواتنا المالية. استكشف كل الأسواق المتاحة للتداول في CK Capital بأسعار مباشرة.",
+    "tab_most": "الأكثر تداولاً",
+    "tab_fx": "أزواج العملات",
+    "tab_indices": "المؤشرات",
+    "tab_commodities": "السلع",
+    "tab_crypto": "العملات الرقمية",
+    "tab_stocks": "الأسهم",
+    "tab_custom": "مخصص",
+    "symbol": "الرمز",
+    "bidPrice": "سعر البيع",
+    "askPrice": "سعر الشراء",
+    "spread": "الفارق",
+    "contractSize": "حجم العقد",
+    "leverage": "الرافعة المالية",
+    "bid": "بيع",
+    "ask": "شراء",
+    "searchPlaceholder": "ابحث عن الأدوات…",
+    "searchLabel": "ابحث عن الأدوات",
+    "clearSearch": "مسح البحث",
+    "categoriesLabel": "فئات الأدوات المالية",
+    "tableCaption": "سعر البيع والشراء والفارق وحجم العقد المباشر لكل أداة في CK Capital.",
+    "statusConnecting": "جارٍ الاتصال…",
+    "statusLive": "مباشر",
+    "statusReconnecting": "جارٍ إعادة الاتصال…",
+    "statusDelayed": "تغذية متأخرة",
+    "addToWatchlist": "أضف إلى قائمتي",
+    "removeFromWatchlist": "أزل من قائمتي",
+    "emptyWatchlist": "ضع نجمة على أي أداة لبناء قائمتك المخصصة.",
+    "noResults": "لا توجد أدوات تطابق \"{query}\".",
+    "disclaimer": "الأسعار إرشادية ومقدمة لأغراض المعلومات فقط. أسعار العملات الرقمية مباشرة من دفتر الأوامر، وتُحدَّث العملات كل دقيقة تقريباً؛ أما المؤشرات والسلع والأسهم فتأتي من تغذية مؤجلة وقد تتأخر عن السوق حتى 15 دقيقة. وباستثناء العملات الرقمية، يُبنى سعرا البيع والشراء من متوسط سعر السوق باستخدام الفارق المعلن من CK Capital. ستختلف أسعار التنفيذ في الحساب الحقيقي.",
+    "rowClosed": "مغلق",
+    "rowClosedTitle": "السوق مغلق — يتم عرض آخر سعر متداول",
+    "rowNoFeed": "لا توجد تغذية",
+    "rowNoFeedTitle": "التغذية غير متاحة — يتم عرض آخر سعر معروف"
+  },
+  "calendar": {
+    "heroTitle": "المفكرة الاقتصادية",
+    "heroSubtitle": "كل إصدار مجدول يحرّك الأسواق التي تتداولها، بتوقيتك المحلي. صفِّ حسب العملة واليوم ودرجة التأثير لتعرف ما هو قادم قبل فتح أي صفقة.",
+    "all": "الكل",
+    "currencyFilter": "تصفية حسب العملة",
+    "timezoneLabel": "المنطقة الزمنية",
+    "timezoneSearch": "ابحث عن منطقتك الزمنية",
+    "days": "الأيام",
+    "impact": "التأثير",
+    "show": "العرض",
+    "upcomingOnly": "القادمة فقط",
+    "source": "المصدر:",
+    "updatedAt": "آخر تحديث {time}",
+    "feedStale": "عرض آخر البيانات المعروفة",
+    "event": "الحدث",
+    "currency": "العملة",
+    "date": "التاريخ",
+    "forecast": "المتوقع",
+    "previous": "السابق",
+    "tableCaption": "الإصدارات الاقتصادية المجدولة لهذا الأسبوع مع القيمة المتوقعة والسابقة.",
+    "noEvents": "لا توجد أحداث تطابق هذه الفلاتر.",
+    "pagination": "صفحات المفكرة",
+    "previousPage": "الصفحة السابقة",
+    "nextPage": "الصفحة التالية",
+    "newsPolicy": "تسمح CK Capital بالتداول وقت الأخبار — لا توجد فترة محظورة حول هذه الإصدارات. هذه المفكرة للتخطيط وإدارة المخاطر، وليست قائمة أوقات محظورة.",
+    "whatIsTitle": "ما هي المفكرة الاقتصادية من CK Capital؟",
+    "whatIsBody": "المفكرة الاقتصادية هي جدول الإعلانات والبيانات وأحداث البنوك المركزية التي تحرّك الأسواق العالمية. تُظهر موعد كل إصدار، والعملة التي يؤثر فيها، ومقدار تأثيره المعتاد، وما يتوقعه المحللون مقارنةً بالقراءة السابقة.",
+    "whyTitle": "لماذا تهم المتداول الممول؟",
+    "whyBody": "قد يؤدي التقلب حول إصدار مهم إلى اتساع الفروق السعرية وتحريك السعر أكثر من المعتاد خلال ثوانٍ. معرفة ما هو مجدول تتيح لك تحديد حجم الصفقة بوعي، وتجنّب المفاجأة في منتصف الصفقة، وتخطيط نقاط الدخول حول البيانات المهمة لأزواجك.",
+    "weekday": {
+      "sunday": "الأحد",
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت"
+    },
+    "impactLevel": {
+      "high": "مرتفع",
+      "medium": "متوسط",
+      "low": "منخفض",
+      "holiday": "عطلة"
+    }
+  },
+  "offersCentre": {
+    "title": "الأخبار",
+    "launcherLabel": "العروض والأخبار",
+    "previous": "السابق",
+    "next": "التالي",
+    "share": "مشاركة",
+    "minimise": "تصغير",
+    "close": "إغلاق",
+    "sharedBy": "شاركها {author}",
+    "ageDays": "قبل {count} يوم",
+    "ageHours": "قبل {count} ساعة",
+    "ageNow": "الآن",
+    "rating": "التقييم",
+    "couponLabel": "رمز القسيمة",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "limitedTime": "عرض لفترة محدودة — قد ينتهي في أي وقت دون إشعار.",
+    "endsAt": "ينتهي العرض في {date}",
+    "pricingGlobal": "الأسعار بعد الخصم",
+    "pricingUsa": "الأسعار بعد الخصم (الولايات المتحدة)",
+    "pricingCaption": "أسعار الخطط قبل الخصم وبعده.",
+    "plan": "الخطة",
+    "wasPrice": "قبل",
+    "nowPrice": "الآن",
+    "saving": "التوفير",
+    "importantRules": "قواعد مهمة",
+    "joinNow": "انضم الآن",
+    "copyManual": "اضغط ⌘C"
+  },
+  "supportWidget": {
+    "launcher": "المساعدة والدعم",
+    "panel": "دعم ckpropfirm",
+    "greeting": "مرحباً! 👋",
+    "greetingSub": "كيف يمكنني المساعدة؟",
+    "home": "الرئيسية",
+    "messages": "الرسائل",
+    "news": "الأخبار",
+    "help": "المساعدة",
+    "close": "إغلاق",
+    "minimise": "تصغير",
+    "back": "رجوع",
+    "sendMessage": "أرسل لنا رسالة",
+    "sendMessageSub": "فريقنا يرد على مدار الساعة",
+    "searchHelp": "ابحث في المساعدة",
+    "noResults": "لا توجد مقالات تطابق «{query}».",
+    "collectionsCount": "{count, plural, zero {# مجموعات} one {مجموعة واحدة} two {مجموعتان} few {# مجموعات} many {# مجموعة} other {# مجموعة}}",
+    "articlesCount": "{count, plural, zero {# مقالات} one {مقالة واحدة} two {مقالتان} few {# مقالات} many {# مقالة} other {# مقالة}}",
+    "recentTitle": "رسالة حديثة",
+    "recentFrom": "دعم ckpropfirm",
+    "recentPreview": "أنا هنا للمساعدة في التقييمات والقواعد والسحوبات.",
+    "liveOffer": "عرض فعّال",
+    "viewOffer": "عرض التفاصيل",
+    "noNews": "لا جديد حالياً.",
+    "talkToHuman": "التحدث مع شخص",
+    "talkToHumanSub": "يفتح مركز المساعدة في تبويب جديد",
+    "helpIntro": "تصفح إجابات أكثر الأسئلة شيوعاً بين المتداولين.",
+    "collections": {
+      "payouts": "السحوبات والمكافآت",
+      "rules": "قواعد التداول",
+      "programmes": "التقييمات والرسوم",
+      "platforms": "المنصات"
+    },
+    "ratingLabel": "تقييم Trustpilot"
   }
 }
