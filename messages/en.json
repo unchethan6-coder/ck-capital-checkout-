@@ -1240,5 +1240,34 @@
       "low": "Low",
       "holiday": "Holiday"
     }
+  },
+  "offersCentre": {
+    "title": "News",
+    "launcherLabel": "Offers and news",
+    "previous": "Previous item",
+    "next": "Next item",
+    "share": "Share",
+    "minimise": "Minimise",
+    "close": "Close",
+    "sharedBy": "Shared by {author}",
+    "ageDays": "{count}d",
+    "ageHours": "{count}h",
+    "ageNow": "just now",
+    "rating": "Rating",
+    "couponLabel": "Coupon code",
+    "copy": "Copy",
+    "copied": "Copied",
+    "limitedTime": "Limited-time offer — may close at any time without notice.",
+    "endsAt": "Offer ends {date}",
+    "pricingGlobal": "Discounted pricing",
+    "pricingUsa": "Discounted pricing (USA)",
+    "pricingCaption": "Plan pricing before and after the discount.",
+    "plan": "Plan",
+    "wasPrice": "Was",
+    "nowPrice": "Now",
+    "saving": "Saving",
+    "importantRules": "Important rules",
+    "joinNow": "Join Now",
+    "copyManual": "Press ⌘C"
   }
 }

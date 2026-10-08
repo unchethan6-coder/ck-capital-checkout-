@@ -1321,5 +1321,34 @@
       "low": "منخفض",
       "holiday": "عطلة"
     }
+  },
+  "offersCentre": {
+    "title": "الأخبار",
+    "launcherLabel": "العروض والأخبار",
+    "previous": "السابق",
+    "next": "التالي",
+    "share": "مشاركة",
+    "minimise": "تصغير",
+    "close": "إغلاق",
+    "sharedBy": "شاركها {author}",
+    "ageDays": "قبل {count} يوم",
+    "ageHours": "قبل {count} ساعة",
+    "ageNow": "الآن",
+    "rating": "التقييم",
+    "couponLabel": "رمز القسيمة",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "limitedTime": "عرض لفترة محدودة — قد ينتهي في أي وقت دون إشعار.",
+    "endsAt": "ينتهي العرض في {date}",
+    "pricingGlobal": "الأسعار بعد الخصم",
+    "pricingUsa": "الأسعار بعد الخصم (الولايات المتحدة)",
+    "pricingCaption": "أسعار الخطط قبل الخصم وبعده.",
+    "plan": "الخطة",
+    "wasPrice": "قبل",
+    "nowPrice": "الآن",
+    "saving": "التوفير",
+    "importantRules": "قواعد مهمة",
+    "joinNow": "انضم الآن",
+    "copyManual": "اضغط ⌘C"
   }
 }

@@ -1321,5 +1321,34 @@
       "low": "Niedrig",
       "holiday": "Feiertag"
     }
+  },
+  "offersCentre": {
+    "title": "Neuigkeiten",
+    "launcherLabel": "Angebote und Neuigkeiten",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "share": "Teilen",
+    "minimise": "Minimieren",
+    "close": "Schließen",
+    "sharedBy": "Geteilt von {author}",
+    "ageDays": "vor {count}T",
+    "ageHours": "vor {count}Std",
+    "ageNow": "gerade eben",
+    "rating": "Bewertung",
+    "couponLabel": "Gutscheincode",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "limitedTime": "Zeitlich begrenztes Angebot — kann jederzeit ohne Vorankündigung enden.",
+    "endsAt": "Angebot endet am {date}",
+    "pricingGlobal": "Rabattierte Preise",
+    "pricingUsa": "Rabattierte Preise (USA)",
+    "pricingCaption": "Planpreise vor und nach dem Rabatt.",
+    "plan": "Plan",
+    "wasPrice": "Vorher",
+    "nowPrice": "Jetzt",
+    "saving": "Ersparnis",
+    "importantRules": "Wichtige Regeln",
+    "joinNow": "Jetzt starten",
+    "copyManual": "⌘C drücken"
   }
 }

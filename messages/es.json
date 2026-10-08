@@ -1241,5 +1241,34 @@
       "low": "Bajo",
       "holiday": "Festivo"
     }
+  },
+  "offersCentre": {
+    "title": "Novedades",
+    "launcherLabel": "Ofertas y novedades",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "share": "Compartir",
+    "minimise": "Minimizar",
+    "close": "Cerrar",
+    "sharedBy": "Compartido por {author}",
+    "ageDays": "hace {count}d",
+    "ageHours": "hace {count}h",
+    "ageNow": "ahora mismo",
+    "rating": "Valoración",
+    "couponLabel": "Código de cupón",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "limitedTime": "Oferta por tiempo limitado — puede cerrarse en cualquier momento sin aviso.",
+    "endsAt": "La oferta termina el {date}",
+    "pricingGlobal": "Precios con descuento",
+    "pricingUsa": "Precios con descuento (EE. UU.)",
+    "pricingCaption": "Precios de los planes antes y después del descuento.",
+    "plan": "Plan",
+    "wasPrice": "Antes",
+    "nowPrice": "Ahora",
+    "saving": "Ahorro",
+    "importantRules": "Reglas importantes",
+    "joinNow": "Únete ahora",
+    "copyManual": "Pulsa ⌘C"
   }
 }

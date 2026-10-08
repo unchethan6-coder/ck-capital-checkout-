@@ -1321,5 +1321,34 @@
       "low": "निम्न",
       "holiday": "अवकाश"
     }
+  },
+  "offersCentre": {
+    "title": "समाचार",
+    "launcherLabel": "ऑफ़र और समाचार",
+    "previous": "पिछला",
+    "next": "अगला",
+    "share": "साझा करें",
+    "minimise": "छोटा करें",
+    "close": "बंद करें",
+    "sharedBy": "{author} द्वारा साझा",
+    "ageDays": "{count} दिन पहले",
+    "ageHours": "{count} घंटे पहले",
+    "ageNow": "अभी",
+    "rating": "रेटिंग",
+    "couponLabel": "कूपन कोड",
+    "copy": "कॉपी",
+    "copied": "कॉपी हो गया",
+    "limitedTime": "सीमित समय का ऑफ़र — बिना सूचना किसी भी समय समाप्त हो सकता है।",
+    "endsAt": "ऑफ़र {date} को समाप्त होगा",
+    "pricingGlobal": "रियायती मूल्य",
+    "pricingUsa": "रियायती मूल्य (यूएसए)",
+    "pricingCaption": "छूट से पहले और बाद में प्लान की कीमतें।",
+    "plan": "प्लान",
+    "wasPrice": "पहले",
+    "nowPrice": "अब",
+    "saving": "बचत",
+    "importantRules": "महत्वपूर्ण नियम",
+    "joinNow": "अभी जुड़ें",
+    "copyManual": "⌘C दबाएँ"
   }
 }
