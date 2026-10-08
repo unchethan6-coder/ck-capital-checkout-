@@ -53,3 +53,5 @@ graphify-out/
 
 # Payout cert downloads (seeded from Google Drive)
 scripts/seed-data/certs/
+scripts/seed-data/opt-certs/
+scripts/seed-data/uploaded_media_cache.json

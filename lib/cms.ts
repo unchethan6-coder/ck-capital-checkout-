@@ -379,7 +379,7 @@ const COUNTRY_CODE_MAP: Record<string, string> = {
   "Georgia": "GE", "Germany": "DE", "Ghana": "GH", "Greece": "GR",
   "Grenada": "GD", "Guatemala": "GT", "Guinea": "GN",
   "Guinea-Bissau": "GW", "Guyana": "GY", "Haiti": "HT",
-  "Honduras": "HN", "Hungary": "HU", "Iceland": "IS", "India": "IN",
+  "Honduras": "HN", "Hong Kong": "HK", "Hungary": "HU", "Iceland": "IS", "India": "IN",
   "Indonesia": "ID", "Iran": "IR", "Iraq": "IQ", "Ireland": "IE",
   "Israel": "IL", "Italy": "IT", "Jamaica": "JM", "Japan": "JP",
   "Jordan": "JO", "Kazakhstan": "KZ", "Kenya": "KE", "Kiribati": "KI",
