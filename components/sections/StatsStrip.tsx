@@ -22,7 +22,7 @@ export function StatsStrip() {
       data-od-id="stats-strip"
     >
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-y-6 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x lg:divide-white/[0.08]">
+        <div className="grid grid-cols-2 gap-y-6 sm:grid-cols-3 lg:grid-cols-[1fr_1fr_1.22fr_1fr_1fr] lg:divide-x lg:divide-white/[0.08]">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -31,8 +31,8 @@ export function StatsStrip() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={cn(
-                "group flex items-center gap-2.5 sm:gap-3 lg:gap-2 xl:gap-3.5 px-2 sm:px-3 lg:px-2 xl:px-4 lg:justify-center cursor-default transition-transform duration-200 hover:-translate-y-0.5",
-                i === 2 ? "col-span-2 sm:col-span-1 justify-center sm:justify-start" : ""
+                "group flex items-center gap-2 sm:gap-3 lg:gap-2 xl:gap-2.5 px-2 sm:px-3 lg:px-2 xl:px-3 lg:justify-center cursor-default transition-transform duration-200 hover:-translate-y-0.5",
+                i === 2 ? "col-span-2 sm:col-span-1 justify-center sm:justify-start lg:justify-center" : ""
               )}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -44,15 +44,15 @@ export function StatsStrip() {
                 height={200}
                 loading="lazy"
                 decoding="async"
-                className="h-11 w-11 sm:h-13 sm:w-13 md:h-14 md:w-14 lg:h-11 lg:w-11 xl:h-16 xl:w-16 shrink-0 object-contain transition-transform duration-200 group-hover:scale-110"
+                className="h-11 w-11 sm:h-12 sm:w-12 md:h-13 md:w-13 lg:h-11 lg:w-11 xl:h-13 xl:w-13 2xl:h-14 2xl:w-14 shrink-0 object-contain transition-transform duration-200 group-hover:scale-110"
               />
               <div className="min-w-0 text-left">
                 <div
                   className={cn(
-                    "font-[family-name:var(--font-jakarta)] font-black tracking-tight text-white group-hover:text-[#A98BFF] transition-colors duration-150 whitespace-nowrap",
+                    "font-[family-name:var(--font-jakarta)] font-black tracking-tight tabular-nums text-white group-hover:text-[#A98BFF] transition-colors duration-150 whitespace-nowrap",
                     stat.value.length > 10
-                      ? "text-lg xs:text-xl sm:text-[16px] md:text-xl lg:text-[15px] xl:text-[21px] 2xl:text-2xl"
-                      : "text-xl sm:text-2xl lg:text-xl xl:text-2xl"
+                      ? "text-lg sm:text-base md:text-lg lg:text-[14px] xl:text-[18px] 2xl:text-[20px]"
+                      : "text-xl sm:text-2xl lg:text-lg xl:text-2xl"
                   )}
                 >
                   <CountUp value={stat.value} />

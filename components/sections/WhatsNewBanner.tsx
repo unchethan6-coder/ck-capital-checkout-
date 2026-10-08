@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -60,18 +59,43 @@ export function WhatsNewBanner({
 }) {
   const t = useTranslations("whatsNew");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const isDark = viewMode === "cards";
 
+  const goToSlide = useCallback(
+    (idx: number) => {
+      if (idx === activeIndex) return;
+      setPrevIndex(activeIndex);
+      setActiveIndex(idx);
+    },
+    [activeIndex]
+  );
+
   const nextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % SLIDES.length);
+    setActiveIndex((current) => {
+      setPrevIndex(current);
+      return (current + 1) % SLIDES.length;
+    });
   }, []);
 
   const prevSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
+    setActiveIndex((current) => {
+      setPrevIndex(current);
+      return (current - 1 + SLIDES.length) % SLIDES.length;
+    });
   }, []);
+
+  // Clean up previous slide layer after transition completes so it yields to z-0
+  useEffect(() => {
+    if (prevIndex === activeIndex) return;
+    const timer = setTimeout(() => {
+      setPrevIndex(activeIndex);
+    }, 350);
+    return () => clearTimeout(timer);
+  }, [activeIndex, prevIndex]);
 
   // Autoplay management
   useEffect(() => {
@@ -148,7 +172,7 @@ export function WhatsNewBanner({
                 key={slide.id}
                 role="tab"
                 aria-selected={isActive}
-                onClick={() => setActiveIndex(idx)}
+                onClick={() => goToSlide(idx)}
                 className={cn(
                   "relative shrink-0 whitespace-nowrap rounded-full px-3 sm:px-4 py-1.5 text-xs sm:text-[13px] font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#894CEF]",
                   isActive
@@ -178,25 +202,34 @@ export function WhatsNewBanner({
           className="block relative w-full aspect-[16/9] sm:aspect-[1981/793] cursor-pointer"
           data-od-id="whats-new-banner-link"
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeSlide.id}
-              initial={{ opacity: 0, scale: 0.985 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.01 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={activeSlide.imageSrc}
-                alt={activeSlide.alt}
-                fill
-                priority
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-cover object-left md:object-center transition-transform duration-500 group-hover:scale-[1.012]"
-              />
-            </motion.div>
-          </AnimatePresence>
+          {SLIDES.map((slide, idx) => {
+            const isActive = activeIndex === idx;
+            const isPrevious = prevIndex === idx && !isActive;
+
+            return (
+              <div
+                key={slide.id}
+                aria-hidden={!isActive}
+                className={cn(
+                  "absolute inset-0 transition-opacity duration-300 ease-out pointer-events-none",
+                  isActive
+                    ? "opacity-100 z-20"
+                    : isPrevious
+                    ? "opacity-100 z-10"
+                    : "opacity-0 z-0"
+                )}
+              >
+                <Image
+                  src={slide.imageSrc}
+                  alt={slide.alt}
+                  fill
+                  priority
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  className="object-cover object-left md:object-center transition-transform duration-500 group-hover:scale-[1.012]"
+                />
+              </div>
+            );
+          })}
         </a>
 
         {/* Prev / Next Controls */}
@@ -206,7 +239,7 @@ export function WhatsNewBanner({
             prevSlide();
           }}
           aria-label="Previous announcement"
-          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/50 text-white/80 backdrop-blur-md border border-white/10 opacity-0 transition-all duration-200 hover:bg-black/80 hover:text-white hover:scale-105 group-hover:opacity-100 focus:opacity-100"
+          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 z-30 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/50 text-white/80 backdrop-blur-md border border-white/10 opacity-0 transition-all duration-200 hover:bg-black/80 hover:text-white hover:scale-105 group-hover:opacity-100 focus:opacity-100"
         >
           <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
@@ -216,7 +249,7 @@ export function WhatsNewBanner({
             nextSlide();
           }}
           aria-label="Next announcement"
-          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/50 text-white/80 backdrop-blur-md border border-white/10 opacity-0 transition-all duration-200 hover:bg-black/80 hover:text-white hover:scale-105 group-hover:opacity-100 focus:opacity-100"
+          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-30 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-black/50 text-white/80 backdrop-blur-md border border-white/10 opacity-0 transition-all duration-200 hover:bg-black/80 hover:text-white hover:scale-105 group-hover:opacity-100 focus:opacity-100"
         >
           <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>

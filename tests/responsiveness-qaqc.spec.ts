@@ -134,30 +134,88 @@ test.describe("QAQC Responsiveness & Cross-Screen Inspection", () => {
       // Verify banner image is rendered with natural dimensions
       const bannerImg = whatsNew.locator('img[alt*="CK Propfirm"]').first();
       await expect(bannerImg).toBeVisible();
-      const imgLoaded = await bannerImg.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0);
-      expect(imgLoaded, "Banner image failed to load or has 0 natural width").toBe(true);
+      await expect
+        .poll(
+          async () => await bannerImg.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0),
+          { timeout: 7000, message: "Banner image 1 failed to load or has 0 natural width" }
+        )
+        .toBe(true);
 
       // 6. Test Interactive Tab Switching on this screen size
+      // Switch to second tab (1:100 Leverage)
       const secondTab = tabs.nth(1);
       await secondTab.click();
-      await page.waitForTimeout(400); // Allow framer-motion transition
+      await page.waitForTimeout(350); // Allow cross-dissolve transition
 
       await expect(secondTab).toHaveAttribute("aria-selected", "true");
       await expect(firstTab).toHaveAttribute("aria-selected", "false");
 
       const leverageImg = whatsNew.locator('img[alt*="1:100 Leverage"]').first();
       await expect(leverageImg).toBeVisible();
+      await expect
+        .poll(
+          async () => await leverageImg.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0),
+          { timeout: 7000, message: "Leverage image failed to load or has 0 natural width" }
+        )
+        .toBe(true);
 
-      // Switch to third tab
+      // Switch to third tab (CK Labs)
       const thirdTab = tabs.nth(2);
       await thirdTab.click();
-      await page.waitForTimeout(400);
+      await page.waitForTimeout(350);
 
       await expect(thirdTab).toHaveAttribute("aria-selected", "true");
       const labsImg = whatsNew.locator('img[alt*="CK Labs"]').first();
       await expect(labsImg).toBeVisible();
+      await expect
+        .poll(
+          async () => await labsImg.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0),
+          { timeout: 7000, message: "Labs image failed to load or has 0 natural width" }
+        )
+        .toBe(true);
 
-      // 7. Navigation bar check
+      // Switch back to first tab
+      await firstTab.click();
+      await page.waitForTimeout(350);
+      await expect(firstTab).toHaveAttribute("aria-selected", "true");
+      await expect(bannerImg).toBeVisible();
+
+      // 7. Inspect StatsStrip Section & Verify Divider Non-Overlap
+      const statsStrip = page.locator('[data-od-id="stats-strip"]');
+      await expect(statsStrip).toBeVisible();
+      await statsStrip.scrollIntoViewIfNeeded();
+
+      // Verify Payouts stat is visible
+      const payoutsText = statsStrip.locator('text=$1,385,127.63').first();
+      await expect(payoutsText).toBeVisible();
+
+      // On desktop viewports (width >= 1024), verify Payouts does NOT overlap with the divider
+      if (screen.width >= 1024) {
+        const payoutsBox = await payoutsText.boundingBox();
+        expect(payoutsBox).not.toBeNull();
+
+        // In CSS grid, column 3 (Payouts) is followed by column 4 (100% Secure)
+        // The divider line is at the left border of column 4
+        const colDivs = statsStrip.locator('.grid > div');
+        const colCount = await colDivs.count();
+        expect(colCount).toBe(5);
+
+        const col4Box = await colDivs.nth(3).boundingBox();
+        expect(col4Box).not.toBeNull();
+
+        if (payoutsBox && col4Box) {
+          const dividerX = col4Box.x;
+          const textRightEdge = payoutsBox.x + payoutsBox.width;
+          const clearance = dividerX - textRightEdge;
+
+          expect(
+            clearance,
+            `Payouts text ($1,385,127.63) right edge (${textRightEdge.toFixed(1)}px) overlaps with divider at ${dividerX.toFixed(1)}px (clearance: ${clearance.toFixed(1)}px)`
+          ).toBeGreaterThanOrEqual(8);
+        }
+      }
+
+      // 8. Navigation bar check
       if (screen.width < 1280) {
         // Mobile / tablet: mobile menu trigger should exist
         const mobileMenu = page.locator('[data-od-id="mobile-menu-trigger"]');
@@ -168,11 +226,14 @@ test.describe("QAQC Responsiveness & Cross-Screen Inspection", () => {
         await expect(navLinks).toBeVisible();
       }
 
-      // 8. Capture targeted visual snapshot if specified
+      // 9. Capture targeted visual snapshot if specified
       if (screen.takeScreenshot) {
         const safeName = screen.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-        const filename = path.join(OUTPUT_DIR, `${safeName}-${screen.width}x${screen.height}.png`);
-        await whatsNew.screenshot({ path: filename });
+        const whatsNewFilename = path.join(OUTPUT_DIR, `whats-new-${safeName}-${screen.width}x${screen.height}.png`);
+        await whatsNew.screenshot({ path: whatsNewFilename });
+
+        const statsFilename = path.join(OUTPUT_DIR, `stats-strip-${safeName}-${screen.width}x${screen.height}.png`);
+        await statsStrip.screenshot({ path: statsFilename });
       }
     });
   }
