@@ -1377,7 +1377,7 @@
   },
   "supportWidget": {
     "launcher": "सहायता और सपोर्ट",
-    "panel": "CK Capital सपोर्ट",
+    "panel": "ckpropfirm सपोर्ट",
     "greeting": "नमस्ते! 👋",
     "greetingSub": "मैं कैसे मदद करूँ?",
     "home": "होम",
@@ -1394,7 +1394,7 @@
     "collectionsCount": "{count, plural, one {# संग्रह} other {# संग्रह}}",
     "articlesCount": "{count, plural, one {# लेख} other {# लेख}}",
     "recentTitle": "हाल का संदेश",
-    "recentFrom": "CK Capital सपोर्ट",
+    "recentFrom": "ckpropfirm सपोर्ट",
     "recentPreview": "मैं मूल्यांकन, नियम और भुगतान में मदद के लिए हूँ।",
     "liveOffer": "चालू ऑफ़र",
     "viewOffer": "ऑफ़र देखें",

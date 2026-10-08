@@ -1302,7 +1302,7 @@
   },
   "supportWidget": {
     "launcher": "Ajuda e suporte",
-    "panel": "Suporte da CK Capital",
+    "panel": "Suporte ckpropfirm",
     "greeting": "Olá! 👋",
     "greetingSub": "Como posso ajudar?",
     "home": "Início",
@@ -1319,7 +1319,7 @@
     "collectionsCount": "{count, plural, one {# coleção} other {# coleções}}",
     "articlesCount": "{count, plural, one {# artigo} other {# artigos}}",
     "recentTitle": "Mensagem recente",
-    "recentFrom": "Suporte CK Capital",
+    "recentFrom": "Suporte ckpropfirm",
     "recentPreview": "Estou aqui para ajudar com avaliações, regras e pagamentos.",
     "liveOffer": "Oferta ativa",
     "viewOffer": "Ver oferta",

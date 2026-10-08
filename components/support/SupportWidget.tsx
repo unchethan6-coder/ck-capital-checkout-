@@ -7,7 +7,7 @@ import {
   MessageSquare, Megaphone, Search, Send, Star, X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { CKEmblem } from "@/components/brand/CKLogo";
+import Image from "next/image";
 import { ALL_FAQ_KEYS, FAQ_COLLECTIONS, SUGGESTED_FAQ_KEYS, SUPPORT_URL } from "@/lib/support/faq";
 import type { NewsItem, OffersPayload } from "@/lib/offers/types";
 import { OfferDetail } from "@/components/offers/OfferDetail";
@@ -101,9 +101,9 @@ export function SupportWidget() {
           data-od-id="support-launcher"
           onClick={openWidget}
           aria-label={t("launcher")}
-          className="fixed right-4 bottom-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--ck-surface-2)] ring-1 ring-[var(--ck-line)] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.7)] transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:right-6 sm:bottom-6"
+          className="fixed right-3 bottom-3 z-40 flex h-16 w-16 items-center justify-center rounded-2xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:right-5 sm:bottom-5"
         >
-          <CKEmblem className="h-7 w-auto aspect-[524/476]" fill="gradient" />
+          <Image src="/ck-support-mark.svg" alt="" width={64} height={64} priority className="h-16 w-16" />
         </button>
       )}
 
@@ -204,11 +204,7 @@ function HomeHeader({ t, onClose }: { t: ReturnType<typeof useTranslations<"supp
   return (
     <div className="relative shrink-0 overflow-hidden px-5 pt-5 pb-8" style={{ background: "var(--ck-brand-gradient)" }}>
       <div className="flex items-start justify-between">
-        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/95 shadow-sm">
-          {/* 28px: below about this size the gaps between the emblem's bars
-              fall under a pixel and the mark reads as a solid blob. */}
-          <CKEmblem className="h-7 w-auto aspect-[524/476]" fill="gradient" />
-        </span>
+        <Image src="/ck-support-mark.svg" alt="" width={56} height={56} className="-m-1 h-14 w-14" />
         <div className="flex items-center gap-2">
           <span
             className="inline-flex items-center gap-1 rounded-md bg-white/95 px-1.5 py-0.5 text-xs font-bold text-[#1A1030]"
@@ -291,9 +287,7 @@ function HomePanel({
       <div className="rounded-xl border border-[var(--ck-line)] bg-[var(--ck-surface)] p-3">
         <p className="text-[11px] font-semibold tracking-wide text-muted-foreground uppercase">{t("recentTitle")}</p>
         <div className="mt-2 flex items-start gap-2.5">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--primary)]/15">
-            <CKEmblem className="h-4 w-auto aspect-[524/476]" fill="gradient" />
-          </span>
+          <Image src="/ck-support-mark.svg" alt="" width={40} height={40} className="-m-1 h-10 w-10 shrink-0" />
           <div className="min-w-0">
             <p className="text-sm font-semibold text-foreground">{t("recentFrom")}</p>
             <p className="truncate text-xs text-muted-foreground">{t("recentPreview")}</p>

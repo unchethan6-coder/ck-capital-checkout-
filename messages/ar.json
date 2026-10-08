@@ -1377,7 +1377,7 @@
   },
   "supportWidget": {
     "launcher": "المساعدة والدعم",
-    "panel": "دعم CK Capital",
+    "panel": "دعم ckpropfirm",
     "greeting": "مرحباً! 👋",
     "greetingSub": "كيف يمكنني المساعدة؟",
     "home": "الرئيسية",
@@ -1394,7 +1394,7 @@
     "collectionsCount": "{count, plural, zero {# مجموعات} one {مجموعة واحدة} two {مجموعتان} few {# مجموعات} many {# مجموعة} other {# مجموعة}}",
     "articlesCount": "{count, plural, zero {# مقالات} one {مقالة واحدة} two {مقالتان} few {# مقالات} many {# مقالة} other {# مقالة}}",
     "recentTitle": "رسالة حديثة",
-    "recentFrom": "دعم CK Capital",
+    "recentFrom": "دعم ckpropfirm",
     "recentPreview": "أنا هنا للمساعدة في التقييمات والقواعد والسحوبات.",
     "liveOffer": "عرض فعّال",
     "viewOffer": "عرض التفاصيل",

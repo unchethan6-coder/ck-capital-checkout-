@@ -1377,7 +1377,7 @@
   },
   "supportWidget": {
     "launcher": "Hilfe und Support",
-    "panel": "CK Capital Support",
+    "panel": "ckpropfirm Support",
     "greeting": "Hallo! 👋",
     "greetingSub": "Wie kann ich helfen?",
     "home": "Start",
@@ -1394,7 +1394,7 @@
     "collectionsCount": "{count, plural, one {# Sammlung} other {# Sammlungen}}",
     "articlesCount": "{count, plural, one {# Artikel} other {# Artikel}}",
     "recentTitle": "Letzte Nachricht",
-    "recentFrom": "CK Capital Support",
+    "recentFrom": "ckpropfirm Support",
     "recentPreview": "Ich helfe bei Evaluierungen, Regeln und Auszahlungen.",
     "liveOffer": "Aktuelles Angebot",
     "viewOffer": "Angebot ansehen",

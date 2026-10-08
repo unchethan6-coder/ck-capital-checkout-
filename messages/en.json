@@ -1296,7 +1296,7 @@
   },
   "supportWidget": {
     "launcher": "Help and support",
-    "panel": "CK Capital support",
+    "panel": "ckpropfirm support",
     "greeting": "Hello! 👋",
     "greetingSub": "How can I help?",
     "home": "Home",
@@ -1313,7 +1313,7 @@
     "collectionsCount": "{count, plural, one {# collection} other {# collections}}",
     "articlesCount": "{count, plural, one {# article} other {# articles}}",
     "recentTitle": "Recent message",
-    "recentFrom": "CK Capital Support",
+    "recentFrom": "ckpropfirm support",
     "recentPreview": "I’m here to help with CK evaluations, rules and payouts.",
     "liveOffer": "Live offer",
     "viewOffer": "View offer",
