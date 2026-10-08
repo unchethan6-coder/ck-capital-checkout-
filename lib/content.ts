@@ -194,7 +194,7 @@ export const FUNDING_PLAN_RAW_DATA: Record<string, Record<string, PlanDetails | 
     instant: { orig: "$792.80", disc: "$198.20", p1: "$0.00", p2: "$0.00", dailyLoss: "$1,500.00", maxLoss: "$2,500.00", period: "Unlimited", minDays: "NA", split1: "Flexible 50%", split2: "-", split3: "-", consistency: "NA", fundedConsistency: "20%" },
   },
   "100K": {
-    standard: { orig: "$752.80", disc: "$178.20", p1: "$10,000.00", p2: "$5,000.00", dailyLoss: "$4,000.00", maxLoss: "$8,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "50%" },
+    standard: { orig: "$712.80", disc: "$178.20", p1: "$10,000.00", p2: "$5,000.00", dailyLoss: "$4,000.00", maxLoss: "$8,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "50%" },
     "1step": { orig: "$919.20", disc: "$229.80", p1: "$10,000.00", p2: "$0.00", dailyLoss: "$3,000.00", maxLoss: "$6,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "30%" },
     pro: { orig: "$1,505.60", disc: "$376.40", p1: "$10,000.00", p2: "$5,000.00", dailyLoss: "$4,000.00", maxLoss: "$8,000.00", period: "Unlimited", minDays: "NA", split1: "80%", split2: "80%", split3: "80%", consistency: "NA", fundedConsistency: "NA" },
     instant: { orig: "$1,556.80", disc: "$389.20", p1: "$0.00", p2: "$0.00", dailyLoss: "$3,000.00", maxLoss: "$5,000.00", period: "Unlimited", minDays: "NA", split1: "Flexible 50%", split2: "-", split3: "-", consistency: "NA", fundedConsistency: "20%" },
@@ -270,7 +270,7 @@ export const CHALLENGE_PRICES: Record<ChallengeType, Record<string, ChallengePri
     "$10K":   { price: "$18.80", oldPrice: "$75.20" },
     "$25K":   { price: "$78.20", oldPrice: "$312.80" },
     "$50K":   { price: "$118.80", oldPrice: "$475.20" },
-    "$100K":  { price: "$188.20", oldPrice: "$752.80" },
+    "$100K":  { price: "$178.20", oldPrice: "$712.80" },
     "$200K":  { price: "$699.20", oldPrice: "$2,796.80" },
     "$300K":  { price: "$899.20", oldPrice: "$3,596.80" },
   },
