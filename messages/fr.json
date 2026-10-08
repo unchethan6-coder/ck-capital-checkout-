@@ -1350,5 +1350,40 @@
     "importantRules": "Règles importantes",
     "joinNow": "Rejoindre",
     "copyManual": "Appuyez ⌘C"
+  },
+  "supportWidget": {
+    "launcher": "Aide et assistance",
+    "panel": "Assistance CK Capital",
+    "greeting": "Bonjour ! 👋",
+    "greetingSub": "Comment puis-je aider ?",
+    "home": "Accueil",
+    "messages": "Messages",
+    "news": "Actualités",
+    "help": "Aide",
+    "close": "Fermer",
+    "minimise": "Réduire",
+    "back": "Retour",
+    "sendMessage": "Écrivez-nous",
+    "sendMessageSub": "Notre équipe répond 24/7",
+    "searchHelp": "Rechercher de l’aide",
+    "noResults": "Aucun article ne correspond à « {query} ».",
+    "collectionsCount": "{count, plural, one {# collection} other {# collections}}",
+    "articlesCount": "{count, plural, one {# article} other {# articles}}",
+    "recentTitle": "Message récent",
+    "recentFrom": "Assistance CK Capital",
+    "recentPreview": "Je suis là pour les évaluations, les règles et les paiements.",
+    "liveOffer": "Offre en cours",
+    "viewOffer": "Voir l’offre",
+    "noNews": "Rien de neuf pour le moment.",
+    "talkToHuman": "Parler à une personne",
+    "talkToHumanSub": "Ouvre notre centre d’aide dans un nouvel onglet",
+    "helpIntro": "Les réponses aux questions que les traders posent le plus.",
+    "collections": {
+      "payouts": "Paiements et récompenses",
+      "rules": "Règles de trading",
+      "programmes": "Évaluations et frais",
+      "platforms": "Plateformes"
+    },
+    "ratingLabel": "Note Trustpilot"
   }
 }

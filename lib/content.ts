@@ -3,7 +3,8 @@
 export const SITE_META = {
   name: "CK Capital",
   tagline: "Prop Trading Firm",
-  promoCode: "JUN70",
+  /** The one coupon code. Everything that shows a code reads this. */
+  promoCode: "10KFOR18",
   promoDiscount: "75%",
 };
 

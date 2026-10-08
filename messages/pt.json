@@ -1275,5 +1275,40 @@
     "importantRules": "Regras importantes",
     "joinNow": "Aderir agora",
     "copyManual": "Prima ⌘C"
+  },
+  "supportWidget": {
+    "launcher": "Ajuda e suporte",
+    "panel": "Suporte da CK Capital",
+    "greeting": "Olá! 👋",
+    "greetingSub": "Como posso ajudar?",
+    "home": "Início",
+    "messages": "Mensagens",
+    "news": "Novidades",
+    "help": "Ajuda",
+    "close": "Fechar",
+    "minimise": "Minimizar",
+    "back": "Voltar",
+    "sendMessage": "Envie-nos uma mensagem",
+    "sendMessageSub": "A nossa equipa responde 24/7",
+    "searchHelp": "Procurar ajuda",
+    "noResults": "Nenhum artigo corresponde a «{query}».",
+    "collectionsCount": "{count, plural, one {# coleção} other {# coleções}}",
+    "articlesCount": "{count, plural, one {# artigo} other {# artigos}}",
+    "recentTitle": "Mensagem recente",
+    "recentFrom": "Suporte CK Capital",
+    "recentPreview": "Estou aqui para ajudar com avaliações, regras e pagamentos.",
+    "liveOffer": "Oferta ativa",
+    "viewOffer": "Ver oferta",
+    "noNews": "Nada de novo por agora.",
+    "talkToHuman": "Falar com uma pessoa",
+    "talkToHumanSub": "Abre o nosso centro de ajuda noutro separador",
+    "helpIntro": "Veja as respostas às perguntas mais frequentes.",
+    "collections": {
+      "payouts": "Pagamentos e recompensas",
+      "rules": "Regras de negociação",
+      "programmes": "Avaliações e taxas",
+      "platforms": "Plataformas"
+    },
+    "ratingLabel": "Avaliação Trustpilot"
   }
 }

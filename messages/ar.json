@@ -1350,5 +1350,40 @@
     "importantRules": "قواعد مهمة",
     "joinNow": "انضم الآن",
     "copyManual": "اضغط ⌘C"
+  },
+  "supportWidget": {
+    "launcher": "المساعدة والدعم",
+    "panel": "دعم CK Capital",
+    "greeting": "مرحباً! 👋",
+    "greetingSub": "كيف يمكنني المساعدة؟",
+    "home": "الرئيسية",
+    "messages": "الرسائل",
+    "news": "الأخبار",
+    "help": "المساعدة",
+    "close": "إغلاق",
+    "minimise": "تصغير",
+    "back": "رجوع",
+    "sendMessage": "أرسل لنا رسالة",
+    "sendMessageSub": "فريقنا يرد على مدار الساعة",
+    "searchHelp": "ابحث في المساعدة",
+    "noResults": "لا توجد مقالات تطابق «{query}».",
+    "collectionsCount": "{count, plural, zero {# مجموعات} one {مجموعة واحدة} two {مجموعتان} few {# مجموعات} many {# مجموعة} other {# مجموعة}}",
+    "articlesCount": "{count, plural, zero {# مقالات} one {مقالة واحدة} two {مقالتان} few {# مقالات} many {# مقالة} other {# مقالة}}",
+    "recentTitle": "رسالة حديثة",
+    "recentFrom": "دعم CK Capital",
+    "recentPreview": "أنا هنا للمساعدة في التقييمات والقواعد والسحوبات.",
+    "liveOffer": "عرض فعّال",
+    "viewOffer": "عرض التفاصيل",
+    "noNews": "لا جديد حالياً.",
+    "talkToHuman": "التحدث مع شخص",
+    "talkToHumanSub": "يفتح مركز المساعدة في تبويب جديد",
+    "helpIntro": "تصفح إجابات أكثر الأسئلة شيوعاً بين المتداولين.",
+    "collections": {
+      "payouts": "السحوبات والمكافآت",
+      "rules": "قواعد التداول",
+      "programmes": "التقييمات والرسوم",
+      "platforms": "المنصات"
+    },
+    "ratingLabel": "تقييم Trustpilot"
   }
 }

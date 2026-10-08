@@ -1,4 +1,4 @@
-import { ACCOUNT_SIZES, FUNDING_PLAN_RAW_DATA } from "@/lib/content";
+import { ACCOUNT_SIZES, FUNDING_PLAN_RAW_DATA, SITE_META } from "@/lib/content";
 import type { NewsItem, OfferPrice } from "./types";
 
 /**
@@ -42,7 +42,7 @@ export const BUNDLED_NEWS: NewsItem[] = [
     image: null,
     startsAt: "2026-10-01T10:00:00.000Z",
     endsAt: null,
-    coupon: "10KFOR19",
+    coupon: SITE_META.promoCode,
     /**
      * CK prices the same worldwide, so both regions read the same table. The
      * per-region split stays available for when an offer really is regional;

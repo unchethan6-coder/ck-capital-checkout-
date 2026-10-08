@@ -1350,5 +1350,40 @@
     "importantRules": "Wichtige Regeln",
     "joinNow": "Jetzt starten",
     "copyManual": "⌘C drücken"
+  },
+  "supportWidget": {
+    "launcher": "Hilfe und Support",
+    "panel": "CK Capital Support",
+    "greeting": "Hallo! 👋",
+    "greetingSub": "Wie kann ich helfen?",
+    "home": "Start",
+    "messages": "Nachrichten",
+    "news": "Neuigkeiten",
+    "help": "Hilfe",
+    "close": "Schließen",
+    "minimise": "Minimieren",
+    "back": "Zurück",
+    "sendMessage": "Schreiben Sie uns",
+    "sendMessageSub": "Unser Team antwortet rund um die Uhr",
+    "searchHelp": "Hilfe durchsuchen",
+    "noResults": "Keine Artikel zu „{query}“.",
+    "collectionsCount": "{count, plural, one {# Sammlung} other {# Sammlungen}}",
+    "articlesCount": "{count, plural, one {# Artikel} other {# Artikel}}",
+    "recentTitle": "Letzte Nachricht",
+    "recentFrom": "CK Capital Support",
+    "recentPreview": "Ich helfe bei Evaluierungen, Regeln und Auszahlungen.",
+    "liveOffer": "Aktuelles Angebot",
+    "viewOffer": "Angebot ansehen",
+    "noNews": "Derzeit nichts Neues.",
+    "talkToHuman": "Mit einem Menschen sprechen",
+    "talkToHumanSub": "Öffnet unser Hilfecenter in einem neuen Tab",
+    "helpIntro": "Antworten auf die häufigsten Fragen von Tradern.",
+    "collections": {
+      "payouts": "Auszahlungen und Rewards",
+      "rules": "Handelsregeln",
+      "programmes": "Evaluierungen und Gebühren",
+      "platforms": "Plattformen"
+    },
+    "ratingLabel": "Trustpilot-Bewertung"
   }
 }

@@ -1269,5 +1269,40 @@
     "importantRules": "Important rules",
     "joinNow": "Join Now",
     "copyManual": "Press ⌘C"
+  },
+  "supportWidget": {
+    "launcher": "Help and support",
+    "panel": "CK Capital support",
+    "greeting": "Hello! 👋",
+    "greetingSub": "How can I help?",
+    "home": "Home",
+    "messages": "Messages",
+    "news": "News",
+    "help": "Help",
+    "close": "Close",
+    "minimise": "Minimise",
+    "back": "Back",
+    "sendMessage": "Send us a message",
+    "sendMessageSub": "Our team replies 24/7",
+    "searchHelp": "Search for help",
+    "noResults": "No articles match “{query}”.",
+    "collectionsCount": "{count, plural, one {# collection} other {# collections}}",
+    "articlesCount": "{count, plural, one {# article} other {# articles}}",
+    "recentTitle": "Recent message",
+    "recentFrom": "CK Capital Support",
+    "recentPreview": "I’m here to help with CK evaluations, rules and payouts.",
+    "liveOffer": "Live offer",
+    "viewOffer": "View offer",
+    "noNews": "Nothing new right now.",
+    "talkToHuman": "Talk to a person",
+    "talkToHumanSub": "Opens our help centre in a new tab",
+    "helpIntro": "Browse answers to the questions traders ask most.",
+    "collections": {
+      "payouts": "Payouts and rewards",
+      "rules": "Trading rules",
+      "programmes": "Evaluations and fees",
+      "platforms": "Platforms"
+    },
+    "ratingLabel": "Trustpilot rating"
   }
 }

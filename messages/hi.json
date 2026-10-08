@@ -1350,5 +1350,40 @@
     "importantRules": "महत्वपूर्ण नियम",
     "joinNow": "अभी जुड़ें",
     "copyManual": "⌘C दबाएँ"
+  },
+  "supportWidget": {
+    "launcher": "सहायता और सपोर्ट",
+    "panel": "CK Capital सपोर्ट",
+    "greeting": "नमस्ते! 👋",
+    "greetingSub": "मैं कैसे मदद करूँ?",
+    "home": "होम",
+    "messages": "संदेश",
+    "news": "समाचार",
+    "help": "सहायता",
+    "close": "बंद करें",
+    "minimise": "छोटा करें",
+    "back": "वापस",
+    "sendMessage": "हमें संदेश भेजें",
+    "sendMessageSub": "हमारी टीम 24/7 उत्तर देती है",
+    "searchHelp": "सहायता खोजें",
+    "noResults": "“{query}” से मेल खाता कोई लेख नहीं।",
+    "collectionsCount": "{count, plural, one {# संग्रह} other {# संग्रह}}",
+    "articlesCount": "{count, plural, one {# लेख} other {# लेख}}",
+    "recentTitle": "हाल का संदेश",
+    "recentFrom": "CK Capital सपोर्ट",
+    "recentPreview": "मैं मूल्यांकन, नियम और भुगतान में मदद के लिए हूँ।",
+    "liveOffer": "चालू ऑफ़र",
+    "viewOffer": "ऑफ़र देखें",
+    "noNews": "अभी कुछ नया नहीं।",
+    "talkToHuman": "किसी व्यक्ति से बात करें",
+    "talkToHumanSub": "हमारा हेल्प सेंटर नए टैब में खुलेगा",
+    "helpIntro": "ट्रेडर्स के सबसे आम सवालों के जवाब देखें।",
+    "collections": {
+      "payouts": "भुगतान और रिवॉर्ड",
+      "rules": "ट्रेडिंग नियम",
+      "programmes": "मूल्यांकन और शुल्क",
+      "platforms": "प्लेटफ़ॉर्म"
+    },
+    "ratingLabel": "Trustpilot रेटिंग"
   }
 }
