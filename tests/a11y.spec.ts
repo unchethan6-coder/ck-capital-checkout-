@@ -9,6 +9,7 @@ const ROUTES = [
   "/en/trading-objectives",
   "/en/payouts",
   "/en/symbols",
+  "/en/economic-calendar",
   "/en/affiliates",
   "/en/blog",
   "/en/contact",

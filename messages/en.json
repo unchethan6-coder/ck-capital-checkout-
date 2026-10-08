@@ -67,7 +67,9 @@
     "calculatorsTitle": "Trading Calculators",
     "calculatorsDesc": "Margin, P/L, lot size and swap, checked against your CK limits",
     "symbolSpecs": "Symbol Specifications",
-    "symbolSpecsDesc": "Live spreads, contract sizes & trading conditions"
+    "symbolSpecsDesc": "Live spreads, contract sizes & trading conditions",
+    "economicCalendar": "Economic Calendar",
+    "economicCalendarDesc": "Live market-moving releases in your timezone"
   },
   "hero": {
     "features": [
@@ -1193,5 +1195,50 @@
     "rowClosedTitle": "Market closed — showing the last traded price",
     "rowNoFeed": "No feed",
     "rowNoFeedTitle": "Feed unavailable — showing the last known price"
+  },
+  "calendar": {
+    "heroTitle": "Economic Calendar",
+    "heroSubtitle": "Every scheduled release that moves the markets you trade, in your own timezone. Filter by currency, day and impact so you know what is coming before you open a position.",
+    "all": "All",
+    "currencyFilter": "Filter by currency",
+    "timezoneLabel": "Timezone",
+    "timezoneSearch": "Search your timezone",
+    "days": "Days",
+    "impact": "Impact",
+    "show": "Show",
+    "upcomingOnly": "Upcoming only",
+    "source": "Source:",
+    "updatedAt": "Updated {time}",
+    "feedStale": "Showing last known data",
+    "event": "Event",
+    "currency": "Currency",
+    "date": "Date",
+    "forecast": "Forecast",
+    "previous": "Previous",
+    "tableCaption": "Scheduled economic releases for this week, with forecast and previous values.",
+    "noEvents": "No events match these filters.",
+    "pagination": "Calendar pages",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "newsPolicy": "CK Capital allows news trading — there is no restricted window around these releases. This calendar is for planning and risk awareness, not a list of blocked times.",
+    "whatIsTitle": "What is the CK Capital Economic Calendar?",
+    "whatIsBody": "An economic calendar is a schedule of the announcements, data releases and central bank events that move global markets. It shows when each release is due, which currency it affects, how much impact it usually carries, and what analysts expect compared with the previous reading.",
+    "whyTitle": "Why does it matter to a funded trader?",
+    "whyBody": "Volatility around a major release can widen spreads and move price further than usual in seconds. Knowing what is scheduled lets you size positions deliberately, avoid being caught mid-trade by a surprise, and plan entries around the releases that matter to your pairs.",
+    "weekday": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+    "impactLevel": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "holiday": "Holiday"
+    }
   }
 }

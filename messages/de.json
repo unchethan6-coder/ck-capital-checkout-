@@ -68,7 +68,9 @@
     "calculatorsTitle": "Trading-Rechner",
     "calculatorsDesc": "Margin, P/L, Lotgröße und Swap, geprüft an Ihren CK-Limits",
     "symbolSpecs": "Symbol-Spezifikationen",
-    "symbolSpecsDesc": "Live-Spreads, Kontraktgrößen & Handelsbedingungen"
+    "symbolSpecsDesc": "Live-Spreads, Kontraktgrößen & Handelsbedingungen",
+    "economicCalendar": "Wirtschaftskalender",
+    "economicCalendarDesc": "Marktbewegende Termine in Ihrer Zeitzone"
   },
   "hero": {
     "features": [
@@ -1274,5 +1276,50 @@
     "rowClosedTitle": "Markt geschlossen — letzter gehandelter Kurs",
     "rowNoFeed": "Kein Feed",
     "rowNoFeedTitle": "Feed nicht verfügbar — letzter bekannter Kurs"
+  },
+  "calendar": {
+    "heroTitle": "Wirtschaftskalender",
+    "heroSubtitle": "Alle geplanten Veröffentlichungen, die Ihre Märkte bewegen — in Ihrer eigenen Zeitzone. Filtern Sie nach Währung, Tag und Wirkung, damit Sie wissen, was ansteht, bevor Sie eine Position eröffnen.",
+    "all": "Alle",
+    "currencyFilter": "Nach Währung filtern",
+    "timezoneLabel": "Zeitzone",
+    "timezoneSearch": "Zeitzone suchen",
+    "days": "Tage",
+    "impact": "Wirkung",
+    "show": "Anzeigen",
+    "upcomingOnly": "Nur bevorstehende",
+    "source": "Quelle:",
+    "updatedAt": "Aktualisiert um {time}",
+    "feedStale": "Letzte bekannte Daten",
+    "event": "Ereignis",
+    "currency": "Währung",
+    "date": "Datum",
+    "forecast": "Prognose",
+    "previous": "Vorher",
+    "tableCaption": "Geplante Wirtschaftsdaten dieser Woche, mit Prognose und vorherigem Wert.",
+    "noEvents": "Keine Ereignisse passen zu diesen Filtern.",
+    "pagination": "Kalenderseiten",
+    "previousPage": "Vorherige Seite",
+    "nextPage": "Nächste Seite",
+    "newsPolicy": "CK Capital erlaubt News-Trading — es gibt kein gesperrtes Zeitfenster rund um diese Veröffentlichungen. Dieser Kalender dient der Planung und dem Risikobewusstsein, er ist keine Liste gesperrter Zeiten.",
+    "whatIsTitle": "Was ist der Wirtschaftskalender von CK Capital?",
+    "whatIsBody": "Ein Wirtschaftskalender ist der Terminplan der Ankündigungen, Konjunkturdaten und Notenbankereignisse, die die globalen Märkte bewegen. Er zeigt, wann eine Veröffentlichung ansteht, welche Währung sie betrifft, wie stark sie üblicherweise wirkt und was Analysten im Vergleich zum Vorwert erwarten.",
+    "whyTitle": "Warum ist das für finanzierte Trader wichtig?",
+    "whyBody": "Die Volatilität rund um wichtige Veröffentlichungen kann Spreads ausweiten und den Kurs in Sekunden weiter bewegen als gewohnt. Wer den Terminplan kennt, kann Positionsgrößen bewusst wählen, nicht mitten im Trade überrascht werden und Einstiege um die relevanten Daten herum planen.",
+    "weekday": {
+      "sunday": "Sonntag",
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag"
+    },
+    "impactLevel": {
+      "high": "Hoch",
+      "medium": "Mittel",
+      "low": "Niedrig",
+      "holiday": "Feiertag"
+    }
   }
 }

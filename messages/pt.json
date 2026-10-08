@@ -68,7 +68,9 @@
     "calculatorsTitle": "Calculadoras de trading",
     "calculatorsDesc": "Margem, P/L, tamanho de lote e swap, conferidos com os seus limites CK",
     "symbolSpecs": "Especificações de Símbolos",
-    "symbolSpecsDesc": "Spreads ao vivo, tamanhos de contrato e condições"
+    "symbolSpecsDesc": "Spreads ao vivo, tamanhos de contrato e condições",
+    "economicCalendar": "Calendário Económico",
+    "economicCalendarDesc": "Divulgações que movem o mercado no seu fuso horário"
   },
   "hero": {
     "features": [
@@ -1199,5 +1201,50 @@
     "rowClosedTitle": "Mercado fechado — a mostrar o último preço negociado",
     "rowNoFeed": "Sem dados",
     "rowNoFeedTitle": "Feed indisponível — a mostrar o último preço conhecido"
+  },
+  "calendar": {
+    "heroTitle": "Calendário Económico",
+    "heroSubtitle": "Todas as divulgações agendadas que movem os mercados que negoceia, no seu fuso horário. Filtre por moeda, dia e impacto para saber o que aí vem antes de abrir uma posição.",
+    "all": "Todas",
+    "currencyFilter": "Filtrar por moeda",
+    "timezoneLabel": "Fuso horário",
+    "timezoneSearch": "Pesquise o seu fuso horário",
+    "days": "Dias",
+    "impact": "Impacto",
+    "show": "Mostrar",
+    "upcomingOnly": "Apenas próximos",
+    "source": "Fonte:",
+    "updatedAt": "Atualizado às {time}",
+    "feedStale": "A mostrar os últimos dados conhecidos",
+    "event": "Evento",
+    "currency": "Moeda",
+    "date": "Data",
+    "forecast": "Previsão",
+    "previous": "Anterior",
+    "tableCaption": "Divulgações económicas agendadas para esta semana, com previsão e valor anterior.",
+    "noEvents": "Nenhum evento corresponde a estes filtros.",
+    "pagination": "Páginas do calendário",
+    "previousPage": "Página anterior",
+    "nextPage": "Página seguinte",
+    "newsPolicy": "A CK Capital permite negociar notícias — não existe janela restrita em torno destas divulgações. Este calendário serve para planear e gerir risco, não é uma lista de horários bloqueados.",
+    "whatIsTitle": "O que é o Calendário Económico da CK Capital?",
+    "whatIsBody": "Um calendário económico é a agenda dos anúncios, dados macroeconómicos e eventos de bancos centrais que movem os mercados globais. Mostra quando sai cada dado, que moeda afeta, que impacto costuma ter e o que os analistas esperam face à leitura anterior.",
+    "whyTitle": "Porque é importante para um trader financiado?",
+    "whyBody": "A volatilidade em torno de uma divulgação importante pode alargar spreads e mover o preço mais do que o habitual em segundos. Saber o que está agendado permite dimensionar posições de forma deliberada, evitar ser apanhado a meio de uma operação e planear entradas em torno dos dados que afetam os seus pares.",
+    "weekday": {
+      "sunday": "Domingo",
+      "monday": "Segunda",
+      "tuesday": "Terça",
+      "wednesday": "Quarta",
+      "thursday": "Quinta",
+      "friday": "Sexta",
+      "saturday": "Sábado"
+    },
+    "impactLevel": {
+      "high": "Alto",
+      "medium": "Médio",
+      "low": "Baixo",
+      "holiday": "Feriado"
+    }
   }
 }

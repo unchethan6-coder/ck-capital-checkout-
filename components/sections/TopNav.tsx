@@ -23,6 +23,7 @@ import {
   TrendingUp,
   Calculator,
   CandlestickChart,
+  CalendarClock,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -112,6 +113,12 @@ export function TopNav() {
           titleKey: "symbolSpecs",
           descKey: "symbolSpecsDesc",
           href: "/symbols",
+        },
+        {
+          icon: CalendarClock,
+          titleKey: "economicCalendar",
+          descKey: "economicCalendarDesc",
+          href: "/economic-calendar",
         },
       ],
     },
@@ -813,6 +820,8 @@ export function TopNav() {
                             ? "symbolSpecs"
                             : item.titleKey === "calculatorsTitle"
                             ? "calculators"
+                            : item.titleKey === "economicCalendar"
+                            ? "economicCalendar"
                             : "rulesFaq";
 
                         return (

@@ -14,6 +14,7 @@ const routes = [
   { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
   { path: "/payouts", priority: 0.7, changeFrequency: "monthly" },
   { path: "/symbols", priority: 0.8, changeFrequency: "daily" },
+  { path: "/economic-calendar", priority: 0.8, changeFrequency: "daily" },
   { path: "/contact", priority: 0.5, changeFrequency: "yearly" },
   { path: "/privacy-policy", priority: 0.2, changeFrequency: "yearly" },
   { path: "/terms-conditions", priority: 0.2, changeFrequency: "yearly" },

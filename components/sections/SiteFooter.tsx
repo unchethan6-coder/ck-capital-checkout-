@@ -89,6 +89,7 @@ export function SiteFooter() {
         { label: t("payouts"), href: "/payouts" },
         { label: t("calculators"), href: "/calculators" },
         { label: tNav("symbolSpecs"), href: "/symbols" },
+        { label: tNav("economicCalendar"), href: "/economic-calendar" },
       ],
     },
     {

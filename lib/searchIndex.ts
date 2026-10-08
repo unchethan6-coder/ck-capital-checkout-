@@ -50,6 +50,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     badge: "Rules",
   },
   {
+    id: "page-economic-calendar",
+    category: "pages",
+    title: "Economic Calendar",
+    description: "Scheduled market-moving releases with forecast and previous values, in your timezone.",
+    keywords: ["economic calendar", "news", "events", "nfp", "cpi", "fomc", "interest rate", "forecast", "impact", "releases", "data"],
+    href: "/economic-calendar",
+    iconName: "Activity",
+    badge: "Live",
+  },
+  {
     id: "page-symbols",
     category: "pages",
     title: "Symbol Specifications",
