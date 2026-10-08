@@ -1,7 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/shared/Container";
 import { EconomicCalendarClient, NewsPolicyNote } from "@/components/calendar/EconomicCalendarClient";
-import { getCalendar } from "@/lib/calendar/feed";
+import { getCalendar, initialPageFor } from "@/lib/calendar/feed";
+import { CALENDAR_PAGE_SIZE } from "@/lib/calendar/types";
 
 /**
  * Economic calendar.
@@ -16,6 +17,7 @@ export const revalidate = 300;
 export default async function EconomicCalendarPage() {
   const t = await getTranslations("calendar");
   const initial = await getCalendar();
+  const initialPage = initialPageFor(initial.events, CALENDAR_PAGE_SIZE);
 
   return (
     <main className="min-h-screen bg-[var(--ck-surface)] pb-24">
@@ -37,7 +39,7 @@ export default async function EconomicCalendarPage() {
       </section>
 
       <Container className="relative -mt-28 sm:-mt-32">
-        <EconomicCalendarClient initial={initial} />
+        <EconomicCalendarClient initial={initial} initialPage={initialPage} />
         <NewsPolicyNote text={t("newsPolicy")} />
 
         <div className="mx-auto mt-16 grid max-w-4xl gap-10 sm:grid-cols-2">

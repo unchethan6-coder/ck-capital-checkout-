@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { ChevronLeft, ChevronRight, Info, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CountryFlag } from "@/components/shared/CountryFlag";
+import { CALENDAR_PAGE_SIZE } from "@/lib/calendar/types";
 import type { CalendarPayload, EventImpact } from "@/lib/calendar/types";
 import { CURRENCIES, CURRENCY_FLAG, IMPACTS, IMPACT_STYLE, WEEKDAYS } from "./calendarMeta";
 import { detectTimeZone, formatEventTime, weekdayIn } from "./timezones";
@@ -20,14 +21,16 @@ import { TimezoneSelect } from "./TimezoneSelect";
 
 /** Events are published gradually, so a slow poll is enough. */
 const REFRESH_MS = 60_000;
-const PAGE_SIZE = 12;
+const PAGE_SIZE = CALENDAR_PAGE_SIZE;
 const TZ_KEY = "ck:calendar:timezone";
 
 interface Props {
   initial: CalendarPayload;
+  /** Page the server already rendered, so hydration does not jump. */
+  initialPage: number;
 }
 
-export function EconomicCalendarClient({ initial }: Props) {
+export function EconomicCalendarClient({ initial, initialPage }: Props) {
   const t = useTranslations("calendar");
   const locale = useLocale();
 
@@ -38,7 +41,7 @@ export function EconomicCalendarClient({ initial }: Props) {
   const [days, setDays] = useState<number[]>([]);
   const [impacts, setImpacts] = useState<EventImpact[]>([]);
   const [upcomingOnly, setUpcomingOnly] = useState(false);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(initialPage);
   /**
    * True once the reader has chosen a page themselves. Until then the calendar
    * follows the clock: the week runs from Sunday, so by midweek the first page

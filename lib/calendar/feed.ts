@@ -116,3 +116,17 @@ export function getCalendar(): Promise<CalendarPayload> {
   });
   return store.inflight;
 }
+
+/**
+ * Which page the calendar should open on.
+ *
+ * Decided here rather than in an effect so the server already renders the
+ * right page: computing it after hydration meant the first paint showed the
+ * start of the week — several days in the past by midweek — and then jumped.
+ */
+export function initialPageFor(events: CalendarEvent[], pageSize: number): number {
+  const now = Date.now();
+  const next = events.findIndex((e) => Date.parse(e.date) >= now);
+  if (next === -1) return Math.max(1, Math.ceil(events.length / pageSize));
+  return Math.floor(next / pageSize) + 1;
+}

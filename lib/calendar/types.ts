@@ -27,3 +27,6 @@ export interface CalendarPayload {
   /** False when the upstream failed and these are the last known events. */
   live: boolean;
 }
+
+/** Rows per page. Shared so the server and the client agree on the first page. */
+export const CALENDAR_PAGE_SIZE = 12;
