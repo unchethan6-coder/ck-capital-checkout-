@@ -129,7 +129,7 @@ export default async function EvaluationPage() {
               Ready to begin your evaluation?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#4B5563]">
-              Select your simulated account size, pass the evaluation targets, and trade with up to $1,200,000 in simulated capital.
+              Select your simulated account size, pass the evaluation targets, and trade with up to $750,000 in simulated capital.
             </p>
             <div className="mt-8">
               <a href="#start-challenge">

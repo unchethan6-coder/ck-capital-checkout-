@@ -576,7 +576,7 @@ export function ChallengeComparison({
                     </div>
                     <div className="flex items-center justify-between py-1 text-xs text-white/70">
                       <span>Scaling Ceiling</span>
-                      <span className="font-bold text-white">Up to $1,200,000</span>
+                      <span className="font-bold text-white">Up to $750,000</span>
                     </div>
                   </div>
 

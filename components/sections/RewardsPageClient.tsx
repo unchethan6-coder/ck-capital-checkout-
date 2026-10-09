@@ -249,7 +249,7 @@ export function RewardsPageClient({
 
   const highlights = useMemo(() => {
     return [
-      { value: "$1.2M+", label: "Total Payouts", note: t("verifiedText") },
+      { value: "$750K+", label: "Total Payouts", note: t("verifiedText") },
       { value: "20K+", label: "Active Traders", note: t("verifiedText") },
       { value: "Worldwide Traders", label: "Global Reach", note: t("verifiedText") },
       { value: summary?.maxRewardPercent == null ? "80%" : `UP TO ${summary.maxRewardPercent}%`, label: t("simulatedRewards"), note: t("subjectToTerms") },
@@ -364,7 +364,7 @@ export function RewardsPageClient({
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{[
             ["80%", "Simulated Profit Rewards", "Keep up to the applicable percentage of eligible simulated profits according to your CK Capital account terms."],
             ["FLEXIBLE", "Reward Cycles", "Eligible Qualified Analysts can request rewards according to the payout conditions applicable to their selected account."],
-            ["UP TO $1.2M", "Total Simulated Account Allocation", "Progress within the CK Capital programme and access larger simulated account allocations subject to applicable programme rules."],
+            ["UP TO $750K", "Total Simulated Account Allocation", "Progress within the CK Capital programme and access larger simulated account allocations subject to applicable programme rules."],
             ["NEWS TRADING", "More Trading Flexibility", "Trade around news events where permitted under the rules of your selected account."],
           ].map(([value, title, copy]) => (
             <div key={title} className="min-h-56 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:border-gray-300 hover:shadow-md transition-all">

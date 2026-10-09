@@ -72,7 +72,7 @@ export function InstantVsChallengeComparison() {
     {
       label: "Capital Scale Potential",
       instantValue: "$200K Direct",
-      challengeValue: "$1.2M Pool",
+      challengeValue: "$750K Pool",
       challengeBadge: "Max Growth",
     },
   ];
@@ -233,7 +233,7 @@ export function InstantVsChallengeComparison() {
                     </span>
                   </div>
                   <p className="mt-1.5 text-xs text-[#4B5563]">
-                    Structured phases for maximum capital growth up to $1.2M.
+                    Structured phases for maximum capital growth up to $750K.
                   </p>
                 </div>
                 <div className="mt-3.5 pt-3 border-t border-gray-200 flex items-center justify-between gap-3">

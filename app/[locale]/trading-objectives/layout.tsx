@@ -12,7 +12,7 @@ export async function generateMetadata({
   const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
   return pageSeo({
     title: "Trading Objectives & Rules",
-    description: "Compare 1-Step, 2-Step, and Instant Funding trading objectives, profit targets, drawdown limits, and rules across account sizes up to $1.2M.",
+    description: "Compare 1-Step, 2-Step, and Instant Funding trading objectives, profit targets, drawdown limits, and rules across account sizes up to $750K.",
     path: "/trading-objectives",
     locale: resolved,
   });

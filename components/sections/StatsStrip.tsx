@@ -10,7 +10,7 @@ export function StatsStrip() {
   const stats = [
     { art: "/images/stats/traders.png", value: "20,000+", label: t("activeTraders") },
     { art: "/images/stats/worldwide.png", value: t("worldwide"), label: t("globalReach") },
-    { art: "/images/stats/payouts.png", value: "$1.2M+", label: t("payoutsTotal") },
+    { art: "/images/stats/payouts.png", value: "$750K+", label: t("payoutsTotal") },
     { art: "/images/stats/secure.png", value: "100%", label: t("secureTransparent") },
     { art: "/images/stats/support.png", value: "24/7", label: t("traderSupport") },
   ];

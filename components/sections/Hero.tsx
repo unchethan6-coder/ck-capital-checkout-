@@ -114,7 +114,7 @@ export function Hero() {
                 </div>
                 <div className="text-left leading-tight">
                   <span className="block text-[11px] sm:text-[12px] font-extrabold text-white">
-                    Scale to $1.2M
+                    Scale to $750K
                   </span>
                   <span className="text-[9.5px] sm:text-[10px] font-medium text-[#999BA3]">
                     Simulated Allocation

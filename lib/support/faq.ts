@@ -27,7 +27,8 @@ export const FAQ_COLLECTIONS: FaqCollection[] = [
     titleKey: "payouts",
     entries: [
       { key: "payoutTime" }, { key: "profitSplit" }, { key: "minProfit" }, { key: "buffer" },
-      { key: "payoutCaps" }, { key: "pendingPayout" }, { key: "instantPayouts" }, { key: "cryptoFunding" },
+      { key: "payoutCaps" }, { key: "pendingPayout" }, { key: "maxAllocation" },
+      { key: "instantPayouts" }, { key: "cryptoFunding" },
     ],
   },
   {
@@ -35,13 +36,17 @@ export const FAQ_COLLECTIONS: FaqCollection[] = [
     titleKey: "rules",
     entries: [
       { key: "drawdown" }, { key: "trailingDrawdown" }, { key: "consistency" }, { key: "consistencyScore" },
-      { key: "newsTrading" }, { key: "expertAdvisors" },
+      { key: "newsTrading" }, { key: "expertAdvisors" }, { key: "lotSize" }, { key: "copyTrading" },
+      { key: "inactivity" },
     ],
   },
   {
     id: "programmes",
     titleKey: "programmes",
-    entries: [{ key: "timeLimit" }, { key: "refundPolicy" }],
+    entries: [
+      { key: "timeLimit" }, { key: "refundPolicy" }, { key: "topUpReset" },
+      { key: "phase2Reset" }, { key: "fundedReset" }, { key: "countries" },
+    ],
   },
   {
     id: "platforms",
