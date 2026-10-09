@@ -225,7 +225,7 @@ function BrowserWindow({
           {/* Centered URL pill */}
           <div className="mx-1.5 flex h-6 sm:h-6.5 flex-1 max-w-[240px] sm:max-w-[300px] items-center justify-center gap-1 sm:gap-1.5 rounded-md border border-gray-200 bg-white px-2 sm:px-2.5 text-[9.5px] sm:text-[11px] font-mono tracking-tight text-gray-500 min-w-0 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
             <Lock size={9} className="shrink-0 text-gray-400" />
-            <span className="whitespace-nowrap truncate">app.ckcapital.co.uk/rewards</span>
+            <span className="whitespace-nowrap truncate">my.ckpropfirm.com/rewards</span>
           </div>
 
           {/* Symmetrical right spacer */}

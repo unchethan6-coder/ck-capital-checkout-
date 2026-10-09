@@ -4,6 +4,7 @@ import { ArrowRight, RefreshCw } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import { GoldButton } from "@/components/shared/GoldButton";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 import { ChallengeComparison } from "@/components/sections/ChallengeComparison";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import EvaluationIntro from "@/components/evaluation/EvaluationIntro";
@@ -72,7 +73,7 @@ export default async function EvaluationPage() {
                 </div>
               </div>
               <a
-                href="https://app.ckcapital.co.uk/signup"
+                href={PORTAL_SIGNUP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0"

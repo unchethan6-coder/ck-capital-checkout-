@@ -103,6 +103,25 @@ function countryToLocale(country: string | null | undefined): string {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Intercept portal and auth paths, redirecting to my.ckpropfirm.com
+  const cleanPath = pathname
+    .replace(/^\/(?:en|es|pt|ar|de|fr|hi)(?=\/|$)/, "")
+    .replace(/^\//, "");
+  const authRedirects: Record<string, string> = {
+    portal: "https://my.ckpropfirm.com",
+    dashboard: "https://my.ckpropfirm.com",
+    signin: "https://my.ckpropfirm.com/auth/signin",
+    login: "https://my.ckpropfirm.com/auth/signin",
+    signup: "https://my.ckpropfirm.com/auth/signup",
+    register: "https://my.ckpropfirm.com/auth/signup",
+  };
+
+  if (cleanPath in authRedirects) {
+    const dest = new URL(authRedirects[cleanPath]);
+    dest.search = request.nextUrl.search;
+    return NextResponse.redirect(dest, 307);
+  }
+
   // Prefixed paths (explicit user intent) go straight to next-intl.
   const hasPrefix = locales.some(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)

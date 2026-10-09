@@ -6,6 +6,7 @@ import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
 import { Container } from '@/components/shared/Container'
 import { SectionReveal } from '@/components/shared/SectionReveal'
 import { GoldButton } from '@/components/shared/GoldButton'
+import { PORTAL_SIGNUP_URL } from '@/lib/portal'
 import {
   Accordion,
   AccordionContent,
@@ -180,7 +181,7 @@ export function FaqContent() {
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href="https://app.ckcapital.co.uk/signup"
+                  href={PORTAL_SIGNUP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

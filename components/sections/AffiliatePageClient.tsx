@@ -16,6 +16,7 @@ import { GoldButton } from "@/components/shared/GoldButton";
 import { AffiliateNetworkVisual } from "@/components/shared/AffiliateNetworkVisual";
 import { Aurora } from "@/components/fx/Aurora";
 import { SectionReveal } from "@/components/shared/SectionReveal";
+import { PORTAL_SIGNIN_URL } from "@/lib/portal";
 
 const TIERS = [
   { name: "STARTER", rate: null, requirement: "Current starter requirements pending publication." },
@@ -256,7 +257,7 @@ export function AffiliatePageClient() {
             </div>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
               <a href="/contact"><GoldButton size="lg">{t("becomeAffiliate")} <ArrowRight size={16} /></GoldButton></a>
-              <a href="https://app.ckcapital.co.uk/signin" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-2.5 text-sm font-semibold text-[#0A0A0C] shadow-sm transition-all hover:bg-gray-50">{t("login")} <ArrowRight size={14} /></a>
+              <a href={PORTAL_SIGNIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-2.5 text-sm font-semibold text-[#0A0A0C] shadow-sm transition-all hover:bg-gray-50">{t("login")} <ArrowRight size={14} /></a>
             </div>
           </SectionReveal>
         </Container>

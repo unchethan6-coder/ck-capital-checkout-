@@ -23,6 +23,7 @@ import { SectionReveal } from '@/components/shared/SectionReveal'
 import { GoldButton } from '@/components/shared/GoldButton'
 import { Aurora } from '@/components/fx/Aurora'
 import { Link } from '@/i18n/navigation'
+import { PORTAL_SIGNUP_URL } from '@/lib/portal'
 import { fadeUp, stagger, EASE } from '@/components/fx/reveal'
 
 const heroFadeDown = {
@@ -197,7 +198,7 @@ export default function AboutPage() {
                   className="mt-9 flex flex-wrap items-center gap-4 sm:gap-5"
                 >
                   <a
-                    href="https://app.ckcapital.co.uk/signup"
+                    href={PORTAL_SIGNUP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-od-id="about-hero-primary"
@@ -474,7 +475,7 @@ export default function AboutPage() {
               </p>
               <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="https://app.ckcapital.co.uk/signup"
+                  href={PORTAL_SIGNUP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-od-id="about-cta-primary"

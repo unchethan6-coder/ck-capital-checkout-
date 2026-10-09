@@ -15,6 +15,7 @@ import { Container } from "@/components/shared/Container";
 import { GoldButton } from "@/components/shared/GoldButton";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import { cn } from "@/lib/utils";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 interface CoreMetric {
   label: string;
@@ -203,7 +204,7 @@ export function InstantVsChallengeComparison() {
                     $5K – $200K Direct
                   </span>
                   <a
-                    href="https://app.ckcapital.co.uk/signup"
+                    href={PORTAL_SIGNUP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

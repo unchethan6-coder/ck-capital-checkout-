@@ -23,6 +23,7 @@ import { GoldButton } from "@/components/shared/GoldButton";
 import { ObjectivesHUDVisual } from "@/components/shared/ObjectivesHUDVisual";
 import { Aurora } from "@/components/fx/Aurora";
 import { SectionReveal } from "@/components/shared/SectionReveal";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 import {
   Accordion,
   AccordionContent,
@@ -792,7 +793,7 @@ function CompareModels({
               {/* Bottom CTA */}
               <div className="mt-8 pt-4 border-t border-gray-100">
                 <a
-                  href={`https://app.ckcapital.co.uk/signup`}
+                  href={PORTAL_SIGNUP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
@@ -1519,7 +1520,7 @@ export function TradingObjectivesPageClient({
                   {/* Direct Buy CTA Button */}
                   <div className="mt-6 space-y-3">
                     <a
-                      href={`https://app.ckcapital.co.uk/signup`}
+                      href={PORTAL_SIGNUP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="brand-gradient-btn group flex w-full items-center justify-center gap-2 rounded-xl py-4 px-4 text-sm font-bold text-[#1A1030] shadow-md hover:opacity-95 transition-all duration-200"
@@ -1729,7 +1730,7 @@ export function TradingObjectivesPageClient({
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href={`https://app.ckcapital.co.uk/signup`}
+                href={PORTAL_SIGNUP_URL}
                 data-od-id="objectives-final-cta-primary"
               >
                 <GoldButton size="lg" className="px-8 shadow-md">

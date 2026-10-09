@@ -35,6 +35,70 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
+  async redirects() {
+    return [
+      {
+        source: "/portal",
+        destination: "https://my.ckpropfirm.com",
+        permanent: false,
+      },
+      {
+        source: "/dashboard",
+        destination: "https://my.ckpropfirm.com",
+        permanent: false,
+      },
+      {
+        source: "/signin",
+        destination: "https://my.ckpropfirm.com/auth/signin",
+        permanent: false,
+      },
+      {
+        source: "/login",
+        destination: "https://my.ckpropfirm.com/auth/signin",
+        permanent: false,
+      },
+      {
+        source: "/signup",
+        destination: "https://my.ckpropfirm.com/auth/signup",
+        permanent: false,
+      },
+      {
+        source: "/register",
+        destination: "https://my.ckpropfirm.com/auth/signup",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|es|pt|ar|de|fr|hi)/portal",
+        destination: "https://my.ckpropfirm.com",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|es|pt|ar|de|fr|hi)/dashboard",
+        destination: "https://my.ckpropfirm.com",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|es|pt|ar|de|fr|hi)/signin",
+        destination: "https://my.ckpropfirm.com/auth/signin",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|es|pt|ar|de|fr|hi)/login",
+        destination: "https://my.ckpropfirm.com/auth/signin",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|es|pt|ar|de|fr|hi)/signup",
+        destination: "https://my.ckpropfirm.com/auth/signup",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|es|pt|ar|de|fr|hi)/register",
+        destination: "https://my.ckpropfirm.com/auth/signup",
+        permanent: false,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

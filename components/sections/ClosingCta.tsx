@@ -6,6 +6,7 @@ import { ArrowRight, Crown, Sparkles, Target, TrendingUp, X, Zap } from "lucide-
 import { MagneticWrapper } from "@/components/fx/MagneticWrapper";
 import { Container } from "@/components/shared/Container";
 import { Link } from "@/i18n/navigation";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 function fireConfetti() {
   if (typeof document === "undefined") return;
@@ -64,7 +65,7 @@ export function ClosingCta() {
 
   const handlePrimary = () => {
     fireConfetti();
-    setTimeout(() => window.open("https://app.ckcapital.co.uk/signup", "_blank", "noopener,noreferrer"), 320);
+    setTimeout(() => window.open(PORTAL_SIGNUP_URL, "_blank", "noopener,noreferrer"), 320);
   };
 
   // 3D tilt for card

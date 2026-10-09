@@ -49,7 +49,7 @@ export function AffiliateNetworkVisual({
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
             <div className="ml-3 hidden sm:flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-mono text-[#6B7280]">
               <Lock size={10} className="text-[#A98BFF]" />
-              <span>app.ckcapital.co.uk/partners/vip-portal</span>
+              <span>my.ckpropfirm.com/partners/vip-portal</span>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ export function AffiliateNetworkVisual({
                 <div className="flex flex-1 items-center gap-2 px-2 overflow-hidden">
                   <Share2 size={14} className="text-[#A98BFF] shrink-0" />
                   <span className="font-mono text-xs text-[#0A0A0C] truncate">
-                    https://ckcapital.co.uk/ref/VIP-PRO
+                    https://ckpropfirm.com/ref/VIP-PRO
                   </span>
                 </div>
                 <button

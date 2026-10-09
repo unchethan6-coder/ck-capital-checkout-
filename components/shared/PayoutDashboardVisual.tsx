@@ -16,6 +16,7 @@ import {
   Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 interface PayoutDashboardVisualProps {
   className?: string;
@@ -157,7 +158,7 @@ export function PayoutDashboardVisual({
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
             <div className="ml-3 hidden sm:flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-mono text-[#6B7280]">
               <Lock size={10} className="text-[#A98BFF]" />
-              <span>app.ckcapital.co.uk/dashboard/payouts</span>
+              <span>my.ckpropfirm.com/dashboard/payouts</span>
             </div>
           </div>
 
@@ -344,7 +345,7 @@ export function PayoutDashboardVisual({
                 {/* Submit CTA Button Mock */}
                 <div className="relative pt-1">
                   <a
-                    href="https://app.ckcapital.co.uk/signup"
+                    href={PORTAL_SIGNUP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-brand-standard group relative flex w-full items-center justify-center gap-2 py-3.5 text-xs sm:text-sm font-bold"

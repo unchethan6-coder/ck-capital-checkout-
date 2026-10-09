@@ -18,6 +18,7 @@ import {
 import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
 import { WhatsNewBanner } from "@/components/sections/WhatsNewBanner";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 const accountSizes = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
@@ -211,7 +212,7 @@ export function ChallengeComparison({
       currency: selectedCurrency,
       qty: String(quantity),
     });
-    return `https://app.ckcapital.co.uk/signup?${params.toString()}`;
+    return `${PORTAL_SIGNUP_URL}?${params.toString()}`;
   }, [selectedType, selectedSize, selectedCurrency, quantity]);
 
   const signupUrlForSize = (size: string) => {
@@ -220,7 +221,7 @@ export function ChallengeComparison({
       size,
       currency: selectedCurrency,
     });
-    return `https://app.ckcapital.co.uk/signup?${params.toString()}`;
+    return `${PORTAL_SIGNUP_URL}?${params.toString()}`;
   };
 
   const comparisonRows: Array<{

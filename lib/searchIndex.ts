@@ -1,3 +1,5 @@
+import { PORTAL_SIGNIN_URL } from "./portal";
+
 export type SearchCategory =
   | "pages"
   | "challenges"
@@ -421,7 +423,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Sign In to Client Portal",
     description: "Access your active trading dashboard, metrics, and reward requests.",
     keywords: ["sign in", "login", "portal", "dashboard", "account", "access"],
-    href: "https://app.ckcapital.co.uk/signin",
+    href: PORTAL_SIGNIN_URL,
     external: true,
     iconName: "LogIn",
     badge: "Portal",

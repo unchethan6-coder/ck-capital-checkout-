@@ -7,6 +7,7 @@ import { Container } from '@/components/shared/Container'
 import { GoldButton } from '@/components/shared/GoldButton'
 import { Aurora } from '@/components/fx/Aurora'
 import { SectionReveal } from '@/components/shared/SectionReveal'
+import { PORTAL_SIGNUP_URL } from '@/lib/portal'
 import { InstantFundingVisual } from '@/components/shared/InstantFundingVisual'
 import { InstantVsChallengeComparison } from '@/components/sections/InstantVsChallengeComparison'
 import {
@@ -196,7 +197,7 @@ export default function InstantPage() {
                   </div>
                 </div>
                 <a
-                  href={`https://app.ckcapital.co.uk/signup?plan=instant&size=${item.amount.replace('$', '')}`}
+                  href={`${PORTAL_SIGNUP_URL}?plan=instant&size=${item.amount.replace('$', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-1 rounded-lg border border-gray-300 bg-white py-2 text-[11px] font-bold uppercase tracking-[0.1em] text-[#0A0A0C] hover:bg-violet-50 hover:border-[#703AD7] transition-colors"
@@ -257,7 +258,7 @@ export default function InstantPage() {
               Skip the evaluation targets and trade with an active simulated account today.
             </p>
             <div className="mt-8">
-              <a href="https://app.ckcapital.co.uk/signup" target="_blank" rel="noopener noreferrer">
+              <a href={PORTAL_SIGNUP_URL} target="_blank" rel="noopener noreferrer">
                 <GoldButton size="lg">
                   Get Instant Account <ArrowRight size={16} />
                 </GoldButton>

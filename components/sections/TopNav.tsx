@@ -28,6 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
+import { PORTAL_SIGNIN_URL } from "@/lib/portal";
 import { GlobalSearchDialog } from "@/components/search/GlobalSearchDialog";
 
 interface NavColumnItem {
@@ -710,7 +711,7 @@ export function TopNav() {
               </button>
               <LanguageSwitcher compact />
               <a
-                href="https://app.ckcapital.co.uk/signin"
+                href={PORTAL_SIGNIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whitespace-nowrap inline-flex items-center h-10 min-h-10 px-2.5 xl:px-3.5 rounded-lg border border-white/20 text-[11.5px] xl:text-[12.5px] font-bold text-white hover:border-[#894CEF] hover:text-[#A98BFF] hover:bg-[#894CEF]/10 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shrink-0"
@@ -969,7 +970,7 @@ export function TopNav() {
                 {/* Action Buttons in Mobile Drawer */}
                 <div className="pt-4 flex flex-col gap-2.5">
                   <a
-                    href="https://app.ckcapital.co.uk/signin"
+                    href={PORTAL_SIGNIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center min-h-11 px-4 py-2.5 rounded-xl border border-white/20 text-sm font-bold text-white hover:border-[#894CEF] hover:text-[#A98BFF] hover:bg-[#894CEF]/10 transition-colors"

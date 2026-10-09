@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 interface ChallengePlan {
   id: string;
@@ -106,7 +107,7 @@ export function EvaluationPrograms() {
               {CHALLENGES.map((challenge) => (
                 <a
                   key={challenge.id}
-                  href="https://app.ckcapital.co.uk/signup"
+                  href={PORTAL_SIGNUP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-od-id={`challenge-card-${challenge.id}`}

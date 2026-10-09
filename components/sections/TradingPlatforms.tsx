@@ -6,6 +6,7 @@ import { GoldButton } from "@/components/shared/GoldButton";
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "@/components/fx/reveal";
 import { Check } from "lucide-react";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 export function TradingPlatforms() {
   const t = useTranslations("platforms");
@@ -84,7 +85,7 @@ export function TradingPlatforms() {
               </ul>
 
               <a
-                href="https://app.ckcapital.co.uk/signup"
+                href={PORTAL_SIGNUP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto self-stretch sm:self-start mt-auto pt-2"

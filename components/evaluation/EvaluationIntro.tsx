@@ -7,6 +7,7 @@ import { Container } from "@/components/shared/Container";
 import { GoldButton } from "@/components/shared/GoldButton";
 import { Aurora } from "@/components/fx/Aurora";
 import { EvaluationPathVisual } from "@/components/shared/EvaluationPathVisual";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 export interface EvaluationStep {
   step: string;
@@ -112,7 +113,7 @@ export default function EvaluationIntro({
                 className="mt-8 flex flex-wrap items-center gap-4"
               >
                 <a
-                  href="https://app.ckcapital.co.uk/signup"
+                  href={PORTAL_SIGNUP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

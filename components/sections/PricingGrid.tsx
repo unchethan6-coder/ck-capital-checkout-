@@ -7,6 +7,7 @@ import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import { Check, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
 const FX: Record<string, number> = { USD: 1, GBP: 0.79, EUR: 0.92 };
 
@@ -114,7 +115,7 @@ export function PricingGrid() {
                   </span>
                 </div>
                 <a
-                  href="https://app.ckcapital.co.uk/signup"
+                  href={PORTAL_SIGNUP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
