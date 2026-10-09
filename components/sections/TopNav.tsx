@@ -340,10 +340,10 @@ export function TopNav() {
               data-od-id="nav-logo"
             >
               <img
-                src="/images/brand/logo.svg"
+                src="/images/brand/ckpropfirm-logo.svg"
                 alt="CK Propfirm"
-                width={886}
-                height={198}
+                width={884}
+                height={174}
                 className="h-6 sm:h-7 w-auto object-contain"
               />
             </Link>

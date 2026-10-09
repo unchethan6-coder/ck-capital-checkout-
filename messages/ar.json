@@ -171,7 +171,7 @@
       },
       "news": {
         "title": "التداول وقت الأخبار مسموح",
-        "description": "تداول بحرية تامة أثناء الأحداث الاقتصادية الكبرى عبر جميع المراحل وبدون أي قيود أو عقوبات."
+        "description": "تداول الإصدارات عالية التأثير في كل البرامج التي تتضمن درجة اتساق — 1 Step Standard و2 Step Standard وInstant Funding — دون عقوبات تعسفية على الحساب. غير مسموح في 2 Step Pro."
       },
       "conditions": {
         "title": "شروط تداول تنافسية",
@@ -351,7 +351,7 @@
     "titleLine1": "تداول بـ",
     "titleLine2": "راحة بال وثقة تامة",
     "benefitFlexible": "دورات دفع مرنة",
-    "benefitAllocation": "تخصيص يصل إلى 1.2M$",
+    "benefitAllocation": "تخصيص يصل إلى 750K$",
     "benefitNoHidden": "بدون رسوم مخفية",
     "benefitStarting": "ابتداءً من 18$",
     "viewEvaluations": "عرض التقييمات",
@@ -442,8 +442,8 @@
         "a": "معايير المخاطرة شفافة: 4% كحد أقصى للتراجع اليومي و 8% كحد أقصى للتراجع الكلي."
       },
       "newsTrading": {
-        "q": "هل يمكنني التداول أثناء الأخبار والاحتفاظ بالصفقات خلال عطلة نهاية الأسبوع؟",
-        "a": "نعم! التداول وقت الأخبار مسموح به بالكامل في جميع الحسابات مع إمكانية الاحتفاظ بالصفقات خلال عطلات نهاية الأسبوع."
+        "q": "Can I trade news and hold over weekends?",
+        "a": "News trading is allowed on every programme that carries a consistency score — 1 Step Standard, 2 Step Standard and Instant Funding. It is not permitted on 2 Step Pro, which has no consistency requirement. Positions may be held overnight and over the weekend on all programmes."
       },
       "consistency": {
         "q": "ما هي قاعدة الاتساق؟",
@@ -475,7 +475,7 @@
       },
       "payoutCaps": {
         "q": "Is there a limit on how much I can withdraw?",
-        "a": "The global minimum request is $500. Your first five withdrawals may not exceed 3% of the initial account balance; after the fifth that cap is removed. After your third approved payout you may withdraw all remaining profits, though a profit cycle still applies between withdrawals."
+        "a": "There is no minimum payout amount. Your first five withdrawals may not exceed 3% of the initial account balance; from the sixth that cap is removed and withdrawals are unlimited. Every withdrawal must still leave your balance at or above the required account buffer — if the buffer is breached, the account is breached."
       },
       "consistencyScore": {
         "q": "How does the consistency rule work on a funded account?",
@@ -488,6 +488,38 @@
       "pendingPayout": {
         "q": "Can I trade while a payout is pending?",
         "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
+      },
+      "lotSize": {
+        "q": "What happens if I breach the lot size rules?",
+        "a": "A lot size breach returns the account to Phase 1, whether it happens during an evaluation phase or on a funded account. You restart the programme from the beginning rather than losing it outright."
+      },
+      "countries": {
+        "q": "Which countries can open an account?",
+        "a": "CK Propfirm accepts traders from most countries, including the United Arab Emirates. Traders in the United States and Canada trade exclusively on TradeLocker. A small number of jurisdictions remain restricted; if you are unsure, contact support before purchasing."
+      },
+      "copyTrading": {
+        "q": "Is copy trading allowed?",
+        "a": "Yes. Copy trading is permitted across all programmes. Accounts are still assessed individually against their own objectives, risk limits and consistency requirements."
+      },
+      "inactivity": {
+        "q": "What happens if I stop trading for a while?",
+        "a": "An account is considered inactive after 28 consecutive days without a trade. Keep at least one trade inside any 28-day window to keep the account live."
+      },
+      "topUpReset": {
+        "q": "How much do top-ups and resets cost?",
+        "a": "A top-up is 6% of the already discounted challenge price, and a reset is 10% of it — both calculated from the price you actually paid, not the full list price."
+      },
+      "maxAllocation": {
+        "q": "How much simulated capital can I hold at once?",
+        "a": "2 Step Standard allows up to $300,000 in allocation. All other programmes allow up to $500,000 combined across accounts. The total across a single household is capped at $750,000, with a maximum of five accounts per household."
+      },
+      "phase2Reset": {
+        "q": "Can I reset a Phase 2 account?",
+        "a": "Yes. A Phase 2 reset costs 2.5 times the applicable discounted challenge price, and the profit split on the reset account is reduced to 65%."
+      },
+      "fundedReset": {
+        "q": "Can I reset a funded account?",
+        "a": "Yes. A funded account reset costs 4 times the applicable challenge price. The profit split on the reset account is reduced to 65% and a 20% consistency requirement applies."
       }
     }
   },
@@ -502,8 +534,8 @@
     "stage1Title": "Prove your edge",
     "stage1Desc": "On Sim & grow with CK",
     "stage2Label": "Stage 2",
-    "stage2Title": "Scale CK propfirm",
-    "stage2Desc": "Scale all the way to $1.2M.",
+    "stage2Title": "Scale CK Propfirm",
+    "stage2Desc": "Scale all the way to $750K.",
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
@@ -742,9 +774,9 @@
         "desc": "Promote CK Propfirm's range of evaluation options including: 1 Step, 2 Step, Instant. Available account structures and products are subject to current CK Propfirm offerings."
       },
       {
-        "value": "UP TO $1.2M",
+        "value": "UP TO $750K",
         "title": "Simulated Account Allocation",
-        "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
+        "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $750K under applicable programme conditions."
       },
       {
         "value": "80%",
@@ -808,7 +840,7 @@
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
       "80% simulated profit rewards",
-      "Total simulated account allocation up to $1.2M"
+      "Total simulated account allocation up to $750K"
     ],
     "ctaStats": [
       {
@@ -1343,7 +1375,7 @@
     "pagination": "صفحات المفكرة",
     "previousPage": "الصفحة السابقة",
     "nextPage": "الصفحة التالية",
-    "newsPolicy": "تسمح CK Capital بالتداول وقت الأخبار — لا توجد فترة محظورة حول هذه الإصدارات. هذه المفكرة للتخطيط وإدارة المخاطر، وليست قائمة أوقات محظورة.",
+    "newsPolicy": "التداول وقت الأخبار مسموح في كل برامج CK Propfirm التي تتضمن درجة اتساق — 1 Step Standard و2 Step Standard وInstant Funding. وهو غير مسموح في 2 Step Pro. هذه المفكرة للتخطيط وإدارة المخاطر.",
     "whatIsTitle": "ما هي المفكرة الاقتصادية من CK Capital؟",
     "whatIsBody": "المفكرة الاقتصادية هي جدول الإعلانات والبيانات وأحداث البنوك المركزية التي تحرّك الأسواق العالمية. تُظهر موعد كل إصدار، والعملة التي يؤثر فيها، ومقدار تأثيره المعتاد، وما يتوقعه المحللون مقارنةً بالقراءة السابقة.",
     "whyTitle": "لماذا تهم المتداول الممول؟",
@@ -1395,7 +1427,7 @@
   },
   "supportWidget": {
     "launcher": "المساعدة والدعم",
-    "panel": "دعم ckpropfirm",
+    "panel": "دعم CK Propfirm",
     "greeting": "مرحباً! 👋",
     "greetingSub": "كيف يمكنني المساعدة؟",
     "home": "الرئيسية",
@@ -1412,7 +1444,7 @@
     "collectionsCount": "{count, plural, zero {# مجموعات} one {مجموعة واحدة} two {مجموعتان} few {# مجموعات} many {# مجموعة} other {# مجموعة}}",
     "articlesCount": "{count, plural, zero {# مقالات} one {مقالة واحدة} two {مقالتان} few {# مقالات} many {# مقالة} other {# مقالة}}",
     "recentTitle": "رسالة حديثة",
-    "recentFrom": "دعم ckpropfirm",
+    "recentFrom": "دعم CK Propfirm",
     "recentPreview": "أنا هنا للمساعدة في التقييمات والقواعد والسحوبات.",
     "liveOffer": "عرض فعّال",
     "viewOffer": "عرض التفاصيل",

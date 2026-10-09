@@ -344,7 +344,7 @@ export const WHY_CHOOSE_US = [
   {
     title: "News Trading Allowed",
     description:
-      "Trade around economic events without restrictions. We never penalise you for trading the news.",
+      "Trade around economic events on every programme that carries a consistency score. We never penalise you for trading the news.",
     icon: "newspaper",
   },
   {

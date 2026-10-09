@@ -171,7 +171,7 @@
       },
       "news": {
         "title": "Trading d'Actualités Autorisé",
-        "description": "Tradez librement lors des annonces économiques majeures sur toutes les phases sans aucune restriction."
+        "description": "Tradez les publications à fort impact sur tous les programmes dotés d’un score de consistance — 1 Step Standard, 2 Step Standard et Instant Funding — sans pénalité arbitraire. Non autorisé sur 2 Step Pro."
       },
       "conditions": {
         "title": "Conditions de Trading Ultra-Compétitives",
@@ -351,7 +351,7 @@
     "titleLine1": "Tradez en toute",
     "titleLine2": "Sérénité & Clarté",
     "benefitFlexible": "Cycles de Retrait Flexibles",
-    "benefitAllocation": "Jusqu'à 1.2M $ d'Allocation",
+    "benefitAllocation": "Jusqu'à 750K $ d'Allocation",
     "benefitNoHidden": "Aucun Frais Caché",
     "benefitStarting": "À partir de 18 $",
     "viewEvaluations": "Voir les Évaluations",
@@ -442,8 +442,8 @@
         "a": "Nos règles de risque sont claires : 4% de perte quotidienne maximale et 8% de perte totale maximale calculée sur le capital initial."
       },
       "newsTrading": {
-        "q": "Puis-je trader les actualités et garder des positions le week-end ?",
-        "a": "Oui ! Le trading de news est entièrement autorisé sur tous les comptes, et vous pouvez maintenir des positions ouvertes pendant le week-end."
+        "q": "Can I trade news and hold over weekends?",
+        "a": "News trading is allowed on every programme that carries a consistency score — 1 Step Standard, 2 Step Standard and Instant Funding. It is not permitted on 2 Step Pro, which has no consistency requirement. Positions may be held overnight and over the weekend on all programmes."
       },
       "consistency": {
         "q": "Quelle est la règle de régularité ?",
@@ -475,7 +475,7 @@
       },
       "payoutCaps": {
         "q": "Is there a limit on how much I can withdraw?",
-        "a": "The global minimum request is $500. Your first five withdrawals may not exceed 3% of the initial account balance; after the fifth that cap is removed. After your third approved payout you may withdraw all remaining profits, though a profit cycle still applies between withdrawals."
+        "a": "There is no minimum payout amount. Your first five withdrawals may not exceed 3% of the initial account balance; from the sixth that cap is removed and withdrawals are unlimited. Every withdrawal must still leave your balance at or above the required account buffer — if the buffer is breached, the account is breached."
       },
       "consistencyScore": {
         "q": "How does the consistency rule work on a funded account?",
@@ -488,6 +488,38 @@
       "pendingPayout": {
         "q": "Can I trade while a payout is pending?",
         "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
+      },
+      "lotSize": {
+        "q": "What happens if I breach the lot size rules?",
+        "a": "A lot size breach returns the account to Phase 1, whether it happens during an evaluation phase or on a funded account. You restart the programme from the beginning rather than losing it outright."
+      },
+      "countries": {
+        "q": "Which countries can open an account?",
+        "a": "CK Propfirm accepts traders from most countries, including the United Arab Emirates. Traders in the United States and Canada trade exclusively on TradeLocker. A small number of jurisdictions remain restricted; if you are unsure, contact support before purchasing."
+      },
+      "copyTrading": {
+        "q": "Is copy trading allowed?",
+        "a": "Yes. Copy trading is permitted across all programmes. Accounts are still assessed individually against their own objectives, risk limits and consistency requirements."
+      },
+      "inactivity": {
+        "q": "What happens if I stop trading for a while?",
+        "a": "An account is considered inactive after 28 consecutive days without a trade. Keep at least one trade inside any 28-day window to keep the account live."
+      },
+      "topUpReset": {
+        "q": "How much do top-ups and resets cost?",
+        "a": "A top-up is 6% of the already discounted challenge price, and a reset is 10% of it — both calculated from the price you actually paid, not the full list price."
+      },
+      "maxAllocation": {
+        "q": "How much simulated capital can I hold at once?",
+        "a": "2 Step Standard allows up to $300,000 in allocation. All other programmes allow up to $500,000 combined across accounts. The total across a single household is capped at $750,000, with a maximum of five accounts per household."
+      },
+      "phase2Reset": {
+        "q": "Can I reset a Phase 2 account?",
+        "a": "Yes. A Phase 2 reset costs 2.5 times the applicable discounted challenge price, and the profit split on the reset account is reduced to 65%."
+      },
+      "fundedReset": {
+        "q": "Can I reset a funded account?",
+        "a": "Yes. A funded account reset costs 4 times the applicable challenge price. The profit split on the reset account is reduced to 65% and a 20% consistency requirement applies."
       }
     }
   },
@@ -502,8 +534,8 @@
     "stage1Title": "Prove your edge",
     "stage1Desc": "On Sim & grow with CK",
     "stage2Label": "Stage 2",
-    "stage2Title": "Scale CK propfirm",
-    "stage2Desc": "Scale all the way to $1.2M.",
+    "stage2Title": "Scale CK Propfirm",
+    "stage2Desc": "Scale all the way to $750K.",
     "stage3Label": "Stage 3",
     "stage3Title": "Become CK Funded",
     "stage3Desc": "Earn from funded capital.",
@@ -742,9 +774,9 @@
         "desc": "Promote CK Propfirm's range of evaluation options including: 1 Step, 2 Step, Instant. Available account structures and products are subject to current CK Propfirm offerings."
       },
       {
-        "value": "UP TO $1.2M",
+        "value": "UP TO $750K",
         "title": "Simulated Account Allocation",
-        "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $1.2M under applicable programme conditions."
+        "desc": "CK Propfirm Qualified Analysts can access total simulated account allocations of up to $750K under applicable programme conditions."
       },
       {
         "value": "80%",
@@ -808,7 +840,7 @@
       "Reset & Top-Up options",
       "News Trading under applicable account rules",
       "80% simulated profit rewards",
-      "Total simulated account allocation up to $1.2M"
+      "Total simulated account allocation up to $750K"
     ],
     "ctaStats": [
       {
@@ -863,7 +895,7 @@
   "evaluation": {
     "badge": "Offre Limitée · 75% de Réduction sur les Évaluations",
     "title": "Des évaluations de trading taillées pour les experts.",
-    "subtitle": "Prouvez vos compétences et débloquez des comptes financés jusqu'à 1.2M$.",
+    "subtitle": "Prouvez vos compétences et débloquez des comptes financés jusqu'à 750K$.",
     "claimOffer": "Profiter de 75% OFF",
     "compareBtn": "Comparer les Challenges",
     "pathEyebrow": "Comment Ça Fonctionne",
@@ -898,7 +930,7 @@
       "instantIdealFor": "Traders expérimentés recherchant une allocation simulée immédiate et des récompenses bimensuelles sans franchir d'objectifs de gain en plusieurs étapes.",
       "challengeBadge": "POTENTIEL DE SCALING MAXIMAL",
       "challengeTagline": "Évaluation multiphase pour un capital maximal",
-      "challengeIdealFor": "Traders disciplinés qui veulent des soldes simulés plus élevés jusqu'à 1,2 M$ et davantage de marge de drawdown avec des frais d'entrée réduits.",
+      "challengeIdealFor": "Traders disciplinés qui veulent des soldes simulés plus élevés jusqu'à 750 K$ et davantage de marge de drawdown avec des frais d'entrée réduits.",
       "instantCta": "Obtenir un compte Instant",
       "challengeCta": "Découvrir les challenges"
     }
@@ -1343,7 +1375,7 @@
     "pagination": "Pages du calendrier",
     "previousPage": "Page précédente",
     "nextPage": "Page suivante",
-    "newsPolicy": "CK Capital autorise le trading sur annonces — il n'y a aucune fenêtre restreinte autour de ces publications. Ce calendrier sert à planifier et à gérer le risque, ce n'est pas une liste d'horaires bloqués.",
+    "newsPolicy": "Le trading sur annonces est autorisé sur tous les programmes CK Propfirm dotés d’un score de consistance : 1 Step Standard, 2 Step Standard et Instant Funding. Il ne l’est pas sur 2 Step Pro. Ce calendrier sert à planifier et gérer le risque.",
     "whatIsTitle": "Qu'est-ce que le Calendrier Économique CK Capital ?",
     "whatIsBody": "Un calendrier économique recense les annonces, statistiques et événements de banques centrales qui font bouger les marchés mondiaux. Il indique quand chaque publication est attendue, quelle devise elle concerne, l'impact qu'elle a habituellement et ce que les analystes anticipent par rapport au chiffre précédent.",
     "whyTitle": "Pourquoi est-ce important pour un trader financé ?",
@@ -1395,7 +1427,7 @@
   },
   "supportWidget": {
     "launcher": "Aide et assistance",
-    "panel": "Assistance ckpropfirm",
+    "panel": "Assistance CK Propfirm",
     "greeting": "Bonjour ! 👋",
     "greetingSub": "Comment puis-je aider ?",
     "home": "Accueil",
@@ -1412,7 +1444,7 @@
     "collectionsCount": "{count, plural, one {# collection} other {# collections}}",
     "articlesCount": "{count, plural, one {# article} other {# articles}}",
     "recentTitle": "Message récent",
-    "recentFrom": "Assistance ckpropfirm",
+    "recentFrom": "Assistance CK Propfirm",
     "recentPreview": "Je suis là pour les évaluations, les règles et les paiements.",
     "liveOffer": "Offre en cours",
     "viewOffer": "Voir l’offre",

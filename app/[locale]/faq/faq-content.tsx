@@ -51,6 +51,38 @@ export function FaqContent() {
       a: <p>{t('items.pendingPayout.a')}</p>,
     },
     {
+      q: t('items.lotSize.q'),
+      a: <p>{t('items.lotSize.a')}</p>,
+    },
+    {
+      q: t('items.countries.q'),
+      a: <p>{t('items.countries.a')}</p>,
+    },
+    {
+      q: t('items.copyTrading.q'),
+      a: <p>{t('items.copyTrading.a')}</p>,
+    },
+    {
+      q: t('items.inactivity.q'),
+      a: <p>{t('items.inactivity.a')}</p>,
+    },
+    {
+      q: t('items.topUpReset.q'),
+      a: <p>{t('items.topUpReset.a')}</p>,
+    },
+    {
+      q: t('items.maxAllocation.q'),
+      a: <p>{t('items.maxAllocation.a')}</p>,
+    },
+    {
+      q: t('items.phase2Reset.q'),
+      a: <p>{t('items.phase2Reset.a')}</p>,
+    },
+    {
+      q: t('items.fundedReset.q'),
+      a: <p>{t('items.fundedReset.a')}</p>,
+    },
+    {
       q: t('items.timeLimit.q'),
       a: <p>{t('items.timeLimit.a')}</p>,
     },
