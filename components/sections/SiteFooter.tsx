@@ -198,10 +198,10 @@ export function SiteFooter() {
               data-od-id="footer-logo"
             >
               <img
-                src="/images/brand/CKLogo.png"
-                alt="CK Capital"
-                width={696}
-                height={100}
+                src="/images/brand/ckpropfirm-logo.svg"
+                alt="ckpropfirm"
+                width={884}
+                height={174}
                 className="h-7 sm:h-8 w-auto object-contain"
               />
             </Link>
