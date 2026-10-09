@@ -66,9 +66,9 @@ export function EvaluationPathVisual({
                 </span>
               </div>
               <p className="mt-1 font-[family-name:var(--font-jakarta)] text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0A0A0C]">
-                +$6,400.00{" "}
+                +$8,000.00{" "}
                 <span className="text-xs font-semibold text-emerald-600">
-                  of $8,000 Target
+                  of $10,000 Target
                 </span>
               </p>
             </div>
@@ -92,14 +92,14 @@ export function EvaluationPathVisual({
             <div className="rounded-xl border border-gray-200 bg-white p-3.5 space-y-2 shadow-sm">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-bold text-[#0A0A0C]">Phase 1 Target Progress</span>
-                <span className="font-mono font-bold text-[#A98BFF]">80.0% ($6,400 / $8,000)</span>
+                <span className="font-mono font-bold text-[#A98BFF]">80.0% ($8,000 / $10,000)</span>
               </div>
               <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
                 <div className="h-full rounded-full bg-gradient-to-r from-[#703AD7] to-[#894CEF] w-[80%]" />
               </div>
               <div className="flex items-center justify-between text-[10px] text-[#6B7280]">
                 <span>Start: $100,000</span>
-                <span>Remaining: $1,600 to Pass</span>
+                <span>Remaining: $2,000 to Pass</span>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ export function EvaluationPathVisual({
               <div className="rounded-xl border border-violet-300 bg-violet-50 p-3 text-center relative overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-0.5 bg-[#703AD7]" />
                 <p className="text-[9.5px] font-bold uppercase text-[#A98BFF]">Phase 1</p>
-                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">8% Goal</p>
+                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">10% Goal</p>
                 <span className="mt-1.5 inline-block rounded bg-violet-100 px-1.5 py-0.5 text-[8.5px] font-bold text-[#A98BFF]">
                   IN PROGRESS
                 </span>
@@ -139,10 +139,10 @@ export function EvaluationPathVisual({
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 text-left">
                 <div className="flex items-center justify-between text-[11px] text-[#6B7280]">
                   <span>Daily Loss Meter</span>
-                  <span className="text-emerald-700 font-bold">1.2% / 5% Max</span>
+                  <span className="text-emerald-700 font-bold">1.2% / 4% Max</span>
                 </div>
                 <div className="mt-1.5 h-1.5 w-full rounded-full bg-gray-200 overflow-hidden">
-                  <div className="h-full bg-emerald-600 w-[24%]" />
+                  <div className="h-full bg-emerald-600 w-[30%]" />
                 </div>
                 <p className="mt-1 text-[9.5px] text-[#6B7280] font-semibold">Healthy safety cushion</p>
               </div>
@@ -150,12 +150,12 @@ export function EvaluationPathVisual({
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 text-left">
                 <div className="flex items-center justify-between text-[11px] text-[#6B7280]">
                   <span>Max Drawdown</span>
-                  <span className="text-emerald-700 font-bold">2.1% / 10% Max</span>
+                  <span className="text-emerald-700 font-bold">2.1% / 8% Max</span>
                 </div>
                 <div className="mt-1.5 h-1.5 w-full rounded-full bg-gray-200 overflow-hidden">
-                  <div className="h-full bg-emerald-600 w-[21%]" />
+                  <div className="h-full bg-emerald-600 w-[26%]" />
                 </div>
-                <p className="mt-1 text-[9.5px] text-[#6B7280] font-semibold">Static drawdown protected</p>
+                <p className="mt-1 text-[9.5px] text-[#6B7280] font-semibold">Trailing drawdown protected</p>
               </div>
             </div>
           </div>

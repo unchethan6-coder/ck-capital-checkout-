@@ -19,12 +19,12 @@ interface BannerSlide {
 
 const SLIDES: BannerSlide[] = [
   {
-    id: "promo-70",
+    id: "promo-75",
     tabLabelKey: "tabPromo",
-    defaultTabLabel: "CK Propfirm • 70% Off",
-    shortTabLabel: "70% Off",
+    defaultTabLabel: "CK Propfirm • 75% Off",
+    shortTabLabel: "75% Off",
     imageSrc: "/images/banners/whats-new-promo-70-v2.jpeg",
-    alt: "CK Propfirm 70% Off Promo - Get Started",
+    alt: "CK Propfirm 75% Off Promo - Get Started",
     targetId: "pricing-calculator",
     glowColor: "amber",
   },

@@ -104,7 +104,7 @@
         "step": "01",
         "phase": "Phase 1",
         "title": "Pick your programme",
-        "description": "Choose a challenge type and an account size from $5K to $300K. One evaluation fee, paid once — no subscription."
+        "description": "Choose a challenge type and an account size from $10K to $300K. One evaluation fee, paid once — no subscription."
       },
       "step2": {
         "step": "02",
@@ -203,7 +203,7 @@
   },
   "whatsNew": {
     "title": "What's New",
-    "tabPromo": "CK Propfirm • 70% Off",
+    "tabPromo": "CK Propfirm • 75% Off",
     "tabLeverage": "1:100 Leverage • Max Exposure",
     "tabLabs": "CK Labs • Coming Soon"
   },
@@ -847,7 +847,7 @@
   "instant": {
     "badge": "NEWLY LAUNCHED",
     "title": "No Challenge. Start Instantly.",
-    "subtitle": "Skip the evaluation process and get funded immediately. Start trading right away with accounts from $5K to $200K.",
+    "subtitle": "Skip the evaluation process and get funded immediately. Start trading right away with accounts from $10K to $100K.",
     "whyTitle": "Why Choose Instant Funding?",
     "pricesTitle": "Instant Funding Prices",
     "comparisonTitle": "Instant vs Challenge",
@@ -984,7 +984,7 @@
     "instantSection": {
       "title": "Skip the traditional multi-stage evaluation.",
       "desc": "CK Propfirm Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
-      "notOffered": "Instant is not currently offered at {size}. Available sizes: $5K – $200K."
+      "notOffered": "Instant is not currently offered at {size}. Available sizes: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "UNDERSTAND YOUR OBJECTIVES",
     "glossaryHeadingTitle": "Know the rules before you trade.",

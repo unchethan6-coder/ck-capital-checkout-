@@ -105,7 +105,7 @@ export function ObjectivesHUDVisual({
                   <span className="text-[10px] uppercase font-bold text-[#6B7280]">Profit Target</span>
                   <Check size={12} className="text-emerald-700 stroke-[3]" />
                 </div>
-                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">8% / 5%</p>
+                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">10% / 5%</p>
                 <p className="text-[9px] text-emerald-700 font-semibold">Target Passed</p>
               </div>
 
@@ -115,7 +115,7 @@ export function ObjectivesHUDVisual({
                   <span className="text-[10px] uppercase font-bold text-[#6B7280]">Daily Loss</span>
                   <Check size={12} className="text-emerald-700 stroke-[3]" />
                 </div>
-                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">5% Max</p>
+                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">4% Max</p>
                 <p className="text-[9px] text-[#6B7280] font-semibold">0.8% Utilized</p>
               </div>
 
@@ -125,8 +125,8 @@ export function ObjectivesHUDVisual({
                   <span className="text-[10px] uppercase font-bold text-[#6B7280]">Max Drawdown</span>
                   <Check size={12} className="text-emerald-700 stroke-[3]" />
                 </div>
-                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">10% Max</p>
-                <p className="text-[9px] text-[#6B7280] font-semibold">Static Shield</p>
+                <p className="mt-1 font-mono text-sm font-extrabold text-[#0A0A0C]">8% Max</p>
+                <p className="text-[9px] text-[#6B7280] font-semibold">Trailing Lock</p>
               </div>
 
               {/* Rule 4 */}

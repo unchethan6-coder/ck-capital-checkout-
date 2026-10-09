@@ -105,7 +105,7 @@
         "step": "01",
         "phase": "المرحلة 1",
         "title": "اختر برنامجك",
-        "description": "اختر نوع التحدي وحجم الحساب من 5 آلاف إلى 300 ألف دولار. رسوم تقييم تُدفع مرة واحدة، بلا اشتراك."
+        "description": "اختر نوع التحدي وحجم الحساب من 10 آلاف إلى 300 ألف دولار. رسوم تقييم تُدفع مرة واحدة، بلا اشتراك."
       },
       "step2": {
         "step": "02",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "ما الجديد",
-    "tabPromo": "CK Propfirm • خصم 70%",
+    "tabPromo": "CK Propfirm • خصم 75%",
     "tabLeverage": "رافعة مالية 1:100 • أقصى تعرض",
     "tabLabs": "CK Labs • قريباً"
   },
@@ -878,7 +878,7 @@
   "instant": {
     "badge": "أُطلق حديثاً",
     "title": "بدون تحديات. ابدأ التداول فوراً.",
-    "subtitle": "تجاوز مرحلة التقييم واحصل على التمويل المباشر بحسابات من 5 آلاف إلى 50 ألف دولار.",
+    "subtitle": "تجاوز مرحلة التقييم واحصل على التمويل المباشر بحسابات من 10 آلاف إلى 100 ألف دولار.",
     "whyTitle": "لماذا تختار التمويل الفوري؟",
     "pricesTitle": "أسعار التمويل الفوري",
     "comparisonTitle": "التمويل الفوري مقابل التحدي",
@@ -1015,7 +1015,7 @@
     "instantSection": {
       "title": "Skip the traditional multi-stage evaluation.",
       "desc": "CK Propfirm Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
-      "notOffered": "Instant is not currently offered at {size}. Available sizes: $5K – $200K."
+      "notOffered": "Instant is not currently offered at {size}. Available sizes: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "UNDERSTAND YOUR OBJECTIVES",
     "glossaryHeadingTitle": "Know the rules before you trade.",

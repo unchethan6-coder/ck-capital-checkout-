@@ -149,7 +149,7 @@ export function InstantFundingVisual({
                   <ShieldAlert size={16} className="text-[#A98BFF]" />
                   <span className="text-xs font-bold text-[#0A0A0C]">Max Loss Shield</span>
                 </div>
-                <p className="mt-1.5 font-mono text-base font-extrabold text-[#0A0A0C]">6% Max Loss</p>
+                <p className="mt-1.5 font-mono text-base font-extrabold text-[#0A0A0C]">5% Max Loss</p>
                 <p className="text-[10px] text-[#6B7280]">Trailing lock protection enabled</p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export function InstantFundingVisual({
             <span className="font-semibold text-[#0A0A0C]">
               Live Trader Split:
             </span>
-            <span className="text-[#0A0A0C] font-bold">80% Payouts</span>
+            <span className="text-[#0A0A0C] font-bold">Flexible 50% Payouts</span>
           </div>
           <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#A98BFF]">
             ZERO WAITING PERIOD

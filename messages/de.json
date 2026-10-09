@@ -105,7 +105,7 @@
         "step": "01",
         "phase": "Phase 1",
         "title": "Programm wählen",
-        "description": "Wählen Sie Challenge-Typ und Kontogröße von $5K bis $300K. Eine einmalige Evaluationsgebühr, kein Abo."
+        "description": "Wählen Sie Challenge-Typ und Kontogröße von $10K bis $300K. Eine einmalige Evaluationsgebühr, kein Abo."
       },
       "step2": {
         "step": "02",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "Neuigkeiten",
-    "tabPromo": "CK Propfirm • 70% Rabatt",
+    "tabPromo": "CK Propfirm • 75% Rabatt",
     "tabLeverage": "1:100 Hebel • Maximale Exposition",
     "tabLabs": "CK Labs • Bald Verfügbar"
   },
@@ -878,7 +878,7 @@
   "instant": {
     "badge": "NEU EINGEFÜHRT",
     "title": "Keine Challenge. Direkt Durchstarten.",
-    "subtitle": "Überspringe die Evaluierung und erhalte sofortige Finanzierung von $5K bis $200K.",
+    "subtitle": "Überspringe die Evaluierung und erhalte sofortige Finanzierung von $10K bis $100K.",
     "whyTitle": "Warum Sofort-Finanzierung wählen?",
     "pricesTitle": "Preise für Sofort-Finanzierung",
     "comparisonTitle": "Sofort vs Challenge",
@@ -1015,7 +1015,7 @@
     "instantSection": {
       "title": "Skip the traditional multi-stage evaluation.",
       "desc": "CK Propfirm Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
-      "notOffered": "Instant is not currently offered at {size}. Available sizes: $5K – $200K."
+      "notOffered": "Instant is not currently offered at {size}. Available sizes: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "UNDERSTAND YOUR OBJECTIVES",
     "glossaryHeadingTitle": "Know the rules before you trade.",

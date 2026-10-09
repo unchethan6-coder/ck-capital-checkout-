@@ -105,7 +105,7 @@
         "step": "01",
         "phase": "चरण 1",
         "title": "अपना प्रोग्राम चुनें",
-        "description": "चैलेंज का प्रकार और $5K से $300K तक का अकाउंट साइज़ चुनें। एक बार की इवैल्यूएशन फ़ीस, कोई सब्सक्रिप्शन नहीं।"
+        "description": "चैलेंज का प्रकार और $10K से $300K तक का अकाउंट साइज़ चुनें। एक बार की इवैल्यूएशन फ़ीस, कोई सब्सक्रिप्शन नहीं।"
       },
       "step2": {
         "step": "02",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "नया क्या है",
-    "tabPromo": "CK Propfirm • 70% छूट",
+    "tabPromo": "CK Propfirm • 75% छूट",
     "tabLeverage": "1:100 लिवरेज • अधिकतम एक्सपोज़र",
     "tabLabs": "CK Labs • जल्द आ रहा है"
   },
@@ -878,7 +878,7 @@
   "instant": {
     "badge": "नया लॉन्च किया गया",
     "title": "कोई चैलेंज नहीं। तुरंत शुरू करें।",
-    "subtitle": "मूल्यांकन प्रक्रिया छोड़ें और $5K से $200K तक के खातों के साथ तुरंत वित्तपोषित हों।",
+    "subtitle": "मूल्यांकन प्रक्रिया छोड़ें और $10K से $100K तक के खातों के साथ तुरंत वित्तपोषित हों।",
     "whyTitle": "तत्काल फंडिंग क्यों चुनें?",
     "pricesTitle": "तत्काल फंडिंग मूल्य",
     "comparisonTitle": "तत्काल बनाम चैलेंज",
@@ -1015,7 +1015,7 @@
     "instantSection": {
       "title": "Skip the traditional multi-stage evaluation.",
       "desc": "CK Propfirm Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
-      "notOffered": "Instant is not currently offered at {size}. Available sizes: $5K – $200K."
+      "notOffered": "Instant is not currently offered at {size}. Available sizes: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "UNDERSTAND YOUR OBJECTIVES",
     "glossaryHeadingTitle": "Know the rules before you trade.",

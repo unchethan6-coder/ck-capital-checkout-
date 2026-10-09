@@ -105,7 +105,7 @@
         "step": "01",
         "phase": "Fase 1",
         "title": "Escolha o seu programa",
-        "description": "Escolha o tipo de desafio e o tamanho da conta, de US$5K a US$300K. Taxa de avaliação única, sem assinatura."
+        "description": "Escolha o tipo de desafio e o tamanho da conta, de US$10K a US$300K. Taxa de avaliação única, sem assinatura."
       },
       "step2": {
         "step": "02",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "Novidades",
-    "tabPromo": "CK Propfirm • 70% Desconto",
+    "tabPromo": "CK Propfirm • 75% Desconto",
     "tabLeverage": "Alavancagem 1:100 • Exposição Máxima",
     "tabLabs": "CK Labs • Em Breve"
   },
@@ -848,7 +848,7 @@
   "instant": {
     "badge": "NOVIDADE",
     "title": "Sem Desafio. Comece Imediatamente.",
-    "subtitle": "Pule o processo de avaliação e receba financiamento imediato de $5K a $200K.",
+    "subtitle": "Pule o processo de avaliação e receba financiamento imediato de $10K a $100K.",
     "whyTitle": "Por Que Escolher Financiamento Instantâneo?",
     "pricesTitle": "Preços do Financiamento Instantâneo",
     "comparisonTitle": "Instantâneo vs Desafio",
@@ -985,7 +985,7 @@
     "instantSection": {
       "title": "Pule a avaliação tradicional por etapas.",
       "desc": "CK Propfirm Instant oferece acesso direto a uma conta simulada sob regras predefinidas.",
-      "notOffered": "Instant não está disponível no tamanho {size}. Tamanhos disponíveis: $5K – $200K."
+      "notOffered": "Instant não está disponível no tamanho {size}. Tamanhos disponíveis: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "ENTENDA SEUS OBJETIVOS",
     "glossaryHeadingTitle": "Conheça as regras antes de operar.",

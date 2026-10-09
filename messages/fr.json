@@ -105,7 +105,7 @@
         "step": "01",
         "phase": "Phase 1",
         "title": "Choisissez votre programme",
-        "description": "Choisissez un type de challenge et une taille de compte de 5 000 $ à 300 000 $. Des frais d'évaluation uniques, sans abonnement."
+        "description": "Choisissez un type de challenge et une taille de compte de 10 000 $ à 300 000 $. Des frais d'évaluation uniques, sans abonnement."
       },
       "step2": {
         "step": "02",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "Nouveautés",
-    "tabPromo": "CK Propfirm • 70% de Réduction",
+    "tabPromo": "CK Propfirm • 75% de Réduction",
     "tabLeverage": "Effet de Levier 1:100 • Exposition Maximale",
     "tabLabs": "CK Labs • Bientôt Disponible"
   },
@@ -878,7 +878,7 @@
   "instant": {
     "badge": "NOUVEAUTÉ",
     "title": "Sans Challenge. Démarrez Instantanément.",
-    "subtitle": "Passez l'étape d'évaluation et obtenez un financement immédiat de 5K$ à 200K$.",
+    "subtitle": "Passez l'étape d'évaluation et obtenez un financement immédiat de 10K$ à 100K$.",
     "whyTitle": "Pourquoi Choisir le Financement Instantané ?",
     "pricesTitle": "Tarifs du Financement Instantané",
     "comparisonTitle": "Instantané vs Challenge",
@@ -1015,7 +1015,7 @@
     "instantSection": {
       "title": "Skip the traditional multi-stage evaluation.",
       "desc": "CK Propfirm Instant provides a different account structure for traders who want to begin under defined account rules without completing the standard multi-stage evaluation process.",
-      "notOffered": "Instant is not currently offered at {size}. Available sizes: $5K – $200K."
+      "notOffered": "Instant is not currently offered at {size}. Available sizes: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "UNDERSTAND YOUR OBJECTIVES",
     "glossaryHeadingTitle": "Know the rules before you trade.",

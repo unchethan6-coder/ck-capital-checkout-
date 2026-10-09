@@ -105,7 +105,7 @@
         "step": "01",
         "phase": "Fase 1",
         "title": "Elige tu programa",
-        "description": "Elige un tipo de desafío y un tamaño de cuenta de $5K a $300K. Una única cuota de evaluación, sin suscripción."
+        "description": "Elige un tipo de desafío y un tamaño de cuenta de $10K a $300K. Una única cuota de evaluación, sin suscripción."
       },
       "step2": {
         "step": "02",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "Novedades",
-    "tabPromo": "CK Propfirm • 70% Descuento",
+    "tabPromo": "CK Propfirm • 75% Descuento",
     "tabLeverage": "Apalancamiento 1:100 • Máxima Exposición",
     "tabLabs": "CK Labs • Próximamente"
   },
@@ -848,7 +848,7 @@
   "instant": {
     "badge": "RECIÉN LANZADO",
     "title": "Sin Desafío. Comienza al Instante.",
-    "subtitle": "Omite la evaluación y obtén fondeo inmediato con cuentas desde $5K hasta $200K.",
+    "subtitle": "Omite la evaluación y obtén fondeo inmediato con cuentas desde $10K hasta $100K.",
     "whyTitle": "¿Por Qué Elegir Fondeo Instantáneo?",
     "pricesTitle": "Precios de Fondeo Instantáneo",
     "comparisonTitle": "Instantáneo vs Desafío",
@@ -985,7 +985,7 @@
     "instantSection": {
       "title": "Omite la evaluación tradicional por etapas.",
       "desc": "CK Propfirm Instant ofrece una estructura diferente para comenzar directamente bajo reglas de cuenta definidas.",
-      "notOffered": "Instant no se ofrece actualmente en {size}. Tamaños disponibles: $5K – $200K."
+      "notOffered": "Instant no se ofrece actualmente en {size}. Tamaños disponibles: $10K – $100K."
     },
     "glossaryHeadingEyebrow": "COMPRENDE TUS OBJETIVOS",
     "glossaryHeadingTitle": "Conoce las reglas antes de operar.",

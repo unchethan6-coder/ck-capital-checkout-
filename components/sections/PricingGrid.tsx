@@ -138,8 +138,8 @@ export function PricingGrid() {
         <SectionReveal delay={0.3} className="mt-8 text-center">
           <p className="flex items-center justify-center gap-2 text-sm text-gray-500 font-medium">
             <TrendingUp size={14} className="text-[#A98BFF]" />
-            Trade with transparent drawdown rules and keep up to{" "}
-            <span className="text-[#A98BFF] font-bold">80% simulated profit split</span>
+            Trade with transparent drawdown rules and keep a{" "}
+            <span className="text-[#A98BFF] font-bold">flat 80% simulated profit split</span>
           </p>
         </SectionReveal>
       </Container>

@@ -84,17 +84,17 @@ export function WhyChooseUs() {
             <div className="mt-6">
               <div className="flex items-center justify-between text-[11.5px] font-semibold mb-2">
                 <span className="text-foreground/80">{t("youKeep")}</span>
-                <span className="text-[#A98BFF] tabular-nums">100%</span>
+                <span className="text-[#A98BFF] tabular-nums">80%</span>
               </div>
               <div className="h-2.5 w-full overflow-hidden rounded-full bg-foreground/[0.07]">
                 <div
-                  style={{ width: "100%" }}
+                  style={{ width: "80%" }}
                   className="h-full rounded-full bg-primary transition-all duration-500"
                 />
               </div>
               <div className="mt-2 flex items-center justify-between text-[11px] text-foreground/65">
                 <span>{t("firmEarns")}</span>
-                <span className="tabular-nums">0%</span>
+                <span className="tabular-nums">20%</span>
               </div>
             </div>
 

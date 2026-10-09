@@ -17,9 +17,15 @@ export function FaqAccordion() {
 
   const faqKeys = [
     "payoutTime",
+    "minProfit",
+    "buffer",
+    "payoutCaps",
+    "profitSplit",
+    "consistencyScore",
+    "trailingDrawdown",
+    "pendingPayout",
     "timeLimit",
     "platforms",
-    "profitSplit",
     "drawdown",
     "newsTrading",
     "consistency",

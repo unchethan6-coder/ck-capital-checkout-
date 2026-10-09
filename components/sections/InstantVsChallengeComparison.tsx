@@ -55,24 +55,24 @@ export function InstantVsChallengeComparison() {
       label: "Profit Target to Qualify",
       instantValue: "0% Target",
       instantBadge: "No Target",
-      challengeValue: "8% / 5%",
+      challengeValue: "10% / 5%",
       challengeBadge: "Required",
     },
     {
       label: "Max Daily Drawdown",
       instantValue: "3%",
-      challengeValue: "4% - 5%",
+      challengeValue: "3% - 4%",
       challengeBadge: "Higher Buffer",
     },
     {
       label: "Max Overall Drawdown",
       instantValue: "5% Total",
-      challengeValue: "8% - 10%",
+      challengeValue: "6% - 8%",
       challengeBadge: "Larger Room",
     },
     {
       label: "Capital Scale Potential",
-      instantValue: "$200K Direct",
+      instantValue: "$100K Direct",
       challengeValue: "$1.2M Pool",
       challengeBadge: "Max Growth",
     },
@@ -201,7 +201,7 @@ export function InstantVsChallengeComparison() {
                 </div>
                 <div className="mt-3.5 pt-3 border-t border-violet-200/60 flex items-center justify-between gap-3">
                   <span className="font-mono text-xs font-bold text-[#0A0A0C]">
-                    $5K – $200K Direct
+                    $10K – $100K Direct
                   </span>
                   <a
                     href={PORTAL_SIGNUP_URL}
@@ -239,7 +239,7 @@ export function InstantVsChallengeComparison() {
                 </div>
                 <div className="mt-3.5 pt-3 border-t border-gray-200 flex items-center justify-between gap-3">
                   <span className="font-mono text-xs font-bold text-[#0A0A0C]">
-                    $5K – $300K Scale
+                    $10K – $300K Scale
                   </span>
                   <Link href="/evaluation">
                     <button
