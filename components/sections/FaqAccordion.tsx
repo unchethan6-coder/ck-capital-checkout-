@@ -1,6 +1,5 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { FAQ_ITEMS } from "@/lib/content";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import { GoldButton } from "@/components/shared/GoldButton";
@@ -20,12 +19,20 @@ export function FaqAccordion() {
     "minProfit",
     "buffer",
     "payoutCaps",
-    "profitSplit",
     "consistencyScore",
     "trailingDrawdown",
     "pendingPayout",
+    "lotSize",
+    "countries",
+    "copyTrading",
+    "inactivity",
+    "topUpReset",
+    "maxAllocation",
+    "phase2Reset",
+    "fundedReset",
     "timeLimit",
     "platforms",
+    "profitSplit",
     "drawdown",
     "newsTrading",
     "consistency",
