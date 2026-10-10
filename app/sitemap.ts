@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 import { getAllArticleSlugs } from "@/lib/cms";
 import { locales } from "@/i18n/routing";
+import { HELP_ARTICLES, HELP_COLLECTIONS } from "@/lib/help";
 
 const routes = [
   { path: "", priority: 1, changeFrequency: "weekly" },
@@ -73,5 +74,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // CMS unreachable — static routes only
   }
 
-  return [...staticEntries, ...articleEntries];
+  const helpEntries = HELP_ARTICLES.flatMap((a) =>
+    locales.map((locale) => ({
+      url: `${SITE_URL}/${locale}/faq/${a.slug}`,
+      lastModified: new Date(a.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+      alternates: alternatesFor(`/faq/${a.slug}`),
+    }))
+  );
+
+  const collectionEntries = HELP_COLLECTIONS.flatMap((c) =>
+    locales.map((locale) => ({
+      url: `${SITE_URL}/${locale}/faq/collections/${c.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: alternatesFor(`/faq/collections/${c.slug}`),
+    }))
+  );
+
+  return [...staticEntries, ...articleEntries, ...collectionEntries, ...helpEntries];
 }

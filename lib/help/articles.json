@@ -1,0 +1,8418 @@
+{
+ "source": "https://intercom.help/ck-capital/en/",
+ "collections": [
+  {
+   "slug": "about-us",
+   "name": "About Us",
+   "description": "What is CK Prop Firm?",
+   "sections": [
+    {
+     "name": null,
+     "articles": [
+      "what-is-ck-prop-firm",
+      "how-can-i-get-started-with-ck-prop-firm",
+      "our-story",
+      "our-mission",
+      "our-vision"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "general",
+   "name": "General",
+   "description": "General Questions",
+   "sections": [
+    {
+     "name": null,
+     "articles": [
+      "are-there-any-inactivity-rules",
+      "how-do-taxes-work",
+      "how-long-does-it-take-to-upgrade-from-phase-1-to-phase-2",
+      "can-i-merge-my-funded-accounts",
+      "do-you-conduct-risk-interviews",
+      "can-i-switch-trading-platforms",
+      "can-i-purchase-multiple-challenges",
+      "are-you-a-broker",
+      "can-i-exceed-the-maximum-allocation",
+      "what-is-the-maximum-allocation",
+      "payouts-profit-splits",
+      "is-there-a-time-limit-to-pass-the-evaluation",
+      "how-quickly-will-i-receive-my-account-credentials",
+      "is-there-a-minimum-trading-day-requirement",
+      "profit-split-after-reset",
+      "reset-top-up-feature",
+      "abuse-threats-confidentiality",
+      "what-leverage-do-you-offer",
+      "do-you-offer-refunds"
+     ]
+    },
+    {
+     "name": "Prohibited Conduct",
+     "articles": [
+      "what-trading-strategies-are-prohibited",
+      "do-you-have-any-lot-size-limits",
+      "what-happens-if-i-violate-a-trading-rule",
+      "is-hedging-allowed",
+      "do-you-have-any-anti-gambling-policies",
+      "are-there-any-prohibited-countries"
+     ]
+    },
+    {
+     "name": "Trading Inquiries",
+     "articles": [
+      "can-i-hold-trades-overnight-weekend",
+      "are-we-trading-real-capital",
+      "what-are-the-trading-commissions",
+      "can-i-trade-high-impact-news-events",
+      "can-i-use-eas",
+      "can-we-copy-trade"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "account-rules",
+   "name": "Account Rules",
+   "description": "Clarification regarding our rules during trading",
+   "sections": [
+    {
+     "name": "2-Step Pro Challenge",
+     "articles": [
+      "2-step-pro-challenge"
+     ]
+    },
+    {
+     "name": "2-Step Standard",
+     "articles": [
+      "2-step-standard-challenge"
+     ]
+    },
+    {
+     "name": "1 Step Standard",
+     "articles": [
+      "1-step-standard-challenge"
+     ]
+    },
+    {
+     "name": "Instant Funding",
+     "articles": [
+      "instant-funding"
+     ]
+    },
+    {
+     "name": "Consistency Rules",
+     "articles": [
+      "how-does-the-consistency-rule-work"
+     ]
+    },
+    {
+     "name": "Daily/Maximum/Trailing Loss Limits",
+     "articles": [
+      "daily-drawdown",
+      "maximum-drawdown",
+      "maximum-trailing-drawdown"
+     ]
+    },
+    {
+     "name": "Protected Account Buffer & Withdrawal Limits",
+     "articles": [
+      "protected-account-buffer-withdrawal-limits"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "funded-accounts",
+   "name": "Funded Accounts",
+   "description": "Funded Accounts Inquiries",
+   "sections": [
+    {
+     "name": null,
+     "articles": [
+      "how-can-i-get-paid",
+      "are-there-any-contracts-between-myself-and-ck-prop-firm",
+      "identity-verification-kyc-requirements",
+      "when-will-i-receive-my-funded-account",
+      "are-there-any-payout-caps",
+      "why-was-my-funded-account-denied",
+      "why-was-my-payout-charged-a-fee",
+      "why-was-my-payout-rejected"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "giveaways",
+   "name": "Giveaways",
+   "description": "Giveaways Inquiries",
+   "sections": [
+    {
+     "name": null,
+     "articles": [
+      "when-will-i-receive-my-giveaway-account-that-i-won",
+      "can-i-gift-an-account-i-won",
+      "who-is-eligible-to-win",
+      "giveaway-policy",
+      "when-will-i-receive-my-payout-from-a-giveaway-account",
+      "what-is-the-profit-split-on-giveaway-accounts"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "affiliates",
+   "name": "Affiliates",
+   "description": "Affiliate Program Terms & Conditions",
+   "sections": [
+    {
+     "name": null,
+     "articles": [
+      "what-is-the-ck-prop-firm-affiliate-program",
+      "how-do-i-become-an-affiliate",
+      "when-are-affiliate-payouts-processed",
+      "what-type-of-content-is-not-permitted",
+      "what-commission-do-affiliates-earn",
+      "can-my-affiliate-account-be-reviewed-or-terminated",
+      "how-can-i-update-my-affiliate-information",
+      "what-happens-if-i-become-inactive",
+      "can-ck-prop-firm-change-the-affiliate-program-terms"
+     ]
+    }
+   ]
+  }
+ ],
+ "articles": [
+  {
+   "slug": "what-is-ck-prop-firm",
+   "title": "What is CK Prop Firm?",
+   "collection": "about-us",
+   "section": null,
+   "updated": "2026-10-08T10:55:41Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "CK Prop Firm is an innovative online retail evaluation trading firm dedicated to assessing trader's skills and leveraging cutting-edge techniques to gather, dissect, and capitalize on their trading data."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-can-i-get-started-with-ck-prop-firm",
+   "title": "How can I Get Started With CK Prop Firm?",
+   "collection": "about-us",
+   "section": null,
+   "updated": "2026-10-08T10:56:31Z",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": true,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Visit the main CK Prop Firm website and sign up for an account "
+         },
+         {
+          "t": "here",
+          "href": "https://ckcapital.co.uk/"
+         },
+         {
+          "t": "."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Access the CK Prop Firm challenge dashboard and select the account size that suits your preferences."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Familiarize yourself with the program's rules by reviewing the terms of use and engaging with our community on "
+         },
+         {
+          "t": "Discord",
+          "href": "https://discord.gg/ckcapital"
+         },
+         {
+          "t": " if you have any questions or wish to connect with others before you start your challenge."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "When you're ready to proceed, click on the purchase button corresponding to your preferred payment method. You have three options: - Credit/bank cards - Crypto & Paypal."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Upon completion of the transaction, you will receive your account credentials. Card transactions yield instant results, while crypto payments may take up to 30 minutes or a few hours for blockchain confirmation."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Congratulations! You are now equipped to begin your journey as a CK Prop Firm trader. Feel free to start trading at your convenience."
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "our-story",
+   "title": "Our Story",
+   "collection": "about-us",
+   "section": null,
+   "updated": "2026-10-08T10:58:17Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 4,
+     "runs": [
+      {
+       "t": "CK Prop Firm was founded with a mission to support aspiring traders by bridging the gap between potential and achievement. Backed by a team of industry experts, we offer trader-friendly systems, in-house technology, and unparalleled support to create a platform where growth and success both thrive."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "our-mission",
+   "title": "Our Mission",
+   "collection": "about-us",
+   "section": null,
+   "updated": "2026-01-31T19:32:44Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "We provide traders with innovative tools, structured guidance, and an evaluation process using simulated capital to develop discipline, skill, and consistent profitability in trading."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "It’s simple, this means that you can trade private equity, private investors, hedge funds, institutional prop and any other methods of fund allocation and be able to be a consistency profitable trader in the financial markets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "our-vision",
+   "title": "Our Vision",
+   "collection": "about-us",
+   "section": null,
+   "updated": "2026-01-31T19:33:15Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Our vision is to empower traders to reach their full potential, redefine personal success, and cultivate a global community of consistently profitable traders who thrive in the markets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "are-there-any-inactivity-rules",
+   "title": "Are there any inactivity rules?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T18:31:19Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "All accounts are subject to a 28 day inactivity period, this means if you do not place a micro-lot trade for longer than 28 consecutive days your account will automatically be suspended."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-do-taxes-work",
+   "title": "How do taxes work?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T18:31:44Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "We cannot provide tax advice and suggest you contact a tax professional in your region for tax related inquiries."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-long-does-it-take-to-upgrade-from-phase-1-to-phase-2",
+   "title": "How long does it take to upgrade from Phase 1 to Phase 2?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T19:52:48Z",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Phase 1 → Phase 2: "
+         },
+         {
+          "t": "Instant",
+          "b": true
+         },
+         {
+          "t": ", once criteria are met"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Phase 2 → Funded: Up to "
+         },
+         {
+          "t": "2 business days",
+          "b": true
+         },
+         {
+          "t": ", subject to:"
+         }
+        ]
+       },
+       {
+        "type": "list",
+        "ordered": false,
+        "items": [
+         [
+          {
+           "type": "p",
+           "runs": [
+            {
+             "t": "Risk review"
+            }
+           ]
+          }
+         ],
+         [
+          {
+           "type": "p",
+           "runs": [
+            {
+             "t": "KYC completion"
+            }
+           ]
+          }
+         ]
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-merge-my-funded-accounts",
+   "title": "Can I merge my funded accounts?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T18:32:54Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "As of now we do not allow merging but we may introduce it in the future."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "do-you-conduct-risk-interviews",
+   "title": "Do you conduct Risk interviews?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T18:33:20Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "We do conduct risk interviews and can conduct them during any phase. You will be required to cooperate with our risk team as well as verify KYC during the interview."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-switch-trading-platforms",
+   "title": "Can I switch trading platforms?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T18:33:59Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "We do not allow the transfer of accounts to different platforms at this time."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-purchase-multiple-challenges",
+   "title": "Can I purchase multiple challenges?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T18:34:47Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, you can buy as many challenges as you want, but you can only be funded up to the maximum allocation allowed for each challenge type."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "are-you-a-broker",
+   "title": "Are you a broker?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-08T11:45:41Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, CK Prop Firm is not a broker. We are an evaluation trading firm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-exceed-the-maximum-allocation",
+   "title": "Can I exceed the maximum allocation?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-10T10:28:13Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, exceeding the "
+      },
+      {
+       "t": "$750,000 max allocation per household",
+       "b": true
+      },
+      {
+       "t": " limit is not allowed. If this happens, your accounts may be reviewed, and adjustments may be made to ensure compliance with our policies. We reserve the right to disable any accounts in violation with no refund"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-is-the-maximum-allocation",
+   "title": "What is the maximum allocation?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-10T10:44:21Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The maximum allocation limits are as follows:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "2-Step Standard:",
+          "b": true
+         },
+         {
+          "t": " $300,000 maximum allocation."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "All other account types:",
+          "b": true
+         },
+         {
+          "t": " $500,000 maximum allocation combined across all eligible account types."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the maximum total allocation per household?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The maximum total allocation per household is "
+      },
+      {
+       "t": "$750,000",
+       "b": true
+      },
+      {
+       "t": " across all accounts and account types."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How many accounts can I have per household?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Each household may hold a maximum of "
+      },
+      {
+       "t": "5 accounts",
+       "b": true
+      },
+      {
+       "t": ". All accounts are subject to the applicable individual account-type allocation limits and the overall household allocation cap of $750,000."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 4,
+     "runs": [
+      {
+       "t": "Can I Purchase More Than the Maximum?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, but your "
+      },
+      {
+       "t": "active funded allocation cannot exceed $1.2 million",
+       "b": true
+      },
+      {
+       "t": " at any time."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 4,
+     "runs": [
+      {
+       "t": "What If I Exceed the Limit?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Contact support immediately via:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Live Chat"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Discord: "
+         },
+         {
+          "t": "https://discord.gg/J3nazzRZJh",
+          "href": "https://discord.gg/J3nazzRZJh"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Email: "
+         },
+         {
+          "t": "momin@ckcapital.co.uk",
+          "b": true,
+          "href": "mailto:momin@ckcapital.co.uk"
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "payouts-profit-splits",
+   "title": "Payouts & Profit Splits",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-10T10:41:49Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the profit split at CK Prop Firm?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved payouts follow an 80/20 profit split. Traders receive 80% of the approved withdrawal amount, while CK Prop Firm retains 20%."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What are the minimum profit requirements for payouts?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "You must reach the minimum net profit threshold for your account size during each payout cycle. Meeting the threshold makes you eligible to request a payout but does not guarantee approval."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do profit targets reset after a payout?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Once a withdrawal is approved, your profit target resets to zero for the next payout cycle. You must meet the applicable minimum profit requirement again before requesting another withdrawal."
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "When can I withdraw all my remaining profits?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Unlimited withdrawals begin after the 5th payout."
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Is reaching the minimum profit target enough to guarantee a payout?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Reaching the minimum profit target establishes eligibility to request a payout. Your account must also comply with the applicable consistency requirements, protected account buffer, trading rules, terms and conditions, and account agreement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "is-there-a-time-limit-to-pass-the-evaluation",
+   "title": "Is there a time limit to pass the evaluation?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-09T11:55:53Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. At CK Prop Firm, there is "
+      },
+      {
+       "t": "no time limit",
+       "b": true
+      },
+      {
+       "t": " to pass the evaluation phase."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "You can trade at your own pace."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-quickly-will-i-receive-my-account-credentials",
+   "title": "How quickly will I receive my account credentials?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T19:14:46Z",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Card / PayPal Payments:",
+          "b": true
+         },
+         {
+          "t": " Instantly (usually within 1 hour)"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Crypto Payments:",
+          "b": true
+         },
+         {
+          "t": " Within 24 hours (depending on blockchain speed)"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once payment is confirmed, credentials are generated without unnecessary delays."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "is-there-a-minimum-trading-day-requirement",
+   "title": "Is There a Minimum Trading Day Requirement?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-01-31T19:37:56Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Only "
+      },
+      {
+       "t": "1 minimum trading day",
+       "b": true
+      },
+      {
+       "t": " is required."
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Your evaluation starts with your "
+         },
+         {
+          "t": "first trade",
+          "b": true
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "That day counts as your minimum trading day"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "You can track this directly from your dashboard"
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "profit-split-after-reset",
+   "title": "Profit Split After Reset",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-10T10:46:00Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "What happens to my profit split after a Phase 2 Reset?"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "If you reset your Phase 2 challenge, the following conditions apply:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Profit Split:",
+          "b": true
+         },
+         {
+          "t": " Reduced to 65%."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "What happens to my profit split after a Funded Account Reset?"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "If you reset your funded account, the following conditions apply:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Profit Split:",
+          "b": true
+         },
+         {
+          "t": " Reduced to 65%."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Consistency Score Requirement:",
+          "b": true
+         },
+         {
+          "t": " Set to 20%."
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "reset-top-up-feature",
+   "title": "Reset / Top-Up Feature",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-10T10:46:26Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "What Is the Reset / Top-Up Feature?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "This feature allows you to "
+      },
+      {
+       "t": "restore your account at a discounted rate",
+       "b": true
+      },
+      {
+       "t": " if:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "You breach rules"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "You hit drawdown limits"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "It lets you restart without buying a new challenge."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Reset Rules by Phase",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Phase 1:",
+          "b": true
+         },
+         {
+          "t": " Unlimited resets/top-ups"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Phase 2:",
+          "b": true
+         },
+         {
+          "t": " 1 reset/top-up allowed"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Funded Account:",
+          "b": true
+         },
+         {
+          "t": " 1 reset/top-up allowed"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "📌 "
+      },
+      {
+       "t": "Resetting in Phase 2 or on a funded account may temporarily reduce your profit split and a consistency score requirement may be applied on your account.",
+       "i": true
+      }
+     ]
+    },
+    {
+     "type": "button",
+     "text": "Click Here: Profit Split After Reset",
+     "href": "/faq/profit-split-after-reset"
+    }
+   ]
+  },
+  {
+   "slug": "abuse-threats-confidentiality",
+   "title": "Abuse, Threats & Confidentiality",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-09T12:03:43Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Any of the following may result in "
+      },
+      {
+       "t": "immediate ban without refund",
+       "b": true
+      },
+      {
+       "t": ":"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Threatening or abusive behavior on social media"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Sharing confidential private chat information"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Attempts to defame or extort the platform"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "CK Prop Firm reserves full rights to escalate such cases under its policies."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-leverage-do-you-offer",
+   "title": "What leverage do you offer?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-02-22T18:31:58Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "MT5 Platform",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Forex: 1:100"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Indices: 1:100"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Commodities: 1:100"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Crypto: 1:100"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "TradeLocker Platform",
+       "b": true
+      },
+      {
+       "t": " "
+      },
+      {
+       "t": "(US & Canada users must use TradeLocker)",
+       "i": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Forex: 1:100"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Indices: 1:100"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Commodities: 1:100"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "If you need help choosing the right platform or account type, feel free to reach out to support anytime."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "do-you-offer-refunds",
+   "title": "Do you offer refunds?",
+   "collection": "general",
+   "section": null,
+   "updated": "2026-10-09T12:04:06Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Refunds are not offered at CK Prop Firm. However, refund requests may be reviewed under special circumstances on a case-by-case basis."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-trading-strategies-are-prohibited",
+   "title": "What trading strategies are prohibited?",
+   "collection": "general",
+   "section": "Prohibited Conduct",
+   "updated": "2026-01-31T18:40:27Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Prohibited trading practices are as follows:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Exploiting unrealistic prices or trade opportunities, including arbitrage, latency trading, front-running price feeds, and exploiting mispricing."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Latency trading"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Arbitrage trading"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "High-frequency trading"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Reverse trading or group hedging Furthermore, account management services are strictly prohibited. All accounts and trades must be executed by the registered trader. If you're unsure about the compliance of your EA or manual scalping strategy submit the strategy to our support team for clarification."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Account rolling/churning, buying multiple accounts and failing in a short timeframe and simultaneously buying more as you fail. The failure of a funded account requires permission before you are able to start a new evaluation, send all requests to "
+         },
+         {
+          "t": "momin@ckcapital.co.uk",
+          "href": "mailto:momin@ckcapital.co.uk"
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "do-you-have-any-lot-size-limits",
+   "title": "Do you have any lot size limits?",
+   "collection": "general",
+   "section": "Prohibited Conduct",
+   "updated": "2026-01-31T18:41:00Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes we have the following limits depending on account size"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "$5,000 - Max 2.5 lots "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "$10,000 - Max 5 lots "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "$25,000 - Max 10 lots "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "$50,000 - Max 20 lots "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "$100,000 - Max 40 lots "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "$200,000 - Max 60 lots "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "$300,000 - Max 60 lots"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Note:",
+       "b": true
+      },
+      {
+       "t": " Max lot size difference means you can't open more than the allowed max lot per account at a time. Example: On a $100K account with a 40 max lot limit, you can't open more than 40 lots on a a combination of all pairs. Example: A $100,000 account with an active trade of EURUSD for 39 lots alongside a trade of XAUUSD with 2 lots would be a violation of the limit as the total is 41."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-happens-if-i-violate-a-trading-rule",
+   "title": "What happens if I violate a trading rule?",
+   "collection": "general",
+   "section": "Prohibited Conduct",
+   "updated": "2026-01-31T18:41:29Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Violation of a trading rule will result in a breach of the account with no compensation or refund. We stress the importance of being familiar with all rules in our challenges when seeking to enter our trading program."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "is-hedging-allowed",
+   "title": "Is Hedging allowed?",
+   "collection": "general",
+   "section": "Prohibited Conduct",
+   "updated": "2026-03-12T09:06:59Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, hedging is not allowed."
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Hedging is strictly prohibited. Opening buy and sell positions simultaneously on the same asset is not allowed. ",
+       "b": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Additionally, using hedging to exploit price or spread differences (arbitrage), or hedging across multiple evaluation accounts, is also not permitted and may result in account forfeiture.",
+       "b": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "do-you-have-any-anti-gambling-policies",
+   "title": "Do you have any anti gambling policies?",
+   "collection": "general",
+   "section": "Prohibited Conduct",
+   "updated": "2026-10-09T12:05:10Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "At CK Prop Firm, we firmly believe that any trades or strategies resembling gambling do not align with the traits of a proficient trader who can navigate risk, secure profits, and exhibit market consistency. Engaging in such activities will lead to contract termination and removal of your accounts."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "are-there-any-prohibited-countries",
+   "title": "Are there any prohibited countries?",
+   "collection": "general",
+   "section": "Prohibited Conduct",
+   "updated": "2026-10-10T10:26:36Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 2,
+     "runs": [
+      {
+       "t": "Restricted Countries"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Africa"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Burundi, Central African Republic, Chad, Democratic Republic of the Congo, Eritrea, Libya, Somalia, Sudan, South Sudan"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Asia & Middle East"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Afghanistan, Iran, Iraq, Syria, Yemen, Myanmar, North Korea, Brunei"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Europe & Eurasia"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Belarus, Russia, Crimea Region"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Americas"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Cuba, Venezuela"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Additional Restricted Countries (Effective July 1 2026 Onwards)"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Saudi Arabia"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Slovakia"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Malaysia"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Kuwait"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Faroe Islands"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "📢 "
+      },
+      {
+       "t": "This list is updated periodically.",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "USA & Canada"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders from the "
+      },
+      {
+       "t": "United States",
+       "b": true
+      },
+      {
+       "t": " and "
+      },
+      {
+       "t": "Canada",
+       "b": true
+      },
+      {
+       "t": " are accepted, but must trade exclusively on the "
+      },
+      {
+       "t": "TradeLocker",
+       "b": true
+      },
+      {
+       "t": " platform."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-hold-trades-overnight-weekend",
+   "title": "Can I hold trades Overnight/Weekend?",
+   "collection": "general",
+   "section": "Trading Inquiries",
+   "updated": "2026-01-31T18:44:22Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, you can. There are no restrictions on holding trades overnight or over the weekend"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "are-we-trading-real-capital",
+   "title": "Are we trading real capital?",
+   "collection": "general",
+   "section": "Trading Inquiries",
+   "updated": "2026-01-31T18:44:43Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "All accounts in our program are in a simulated trading environment."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-are-the-trading-commissions",
+   "title": "What are the trading commissions?",
+   "collection": "general",
+   "section": "Trading Inquiries",
+   "updated": "2026-01-31T18:45:57Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Forex, metals and commodities are $6 per lot round trip. Indices are zero commission trading."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-trade-high-impact-news-events",
+   "title": "Can I trade high impact news events?",
+   "collection": "general",
+   "section": "Trading Inquiries",
+   "updated": "2026-01-31T18:46:18Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, you can trade high-impact news events as we do not have any restrictions. You are free to open, close, or modify trades during news releases without limitations."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-use-eas",
+   "title": "Can I use EAs?",
+   "collection": "general",
+   "section": "Trading Inquiries",
+   "updated": "2026-01-31T18:46:37Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, you can use Expert Advisors (EAs) for trading on our platforms. However, please note that we may ask to audit the EA at anytime for any reason at our discretion."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-we-copy-trade",
+   "title": "Can we copy trade?",
+   "collection": "general",
+   "section": "Trading Inquiries",
+   "updated": "2026-01-31T18:46:52Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Copy trading is allowed in our program but the master account must be yours. Copy trading from signal groups or fellow traders will result in a breach of your account."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "2-step-pro-challenge",
+   "title": "2-Step Pro Challenge",
+   "collection": "account-rules",
+   "section": "2-Step Pro Challenge",
+   "updated": "2026-10-10T10:15:20Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Profit Targets & Evaluation Stages"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the Phase 1 profit target?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must achieve a 10% profit target to pass Phase 1."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the Phase 2 profit target?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must achieve a 5% profit target to successfully complete Phase 2."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How many minimum trading days are required?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must complete at least one trading day in each evaluation phase."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Funded Account & Consistency"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is there a consistency rule?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, consistency rule does not apply to 2-Step Pro Challenge."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Drawdown Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the maximum drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The maximum drawdown is 8% of the initial account balance and is static."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How does static drawdown work?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The drawdown threshold remains fixed relative to the initial account balance and does not trail upward as the account generates profits. For example, on a $100,000 account, the 8% static drawdown threshold is $92,000. Even if the account balance increases to $105,000, the threshold remains at $92,000."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can the static drawdown threshold move?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. The threshold remains fixed relative to the initial account balance."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the daily loss limit?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The daily loss limit is 4%. It is calculated using the higher of your account balance or equity at the start of the trading day. Exceeding the permitted daily loss limit results in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "News Trading"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is news trading allowed?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, news-trading is not permitted for the 2-Step Pro Challenge."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Inactivity Policy"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long can my account remain inactive?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Accounts are subject to a 28-day inactivity rule. To remain active, you must open and close at least one trade within the permitted inactivity period. Failure to complete a trade within 28 consecutive days may result in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Lot Size Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What are the maximum lot size limits?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Maximum combined open lot limits apply to all account types."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Maximum Combined Open Lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "2.5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "10 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "20 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "40 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do lot size limits apply to all open trades combined?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The maximum lot limit applies to the combined size of all open trades across instruments. You must not exceed the permitted total at any time. For example, on a $100,000 account, opening 39 lots on EURUSD and 2 lots on XAUUSD results in 41 combined lots, exceeding the 40-lot limit."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Payout Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is there a funded consistency requirement?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, consistency rule does not apply to 2-Step Pro Challenge."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the minimum profit required for each payout cycle?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "First Payout"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Second Payout Onwards"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$625"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$750"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,500"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$2,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$3,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$6,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$7,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$9,000"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Meeting the applicable threshold does not guarantee payout approval."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is there a minimum payout amount?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. There is no minimum payout amount. Traders must meet the applicable profit requirements and maintain the required account buffer after withdrawals. If the required buffer is breached, the account is considered breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the required account buffer?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Required Balance"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,700"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$26,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$52,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$103,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$206,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$309,100"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Only funds above the required baseline balance are available for withdrawal, subject to applicable payout rules."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the payout profit split?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved payouts follow an 80/20 profit split. Traders receive 80% of the approved withdrawal amount, while CK Prop Firm retains 20%."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long do payouts take?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once approved, the withdrawal is deducted from the trading balance and disbursed to the payment method within two business days."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can I trade while a payout is pending?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. However, you must treat the requested withdrawal as already deducted. Trading into the protected buffer before approval may cause rejection. Falling below the required threshold after deduction risks your account."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "When do unrestricted withdrawals begin?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Unrestricted withdrawals begin after the fifth payout. All other applicable payout requirements remain in effect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "2-step-standard-challenge",
+   "title": "2-Step Standard Challenge",
+   "collection": "account-rules",
+   "section": "2-Step Standard",
+   "updated": "2026-10-10T10:24:08Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Profit Targets & Evaluation Stages"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the Phase 1 profit target?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must achieve a 10% profit target to pass Phase 1 of the evaluation."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the Phase 2 profit target?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must achieve a 5% profit target to successfully complete Phase 2."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How many minimum trading days are required?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must complete at least one trading day in each evaluation phase."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Funded Account & Consistency"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the funded consistency rule?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The 2-Step Standard funded account has a 50% consistency requirement."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your single most profitable trading day cannot account for more than 50% of your total profit during the current payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How is consistency calculated?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your best trading day's profit is divided by your total profit for the current payout cycle. For example, if your best trading day generates $1,200, your total cycle profit must reach at least $2,400 to satisfy the 50% consistency requirement."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does the consistency calculation reset after a payout?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The consistency calculation resets following every approved payout."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Drawdown Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the maximum drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The maximum drawdown is 8% of the initial account balance and follows a trailing drawdown structure."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How does trailing drawdown work?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The drawdown threshold is calculated using your closed end-of-day (EOD) balance. It moves upward as your account records higher qualifying EOD balances. Once your EOD balance reaches a profit equal to 8% of your initial account balance, the threshold locks at the initial starting balance under the main drawdown policy."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do floating profits increase the drawdown threshold?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Intraday floating profits and temporary balance peaks do not raise the threshold. Only qualifying closed profits reflected in the EOD balance can move it upward."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can the drawdown threshold move back down?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Once the threshold moves upward, it does not move back down, even if the account subsequently incurs losses."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can my account breach the drawdown limit during the trading day?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Breach monitoring is continuous. If your account equity or balance falls below the active drawdown threshold during trading hours, your account is breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the daily loss limit?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The daily loss limit is 4%. It is calculated using the higher of your account balance or equity at the start of the trading day. Exceeding the permitted daily loss limit results in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "News Trading"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is news trading allowed?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, news trading is permitted on the 2-Step Standard Challenge."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Inactivity Policy"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What happens if I do not trade for an extended period?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Accounts are subject to a 28-day inactivity rule. To remain active, you must open and close at least one trade within the permitted inactivity period. Failure to complete a trade within 28 consecutive days may result in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Lot Size Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What are the maximum lot size limits?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Maximum combined open lot limits apply to all account types."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Maximum Combined Open Lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "2.5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "10 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "20 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "40 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do lot size limits apply to all open trades combined?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The maximum lot limit applies to the combined size of all open trades across instruments. You must not exceed the permitted total at any time. For example, on a $100,000 account, opening 39 lots on EURUSD and 2 lots on XAUUSD results in 41 combined lots, exceeding the 40-lot limit."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Payout Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the funded consistency requirement?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The funded consistency requirement is 50%. Your best trading day must not account for more than 50% of your total profit during the current payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the minimum profit required for each payout cycle?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "First Payout"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Second Payout Onwards"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$625"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$750"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,500"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$2,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$3,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$6,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$7,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$9,000"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Meeting the applicable threshold does not guarantee payout approval."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is there a minimum payout amount?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. There is no minimum payout amount. Traders must meet the applicable profit requirements and maintain the required account buffer after withdrawals. If the required buffer is breached, the account is considered breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the required account buffer?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Required Balance"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,700"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$26,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$52,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$103,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$206,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$309,100"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Only funds above the required baseline balance are available for withdrawal, subject to applicable payout rules."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the payout profit split?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved payouts follow an 80/20 profit split. Traders receive 80% of the approved withdrawal amount, while CK Prop Firm retains 20%."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long do payouts take?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once approved, the withdrawal is deducted from the trading balance and disbursed to the payment method within two business days."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can I trade while a payout is pending?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. However, you must treat the requested withdrawal as already deducted. Trading into the protected buffer before approval may cause rejection. Falling below the required threshold after deduction risks your account."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "When do unrestricted withdrawals begin?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Unrestricted withdrawals begin after the fifth payout. All other applicable payout requirements remain in effect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "1-step-standard-challenge",
+   "title": "1 Step Standard Challenge",
+   "collection": "account-rules",
+   "section": "1 Step Standard",
+   "updated": "2026-10-10T10:11:57Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Profit Targets & Evaluation"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the profit target?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Traders must achieve a 10% profit target to successfully complete the 1-Step Standard evaluation and qualify for a funded account, subject to all applicable rules."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How many evaluation phases are required?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The 1-Step Standard Challenge consists of one evaluation phase with a 10% profit target."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How many minimum trading days are required?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "1 minimum trading day per phase is required for the 1-Step Standard Challenge."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Funded Account & Consistency"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the funded consistency rule?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The 1-Step Standard funded account has a 30% consistency requirement."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your single most profitable trading day cannot account for more than 30% of your total profit during the current payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How is consistency calculated?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your best trading day's profit is divided by your total profit for the current payout cycle. For example, if your best trading day generates $1,200, your total cycle profit must reach at least $4,000 to satisfy the 30% consistency requirement."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does the consistency calculation reset after a payout?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Following an approved payout, the consistency calculation resets for the next payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Drawdown Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the maximum drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The maximum drawdown is 6% of the initial account balance and follows a trailing drawdown structure."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How does trailing drawdown work?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The drawdown threshold is calculated using your closed end-of-day (EOD) balance. It moves upward as your account records higher qualifying EOD balances."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once your EOD balance reaches a profit equal to 6% of your initial account balance, the threshold locks at the initial starting balance under the main drawdown policy."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do floating profits increase the drawdown threshold?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Intraday floating profits and temporary balance peaks do not raise the threshold. Only qualifying closed profits reflected in the EOD balance can move it upward."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can the drawdown threshold move back down?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Once the threshold moves upward, it does not move back down, even if your account subsequently incurs losses."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can my account breach the drawdown limit during the trading day?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Breach monitoring is continuous. If your account equity or balance falls below the active drawdown threshold during trading hours, your account is breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the daily loss limit?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The daily loss limit is 3%. It is calculated using the higher of your account balance or equity at the start of the trading day. Exceeding the permitted daily loss limit results in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "News Trading"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is news trading allowed?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, news-trading is permitted for the 1-Step Standard Challenge."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Inactivity Policy"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long can my account remain inactive?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Accounts are subject to a 28-day inactivity rule. To remain active, you must open and close at least one trade within the permitted inactivity period. Failure to complete a trade within 28 consecutive days may result in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Lot Size Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What are the maximum lot size limits?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Maximum combined open lot limits apply to all account types."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Maximum Combined Open Lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "2.5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "10 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "20 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "40 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do lot size limits apply to all open trades combined?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The maximum lot limit applies to the combined size of all open trades across instruments. You must not exceed the permitted total at any time."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "For example, on a $100,000 account, opening 39 lots on EURUSD and 2 lots on XAUUSD results in 41 combined lots, exceeding the 40-lot limit."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Payout Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the funded consistency requirement?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The funded consistency requirement is 30%, calculated using your best trading day relative to your total profit during the current payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the minimum profit required for each payout cycle?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "First Payout"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Second Payout Onwards"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$625"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$750"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,500"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$2,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$3,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$6,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$7,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$9,000"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "These are the profit thresholds listed in the payout policy. Meeting the applicable threshold does not guarantee payout approval."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is there a minimum payout amount?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. There is no minimum payout amount. Traders must meet the applicable profit requirements and maintain the required account buffer after withdrawals."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the required account buffer?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Required Balance"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,700"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$26,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$52,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$103,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$206,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$309,100"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Only funds above the required baseline balance are available for withdrawal, subject to applicable payout rules. If the required buffer is breached, the account is considered breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the payout profit split?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved payouts follow an 80/20 profit split. Traders receive 80% of the approved withdrawal amount, while CK Prop Firm retains 20%."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long do payouts take?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once approved, the withdrawal is deducted from the trading balance and disbursed to the payment method within two business days."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can I trade while a payout is pending?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. However, you must treat the requested withdrawal as already deducted. Trading into the protected buffer before approval may cause rejection. Falling below the required threshold after deduction risks your account."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "When do unrestricted withdrawals begin?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Unrestricted withdrawals begin after the fifth payout. All other applicable payout requirements remain in effect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "instant-funding",
+   "title": "Instant Funding",
+   "collection": "account-rules",
+   "section": "Instant Funding",
+   "updated": "2026-10-10T10:09:46Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Account Structure & Profit Requirements"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does Instant Funding have evaluation phases?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No, Instant Funding does not have any evaluation phases. You are placed directly in a funded account"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What profit requirements apply to payouts?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Minimum profit requirements depend on account size and payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "First Payout"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Second Payout Onwards"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$625"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$750"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,250"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$1,500"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$2,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$3,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$6,000"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$7,500"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$9,000"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The $200,000 and $300,000 Instant Funding options are coming soon. Availability must be confirmed before purchase."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Funded Account & Consistency"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the funded consistency rule?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Instant Funding has a 20% consistency requirement. Your single most profitable trading day cannot account for more than 20% of your total profit during the current payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How is consistency calculated?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your best trading day's profit is divided by your total profit for the current payout cycle. For example, if your best trading day generates $1,000, your total cycle profit must reach at least $5,000 to satisfy a 20% consistency requirement."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does the consistency calculation reset after a payout?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The consistency calculation resets following every approved payout."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Drawdown Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the maximum drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Instant Funding has a 5% trailing maximum drawdown."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How does trailing drawdown work?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The drawdown threshold is calculated using your closed end-of-day (EOD) balance. It moves upward as your account records higher qualifying EOD balances. Once your EOD balance reaches a profit equal to 5% of your initial account balance, the threshold locks at the initial starting balance under the main drawdown policy."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do floating profits increase the drawdown threshold?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Intraday floating profits and temporary balance peaks do not raise the threshold. Only qualifying closed profits reflected in the EOD balance can move it upward."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can the drawdown threshold move back down?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Once the threshold moves upward, it does not move back down, even if your account subsequently incurs losses."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can my account breach the drawdown limit during the trading day?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Breach monitoring is continuous. If your account equity or balance falls below the active drawdown threshold during trading hours, your account is breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the daily loss limit?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The daily loss limit is 3%. It is calculated using the higher of your account balance or equity at the start of the trading day. Exceeding the permitted daily loss limit results in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "News Trading"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is news trading allowed?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes, news-trading is permitted in Instant Funding."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Inactivity Policy"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long can my Instant Funding account remain inactive?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Accounts are subject to a 28-day inactivity rule. To remain active, you must open and close at least one trade within the permitted inactivity period. Failure to complete a trade within 28 consecutive days may result in an account breach."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Lot Size Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What are the maximum lot size limits?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Maximum combined open lot limits apply to all account types."
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Maximum Combined Open Lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$5,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "2.5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "5 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "10 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "20 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "40 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "60 lots"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do lot size limits apply to all open trades combined?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The maximum lot limit applies to the combined size of all open trades across instruments. You must not exceed the permitted total at any time. For example, on a $100,000 account, opening 39 lots on EURUSD and 2 lots on XAUUSD results in 41 combined lots, exceeding the 40-lot limit."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Payout Rules"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the funded consistency requirement?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Instant Funding has a 20% consistency requirement. Your best trading day must not account for more than 20% of your total profit during the current payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the minimum profit required for each payout cycle?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The minimum profit thresholds are listed in the payout table above and depend on account size and payout cycle."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is there a minimum payout amount?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. There is no minimum payout amount. Traders must meet the applicable profit requirements and maintain the required account buffer after withdrawals. If the required buffer is breached, the account is considered breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the required account buffer?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Required Balance"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,700"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$26,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$52,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$103,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$206,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$309,100"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Only funds above the required baseline balance are available for withdrawal, subject to applicable payout rules."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the payout profit split?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved payouts follow an 80/20 profit split. Traders receive 80% of the approved withdrawal amount, while CK Prop Firm retains 20%."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How long do payouts take?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once approved, the withdrawal is deducted from the trading balance and disbursed to the payment method within two business days."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can I trade while a payout is pending?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. However, you must treat the requested withdrawal as already deducted. Trading into the protected buffer before approval may cause rejection. Falling below the required threshold after deduction risks your account."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "When do unrestricted withdrawals begin?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Unrestricted withdrawals begin after the fifth payout. All other applicable payout requirements remain in effect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-does-the-consistency-rule-work",
+   "title": "How Does the Consistency Rule Work?",
+   "collection": "account-rules",
+   "section": "Consistency Rules",
+   "updated": "2026-10-10T10:49:55Z",
+   "blocks": [
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "What is the consistency rule?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The consistency rule limits how much of your total profit for the current payout cycle can come from your single most profitable trading day. Its purpose is to encourage disciplined trading and discourage excessive risk-taking."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What are the funded consistency requirements for each account type?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Type"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Consistency Requirement"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "1-Step Standard"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "30%"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "2-Step Standard"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "50%"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "2-Step Pro"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Not applicable"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Instant Funding"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "20%"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How is the consistency score calculated?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your best trading day's profit is divided by your total profit for the current payout cycle. The result must not exceed the consistency percentage applicable to your account. For example, if your best day generates $1,200 and your total cycle profit is $1,600, your best day represents 75% of your total profit. This would fail a 30% consistency requirement."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How can I meet the consistency requirement without losing my profits?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "You can continue trading and building additional profits until your best day's profit represents an acceptable percentage of your total cycle profit, provided you continue to comply with all trading rules. For example, if your best trading day generated $1,200 under a 30% consistency rule, your total cycle profit would need to reach at least $4,000: $1,200 ÷ 0.30 = $4,000."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does the consistency calculation reset after a payout?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The consistency calculation resets after every approved payout. The next payout cycle is evaluated independently."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does the consistency rule apply to every account type?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. The 2-Step Pro account has no consistency score requirement. The 1-Step Standard, 2-Step Standard, and Instant Funding accounts have requirements of 30%, 50%, and 20%, respectively."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "daily-drawdown",
+   "title": "Daily Drawdown",
+   "collection": "account-rules",
+   "section": "Daily/Maximum/Trailing Loss Limits",
+   "updated": "2026-01-31T20:23:45Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The Daily Loss Limit is the maximum amount you are allowed to lose in a single trading day. It is calculated using the higher value between your account balance and equity at the start of the trading day. Breaching this rule is a hard violation and will result in account closure. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "For 2 Step accounts:",
+       "b": true
+      },
+      {
+       "t": " Daily Loss Limit = 4% of the higher value between starting balance or equity. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Example 1 – Higher Equity: "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Balance: $102,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Equity: $104,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Daily loss limit is based on $104,000, meaning your equity must not fall below $100,000 during the day. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Example 2 – Higher Balance: "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Balance: $100,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Equity: $98,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Daily loss limit is based on $100,000, meaning your equity must not fall below $96,000 during the day. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Important notes:",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Both floating and closed PnL count toward the daily loss limit."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Equity must never touch or go below the limit at any point during the day."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "The Daily Loss Limit resets at 22:00 Server Time (GMT)."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "You can check the reset timer anytime on your CK Capital dashboard."
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "maximum-drawdown",
+   "title": "Maximum Drawdown",
+   "collection": "account-rules",
+   "section": "Daily/Maximum/Trailing Loss Limits",
+   "updated": "2026-01-31T20:23:19Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The Maximum Static Drawdown is the maximum loss allowed on the account, calculated as a fixed percentage of the initial starting balance. This drawdown level never moves, even if the account grows. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Drawdown Limits by Account Type:",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "2 Step Standard:",
+          "b": true
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "8% static drawdown"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "2 Step Lightweight:",
+          "b": true
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "8% static drawdown"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "2 Step Middleweight:",
+          "b": true
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "12% static drawdown "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Example – 2 Step Standard / Lightweight (8%):",
+       "b": true
+      },
+      {
+       "t": " "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Starting balance: $100,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Maximum allowed loss: $8,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "If balance or equity drops below "
+      },
+      {
+       "t": "$92,000",
+       "b": true
+      },
+      {
+       "t": ", the account is breached and all trades are closed. Even if the account grows to $110,000, the drawdown level "
+      },
+      {
+       "t": "remains at $92,000.",
+       "b": true
+      },
+      {
+       "t": " "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Example – 2 Step Middleweight (12%):",
+       "b": true
+      },
+      {
+       "t": " "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Starting balance: $100,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Maximum allowed loss: $12,000 "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "If balance or equity drops below "
+      },
+      {
+       "t": "$88,000,",
+       "b": true
+      },
+      {
+       "t": " the account is breached and all trades are closed. Even if the account grows to $110,000, the drawdown level"
+      },
+      {
+       "t": " remains at $88,000.",
+       "b": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "maximum-trailing-drawdown",
+   "title": "Maximum Trailing Drawdown",
+   "collection": "account-rules",
+   "section": "Daily/Maximum/Trailing Loss Limits",
+   "updated": "2026-10-10T10:55:02Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is maximum trailing drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Maximum trailing drawdown is a loss limit that moves upward as your account records higher closed end-of-day balances. It is designed to protect the account against excessive losses while allowing the drawdown floor to rise as profits accumulate."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Which accounts use trailing drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "1-Step Standard: 6% trailing drawdown."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "2-Step Standard: 8% trailing drawdown."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Instant Funding: 5% trailing drawdown."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "2-Step Pro: 8% static drawdown."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How is trailing drawdown calculated?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The threshold is calculated using your closed end-of-day balance. It updates at daily market rollover, and only closed profits recorded by that time can move the threshold upward. Temporary intraday balance peaks and floating profits do not raise the drawdown threshold."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Does the trailing drawdown threshold move downward if I lose money?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Once the drawdown threshold moves upward, it does not move back down, even if the account subsequently incurs losses."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "When does trailing drawdown stop moving?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Trailing drawdown stops moving once the closed end-of-day balance reaches a profit equal to the applicable drawdown percentage above the initial balance. The threshold then locks at the initial starting balance. For example, on a $100,000 account with a 5% trailing drawdown, the threshold starts at $95,000. Once the qualifying end-of-day balance reaches $105,000, the threshold locks at $100,000."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the difference between trailing and static drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Trailing drawdown rises with qualifying end-of-day balance increases until it reaches its specified cap. Static drawdown remains fixed relative to the initial account balance."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "For a $100,000 account:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "An 8% trailing drawdown starts at $92,000 and can rise until it locks at $100,000 under the main policy."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "An 8% static drawdown starts at $92,000 and remains at that level throughout the challenge."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Do floating profits count toward increasing my drawdown threshold?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Only closed profits reflected in the end-of-day balance can increase the trailing drawdown threshold. Intraday floating profits do not change the floor."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can my account breach the drawdown limit during the trading day?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. Although the threshold is recalculated at daily rollover, Breach monitoring is continuous. If your account equity or balance falls below the active threshold during trading hours, the account is breached."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How much is the drawdown allowance on a $100,000 account?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The following are fixed-dollar allowances for a $100,000 account:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "5% drawdown: $5,000."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "6% drawdown: $6,000."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "8% drawdown: $8,000."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can you provide an example of 5% trailing drawdown?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Consider a $100,000 Instant Funding account with a 5% trailing drawdown."
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Starting balance: $100,000."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Initial drawdown threshold: $95,000."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "End-of-day balance rises to $102,000: threshold rises to $97,000."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "End-of-day balance rises to $103,500: threshold rises to $98,500."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "End-of-day balance reaches $105,500: threshold locks at $100,000 under the main policy."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "If the balance later reaches $115,000, the threshold remains at $100,000."
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "protected-account-buffer-withdrawal-limits",
+   "title": "Protected Account Buffer & Withdrawal Limits",
+   "collection": "account-rules",
+   "section": "Protected Account Buffer & Withdrawal Limits",
+   "updated": "2026-10-10T10:59:32Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the protected account buffer?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The protected account buffer is a mandatory safety cushion that must remain in your funded account. Only funds above the required baseline balance are available for withdrawal, subject to all other payout conditions."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "What is the required account balance for each account size?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Account Size"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "Required Account Balance"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$10,700"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$25,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$26,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$50,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$52,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$100,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$103,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$200,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$206,100"
+          }
+         ]
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$300,000"
+          }
+         ]
+        }
+       ],
+       [
+        {
+         "type": "p",
+         "runs": [
+          {
+           "t": "$309,100"
+          }
+         ]
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "How is my available withdrawal amount calculated?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Your available withdrawal amount is calculated by subtracting the required baseline balance from your current account balance. Available amount = Current balance − Required baseline balance. The resulting amount represents the maximum balance excess available before applying the applicable withdrawal caps, profit split, and other payout conditions."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can I withdraw funds that would reduce my account below the required buffer?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "No. Your account balance after the requested withdrawal must remain at or above the required baseline balance."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Can you provide an example of the protected buffer calculation?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Consider a $50,000 account with a required baseline balance of $52,100 and a current balance of $53,500."
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Current balance: $53,500"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Required baseline balance: $52,100"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Balance available above the buffer: $1,400"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Trader's 80% share of $1,400: $1,120"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Remaining account balance after deducting $1,400: $52,100"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "This illustrates the buffer calculation and the 80/20 split. Actual approval remains subject to the applicable withdrawal caps and all other rules."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Are there limits on my first withdrawals?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. A user's first five withdrawals may not exceed 3% of the initial account balance. After the fifth withdrawal, this 3% cap is removed."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Is the 3% withdrawal cap removed after my fifth withdrawal?",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. The 3% cap applies to the first five withdrawals and is removed after the fifth withdrawal. All other applicable payout conditions must still be satisfied."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-can-i-get-paid",
+   "title": "How can I get paid?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-10-08T11:08:18Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved payouts follow an "
+      },
+      {
+       "t": "80/20",
+       "b": true
+      },
+      {
+       "t": " profit split: the trader receives "
+      },
+      {
+       "t": "80%",
+       "b": true
+      },
+      {
+       "t": " of the approved withdrawal amount, and CK Prop Firm retains "
+      },
+      {
+       "t": "20%",
+       "b": true
+      },
+      {
+       "t": ". "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Payouts are simple, in order to request your reward you must hit the minimum profit target, trade within your account parameters and hit your consistency score."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Minimum Profit Requirement"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Before requesting a payout, you must reach a minimum net profit during that specific payout cycle. These thresholds establish withdrawal eligibility; they are not automatic or guaranteed payouts."
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Note:",
+       "b": true
+      },
+      {
+       "t": " Targets reset back to zero at the start of each new payout cycle once a withdrawal is approved."
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Withdrawal Methods",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "We offer both fiat and cryptocurrency withdrawals through Rise. You can sign up here:"
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "🔗 "
+      },
+      {
+       "t": "https://pay.riseworks.io/sign-up",
+       "href": "https://pay.riseworks.io/sign-up"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Important Requirement: Matching Email Address",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The email address you use for your Rise account "
+      },
+      {
+       "t": "must be the same",
+       "b": true
+      },
+      {
+       "t": " as the email used to purchase your trading account."
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "If these emails do "
+         },
+         {
+          "t": "not match",
+          "b": true
+         },
+         {
+          "t": ", your payout request will be "
+         },
+         {
+          "t": "denied",
+          "b": true
+         },
+         {
+          "t": ", and your account will be "
+         },
+         {
+          "t": "terminated",
+          "b": true
+         },
+         {
+          "t": "."
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "are-there-any-contracts-between-myself-and-ck-prop-firm",
+   "title": "Are there any contracts between myself and CK Prop Firm?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-10-08T11:09:07Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. After successfully passing your evaluation, you will be required to sign a formal agreement before your performance account is issued. This contract outlines the terms and conditions governing your funded account and trading relationship with CK Prop Firm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "identity-verification-kyc-requirements",
+   "title": "Identity Verification (KYC) Requirements",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-10-08T11:09:32Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "After completing the evaluation phase, all traders must complete a "
+      },
+      {
+       "t": "KYC (Know Your Customer)",
+       "b": true
+      },
+      {
+       "t": " verification process. This includes the following steps:"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "1. Government-Issued ID",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Please upload one valid photo ID:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Passport"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Driver’s License"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "National ID Card"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Residence Permit"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "2. Proof of Address",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Upload a document issued within the "
+      },
+      {
+       "t": "last 90 days",
+       "b": true
+      },
+      {
+       "t": ", such as:"
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Bank Statement"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Utility Bill (electricity, water, gas)"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Landline or Internet Bill"
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "3. Live Selfie (Facial Verification)",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "After submitting your documents, you’ll be asked to take a "
+      },
+      {
+       "t": "live selfie",
+       "b": true
+      },
+      {
+       "t": " to verify your identity and match it with your ID."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "🔐 We use a secure verification system called "
+      },
+      {
+       "t": "Veriff",
+       "b": true
+      },
+      {
+       "t": "."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Once all steps are completed and approved, you’ll see a "
+      },
+      {
+       "t": "“Successful”",
+       "b": true
+      },
+      {
+       "t": " confirmation on your dashboard."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "when-will-i-receive-my-funded-account",
+   "title": "When Will I Receive My Funded Account?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-01-31T19:30:12Z",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Complete KYC as soon as you pass the evaluation"
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "KYC Approved → Contract sent within 2 business days",
+          "b": true
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "Contract signed → Funded account issued within 1 hour",
+          "b": true
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "are-there-any-payout-caps",
+   "title": "Are there any payout caps?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-10-08T11:20:35Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "For your first "
+      },
+      {
+       "t": "5 withdrawals",
+       "b": true
+      },
+      {
+       "t": ", each withdrawal is capped at "
+      },
+      {
+       "t": "3% of your initial account balance",
+       "b": true
+      },
+      {
+       "t": ". "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "After completing your "
+      },
+      {
+       "t": "5th withdrawal",
+       "b": true
+      },
+      {
+       "t": ", the 3% withdrawal cap is removed and you may withdraw according to the standard payout rules."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "why-was-my-funded-account-denied",
+   "title": "Why was my funded account denied?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-01-31T19:03:50Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "During the review of your Phase 1 and Phase 2 evaluations, we assess whether your trading style aligns with our current risk management policies and program objectives."
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "If your trading approach does not meet our criteria, your challenge fee will be refunded."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "However, if any prohibited trading practices are detected, your funded account will be denied "
+         },
+         {
+          "t": "without a refund",
+          "b": true
+         },
+         {
+          "t": "."
+         }
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "why-was-my-payout-charged-a-fee",
+   "title": "Why was my payout charged a fee?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-10-08T11:43:31Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "All withdrawals are subject to a $50 or 3% transaction fee per payout to cover transfer costs."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "why-was-my-payout-rejected",
+   "title": "Why was my payout rejected?",
+   "collection": "funded-accounts",
+   "section": null,
+   "updated": "2026-10-08T11:43:51Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "A payout may be rejected if our Risk Team identifies trading activity that does not align with CK Prop Firm's trading requirements, or if a breach of our established trading rules or Terms & Conditions is identified."
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Each payout request is reviewed individually by our Risk Team. If a violation or trading activity that falls outside our permitted conditions is identified, the payout may be denied. If your payout has been rejected and you believe this was done in error, please contact our Support Team or reach out at "
+      },
+      {
+       "t": "momin@ckcapital.co.uk",
+       "href": "mailto:momin@ckcapital.co.uk"
+      },
+      {
+       "t": " so your case can be reviewed and clarified."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "when-will-i-receive-my-giveaway-account-that-i-won",
+   "title": "When will I receive my giveaway account that I won?",
+   "collection": "giveaways",
+   "section": null,
+   "updated": "2026-01-31T19:05:20Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Congratulations if you are a winner! All giveaway accounts are distributed weekly on Sundays following the announcement of the winners."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-i-gift-an-account-i-won",
+   "title": "Can I gift an account I won?",
+   "collection": "giveaways",
+   "section": null,
+   "updated": "2026-01-31T19:05:36Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "All giveaway prizes must be claimed by the original winner and cannot be transferred or gifted to others."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "who-is-eligible-to-win",
+   "title": "Who is eligible to win?",
+   "collection": "giveaways",
+   "section": null,
+   "updated": "2026-01-31T19:05:53Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "To be eligible to win, you must have participated in the giveaway, followed all the instructions, be 18 or older, and not reside in a prohibited country."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "giveaway-policy",
+   "title": "Giveaway Policy",
+   "collection": "giveaways",
+   "section": null,
+   "updated": "2026-01-31T19:06:21Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "We love rewarding our community through social giveaways and contest-based prizes. To ensure fairness for all participants, please review the following policy:"
+      }
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "Eligibility to Claim a Giveaway",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "If you win a giveaway via a "
+         },
+         {
+          "t": "social media post, Discord event, or any contest/game",
+          "b": true
+         },
+         {
+          "t": ", you are "
+         },
+         {
+          "t": "eligible to claim the prize",
+          "b": true
+         },
+         {
+          "t": " only if you "
+         },
+         {
+          "t": "have not won another giveaway in the past 60 days",
+          "b": true
+         },
+         {
+          "t": "."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "h",
+     "level": 3,
+     "runs": [
+      {
+       "t": "One-Win Per 60 Days Rule",
+       "b": true
+      }
+     ]
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "If you have already claimed a giveaway prize "
+         },
+         {
+          "t": "within the last 60 days",
+          "b": true
+         },
+         {
+          "t": ", you will "
+         },
+         {
+          "t": "not be eligible",
+          "b": true
+         },
+         {
+          "t": " to redeem another prize during this period."
+         }
+        ]
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "runs": [
+         {
+          "t": "This rule helps keep giveaways fair and provides equal opportunities for all members of our community."
+         }
+        ]
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Thank you for your understanding and continued support!"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "when-will-i-receive-my-payout-from-a-giveaway-account",
+   "title": "When will I receive my payout from a giveaway account?",
+   "collection": "giveaways",
+   "section": null,
+   "updated": "2026-08-09T07:45:53Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Payouts for giveaway accounts are processed and issued "
+      },
+      {
+       "t": "within 30 days",
+       "b": true
+      },
+      {
+       "t": " of requesting a payout."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-is-the-profit-split-on-giveaway-accounts",
+   "title": "What is the profit split on giveaway accounts?",
+   "collection": "giveaways",
+   "section": null,
+   "updated": "2026-08-09T07:46:23Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Giveaway accounts come with a "
+      },
+      {
+       "t": "50% profit split",
+       "b": true
+      },
+      {
+       "t": ", meaning you receive 50% of the eligible profits you generate on the account."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-is-the-ck-prop-firm-affiliate-program",
+   "title": "What is the CK Prop Firm Affiliate Program?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-10-08T10:59:07Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The affiliate program allows approved creators and traders to earn commissions by referring customers to CK Prop Firm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-do-i-become-an-affiliate",
+   "title": "How do I become an affiliate?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-06-10T14:42:10Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Apply through the affiliate application process. Each application is reviewed individually."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "when-are-affiliate-payouts-processed",
+   "title": "When are affiliate payouts processed?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-06-10T14:48:31Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Affiliate payouts are processed according to our payout schedule. A minimum payout "
+      },
+      {
+       "t": "$250",
+       "b": true
+      },
+      {
+       "t": " is required before a payout can be requested or processed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-type-of-content-is-not-permitted",
+   "title": "What type of content is not permitted?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-06-10T14:52:03Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Affiliates must not publish, promote, or distribute any content that is misleading, deceptive, false, offensive, defamatory, unlawful or likely to damage the reputation, brand or interests of the company."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-commission-do-affiliates-earn",
+   "title": "What commission do affiliates earn?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-06-10T14:59:36Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Approved affiliates can earn up to "
+      },
+      {
+       "t": "25% commission",
+       "b": true
+      },
+      {
+       "t": " on qualified referrals, subject to their affiliate tier, performance and program terms."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-my-affiliate-account-be-reviewed-or-terminated",
+   "title": "Can my affiliate account be reviewed or terminated?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-10-08T10:59:32Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. All affiliate accounts are subject to ongoing review. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "CK Prop Firm reserves the right to suspend or terminate any affiliate account or partnership at its sole discretion if it violates program rules, engages in prohibited activity or is no longer aligned with the company objectives."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "how-can-i-update-my-affiliate-information",
+   "title": "How can I update my affiliate information?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-06-10T15:04:16Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "If you need to update your affiliate information, please contact our support team and provide the required details for verification. "
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "",
+       "br": true
+      },
+      {
+       "t": "Once your identity has been confirmed, our team will review and process the requested changes as soon as possible."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "what-happens-if-i-become-inactive",
+   "title": "What happens if I become inactive?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-06-10T15:05:44Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Inactive affiliate accounts may be reviewed, suspended or removed from the program."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "can-ck-prop-firm-change-the-affiliate-program-terms",
+   "title": "Can CK Prop Firm change the affiliate program terms?",
+   "collection": "affiliates",
+   "section": null,
+   "updated": "2026-10-08T10:59:56Z",
+   "blocks": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Yes. CK Prop Firm reserves the right to update affiliate commissions, requirements, benefits and program terms at any time."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

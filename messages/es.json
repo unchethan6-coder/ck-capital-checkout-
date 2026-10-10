@@ -1379,5 +1379,25 @@
       "platforms": "Plataformas"
     },
     "ratingLabel": "Valoración de Trustpilot"
+  },
+  "helpCenter": {
+    "eyebrow": "Centro de Ayuda",
+    "heading": "Encuentra respuestas oficiales, guías y todo lo que necesitas saber.",
+    "searchLabel": "Buscar en el centro de ayuda",
+    "searchPlaceholder": "Haz una pregunta o busca artículos…",
+    "clear": "Borrar búsqueda",
+    "loading": "Buscando…",
+    "tryAsking": "Prueba a preguntar",
+    "instantAnswer": "Respuesta instantánea",
+    "answerSource": "Citado textualmente de nuestro artículo de ayuda.",
+    "readFull": "Leer el artículo completo",
+    "matchingArticles": "Artículos relacionados",
+    "noAnswerTitle": "No se encontró respuesta para “{query}”",
+    "noAnswerBody": "Prueba con otras palabras o pregunta directamente a nuestro equipo de soporte.",
+    "contactSupport": "Contactar con soporte",
+    "articlesCount": "{count, plural, one {# artículo} other {# artículos}}",
+    "updated": "Actualizado el {date}",
+    "moreIn": "Más en {collection}",
+    "englishOnly": "Los artículos de ayuda solo están disponibles en inglés por ahora."
   }
 }

@@ -1459,5 +1459,25 @@
       "platforms": "المنصات"
     },
     "ratingLabel": "تقييم Trustpilot"
+  },
+  "helpCenter": {
+    "eyebrow": "مركز المساعدة",
+    "heading": "اعثر على الإجابات الرسمية والأدلة وكل ما تحتاج إلى معرفته.",
+    "searchLabel": "ابحث في مركز المساعدة",
+    "searchPlaceholder": "اطرح سؤالاً أو ابحث في المقالات…",
+    "clear": "مسح البحث",
+    "loading": "جارٍ البحث…",
+    "tryAsking": "جرّب أن تسأل",
+    "instantAnswer": "إجابة فورية",
+    "answerSource": "مقتبسة حرفياً من مقال المساعدة لدينا.",
+    "readFull": "اقرأ المقال كاملاً",
+    "matchingArticles": "مقالات مطابقة",
+    "noAnswerTitle": "لم يتم العثور على إجابة لـ “{query}”",
+    "noAnswerBody": "جرّب كلمات أخرى أو اسأل فريق الدعم مباشرة.",
+    "contactSupport": "تواصل مع الدعم",
+    "articlesCount": "{count, plural, one {مقال واحد} two {مقالان} few {# مقالات} many {# مقالاً} other {# مقال}}",
+    "updated": "آخر تحديث {date}",
+    "moreIn": "المزيد في {collection}",
+    "englishOnly": "مقالات المساعدة متاحة حالياً باللغة الإنجليزية فقط."
   }
 }

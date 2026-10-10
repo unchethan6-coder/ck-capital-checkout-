@@ -21,6 +21,7 @@ import {
 } from "@/lib/cms";
 import type { VideoItem } from "@/components/sections/Testimonials";
 import type { ReviewCard } from "@/components/sections/TraderReviews";
+import { activeHeroVideo } from "@/lib/heroTakeover";
 
 export const revalidate = 300;
 
@@ -63,7 +64,7 @@ export default async function Home() {
   return (
     <main className="home-purple-theme min-h-screen">
       {/* S1 — Hero: Light */}
-      <Hero />
+      <Hero video={activeHeroVideo()} />
 
       {/* S2 — Stats Strip: Light (was Jet Black) */}
       <StatsStrip />

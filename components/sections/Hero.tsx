@@ -1,16 +1,78 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ArrowRight, Play, BarChart2, Coins, Zap } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import type { HeroVideo } from "@/lib/heroTakeover";
 
-export function Hero() {
+/** Interactions a browser accepts as permission to play sound. */
+const UNLOCK_EVENTS = ["pointerdown", "keydown", "touchend"] as const;
+
+/** With `video`, the hero plays it as a full background instead of showing the mascot. */
+export function Hero({ video = null }: { video?: HeroVideo | null }) {
   const t = useTranslations("hero");
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
+  // Sound. Browsers refuse to start audio before the visitor has interacted with
+  // the page, so: try with sound, and where that is refused keep the muted loop
+  // running and switch the sound on at the first click, tap or key press.
+  const hasVideo = video !== null;
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || !hasVideo) return;
+    // Visitors who ask for reduced motion get the poster frame, silent.
+    if (reduceMotion) {
+      el.pause();
+      return;
+    }
+
+    let allowed = false; // the browser has let sound through
+    let disposed = false;
+    let inView = true;
+    const sync = () => {
+      el.muted = !(allowed && inView && !document.hidden);
+    };
+    const unlock = () => {
+      allowed = true;
+      sync();
+      el.play().catch(() => {});
+      for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
+    };
+
+    el.muted = false;
+    el.play().then(
+      () => {
+        if (disposed) return;
+        allowed = true;
+        sync();
+      },
+      () => {
+        if (disposed) return;
+        el.muted = true;
+        el.play().catch(() => {});
+        for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
+      }
+    );
+
+    // The loop only has sound while the hero is on screen and the tab is in front.
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      sync();
+    }, { threshold: 0.25 });
+    observer.observe(el);
+    document.addEventListener("visibilitychange", sync);
+
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", sync);
+      for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
+    };
+  }, [hasVideo, reduceMotion]);
 
   // Scroll-linked parallax: the artwork drifts up and fades slightly as the
   // hero leaves the viewport, so the section feels layered rather than static.
@@ -30,13 +92,36 @@ export function Hero() {
       className="relative isolate overflow-hidden bg-[#030A1C] text-[#F8FAFC] pt-12 sm:pt-16 md:pt-20 pb-14 sm:pb-16 md:pb-20"
       data-od-id="hero"
     >
-      {/* Background Aurora & Dots Grid */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="fx-aurora-a absolute inset-0" />
-        <div className="fx-aurora-b absolute inset-0" />
-        <div className="fx-aurora-core absolute inset-0" />
-        <div className="fx-aurora-dots absolute inset-0 opacity-40" />
-      </div>
+      {video ? (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden" data-od-id="hero-video">
+          {/* Wider than the hero on desktop, so the coin at its centre clears the copy. */}
+          <video
+            ref={videoRef}
+            poster={video.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-y-0 left-0 h-full w-full object-cover lg:w-[126%] lg:max-w-none"
+          >
+            {video.sources.map((source) => (
+              <source key={source.src} src={source.src} type={source.type} media={source.media} />
+            ))}
+          </video>
+          {/* Scrims: keep the copy readable, and blend the bottom edge into the next section. */}
+          <div className="absolute inset-0 bg-[#030A1C]/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-[#030A1C]/95 lg:via-[#030A1C]/70 lg:via-[38%] lg:to-transparent lg:to-[62%]" />
+          <div className="absolute inset-x-0 bottom-0 h-[22%] bg-gradient-to-t from-[#030A1C] to-transparent" />
+        </div>
+      ) : (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          {/* Background Aurora & Dots Grid */}
+          <div className="fx-aurora-a absolute inset-0" />
+          <div className="fx-aurora-b absolute inset-0" />
+          <div className="fx-aurora-core absolute inset-0" />
+          <div className="fx-aurora-dots absolute inset-0 opacity-40" />
+        </div>
+      )}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-6">
@@ -185,7 +270,10 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: CK mascot artwork */}
+          {/* Right Column: CK mascot artwork, or room for the video to show through */}
+          {video ? (
+            <div aria-hidden="true" className="hidden lg:col-span-7 lg:block lg:min-h-[610px]" />
+          ) : (
           <motion.div
             style={{ y: artY, scale: artScale, opacity: artOpacity }}
             className="relative isolate z-0 mt-6 -mb-14 flex min-h-[340px] w-full max-w-full items-end justify-center overflow-visible sm:-mb-16 sm:mt-8 sm:min-h-[470px] md:-mb-20 lg:col-span-7 lg:mt-0 lg:min-h-[610px] lg:justify-end xl:col-span-7"
@@ -221,6 +309,7 @@ export function Hero() {
               className="pointer-events-none absolute -inset-x-[8%] bottom-0 z-10 h-[30%] bg-gradient-to-t from-[#030A1C] via-[#030A1C]/70 to-transparent"
             />
           </motion.div>
+          )}
         </div>
       </div>
     </section>

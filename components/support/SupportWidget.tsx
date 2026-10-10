@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ALL_FAQ_KEYS, FAQ_COLLECTIONS, SUGGESTED_FAQ_KEYS, SUPPORT_URL } from "@/lib/support/faq";
+import { ALL_FAQ_KEYS, FAQ_COLLECTIONS, SUGGESTED_FAQ_KEYS, SUPPORT_PATH } from "@/lib/support/faq";
 import type { NewsItem, OffersPayload } from "@/lib/offers/types";
 import { OfferDetail } from "@/components/offers/OfferDetail";
 import { track } from "@/components/offers/track";
@@ -90,6 +90,7 @@ export function SupportWidget() {
     track("offer_open", { source: "support_widget" });
   };
 
+  const supportHref = `/${locale}${SUPPORT_PATH}`;
   const items: NewsItem[] = offers?.items ?? [];
   const liveOffer = items.find((i) => i.coupon) ?? null;
 
@@ -135,12 +136,13 @@ export function SupportWidget() {
                 openFaq={openFaq}
                 setOpenFaq={setOpenFaq}
                 liveOffer={liveOffer}
+                supportHref={supportHref}
                 onSeeOffer={() => setTab("news")}
                 onSearch={() => setTab("help")}
               />
             )}
 
-            {tab === "messages" && <MessagesPanel t={t} />}
+            {tab === "messages" && <MessagesPanel t={t} supportHref={supportHref} />}
 
             {tab === "news" && (
               <NewsPanel
@@ -271,8 +273,9 @@ function FaqRow({ q, a, open, onToggle }: { q: string; a: string; open: boolean;
 }
 
 function HomePanel({
-  t, faqText, openFaq, setOpenFaq, liveOffer, onSeeOffer, onSearch,
+  t, faqText, openFaq, setOpenFaq, liveOffer, supportHref, onSeeOffer, onSearch,
 }: {
+  supportHref: string;
   t: ReturnType<typeof useTranslations<"supportWidget">>;
   faqText: FaqText;
   openFaq: string | null;
@@ -296,7 +299,7 @@ function HomePanel({
       </div>
 
       <a
-        href={SUPPORT_URL}
+        href={supportHref}
         target="_blank"
         rel="noopener noreferrer"
         data-od-id="support-send-message"
@@ -351,11 +354,11 @@ function HomePanel({
   );
 }
 
-function MessagesPanel({ t }: { t: ReturnType<typeof useTranslations<"supportWidget">> }) {
+function MessagesPanel({ t, supportHref }: { t: ReturnType<typeof useTranslations<"supportWidget">>; supportHref: string }) {
   return (
     <div className="space-y-3 p-4">
       <a
-        href={SUPPORT_URL}
+        href={supportHref}
         target="_blank"
         rel="noopener noreferrer"
         data-od-id="support-escalate"

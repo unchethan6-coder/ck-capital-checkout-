@@ -1378,5 +1378,25 @@
       "platforms": "Platforms"
     },
     "ratingLabel": "Trustpilot rating"
+  },
+  "helpCenter": {
+    "eyebrow": "Help Center",
+    "heading": "Find official answers, guides and everything you need to know.",
+    "searchLabel": "Search the help center",
+    "searchPlaceholder": "Ask a question or search articles…",
+    "clear": "Clear search",
+    "loading": "Searching…",
+    "tryAsking": "Try asking",
+    "instantAnswer": "Instant answer",
+    "answerSource": "Quoted word for word from our help article.",
+    "readFull": "Read the full article",
+    "matchingArticles": "Matching articles",
+    "noAnswerTitle": "No answer found for “{query}”",
+    "noAnswerBody": "Try different words, or ask our support team directly.",
+    "contactSupport": "Contact support",
+    "articlesCount": "{count, plural, one {# article} other {# articles}}",
+    "updated": "Updated {date}",
+    "moreIn": "More in {collection}",
+    "englishOnly": "Help articles are currently available in English only."
   }
 }

@@ -1459,5 +1459,25 @@
       "platforms": "प्लेटफ़ॉर्म"
     },
     "ratingLabel": "Trustpilot रेटिंग"
+  },
+  "helpCenter": {
+    "eyebrow": "हेल्प सेंटर",
+    "heading": "आधिकारिक उत्तर, गाइड और वह सब कुछ पाएं जो आपको जानना चाहिए।",
+    "searchLabel": "हेल्प सेंटर में खोजें",
+    "searchPlaceholder": "सवाल पूछें या लेख खोजें…",
+    "clear": "खोज साफ़ करें",
+    "loading": "खोज रहे हैं…",
+    "tryAsking": "यह पूछकर देखें",
+    "instantAnswer": "तुरंत उत्तर",
+    "answerSource": "हमारे हेल्प लेख से शब्दशः लिया गया।",
+    "readFull": "पूरा लेख पढ़ें",
+    "matchingArticles": "मिलते-जुलते लेख",
+    "noAnswerTitle": "“{query}” के लिए कोई उत्तर नहीं मिला",
+    "noAnswerBody": "दूसरे शब्द आज़माएं या सीधे हमारी सपोर्ट टीम से पूछें।",
+    "contactSupport": "सपोर्ट से संपर्क करें",
+    "articlesCount": "{count, plural, one {# लेख} other {# लेख}}",
+    "updated": "{date} को अपडेट किया गया",
+    "moreIn": "{collection} में और",
+    "englishOnly": "हेल्प लेख फ़िलहाल केवल अंग्रेज़ी में उपलब्ध हैं।"
   }
 }
