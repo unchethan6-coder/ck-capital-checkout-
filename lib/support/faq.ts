@@ -61,5 +61,5 @@ export const ALL_FAQ_KEYS: string[] = FAQ_COLLECTIONS.flatMap((c) => c.entries.m
 /** Questions offered on the home tab before anyone searches. */
 export const SUGGESTED_FAQ_KEYS = ["payoutTime", "profitSplit", "newsTrading", "expertAdvisors"];
 
-/** Where a conversation escalates to a person. */
-export const SUPPORT_URL = "https://intercom.help/ck-capital/";
+/** The help centre, which leads on to the contact page. Prefix with the locale. */
+export const SUPPORT_PATH = "/faq";

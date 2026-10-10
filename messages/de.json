@@ -1441,5 +1441,25 @@
       "platforms": "Plattformen"
     },
     "ratingLabel": "Trustpilot-Bewertung"
+  },
+  "helpCenter": {
+    "eyebrow": "Hilfecenter",
+    "heading": "Offizielle Antworten, Anleitungen und alles, was Sie wissen müssen.",
+    "searchLabel": "Hilfecenter durchsuchen",
+    "searchPlaceholder": "Frage stellen oder Artikel suchen…",
+    "clear": "Suche löschen",
+    "loading": "Suche läuft…",
+    "tryAsking": "Fragen Sie zum Beispiel",
+    "instantAnswer": "Sofortantwort",
+    "answerSource": "Wörtlich aus unserem Hilfeartikel zitiert.",
+    "readFull": "Ganzen Artikel lesen",
+    "matchingArticles": "Passende Artikel",
+    "noAnswerTitle": "Keine Antwort gefunden für „{query}“",
+    "noAnswerBody": "Versuchen Sie andere Begriffe oder fragen Sie direkt unser Support-Team.",
+    "contactSupport": "Support kontaktieren",
+    "articlesCount": "{count, plural, one {# Artikel} other {# Artikel}}",
+    "updated": "Aktualisiert am {date}",
+    "moreIn": "Mehr in {collection}",
+    "englishOnly": "Hilfeartikel sind derzeit nur auf Englisch verfügbar."
   }
 }

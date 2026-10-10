@@ -15,7 +15,7 @@ export const NAV_LINKS = [
   { label: "Payouts", href: "/payouts" },
   { label: "About Us", href: "/about-us" },
   { label: "Affiliates", href: "/affiliates" },
-  { label: "FAQ", href: "https://intercom.help/ck-capital/" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export const PRICING_PLANS = [

@@ -78,7 +78,7 @@ export function SiteFooter() {
         { label: t("evaluation"), href: "/evaluation" },
         { label: t("instantFunding"), href: "/instant" },
         { label: t("tradingObjectives"), href: "/trading-objectives" },
-        { label: tNav("faq"), href: "https://intercom.help/ck-capital/" },
+        { label: tNav("faq"), href: "/faq" },
       ],
     },
     {

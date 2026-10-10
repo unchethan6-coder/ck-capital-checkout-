@@ -168,8 +168,7 @@ export function TopNav() {
           icon: HelpCircle,
           titleKey: "helpCenter",
           descKey: "helpCenterDesc",
-          href: "https://intercom.help/ck-capital/",
-          external: true,
+          href: "/faq",
         },
       ],
     },
@@ -676,10 +675,8 @@ export function TopNav() {
               </Link>
 
               {/* 5. FAQ DIRECT LINK */}
-              <a
-                href="https://intercom.help/ck-capital/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/faq"
                 data-od-id="desktop-nav-faq"
                 onClick={() => {
                   setActiveMegaMenu(null);
@@ -688,7 +685,7 @@ export function TopNav() {
                 className="whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
               >
                 {t("faq" as any)}
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Actions */}
@@ -952,17 +949,15 @@ export function TopNav() {
                 </Link>
 
                 {/* Direct Link: FAQ */}
-                <a
-                  href="https://intercom.help/ck-capital/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/faq"
                   data-od-id="mobile-nav-faq"
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05] rounded-lg transition-colors"
                 >
                   <span>{t("faq" as any)}</span>
-                  <ArrowUpRight size={14} className="opacity-40" />
-                </a>
+                  <ArrowRight size={14} className="opacity-40" />
+                </Link>
 
                 {/* Action Buttons in Mobile Drawer */}
                 <div className="pt-4 flex flex-col gap-2.5">
