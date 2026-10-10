@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight, Play, BarChart2, Coins, Zap } from "lucide-react";
+import { ArrowRight, Play, BarChart2, Coins, Volume2, VolumeX, Zap } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { HeroVideo } from "@/lib/heroTakeover";
 
@@ -14,6 +14,17 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
+  // Browsers only autoplay video that is muted, so sound waits for the visitor to ask.
+  const [muted, setMuted] = useState(true);
+
+  const toggleSound = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = !muted;
+    setMuted(!muted);
+    // Turning sound on is also a request to play, for anyone the loop was paused for.
+    if (muted) el.play().catch(() => {});
+  };
 
   // Visitors who ask for reduced motion get the poster frame, not the loop.
   useEffect(() => {
@@ -46,7 +57,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             src={video.src}
             poster={video.poster}
             autoPlay
-            muted
+            muted={muted}
             loop
             playsInline
             preload="auto"
@@ -64,6 +75,19 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
           <div className="fx-aurora-core absolute inset-0" />
           <div className="fx-aurora-dots absolute inset-0 opacity-40" />
         </div>
+      )}
+
+      {video && (
+        <button
+          type="button"
+          onClick={toggleSound}
+          aria-pressed={!muted}
+          data-od-id="hero-video-sound"
+          className="absolute top-0.5 right-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-[#030A1C]/70 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-[#894CEF] hover:bg-[#030A1C]/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:top-6 sm:right-6 lg:right-8"
+        >
+          {muted ? <VolumeX size={16} aria-hidden /> : <Volume2 size={16} aria-hidden />}
+          {muted ? "Sound on" : "Sound off"}
+        </button>
       )}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
