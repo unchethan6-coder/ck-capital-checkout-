@@ -442,8 +442,8 @@
         "a": "हमारे नियम स्पष्ट हैं: शुरुआती बैलेंस पर 4% अधिकतम दैनिक नुकसान और 8% अधिकतम कुल नुकसान।"
       },
       "newsTrading": {
-        "q": "Can I trade news and hold over weekends?",
-        "a": "News trading is allowed on every programme that carries a consistency score — 1 Step Standard, 2 Step Standard and Instant Funding. It is not permitted on 2 Step Pro, which has no consistency requirement. Positions may be held overnight and over the weekend on all programmes."
+        "q": "क्या मैं समाचारों के दौरान ट्रेड कर सकता हूँ और सप्ताहांत में पोजीशन होल्ड कर सकता हूँ?",
+        "a": "कंसिस्टेंसी स्कोर वाले हर प्रोग्राम में समाचार ट्रेडिंग की अनुमति है — 1 Step Standard, 2 Step Standard और Instant Funding। यह 2 Step Pro पर अनुमत नहीं है, जिसमें कोई कंसिस्टेंसी आवश्यकता नहीं होती है। सभी प्रोग्रामों में रातभर और सप्ताहांत में पोजीशन होल्ड की जा सकती हैं।"
       },
       "consistency": {
         "q": "स्थिरता (Consistency) नियम क्या है?",
@@ -466,60 +466,60 @@
         "a": "आप खरीदारी के कुछ ही मिनटों में ट्रेडिंग शुरू कर सकते हैं। खाते तुरंत सक्रिय हो जाते हैं।"
       },
       "minProfit": {
-        "q": "Is there a minimum profit before I can request a payout?",
-        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+        "q": "क्या पेआउट का अनुरोध करने से पहले कोई न्यूनतम लाभ होना आवश्यक है?",
+        "a": "हाँ। अनुरोध योग्य होने के लिए प्रत्येक पेआउट चक्र में न्यूनतम शुद्ध लाभ होना आवश्यक है: $10K खाते पर $250, $25K पर $625, $50K पर $1,250, $100K पर $2,500, $200K पर $5,000 और $300K पर $7,500। दूसरे पेआउट के बाद ये सीमाएं बढ़कर $300, $750, $1,500, $3,000, $6,000 और $9,000 हो जाती हैं। निकासी स्वीकृत होने पर लक्ष्य शून्य पर रीसेट हो जाता है। ये केवल पात्रता तय करते हैं — यह स्वचालित भुगतान नहीं है।"
       },
       "buffer": {
-        "q": "What is the protected account buffer?",
-        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+        "q": "सुरक्षित अकाउंट बफर क्या है?",
+        "a": "आपका फंडेड खाता एक अनिवार्य सुरक्षा कुशन बनाए रखता है, और केवल उस बेसलाइन से ऊपर की पूंजी ही निकाली जा सकती है। आवश्यक शेष राशि $10K खाते पर $10,700, $25K पर $26,100, $50K पर $52,100, $100K पर $103,100, $200K पर $206,100 और $300K पर $309,100 है। निकासी के बाद आपका बैलेंस बेसलाइन पर या उससे ऊपर रहना चाहिए।"
       },
       "payoutCaps": {
-        "q": "Is there a limit on how much I can withdraw?",
-        "a": "There is no minimum payout amount. Your first five withdrawals may not exceed 3% of the initial account balance; from the sixth that cap is removed and withdrawals are unlimited. Every withdrawal must still leave your balance at or above the required account buffer — if the buffer is breached, the account is breached."
+        "q": "क्या निकासी राशि पर कोई सीमा (कैप) है?",
+        "a": "कोई न्यूनतम पेआउट राशि नहीं है। आपकी पहली पाँच निकासी प्रारंभिक खाता शेष के 3% से अधिक नहीं हो सकती; छठी निकासी से यह सीमा हटा दी जाती है और निकासी असीमित हो जाती है। प्रत्येक निकासी के बाद आपका बैलेंस आवश्यक अकाउंट बफर पर या उससे ऊपर होना चाहिए — यदि बफर टूटता है, तो खाता ब्रीच माना जाता है।"
       },
       "consistencyScore": {
-        "q": "How does the consistency rule work on a funded account?",
-        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+        "q": "फंडेड खाते पर कंसिस्टेंसी नियम कैसे काम करता है?",
+        "a": "आपका सबसे अच्छा ट्रेडिंग दिन वर्तमान चक्र में कुल लाभ के एक निर्धारित हिस्से से अधिक नहीं हो सकता, और गणना प्रत्येक स्वीकृत पेआउट के बाद रीसेट होती है। सीमा आपके प्रोग्राम पर निर्भर करती है: 1 Step Standard पर 30%, 2 Step Standard पर 50%, Instant पर 20%, और 2 Step Pro पर कोई कंसिस्टेंसी नियम नहीं है। उदाहरण के लिए, 30% नियम के तहत $1,200 के सबसे अच्छे दिन के लिए चक्र का कुल लाभ $4,000 तक पहुँचना चाहिए ताकि पेआउट योग्य हो सके।"
       },
       "trailingDrawdown": {
-        "q": "How does the trailing drawdown work?",
-        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+        "q": "ट्रेलिंग ड्रॉडाउन कैसे काम करता है?",
+        "a": "ट्रेलिंग ड्रॉडाउन की गणना दिन के अंत में क्लोज्ड बैलेंस पर की जाती है, इंट्राडे इक्विटी पर नहीं, इसलिए फ्लोटिंग प्रॉफिट आपकी न्यूनतम सीमा को कभी नहीं बढ़ाता है। छूट आपके शुरुआती बैलेंस से एक निश्चित डॉलर राशि है — 1 Step Standard पर 6%, 2 Step Standard पर 8% और Instant पर 5%। सीमा केवल ऊपर बढ़ती है और जब आप लाभ में उसी प्रतिशत तक पहुँच जाते हैं तो यह स्थायी रूप से आपके शुरुआती बैलेंस पर लॉक हो जाती है। 2 Step Pro एक स्थिर 8% ड्रॉडाउन का उपयोग करता है जो कभी ट्रेल नहीं करता। ब्रीच की निगरानी लाइव और निरंतर होती है, भले ही सीमा दिन में एक बार फिर से निर्धारित की जाती है।"
       },
       "pendingPayout": {
-        "q": "Can I trade while a payout is pending?",
-        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
+        "q": "क्या पेआउट पेंडिंग होने के दौरान मैं ट्रेड कर सकता हूँ?",
+        "a": "हाँ, लेकिन अनुरोधित राशि को पहले से काटा हुआ मानें। स्वीकृति से पहले बफर में ट्रेडिंग करने से अनुरोध अस्वीकार हो सकता है, और कटौती के बाद बेसलाइन से नीचे आने पर खाता जोखिम में पड़ जाता है। सबमिट करने के बाद निकासी अनुरोध को संशोधित या रद्द नहीं किया जा सकता।"
       },
       "lotSize": {
-        "q": "What happens if I breach the lot size rules?",
-        "a": "A lot size breach returns the account to Phase 1, whether it happens during an evaluation phase or on a funded account. You restart the programme from the beginning rather than losing it outright."
+        "q": "यदि मैं लॉट साइज नियमों का उल्लंघन करता हूँ तो क्या होगा?",
+        "a": "लॉट साइज का उल्लंघन खाते को चरण 1 (Phase 1) पर वापस भेज देता है, चाहे वह मूल्यांकन चरण में हो या फंडेड खाते पर। आप खाते को पूरी तरह खोने के बजाय प्रोग्राम को शुरू से पुनः आरंभ करते हैं।"
       },
       "countries": {
-        "q": "Which countries can open an account?",
-        "a": "CK Propfirm accepts traders from most countries, including the United Arab Emirates. Traders in the United States and Canada trade exclusively on TradeLocker. A small number of jurisdictions remain restricted; if you are unsure, contact support before purchasing."
+        "q": "किन देशों के ट्रेडर खाता खोल सकते हैं?",
+        "a": "CK Propfirm संयुक्त अरब अमीरात सहित अधिकांश देशों के ट्रेडर्स का स्वागत करती है। संयुक्त राज्य अमेरिका और कनाडा के ट्रेडर्स विशेष रूप से TradeLocker पर ट्रेड करते हैं। कुछ न्यायक्षेत्र अभी भी प्रतिबंधित हैं; यदि आपको कोई संदेह है, तो खरीदारी से पहले सपोर्ट से संपर्क करें।"
       },
       "copyTrading": {
-        "q": "Is copy trading allowed?",
-        "a": "Yes. Copy trading is permitted across all programmes. Accounts are still assessed individually against their own objectives, risk limits and consistency requirements."
+        "q": "क्या कॉपी ट्रेडिंग की अनुमति है?",
+        "a": "हाँ। सभी प्रोग्रामों में कॉपी ट्रेडिंग की अनुमति है। खातों का मूल्यांकन अभी भी उनके अपने उद्देश्यों, जोखिम सीमाओं और कंसिस्टेंसी आवश्यकताओं के आधार पर व्यक्तिगत रूप से किया जाता है।"
       },
       "inactivity": {
-        "q": "What happens if I stop trading for a while?",
-        "a": "An account is considered inactive after 28 consecutive days without a trade. Keep at least one trade inside any 28-day window to keep the account live."
+        "q": "यदि मैं कुछ समय के लिए ट्रेडिंग बंद कर दूँ तो क्या होगा?",
+        "a": "बिना किसी ट्रेड के लगातार 28 दिनों के बाद खाते को निष्क्रिय माना जाता है। खाते को सक्रिय रखने के लिए किसी भी 28 दिनों की अवधि में कम से कम एक ट्रेड अवश्य करें।"
       },
       "topUpReset": {
-        "q": "How much do top-ups and resets cost?",
-        "a": "A top-up is 6% of the already discounted challenge price, and a reset is 10% of it — both calculated from the price you actually paid, not the full list price."
+        "q": "टॉप-अप और रीसेट की लागत कितनी है?",
+        "a": "टॉप-अप पहले से रियायती चैलेंज मूल्य का 6% है, और रीसेट 10% है — दोनों की गणना आपके द्वारा वास्तव में भुगतान की गई कीमत से की जाती है, पूरी सूची मूल्य से नहीं।"
       },
       "maxAllocation": {
-        "q": "How much simulated capital can I hold at once?",
-        "a": "2 Step Standard allows up to $300,000 in allocation. All other programmes allow up to $500,000 combined across accounts. The total across a single household is capped at $750,000, with a maximum of five accounts per household."
+        "q": "मैं एक साथ कितनी सिम्युलेटेड पूंजी रख सकता हूँ?",
+        "a": "2 Step Standard $300,000 तक आवंटन की अनुमति देता है। अन्य सभी प्रोग्राम खातों में मिलाकर $500,000 तक की अनुमति देते हैं। एक ही परिवार के लिए कुल सीमा $750,000 है, जिसमें प्रति परिवार अधिकतम पांच खाते हो सकते हैं।"
       },
       "phase2Reset": {
-        "q": "Can I reset a Phase 2 account?",
-        "a": "Yes. A Phase 2 reset costs 2.5 times the applicable discounted challenge price, and the profit split on the reset account is reduced to 65%."
+        "q": "क्या मैं Phase 2 खाते को रीसेट कर सकता हूँ?",
+        "a": "हाँ। Phase 2 रीसेट की लागत लागू रियायती चैलेंज मूल्य की 2.5 गुना है, और रीसेट खाते पर लाभ का विभाजन 65% तक कम हो जाता है।"
       },
       "fundedReset": {
-        "q": "Can I reset a funded account?",
-        "a": "Yes. A funded account reset costs 4 times the applicable challenge price. The profit split on the reset account is reduced to 65% and a 20% consistency requirement applies."
+        "q": "क्या मैं फंडेड खाते को रीसेट कर सकता हूँ?",
+        "a": "हाँ। फंडेड खाते के रीसेट की लागत लागू चैलेंज मूल्य की 4 गुना है। रीसेट खाते पर लाभ विभाजन घटकर 65% हो जाता है और 20% कंसिस्टेंसी आवश्यकता लागू होती है।"
       }
     }
   },

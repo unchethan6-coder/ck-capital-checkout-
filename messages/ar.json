@@ -442,8 +442,8 @@
         "a": "معايير المخاطرة شفافة: 4% كحد أقصى للتراجع اليومي و 8% كحد أقصى للتراجع الكلي."
       },
       "newsTrading": {
-        "q": "Can I trade news and hold over weekends?",
-        "a": "News trading is allowed on every programme that carries a consistency score — 1 Step Standard, 2 Step Standard and Instant Funding. It is not permitted on 2 Step Pro, which has no consistency requirement. Positions may be held overnight and over the weekend on all programmes."
+        "q": "هل يمكنني التداول أثناء الأخبار والاحتفاظ بالصفقات خلال عطلة نهاية الأسبوع؟",
+        "a": "يُسمح بالتداول وقت الأخبار في جميع البرامج التي تتطلب مقياس الاستمرارية — 1 Step Standard و2 Step Standard وInstant Funding. غير مسموح به في 2 Step Pro، الذي لا يتطلب أي شروط استمرارية. يُسمح بالاحتفاظ بالصفقات ليلاً وخلال عطلة نهاية الأسبوع في جميع البرامج."
       },
       "consistency": {
         "q": "ما هي قاعدة الاتساق؟",
@@ -466,60 +466,60 @@
         "a": "يمكنك بدء التداول في غضون دقائق بعد الشراء، حيث يتم تفعيل حسابات التمويل الفوري على الفور."
       },
       "minProfit": {
-        "q": "Is there a minimum profit before I can request a payout?",
-        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+        "q": "هل هناك حد أدنى للأرباح قبل أن أتمكن من طلب السحب؟",
+        "a": "نعم. تتطلب كل دورة سحب حداً أدنى من صافي الأرباح لتكون مؤهلة: 250 دولاراً على حساب 10 آلاف، و625 دولاراً على 25 ألفاً، و1,250 دولاراً على 50 ألفاً، و2,500 دولار على 100 ألف، و5,000 دولار على 200 ألف، و7,500 دولار على 300 ألف. بدءاً من السحب الثاني، ترتفع هذه الحدود إلى 300 و750 و1,500 و3,000 و6,000 و9,000 دولار. تتم إعادة تعيين الهدف إلى الصفر بمجرد الموافقة على السحب. هذه الشروط تحدد الأهلية وليست دفعات تلقائية."
       },
       "buffer": {
-        "q": "What is the protected account buffer?",
-        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+        "q": "ما هو هامش الأمان المحمي للحساب (Account Buffer)؟",
+        "a": "يحتفظ حسابك الممول بهامش أمان إلزامي، ولا يمكن سحب سوى رأس المال الذي يتجاوز هذا الخط الأساسي. الأرصدة المطلوبة هي 10,700 دولار لحساب 10 آلاف، و26,100 دولار لـ 25 ألفاً، و52,100 دولار لـ 50 ألفاً، و103,100 دولار لـ 100 ألف، و206,100 دولار لـ 200 ألف، و309,100 دولار لـ 300 ألف. يجب أن يظل رصيدك بعد السحب عند الخط الأساسي أو أعلى منه."
       },
       "payoutCaps": {
-        "q": "Is there a limit on how much I can withdraw?",
-        "a": "There is no minimum payout amount. Your first five withdrawals may not exceed 3% of the initial account balance; from the sixth that cap is removed and withdrawals are unlimited. Every withdrawal must still leave your balance at or above the required account buffer — if the buffer is breached, the account is breached."
+        "q": "هل يوجد حد أقصى للمبلغ الذي يمكنني سحبه؟",
+        "a": "لا يوجد حد أدنى لمبلغ السحب. لا يجوز أن تتجاوز أول خمس عمليات سحب 3% من رصيد الحساب الأولي؛ وبدءاً من السحب السادس يُرفع هذا السقف وتصبح السحوبات غير محدودة. يجب أن يترك كل سحب رصيدك عند هامش الأمان المطلوب أو أعلى منه — وفي حال انتهاك هامش الأمان، يعتبر الحساب مخترقاً."
       },
       "consistencyScore": {
-        "q": "How does the consistency rule work on a funded account?",
-        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+        "q": "كيف تعمل قاعدة الاستمرارية في الحساب الممول؟",
+        "a": "لا يمكن أن يتجاوز أفضل يوم تداول لك حصة محددة من إجمالي الربح في الدورة الحالية، وتتم إعادة تعيين الحساب بعد كل دفعة معتمدة. يعتمد الحد على برنامجك: 30% في 1 Step Standard، و50% في 2 Step Standard، و20% في Instant، ولا توجد شروط استمرارية في 2 Step Pro. على سبيل المثال، إذا حققت 1,200 دولار كأفضل يوم بموجب قاعدة 30%، فيجب أن يصل إجمالي الدورة إلى 4,000 دولار ليكون السحب مؤهلاً."
       },
       "trailingDrawdown": {
-        "q": "How does the trailing drawdown work?",
-        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+        "q": "كيف يعمل التراجع المتحرك (Trailing Drawdown)؟",
+        "a": "يُحسب التراجع المتحرك بناءً على رصيد إغلاق نهاية اليوم، وليس على حقوق الملكية خلال اليوم، وبالتالي فإن الأرباح العائمة لا ترفع الحد الأدنى أبداً. النسبة المسموح بها هي مبلغ ثابت بالدولار من رصيدك الأولي — 6% في 1 Step Standard، و8% في 2 Step Standard، و5% في Instant. يتحرك الحد الأدنى للأعلى فقط ويُقفل نهائياً عند رصيد البداية بمجرد تحقيق نفس النسبة من الربح. يستخدم برنامج 2 Step Pro تراجعاً ثابتاً بنسبة 8% لا يتحرك أبداً. مراقبة الانتهاكات فورية ومستمرة حتى وإن أُعيد حساب الحد مرة واحدة يومياً."
       },
       "pendingPayout": {
-        "q": "Can I trade while a payout is pending?",
-        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
+        "q": "هل يمكنني التداول أثناء تعليق طلب السحب؟",
+        "a": "نعم، ولكن تعامل مع المبلغ المطلوب كما لو تم خصمه بالفعل. قد يؤدي التداول داخل هامش الأمان قبل الموافقة إلى رفض الطلب، كما أن الهبوط دون الخط الأساسي بعد الخصم يعرض الحساب للخطر. بمجرد تقديم طلب السحب، لا يمكن تعديله أو إلغاؤه."
       },
       "lotSize": {
-        "q": "What happens if I breach the lot size rules?",
-        "a": "A lot size breach returns the account to Phase 1, whether it happens during an evaluation phase or on a funded account. You restart the programme from the beginning rather than losing it outright."
+        "q": "ماذا يحدث إذا انتهكت قواعد حجم اللوت (Lot Size)؟",
+        "a": "انتهاك حجم اللوت يعيد الحساب إلى المرحلة الأولى (Phase 1)، سواء حدث ذلك أثناء مرحلة التقييم أو في حساب ممول. ستعيد البرنامج من البداية بدلاً من خسارته نهائياً."
       },
       "countries": {
-        "q": "Which countries can open an account?",
-        "a": "CK Propfirm accepts traders from most countries, including the United Arab Emirates. Traders in the United States and Canada trade exclusively on TradeLocker. A small number of jurisdictions remain restricted; if you are unsure, contact support before purchasing."
+        "q": "ما هي الدول المؤهلة لفتح حساب؟",
+        "a": "تقبل CK Propfirm المتداولين من معظم دول العالم، بما في ذلك الإمارات العربية المتحدة. يتداول المتداولون في الولايات المتحدة وكندا حصرياً عبر TradeLocker. هناك عدد قليل من البلدان المحظورة؛ وإذا لم تكن متأكداً، يُرجى التواصل مع الدعم قبل الشراء."
       },
       "copyTrading": {
-        "q": "Is copy trading allowed?",
-        "a": "Yes. Copy trading is permitted across all programmes. Accounts are still assessed individually against their own objectives, risk limits and consistency requirements."
+        "q": "هل نسخ الصفقات (Copy Trading) مسموح به؟",
+        "a": "نعم. يُسمح بنسخ الصفقات في جميع البرامج. لا تزال الحسابات تُقيّم بشكل فردي وفقاً لأهدافها الخاصة وحدود المخاطر وشروط الاستمرارية."
       },
       "inactivity": {
-        "q": "What happens if I stop trading for a while?",
-        "a": "An account is considered inactive after 28 consecutive days without a trade. Keep at least one trade inside any 28-day window to keep the account live."
+        "q": "ماذا يحدث إذا توقفت عن التداول لفترة؟",
+        "a": "يعتبر الحساب غير نشط بعد 28 يوماً متتالياً دون أي صفقة. احرص على تنفيذ صفقة واحدة على الأقل خلال أي فترة مدتها 28 يوماً للحفاظ على الحساب نشطاً."
       },
       "topUpReset": {
-        "q": "How much do top-ups and resets cost?",
-        "a": "A top-up is 6% of the already discounted challenge price, and a reset is 10% of it — both calculated from the price you actually paid, not the full list price."
+        "q": "ما هي تكلفة إعادة الشحن (Top-up) وإعادة التعيين (Reset)؟",
+        "a": "تبلغ تكلفة إعادة الشحن 6% من سعر التحدي بعد الخصم، وتكلفة إعادة التعيين 10% — وكلاهما يُحسب من السعر الفعلي الذي دفعته وليس السعر الكامل المعلن."
       },
       "maxAllocation": {
-        "q": "How much simulated capital can I hold at once?",
-        "a": "2 Step Standard allows up to $300,000 in allocation. All other programmes allow up to $500,000 combined across accounts. The total across a single household is capped at $750,000, with a maximum of five accounts per household."
+        "q": "ما هو الحد الأقصى لرأس المال التجريبي الذي يمكنني إدارته في وقت واحد؟",
+        "a": "يسمح برنامج 2 Step Standard بتخصيص يصل إلى 300,000 دولار. وتسمح البرامج الأخرى بما يصل إلى 500,000 دولار مجتمعة عبر الحسابات. الحد الأقصى للأسرة الواحدة هو 750,000 دولار، بحد أقصى خمسة حسابات لكل أسرة."
       },
       "phase2Reset": {
-        "q": "Can I reset a Phase 2 account?",
-        "a": "Yes. A Phase 2 reset costs 2.5 times the applicable discounted challenge price, and the profit split on the reset account is reduced to 65%."
+        "q": "هل يمكنني إعادة تعيين حساب في المرحلة الثانية (Phase 2)؟",
+        "a": "نعم. تبلغ تكلفة إعادة تعيين المرحلة 2 ما يعادل 2.5 ضعف سعر التحدي المخفض المطبق، وتُخفض نسبة مشاركة الأرباح في الحساب المعاد تعيينه إلى 65%."
       },
       "fundedReset": {
-        "q": "Can I reset a funded account?",
-        "a": "Yes. A funded account reset costs 4 times the applicable challenge price. The profit split on the reset account is reduced to 65% and a 20% consistency requirement applies."
+        "q": "هل يمكنني إعادة تعيين حساب ممول؟",
+        "a": "نعم. تبلغ تكلفة إعادة تعيين الحساب الممول 4 أضعاف سعر التحدي المطبق. وتُخفض نسبة مشاركة الأرباح في الحساب المعاد تعيينه إلى 65% مع تطبيق شرط استمرارية بنسبة 20%."
       }
     }
   },

@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { FaqContent } from "./faq-content";
 
 export default function FAQPage() {
-  redirect("https://intercom.help/ck-capital/");
+  return <FaqContent />;
 }

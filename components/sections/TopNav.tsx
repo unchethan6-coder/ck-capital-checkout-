@@ -679,19 +679,19 @@ export function TopNav() {
               </Link>
 
               {/* 5. FAQ DIRECT LINK */}
-              <a
-                href="https://intercom.help/ck-capital/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/faq"
                 data-od-id="desktop-nav-faq"
-                onClick={() => {
-                  setActiveMegaMenu(null);
-                  setOpen(false);
-                }}
-                className="whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
+                onClick={(e) => handleNavClick(e, "/faq")}
+                className={cn(
+                  "whitespace-nowrap px-2 xl:px-3 py-1.5 rounded-lg text-[12px] xl:text-[13px] font-semibold transition-colors",
+                  pathname === "/faq"
+                    ? "text-[#A98BFF] bg-white/[0.06]"
+                    : "text-white/75 hover:text-[#A98BFF] hover:bg-white/[0.04]"
+                )}
               >
                 {t("faq" as any)}
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Actions */}
@@ -955,17 +955,20 @@ export function TopNav() {
                 </Link>
 
                 {/* Direct Link: FAQ */}
-                <a
-                  href="https://intercom.help/ck-capital/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/faq"
                   data-od-id="mobile-nav-faq"
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05] rounded-lg transition-colors"
+                  onClick={(e) => handleNavClick(e, "/faq")}
+                  className={cn(
+                    "flex items-center justify-between min-h-11 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                    pathname === "/faq"
+                      ? "bg-primary/10 text-[#A98BFF] font-semibold"
+                      : "text-foreground/80 hover:text-foreground hover:bg-foreground/[0.05]"
+                  )}
                 >
                   <span>{t("faq" as any)}</span>
-                  <ArrowUpRight size={14} className="opacity-40" />
-                </a>
+                  <ArrowRight size={14} className="opacity-40 rtl:rotate-180" />
+                </Link>
 
                 {/* Action Buttons in Mobile Drawer */}
                 <div className="pt-4 flex flex-col gap-2.5">

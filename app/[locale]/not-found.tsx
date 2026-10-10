@@ -47,14 +47,9 @@ export default async function NotFound() {
             {tNav("payouts")}
           </Link>
           <span className="text-foreground/20">·</span>
-          <a
-            href="https://intercom.help/ck-capital/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-[#A98BFF]"
-          >
+          <Link href="/faq" className="transition-colors hover:text-[#A98BFF]">
             {tNav("faq")}
-          </a>
+          </Link>
           <span className="text-foreground/20">·</span>
           <Link href="/contact" className="transition-colors hover:text-[#A98BFF]">
             {tNav("contact")}

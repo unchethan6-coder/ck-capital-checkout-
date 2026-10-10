@@ -118,6 +118,10 @@ export function FaqContent() {
       q: t('items.expertAdvisors.q'),
       a: <p>{t('items.expertAdvisors.a')}</p>,
     },
+    {
+      q: t('items.instantPayouts.q'),
+      a: <p>{t('items.instantPayouts.a')}</p>,
+    },
   ]
 
   return (
@@ -130,7 +134,7 @@ export function FaqContent() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(circle at 70% 0%, rgba(212,175,55,0.20), transparent 45%), radial-gradient(circle at 5% 100%, rgba(212,175,55,0.08), transparent 40%)',
+              'radial-gradient(circle at 70% 0%, rgba(137,76,239,0.18), transparent 45%), radial-gradient(circle at 5% 100%, rgba(169,139,255,0.08), transparent 40%)',
           }}
         />
         <Container className="relative py-16 md:py-24">
@@ -171,21 +175,21 @@ export function FaqContent() {
       </section>
 
       {/* ─────────────── Accordion ─────────────── */}
-      <section className="bg-muted py-16 md:py-24" data-od-id="faq-accordion">
+      <section className="border-t border-white/[0.06] bg-foreground/[0.02] py-16 md:py-24" data-od-id="faq-accordion">
         <Container>
           <div className="mx-auto max-w-3xl">
             <SectionReveal>
-              <Accordion multiple={false} className="space-y-2">
+              <Accordion multiple={false} className="space-y-2.5">
                 {faqItems.map((item, i) => (
                   <AccordionItem
                     key={i}
                     value={String(i)}
-                    className="rounded-xl border border-foreground/10 bg-foreground/[0.03] px-5 transition-all data-[open]:border-primary/30 data-[open]:bg-foreground/[0.05]"
+                    className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 transition-all hover:border-white/[0.14] data-[open]:border-[#894CEF]/40 data-[open]:bg-white/[0.05]"
                   >
-                    <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground hover:text-[#A98BFF] hover:no-underline">
+                    <AccordionTrigger className="py-4 text-start text-sm font-semibold text-foreground hover:text-[#A98BFF] hover:no-underline">
                       {item.q}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-4 text-foreground/65">
+                    <AccordionContent className="pb-4 text-start text-sm leading-relaxed text-foreground/70">
                       {item.a}
                     </AccordionContent>
                   </AccordionItem>

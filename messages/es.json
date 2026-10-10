@@ -438,8 +438,8 @@
         "a": "Nuestros parámetros de riesgo son transparentes: 4% de reducción diaria máxima y 8% de reducción máxima total sobre el balance inicial."
       },
       "newsTrading": {
-        "q": "Can I trade news and hold over weekends?",
-        "a": "News trading is allowed on every programme that carries a consistency score — 1 Step Standard, 2 Step Standard and Instant Funding. It is not permitted on 2 Step Pro, which has no consistency requirement. Positions may be held overnight and over the weekend on all programmes."
+        "q": "¿Puedo operar durante noticias y mantener posiciones el fin de semana?",
+        "a": "El trading de noticias está permitido en todos los programas que tienen puntuación de consistencia: 1 Step Standard, 2 Step Standard e Instant Funding. No está permitido en 2 Step Pro, que no tiene requisito de consistencia. Se permite mantener posiciones abiertas durante la noche y el fin de semana en todos los programas."
       },
       "consistency": {
         "q": "¿Cuál es la regla de consistencia?",
@@ -462,60 +462,60 @@
         "a": "Puede estar operando a los pocos minutos de la compra. Las cuentas de financiamiento instantáneo se activan de inmediato."
       },
       "minProfit": {
-        "q": "Is there a minimum profit before I can request a payout?",
-        "a": "Yes. Each payout cycle has a minimum net profit before a request is eligible: $250 on a $10K account, $625 on $25K, $1,250 on $50K, $2,500 on $100K, $5,000 on $200K and $7,500 on $300K. From the second payout onwards those thresholds rise to $300, $750, $1,500, $3,000, $6,000 and $9,000. The target resets to zero once a withdrawal is approved. These establish eligibility — they are not automatic payouts."
+        "q": "¿Existe una ganancia mínima antes de solicitar un retiro?",
+        "a": "Sí. Cada ciclo de retiro tiene un beneficio neto mínimo antes de que la solicitud sea elegible: $250 en una cuenta de $10K, $625 en $25K, $1,250 en $50K, $2,500 en $100K, $5,000 en $200K y $7,500 en $300K. A partir del segundo retiro, esos umbrales aumentan a $300, $750, $1,500, $3,000, $6,000 y $9,000. El objetivo se reinicia a cero una vez aprobado el retiro. Estos umbrales establecen la elegibilidad; no son pagos automáticos."
       },
       "buffer": {
-        "q": "What is the protected account buffer?",
-        "a": "Your funded account keeps a mandatory safety cushion, and only capital above that baseline can be withdrawn. The required balances are $10,700 on a $10K account, $26,100 on $25K, $52,100 on $50K, $103,100 on $100K, $206,100 on $200K and $309,100 on $300K. Your balance after a withdrawal must still sit at or above the baseline."
+        "q": "¿Qué es el colchón de seguridad protegido de la cuenta?",
+        "a": "Su cuenta fondeada mantiene un colchón de seguridad obligatorio, y solo se puede retirar el capital por encima de esa línea base. Los saldos requeridos son $10,700 en una cuenta de $10K, $26,100 en $25K, $52,100 en $50K, $103,100 en $100K, $206,100 en $200K y $309,100 en $300K. Su saldo después del retiro debe permanecer igual o superior a esta línea base."
       },
       "payoutCaps": {
-        "q": "Is there a limit on how much I can withdraw?",
-        "a": "There is no minimum payout amount. Your first five withdrawals may not exceed 3% of the initial account balance; from the sixth that cap is removed and withdrawals are unlimited. Every withdrawal must still leave your balance at or above the required account buffer — if the buffer is breached, the account is breached."
+        "q": "¿Existe un límite en la cantidad que puedo retirar?",
+        "a": "No hay un monto mínimo de retiro. Sus primeros cinco retiros no pueden exceder el 3% del saldo inicial de la cuenta; a partir del sexto retiro, este límite se elimina y los retiros son ilimitados. Cada retiro debe dejar su saldo en o por encima del colchón de seguridad requerido; si se supera el colchón, la cuenta se considera vulnerada."
       },
       "consistencyScore": {
-        "q": "How does the consistency rule work on a funded account?",
-        "a": "Your single best trading day cannot exceed a set share of total profit in the current cycle, and the calculation resets after every approved payout. The limit depends on your programme: 30% on 1 Step Standard, 50% on 2 Step Standard, 20% on Instant, and no consistency requirement on 2 Step Pro. For example, a $1,200 best day under a 30% rule needs the cycle total to reach $4,000 before the payout qualifies."
+        "q": "¿Cómo funciona la regla de consistencia en una cuenta fondeada?",
+        "a": "Su mejor día de trading no puede superar un porcentaje determinado del beneficio total en el ciclo actual, y el cálculo se reinicia tras cada retiro aprobado. El límite depende de su programa: 30% en 1 Step Standard, 50% en 2 Step Standard, 20% en Instant, y sin requisito de consistencia en 2 Step Pro. Por ejemplo, con un mejor día de $1,200 bajo la regla del 30%, el total del ciclo debe alcanzar los $4,000 para calificar para el retiro."
       },
       "trailingDrawdown": {
-        "q": "How does the trailing drawdown work?",
-        "a": "The trailing drawdown is calculated on your closed end-of-day balance, not intraday equity, so floating profit never raises your floor. The allowance is a fixed dollar amount from your starting balance — 6% on 1 Step Standard, 8% on 2 Step Standard and 5% on Instant. The floor only ratchets upward and locks permanently at your starting balance once you reach that same percentage in profit. 2 Step Pro uses a static 8% drawdown that never trails. Breach monitoring is live and continuous even though the threshold recalculates once a day."
+        "q": "¿Cómo funciona el drawdown dinámico (trailing drawdown)?",
+        "a": "El trailing drawdown se calcula según el saldo cerrado al final del día, no sobre la equidad intradía, por lo que el beneficio flotante nunca eleva su límite inferior. La tolerancia es un monto fijo en dólares desde su saldo inicial: 6% en 1 Step Standard, 8% en 2 Step Standard y 5% en Instant. El límite solo sube y se bloquea permanentemente en su saldo inicial cuando alcanza ese mismo porcentaje de beneficio. 2 Step Pro utiliza un drawdown estático del 8% que nunca sube. El monitoreo de infracciones es en tiempo real y continuo, aunque el umbral se recalcula una vez al día."
       },
       "pendingPayout": {
-        "q": "Can I trade while a payout is pending?",
-        "a": "Yes, but treat the requested amount as already deducted. Trading into the buffer before approval can cause the request to be rejected, and falling below the baseline after the deduction puts the account at risk. Once submitted, a withdrawal request cannot be modified or cancelled."
+        "q": "¿Puedo operar mientras un retiro está pendiente?",
+        "a": "Sí, pero considere el monto solicitado como ya deducido. Operar dentro del colchón antes de la aprobación puede provocar el rechazo de la solicitud, y caer por debajo de la línea base tras la deducción pone la cuenta en riesgo. Una vez enviada, la solicitud de retiro no se puede modificar ni cancelar."
       },
       "lotSize": {
-        "q": "What happens if I breach the lot size rules?",
-        "a": "A lot size breach returns the account to Phase 1, whether it happens during an evaluation phase or on a funded account. You restart the programme from the beginning rather than losing it outright."
+        "q": "¿Qué sucede si infrinjo las reglas de tamaño de lote?",
+        "a": "Una infracción de tamaño de lote devuelve la cuenta a la Fase 1, ya sea durante una fase de evaluación o en una cuenta fondeada. Reinicia el programa desde el principio en lugar de perderlo por completo."
       },
       "countries": {
-        "q": "Which countries can open an account?",
-        "a": "CK Propfirm accepts traders from most countries, including the United Arab Emirates. Traders in the United States and Canada trade exclusively on TradeLocker. A small number of jurisdictions remain restricted; if you are unsure, contact support before purchasing."
+        "q": "¿Qué países pueden abrir una cuenta?",
+        "a": "CK Propfirm acepta traders de la mayoría de los países, incluidos los Emiratos Árabes Unidos. Los traders de Estados Unidos y Canadá operan exclusivamente en TradeLocker. Algunas pocas jurisdicciones siguen restringidas; si tiene dudas, comuníquese con soporte antes de comprar."
       },
       "copyTrading": {
-        "q": "Is copy trading allowed?",
-        "a": "Yes. Copy trading is permitted across all programmes. Accounts are still assessed individually against their own objectives, risk limits and consistency requirements."
+        "q": "¿Está permitido el copy trading?",
+        "a": "Sí. El copy trading está permitido en todos los programas. Las cuentas se evalúan individualmente según sus propios objetivos, límites de riesgo y requisitos de consistencia."
       },
       "inactivity": {
-        "q": "What happens if I stop trading for a while?",
-        "a": "An account is considered inactive after 28 consecutive days without a trade. Keep at least one trade inside any 28-day window to keep the account live."
+        "q": "¿Qué sucede si dejo de operar durante un tiempo?",
+        "a": "Una cuenta se considera inactiva tras 28 días consecutivos sin operaciones. Realice al menos una operación dentro de cualquier período de 28 días para mantener la cuenta activa."
       },
       "topUpReset": {
-        "q": "How much do top-ups and resets cost?",
-        "a": "A top-up is 6% of the already discounted challenge price, and a reset is 10% of it — both calculated from the price you actually paid, not the full list price."
+        "q": "¿Cuánto cuestan las recargas (top-ups) y los reinicios (resets)?",
+        "a": "Un top-up cuesta el 6% del precio con descuento del desafío, y un reset cuesta el 10%, ambos calculados a partir del precio que pagó realmente, no del precio de lista completo."
       },
       "maxAllocation": {
-        "q": "How much simulated capital can I hold at once?",
-        "a": "2 Step Standard allows up to $300,000 in allocation. All other programmes allow up to $500,000 combined across accounts. The total across a single household is capped at $750,000, with a maximum of five accounts per household."
+        "q": "¿Cuánto capital simulado puedo tener al mismo tiempo?",
+        "a": "2 Step Standard permite hasta $300,000 en asignación. Todos los demás programas permiten hasta $500,000 combinados entre cuentas. El total por hogar tiene un límite de $750,000, con un máximo de cinco cuentas por hogar."
       },
       "phase2Reset": {
-        "q": "Can I reset a Phase 2 account?",
-        "a": "Yes. A Phase 2 reset costs 2.5 times the applicable discounted challenge price, and the profit split on the reset account is reduced to 65%."
+        "q": "¿Puedo reiniciar una cuenta de Fase 2?",
+        "a": "Sí. El reinicio de la Fase 2 cuesta 2.5 veces el precio con descuento aplicable del desafío, y la división de ganancias en la cuenta reiniciada se reduce al 65%."
       },
       "fundedReset": {
-        "q": "Can I reset a funded account?",
-        "a": "Yes. A funded account reset costs 4 times the applicable challenge price. The profit split on the reset account is reduced to 65% and a 20% consistency requirement applies."
+        "q": "¿Puedo reiniciar una cuenta fondeada?",
+        "a": "Sí. El reinicio de una cuenta fondeada cuesta 4 veces el precio aplicable del desafío. La división de ganancias en la cuenta reiniciada se reduce al 65% y se aplica un requisito de consistencia del 20%."
       }
     }
   },
