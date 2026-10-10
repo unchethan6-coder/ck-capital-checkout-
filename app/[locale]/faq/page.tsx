@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, ChevronRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { Container } from "@/components/shared/Container";
+import { COLLECTION_GLOW, CollectionIcon } from "@/components/help/CollectionIcon";
 import { HelpSearch } from "@/components/help/HelpSearch";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { HELP_ARTICLES, HELP_COLLECTIONS, blocksToText, getHelpArticle } from "@/lib/help";
+import { HELP_ARTICLES, HELP_COLLECTIONS, blocksToText } from "@/lib/help";
 import { pageSeo } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -77,43 +78,38 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
       {/* ─────────────── Collections ─────────────── */}
       <section className="bg-muted py-14 md:py-20" data-od-id="faq">
         <Container>
-          <div className="mx-auto max-w-3xl space-y-12" dir="ltr">
+          <ul dir="ltr" className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {HELP_COLLECTIONS.map((collection) => {
               const count = collection.sections.reduce((n, s) => n + s.articles.length, 0);
               return (
-                <section key={collection.slug} id={collection.slug} className="scroll-mt-28" data-od-id={`faq-collection-${collection.slug}`}>
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <h2 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-foreground">
-                      {collection.name}
-                    </h2>
-                    <span className="text-xs font-medium text-foreground/50">{t("articlesCount", { count })}</span>
-                  </div>
-                  <p className="mt-1 text-sm text-foreground/60">{collection.description}</p>
-
-                  {collection.sections.map((section) => (
-                    <div key={section.name ?? "_"} className="mt-5">
-                      {section.name && (
-                        <h3 className="mb-2 text-xs font-bold tracking-[0.12em] text-[#A98BFF] uppercase">{section.name}</h3>
-                      )}
-                      <ul className="overflow-hidden rounded-xl border border-foreground/10 bg-foreground/[0.03]">
-                        {section.articles.map((slug) => (
-                          <li key={slug} className="border-b border-foreground/10 last:border-0">
-                            <Link
-                              href={`/faq/${slug}` as never}
-                              className="flex min-h-12 items-center justify-between gap-3 px-4 py-3 text-sm font-medium text-foreground/85 transition-colors hover:bg-foreground/[0.05] hover:text-[#A98BFF] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--ring)]"
-                            >
-                              <span className="min-w-0">{getHelpArticle(slug)?.title}</span>
-                              <ChevronRight size={15} aria-hidden className="shrink-0 text-foreground/35" />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </section>
+                <li key={collection.slug}>
+                  <Link
+                    href={`/faq/collections/${collection.slug}` as never}
+                    data-od-id={`faq-collection-${collection.slug}`}
+                    className="dark-panel group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#070B1F] text-center transition-[transform,border-color,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:border-[#894CEF]/60 hover:shadow-[0_18px_50px_-18px_rgba(137,76,239,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                  >
+                    <span className="relative flex h-[150px] items-center justify-center">
+                      <span
+                        aria-hidden
+                        className="absolute inset-0 opacity-90 transition-opacity duration-200 group-hover:opacity-100"
+                        style={{ background: COLLECTION_GLOW }}
+                      />
+                      <CollectionIcon slug={collection.slug} className="relative" />
+                    </span>
+                    <span className="flex flex-1 flex-col px-6 pt-4 pb-7">
+                      <span className="font-[family-name:var(--font-jakarta)] text-lg font-bold text-white">
+                        {collection.name}
+                      </span>
+                      <span className="mt-1.5 line-clamp-3 text-[15px] leading-relaxed text-white/75">
+                        {collection.description}
+                      </span>
+                      <span className="mt-auto pt-5 text-[15px] text-white/60">{t("articlesCount", { count })}</span>
+                    </span>
+                  </Link>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </Container>
       </section>
 

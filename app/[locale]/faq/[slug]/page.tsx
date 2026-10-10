@@ -59,7 +59,7 @@ export default async function HelpArticlePage({ params }: { params: Params }) {
             {collection && (
               <>
                 <span aria-hidden className="text-foreground/25">/</span>
-                <Link href={`/faq#${collection.slug}` as never} dir="ltr" className="inline-flex min-h-9 items-center transition-colors hover:text-[#A98BFF]">
+                <Link href={`/faq/collections/${collection.slug}` as never} dir="ltr" className="inline-flex min-h-9 items-center transition-colors hover:text-[#A98BFF]">
                   {collection.name}
                 </Link>
               </>
