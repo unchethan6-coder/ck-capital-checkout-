@@ -54,7 +54,6 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
           {/* Wider than the hero on desktop, so the coin at its centre clears the copy. */}
           <video
             ref={videoRef}
-            src={video.src}
             poster={video.poster}
             autoPlay
             muted={muted}
@@ -62,7 +61,11 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             playsInline
             preload="auto"
             className="absolute inset-y-0 left-0 h-full w-full object-cover lg:w-[126%] lg:max-w-none"
-          />
+          >
+            {video.sources.map((source) => (
+              <source key={source.src} src={source.src} type={source.type} media={source.media} />
+            ))}
+          </video>
           {/* Scrims: keep the copy readable, and blend the bottom edge into the next section. */}
           <div className="absolute inset-0 bg-[#030A1C]/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-[#030A1C]/95 lg:via-[#030A1C]/70 lg:via-[38%] lg:to-transparent lg:to-[62%]" />
           <div className="absolute inset-x-0 bottom-0 h-[22%] bg-gradient-to-t from-[#030A1C] to-transparent" />
