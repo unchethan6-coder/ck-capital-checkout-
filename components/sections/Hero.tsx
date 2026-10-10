@@ -1,12 +1,15 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight, Play, BarChart2, Coins, Volume2, VolumeX, Zap } from "lucide-react";
+import { ArrowRight, Play, BarChart2, Coins, Zap } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { HeroVideo } from "@/lib/heroTakeover";
+
+/** Interactions a browser accepts as permission to play sound. */
+const UNLOCK_EVENTS = ["pointerdown", "keydown", "touchend"] as const;
 
 /** With `video`, the hero plays it as a full background instead of showing the mascot. */
 export function Hero({ video = null }: { video?: HeroVideo | null }) {
@@ -14,22 +17,62 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
-  // Browsers only autoplay video that is muted, so sound waits for the visitor to ask.
-  const [muted, setMuted] = useState(true);
-
-  const toggleSound = () => {
-    const el = videoRef.current;
-    if (!el) return;
-    el.muted = !muted;
-    setMuted(!muted);
-    // Turning sound on is also a request to play, for anyone the loop was paused for.
-    if (muted) el.play().catch(() => {});
-  };
-
-  // Visitors who ask for reduced motion get the poster frame, not the loop.
+  // Sound. Browsers refuse to start audio before the visitor has interacted with
+  // the page, so: try with sound, and where that is refused keep the muted loop
+  // running and switch the sound on at the first click, tap or key press.
+  const hasVideo = video !== null;
   useEffect(() => {
-    if (reduceMotion) videoRef.current?.pause();
-  }, [reduceMotion]);
+    const el = videoRef.current;
+    if (!el || !hasVideo) return;
+    // Visitors who ask for reduced motion get the poster frame, silent.
+    if (reduceMotion) {
+      el.pause();
+      return;
+    }
+
+    let allowed = false; // the browser has let sound through
+    let disposed = false;
+    let inView = true;
+    const sync = () => {
+      el.muted = !(allowed && inView && !document.hidden);
+    };
+    const unlock = () => {
+      allowed = true;
+      sync();
+      el.play().catch(() => {});
+      for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
+    };
+
+    el.muted = false;
+    el.play().then(
+      () => {
+        if (disposed) return;
+        allowed = true;
+        sync();
+      },
+      () => {
+        if (disposed) return;
+        el.muted = true;
+        el.play().catch(() => {});
+        for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
+      }
+    );
+
+    // The loop only has sound while the hero is on screen and the tab is in front.
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      sync();
+    }, { threshold: 0.25 });
+    observer.observe(el);
+    document.addEventListener("visibilitychange", sync);
+
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", sync);
+      for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
+    };
+  }, [hasVideo, reduceMotion]);
 
   // Scroll-linked parallax: the artwork drifts up and fades slightly as the
   // hero leaves the viewport, so the section feels layered rather than static.
@@ -56,7 +99,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             ref={videoRef}
             poster={video.poster}
             autoPlay
-            muted={muted}
+            muted
             loop
             playsInline
             preload="auto"
@@ -78,19 +121,6 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
           <div className="fx-aurora-core absolute inset-0" />
           <div className="fx-aurora-dots absolute inset-0 opacity-40" />
         </div>
-      )}
-
-      {video && (
-        <button
-          type="button"
-          onClick={toggleSound}
-          aria-pressed={!muted}
-          data-od-id="hero-video-sound"
-          className="absolute top-0.5 right-4 z-20 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-[#030A1C]/70 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-[#894CEF] hover:bg-[#030A1C]/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:top-6 sm:right-6 lg:right-8"
-        >
-          {muted ? <VolumeX size={16} aria-hidden /> : <Volume2 size={16} aria-hidden />}
-          {muted ? "Sound on" : "Sound off"}
-        </button>
       )}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
