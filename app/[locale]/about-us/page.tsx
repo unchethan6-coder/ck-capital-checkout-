@@ -538,78 +538,91 @@ export default function AboutPage() {
             />
 
             {/* Modal Box */}
-            <div className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-white/15 bg-[#070B1D] p-6 shadow-2xl text-white sm:p-8">
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={() => setStoryOpen(false)}
-                className="absolute right-5 top-5 rounded-full border border-white/10 bg-white/5 p-2 text-white/70 transition hover:bg-white/15 hover:text-white cursor-pointer"
-                aria-label="Close"
-              >
-                <X size={18} />
-              </button>
-
-              {/* Header */}
-              <div className="flex items-center gap-4 sm:gap-5 pr-8">
-                <img
-                  src="/images/about/monray-linevee.jpg"
-                  alt="Monray Linevee — Founder"
-                  className="h-16 w-16 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-md sm:h-20 sm:w-20"
-                />
-                <div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
-                    <Star size={10} className="fill-[#894CEF] text-[#A98BFF]" /> {t('founderRoleBadge')}
-                  </span>
-                  <h3 id="monray-story-title" className="mt-1.5 font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-white">
-                    Monray Linevee
-                  </h3>
-                  <p className="text-xs font-semibold text-[#A98BFF]">
-                    {t('founderRole')}
-                  </p>
+            <div className="relative z-10 flex flex-col max-h-[85vh] w-full max-w-2xl overflow-hidden rounded-3xl border border-white/15 bg-[#070B1D] shadow-2xl text-white">
+              {/* Header (Fixed) */}
+              <div className="shrink-0 flex items-center justify-between border-b border-white/10 bg-[#070B1D]/95 px-6 py-5 sm:px-8 sm:py-6 backdrop-blur-md">
+                <div className="flex items-center gap-4 sm:gap-5 min-w-0">
+                  <img
+                    src="/images/about/monray-linevee.jpg"
+                    alt="Monray Linevee — Founder"
+                    className="h-14 w-14 sm:h-16 sm:w-16 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-md"
+                  />
+                  <div className="min-w-0">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
+                      <Star size={10} className="fill-[#894CEF] text-[#A98BFF]" /> {t('founderRoleBadge')}
+                    </span>
+                    <h3 id="monray-story-title" className="mt-1 font-[family-name:var(--font-jakarta)] text-xl sm:text-2xl font-extrabold text-white truncate">
+                      Monray Linevee
+                    </h3>
+                    <p className="text-xs font-semibold text-[#A98BFF] truncate">
+                      {t('founderRole')}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Quote */}
-              <div className="mt-6 rounded-2xl border border-[#703AD7]/30 bg-[#703AD7]/10 p-4">
-                <p className="text-sm italic text-white/95 leading-relaxed">
-                  &ldquo;{t('founderQuote')}&rdquo;
-                </p>
-              </div>
-
-              {/* Full Narrative */}
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-white/80">
-                <p>
-                  My journey began when I was a full-time student and first discovered the stock market. I was immediately fascinated by the world of investing and the possibilities it offered. I soon realised that investment management was something I genuinely wanted to pursue. However, one of my biggest challenges was figuring out how to build the capital needed to turn that vision into reality. At the time, financial freedom felt like a distant goal.
-                </p>
-                <p>
-                  Determined to find a way forward, I explored cryptocurrency investing. It introduced me to new opportunities, helped me work towards building capital, and strengthened my belief that my long-term goals were achievable. This experience motivated me to explore further and eventually led me to forex trading.
-                </p>
-                <p>
-                  I spent months studying the markets, reading, testing strategies, and learning through experience. Initially, I relied heavily on technical indicators, believing they would help me identify the right trading opportunities. However, as I gained experience, I discovered Price Action trading, which fundamentally changed the way I understood the markets.
-                </p>
-                <p>
-                  I began developing my own trading approach, focusing on price movements and market behaviour rather than relying solely on indicators. This shift helped me make more informed decisions and build a clearer understanding of how I wanted to approach trading.
-                </p>
-                <p>
-                  Beyond technical knowledge, trading taught me some of the most valuable lessons about discipline, patience, and objectivity. I learned the importance of staying calm under pressure, managing risk, accepting losses, and maintaining a long-term perspective. These lessons have shaped not only my trading approach but also the way I handle challenges in everyday life.
-                </p>
-                <p>
-                  Today, I continue to refine my strategy and work towards consistent profitability. My long-term vision remains the same: to build the capital needed to create my own stock portfolio and pursue greater financial independence.
-                </p>
-                <p>
-                  Looking back, this journey has been about much more than financial markets. It has been about learning, adapting, overcoming challenges, and becoming more disciplined with every step.
-                </p>
-                <p className="font-medium text-white/95">
-                  I&apos;m still learning, still improving, and still working towards the vision that started it all. For me, success isn&apos;t just about reaching the destination. It&apos;s about the growth, experience, and discipline built along the way.
-                </p>
-              </div>
-
-              {/* Close footer button */}
-              <div className="mt-8 pt-4 border-t border-white/10 flex justify-end">
+                {/* Close Button */}
                 <button
                   type="button"
                   onClick={() => setStoryOpen(false)}
-                  className="rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 cursor-pointer"
+                  className="shrink-0 ml-4 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/15 hover:text-white cursor-pointer"
+                  aria-label="Close"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* Scrollable Body */}
+              <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-8 sm:py-7">
+                {/* Quote Box */}
+                <div className="mb-6 rounded-2xl border border-[#703AD7]/30 bg-[#703AD7]/10 p-4 sm:p-5">
+                  <div className="flex items-start gap-3">
+                    <Quote size={18} className="text-[#A98BFF] shrink-0 mt-0.5 opacity-80" />
+                    <p className="text-sm italic text-white/95 leading-relaxed">
+                      &ldquo;{t('founderQuote')}&rdquo;
+                    </p>
+                  </div>
+                </div>
+
+                {/* Narrative */}
+                <div className="space-y-4 text-sm sm:text-[14.5px] leading-[1.75] text-white/80">
+                  <p>
+                    My journey began when I was a full-time student and first discovered the stock market. I was immediately fascinated by the world of investing and the possibilities it offered. I soon realised that investment management was something I genuinely wanted to pursue. However, one of my biggest challenges was figuring out how to build the capital needed to turn that vision into reality. At the time, financial freedom felt like a distant goal.
+                  </p>
+                  <p>
+                    Determined to find a way forward, I explored cryptocurrency investing. It introduced me to new opportunities, helped me work towards building capital, and strengthened my belief that my long-term goals were achievable. This experience motivated me to explore further and eventually led me to forex trading.
+                  </p>
+                  <p>
+                    I spent months studying the markets, reading, testing strategies, and learning through experience. Initially, I relied heavily on technical indicators, believing they would help me identify the right trading opportunities. However, as I gained experience, I discovered Price Action trading, which fundamentally changed the way I understood the markets.
+                  </p>
+                  <p>
+                    I began developing my own trading approach, focusing on price movements and market behaviour rather than relying solely on indicators. This shift helped me make more informed decisions and build a clearer understanding of how I wanted to approach trading.
+                  </p>
+                  <p>
+                    Beyond technical knowledge, trading taught me some of the most valuable lessons about discipline, patience, and objectivity. I learned the importance of staying calm under pressure, managing risk, accepting losses, and maintaining a long-term perspective. These lessons have shaped not only my trading approach but also the way I handle challenges in everyday life.
+                  </p>
+                  <p>
+                    Today, I continue to refine my strategy and work towards consistent profitability. My long-term vision remains the same: to build the capital needed to create my own stock portfolio and pursue greater financial independence.
+                  </p>
+                  <p>
+                    Looking back, this journey has been about much more than financial markets. It has been about learning, adapting, overcoming challenges, and becoming more disciplined with every step.
+                  </p>
+                  <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-white/95">
+                    <p className="font-medium italic leading-relaxed">
+                      &ldquo;I&apos;m still learning, still improving, and still working towards the vision that started it all. For me, success isn&apos;t just about reaching the destination. It&apos;s about the growth, experience, and discipline built along the way.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fixed Footer */}
+              <div className="shrink-0 flex items-center justify-between border-t border-white/10 bg-[#070B1D]/95 px-6 py-4 sm:px-8 backdrop-blur-md">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/40">
+                  CK Propfirm · Founder Journey
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setStoryOpen(false)}
+                  className="rounded-xl border border-white/20 bg-white/10 px-5 py-2 text-xs font-semibold text-white transition hover:bg-white/20 cursor-pointer"
                 >
                   {t('closeStory')}
                 </button>
