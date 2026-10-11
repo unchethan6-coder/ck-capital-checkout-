@@ -8,6 +8,10 @@ import { GoldButton } from "@/components/shared/GoldButton";
 import { BlocksRenderer } from "@/components/blog/BlocksRenderer";
 import { getArticleBySlug, getAllArticleSlugs } from "@/lib/cms";
 import type { CmsArticle } from "@/lib/cms";
+import { hasLocale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import { getLocaleMeta } from "@/i18n/locales";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const revalidate = 300;
@@ -32,32 +36,49 @@ function articleOgImage(article: CmsArticle) {
   return DEFAULT_OG_IMAGE;
 }
 
+type ArticleParams = Promise<{ locale?: string; slug: string }>;
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: ArticleParams;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
+  const localeMeta = getLocaleMeta(locale);
   const article = await getArticleBySlug(slug);
   if (!article) return { title: "Article Not Found" };
 
-  const url = `${SITE_URL}/blog/${article.slug}`;
+  const url = `${SITE_URL}/${locale}/blog/${article.slug}`;
   const title = article.seoTitle ?? `${article.title} | CK Propfirm`;
   const description = article.seoDescription ?? article.excerpt ?? "";
   const image = articleOgImage(article);
+  const imageUrl = image.url.startsWith("http") ? image.url : `${SITE_URL}${image.url}`;
 
   return {
     title,
     description,
     metadataBase: new URL(SITE_URL),
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: {
+        "x-default": `${SITE_URL}/en/blog/${article.slug}`,
+        "en-US": `${SITE_URL}/en/blog/${article.slug}`,
+        "es-ES": `${SITE_URL}/es/blog/${article.slug}`,
+        "pt-BR": `${SITE_URL}/pt/blog/${article.slug}`,
+        ar: `${SITE_URL}/ar/blog/${article.slug}`,
+        "de-DE": `${SITE_URL}/de/blog/${article.slug}`,
+        "fr-FR": `${SITE_URL}/fr/blog/${article.slug}`,
+        "hi-IN": `${SITE_URL}/hi/blog/${article.slug}`,
+      },
+    },
     openGraph: {
       title,
       description,
       url,
       siteName: SITE_NAME,
       type: "article",
-      locale: "en_US",
+      locale: localeMeta?.ogLocale ?? "en_US",
       images: [image],
       publishedTime: article.publishedAt,
     },
@@ -65,7 +86,17 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [imageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
@@ -73,14 +104,77 @@ export async function generateMetadata({
 export default async function ArticlePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: ArticleParams;
 }) {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale = hasLocale(routing.locales, rawLocale) ? rawLocale : routing.defaultLocale;
+  setRequestLocale(locale);
+
   const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
+  const image = articleOgImage(article);
+  const imageUrl = image.url.startsWith("http") ? image.url : `${SITE_URL}${image.url}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${SITE_URL}/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: `${SITE_URL}/${locale}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: article.title,
+            item: `${SITE_URL}/${locale}/blog/${article.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "BlogPosting",
+        headline: article.title,
+        description: article.seoDescription ?? article.excerpt ?? "",
+        image: imageUrl,
+        datePublished: article.publishedAt,
+        dateModified: article.publishedAt,
+        author: {
+          "@type": "Person",
+          name: article.author || SITE_NAME,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          logo: {
+            "@type": "ImageObject",
+            url: `${SITE_URL}/favicon-192x192.png`,
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/${locale}/blog/${article.slug}`,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background" data-od-id="article-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       {/* ─────────────── Hero Header (LIGHT) ─────────────── */}
       <section className="relative isolate -mt-[72px] md:-mt-[76px] overflow-hidden border-b border-gray-200 bg-white pt-28 md:pt-36 pb-14 md:pb-20 text-[#0A0A0C]" data-od-id="article-hero">
         <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">

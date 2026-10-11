@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Funded accounts up to $750K with an 80% profit split. Trade Forex, Crypto, and Commodities with no restrictions.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0b0a07",
-    theme_color: "#0b0a07",
+    background_color: "#030A1C",
+    theme_color: "#030A1C",
     lang: "en",
     icons: [
       { src: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },

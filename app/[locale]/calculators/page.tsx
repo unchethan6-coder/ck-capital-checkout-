@@ -1,14 +1,24 @@
+import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { Container } from "@/components/shared/Container";
 import { Aurora } from "@/components/fx/Aurora";
 import { CalculatorSuite } from "@/components/calculators/CalculatorSuite";
 import { pageSeo } from "@/lib/seo";
 
-export const metadata = pageSeo({
-  title: "Trading Calculators",
-  description:
-    "Plan trades on your CK Capital simulated account: margin, profit and loss, lot size and swap, checked against the daily loss, drawdown and payout rules of your programme.",
-  path: "/calculators",
-});
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  return pageSeo({
+    title: "Trading Calculators",
+    description:
+      "Plan trades on your CK Capital simulated account: margin, profit and loss, lot size and swap, checked against the daily loss, drawdown and payout rules of your programme.",
+    path: "/calculators",
+    locale: resolved,
+  });
+}
 
 const HIGHLIGHTS = [
   "Margin, P/L, lot size and swap in one place",

@@ -21,17 +21,37 @@ interface PageSeoOptions {
   images?: Metadata["openGraph"] extends infer _T ? { url: string; width?: number; height?: number; alt?: string }[] : never;
 }
 
-/** Build a per-page Metadata object with canonical URL, OG and Twitter cards. */
+const HREFLANG_MAP: Record<AppLocale, string> = {
+  en: "en-US",
+  es: "es-ES",
+  pt: "pt-BR",
+  ar: "ar",
+  de: "de-DE",
+  fr: "fr-FR",
+  hi: "hi-IN",
+};
+
+/** Build a per-page Metadata object with canonical URL, full hreflang alternates, OG and Twitter cards. */
 export function pageSeo({ title, description, path, locale = "en", type = "website", images }: PageSeoOptions): Metadata {
   const localeMeta = getLocaleMeta(locale);
-  // The canonical URL keeps the locale prefix so each language version is distinct.
-  const url = `${SITE_URL}/${locale}${path === "/" ? "/" : path}`;
+  const cleanPath = path === "/" ? "" : path.startsWith("/") ? path : `/${path}`;
+  const url = `${SITE_URL}/${locale}${cleanPath}`;
   const ogImages = images && images.length ? images : [DEFAULT_OG_IMAGE];
+
+  const languages: Record<string, string> = {};
+  for (const loc of ["en", "es", "pt", "ar", "de", "fr", "hi"] as AppLocale[]) {
+    languages[HREFLANG_MAP[loc]] = `${SITE_URL}/${loc}${cleanPath}`;
+  }
+  languages["x-default"] = `${SITE_URL}/en${cleanPath}`;
+
   return {
     title,
     description,
     metadataBase: new URL(SITE_URL),
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages,
+    },
     openGraph: {
       title,
       description,
@@ -46,6 +66,16 @@ export function pageSeo({ title, description, path, locale = "en", type = "websi
       title,
       description,
       images: ogImages,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }

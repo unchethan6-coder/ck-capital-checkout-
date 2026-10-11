@@ -1,13 +1,23 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { Container } from "@/components/shared/Container";
 import { pageSeo } from "@/lib/seo";
 
-export const metadata = pageSeo({
-  title: "Terms & Conditions",
-  description:
-    "CK Propfirm Terms and Conditions — Please review our rules and terms before purchasing or using our services.",
-  path: "/terms-conditions",
-});
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  return pageSeo({
+    title: "Terms & Conditions",
+    description:
+      "CK Propfirm Terms and Conditions — Please review our rules and terms before purchasing or using our services.",
+    path: "/terms-conditions",
+    locale: resolved,
+  });
+}
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (

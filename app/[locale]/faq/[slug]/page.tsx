@@ -8,7 +8,7 @@ import { ArticleBody } from "@/components/help/ArticleBody";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { HELP_ARTICLES, blocksToText, excerpt, getHelpArticle, getHelpCollection } from "@/lib/help";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, SITE_URL } from "@/lib/seo";
 
 // Every article is known at build time; anything else is a 404, not a render.
 export const dynamicParams = false;
@@ -47,8 +47,71 @@ export default async function HelpArticlePage({ params }: { params: Params }) {
     .map(getHelpArticle)
     .filter((a) => a !== undefined);
 
+  const breadcrumbItems = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: `${SITE_URL}/${locale}`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Help Center",
+      item: `${SITE_URL}/${locale}/faq`,
+    },
+  ];
+  if (collection) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 3,
+      name: collection.name,
+      item: `${SITE_URL}/${locale}/faq/collections/${collection.slug}`,
+    });
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 4,
+      name: article.title,
+      item: `${SITE_URL}/${locale}/faq/${article.slug}`,
+    });
+  } else {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 3,
+      name: article.title,
+      item: `${SITE_URL}/${locale}/faq/${article.slug}`,
+    });
+  }
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbItems,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: article.title,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: blocksToText(article.blocks),
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background" data-od-id="faq-article-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <Container className="py-10 md:py-16">
         <div className="mx-auto max-w-3xl">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-[13px] text-foreground/55">

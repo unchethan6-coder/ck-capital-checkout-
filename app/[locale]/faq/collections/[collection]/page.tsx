@@ -8,7 +8,7 @@ import { COLLECTION_GLOW, CollectionIcon } from "@/components/help/CollectionIco
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { HELP_COLLECTIONS, getHelpArticle, getHelpCollection } from "@/lib/help";
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, SITE_URL } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -39,8 +39,37 @@ export default async function HelpCollectionPage({ params }: { params: Params })
   const t = await getTranslations("helpCenter");
   const count = collection.sections.reduce((n, s) => n + s.articles.length, 0);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Help Center",
+        item: `${SITE_URL}/${locale}/faq`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: collection.name,
+        item: `${SITE_URL}/${locale}/faq/collections/${collection.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background" data-od-id="faq-collection-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <Container className="py-10 md:py-16">
         <div className="mx-auto max-w-3xl">
           <nav aria-label="Breadcrumb" className="text-[13px] text-foreground/55">

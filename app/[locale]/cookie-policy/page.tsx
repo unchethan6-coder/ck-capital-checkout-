@@ -1,13 +1,23 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { Container } from "@/components/shared/Container";
 import { pageSeo } from "@/lib/seo";
 
-export const metadata = pageSeo({
-  title: "Cookie Policy",
-  description:
-    "CK Propfirm Cookie Policy — Information about cookies and how they are used on our platform.",
-  path: "/cookie-policy",
-});
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  return pageSeo({
+    title: "Cookie Policy",
+    description:
+      "CK Propfirm Cookie Policy — Information about cookies and how they are used on our platform.",
+    path: "/cookie-policy",
+    locale: resolved,
+  });
+}
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (

@@ -1,14 +1,24 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { TriangleAlert } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { pageSeo } from "@/lib/seo";
 
-export const metadata = pageSeo({
-  title: "Risk Disclosure & Trading Warnings",
-  description:
-    "Important risk disclosure for trading. Understand the risks and market volatility considerations before participating in CK Propfirm evaluation programs.",
-  path: "/risk-disclosure",
-});
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const resolved = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  return pageSeo({
+    title: "Risk Disclosure & Trading Warnings",
+    description:
+      "Important risk disclosure for trading. Understand the risks and market volatility considerations before participating in CK Propfirm evaluation programs.",
+    path: "/risk-disclosure",
+    locale: resolved,
+  });
+}
 
 function RiskSection({ num, title, children }: { num: string; title: string; children: React.ReactNode }) {
   return (

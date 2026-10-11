@@ -71,6 +71,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
+        "x-default": `${SITE_URL}/en/`,
         "en-US": `${SITE_URL}/en/`,
         "es-ES": `${SITE_URL}/es/`,
         "pt-BR": `${SITE_URL}/pt/`,
@@ -105,7 +106,7 @@ export async function generateMetadata({
       title: `CK Propfirm — Get Funded Up to $750K | 80% Profit Split`,
       description:
         "Proprietary trading evaluations and simulated funded accounts up to $750K with an 80% profit split.",
-      images: ["/og-image.jpg"],
+      images: [`${SITE_URL}/og-image.jpg`],
     },
     robots: {
       index: true,
