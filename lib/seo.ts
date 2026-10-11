@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getLocaleMeta } from "@/i18n/locales";
 import type { AppLocale } from "@/i18n/routing";
 
-export const SITE_URL = "https://ckcapital.co.uk";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ckpropfirm.com";
 export const SITE_NAME = "CK Propfirm";
 
 export const DEFAULT_OG_IMAGE = {
