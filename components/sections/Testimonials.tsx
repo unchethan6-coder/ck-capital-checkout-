@@ -12,7 +12,7 @@ export const VIDEO_META: Record<string, { reward: string; desc: string; thumbnai
   },
   "8NQAWtlh_ws": {
     reward: "$84,120",
-    desc: "CK Propfirm 1 Year Review • Dan Cheung",
+    desc: "CK Propfirm 1 Year Review • Monray Linevee",
     thumbnail: "/images/testimonials/hqdefault-308afdd2f9.jpg",
     title: "BEST PROP? I TRUST CK PROPFIRM",
   },

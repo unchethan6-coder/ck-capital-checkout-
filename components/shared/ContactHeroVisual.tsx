@@ -148,13 +148,13 @@ export function ContactHeroVisual({
               </div>
               <div className="mt-2.5 flex items-start gap-3">
                 <img
-                  src="/images/about/dan.jpg"
-                  alt="Support Specialist"
+                  src="/images/about/monray-linevee.jpg"
+                  alt="Monray & Team"
                   className="h-8 w-8 rounded-full border border-gray-300 object-cover shrink-0"
                 />
                 <div className="space-y-1">
                   <p className="text-xs font-semibold text-[#0A0A0C]">
-                    Daniel &amp; Team · <span className="text-[#6B7280] font-normal">Desk Staff</span>
+                    Monray &amp; Team · <span className="text-[#6B7280] font-normal">Desk Staff</span>
                   </p>
                   <p className="text-[11px] text-[#4B5563] leading-relaxed">
                     &ldquo;Have a question about rules, instant funding setup, or profit withdrawals? Our UK support desk is live 24/7.&rdquo;

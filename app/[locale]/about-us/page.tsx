@@ -246,7 +246,7 @@ export default function AboutPage() {
                 </motion.div>
               </div>
 
-              {/* Right Column: Founder Spotlight Card */}
+              {/* Right Column: Founder Card */}
               <motion.div
                 variants={heroScaleIn}
                 initial="hidden"
@@ -266,7 +266,7 @@ export default function AboutPage() {
                         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#703AD7] to-[#894CEF] opacity-60 blur-sm" />
                         <img
                           src="/images/about/monray-linevee.jpg"
-                          alt="Monray Linevee — Trader & Market Strategist"
+                          alt="Monray Linevee — Founder"
                           className="relative h-20 w-20 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-lg sm:h-24 sm:w-24"
                           data-od-id="about-founder-photo"
                         />
@@ -553,7 +553,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-4 sm:gap-5 pr-8">
                 <img
                   src="/images/about/monray-linevee.jpg"
-                  alt="Monray Linevee"
+                  alt="Monray Linevee — Founder"
                   className="h-16 w-16 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-md sm:h-20 sm:w-20"
                 />
                 <div>

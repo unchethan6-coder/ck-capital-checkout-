@@ -222,7 +222,7 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     sourceKey: "discord",
     sourceLabel: "Discord",
     rating: 5,
-    text: "I want to express my gratitude to CK Capital Prop Firm and its CEO, Dan Cheung, for the prompt payout of my funded account. Delivered the payout on time.",
+    text: "I want to express my gratitude to CK Capital Prop Firm and its founder, Monray Linevee, for the prompt payout of my funded account. Delivered the payout on time.",
     name: "Wakeel Ahmed",
     location: "Funded Trader",
     amount: "$14,642.00",
