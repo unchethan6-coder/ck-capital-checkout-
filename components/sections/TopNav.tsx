@@ -327,7 +327,7 @@ export function TopNav() {
             open
               ? "mx-auto px-4 sm:px-6 lg:px-8 bg-[#030A1C] rounded-none border border-transparent shadow-none pointer-events-auto translate-y-0"
               : scrolled
-              ? "pointer-events-auto translate-y-2 sm:translate-y-2.5 mx-3 sm:mx-4 xl:mx-auto rounded-2xl sm:rounded-[22px] border border-white/[0.14] bg-[#030A1C] shadow-[0_20px_50px_rgba(0,0,0,0.8)] px-4 sm:px-6 lg:px-8"
+              ? "pointer-events-auto translate-y-2 sm:translate-y-2.5 mx-3 sm:mx-4 xl:mx-auto rounded-2xl sm:rounded-[22px] border border-white/[0.14] bg-[#030A1C]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] px-4 sm:px-6 lg:px-8"
               : "mx-auto px-4 sm:px-6 lg:px-8 bg-[#030A1C] rounded-none border border-transparent shadow-none pointer-events-auto translate-y-0"
           )}
         >
@@ -565,7 +565,7 @@ export function TopNav() {
                             {col.items.map((item) => {
                               const IconComponent = item.icon;
                               const isExt = item.external || item.href.startsWith("http");
-                              const itemKey = item.titleKey === "aboutUs" ? "aboutUs" : item.titleKey === "payoutsProof" ? "payouts" : item.titleKey === "affiliateProgram" ? "affiliates" : item.titleKey === "support247" ? "contact" : "blog";
+                              const itemKey = item.titleKey === "aboutUs" ? "aboutUs" : item.titleKey === "payoutsProof" ? "payouts" : item.titleKey === "affiliateProgram" ? "affiliates" : item.titleKey === "support247" ? "contact" : item.titleKey === "blogTitle" ? "blog" : "faq";
 
                               const content = (
                                 <>

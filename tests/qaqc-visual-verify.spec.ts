@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import path from "path";
 
-const ARTIFACTS_DIR = "/Users/kimjoshuadr/.gemini/antigravity-cli/brain/46013b9a-dfe7-4798-93ed-870dff156ca4";
+const ARTIFACTS_DIR = process.env.ARTIFACTS_DIR || "/Users/kimjoshuadr/.gemini/antigravity-cli/brain/671eaa3b-d139-4698-892c-ac18fd353d90/screenshots";
 
 test.describe("QAQC Visual Screenshot Verification", () => {
   test.beforeEach(async ({ page }) => {

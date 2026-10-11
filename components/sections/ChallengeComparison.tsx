@@ -516,6 +516,7 @@ export function ChallengeComparison({
                         checked={!isPercentage}
                         onChange={(e) => setIsPercentage(!e.target.checked)}
                         className="sr-only peer"
+                        aria-label={t("showAmounts") || "Show $ Amounts"}
                       />
                       <span className="absolute inset-0 bg-[#E5E5E5] peer-checked:bg-[#703AD7] rounded-full transition-all duration-300"></span>
                       <span className="absolute bottom-[3px] left-[3px] bg-white w-3.5 h-3.5 rounded-full transition-transform duration-300 peer-checked:translate-x-4 shadow-sm"></span>
@@ -762,7 +763,13 @@ export function ChallengeComparison({
                   <label className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-[#0A0A0C]">
                     <Percent className="h-4 w-4 text-[#A98BFF]" />
                     <span>{t("showAmounts") || "Show $ Amounts"}</span>
-                    <input type="checkbox" checked={!isPercentage} onChange={(event) => setIsPercentage(!event.target.checked)} className="peer sr-only" />
+                    <input
+                      type="checkbox"
+                      checked={!isPercentage}
+                      onChange={(event) => setIsPercentage(!event.target.checked)}
+                      className="peer sr-only"
+                      aria-label={t("showAmounts") || "Show $ Amounts"}
+                    />
                     <span className="relative h-5 w-9 rounded-full bg-[#E5E5E5] transition-colors peer-checked:bg-[#703AD7] after:absolute after:bottom-[3px] after:left-[3px] after:h-3.5 after:w-3.5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:after:translate-x-4" />
                   </label>
                 </div>
