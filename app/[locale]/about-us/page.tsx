@@ -124,12 +124,12 @@ export default function AboutPage() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-[#070B1D] text-white" data-od-id="about-page">
+      <div className="min-h-screen bg-white" data-od-id="about-page">
 
         {/* ─────────────── Hero (Landing Page Parity) ─────────────── */}
         <section
           ref={sectionRef}
-          className="relative isolate -mt-[72px] md:-mt-[76px] flex min-h-[calc(100dvh-44px)] flex-col overflow-hidden border-b border-white/10 bg-[#070B1D]"
+          className="relative isolate -mt-[72px] md:-mt-[76px] flex min-h-[calc(100dvh-44px)] flex-col overflow-hidden border-b border-gray-200 bg-white"
           data-od-id="about-hero"
         >
           {/* Parallax Radial Glows */}
@@ -161,7 +161,7 @@ export default function AboutPage() {
                   variants={heroFadeDown}
                   initial="hidden"
                   animate="show"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#894CEF]/35 bg-[#894CEF]/15 px-3.5 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#7943E0]/30 bg-[#7943E0]/10 px-3.5 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#A98BFF]"
                   data-od-id="about-hero-eyebrow"
                 >
                   <Sparkles size={12} className="text-[#A98BFF]" />
@@ -173,7 +173,7 @@ export default function AboutPage() {
                   initial="hidden"
                   animate="show"
                   custom={0.08}
-                  className="mt-6 font-[family-name:var(--font-jakarta)] text-[clamp(36px,6vw,44px)] font-extrabold leading-[1.03] tracking-[-0.02em] text-white sm:text-[50px] md:text-[58px] lg:text-[52px] xl:text-[64px]"
+                  className="mt-6 font-[family-name:var(--font-jakarta)] text-[clamp(36px,6vw,44px)] font-extrabold leading-[1.03] tracking-[-0.02em] text-[#0A0A0C] sm:text-[50px] md:text-[58px] lg:text-[52px] xl:text-[64px]"
                   data-od-id="about-hero-title"
                 >
                   {t('heroTitlePrefix')}{' '}
@@ -185,7 +185,7 @@ export default function AboutPage() {
                   initial="hidden"
                   animate="show"
                   custom={0.18}
-                  className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/70 sm:text-base"
+                  className="mt-6 max-w-xl text-[15px] leading-relaxed text-[#4B5563] sm:text-base"
                 >
                   {t('storyDesc')}
                 </motion.p>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                   </a>
                   <Link
                     href="/trading-objectives"
-                    className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-white transition hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#4B5563] transition hover:text-[#0A0A0C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                     data-od-id="about-hero-secondary"
                   >
                     {t('exploreObjectives')} <ArrowRight size={15} />
@@ -221,7 +221,7 @@ export default function AboutPage() {
                   initial="hidden"
                   animate="show"
                   custom={0.38}
-                  className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-[10.5px] font-bold uppercase tracking-[0.16em] text-white/70">
+                  className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#6B7280]">
                   <span className="inline-flex items-center gap-2">
                     <ShieldCheck size={14} className="text-[#A98BFF]" /> {t('badgeSimulated')}
                   </span>
@@ -229,7 +229,7 @@ export default function AboutPage() {
                     <BadgeCheck size={14} className="text-[#A98BFF]" /> {t('badgeVerifiedUk')}
                   </span>
                   <span className="inline-flex items-center gap-2">
-                    <Users size={14} className="text-[#A98BFF]" /> {t('badgeGlobalTraders')}
+                    <Users size={14} className="text-[#6B7280]" /> {t('badgeGlobalTraders')}
                   </span>
                 </motion.div>
               </div>
@@ -242,25 +242,25 @@ export default function AboutPage() {
                 className="relative"
               >
                 {/* Background ambient glow */}
-                <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-[#894CEF]/15 blur-2xl" />
+                <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-primary/10 blur-2xl" />
 
-                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0B0F24]/90 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
-                  {/* Purple accent line */}
+                <div className="relative overflow-hidden rounded-3xl border border-[#1E293B] bg-[#030A1C] bg-gradient-to-br from-[#061B33]/95 via-[#030A1C]/95 to-[#01060F] p-6 shadow-xl backdrop-blur-xl sm:p-8">
+                  {/* Cyan accent line */}
                   <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#894CEF] to-transparent" />
 
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-4 sm:gap-5">
                       <div className="relative">
-                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#703AD7] to-[#894CEF] opacity-75 blur-sm" />
+                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#703AD7] to-[#894CEF] opacity-60 blur-sm" />
                         <img
                           src="/images/about/dan.jpg"
                           alt="Daniel Cheung — Founder of CK Propfirm"
-                          className="relative h-20 w-20 shrink-0 rounded-2xl border-2 border-[#894CEF] object-cover shadow-lg sm:h-24 sm:w-24"
+                          className="relative h-20 w-20 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-lg sm:h-24 sm:w-24"
                           data-od-id="about-founder-photo"
                         />
                       </div>
                       <div>
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
                           <Star size={10} className="fill-[#894CEF] text-[#A98BFF]" /> {t('founderRoleBadge')}
                         </span>
                         <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-xl font-extrabold text-white sm:text-2xl">
@@ -273,24 +273,24 @@ export default function AboutPage() {
                     </div>
 
                     {/* Philosophy Quote */}
-                    <div className="relative rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                      <Quote size={20} className="text-[#A98BFF] mb-2" />
+                    <div className="relative rounded-2xl border border-white/[0.12] bg-white/[0.04] p-5">
+                      <Quote size={20} className="text-[#A98BFF]/60 mb-2" />
                       <p className="text-sm leading-relaxed text-white/90 italic">
                         &ldquo;{t('founderQuote')}&rdquo;
                       </p>
                     </div>
 
                     {/* Bio details */}
-                    <p className="text-xs leading-relaxed text-white/65">
+                    <p className="text-xs leading-relaxed text-gray-300">
                       {t('founderBio')}
                     </p>
 
                     {/* Track record chips */}
-                    <div className="flex flex-wrap gap-2 pt-1 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2 pt-1 border-t border-foreground/[0.06]">
                       {founderBadges.map((badge) => (
                         <span
                           key={badge}
-                          className="rounded-full border border-[#894CEF]/30 bg-[#894CEF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#A98BFF]"
+                          className="rounded-lg border border-primary/20 bg-primary/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#A98BFF]/90"
                         >
                           {badge}
                         </span>
