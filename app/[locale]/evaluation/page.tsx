@@ -14,13 +14,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getChallengeConfig } from "@/lib/cms";
+import { getChallengeConfig, getActivePromo } from "@/lib/cms";
 
 export const revalidate = 300;
 
 export default async function EvaluationPage() {
-  const [challengeConfig, t, tFaq] = await Promise.all([
+  const [challengeConfig, promo, t, tFaq] = await Promise.all([
     getChallengeConfig(),
+    getActivePromo(),
     getTranslations("evaluation"),
     getTranslations("faq"),
   ]);
@@ -52,7 +53,7 @@ export default async function EvaluationPage() {
       <StatsStrip />
 
       {/* ─────────────── Interactive pricing table (LIGHT) ─────────────── */}
-      <ChallengeComparison config={challengeConfig} />
+      <ChallengeComparison config={challengeConfig} promo={promo} />
 
       {/* ─────────────── Reset & Top-Up ─────────────── */}
       <section className="bg-white py-16 md:py-24 text-[#0A0A0C]" data-od-id="evaluation-reset">

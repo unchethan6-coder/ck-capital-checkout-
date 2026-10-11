@@ -12,10 +12,20 @@ export interface AnnouncementBanner {
   link?: string | null;
 }
 
+export interface AnnouncementPromo {
+  code: string;
+  title?: string | null;
+  subtitle?: string | null;
+  ctaLabel?: string | null;
+  discountLabel?: string | null;
+}
+
 export function AnnouncementBar({
   banners,
+  promo,
 }: {
   banners?: (string | AnnouncementBanner)[];
+  promo?: AnnouncementPromo | null;
 } = {}) {
   const [visible, setVisible] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -92,10 +102,16 @@ export function AnnouncementBar({
           <>
             <span className="text-sm">🎁</span>
             <span className="font-semibold text-white/95 tracking-wide">
-              <span className="text-[#A98BFF]">{t("badge")}:</span> {t("discount")} {t("allEvaluations")}!
+              {promo?.title ? (
+                <span>{promo.title}</span>
+              ) : (
+                <>
+                  <span className="text-[#A98BFF]">{t("badge")}:</span> {promo?.discountLabel ?? t("discount")} {t("allEvaluations")}!
+                </>
+              )}
             </span>
             <span className="inline-flex items-center rounded border border-[#894CEF]/40 bg-[#894CEF]/10 px-2 py-0.5 font-mono text-[11px] sm:text-xs font-bold text-[#A98BFF]">
-              {t("codeLabel")}: {SITE_META.promoCode}
+              {t("codeLabel")}: {promo?.code ?? SITE_META.promoCode}
             </span>
             <Link
               href="/#start-challenge"

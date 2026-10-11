@@ -10,7 +10,7 @@ import { SiteFooter } from "@/components/sections/SiteFooter";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { SupportWidget } from "@/components/support/SupportWidget";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
-import { getActiveBanners } from "@/lib/cms";
+import { getActiveBanners, getActivePromo } from "@/lib/cms";
 import { routing } from "@/i18n/routing";
 import { getLocaleMeta } from "@/i18n/locales";
 import { ScrollHandler } from "@/components/shared/ScrollHandler";
@@ -134,7 +134,10 @@ export default async function LocaleLayout({
   const meta = getLocaleMeta(locale);
   const dir = meta.dir;
 
-  const banners = await getActiveBanners();
+  const [banners, promo] = await Promise.all([
+    getActiveBanners(),
+    getActivePromo(),
+  ]);
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
@@ -151,7 +154,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ScrollHandler />
           <TopNav />
-          <AnnouncementBar banners={banners.length ? banners : undefined} />
+          <AnnouncementBar banners={banners.length ? banners : undefined} promo={promo} />
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <CookieConsent />

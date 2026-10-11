@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -52,16 +52,41 @@ const SLIDES: BannerSlide[] = [
 
 const AUTOPLAY_INTERVAL = 6000;
 
+export interface WhatsNewPromo {
+  code: string;
+  title?: string | null;
+  subtitle?: string | null;
+  ctaLabel?: string | null;
+  discountLabel?: string | null;
+}
+
 export function WhatsNewBanner({
   viewMode = "cards",
+  promo,
 }: {
   viewMode?: "cards" | "table";
+  promo?: WhatsNewPromo | null;
 }) {
   const t = useTranslations("whatsNew");
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const slides: BannerSlide[] = useMemo(() => {
+    return SLIDES.map((s, idx) => {
+      if (idx === 0 && promo) {
+        const discount = promo.discountLabel || "75% Off";
+        return {
+          ...s,
+          defaultTabLabel: promo.title ? promo.title : `CK Propfirm • ${discount}`,
+          shortTabLabel: discount,
+          alt: promo.title || `CK Propfirm ${discount} Promo - Get Started`,
+        };
+      }
+      return s;
+    });
+  }, [promo]);
 
   const isDark = viewMode === "cards";
 
@@ -77,16 +102,16 @@ export function WhatsNewBanner({
   const nextSlide = useCallback(() => {
     setActiveIndex((current) => {
       setPrevIndex(current);
-      return (current + 1) % SLIDES.length;
+      return (current + 1) % slides.length;
     });
-  }, []);
+  }, [slides.length]);
 
   const prevSlide = useCallback(() => {
     setActiveIndex((current) => {
       setPrevIndex(current);
-      return (current - 1 + SLIDES.length) % SLIDES.length;
+      return (current - 1 + slides.length) % slides.length;
     });
-  }, []);
+  }, [slides.length]);
 
   // Clean up previous slide layer after transition completes so it yields to z-0
   useEffect(() => {
@@ -113,7 +138,7 @@ export function WhatsNewBanner({
     };
   }, [isHovered, nextSlide, activeIndex]);
 
-  const activeSlide = SLIDES[activeIndex];
+  const activeSlide = slides[activeIndex];
 
   const handleBannerClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -155,7 +180,7 @@ export function WhatsNewBanner({
           aria-label="What's New announcements"
           className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 no-scrollbar sm:flex-wrap"
         >
-          {SLIDES.map((slide, idx) => {
+          {slides.map((slide, idx) => {
             const isActive = activeIndex === idx;
             let fullLabel = slide.defaultTabLabel;
             try {
@@ -202,7 +227,7 @@ export function WhatsNewBanner({
           className="block relative w-full aspect-[16/9] sm:aspect-[1981/793] cursor-pointer"
           data-od-id="whats-new-banner-link"
         >
-          {SLIDES.map((slide, idx) => {
+          {slides.map((slide, idx) => {
             const isActive = activeIndex === idx;
             const isPrevious = prevIndex === idx && !isActive;
 

@@ -69,16 +69,26 @@ function toMedia(raw: any): CmsMedia | null {
 /* ─────────────────────────────── core fetch ─────────────────────────────── */
 
 async function cmsFetch<T>(path: string, revalidate = DEFAULT_REVALIDATE): Promise<T | null> {
-  if (!API_TOKEN) return null;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
   try {
-    const res = await fetch(`${BASE_URL}/api/${path}`, {
-      headers: { Authorization: `Bearer ${API_TOKEN}` },
-      signal: controller.signal,
-      next: { revalidate, tags: ["cms"] },
-      cache: undefined,
-    });
+    let res: Response | null = null;
+    if (API_TOKEN) {
+      res = await fetch(`${BASE_URL}/api/${path}`, {
+        headers: { Authorization: `Bearer ${API_TOKEN}` },
+        signal: controller.signal,
+        next: { revalidate, tags: ["cms"] },
+        cache: undefined,
+      });
+    }
+    // If no token or if API token was forbidden (e.g. public-only endpoint), fallback to public fetch
+    if (!res || (!res.ok && res.status === 403)) {
+      res = await fetch(`${BASE_URL}/api/${path}`, {
+        signal: controller.signal,
+        next: { revalidate, tags: ["cms"] },
+        cache: undefined,
+      });
+    }
     if (!res.ok) return null;
     return (await res.json()) as T;
   } catch {
@@ -341,6 +351,41 @@ export async function getActiveBanners(): Promise<CmsBanner[]> {
   return res.data
     .map((b: any) => ({ id: b.id, text: b.text ?? "", link: b.link ?? null }))
     .filter((b: CmsBanner) => b.text);
+}
+
+/* ─────────────────────────────── faqs ─────────────────────────────── */
+
+export interface CmsFaq {
+  id: number;
+  documentId: string;
+  question: string;
+  answer: string;
+  scope?: string | null;
+  firmSlug?: string | null;
+  sortOrder?: number | null;
+}
+
+export async function getFaqs(opts: { firmSlug?: string; scope?: string } = {}): Promise<CmsFaq[]> {
+  const params = new URLSearchParams();
+  params.set("pagination[pageSize]", "100");
+  params.set("sort", "sortOrder:asc");
+  if (opts.firmSlug) params.set("filters[firmSlug][$eq]", opts.firmSlug);
+  if (opts.scope) params.set("filters[scope][$eq]", opts.scope);
+
+  const res = await cmsFetch<any>(`faqs?${params.toString()}`);
+  if (!res?.data || !Array.isArray(res.data)) return [];
+
+  return res.data
+    .map((f: any) => ({
+      id: f.id,
+      documentId: f.documentId,
+      question: (f.question ?? "").replace(/\{firm\}/gi, "CK Capital"),
+      answer: (f.answer ?? "").replace(/\{firm\}/gi, "CK Capital"),
+      scope: f.scope ?? null,
+      firmSlug: f.firmSlug ?? null,
+      sortOrder: typeof f.sortOrder === "number" ? f.sortOrder : null,
+    }))
+    .filter((f: CmsFaq) => f.question && f.answer);
 }
 
 /* ─────────────────────────────── payouts ─────────────────────────────── */

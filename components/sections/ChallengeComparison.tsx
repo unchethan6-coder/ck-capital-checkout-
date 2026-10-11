@@ -17,10 +17,10 @@ import {
 } from "@/lib/content";
 import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
-import { WhatsNewBanner } from "@/components/sections/WhatsNewBanner";
+import { WhatsNewBanner, type WhatsNewPromo } from "@/components/sections/WhatsNewBanner";
 import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
-const accountSizes = ["10K", "25K", "50K", "100K", "200K", "300K"];
+const DEFAULT_ACCOUNT_SIZES = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
 /** Multi-account pricing: buying more than one evaluation discounts each one. */
 const QUANTITY_TIERS = [
@@ -49,10 +49,19 @@ const PAYMENT_METHODS = [
 
 export function ChallengeComparison({
   config,
+  promo,
 }: {
   config?: ChallengeConfig | null;
+  promo?: WhatsNewPromo | null;
 }) {
   const t = useTranslations("challenge");
+
+  const accountSizes = useMemo(() => {
+    if (config?.sizes?.length) {
+      return config.sizes.map((s) => s.replace("$", "").trim());
+    }
+    return DEFAULT_ACCOUNT_SIZES;
+  }, [config?.sizes]);
 
   const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
   const [isCurrencyOpen, setIsCurrencyOpen] = useState<boolean>(false);
@@ -254,7 +263,7 @@ export function ChallengeComparison({
         <div className="max-w-[1200px] mx-auto flex flex-col gap-10 sm:gap-14 md:gap-16">
           {/* What's New Tabbed Promo Carousel */}
           <SectionReveal className="w-full">
-            <WhatsNewBanner viewMode={viewMode} />
+            <WhatsNewBanner viewMode={viewMode} promo={promo} />
           </SectionReveal>
 
           {/* Header */}

@@ -18,6 +18,8 @@ import {
   getRewardsSummary,
   getArticles,
   getFeedbacks,
+  getActivePromo,
+  getFaqs,
 } from "@/lib/cms";
 import type { VideoItem } from "@/components/sections/Testimonials";
 import type { ReviewCard } from "@/components/sections/TraderReviews";
@@ -26,7 +28,7 @@ import { activeHeroVideo } from "@/lib/heroTakeover";
 export const revalidate = 300;
 
 export default async function Home() {
-  const [videos, challengeConfig, payouts, rewardsSummary, articles, feedbacks] =
+  const [videos, challengeConfig, payouts, rewardsSummary, articles, feedbacks, activePromo, cmsFaqs] =
     await Promise.all([
       getVideoReviews(),
       getChallengeConfig(),
@@ -34,6 +36,8 @@ export default async function Home() {
       getRewardsSummary(),
       getArticles(),
       getFeedbacks(),
+      getActivePromo(),
+      getFaqs(),
     ]);
 
   const reviewCards: ReviewCard[] | undefined = feedbacks.length
@@ -61,6 +65,8 @@ export default async function Home() {
       }))
     : undefined;
 
+  const ckFaqs = cmsFaqs.filter((f) => f.firmSlug === "ck-capital");
+
   return (
     <main className="home-purple-theme min-h-screen">
       {/* S1 — Hero: Light */}
@@ -70,7 +76,7 @@ export default async function Home() {
       <StatsStrip />
 
       {/* S3 — Challenge Selector (evals) */}
-      <ChallengeComparison config={challengeConfig} />
+      <ChallengeComparison config={challengeConfig} promo={activePromo} />
 
       {/* S4 — Trade with Peace of Mind (proof): sits below the challenges */}
       <ProofShowcase payouts={payouts} summary={rewardsSummary} />
@@ -94,7 +100,7 @@ export default async function Home() {
       <HowItWorks />
 
       {/* S11 — FAQ: Light (was Jet Black) */}
-      <FaqAccordion />
+      <FaqAccordion cmsFaqs={ckFaqs.length ? ckFaqs : undefined} />
 
       {/* S12 — Closing CTA: Light + warm glow */}
       <ClosingCta />

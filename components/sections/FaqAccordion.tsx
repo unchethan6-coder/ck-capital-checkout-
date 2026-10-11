@@ -1,4 +1,6 @@
 "use client";
+
+import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
@@ -11,7 +13,17 @@ import {
 } from "@/components/ui/accordion";
 import { MessageCircle } from "lucide-react";
 
-export function FaqAccordion() {
+export interface FaqItem {
+  id?: number | string;
+  question: string;
+  answer: string;
+}
+
+export function FaqAccordion({
+  cmsFaqs,
+}: {
+  cmsFaqs?: FaqItem[];
+} = {}) {
   const t = useTranslations("faq");
 
   const faqKeys = [
@@ -41,6 +53,17 @@ export function FaqAccordion() {
     "expertAdvisors",
   ] as const;
 
+  const items = useMemo<FaqItem[]>(() => {
+    if (cmsFaqs && cmsFaqs.length > 0) {
+      return cmsFaqs;
+    }
+    return faqKeys.map((key) => ({
+      id: key,
+      question: t(`items.${key}.q` as any),
+      answer: t(`items.${key}.a` as any),
+    }));
+  }, [cmsFaqs, t]);
+
   return (
     <section id="faqs" className="bg-white text-[#0A0A0C] py-16 md:py-24" data-od-id="faq">
       <Container>
@@ -59,17 +82,17 @@ export function FaqAccordion() {
         <div className="max-w-3xl mx-auto">
           <SectionReveal delay={0.06}>
             <Accordion multiple={false} className="space-y-3">
-              {faqKeys.map((key, i) => (
+              {items.map((item, i) => (
                 <AccordionItem
-                  key={key}
+                  key={item.id ?? i}
                   value={String(i)}
                   className="rounded-2xl border border-gray-200 bg-white px-6 shadow-sm transition-all hover:border-gray-300"
                 >
                   <AccordionTrigger className="text-left text-sm font-bold text-[#0A0A0C] hover:text-[#A98BFF] hover:no-underline py-4">
-                    {t(`items.${key}.q` as any)}
+                    {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm font-medium text-[#4B5563] pb-4 leading-relaxed">
-                    {t(`items.${key}.a` as any)}
+                    {item.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
