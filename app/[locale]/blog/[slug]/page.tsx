@@ -79,6 +79,9 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       type: "article",
       locale: localeMeta?.ogLocale ?? "en_US",
+      alternateLocale: ["en_US", "es_ES", "pt_BR", "ar_AR", "de_DE", "fr_FR", "hi_IN"].filter(
+        (l) => l !== (localeMeta?.ogLocale ?? "en_US")
+      ),
       images: [image],
       publishedTime: article.publishedAt,
     },

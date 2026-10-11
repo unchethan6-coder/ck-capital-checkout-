@@ -22,6 +22,7 @@ const routes = [
   { path: "/cookie-policy", priority: 0.2, changeFrequency: "yearly" },
   { path: "/risk-disclosure", priority: 0.2, changeFrequency: "yearly" },
   { path: "/return-policy", priority: 0.2, changeFrequency: "yearly" },
+  { path: "/calculators", priority: 0.7, changeFrequency: "monthly" },
 ];
 
 const languages: Record<string, string> = {
@@ -39,6 +40,7 @@ function alternatesFor(path: string) {
   for (const locale of locales) {
     languageMap[languages[locale]] = `${SITE_URL}/${locale}${path}`;
   }
+  languageMap["x-default"] = `${SITE_URL}/en${path}`;
   return {
     languages: languageMap,
     canonical: `${SITE_URL}/en${path}`,

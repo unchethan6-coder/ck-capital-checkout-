@@ -67,6 +67,20 @@ export async function generateMetadata({
     },
     description:
       "CK Propfirm provides proprietary trading evaluations and simulated funded accounts up to $750K with an 80% profit split, fast payouts, and 24/7 support.",
+    keywords: [
+      "prop firm",
+      "proprietary trading firm",
+      "funded trading account",
+      "forex prop firm",
+      "crypto prop firm",
+      "simulated trading",
+      "80% profit split",
+      "instant funding",
+      "trading challenge",
+      "evaluation account",
+      "CK Propfirm",
+      "CK Capital",
+    ],
     applicationName: SITE_NAME,
     alternates: {
       canonical: url,
@@ -96,6 +110,9 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       url,
       locale: meta.ogLocale,
+      alternateLocale: ["en_US", "es_ES", "pt_BR", "ar_AR", "de_DE", "fr_FR", "hi_IN"].filter(
+        (l) => l !== meta.ogLocale
+      ),
       title: `CK Propfirm — Get Funded Up to $750K | 80% Profit Split`,
       description:
         "Proprietary trading evaluations and simulated funded accounts up to $750K with an 80% profit split.",

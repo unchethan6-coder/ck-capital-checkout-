@@ -31,6 +31,8 @@ const HREFLANG_MAP: Record<AppLocale, string> = {
   hi: "hi-IN",
 };
 
+const ALL_OG_LOCALES = ["en_US", "es_ES", "pt_BR", "ar_AR", "de_DE", "fr_FR", "hi_IN"];
+
 /** Build a per-page Metadata object with canonical URL, full hreflang alternates, OG and Twitter cards. */
 export function pageSeo({ title, description, path, locale = "en", type = "website", images }: PageSeoOptions): Metadata {
   const localeMeta = getLocaleMeta(locale);
@@ -43,6 +45,8 @@ export function pageSeo({ title, description, path, locale = "en", type = "websi
     languages[HREFLANG_MAP[loc]] = `${SITE_URL}/${loc}${cleanPath}`;
   }
   languages["x-default"] = `${SITE_URL}/en${cleanPath}`;
+
+  const currentOgLocale = localeMeta?.ogLocale ?? "en_US";
 
   return {
     title,
@@ -58,7 +62,8 @@ export function pageSeo({ title, description, path, locale = "en", type = "websi
       url,
       siteName: SITE_NAME,
       type,
-      locale: localeMeta?.ogLocale ?? "en_US",
+      locale: currentOgLocale,
+      alternateLocale: ALL_OG_LOCALES.filter((l) => l !== currentOgLocale),
       images: ogImages,
     },
     twitter: {
