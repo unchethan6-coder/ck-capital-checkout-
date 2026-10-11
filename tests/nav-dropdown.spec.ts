@@ -337,7 +337,7 @@ test.describe("TopNav Mega Menu & Navigation QAQC", () => {
       const founderPhoto = page.locator('[data-od-id="about-founder-photo"]');
       await expect(founderPhoto).toBeVisible();
 
-      const founderName = page.locator('h3:has-text("Daniel Cheung")');
+      const founderName = page.locator('h3:has-text("Monray Linevee")');
       await expect(founderName).toBeVisible();
       await expect(founderName).toHaveClass(/text-white/);
     });

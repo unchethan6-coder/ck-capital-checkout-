@@ -628,16 +628,16 @@
     "title": "Meet The CK Propfirm Team",
     "storyEyebrow": "Our Story",
     "storyTitle": "Built to Close the Gap",
-    "storyDesc": "CK Propfirm was founded with a mission to support aspiring traders by bridging the gap between potential and achievement. Backed by a team of industry experts, we offer trader-friendly systems, in-house technology, and unparalleled support. We believe that with the right environment, education, and opportunity, traders can achieve remarkable results.",
+    "storyDesc": "CK Propfirm was founded to bridge the gap between dedication and scalable capital — inspired by disciplined traders like Monray Linevee who mastered price action, patience, and risk management across stocks, crypto, and forex. We provide trader-friendly systems, institutional technology, and 80% profit splits to empower every trader to achieve long-term financial independence.",
     "missionTitle": "Our Mission",
     "missionDesc": "We provide traders with innovative tools, structured guidance, and an evaluation process using simulated capital to develop discipline, skill, and consistent profitability. We're committed to democratizing access to prop trading opportunities for traders worldwide.",
     "visionTitle": "Our Vision",
     "visionDesc": "To empower traders to reach their full potential, redefine personal success, and cultivate a global community of consistently profitable traders. We envision a future where trading skill is rewarded fairly and everyone has equal opportunity.",
     "leadershipEyebrow": "Leadership",
     "leadershipTitle": "Our Leadership",
-    "founderTitle": "Daniel Cheung — Founder",
-    "founderRole": "Seven-figure trader | FX Brokering Expert | Private Capital Specialist",
-    "founderBio": "UK-born Daniel Cheung is a seven-figure trader with extensive experience in FX brokering, private capital management, and professional funds. He champions an 'us vs us' mindset, emphasizing self-growth and collective improvement. Daniel's vision for CK Propfirm is to create an environment where traders are supported like family while being rewarded for their skills.",
+    "founderTitle": "Monray Linevee — Trader & Market Strategist",
+    "founderRole": "Price Action Specialist | Stock & Crypto Investor | Disciplined Risk Practitioner",
+    "founderBio": "Starting as a full-time student discovering the stock market, Monray journeyed through crypto before mastering Price Action in forex. Leaving indicators behind, he built a disciplined approach focused on market behaviour, risk control, and long-term capital independence.",
     "valuesEyebrow": "What We Stand For",
     "valuesTitle": "Our Values",
     "integrityTitle": "Integrity",
@@ -662,13 +662,13 @@
     "badgeSimulated": "Simulated Capital",
     "badgeVerifiedUk": "Verified UK Firm",
     "badgeGlobalTraders": "20K+ Active Traders",
-    "founderRoleBadge": "Founder & Trader",
-    "founderQuote": "We champion an 'us vs us' mindset — supporting our community of traders like family while rewarding verified skill with industry-leading profit splits.",
+    "founderRoleBadge": "Trader Spotlight",
+    "founderQuote": "Success isn’t just about reaching the destination. It’s about the growth, experience, and discipline built along the way.",
     "founderBadges": [
-      "7-Figure Trader",
-      "FX Brokering",
-      "Private Capital",
-      "UK Founded"
+      "Price Action",
+      "Stock & Crypto",
+      "Risk Discipline",
+      "Capital Growth"
     ],
     "statsTradersNote": "Worldwide Traders",
     "statsCapitalNote": "Max scalable allocation",
@@ -696,7 +696,10 @@
         "description": "Built by experienced proprietary traders who understand market realities and provide continuous dedicated guidance."
       }
     ],
-    "valuesSubtitle": "The non-negotiable principles that drive our technology, support, and community every single day."
+    "valuesSubtitle": "The non-negotiable principles that drive our technology, support, and community every single day.",
+    "founderName": "Monray Linevee",
+    "readFullJourney": "Read Monray’s Story",
+    "closeStory": "Close"
   },
   "affiliates": {
     "badge": "CK PROPFIRM AFFILIATE PROGRAM",

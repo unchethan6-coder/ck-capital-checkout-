@@ -1,12 +1,13 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion, useScroll, useTransform, MotionConfig } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import {
   ArrowRight,
   BadgeCheck,
+  BookOpen,
   Compass,
   Lightbulb,
   MessageCircle,
@@ -16,6 +17,7 @@ import {
   Star,
   Target,
   Users,
+  X,
   Zap,
 } from 'lucide-react'
 import { Container } from '@/components/shared/Container'
@@ -49,6 +51,16 @@ export default function AboutPage() {
   const t = useTranslations('about')
   const tChallenge = useTranslations('challenge')
   const sectionRef = useRef<HTMLElement>(null)
+  const [storyOpen, setStoryOpen] = useState(false)
+
+  useEffect(() => {
+    if (!storyOpen) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setStoryOpen(false)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [storyOpen])
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -253,8 +265,8 @@ export default function AboutPage() {
                       <div className="relative">
                         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#703AD7] to-[#894CEF] opacity-60 blur-sm" />
                         <img
-                          src="/images/about/dan.jpg"
-                          alt="Daniel Cheung — Founder of CK Propfirm"
+                          src="/images/about/monray-linevee.jpg"
+                          alt="Monray Linevee — Trader & Market Strategist"
                           className="relative h-20 w-20 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-lg sm:h-24 sm:w-24"
                           data-od-id="about-founder-photo"
                         />
@@ -264,7 +276,7 @@ export default function AboutPage() {
                           <Star size={10} className="fill-[#894CEF] text-[#A98BFF]" /> {t('founderRoleBadge')}
                         </span>
                         <h3 className="mt-2 font-[family-name:var(--font-jakarta)] text-xl font-extrabold text-white sm:text-2xl">
-                          Daniel Cheung
+                          Monray Linevee
                         </h3>
                         <p className="text-xs font-semibold text-[#A98BFF]">
                           {t('founderRole')}
@@ -284,6 +296,18 @@ export default function AboutPage() {
                     <p className="text-xs leading-relaxed text-gray-300">
                       {t('founderBio')}
                     </p>
+
+                    {/* Interactive Read Journey Trigger */}
+                    <button
+                      type="button"
+                      onClick={() => setStoryOpen(true)}
+                      className="inline-flex items-center gap-2 self-start rounded-xl border border-[#894CEF]/30 bg-[#894CEF]/10 px-3.5 py-2 text-xs font-bold text-[#A98BFF] transition-all hover:bg-[#894CEF]/25 hover:text-white cursor-pointer"
+                      data-od-id="about-read-story-btn"
+                    >
+                      <BookOpen size={14} className="text-[#A98BFF]" />
+                      <span>{t('readFullJourney')}</span>
+                      <ArrowRight size={13} />
+                    </button>
 
                     {/* Track record chips */}
                     <div className="flex flex-wrap gap-2 pt-1 border-t border-foreground/[0.06]">
@@ -498,6 +522,101 @@ export default function AboutPage() {
             </SectionReveal>
           </Container>
         </section>
+
+        {/* ─────────────── Monray Linevee Full Journey Modal ─────────────── */}
+        {storyOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="monray-story-title"
+          >
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
+              onClick={() => setStoryOpen(false)}
+            />
+
+            {/* Modal Box */}
+            <div className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-white/15 bg-[#070B1D] p-6 shadow-2xl text-white sm:p-8">
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setStoryOpen(false)}
+                className="absolute right-5 top-5 rounded-full border border-white/10 bg-white/5 p-2 text-white/70 transition hover:bg-white/15 hover:text-white cursor-pointer"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+
+              {/* Header */}
+              <div className="flex items-center gap-4 sm:gap-5 pr-8">
+                <img
+                  src="/images/about/monray-linevee.jpg"
+                  alt="Monray Linevee"
+                  className="h-16 w-16 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-md sm:h-20 sm:w-20"
+                />
+                <div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#894CEF]/30 bg-[#894CEF]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A98BFF]">
+                    <Star size={10} className="fill-[#894CEF] text-[#A98BFF]" /> {t('founderRoleBadge')}
+                  </span>
+                  <h3 id="monray-story-title" className="mt-1.5 font-[family-name:var(--font-jakarta)] text-2xl font-extrabold text-white">
+                    Monray Linevee
+                  </h3>
+                  <p className="text-xs font-semibold text-[#A98BFF]">
+                    {t('founderRole')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="mt-6 rounded-2xl border border-[#703AD7]/30 bg-[#703AD7]/10 p-4">
+                <p className="text-sm italic text-white/95 leading-relaxed">
+                  &ldquo;{t('founderQuote')}&rdquo;
+                </p>
+              </div>
+
+              {/* Full Narrative */}
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-white/80">
+                <p>
+                  My journey began when I was a full-time student and first discovered the stock market. I was immediately fascinated by the world of investing and the possibilities it offered. I soon realised that investment management was something I genuinely wanted to pursue. However, one of my biggest challenges was figuring out how to build the capital needed to turn that vision into reality. At the time, financial freedom felt like a distant goal.
+                </p>
+                <p>
+                  Determined to find a way forward, I explored cryptocurrency investing. It introduced me to new opportunities, helped me work towards building capital, and strengthened my belief that my long-term goals were achievable. This experience motivated me to explore further and eventually led me to forex trading.
+                </p>
+                <p>
+                  I spent months studying the markets, reading, testing strategies, and learning through experience. Initially, I relied heavily on technical indicators, believing they would help me identify the right trading opportunities. However, as I gained experience, I discovered Price Action trading, which fundamentally changed the way I understood the markets.
+                </p>
+                <p>
+                  I began developing my own trading approach, focusing on price movements and market behaviour rather than relying solely on indicators. This shift helped me make more informed decisions and build a clearer understanding of how I wanted to approach trading.
+                </p>
+                <p>
+                  Beyond technical knowledge, trading taught me some of the most valuable lessons about discipline, patience, and objectivity. I learned the importance of staying calm under pressure, managing risk, accepting losses, and maintaining a long-term perspective. These lessons have shaped not only my trading approach but also the way I handle challenges in everyday life.
+                </p>
+                <p>
+                  Today, I continue to refine my strategy and work towards consistent profitability. My long-term vision remains the same: to build the capital needed to create my own stock portfolio and pursue greater financial independence.
+                </p>
+                <p>
+                  Looking back, this journey has been about much more than financial markets. It has been about learning, adapting, overcoming challenges, and becoming more disciplined with every step.
+                </p>
+                <p className="font-medium text-white/95">
+                  I&apos;m still learning, still improving, and still working towards the vision that started it all. For me, success isn&apos;t just about reaching the destination. It&apos;s about the growth, experience, and discipline built along the way.
+                </p>
+              </div>
+
+              {/* Close footer button */}
+              <div className="mt-8 pt-4 border-t border-white/10 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setStoryOpen(false)}
+                  className="rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 cursor-pointer"
+                >
+                  {t('closeStory')}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </MotionConfig>
   )

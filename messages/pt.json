@@ -629,16 +629,16 @@
     "title": "Conheça a Equipe da CK Propfirm",
     "storyEyebrow": "Nossa História",
     "storyTitle": "Construídos para Superar Desafios",
-    "storyDesc": "A CK Propfirm nasceu com a missão de apoiar traders conectando potencial com conquistas reais através de suporte e tecnologia de ponta.",
+    "storyDesc": "A CK Propfirm foi criada para diminuir a distância entre dedicação e capital escalável — inspirada em traders disciplinados como Monray Linevee, que dominaram price action, paciência e gestão de risco em ações, cripto e forex. Oferecemos regras amigáveis, tecnologia institucional e 80% de divisão de lucros para potencializar a independência financeira de cada trader.",
     "missionTitle": "Nossa Missão",
     "missionDesc": "Fornecemos ferramentas inovadoras e avaliações com capital simulado para desenvolver disciplina e consistência.",
     "visionTitle": "Nossa Visão",
     "visionDesc": "Capacitar traders globalmente onde a habilidade seja recompensada de forma justa e transparente.",
     "leadershipEyebrow": "Liderança",
     "leadershipTitle": "Nossa Liderança",
-    "founderTitle": "Daniel Cheung — Fundador",
-    "founderRole": "Trader de 7 dígitos | Especialista em Capital Privado",
-    "founderBio": "Daniel Cheung é um trader britânico experiente com foco em gestão de capital e desenvolvimento de traders.",
+    "founderTitle": "Monray Linevee — Trader e Estrategista de Mercado",
+    "founderRole": "Especialista em Price Action | Investidor em Ações e Cripto | Operador de Risco Disciplinado",
+    "founderBio": "Iniciando como estudante descobrindo o mercado de ações, Monray explorou cripto antes de dominar Price Action no forex. Deixando os indicadores de lado, desenvolveu uma abordagem disciplinada voltada ao comportamento do mercado, controle de risco e independência de capital a longo prazo.",
     "valuesEyebrow": "Nossos Princípios",
     "valuesTitle": "Nossos Valores",
     "integrityTitle": "Integridade",
@@ -663,13 +663,13 @@
     "badgeSimulated": "Capital Simulado",
     "badgeVerifiedUk": "Empresa Verificada do Reino Unido",
     "badgeGlobalTraders": "50.000+ Traders Globais",
-    "founderRoleBadge": "Fundador e Trader",
-    "founderQuote": "Defendemos a mentalidade 'nós contra nós' — apoiando nossa comunidade como uma família e recompensando a habilidade com divisões de lucro líderes do setor.",
+    "founderRoleBadge": "Trader em Destaque",
+    "founderQuote": "O sucesso não é apenas sobre alcançar o destino, mas sobre o crescimento, a experiência e a disciplina construídos ao longo do caminho.",
     "founderBadges": [
-      "Trader de 7 Dígitos",
-      "Corretagem FX",
-      "Capital Privado",
-      "Fundado no Reino Unido"
+      "Price Action",
+      "Ações e Cripto",
+      "Disciplina de Risco",
+      "Crescimento de Capital"
     ],
     "statsTradersNote": "Traders em mais de 140 países",
     "statsCapitalNote": "Alocação máxima escalável",
@@ -697,7 +697,10 @@
         "description": "Criado por traders experientes que entendem as realidades do mercado e oferecem suporte dedicado."
       }
     ],
-    "valuesSubtitle": "Os princípios inegociáveis que impulsionam nossa tecnologia, suporte e comunidade todos os dias."
+    "valuesSubtitle": "Os princípios inegociáveis que impulsionam nossa tecnologia, suporte e comunidade todos os dias.",
+    "founderName": "Monray Linevee",
+    "readFullJourney": "Ler a história de Monray",
+    "closeStory": "Fechar"
   },
   "affiliates": {
     "badge": "PROGRAMA DE AFILIADOS CK PROPFIRM",
