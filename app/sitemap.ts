@@ -43,7 +43,6 @@ function alternatesFor(path: string) {
   languageMap["x-default"] = `${SITE_URL}/en${path}`;
   return {
     languages: languageMap,
-    canonical: `${SITE_URL}/en${path}`,
   };
 }
 

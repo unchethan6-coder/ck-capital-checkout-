@@ -138,7 +138,12 @@ export async function middleware(request: NextRequest) {
     detectedLocale = cookieLocale;
   }
 
-  if (!detectedLocale) {
+  const userAgent = request.headers.get("user-agent") || "";
+  const isSearchBot = /Googlebot|Google-InspectionTool|bingbot|Baiduspider|YandexBot|DuckDuckBot|Slurp|facebookexternalhit|Twitterbot|LinkedInBot|Bytespider/i.test(userAgent);
+
+  if (isSearchBot) {
+    detectedLocale = defaultLocale;
+  } else if (!detectedLocale) {
     // 1. Check edge / reverse-proxy country headers
     const country =
       request.headers.get("cf-ipcountry") ||
