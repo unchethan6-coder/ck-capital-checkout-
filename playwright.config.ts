@@ -18,14 +18,14 @@ export default defineConfig({
   },
   snapshotPathTemplate: "{testDir}/__snapshots__/{testFilePath}/{arg}{ext}",
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || "https://staging.ckcapital.co.uk",
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://localhost:3002",
     httpCredentials: { username, password },
     trace: "retain-on-failure",
   },
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-        command: "npm run dev",
+        command: "npm run dev -- -p 3002",
         url: "http://localhost:3002/en",
         reuseExistingServer: true,
         timeout: 120_000,

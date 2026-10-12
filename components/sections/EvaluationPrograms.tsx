@@ -3,7 +3,8 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import { PORTAL_SIGNUP_URL } from "@/lib/portal";
+import { getPortalSignupUrl } from "@/lib/portal";
+import { trackBeginCheckout } from "@/lib/analytics/events";
 
 interface ChallengePlan {
   id: string;
@@ -107,10 +108,20 @@ export function EvaluationPrograms() {
               {CHALLENGES.map((challenge) => (
                 <a
                   key={challenge.id}
-                  href={PORTAL_SIGNUP_URL}
+                  href={getPortalSignupUrl({ plan: challenge.id, size: challenge.name })}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-od-id={`challenge-card-${challenge.id}`}
+                  onClick={() => {
+                    const priceVal = parseFloat(challenge.discountedPrice.replace(/[^0-9.]/g, ""));
+                    trackBeginCheckout({
+                      planId: challenge.id,
+                      planName: challenge.name,
+                      value: isNaN(priceVal) ? 0 : priceVal,
+                      currency: "USD",
+                      quantity: 1,
+                    });
+                  }}
                   className={`group relative flex flex-col rounded-2xl bg-white p-5 cursor-pointer transition-all duration-200 hover:-translate-y-1 ${
                     challenge.popular
                       ? "border-2 border-[#703AD7] shadow-md shadow-[#703AD7]/15 hover:shadow-[0_16px_32px_-8px_rgba(54,124,219,0.28)] hover:border-[#703AD7]"

@@ -23,7 +23,8 @@ import { GoldButton } from "@/components/shared/GoldButton";
 import { ObjectivesHUDVisual } from "@/components/shared/ObjectivesHUDVisual";
 import { Aurora } from "@/components/fx/Aurora";
 import { SectionReveal } from "@/components/shared/SectionReveal";
-import { PORTAL_SIGNUP_URL } from "@/lib/portal";
+import { PORTAL_SIGNUP_URL, getPortalSignupUrl } from "@/lib/portal";
+import { trackBeginCheckout } from "@/lib/analytics/events";
 import {
   Accordion,
   AccordionContent,
@@ -1520,11 +1521,21 @@ export function TradingObjectivesPageClient({
                   {/* Direct Buy CTA Button */}
                   <div className="mt-6 space-y-3">
                     <a
-                      href={PORTAL_SIGNUP_URL}
+                      href={getPortalSignupUrl({ plan: typeParam, size })}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="brand-gradient-btn group flex w-full items-center justify-center gap-2 rounded-xl py-4 px-4 text-sm font-bold text-[#1A1030] shadow-md hover:opacity-95 transition-all duration-200"
                       data-od-id="summary-direct-checkout"
+                      onClick={() => {
+                        const numericPrice = parseFloat(String(activePrice || "$0").replace(/[^0-9.]/g, ""));
+                        trackBeginCheckout({
+                          planId: `${typeParam}_${size}`,
+                          planName: `${size} Challenge (${typeParam})`,
+                          value: isNaN(numericPrice) ? 0 : numericPrice,
+                          currency: "USD",
+                          quantity: 1,
+                        });
+                      }}
                     >
                       <span>Start {size || "$100K"} Challenge</span>
                       <ArrowRight

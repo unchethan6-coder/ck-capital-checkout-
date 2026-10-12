@@ -14,6 +14,7 @@ import { getActiveBanners, getActivePromo } from "@/lib/cms";
 import { routing } from "@/i18n/routing";
 import { getLocaleMeta } from "@/i18n/locales";
 import { ScrollHandler } from "@/components/shared/ScrollHandler";
+import { MarketingPixels } from "@/components/analytics/MarketingPixels";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -169,6 +170,26 @@ export default async function LocaleLayout({
       } h-full antialiased dark`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-P5Q75TM2"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* Meta Pixel (noscript) */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1102958381163703&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+        <MarketingPixels />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ScrollHandler />
           <TopNav />

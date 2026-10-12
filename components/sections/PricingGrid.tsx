@@ -7,7 +7,8 @@ import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import { Check, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PORTAL_SIGNUP_URL } from "@/lib/portal";
+import { getPortalSignupUrl } from "@/lib/portal";
+import { trackBeginCheckout } from "@/lib/analytics/events";
 
 const FX: Record<string, number> = { USD: 1, GBP: 0.79, EUR: 0.92 };
 
@@ -115,10 +116,19 @@ export function PricingGrid() {
                   </span>
                 </div>
                 <a
-                  href={PORTAL_SIGNUP_URL}
+                  href={getPortalSignupUrl({ plan: plan.id, size: plan.accountSize, currency })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
+                  onClick={() => {
+                    trackBeginCheckout({
+                      planId: plan.id,
+                      planName: `${plan.accountSize} Plan`,
+                      value: Number((plan.priceUSD * fx).toFixed(2)),
+                      currency,
+                      quantity: 1,
+                    });
+                  }}
                 >
                   <GoldButton
                     className="mt-3 w-full justify-center"

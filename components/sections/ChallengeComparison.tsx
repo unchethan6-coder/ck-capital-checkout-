@@ -18,7 +18,9 @@ import {
 import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
 import { WhatsNewBanner, type WhatsNewPromo } from "@/components/sections/WhatsNewBanner";
-import { PORTAL_SIGNUP_URL } from "@/lib/portal";
+import { getPortalSignupUrl } from "@/lib/portal";
+import { trackBeginCheckout } from "@/lib/analytics/events";
+import { enrichUrlWithAttribution } from "@/lib/analytics/attribution";
 
 const DEFAULT_ACCOUNT_SIZES = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
@@ -70,8 +72,13 @@ export function ChallengeComparison({
   const [isPercentage, setIsPercentage] = useState<boolean>(true);
   const [viewMode, setViewMode] = useState<"cards" | "table">("cards");
   const [quantity, setQuantity] = useState<number>(1);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   const currencyDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
 
 
@@ -215,22 +222,20 @@ export function ChallengeComparison({
   };
 
   const signupUrl = useMemo(() => {
-    const params = new URLSearchParams({
+    return getPortalSignupUrl({
       plan: selectedType,
       size: selectedSize,
       currency: selectedCurrency,
       qty: String(quantity),
     });
-    return `${PORTAL_SIGNUP_URL}?${params.toString()}`;
-  }, [selectedType, selectedSize, selectedCurrency, quantity]);
+  }, [selectedType, selectedSize, selectedCurrency, quantity, isMounted]);
 
   const signupUrlForSize = (size: string) => {
-    const params = new URLSearchParams({
+    return getPortalSignupUrl({
       plan: selectedType,
       size,
       currency: selectedCurrency,
     });
-    return `${PORTAL_SIGNUP_URL}?${params.toString()}`;
   };
 
   const comparisonRows: Array<{
@@ -706,6 +711,17 @@ export function ChallengeComparison({
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block min-w-0 flex-1"
+                      onClick={(e) => {
+                        const targetUrl = enrichUrlWithAttribution((e.currentTarget as HTMLAnchorElement).href);
+                        (e.currentTarget as HTMLAnchorElement).href = targetUrl;
+                        trackBeginCheckout({
+                          planId: `${selectedType}_${selectedSize}`,
+                          planName: `${activeTypeName} $${selectedSize}`,
+                          value: orderTotal(quantity),
+                          currency: selectedCurrency,
+                          quantity,
+                        });
+                      }}
                     >
                       <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-[0_4px_22px_rgba(231,198,107,0.4)] hover:shadow-amber-400/50 hover:brightness-105 transition-all">
                         <span>{t("startChallenge") || "Start Challenge"}</span>
@@ -842,7 +858,22 @@ export function ChallengeComparison({
                       return (
                         <div key={`cta-${size}`} className={cn("rounded-b-xl border-x border-b border-[#D9D9D9] bg-white p-2.5 shadow-sm", selectedSize === size && "bg-violet-50")}>
                           {plan ? (
-                            <a href={signupUrlForSize(size)} target="_blank" rel="noopener noreferrer" className="brand-gradient-btn flex min-h-9 items-center justify-center rounded-lg px-2 text-[10px] font-bold text-[#1A1030] shadow-sm transition-transform hover:-translate-y-0.5">
+                            <a
+                              href={signupUrlForSize(size)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="brand-gradient-btn flex min-h-9 items-center justify-center rounded-lg px-2 text-[10px] font-bold text-[#1A1030] shadow-sm transition-transform hover:-translate-y-0.5"
+                              onClick={() => {
+                                const priceVal = parseFloat((plan.disc || "$0").replace(/[$,]/g, ""));
+                                trackBeginCheckout({
+                                  planId: `${selectedType}_${size}`,
+                                  planName: `${activeTypeName} $${size}`,
+                                  value: isNaN(priceVal) ? 0 : priceVal,
+                                  currency: selectedCurrency,
+                                  quantity: 1,
+                                });
+                              }}
+                            >
                               {t("startChallenge") || "Get plan"}
                             </a>
                           ) : (
