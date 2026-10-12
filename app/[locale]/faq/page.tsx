@@ -32,7 +32,7 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
   const [t, tFaq, cmsFaqs] = await Promise.all([
     getTranslations("helpCenter"),
     getTranslations("faq"),
-    getFaqs(),
+    getFaqs({ firmSlug: "ck-capital" }),
   ]);
 
   const ckFaqs = cmsFaqs.filter((f) => f.firmSlug === "ck-capital" || f.scope === "ck-capital");
@@ -121,7 +121,7 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
       </section>
 
       {/* ─────────────── Quick FAQ Accordion (Strapi / Localized) ─────────────── */}
-      <FaqAccordion cmsFaqs={ckFaqs.length ? ckFaqs : undefined} />
+      <FaqAccordion cmsFaqs={locale === "en" && ckFaqs.length ? ckFaqs : undefined} />
 
       {/* ─────────────── CTA ─────────────── */}
       <section className="bg-background py-14 md:py-20" data-od-id="faq-cta">

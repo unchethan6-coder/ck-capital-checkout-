@@ -27,7 +27,14 @@ import { activeHeroVideo } from "@/lib/heroTakeover";
 
 export const revalidate = 300;
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params?: Promise<{ locale?: string }>;
+} = {}) {
+  const resolvedParams = params ? await params : undefined;
+  const locale = resolvedParams?.locale ?? "en";
+
   const [videos, challengeConfig, payouts, rewardsSummary, articles, feedbacks, activePromo, cmsFaqs] =
     await Promise.all([
       getVideoReviews(),
@@ -37,7 +44,7 @@ export default async function Home() {
       getArticles(),
       getFeedbacks(),
       getActivePromo(),
-      getFaqs(),
+      getFaqs({ firmSlug: "ck-capital" }),
     ]);
 
   const reviewCards: ReviewCard[] | undefined = feedbacks.length
@@ -100,7 +107,7 @@ export default async function Home() {
       <HowItWorks />
 
       {/* S11 — FAQ: Light (was Jet Black) */}
-      <FaqAccordion cmsFaqs={ckFaqs.length ? ckFaqs : undefined} />
+      <FaqAccordion cmsFaqs={locale === "en" && ckFaqs.length ? ckFaqs : undefined} />
 
       {/* S12 — Closing CTA: Light + warm glow */}
       <ClosingCta />

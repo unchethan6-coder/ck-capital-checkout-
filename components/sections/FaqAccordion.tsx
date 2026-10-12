@@ -51,6 +51,7 @@ export function FaqAccordion({
     "cryptoFunding",
     "refundPolicy",
     "expertAdvisors",
+    "instantPayouts",
   ] as const;
 
   const items = useMemo<FaqItem[]>(() => {
