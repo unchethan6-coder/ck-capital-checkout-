@@ -597,11 +597,6 @@ export default function AboutPage() {
                   <p>
                     Beyond technical acumen, trading reinforced essential principles of discipline, patience, and objectivity. Staying calm under pressure, managing asymmetric risk, accepting losses constructively, and maintaining a long-term horizon have shaped both his trading approach and operational execution.
                   </p>
-                  <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-white/95">
-                    <p className="font-medium italic leading-relaxed">
-                      &ldquo;With unwavering perseverance and discipline, we turn ambitious financial dreams into reality. For me, success isn&apos;t just about reaching the destination. It&apos;s about the growth, experience, and discipline built along the way.&rdquo;
-                    </p>
-                  </div>
                 </div>
               </div>
 
