@@ -128,10 +128,10 @@ export default function AboutPage() {
     : []
 
   const founderBadges = (t.raw('founderBadges') as string[]) ?? [
-    '7-Figure Trader',
-    'FX Brokering',
-    'Private Capital',
-    'UK Founded',
+    'Senior Operations',
+    '10+ Yrs Audit',
+    'Risk Analysis',
+    'Price Action',
   ]
 
   return (
@@ -266,7 +266,7 @@ export default function AboutPage() {
                         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#703AD7] to-[#894CEF] opacity-60 blur-sm" />
                         <img
                           src="/images/about/monray-linevee.jpg"
-                          alt="Monray Linevee — Founder"
+                          alt="Monray Linevee | Senior Operations"
                           className="relative h-20 w-20 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-lg sm:h-24 sm:w-24"
                           data-od-id="about-founder-photo"
                         />
@@ -544,7 +544,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-4 sm:gap-5 min-w-0">
                   <img
                     src="/images/about/monray-linevee.jpg"
-                    alt="Monray Linevee — Founder"
+                    alt="Monray Linevee | Senior Operations"
                     className="h-14 w-14 sm:h-16 sm:w-16 shrink-0 rounded-2xl border-2 border-[#703AD7]/60 object-cover shadow-md"
                   />
                   <div className="min-w-0">
@@ -586,29 +586,20 @@ export default function AboutPage() {
                 {/* Narrative */}
                 <div className="space-y-4 text-sm sm:text-[14.5px] leading-[1.75] text-white/80">
                   <p>
-                    My journey began when I was a full-time student and first discovered the stock market. I was immediately fascinated by the world of investing and the possibilities it offered. I soon realised that investment management was something I genuinely wanted to pursue. However, one of my biggest challenges was figuring out how to build the capital needed to turn that vision into reality. At the time, financial freedom felt like a distant goal.
+                    Monray&apos;s financial journey began in accounting and audit, where he spent a decade as an External Auditor developing a rigorous, detail-oriented approach to risk and financial analysis. Driven by a passion for capital markets and investment management, he transitioned into active trading, progressing from cryptocurrency to market-driven forex price action strategies.
                   </p>
                   <p>
-                    Determined to find a way forward, I explored cryptocurrency investing. It introduced me to new opportunities, helped me work towards building capital, and strengthened my belief that my long-term goals were achievable. This experience motivated me to explore further and eventually led me to forex trading.
+                    Today, as a key operator at ckpropfirm, he blends 10 years of audit experience with practical market experience to help traders navigate the path toward financial independence.
                   </p>
                   <p>
-                    I spent months studying the markets, reading, testing strategies, and learning through experience. Initially, I relied heavily on technical indicators, believing they would help me identify the right trading opportunities. However, as I gained experience, I discovered Price Action trading, which fundamentally changed the way I understood the markets.
+                    He spent years studying the markets, testing strategies, and learning through real market conditions. While initially exploring indicator-based approaches, discovering Price Action trading fundamentally transformed how he analyzed market structure — grounding decisions in genuine liquidity, market behaviour, and strict risk parameters.
                   </p>
                   <p>
-                    I began developing my own trading approach, focusing on price movements and market behaviour rather than relying solely on indicators. This shift helped me make more informed decisions and build a clearer understanding of how I wanted to approach trading.
-                  </p>
-                  <p>
-                    Beyond technical knowledge, trading taught me some of the most valuable lessons about discipline, patience, and objectivity. I learned the importance of staying calm under pressure, managing risk, accepting losses, and maintaining a long-term perspective. These lessons have shaped not only my trading approach but also the way I handle challenges in everyday life.
-                  </p>
-                  <p>
-                    Today, I continue to refine my strategy and work towards consistent profitability. My long-term vision remains the same: to build the capital needed to create my own stock portfolio and pursue greater financial independence.
-                  </p>
-                  <p>
-                    Looking back, this journey has been about much more than financial markets. It has been about learning, adapting, overcoming challenges, and becoming more disciplined with every step.
+                    Beyond technical acumen, trading reinforced essential principles of discipline, patience, and objectivity. Staying calm under pressure, managing asymmetric risk, accepting losses constructively, and maintaining a long-term horizon have shaped both his trading approach and operational execution.
                   </p>
                   <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-white/95">
                     <p className="font-medium italic leading-relaxed">
-                      &ldquo;I&apos;m still learning, still improving, and still working towards the vision that started it all. For me, success isn&apos;t just about reaching the destination. It&apos;s about the growth, experience, and discipline built along the way.&rdquo;
+                      &ldquo;With unwavering perseverance and discipline, we turn ambitious financial dreams into reality. For me, success isn&apos;t just about reaching the destination. It&apos;s about the growth, experience, and discipline built along the way.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -617,7 +608,7 @@ export default function AboutPage() {
               {/* Fixed Footer */}
               <div className="shrink-0 flex items-center justify-between border-t border-white/10 bg-[#070B1D]/95 px-6 py-4 sm:px-8 backdrop-blur-md">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/40">
-                  CK Propfirm · Founder Journey
+                  CK Propfirm · Senior Operations
                 </span>
                 <button
                   type="button"

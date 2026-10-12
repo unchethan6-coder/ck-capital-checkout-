@@ -332,7 +332,7 @@ test.describe("TopNav Mega Menu & Navigation QAQC", () => {
       await expect(heroVisual).toBeAttached();
     });
 
-    test("About Us Page (/en/about-us): Founder card has crisp white name and readable quote", async ({ page }) => {
+    test("About Us Page (/en/about-us): Senior Operations spotlight card has crisp white name and readable quote", async ({ page }) => {
       await page.goto("/en/about-us");
       const founderPhoto = page.locator('[data-od-id="about-founder-photo"]');
       await expect(founderPhoto).toBeVisible();
@@ -341,8 +341,8 @@ test.describe("TopNav Mega Menu & Navigation QAQC", () => {
       await expect(founderName).toBeVisible();
       await expect(founderName).toHaveClass(/text-white/);
 
-      const founderBadge = page.locator('text=Founder').first();
-      await expect(founderBadge).toBeVisible();
+      const seniorOpsBadge = page.locator('text=Senior Operations').first();
+      await expect(seniorOpsBadge).toBeVisible();
     });
 
     test("Trading Objectives Page (/en/trading-objectives): Objectives HUD visual has readable labels", async ({ page }) => {
