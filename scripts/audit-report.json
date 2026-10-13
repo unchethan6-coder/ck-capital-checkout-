@@ -706,7 +706,7 @@
     "lowContrastSample": [
       {
         "tag": "A",
-        "text": "CK Capital Help Center",
+        "text": "CK Propfirm Help Center",
         "color": "rgb(146, 155, 165)",
         "rgb": {
           "r": 146,
@@ -725,7 +725,7 @@
       },
       {
         "tag": "SPAN",
-        "text": "CK Capital Help Center",
+        "text": "CK Propfirm Help Center",
         "color": "rgb(146, 155, 165)",
         "rgb": {
           "r": 146,

@@ -128,7 +128,7 @@ export function ContactHeroVisual({
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#0A0A0C]">Direct Desk Email</p>
-                    <p className="text-[10px] text-[#6B7280]">support@ckcapital.co.uk</p>
+                    <p className="text-[10px] text-[#6B7280]">support@ckpropfirm.com</p>
                   </div>
                 </div>
                 <span className="rounded border border-gray-200 bg-gray-100 px-2 py-0.5 text-[9px] font-bold text-[#4B5563]">

@@ -1,4 +1,4 @@
-# CK Capital — Clone Notes
+# CK Propfirm — Clone Notes
 
 ## Source
 - **Origin:** https://ck-website-2.vercel.app
@@ -17,7 +17,7 @@
 
 ## Dev server
 ```bash
-cd "/Users/kimjoshuadr/CK Capital"
+cd "/Users/kimjoshuadr/CKCapital Latest"
 npm run dev
 # → http://localhost:3000
 ```
@@ -37,7 +37,6 @@ npm run dev
 | Gold gradient | `linear-gradient(135deg, #d4af37, #f5d570, #d4af37)` | CSS `--ck-gold-gradient` |
 | Footer bg | `#0F0D08` | computed |
 | Theme | Dark default (matches source), light opt-in via nav toggle | `app/layout.tsx` boot script |
-| Trustpilot green | `#00b67a` | CSS `--trustpilot` |
 | Font (display + body) | Inter variable (wght 100–900) | `@font-face` / `next/font` |
 
 ## Section map
@@ -91,7 +90,7 @@ npm run dev
 
 ### 2026-08-06 — DevOps / Coolify deployment
 - **Repo:** `kimjoshuadr/ck-capital` (private). Branches: `main` → production, `staging` → staging.
-- **Coolify:** 4.1.2 at coolify.fundedproptraders.com, server 178.105.229.60. Apps: `ck-capital:main` (production, `https://ckcapital.co.uk`, running:healthy) + `ck-capital:staging` (staging env in Product project, `https://staging.ckcapital.co.uk`, basic-auth protected).
+- **Coolify:** 4.1.2 at coolify.fundedproptraders.com, server 178.105.229.60. Apps: `ck-capital:main` (production, `https://ckpropfirm.com`, running:healthy) + `ck-capital:staging` (staging env in Product project, `https://staging.ckpropfirm.com`, basic-auth protected).
 - **Build:** custom `Dockerfile` (node:22-alpine, `output: "standalone"`, healthcheck) + `.dockerignore`. Env vars live in Coolify (STRAPI_BASE_URL, STRAPI_API_TOKEN read-only, REVALIDATE_SECRET).
 - **CI:** `.github/workflows/ci.yml` — typecheck+build on PR/push; Playwright smoke against staging on `staging` branch (secrets `STAGING_URL`, `STAGING_BASIC_AUTH`).
 - **Tests:** `tests/smoke.spec.ts` (route 200s, key sections, theme toggle, basic-auth guard).
@@ -119,9 +118,9 @@ Most copy is typed in `lib/content.ts`. To update any text, price, FAQ, or testi
 This is a local learning clone. The following items **must** be replaced or cleared before any public deployment:
 
 ### Brand / IP
-- [ ] "CK Capital" name and "CK CAPITAL" wordmark — original brand belongs to CK Capital Group Ltd (Harpenden, UK)
+- [x] "CK Capital" name and "CK CAPITAL" wordmark removed / rebranded to CK Propfirm
 - [ ] All testimonials are illustrative placeholders — replace with real, verifiable reviews or mark as "example"
-- [ ] Trustpilot badge links to external trustpilot.com — verify or remove if not your profile
+- [x] Trustpilot badge and external trustpilot.com links completely removed
 - [ ] Payment method logos (Visa, Mastercard, etc.) are trademarks — acceptable for "we accept" display only
 
 ### Tracking / analytics (already removed)
@@ -176,11 +175,11 @@ This is a local learning clone. The following items **must** be replaced or clea
 
 ### 2026-08-06 — Favicon + Technical SEO setup
 - **Favicon set** (generated from the brand logo via open-source `sharp` + `to-ico`): `favicon.ico` (16/32/48 multi-ICO), `favicon-16x16/32x32/48x48/192x192/512x512.png`, `apple-touch-icon.png` (180). Replaced Next default `app/favicon.ico`.
-- **OG social card**: `public/og-image.jpg` rebuilt at 1200×630 — dark brand bg (#0b0a07), gold radial glows, white rounded logo tile, gold title "CK CAPITAL", tagline, and Start Trading pill. `og-image.png` kept as source.
-- **`app/sitemap.ts`**: 14 URLs under `https://ckcapital.co.uk` with priority/changeFrequency.
+- **OG social card**: `public/og-image.jpg` rebuilt at 1200×630 — dark brand bg (#0b0a07), gold radial glows, white rounded logo tile, gold title "CK PROPFIRM", tagline, and Start Trading pill. `og-image.png` kept as source.
+- **`app/sitemap.ts`**: 14 URLs under `https://ckpropfirm.com` with priority/changeFrequency.
 - **`app/robots.ts`**: allow all, disallow `/api/` + `/_next/`, sitemap link.
 - **`app/manifest.ts`**: PWA manifest (name, theme `#0b0a07`, icons 192/512/180).
-- **`app/layout.tsx`**: `metadataBase` = ckcapital.co.uk, `title.template` ("%s | CK Capital"), full icon set (favicon ico + pngs, apple-touch), OG/Twitter defaults + 1200×630 image, robots rules, manifest link, and JSON-LD `@graph` (Organization + WebSite) via inline `application/ld+json`.
+- **`app/layout.tsx`**: `metadataBase` = ckpropfirm.com, `title.template` ("%s | CK Propfirm"), full icon set (favicon ico + pngs, apple-touch), OG/Twitter defaults + 1200×630 image, robots rules, manifest link, and JSON-LD `@graph` (Organization + WebSite) via inline `application/ld+json`.
 - **Per-page metadata**: `lib/seo.ts` `pageSeo()` helper adds canonical + OG + Twitter. Added to all 13 content/policy pages (server `layout.tsx` wrappers for the 7 client-component pages; `pageSeo` in the 5 policy pages + FAQ). FAQ page also emits `FAQPage` JSON-LD (10 Q&As from source).
 - Verified: sitemap/robots/manifest serve (200), correct per-page `<title>` everywhere, JSON-LD parses (Organization/WebSite/FAQPage), icons + og-image serve, `npm run build` clean.
 

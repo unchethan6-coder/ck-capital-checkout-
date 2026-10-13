@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const BASE = process.env.PLAYWRIGHT_BASE_URL || "https://staging.ckcapital.co.uk";
+const BASE = process.env.PLAYWRIGHT_BASE_URL || "https://staging.ckpropfirm.com";
 
 const PUBLIC_ROUTES = ["/", "/evaluation", "/instant", "/blog", "/faq", "/about-us", "/contact"];
 
@@ -26,16 +26,12 @@ test.describe("staging smoke", () => {
     await expect(page.locator('[data-od-id="challenge-table"]')).toBeVisible();
   });
 
-  test("theme toggle switches dark/light", async ({ page }) => {
+  test("dark theme is active and support launcher renders", async ({ page }) => {
     await page.goto("/");
-    const toggle = page.locator('button[role="switch"]').first();
-    await expect(toggle).toBeVisible();
     const html = page.locator("html");
-    const before = await html.getAttribute("class");
-    await toggle.click();
-    await page.waitForTimeout(300);
-    const after = await html.getAttribute("class");
-    expect(after).not.toBe(before);
+    await expect(html).toHaveClass(/dark/);
+    const launcher = page.locator('[data-od-id="support-launcher"]');
+    await expect(launcher).toBeVisible();
   });
 
   test("staging is protected by basic auth (401 without credentials)", async () => {

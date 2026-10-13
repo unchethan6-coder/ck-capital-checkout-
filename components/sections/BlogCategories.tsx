@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * "Built by traders, for traders" — exact clone of FundingPips media showcase,
- * re-themed to CK Capital (light #FFFFFF, matching ProofShowcase / ChallengeComparison / TraderStories).
+ * re-themed to CK Propfirm (light #FFFFFF, matching ProofShowcase / ChallengeComparison / TraderStories).
  * Stock trader photos as placeholders + 3.5s auto-scroll, pause on hover, resume 5s after click.
  */
 

@@ -248,11 +248,11 @@ Fields:
 
 ---
 
-## Tagging articles to the CK Capital brand
+## Tagging articles to the CK Propfirm brand
 
-Articles only appear on `/blog` when the **Brand** relation is set to **CK Capital**
-(slug `ck-capital` — already created). In the article editor, set *Brand* →
-*CK Capital*, then Publish. Non-branded articles (including the leftover
+Articles only appear on `/blog` when the **Brand** relation is set to **CK Propfirm**
+(slug `ck-propfirm` / `ck-capital`). In the article editor, set *Brand* →
+*CK Propfirm*, then Publish. Non-branded articles (including the leftover
 `this-is-a-test` entry) never appear.
 
 ## Seeding notes (2026-08-06)
@@ -280,8 +280,8 @@ All content types were seeded via API from the site's then-current static conten
 ## Revalidation webhook (instant content updates)
 
 1. Strapi admin → **Settings → Webhooks → Create new webhook**.
-2. Name: `CK Capital revalidate`.
-3. URL: `https://ckcapital.co.uk/api/revalidate`
+2. Name: `CK Propfirm revalidate`.
+3. URL: `https://ckpropfirm.com/api/revalidate`
 4. Headers: key `x-strapi-webhook-secret`, value = the `REVALIDATE_SECRET` in `.env.local`.
 5. Events: tick **Publish / Unpublish** for: Article, Promo, Banner, Payout,
    Firm Review, Video Review, Challenge Config.

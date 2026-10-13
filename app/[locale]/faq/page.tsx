@@ -29,13 +29,15 @@ const JSON_LD_QUESTIONS = 20;
 export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const [t, tFaq, cmsFaqs] = await Promise.all([
+  const [t, tFaq, allCmsFaqs] = await Promise.all([
     getTranslations("helpCenter"),
     getTranslations("faq"),
-    getFaqs({ firmSlug: "ck-capital" }),
+    getFaqs(),
   ]);
 
-  const ckFaqs = cmsFaqs.filter((f) => f.firmSlug === "ck-capital" || f.scope === "ck-capital");
+  const ckFaqs = allCmsFaqs.filter(
+    (f) => f.scope === "firm-detail" || f.firmSlug === "ck-capital" || f.firmSlug === "ck-propfirm"
+  );
 
   const jsonLd = {
     "@context": "https://schema.org",

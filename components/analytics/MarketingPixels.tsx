@@ -7,7 +7,7 @@ import { getCookieConsent, type CookieChoice } from "@/components/shared/CookieC
 import { captureAttribution } from "@/lib/analytics/attribution";
 import { trackPageView } from "@/lib/analytics/events";
 
-// Official platform IDs registered in the CK Capital Implementation Guide
+// Official platform IDs registered in the CK Propfirm Implementation Guide
 export const GTM_ID = "GTM-P5Q75TM2";
 export const META_PIXEL_ID = "1102958381163703";
 export const TIKTOK_PIXEL_ID = "D9L0M8BC77U349A6OIL0";

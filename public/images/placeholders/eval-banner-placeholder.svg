@@ -44,7 +44,7 @@
     <g transform="translate(12, 11)">
       <path d="M 5 11 L 1 7 L 5 3" fill="none" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M 10 11 L 6 7 L 10 3" fill="none" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <text x="18" y="9" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="9" font-weight="900" letter-spacing="1">CK CAPITAL</text>
+      <text x="18" y="9" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="9" font-weight="900" letter-spacing="1">CK PROPFIRM</text>
       
       <rect x="146" y="-1" width="56" height="15" rx="7" fill="#FFC107" fill-opacity="0.15" stroke="#FFC107" stroke-width="0.8" />
       <text x="152" y="10" fill="#FFC107" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="6.5" font-weight="800">1-2 STEP</text>

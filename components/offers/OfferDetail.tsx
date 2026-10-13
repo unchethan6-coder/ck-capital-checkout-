@@ -3,7 +3,7 @@
 import { useCallback, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { Check, ChevronLeft, ChevronRight, Copy, Star } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { NewsItem, OfferRegion } from "@/lib/offers/types";
 import { track } from "./track";
@@ -104,12 +104,6 @@ export function OfferDetail({ item, region, index, total, onIndexChange }: Offer
 
         <p className="mt-1.5 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
           <span>{t("sharedBy", { author: item.author })}</span>
-          {item.rating !== null && (
-            <span className="ml-auto inline-flex items-center gap-1 text-[#E9BE57]">
-              <Star size={11} className="fill-[#E9BE57]" aria-hidden />
-              {item.rating.toFixed(1)}
-            </span>
-          )}
         </p>
 
         {item.summary && <p className="mt-3 text-sm leading-relaxed text-foreground/85">{item.summary}</p>}

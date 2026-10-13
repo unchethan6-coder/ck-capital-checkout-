@@ -100,12 +100,94 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Filter items
+  const [extraFaqItems, setExtraFaqItems] = useState<SearchItem[]>([]);
+  const hasLoadedRef = useRef(false);
+
+  // Lazily load CMS FAQs and Knowledge Base articles when modal opens
+  useEffect(() => {
+    if (!isOpen || hasLoadedRef.current) return;
+    hasLoadedRef.current = true;
+
+    Promise.all([
+      fetch("/api/faqs")
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null),
+      import("@/lib/help/articles.json")
+        .then((m) => m.default)
+        .catch(() => null),
+    ]).then(([faqsData, helpData]) => {
+      const newItems: SearchItem[] = [];
+
+      // 1. Ingest Strapi CMS FAQs
+      if (faqsData?.data && Array.isArray(faqsData.data)) {
+        for (const faq of faqsData.data) {
+          if (!faq.question || !faq.answer) continue;
+          newItems.push({
+            id: `cms-faq-${faq.id}`,
+            category: "faq",
+            title: faq.question,
+            description: faq.answer.length > 130 ? faq.answer.slice(0, 130) + "…" : faq.answer,
+            keywords: [
+              ...faq.question.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean),
+              ...faq.answer.toLowerCase().slice(0, 150).split(/[^a-z0-9]+/).filter(Boolean),
+              "faq", "help", "rule", "questions", "answer", "ck propfirm"
+            ],
+            href: `/faq#faq-${faq.id}`,
+            iconName: "HelpCircle",
+            badge: "FAQ",
+          });
+        }
+      }
+
+      // 2. Ingest Help Center Articles
+      if (helpData?.articles && Array.isArray(helpData.articles)) {
+        for (const art of helpData.articles) {
+          if (!art.slug || !art.title) continue;
+          const textRuns: string[] = [];
+          if (Array.isArray(art.blocks)) {
+            for (const b of art.blocks.slice(0, 3)) {
+              const blk = b as any;
+              if (blk?.runs && Array.isArray(blk.runs)) {
+                textRuns.push(blk.runs.map((r: any) => r?.t || "").join(""));
+              }
+            }
+          }
+          const plainText = textRuns.join(" ").replace(/\s+/g, " ").trim();
+          newItems.push({
+            id: `help-article-${art.slug}`,
+            category: "faq",
+            title: art.title,
+            description: plainText.length > 130 ? plainText.slice(0, 130) + "…" : (plainText || "Help Center article and official guide."),
+            keywords: [
+              art.slug,
+              art.collection || "",
+              ...art.title.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean),
+              "article", "guide", "knowledgebase", "help", "rules"
+            ],
+            href: `/faq/${art.slug}`,
+            iconName: "BookOpen",
+            badge: "Guide",
+          });
+        }
+      }
+
+      if (newItems.length > 0) {
+        setExtraFaqItems(newItems);
+      }
+    });
+  }, [isOpen]);
+
+  const allSearchItems = useMemo(() => {
+    if (extraFaqItems.length === 0) return SEARCH_INDEX;
+    return [...SEARCH_INDEX, ...extraFaqItems];
+  }, [extraFaqItems]);
+
+  // Filter items with token-based fuzzy matching
   const filteredItems = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) {
       // Default suggested items
-      return SEARCH_INDEX.filter((item) =>
+      return allSearchItems.filter((item) =>
         [
           "challenge-1step",
           "challenge-2step-standard",
@@ -120,14 +202,37 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
       );
     }
 
-    return SEARCH_INDEX.filter((item) => {
-      const titleMatch = item.title.toLowerCase().includes(q);
-      const descMatch = item.description.toLowerCase().includes(q);
-      const badgeMatch = item.badge?.toLowerCase().includes(q);
-      const keywordMatch = item.keywords.some((k) => k.toLowerCase().includes(q));
-      return titleMatch || descMatch || badgeMatch || keywordMatch;
+    const queryTokens = q.split(/\s+/).filter(Boolean);
+
+    return allSearchItems.filter((item) => {
+      const titleLower = item.title.toLowerCase();
+      const descLower = item.description.toLowerCase();
+      const badgeLower = item.badge?.toLowerCase() ?? "";
+
+      // Exact phrase match
+      if (
+        titleLower.includes(q) ||
+        descLower.includes(q) ||
+        badgeLower.includes(q) ||
+        item.keywords.some((k) => k.toLowerCase().includes(q))
+      ) {
+        return true;
+      }
+
+      // Multi-word token match (e.g. "what is ck prop firm", "drawdown rules")
+      if (queryTokens.length > 1) {
+        const matchesAll = queryTokens.every(
+          (token) =>
+            titleLower.includes(token) ||
+            descLower.includes(token) ||
+            item.keywords.some((k) => k.toLowerCase().includes(token))
+        );
+        if (matchesAll) return true;
+      }
+
+      return false;
     });
-  }, [query]);
+  }, [query, allSearchItems]);
 
   // Reset selected index when results change
   useEffect(() => {
@@ -165,6 +270,16 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
 
   const handleSelect = (item: SearchItem) => {
     onClose();
+    if (item.id.startsWith("cms-faq-")) {
+      const rawFaqId = item.id.replace("cms-faq-", "");
+      window.dispatchEvent(
+        new CustomEvent("open-support-widget", {
+          detail: { tab: "help", faqId: Number(rawFaqId) || rawFaqId },
+        })
+      );
+      router.push("/faq");
+      return;
+    }
     if (item.external || item.href.startsWith("http") || item.href.startsWith("mailto:")) {
       window.open(item.href, "_blank", "noopener,noreferrer");
     } else {

@@ -61,7 +61,7 @@ export function CustomerSupportSection() {
                 <ArrowUpRight size={16} />
               </a>
               <a
-                href="mailto:support@ckcapital.co.uk"
+                href="mailto:support@ckpropfirm.com"
                 className="inline-flex min-h-12 items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 text-sm font-bold text-[#0A0A0C] shadow-sm transition-all hover:border-gray-300 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 data-od-id="customer-support-email"
               >

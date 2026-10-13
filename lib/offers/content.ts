@@ -25,7 +25,7 @@ function pricingFor(plan: keyof (typeof FUNDING_PLAN_RAW_DATA)["10K"]): OfferPri
   });
 }
 
-const STANDARD_PRICING = pricingFor("standard");
+export const STANDARD_PRICING = pricingFor("standard");
 
 export const BUNDLED_NEWS: NewsItem[] = [
   {
@@ -57,7 +57,7 @@ export const BUNDLED_NEWS: NewsItem[] = [
     ],
     ctaHref: "/#start-challenge",
     ctaLabel: null,
-    rating: 4.5,
+    rating: null,
     priority: 100,
     locales: [],
   },

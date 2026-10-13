@@ -35,7 +35,7 @@ async function fetchJson<T>(url: string, init?: RequestInit): Promise<T | null> 
       ...init,
       signal: controller.signal,
       cache: "no-store",
-      headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; CKCapital/1.0)", ...init?.headers },
+      headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; CKPropfirm/1.0)", ...init?.headers },
     });
     if (!res.ok) return null;
     return (await res.json()) as T;

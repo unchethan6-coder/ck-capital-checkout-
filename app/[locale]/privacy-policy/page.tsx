@@ -43,7 +43,7 @@ function Subsection({ title, children }: { title: string; children: React.ReactN
   );
 }
 
-const MAILTO = "service@ckcapital.co.uk";
+const MAILTO = "service@ckpropfirm.com";
 const EmailLink = (
   <a
     href={`mailto:${MAILTO}`}
@@ -87,7 +87,7 @@ export default async function PrivacyPolicyPage() {
         <Container className="max-w-4xl">
           <div className="rounded-2xl border border-[#E5E7EB] bg-white p-8 sm:p-12 shadow-sm text-[15px] leading-relaxed text-[#4B5563]">
             <p className="font-semibold text-[#0A0A0C]">
-              CK Capital Group LTD (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;,
+              CK Propfirm (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;,
               or &quot;our&quot;) is committed to protecting your privacy. This Privacy
               Policy explains how we collect, use, disclose, and safeguard your
               information when you visit our website or use our evaluation services.

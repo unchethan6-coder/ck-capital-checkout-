@@ -704,7 +704,7 @@ export function CalculatorSuite() {
         </div>
 
         <p className="mx-auto mt-6 max-w-3xl text-center text-[11px] leading-5 text-white/50">
-          These calculators are planning tools for simulated trading on CK Capital evaluation and Qualified Analyst
+          These calculators are planning tools for simulated trading on CK Propfirm evaluation and Qualified Analyst
           accounts. Figures are estimates: spreads, commissions, slippage and your platform's live swap rates are not
           included, and exchange rates refresh periodically rather than tick by tick. Nothing here is investment advice,
           and no result guarantees a payout or the outcome of an evaluation.

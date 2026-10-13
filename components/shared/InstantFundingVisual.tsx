@@ -158,7 +158,7 @@ export function InstantFundingVisual({
             <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-xs">
               <div className="flex items-center gap-2 text-[#6B7280]">
                 <Rocket size={14} className="text-[#A98BFF]" />
-                <span className="text-[11px]">Server: CK-Capital-Live-01 · Fast Execution</span>
+                <span className="text-[11px]">Server: CK-Propfirm-Live-01 · Fast Execution</span>
               </div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#A98BFF]">
                 Ready in 60s

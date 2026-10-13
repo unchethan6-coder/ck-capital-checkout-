@@ -1,5 +1,5 @@
 {
- "source": "https://intercom.help/ck-capital/en/",
+ "source": "https://intercom.help/ckpropfirm/en/",
  "collections": [
   {
    "slug": "about-us",
@@ -247,7 +247,7 @@
          },
          {
           "t": "Discord",
-          "href": "https://discord.gg/ckcapital"
+          "href": "https://discord.com/invite/hGSVx9CmS2"
          },
          {
           "t": " if you have any questions or wish to connect with others before you start your challenge."
@@ -743,9 +743,9 @@
           "t": "Email: "
          },
          {
-          "t": "momin@ckcapital.co.uk",
+          "t": "support@ckpropfirm.com",
           "b": true,
-          "href": "mailto:momin@ckcapital.co.uk"
+          "href": "mailto:support@ckpropfirm.com"
          }
         ]
        }
@@ -1527,8 +1527,8 @@
           "t": "Account rolling/churning, buying multiple accounts and failing in a short timeframe and simultaneously buying more as you fail. The failure of a funded account requires permission before you are able to start a new evaluation, send all requests to "
          },
          {
-          "t": "momin@ckcapital.co.uk",
-          "href": "mailto:momin@ckcapital.co.uk"
+          "t": "support@ckpropfirm.com",
+          "href": "mailto:support@ckpropfirm.com"
          }
         ]
        }
@@ -6509,7 +6509,7 @@
         "type": "p",
         "runs": [
          {
-          "t": "You can check the reset timer anytime on your CK Capital dashboard."
+          "t": "You can check the reset timer anytime on your CK Propfirm dashboard."
          }
         ]
        }
@@ -7994,8 +7994,8 @@
        "t": "Each payout request is reviewed individually by our Risk Team. If a violation or trading activity that falls outside our permitted conditions is identified, the payout may be denied. If your payout has been rejected and you believe this was done in error, please contact our Support Team or reach out at "
       },
       {
-       "t": "momin@ckcapital.co.uk",
-       "href": "mailto:momin@ckcapital.co.uk"
+       "t": "support@ckpropfirm.com",
+       "href": "mailto:support@ckpropfirm.com"
       },
       {
        "t": " so your case can be reviewed and clarified."

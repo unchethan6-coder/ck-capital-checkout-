@@ -1,7 +1,7 @@
 import type { SymbolSpec } from "./types";
 
 /**
- * The CK Capital instrument catalogue.
+ * The CK Propfirm instrument catalogue.
  *
  * Spreads are CK's published typical spreads in price units. For every feed
  * except crypto the upstream only gives a last traded price, so these values

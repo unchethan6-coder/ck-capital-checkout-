@@ -80,7 +80,6 @@ export async function generateMetadata({
       "trading challenge",
       "evaluation account",
       "CK Propfirm",
-      "CK Capital",
     ],
     applicationName: SITE_NAME,
     alternates: {

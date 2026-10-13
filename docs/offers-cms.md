@@ -11,7 +11,7 @@ Create a collection type with the API ID `news-item` and these fields.
 | --- | --- | --- |
 | `slug` | UID | Used as the item id; also the share anchor. |
 | `title` | Text | Headline. Required — rows without one are skipped. |
-| `author` | Text | Shown under the headline. Defaults to "CK Capital". |
+| `author` | Text | Shown under the headline. Defaults to "CK Propfirm". |
 | `summary` | Text (long) | Lead paragraph. |
 | `body` | JSON (array of strings) | One entry per paragraph, rendered in order. |
 | `tags` | JSON (array of strings) | Short labels above the headline, e.g. `["Offer","New"]`. |

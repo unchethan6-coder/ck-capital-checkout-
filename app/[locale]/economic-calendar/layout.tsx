@@ -13,7 +13,7 @@ export async function generateMetadata({
   return pageSeo({
     title: "Economic Calendar — Live Market-Moving Events",
     description:
-      "Track every scheduled economic release that moves forex, indices and commodities. Filter by currency, day and impact, in your own timezone. News trading is allowed at CK Capital.",
+      "Track every scheduled economic release that moves forex, indices and commodities. Filter by currency, day and impact, in your own timezone. News trading is allowed at CK Propfirm.",
     path: "/economic-calendar",
     locale: resolved,
   });

@@ -1,5 +1,5 @@
 /**
- * Pure maths for the CK Capital calculator suite.
+ * Pure maths for the CK Propfirm calculator suite.
  *
  * Everything here is deterministic and side-effect free so the formulas can be
  * unit-tested without a browser (see tests/calculators.spec.ts). Prices and FX

@@ -127,7 +127,7 @@ export const ARTICLE_CATEGORIES: { label: string; value: ArticleCategory | "all"
 
 function mapArticle(raw: any): CmsArticle | null {
   if (!raw || typeof raw !== "object") return null;
-  // Strictly ensure article belongs to CK Capital brand
+  // Strictly ensure article belongs to CK Propfirm brand
   if (raw.brand?.slug && raw.brand.slug !== CMS_BRAND_SLUG) return null;
   return {
     id: raw.id,
@@ -208,11 +208,11 @@ export async function getFirmReviews(): Promise<CmsFirmReview[]> {
   return res.data
     .map((r: any) => ({
       id: r.id,
-      summary: r.summary ?? "",
+      summary: cleanBrandText(r.summary ?? ""),
       rating: typeof r.rating === "number" ? r.rating : 0,
       body: Array.isArray(r.body) ? r.body : [],
       publishedAt: r.publishedAt,
-      authorName: r.authorName ?? r.author_name ?? null,
+      authorName: r.authorName ? cleanBrandText(r.authorName) : (r.author_name ? cleanBrandText(r.author_name) : null),
       countryName: r.countryName ?? r.country_name ?? null,
       countryCode: r.countryCode ?? r.country_code ?? null,
       source: r.source ?? null,
@@ -281,6 +281,16 @@ export interface CmsFeedback {
   publishedAt: string;
 }
 
+export function cleanBrandText(str: string): string {
+  if (!str) return "";
+  return str
+    .replace(/CK\s*Capital\s*Prop\s*Firm/gi, "CK Propfirm")
+    .replace(/CK\s*Capital\s*Group\s*LTD/gi, "CK Propfirm")
+    .replace(/CK\s*Capital/gi, "CK Propfirm")
+    .replace(/ckcapital\.co\.uk/gi, "ckpropfirm.com")
+    .replace(/ckcapital/gi, "ckpropfirm");
+}
+
 export async function getFeedbacks(): Promise<CmsFeedback[]> {
   const params = new URLSearchParams();
   params.set("pagination[pageSize]", "100");
@@ -292,8 +302,8 @@ export async function getFeedbacks(): Promise<CmsFeedback[]> {
     .map((item: any) => ({
       id: item.id,
       documentId: item.documentId,
-      username: item.username ?? item.authorName ?? "Trader",
-      message: item.message ?? item.summary ?? item.text ?? "",
+      username: cleanBrandText(item.username ?? item.authorName ?? "Trader"),
+      message: cleanBrandText(item.message ?? item.summary ?? item.text ?? ""),
       rating: typeof item.rating === "number" ? item.rating : 5,
       source: item.source ?? "Discord",
       date: item.date ?? null,
@@ -379,8 +389,8 @@ export async function getFaqs(opts: { firmSlug?: string; scope?: string } = {}):
     .map((f: any) => ({
       id: f.id,
       documentId: f.documentId,
-      question: (f.question ?? "").replace(/\{firm\}/gi, "CK Capital"),
-      answer: (f.answer ?? "").replace(/\{firm\}/gi, "CK Capital"),
+      question: cleanBrandText((f.question ?? "").replace(/\{firm\}/gi, "CK Propfirm")),
+      answer: cleanBrandText((f.answer ?? "").replace(/\{firm\}/gi, "CK Propfirm")),
       scope: f.scope ?? null,
       firmSlug: f.firmSlug ?? null,
       sortOrder: typeof f.sortOrder === "number" ? f.sortOrder : null,

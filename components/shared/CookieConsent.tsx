@@ -59,7 +59,7 @@ export function CookieConsent() {
             We use strictly necessary cookies to run this site and to keep your
             evaluation dashboard session secure. With your permission we also use
             analytics and marketing cookies to measure how traders find our
-            programmes. CK Capital provides simulated trading evaluations only — no
+            programmes. CK Propfirm provides simulated trading evaluations only — no
             cookie is used to execute, place or record live market trades. Read our{" "}
             <Link
               href="/cookie-policy"

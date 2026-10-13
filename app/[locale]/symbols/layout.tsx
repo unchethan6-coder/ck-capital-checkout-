@@ -13,7 +13,7 @@ export async function generateMetadata({
   return pageSeo({
     title: "Symbol Specifications — Live Spreads & Contract Sizes",
     description:
-      "Live bid and ask prices, spreads, contract sizes and leverage for every forex pair, index, commodity, crypto and stock you can trade at CK Capital.",
+      "Live bid and ask prices, spreads, contract sizes and leverage for every forex pair, index, commodity, crypto and stock you can trade at CK Propfirm.",
     path: "/symbols",
     locale: resolved,
   });

@@ -1,4 +1,4 @@
-import { BUNDLED_NEWS } from "./content";
+import { BUNDLED_NEWS, STANDARD_PRICING } from "./content";
 import type { NewsItem, OfferPrice, OfferRegion, OffersPayload } from "./types";
 
 /**
@@ -96,13 +96,51 @@ const asPriceRows = (v: unknown): OfferPrice[] =>
       })
     : [];
 
+function fromPromoRow(raw: any): NewsItem | null {
+  if (!raw.code && !raw.title) return null;
+  const code = raw.code || "SEP70";
+  const title = raw.title || `Special Offer — Code ${code}`;
+  const subtitle = raw.subtitle || `Use code ${code} at checkout to claim your discount.`;
+  const discountLabel = raw.discountLabel || "Special Offer";
+  const ctaLabel = raw.ctaLabel || `Use Code: ${code}`;
+  return {
+    id: `promo-${raw.documentId || raw.id || code}`,
+    tags: ["Promo", discountLabel],
+    title,
+    author: "CK Propfirm",
+    summary: subtitle,
+    body: [
+      subtitle,
+      `Enter coupon code "${code}" at checkout to apply your discount. Limited-time promotion available for new and existing traders.`,
+    ],
+    image: null,
+    startsAt: null,
+    endsAt: null,
+    coupon: code,
+    pricing: {
+      global: STANDARD_PRICING,
+      usa: STANDARD_PRICING,
+    },
+    rules: [
+      `Use discount code: ${code}`,
+      "Applicable to eligible simulated evaluation plans.",
+      "Cannot be combined with other promotional codes.",
+    ],
+    ctaHref: "/#start-challenge",
+    ctaLabel,
+    rating: null,
+    priority: typeof raw.sortOrder === "number" ? 100 - raw.sortOrder : 50,
+    locales: [],
+  };
+}
+
 function fromCmsRow(raw: CmsRow): NewsItem | null {
   if (!raw.title) return null;
   return {
     id: raw.slug || String(raw.id ?? raw.title),
     tags: asStringArray(raw.tags),
     title: raw.title,
-    author: raw.author ?? "CK Capital",
+    author: raw.author ?? "CK Propfirm",
     summary: raw.summary ?? "",
     body: asStringArray(raw.body),
     image: raw.imageUrl ? { src: raw.imageUrl, alt: raw.imageAlt ?? "" } : null,
@@ -116,7 +154,7 @@ function fromCmsRow(raw: CmsRow): NewsItem | null {
     rules: asStringArray(raw.rules),
     ctaHref: raw.ctaHref ?? "/#start-challenge",
     ctaLabel: raw.ctaLabel ?? null,
-    rating: typeof raw.rating === "number" ? raw.rating : null,
+    rating: null,
     priority: typeof raw.priority === "number" ? raw.priority : 0,
     locales: asStringArray(raw.locales),
   };
@@ -127,8 +165,9 @@ async function fetchFromCms(): Promise<NewsItem[] | null> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
-    const url = `${BASE_URL.replace(/\/$/, "")}/api/news-items?pagination[pageSize]=50&sort=priority:desc`;
-    const res = await fetch(url, {
+    // 1. Fetch active promos from CMS
+    const promoUrl = `${BASE_URL.replace(/\/$/, "")}/api/promos?filters[active][$eq]=true&sort=sortOrder:asc`;
+    const res = await fetch(promoUrl, {
       signal: controller.signal,
       cache: "no-store",
       headers: {
@@ -136,11 +175,30 @@ async function fetchFromCms(): Promise<NewsItem[] | null> {
         ...(API_TOKEN ? { Authorization: `Bearer ${API_TOKEN}` } : {}),
       },
     });
-    if (!res.ok) return null;
-    const json = (await res.json()) as { data?: CmsRow[] };
-    const rows = json?.data;
-    if (!Array.isArray(rows) || rows.length === 0) return null;
-    const items = rows.map(fromCmsRow).filter((i): i is NewsItem => i !== null);
+    if (res.ok) {
+      const json = (await res.json()) as { data?: any[] };
+      const rows = json?.data;
+      if (Array.isArray(rows) && rows.length > 0) {
+        const promoItems = rows.map(fromPromoRow).filter((i): i is NewsItem => i !== null);
+        if (promoItems.length > 0) return promoItems;
+      }
+    }
+
+    // 2. Fallback to news-items if configured
+    const newsUrl = `${BASE_URL.replace(/\/$/, "")}/api/news-items?pagination[pageSize]=50&sort=priority:desc`;
+    const resNews = await fetch(newsUrl, {
+      signal: controller.signal,
+      cache: "no-store",
+      headers: {
+        Accept: "application/json",
+        ...(API_TOKEN ? { Authorization: `Bearer ${API_TOKEN}` } : {}),
+      },
+    });
+    if (!resNews.ok) return null;
+    const jsonNews = (await resNews.json()) as { data?: CmsRow[] };
+    const rowsNews = jsonNews?.data;
+    if (!Array.isArray(rowsNews) || rowsNews.length === 0) return null;
+    const items = rowsNews.map(fromCmsRow).filter((i): i is NewsItem => i !== null);
     return items.length > 0 ? items : null;
   } catch {
     // Unreachable or malformed — the bundled set covers it.

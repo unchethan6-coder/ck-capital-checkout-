@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Seed CK Capital payout records into Strapi from the public payout CSV.
+ * Seed CK Propfirm payout records into Strapi from the public payout CSV.
  *
  * The `payout` content type is minimal (title, amount, image) — no country,
  * date, or verification fields exist and the API token cannot extend the

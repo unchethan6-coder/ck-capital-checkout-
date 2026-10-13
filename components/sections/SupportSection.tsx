@@ -43,7 +43,7 @@ export function SupportSection() {
             title={t("youtubeTitle")}
             description={t("youtubeDesc")}
             action={t("youtubeAction")}
-            href="https://www.youtube.com/@CKCapital"
+            href="https://www.youtube.com/@CKPropfirm"
           />
         </div>
       </Container>

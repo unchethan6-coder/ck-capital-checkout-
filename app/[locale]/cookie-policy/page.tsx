@@ -170,10 +170,10 @@ export default async function CookiePolicyPage() {
               <p>
                 For privacy-related questions or comments, email us at{' '}
                 <a
-                  href="mailto:support@ckcapital.co.uk"
+                  href="mailto:support@ckpropfirm.com"
                   className="font-semibold text-[#0A0A0C] underline decoration-[#7943E0]/40 underline-offset-4 transition-colors hover:text-[#A98BFF]"
                 >
-                  support@ckcapital.co.uk
+                  support@ckpropfirm.com
                 </a>
                 .
               </p>

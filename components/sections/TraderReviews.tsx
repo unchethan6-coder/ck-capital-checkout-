@@ -30,9 +30,10 @@ export interface ReviewCard {
   imageHeight?: number | null;
   date?: string | null;
   amount?: string | null;
+  url?: string;
 }
 
-type SourceKey = "trustpilot" | "x" | "reddit" | "discord";
+type SourceKey = "x" | "reddit" | "discord";
 
 interface WallCard extends ReviewCard {
   sourceKey: SourceKey;
@@ -45,14 +46,6 @@ function DiscordIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
-    </svg>
-  );
-}
-
-function TrustpilotStarIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="#00B67A" aria-hidden="true">
-      <path d="m12 1.75 3.167 6.417 7.083 1.03-5.125 4.995 1.21 7.058L12 17.925l-6.335 3.325 1.21-7.058-5.125-4.995 7.083-1.03z" />
     </svg>
   );
 }
@@ -82,17 +75,6 @@ const SOURCE_STYLE: Record<
     cta: "Join Discord",
     ctaBg: "bg-[#5865F2] hover:bg-[#4752C4] text-white shadow-md shadow-[#5865F2]/30 hover:scale-[1.02]",
   },
-  trustpilot: {
-    border: "border-emerald-500/30 hover:border-[#00B67A]",
-    cardBg: "bg-[#091e19]/90 backdrop-blur-md",
-    glow: "hover:shadow-[0_0_30px_rgba(0,182,122,0.3)]",
-    tint: "text-[#00B67A]",
-    chip: "text-white bg-[#00B67A] border-emerald-400/80 shadow-sm shadow-[#00B67A]/30",
-    avatar: "border-2 border-emerald-400 text-white",
-    avatarBg: "bg-[#00B67A] shadow-md shadow-[#00B67A]/40",
-    cta: "View on Trustpilot",
-    ctaBg: "bg-[#00B67A] hover:bg-[#009E69] text-white shadow-md shadow-[#00B67A]/30 hover:scale-[1.02]",
-  },
   x: {
     border: "border-white/20 hover:border-white/40",
     cardBg: "bg-[#141824]/90 backdrop-blur-md",
@@ -120,10 +102,9 @@ const SOURCE_STYLE: Record<
 function normalizeSource(source: string | undefined): { key: SourceKey; label: string } {
   const s = (source || "").toLowerCase();
   if (s.includes("discord")) return { key: "discord", label: "Discord" };
-  if (s.includes("trustpilot")) return { key: "trustpilot", label: "Trustpilot" };
   if (s.includes("reddit")) return { key: "reddit", label: "Reddit" };
   if (s === "x" || s.includes("twitter")) return { key: "x", label: "X" };
-  return { key: "trustpilot", label: source || "Trustpilot" };
+  return { key: "discord", label: source || "Discord" };
 }
 
 function StarRating({ rating = 5 }: { rating?: number }) {
@@ -133,7 +114,7 @@ function StarRating({ rating = 5 }: { rating?: number }) {
         <Star
           key={i}
           size={14}
-          className={i < rating ? "fill-[#00B67A] text-[#00B67A]" : "fill-transparent text-gray-600"}
+          className={i < rating ? "fill-[#F59E0B] text-[#F59E0B]" : "fill-transparent text-gray-600"}
         />
       ))}
     </div>
@@ -141,12 +122,12 @@ function StarRating({ rating = 5 }: { rating?: number }) {
 }
 
 /** Real fallback data representing verified trader social proof */
-const TRUSTPILOT_FALLBACK: WallCard[] = [
+const REVIEWS_FALLBACK: WallCard[] = [
   {
     sourceKey: "discord",
     sourceLabel: "Discord",
     rating: 5,
-    text: "I just received my second payout from CK Capital - and I can't even put into words how happy and proud I am to be part of this company! From the very beginning, I had trust and I invested in CK Capital - and let me tell you: it was so worth it.",
+    text: "I just received my second payout from CK Propfirm - and I can't even put into words how happy and proud I am to be part of this company! From the very beginning, I had trust and I invested in CK Propfirm - and let me tell you: it was so worth it.",
     name: "Pedro Perez",
     location: "Funded Trader",
     amount: "$6,578.00",
@@ -157,20 +138,20 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     url: "https://discord.com/invite/hGSVx9CmS2",
   },
   {
-    sourceKey: "trustpilot",
-    sourceLabel: "Trustpilot",
+    sourceKey: "discord",
+    sourceLabel: "Discord",
     rating: 5,
     text: "Best customer support experience especially on discord. Their plan rules also straightforward as all in their faq website.",
     name: "Aiman A.",
     location: "Malaysia",
-    source: "Trustpilot",
-    url: "https://www.trustpilot.com/review/ckcapital.co.uk",
+    source: "Discord",
+    url: "https://discord.com/invite/hGSVx9CmS2",
   },
   {
     sourceKey: "discord",
     sourceLabel: "Discord",
     rating: 5,
-    text: "THANK YOU so much CK Capital! Means the world! Thanks for all the support throughout from start to finish! Looking forward to continuing my journey with the CK Fam!",
+    text: "THANK YOU so much CK Propfirm! Means the world! Thanks for all the support throughout from start to finish! Looking forward to continuing my journey with the CK Fam!",
     name: "Jackie KK",
     location: "Funded Trader",
     amount: "$19,051.00",
@@ -184,7 +165,7 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     sourceKey: "discord",
     sourceLabel: "Discord",
     rating: 5,
-    text: "Very first payout with CK Capital. Still need to pinch myself that this is actually real. Thank you so so much to my CK family. Appreciate all of you so so much. US vs US!!! Let's go!",
+    text: "Very first payout with CK Propfirm. Still need to pinch myself that this is actually real. Thank you so so much to my CK family. Appreciate all of you so so much. US vs US!!! Let's go!",
     name: "mausi91",
     location: "Funded Trader",
     amount: "$17,260.00",
@@ -195,14 +176,14 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     url: "https://discord.com/invite/hGSVx9CmS2",
   },
   {
-    sourceKey: "trustpilot",
-    sourceLabel: "Trustpilot",
+    sourceKey: "discord",
+    sourceLabel: "Discord",
     rating: 5,
-    text: "CK cap is my new favorite prop firm. The rules are very trader friendly and almost all pairs are available especially indices.",
+    text: "CK Propfirm is my new favorite prop firm. The rules are very trader friendly and almost all pairs are available especially indices.",
     name: "Ghecel V.",
     location: "Philippines",
-    source: "Trustpilot",
-    url: "https://www.trustpilot.com/review/ckcapital.co.uk",
+    source: "Discord",
+    url: "https://discord.com/invite/hGSVx9CmS2",
   },
   {
     sourceKey: "discord",
@@ -222,7 +203,7 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     sourceKey: "discord",
     sourceLabel: "Discord",
     rating: 5,
-    text: "I want to express my gratitude to CK Capital Prop Firm and its founder, Monray Linevee, for the prompt payout of my funded account. Delivered the payout on time.",
+    text: "I want to express my gratitude to CK Propfirm and its founder, Monray Linevee, for the prompt payout of my funded account. Delivered the payout on time.",
     name: "Wakeel Ahmed",
     location: "Funded Trader",
     amount: "$14,642.00",
@@ -233,20 +214,20 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     url: "https://discord.com/invite/hGSVx9CmS2",
   },
   {
-    sourceKey: "trustpilot",
-    sourceLabel: "Trustpilot",
+    sourceKey: "discord",
+    sourceLabel: "Discord",
     rating: 5,
-    text: "CK PROPFIRM is currently one of my top choices for prop firms — the dashboard is simple, and the support team is quick to respond.",
+    text: "CK Propfirm is currently one of my top choices for prop firms — the dashboard is simple, and the support team is quick to respond.",
     name: "Sandi G.",
     location: "Indonesia",
-    source: "Trustpilot",
-    url: "https://www.trustpilot.com/review/ckcapital.co.uk",
+    source: "Discord",
+    url: "https://discord.com/invite/hGSVx9CmS2",
   },
   {
     sourceKey: "discord",
     sourceLabel: "Discord",
     rating: 5,
-    text: "Just received my 1st CK payout. The support during the waiting time was always great. I hope this is the starting point of a success story.",
+    text: "Just received my 1st CK Propfirm payout. The support during the waiting time was always great. I hope this is the starting point of a success story.",
     name: "jensf5650",
     location: "Funded Trader",
     amount: "$7,469.00",
@@ -257,6 +238,16 @@ const TRUSTPILOT_FALLBACK: WallCard[] = [
     url: "https://discord.com/invite/hGSVx9CmS2",
   },
 ];
+
+function sanitizeBrand(text: string): string {
+  if (!text) return "";
+  return text
+    .replace(/CK\s*Capital\s*Prop\s*Firm/gi, "CK Propfirm")
+    .replace(/CK\s*Capital\s*Group\s*LTD/gi, "CK Propfirm")
+    .replace(/CK\s*Capital/gi, "CK Propfirm")
+    .replace(/ckcapital\.co\.uk/gi, "ckpropfirm.com")
+    .replace(/ckcapital/gi, "ckpropfirm");
+}
 
 function safeT(t: any, key: string, fallback: string): string {
   try {
@@ -319,7 +310,7 @@ export function TraderReviews({
   const t = useTranslations("reviews");
   const tr = (key: string, fallback: string) => safeT(t, key, fallback);
 
-  const [activeTab, setActiveTab] = useState<"all" | "discord" | "trustpilot">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "discord">("all");
   const [showAll, setShowAll] = useState(false);
 
   // Use CMS reviews if provided, else fallback — filter out invalid names and low-height cards
@@ -328,23 +319,26 @@ export function TraderReviews({
       r.name &&
       r.name.trim().length > 0 &&
       !/^verified trader$/i.test(r.name.trim()) &&
-      !isLowHeightCard(r)
+      !isLowHeightCard(r) &&
+      !/trustpilot/i.test(r.source || "")
   );
 
   const wallCards: WallCard[] = useMemo(() => {
-    const rawList = realReviews.length > 0 ? realReviews : TRUSTPILOT_FALLBACK;
+    const rawList = realReviews.length > 0 ? realReviews : REVIEWS_FALLBACK;
     // Ensure all cards (CMS or fallback) exclude low-height items
     const filteredList = rawList.filter((r) => !isLowHeightCard(r));
     return filteredList.map((r) => {
       const { key, label } = normalizeSource(r.source);
       return {
         ...r,
+        text: sanitizeBrand(r.text),
+        name: sanitizeBrand(r.name),
         sourceKey: key,
         sourceLabel: label,
         url:
           key === "discord"
             ? "https://discord.com/invite/hGSVx9CmS2"
-            : "https://www.trustpilot.com/review/ckcapital.co.uk",
+            : r.url || "https://discord.com/invite/hGSVx9CmS2",
       };
     });
   }, [realReviews]);
@@ -352,7 +346,6 @@ export function TraderReviews({
   // Tab filtering
   const filteredCards = useMemo(() => {
     if (activeTab === "discord") return wallCards.filter((c) => c.sourceKey === "discord");
-    if (activeTab === "trustpilot") return wallCards.filter((c) => c.sourceKey === "trustpilot");
     return wallCards;
   }, [wallCards, activeTab]);
 
@@ -361,7 +354,6 @@ export function TraderReviews({
   const mobileVisibleCards = showAll ? filteredCards : filteredCards.slice(0, 3);
 
   const discordCount = wallCards.filter((c) => c.sourceKey === "discord").length;
-  const trustpilotCount = wallCards.filter((c) => c.sourceKey === "trustpilot").length;
 
   // Smart Height Balancing: Distribute cards across the 3 columns by cumulative height
   const columns: WallCard[][] = useMemo(() => {
@@ -413,8 +405,8 @@ export function TraderReviews({
             )}
           </p>
 
-          {/* Clean standard filter tabs — only shown when multiple sources exist to filter */}
-          {trustpilotCount > 0 && (
+          {/* Clean standard filter tabs */}
+          {discordCount > 0 && wallCards.some((c) => c.sourceKey !== "discord") && (
             <div className="mt-7 flex flex-wrap items-center justify-center gap-2">
               <button
                 onClick={() => {
@@ -448,24 +440,6 @@ export function TraderReviews({
                 <span>{tr("filterDiscord", "Discord Payouts & Proof")}</span>
                 <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-white/20">
                   {discordCount}
-                </span>
-              </button>
-
-              <button
-                onClick={() => {
-                  setActiveTab("trustpilot");
-                  setShowAll(false);
-                }}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 flex items-center gap-2 ${
-                  activeTab === "trustpilot"
-                    ? "bg-[#00B67A] text-white shadow-md shadow-[#00B67A]/40 border border-emerald-400"
-                    : "bg-white/10 text-slate-300 hover:text-white border border-white/15 hover:border-white/30"
-                }`}
-              >
-                <TrustpilotStarIcon className="w-3.5 h-3.5 text-white" />
-                <span>{tr("filterTrustpilot", "Trustpilot Reviews")}</span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-white/20">
-                  {trustpilotCount}
                 </span>
               </button>
             </div>
@@ -582,7 +556,6 @@ function MobileReviewCard({ card, index }: { card: WallCard; index: number }) {
           className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] font-bold uppercase tracking-wider border shrink-0 ${style.chip}`}
         >
           {card.sourceKey === "discord" && <DiscordIcon className="w-3 h-3" />}
-          {card.sourceKey === "trustpilot" && <TrustpilotStarIcon className="w-3 h-3 text-white" />}
           {card.sourceLabel}
         </span>
       </div>
@@ -634,19 +607,13 @@ function MobileReviewCard({ card, index }: { card: WallCard; index: number }) {
           Verified Community Trader
         </span>
         <a
-          href={
-            card.url ||
-            (card.sourceKey === "discord"
-              ? "https://discord.com/invite/hGSVx9CmS2"
-              : "https://www.trustpilot.com/review/ckcapital.co.uk")
-          }
+          href={card.url || "https://discord.com/invite/hGSVx9CmS2"}
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all ${style.ctaBg}`}
           aria-label={`${style.cta} - ${card.name}`}
         >
           {card.sourceKey === "discord" && <DiscordIcon className="w-3.5 h-3.5" />}
-          {card.sourceKey === "trustpilot" && <TrustpilotStarIcon className="w-3.5 h-3.5 text-white" />}
           <span>{style.cta}</span>
           <ArrowUpRight size={12} />
         </a>
@@ -776,7 +743,6 @@ function WallMasonryCard({
                 className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9.5px] font-bold uppercase tracking-wider border ${style.chip}`}
               >
                 {card.sourceKey === "discord" && <DiscordIcon className="w-3 h-3" />}
-                {card.sourceKey === "trustpilot" && <TrustpilotStarIcon className="w-3 h-3 text-white" />}
                 {card.sourceLabel}
               </span>
             </div>
@@ -816,12 +782,7 @@ function WallMasonryCard({
           )}
 
           <a
-            href={
-              card.url ||
-              (card.sourceKey === "discord"
-                ? "https://discord.com/invite/hGSVx9CmS2"
-                : "https://www.trustpilot.com/review/ckcapital.co.uk")
-            }
+            href={card.url || "https://discord.com/invite/hGSVx9CmS2"}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -829,7 +790,6 @@ function WallMasonryCard({
             aria-label={`${style.cta} - ${card.name}`}
           >
             {card.sourceKey === "discord" && <DiscordIcon className="w-3 h-3" />}
-            {card.sourceKey === "trustpilot" && <TrustpilotStarIcon className="w-3 h-3 text-white" />}
             <span>{style.cta}</span>
             <ArrowUpRight size={10} />
           </a>

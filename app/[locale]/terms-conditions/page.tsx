@@ -66,7 +66,7 @@ export default async function TermsPage() {
         <Container className="max-w-4xl">
           <div className="rounded-2xl border border-[#E5E7EB] bg-white p-8 sm:p-12 shadow-sm text-[15px] leading-relaxed text-[#4B5563]">
             <p className="font-semibold text-[#0A0A0C]">
-              Welcome to CK Capital Group LTD. The &quot;Company&quot; provides you
+              Welcome to CK Propfirm. The &quot;Company&quot; provides you
               (&quot;You&quot; or the &quot;Trader&quot;) with a limited license to use
               the services (the &quot;Services&quot;) offered by the Company subject to
               the terms and conditions contained herein (the &quot;Agreement&quot;).

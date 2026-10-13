@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return pageSeo({
     title: "Trading Calculators",
     description:
-      "Plan trades on your CK Capital simulated account: margin, profit and loss, lot size and swap, checked against the daily loss, drawdown and payout rules of your programme.",
+      "Plan trades on your CK Propfirm simulated account: margin, profit and loss, lot size and swap, checked against the daily loss, drawdown and payout rules of your programme.",
     path: "/calculators",
     locale: resolved,
   });

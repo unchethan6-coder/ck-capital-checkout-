@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
-  <title id="title">CK Capital video placeholder</title>
-  <desc id="desc">Abstract placeholder artwork for CK Capital trader stories.</desc>
+  <title id="title">CK Propfirm video placeholder</title>
+  <desc id="desc">Abstract placeholder artwork for CK Propfirm trader stories.</desc>
   <rect width="1200" height="700" fill="#0b0a0f"/>
   <rect x="70" y="85" width="350" height="530" rx="28" fill="#12100a" stroke="#f4f6f8" stroke-opacity=".12" stroke-width="2"/>
   <circle cx="245" cy="250" r="76" fill="#f4f6f8"/>
   <path d="m225 210 65 40-65 40z" fill="#0b0a0f"/>
-  <text x="140" y="390" fill="#f4f6f8" font-family="Arial, sans-serif" font-size="36" font-weight="700">CK CAPITAL</text>
+  <text x="140" y="390" fill="#f4f6f8" font-family="Arial, sans-serif" font-size="36" font-weight="700">CK PROPFIRM</text>
   <text x="154" y="430" fill="#9aa2ad" font-family="Arial, sans-serif" font-size="22">Trader stories</text>
   <g stroke="#14b8a6" stroke-opacity=".6" stroke-width="2">
     <rect x="500" y="95" width="300" height="170" rx="18" fill="#12100a"/>

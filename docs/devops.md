@@ -1,4 +1,4 @@
-# DevOps Runbook — CK Capital
+# DevOps Runbook — CK Propfirm
 
 Hosting: Coolify 4.x at `https://coolify.fundedproptraders.com`
 Server: single host `178.105.229.60` (Traefik proxy, Let's Encrypt TLS)
@@ -38,7 +38,7 @@ test uses `STAGING_BASIC_AUTH` (format `user:pass`) from GitHub secrets.
 
 ## GitHub secrets (CI)
 
-- `STAGING_URL` — `https://staging.ckcapital.co.uk`
+- `STAGING_URL` — `https://staging.ckpropfirm.com`
 - `STAGING_BASIC_AUTH` — `user:pass` for the staging basic auth
 
 ## DNS / TLS

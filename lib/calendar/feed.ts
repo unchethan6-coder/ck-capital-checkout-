@@ -82,7 +82,7 @@ async function readUpstream(): Promise<CalendarPayload> {
     const res = await fetch(UPSTREAM, {
       signal: controller.signal,
       cache: "no-store",
-      headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; CKCapital/1.0)" },
+      headers: { Accept: "application/json", "User-Agent": "Mozilla/5.0 (compatible; CKPropfirm/1.0)" },
     });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
     const events = normalise((await res.json()) as UpstreamEvent[]);
