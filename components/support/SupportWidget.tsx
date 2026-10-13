@@ -184,7 +184,7 @@ export function SupportWidget() {
           aria-modal="false"
           aria-label={t("panel")}
           data-od-id="support-panel"
-          className="fixed inset-0 z-50 flex flex-col overflow-hidden border-[var(--ck-line)] bg-[var(--ck-surface-2)] sm:inset-auto sm:right-6 sm:bottom-6 sm:h-[min(48rem,calc(100dvh-3rem))] sm:w-[29rem] md:w-[31rem] sm:rounded-2xl sm:border sm:shadow-[0_35px_90px_-20px_rgba(0,0,0,0.92)] transition-all"
+          className="fixed inset-0 z-50 flex flex-col overflow-hidden border-[var(--ck-line)] bg-[var(--ck-surface-2)] sm:inset-auto sm:right-6 sm:bottom-6 sm:h-[min(43rem,calc(100dvh-5.5rem))] sm:max-h-[calc(100dvh-5.5rem)] sm:w-[28.5rem] md:w-[30rem] sm:rounded-2xl sm:border sm:shadow-[0_35px_90px_-20px_rgba(0,0,0,0.92)] transition-all"
         >
           {tab === "home" ? (
             <HomeHeader t={t} onClose={() => setOpen(false)} />
@@ -266,22 +266,22 @@ export function SupportWidget() {
 
 function HomeHeader({ t, onClose }: { t: ReturnType<typeof useTranslations<"supportWidget">>; onClose: () => void }) {
   return (
-    <div className="relative shrink-0 overflow-hidden px-6 pt-6 pb-9" style={{ background: "var(--ck-brand-gradient)" }}>
+    <div className="relative shrink-0 overflow-hidden px-5 pt-5 pb-5 sm:px-6 sm:pt-6 sm:pb-6" style={{ background: "var(--ck-brand-gradient)" }}>
       <div className="flex items-start justify-between">
-        <Image src="/ck-support-mark.svg" alt="" width={60} height={60} className="-m-1 h-14 w-14 drop-shadow-md" />
+        <Image src="/ck-support-mark.svg" alt="" width={56} height={56} className="-m-1 h-12 w-12 sm:h-14 sm:w-14 drop-shadow-md" />
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={onClose}
             aria-label={t("close")}
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-black/15 text-white/90 backdrop-blur-md transition-colors hover:bg-black/30 hover:text-white focus-visible:outline-2 focus-visible:outline-white"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-black/20 text-white backdrop-blur-md transition-colors hover:bg-black/35 hover:text-white focus-visible:outline-2 focus-visible:outline-white"
           >
             <X size={20} aria-hidden />
           </button>
         </div>
       </div>
-      <p className="mt-5 text-2xl font-bold tracking-tight text-white/80">{t("greeting")}</p>
-      <p className="text-2xl font-extrabold tracking-tight text-white">{t("greetingSub")}</p>
+      <p className="mt-4 sm:mt-5 text-xl sm:text-2xl font-bold tracking-tight text-white/90">{t("greeting")}</p>
+      <p className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">{t("greetingSub")}</p>
     </div>
   );
 }
@@ -343,7 +343,7 @@ function HomePanel({
   const quickFaqs = faqs.slice(0, 4);
 
   return (
-    <div className="-mt-5 space-y-3.5 p-4 sm:p-5">
+    <div className="space-y-3.5 p-4 sm:p-5">
       {/* Primary Support Action: Redirect to Discord for instant live support */}
       <a
         href={DISCORD_SUPPORT_URL}

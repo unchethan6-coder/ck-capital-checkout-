@@ -41,7 +41,10 @@ export async function POST(req: Request) {
           Accept: "application/json",
           "X-Kit-Api-Key": apiKey,
         },
-        body: JSON.stringify({ email_address: email }),
+        body: JSON.stringify({
+          email_address: email,
+          state: "active",
+        }),
       });
 
       const subscriberData = await subscriberRes.json().catch(() => null);
@@ -59,9 +62,9 @@ export async function POST(req: Request) {
 
       const subscriberId = subscriberData.subscriber.id;
 
-      // 2. Add subscriber to form in Kit v4 API
+      // 2. Add subscriber to form in Kit v4 API (POST /v4/forms/:form_id/subscribers)
       const formRes = await fetch(
-        `https://api.kit.com/v4/forms/${encodeURIComponent(formId)}/subscribers/${encodeURIComponent(subscriberId)}`,
+        `https://api.kit.com/v4/forms/${encodeURIComponent(formId)}/subscribers`,
         {
           method: "POST",
           headers: {
@@ -69,13 +72,15 @@ export async function POST(req: Request) {
             Accept: "application/json",
             "X-Kit-Api-Key": apiKey,
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify({
+            email_address: email,
+          }),
         }
       );
 
       const formData = await formRes.json().catch(() => null);
 
-      if (!formRes.ok) {
+      if (!formRes.ok && formRes.status !== 200 && formRes.status !== 201) {
         console.error("[Newsletter] Kit v4 form attach error:", formData || formRes.statusText);
       }
 
