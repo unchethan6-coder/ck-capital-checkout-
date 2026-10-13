@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 interface BannerSlide {
   id: string;
@@ -14,6 +15,8 @@ interface BannerSlide {
   imageSrc: string;
   alt: string;
   targetId?: string;
+  /** CMS-provided destination: "#hash" scrolls, "/path" and URLs navigate. */
+  link?: string | null;
   glowColor: "amber" | "purple";
 }
 
@@ -60,12 +63,30 @@ export interface WhatsNewPromo {
   discountLabel?: string | null;
 }
 
+/**
+ * CMS-provided carousel slide (see `getWhatsNewSlides` in lib/cms.ts).
+ * When at least one is given, these replace the bundled artwork entirely.
+ */
+export interface WhatsNewSlide {
+  id?: string | number;
+  /** Desktop tab pill, e.g. "CK Propfirm • 75% Off". */
+  tabLabel: string;
+  /** Mobile tab pill; falls back to `tabLabel`. */
+  shortTabLabel?: string | null;
+  imageSrc: string;
+  alt?: string | null;
+  /** "#anchor" scrolls on the page; other values navigate. */
+  link?: string | null;
+}
+
 export function WhatsNewBanner({
   viewMode = "cards",
   promo,
+  slides: cmsSlides,
 }: {
   viewMode?: "cards" | "table";
   promo?: WhatsNewPromo | null;
+  slides?: WhatsNewSlide[] | null;
 }) {
   const t = useTranslations("whatsNew");
   const [activeIndex, setActiveIndex] = useState(0);
@@ -74,6 +95,20 @@ export function WhatsNewBanner({
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const slides: BannerSlide[] = useMemo(() => {
+    // CMS-managed slides take over entirely when present; the bundled
+    // artwork below is the fallback whenever the collection is empty.
+    if (cmsSlides && cmsSlides.length > 0) {
+      return cmsSlides.map((s, idx) => ({
+        id: String(s.id ?? `cms-${idx}`),
+        tabLabelKey: "",
+        defaultTabLabel: s.tabLabel,
+        shortTabLabel: s.shortTabLabel || s.tabLabel,
+        imageSrc: s.imageSrc,
+        alt: s.alt || s.tabLabel,
+        link: s.link ?? null,
+        glowColor: (idx % 2 === 0 ? "amber" : "purple") as "amber" | "purple",
+      }));
+    }
     return SLIDES.map((s, idx) => {
       if (idx === 0 && promo) {
         const discount = promo.discountLabel || "75% Off";
@@ -86,9 +121,18 @@ export function WhatsNewBanner({
       }
       return s;
     });
-  }, [promo]);
+  }, [promo, cmsSlides]);
 
   const isDark = viewMode === "cards";
+
+  // Safety: if the slide list shrinks (e.g. CMS revalidation removes an
+  // entry), reset the index so a stale value can't hide every slide.
+  useEffect(() => {
+    if (activeIndex >= slides.length) {
+      setActiveIndex(0);
+      setPrevIndex(0);
+    }
+  }, [slides.length, activeIndex]);
 
   const goToSlide = useCallback(
     (idx: number) => {
@@ -139,16 +183,56 @@ export function WhatsNewBanner({
   }, [isHovered, nextSlide, activeIndex]);
 
   const activeSlide = slides[activeIndex];
+  const activeHref = activeSlide.link || `#${activeSlide.targetId || "pricing-calculator"}`;
+  const isHashLink = activeHref.startsWith("#");
+  const isExternalLink = /^https?:\/\//i.test(activeHref);
 
   const handleBannerClick = (e: React.MouseEvent) => {
+    // Route and external links navigate normally; only in-page hashes scroll.
+    if (!isHashLink) return;
     e.preventDefault();
-    if (activeSlide.targetId) {
-      const el =
-        document.getElementById(activeSlide.targetId) ||
-        document.querySelector('[data-od-id="challenge-title"]');
-      el?.scrollIntoView({ behavior: "smooth" });
-    }
+    const targetId = activeHref.replace(/^#/, "") || activeSlide.targetId || "pricing-calculator";
+    const el =
+      document.getElementById(targetId) ||
+      document.querySelector('[data-od-id="challenge-title"]');
+    el?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const bannerLinkClass =
+    "block relative w-full aspect-[16/9] sm:aspect-[1981/793] cursor-pointer";
+
+  const bannerInner = (
+    <>
+      {slides.map((slide, idx) => {
+        const isActive = activeIndex === idx;
+        const isPrevious = prevIndex === idx && !isActive;
+
+        return (
+          <div
+            key={slide.id}
+            aria-hidden={!isActive}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-300 ease-out pointer-events-none",
+              isActive
+                ? "opacity-100 z-20"
+                : isPrevious
+                ? "opacity-100 z-10"
+                : "opacity-0 z-0"
+            )}
+          >
+            <Image
+              src={slide.imageSrc}
+              alt={slide.alt}
+              fill
+              priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="object-cover object-left md:object-center transition-transform duration-500 group-hover:scale-[1.012]"
+            />
+          </div>
+        );
+      })}
+    </>
+  );
 
   return (
     <div
@@ -183,13 +267,16 @@ export function WhatsNewBanner({
           {slides.map((slide, idx) => {
             const isActive = activeIndex === idx;
             let fullLabel = slide.defaultTabLabel;
-            try {
-              const translated = t(slide.tabLabelKey as "tabPromo" | "tabLeverage" | "tabLabs");
-              if (translated && !translated.startsWith("whatsNew.")) {
-                fullLabel = translated;
+            // CMS slides carry their own label (no translation key).
+            if (slide.tabLabelKey) {
+              try {
+                const translated = t(slide.tabLabelKey as "tabPromo" | "tabLeverage" | "tabLabs");
+                if (translated && !translated.startsWith("whatsNew.")) {
+                  fullLabel = translated;
+                }
+              } catch {
+                fullLabel = slide.defaultTabLabel;
               }
-            } catch {
-              fullLabel = slide.defaultTabLabel;
             }
 
             return (
@@ -221,41 +308,30 @@ export function WhatsNewBanner({
       <div
         className="group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[#070913] shadow-[0_10px_40px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-white/20"
       >
-        <a
-          href={`#${activeSlide.targetId || "pricing-calculator"}`}
-          onClick={handleBannerClick}
-          className="block relative w-full aspect-[16/9] sm:aspect-[1981/793] cursor-pointer"
-          data-od-id="whats-new-banner-link"
-        >
-          {slides.map((slide, idx) => {
-            const isActive = activeIndex === idx;
-            const isPrevious = prevIndex === idx && !isActive;
-
-            return (
-              <div
-                key={slide.id}
-                aria-hidden={!isActive}
-                className={cn(
-                  "absolute inset-0 transition-opacity duration-300 ease-out pointer-events-none",
-                  isActive
-                    ? "opacity-100 z-20"
-                    : isPrevious
-                    ? "opacity-100 z-10"
-                    : "opacity-0 z-0"
-                )}
-              >
-                <Image
-                  src={slide.imageSrc}
-                  alt={slide.alt}
-                  fill
-                  priority
-                  sizes="(max-width: 1200px) 100vw, 1200px"
-                  className="object-cover object-left md:object-center transition-transform duration-500 group-hover:scale-[1.012]"
-                />
-              </div>
-            );
-          })}
-        </a>
+        {isHashLink ? (
+          <a
+            href={activeHref}
+            onClick={handleBannerClick}
+            className={bannerLinkClass}
+            data-od-id="whats-new-banner-link"
+          >
+            {bannerInner}
+          </a>
+        ) : isExternalLink ? (
+          <a
+            href={activeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={bannerLinkClass}
+            data-od-id="whats-new-banner-link"
+          >
+            {bannerInner}
+          </a>
+        ) : (
+          <Link href={activeHref} className={bannerLinkClass} data-od-id="whats-new-banner-link">
+            {bannerInner}
+          </Link>
+        )}
 
         {/* Prev / Next Controls */}
         <button

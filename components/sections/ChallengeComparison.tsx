@@ -17,7 +17,7 @@ import {
 } from "@/lib/content";
 import type { ChallengeConfig } from "@/lib/cms";
 import { cn } from "@/lib/utils";
-import { WhatsNewBanner, type WhatsNewPromo } from "@/components/sections/WhatsNewBanner";
+import { WhatsNewBanner, type WhatsNewPromo, type WhatsNewSlide } from "@/components/sections/WhatsNewBanner";
 import { getPortalSignupUrl } from "@/lib/portal";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 import { enrichUrlWithAttribution } from "@/lib/analytics/attribution";
@@ -52,9 +52,11 @@ const PAYMENT_METHODS = [
 export function ChallengeComparison({
   config,
   promo,
+  slides,
 }: {
   config?: ChallengeConfig | null;
   promo?: WhatsNewPromo | null;
+  slides?: WhatsNewSlide[] | null;
 }) {
   const t = useTranslations("challenge");
 
@@ -268,7 +270,7 @@ export function ChallengeComparison({
         <div className="max-w-[1200px] mx-auto flex flex-col gap-10 sm:gap-14 md:gap-16">
           {/* What's New Tabbed Promo Carousel */}
           <SectionReveal className="w-full">
-            <WhatsNewBanner viewMode={viewMode} promo={promo} />
+            <WhatsNewBanner viewMode={viewMode} promo={promo} slides={slides} />
           </SectionReveal>
 
           {/* Header */}

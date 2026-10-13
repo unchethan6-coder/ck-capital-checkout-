@@ -20,6 +20,7 @@ import {
   getFeedbacks,
   getActivePromo,
   getFaqs,
+  getWhatsNewSlides,
 } from "@/lib/cms";
 import type { VideoItem } from "@/components/sections/Testimonials";
 import type { ReviewCard } from "@/components/sections/TraderReviews";
@@ -35,7 +36,7 @@ export default async function Home({
   const resolvedParams = params ? await params : undefined;
   const locale = resolvedParams?.locale ?? "en";
 
-  const [videos, challengeConfig, payouts, rewardsSummary, articles, feedbacks, activePromo, cmsFaqs] =
+  const [videos, challengeConfig, payouts, rewardsSummary, articles, feedbacks, activePromo, cmsFaqs, whatsNewSlides] =
     await Promise.all([
       getVideoReviews(),
       getChallengeConfig(),
@@ -45,6 +46,7 @@ export default async function Home({
       getFeedbacks(),
       getActivePromo(),
       getFaqs({ firmSlug: "ck-capital" }),
+      getWhatsNewSlides(),
     ]);
 
   const reviewCards: ReviewCard[] | undefined = feedbacks.length
@@ -83,7 +85,7 @@ export default async function Home({
       <StatsStrip />
 
       {/* S3 — Challenge Selector (evals) */}
-      <ChallengeComparison config={challengeConfig} promo={activePromo} />
+      <ChallengeComparison config={challengeConfig} promo={activePromo} slides={whatsNewSlides} />
 
       {/* S4 — Trade with Peace of Mind (proof): sits below the challenges */}
       <ProofShowcase payouts={payouts} summary={rewardsSummary} />

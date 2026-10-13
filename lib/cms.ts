@@ -363,6 +363,49 @@ export async function getActiveBanners(): Promise<CmsBanner[]> {
     .filter((b: CmsBanner) => b.text);
 }
 
+/* ─────────────────────────── "What's New" slides ─────────────────────────── */
+
+export interface CmsWhatsNewSlide {
+  id: number;
+  documentId: string;
+  tabLabel: string;
+  shortTabLabel: string | null;
+  imageSrc: string;
+  alt: string | null;
+  link: string | null;
+  sortOrder: number | null;
+}
+
+/**
+ * What's New carousel slides (graphic + tab labels) from the CMS.
+ * Returns [] until the `whats-new-slides` collection exists or has active
+ * entries — callers then fall back to the bundled artwork, so the section
+ * never breaks while the CMS type is being set up. See docs/strapi-cms.md § 7.
+ */
+export async function getWhatsNewSlides(): Promise<CmsWhatsNewSlide[]> {
+  const params = new URLSearchParams();
+  params.set("filters[active][$eq]", "true");
+  params.set("populate", "*");
+  params.set("pagination[pageSize]", "10");
+  params.set("sort", "createdAt:asc");
+  const res = await cmsFetch<any>(`whats-new-slides?${params.toString()}`);
+  if (!res?.data) return [];
+  return res.data
+    .map((s: any) => ({
+      id: s.id,
+      documentId: s.documentId,
+      tabLabel: String(s.tabLabel ?? s.text ?? s.title ?? "").trim(),
+      shortTabLabel: s.shortTabLabel ?? null,
+      imageSrc: toMedia(s.image ?? s.graphic ?? s.cover)?.url ?? "",
+      alt: s.alt ?? null,
+      link: s.link ?? null,
+      // Optional explicit ordering; entries without it keep creation order.
+      sortOrder: typeof s.sortOrder === "number" ? s.sortOrder : null,
+    }))
+    .filter((s: CmsWhatsNewSlide) => s.imageSrc && s.tabLabel)
+    .sort((a: CmsWhatsNewSlide, b: CmsWhatsNewSlide) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
+}
+
 /* ─────────────────────────────── newsletter popup ─────────────────────────────── */
 
 export interface CmsNewsletterPopup {

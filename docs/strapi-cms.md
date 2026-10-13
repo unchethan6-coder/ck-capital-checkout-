@@ -19,6 +19,7 @@ types below exist.
 | Announcement banner (top) | `banner` | ✅ live |
 | Challenge rules / prices / splits | `challenge-config` (single type) | ✅ live — seeded via API (2026-08-06) |
 | Newsletter Popup (VIP Modal) | `newsletter-popup` (single or collection) | ✅ live wired (with static fallback) |
+| "What's New" carousel (home + `/evaluation`) | `whats-new-slide` | ✅ wired — bundled artwork until entries exist |
 | Trader Feedback (Discord & testimonials) | `feedback` | ⏳ pending creation in CMS |
 
 ---
@@ -285,6 +286,33 @@ Controls the one-time VIP newsletter popup modal text, background mascot image, 
 
 ---
 
+## 7. What's New Slide — collection type
+
+Controls the "What's New" carousel under the challenge selector (home + `/evaluation`). Each entry is one slide: a graphic plus its tab pill labels. Until at least one entry is active (or while this type doesn't exist), the section keeps rendering its bundled artwork — so adding this type is safe at any time.
+
+| Setting | Value |
+|---|---|
+| Display name | `What's New Slide` |
+| Singular (API) name | `whats-new-slide` |
+| Plural (API) name | `whats-new-slides` |
+| Draft & publish | **On** |
+
+### Fields
+
+| Name (exact) | Type | Required | Notes |
+|---|---|---|---|
+| `tabLabel` | Text (short) | yes | Desktop tab pill, e.g. `CK Propfirm • 75% Off` |
+| `shortTabLabel` | Text (short) | no | Mobile tab pill, e.g. `75% Off` (falls back to `tabLabel`) |
+| `image` | Media (single, image only) | yes | The slide graphic. Landscape ~1981×793 (2.5:1) fills the card; other ratios are cover-cropped |
+| `alt` | Text (short) | no | Accessibility alt text (falls back to `tabLabel`) |
+| `link` | Text (short) | no | `#pricing-calculator` scrolls on the page; `/evaluation` (or any path) navigates with the locale prefix; `https://…` opens in a new tab. Defaults to `#pricing-calculator` when empty |
+| `active` | Boolean | no | Only `active: true` entries render |
+| `sortOrder` | Number (integer) | no | Lowest first; omit to keep creation order |
+
+> **Fallback:** the section shows the bundled `public/images/banners/whats-new-*.jpeg` artwork whenever no active entries exist (or the CMS is unreachable). CMS slides replace the bundled set entirely — there is no per-slide merge.
+
+---
+
 ## Tagging articles to the CK Propfirm brand
 
 Articles only appear on `/blog` when the **Brand** relation is set to **CK Propfirm**
@@ -321,7 +349,7 @@ All content types were seeded via API from the site's then-current static conten
 3. URL: `https://ckpropfirm.com/api/revalidate`
 4. Headers: key `x-strapi-webhook-secret`, value = the `REVALIDATE_SECRET` in `.env.local`.
 5. Events: tick **Publish / Unpublish** for: Article, Promo, Banner, Payout,
-   Firm Review, Video Review, Challenge Config.
+   Firm Review, Video Review, Challenge Config, What's New Slide.
 6. Save. Pages also refresh on their own within ~5 minutes via ISR.
 
 ---
