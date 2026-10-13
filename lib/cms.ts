@@ -363,6 +363,112 @@ export async function getActiveBanners(): Promise<CmsBanner[]> {
     .filter((b: CmsBanner) => b.text);
 }
 
+/* ─────────────────────────────── newsletter popup ─────────────────────────────── */
+
+export interface CmsNewsletterPopup {
+  id?: number;
+  active: boolean;
+  eyebrow: string;
+  title: string;
+  highlightedTitle: string;
+  subtitle: string;
+  placeholder: string;
+  ctaLabel: string;
+  badge1Title: string;
+  badge1Subtitle: string;
+  badge2Title: string;
+  badge2Subtitle: string;
+  badge3Title: string;
+  badge3Subtitle: string;
+  successTitle: string;
+  successSubtitle: string;
+  delaySeconds: number;
+  dismissDays: number;
+  image?: CmsMedia | null;
+  imageUrl: string;
+}
+
+export const DEFAULT_NEWSLETTER_POPUP: CmsNewsletterPopup = {
+  active: true,
+  eyebrow: "STAY AHEAD",
+  title: "Subscribe to our",
+  highlightedTitle: "Newsletter",
+  subtitle: "Get the latest updates, exclusive offers, trading news and be the first to know about upcoming events.",
+  placeholder: "Enter your email address",
+  ctaLabel: "Subscribe",
+  badge1Title: "Exclusive",
+  badge1Subtitle: "Updates",
+  badge2Title: "Monthly",
+  badge2Subtitle: "Giveaways",
+  badge3Title: "Special",
+  badge3Subtitle: "Offers",
+  successTitle: "You are subscribed!",
+  successSubtitle: "Check your inbox for exclusive updates and perks.",
+  delaySeconds: 2.5,
+  dismissDays: 30,
+  imageUrl: "/images/newsletter/popup-bg.jpg",
+};
+
+export async function getNewsletterPopup(): Promise<CmsNewsletterPopup> {
+  try {
+    // 1. Try single-type `newsletter-popup`
+    const singleRes = await cmsFetch<any>("newsletter-popup?populate=*");
+    const singleData = singleRes?.data?.attributes ?? singleRes?.data;
+    if (singleData && typeof singleData === "object" && Object.keys(singleData).length > 0) {
+      return normalizeNewsletterPopup(singleData);
+    }
+
+    // 2. Try collection-type `newsletter-popups`
+    const collRes = await cmsFetch<any>("newsletter-popups?filters[active][$eq]=true&populate=*");
+    const collItem = collRes?.data?.[0]?.attributes ?? collRes?.data?.[0];
+    if (collItem && typeof collItem === "object") {
+      return normalizeNewsletterPopup(collItem);
+    }
+  } catch (err) {
+    console.warn("[CMS] Error fetching newsletter popup from Strapi:", err);
+  }
+
+  return DEFAULT_NEWSLETTER_POPUP;
+}
+
+function normalizeNewsletterPopup(raw: any): CmsNewsletterPopup {
+  const media = toMedia(raw.image ?? raw.cover ?? raw.background ?? raw.backgroundImage);
+  const mediaUrl = media?.url;
+
+  return {
+    id: raw.id,
+    active: raw.active !== undefined ? Boolean(raw.active) : DEFAULT_NEWSLETTER_POPUP.active,
+    eyebrow: raw.eyebrow ? cleanBrandText(raw.eyebrow) : DEFAULT_NEWSLETTER_POPUP.eyebrow,
+    title: raw.title ? cleanBrandText(raw.title) : DEFAULT_NEWSLETTER_POPUP.title,
+    highlightedTitle: (raw.highlightedTitle ?? raw.highlighted_title)
+      ? cleanBrandText(raw.highlightedTitle ?? raw.highlighted_title)
+      : DEFAULT_NEWSLETTER_POPUP.highlightedTitle,
+    subtitle: (raw.subtitle ?? raw.description)
+      ? cleanBrandText(raw.subtitle ?? raw.description)
+      : DEFAULT_NEWSLETTER_POPUP.subtitle,
+    placeholder: raw.placeholder ?? DEFAULT_NEWSLETTER_POPUP.placeholder,
+    ctaLabel: (raw.ctaLabel ?? raw.cta_label ?? raw.buttonText ?? raw.button_text)
+      ? cleanBrandText(raw.ctaLabel ?? raw.cta_label ?? raw.buttonText ?? raw.button_text)
+      : DEFAULT_NEWSLETTER_POPUP.ctaLabel,
+    badge1Title: (raw.badge1Title ?? raw.badge1_title) ?? DEFAULT_NEWSLETTER_POPUP.badge1Title,
+    badge1Subtitle: (raw.badge1Subtitle ?? raw.badge1_subtitle) ?? DEFAULT_NEWSLETTER_POPUP.badge1Subtitle,
+    badge2Title: (raw.badge2Title ?? raw.badge2_title) ?? DEFAULT_NEWSLETTER_POPUP.badge2Title,
+    badge2Subtitle: (raw.badge2Subtitle ?? raw.badge2_subtitle) ?? DEFAULT_NEWSLETTER_POPUP.badge2Subtitle,
+    badge3Title: (raw.badge3Title ?? raw.badge3_title) ?? DEFAULT_NEWSLETTER_POPUP.badge3Title,
+    badge3Subtitle: (raw.badge3Subtitle ?? raw.badge3_subtitle) ?? DEFAULT_NEWSLETTER_POPUP.badge3Subtitle,
+    successTitle: (raw.successTitle ?? raw.success_title) ?? DEFAULT_NEWSLETTER_POPUP.successTitle,
+    successSubtitle: (raw.successSubtitle ?? raw.success_subtitle) ?? DEFAULT_NEWSLETTER_POPUP.successSubtitle,
+    delaySeconds: typeof (raw.delaySeconds ?? raw.delay_seconds) === "number"
+      ? (raw.delaySeconds ?? raw.delay_seconds)
+      : DEFAULT_NEWSLETTER_POPUP.delaySeconds,
+    dismissDays: typeof (raw.dismissDays ?? raw.dismiss_days) === "number"
+      ? (raw.dismissDays ?? raw.dismiss_days)
+      : DEFAULT_NEWSLETTER_POPUP.dismissDays,
+    image: media,
+    imageUrl: mediaUrl || raw.imageUrl || raw.image_url || DEFAULT_NEWSLETTER_POPUP.imageUrl,
+  };
+}
+
 /* ─────────────────────────────── faqs ─────────────────────────────── */
 
 export interface CmsFaq {

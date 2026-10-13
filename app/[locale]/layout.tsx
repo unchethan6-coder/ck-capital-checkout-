@@ -11,7 +11,7 @@ import { CookieConsent } from "@/components/shared/CookieConsent";
 import { SupportWidget } from "@/components/support/SupportWidget";
 import { NewsletterPopup } from "@/components/shared/NewsletterPopup";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
-import { getActiveBanners, getActivePromo } from "@/lib/cms";
+import { getActiveBanners, getActivePromo, getNewsletterPopup } from "@/lib/cms";
 import { routing } from "@/i18n/routing";
 import { getLocaleMeta } from "@/i18n/locales";
 import { ScrollHandler } from "@/components/shared/ScrollHandler";
@@ -153,9 +153,10 @@ export default async function LocaleLayout({
   const meta = getLocaleMeta(locale);
   const dir = meta.dir;
 
-  const [banners, promo] = await Promise.all([
+  const [banners, promo, newsletterPopup] = await Promise.all([
     getActiveBanners(),
     getActivePromo(),
+    getNewsletterPopup(),
   ]);
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
@@ -198,7 +199,7 @@ export default async function LocaleLayout({
           <SiteFooter />
           <CookieConsent />
           <SupportWidget />
-          <NewsletterPopup />
+          <NewsletterPopup content={newsletterPopup} />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

@@ -4,12 +4,18 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, ArrowRight, Bell, Gift, Tag, CheckCircle2, Loader2 } from "lucide-react";
+import { DEFAULT_NEWSLETTER_POPUP, type CmsNewsletterPopup } from "@/lib/cms";
 
 const COOKIE_NAME = "ck_newsletter_popup_dismissed";
 const DISMISS_DAYS = 30;
 const SUBSCRIBE_DAYS = 365;
 
-export function NewsletterPopup() {
+export interface NewsletterPopupProps {
+  content?: CmsNewsletterPopup | null;
+}
+
+export function NewsletterPopup({ content }: NewsletterPopupProps = {}) {
+  const data = content ?? DEFAULT_NEWSLETTER_POPUP;
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -40,14 +46,15 @@ export function NewsletterPopup() {
       .split(";")
       .some((item) => item.trim().startsWith(`${COOKIE_NAME}=`));
 
-    if (!hasDismissed) {
-      // 2.5s delay after initial page load
+    // Only auto-trigger if not dismissed and active in CMS
+    if (!hasDismissed && data.active !== false) {
+      const delay = (typeof data.delaySeconds === "number" ? data.delaySeconds : 2.5) * 1000;
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 2500);
+      }, delay);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [data.active, data.delaySeconds]);
 
   // Listen for programmatic triggers, URL hash changes, and window helper functions
   useEffect(() => {
@@ -113,7 +120,7 @@ export function NewsletterPopup() {
 
   const handleDismiss = () => {
     setIsOpen(false);
-    setCookie(DISMISS_DAYS);
+    setCookie(typeof data.dismissDays === "number" ? data.dismissDays : DISMISS_DAYS);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -136,9 +143,9 @@ export function NewsletterPopup() {
         body: JSON.stringify({ email: trimmed }),
       });
 
-      const data = await res.json().catch(() => null);
+      const resData = await res.json().catch(() => null);
 
-      if (res.ok && data?.success) {
+      if (res.ok && resData?.success) {
         setStatus("success");
         setCookie(SUBSCRIBE_DAYS);
         // Automatically close after displaying celebration
@@ -147,7 +154,7 @@ export function NewsletterPopup() {
         }, 2800);
       } else {
         setStatus("error");
-        setErrorMessage(data?.error || "Could not complete subscription. Please try again.");
+        setErrorMessage(resData?.error || "Could not complete subscription. Please try again.");
       }
     } catch {
       setStatus("error");
@@ -155,13 +162,16 @@ export function NewsletterPopup() {
     }
   };
 
+  const imageSrc = data.imageUrl || "/images/newsletter/popup-bg.jpg";
+  const imageAlt = data.title ? `${data.title} ${data.highlightedTitle}` : "CK Propfirm Newsletter Mascot";
+
   return (
     <AnimatePresence>
       {isOpen && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Subscribe to our Newsletter"
+          aria-label={data.title ? `${data.title} ${data.highlightedTitle}` : "Subscribe to our Newsletter"}
           data-od-id="newsletter-popup-modal"
           className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 md:p-6"
         >
@@ -199,8 +209,8 @@ export function NewsletterPopup() {
               {/* Image Layer */}
               <div className="absolute inset-0 z-0">
                 <Image
-                  src="/images/newsletter/popup-bg.jpg"
-                  alt="CK Propfirm Newsletter Mascot"
+                  src={imageSrc}
+                  alt={imageAlt}
                   fill
                   priority
                   className="object-cover object-right"
@@ -214,20 +224,20 @@ export function NewsletterPopup() {
               <div className="relative z-10 w-full max-w-[440px] md:max-w-[480px] lg:max-w-[500px] p-7 md:p-10 flex flex-col justify-center">
                 {/* Eyebrow */}
                 <p className="text-[11px] md:text-xs font-bold tracking-[0.25em] text-[#6B7280] uppercase mb-1.5">
-                  STAY AHEAD
+                  {data.eyebrow}
                 </p>
 
                 {/* Main Headline */}
                 <h2 className="font-[family-name:var(--font-jakarta)] text-3xl md:text-4xl lg:text-[44px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#0F172A]">
-                  Subscribe to our{" "}
+                  {data.title}{" "}
                   <span className="block text-[#6D28D9] bg-gradient-to-r from-[#6D28D9] to-[#8B5CF6] bg-clip-text text-transparent">
-                    Newsletter
+                    {data.highlightedTitle}
                   </span>
                 </h2>
 
                 {/* Description Subtitle */}
                 <p className="mt-2.5 text-[13px] md:text-[14px] leading-relaxed text-[#4B5563] font-medium max-w-[390px]">
-                  Get the latest updates, exclusive offers, trading news and be the first to know about upcoming events.
+                  {data.subtitle}
                 </p>
 
                 {/* Input & Form Row */}
@@ -235,8 +245,8 @@ export function NewsletterPopup() {
                   <div className="mt-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex items-center gap-3 text-emerald-800">
                     <CheckCircle2 size={24} className="text-emerald-600 shrink-0" />
                     <div>
-                      <p className="font-bold text-sm">You are subscribed!</p>
-                      <p className="text-xs text-emerald-700">Check your inbox for exclusive updates and perks.</p>
+                      <p className="font-bold text-sm">{data.successTitle}</p>
+                      <p className="text-xs text-emerald-700">{data.successSubtitle}</p>
                     </div>
                   </div>
                 ) : (
@@ -251,7 +261,7 @@ export function NewsletterPopup() {
                           setEmail(e.target.value);
                           if (status === "error") setStatus("idle");
                         }}
-                        placeholder="Enter your email address"
+                        placeholder={data.placeholder}
                         disabled={status === "loading"}
                         className="w-full bg-transparent text-sm text-[#0F172A] placeholder:text-[#9CA3AF] outline-none font-medium pr-2"
                         aria-label="Email address for newsletter"
@@ -269,7 +279,7 @@ export function NewsletterPopup() {
                           </>
                         ) : (
                           <>
-                            <span>Subscribe</span>
+                            <span>{data.ctaLabel}</span>
                             <ArrowRight size={15} />
                           </>
                         )}
@@ -286,36 +296,36 @@ export function NewsletterPopup() {
 
                 {/* 3 Feature Badges */}
                 <div className="mt-5 pt-1 grid grid-cols-3 gap-2 sm:gap-2.5 max-w-[410px]">
-                  {/* Badge 1: Exclusive Updates */}
+                  {/* Badge 1 */}
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-[#EDE9FE] text-[#7C3AED] shadow-sm shrink-0">
                       <Bell size={14} />
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-bold leading-tight text-[#1E1B4B]">
-                      <span>Exclusive</span>
-                      <span className="block text-[#4B5563] font-semibold">Updates</span>
+                      <span>{data.badge1Title}</span>
+                      <span className="block text-[#4B5563] font-semibold">{data.badge1Subtitle}</span>
                     </div>
                   </div>
 
-                  {/* Badge 2: Monthly Giveaways */}
+                  {/* Badge 2 */}
                   <div className="flex items-center gap-1.5 sm:gap-2 border-l border-purple-200/80 pl-2 sm:pl-2.5">
                     <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-[#EDE9FE] text-[#7C3AED] shadow-sm shrink-0">
                       <Gift size={14} />
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-bold leading-tight text-[#1E1B4B]">
-                      <span>Monthly</span>
-                      <span className="block text-[#4B5563] font-semibold">Giveaways</span>
+                      <span>{data.badge2Title}</span>
+                      <span className="block text-[#4B5563] font-semibold">{data.badge2Subtitle}</span>
                     </div>
                   </div>
 
-                  {/* Badge 3: Special Offers */}
+                  {/* Badge 3 */}
                   <div className="flex items-center gap-1.5 sm:gap-2 border-l border-purple-200/80 pl-2 sm:pl-2.5">
                     <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-[#EDE9FE] text-[#7C3AED] shadow-sm shrink-0">
                       <Tag size={14} />
                     </div>
                     <div className="text-[10px] sm:text-[11px] font-bold leading-tight text-[#1E1B4B]">
-                      <span>Special</span>
-                      <span className="block text-[#4B5563] font-semibold">Offers</span>
+                      <span>{data.badge3Title}</span>
+                      <span className="block text-[#4B5563] font-semibold">{data.badge3Subtitle}</span>
                     </div>
                   </div>
                 </div>
@@ -327,8 +337,8 @@ export function NewsletterPopup() {
               {/* Mascot Banner Header */}
               <div className="relative h-44 w-full overflow-hidden bg-gradient-to-b from-[#7C3AED]/20 to-[#F5F3FF]">
                 <Image
-                  src="/images/newsletter/popup-bg.jpg"
-                  alt="CK Propfirm Newsletter Mascot"
+                  src={imageSrc}
+                  alt={imageAlt}
                   fill
                   priority
                   className="object-cover object-[80%_center]"
@@ -340,16 +350,16 @@ export function NewsletterPopup() {
               {/* Text & Form Container */}
               <div className="p-5 pt-1 -mt-4 relative z-10 flex flex-col">
                 <p className="text-[10px] font-bold tracking-[0.22em] text-[#6B7280] uppercase">
-                  STAY AHEAD
+                  {data.eyebrow}
                 </p>
 
                 <h2 className="mt-1 font-[family-name:var(--font-jakarta)] text-2xl font-extrabold leading-tight text-[#0F172A]">
-                  Subscribe to our{" "}
-                  <span className="text-[#6D28D9] block">Newsletter</span>
+                  {data.title}{" "}
+                  <span className="text-[#6D28D9] block">{data.highlightedTitle}</span>
                 </h2>
 
                 <p className="mt-2 text-xs text-[#4B5563] font-medium leading-relaxed">
-                  Get the latest updates, exclusive offers, trading news and be the first to know about upcoming events.
+                  {data.subtitle}
                 </p>
 
                 {/* Mobile Form */}
@@ -357,8 +367,8 @@ export function NewsletterPopup() {
                   <div className="mt-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-3.5 flex items-center gap-2.5 text-emerald-800">
                     <CheckCircle2 size={20} className="text-emerald-600 shrink-0" />
                     <div>
-                      <p className="font-bold text-xs">You are subscribed!</p>
-                      <p className="text-[11px] text-emerald-700">Check your inbox for updates and perks.</p>
+                      <p className="font-bold text-xs">{data.successTitle}</p>
+                      <p className="text-[11px] text-emerald-700">{data.successSubtitle}</p>
                     </div>
                   </div>
                 ) : (
@@ -372,7 +382,7 @@ export function NewsletterPopup() {
                           setEmail(e.target.value);
                           if (status === "error") setStatus("idle");
                         }}
-                        placeholder="Enter your email address"
+                        placeholder={data.placeholder}
                         disabled={status === "loading"}
                         className="w-full bg-transparent text-xs text-[#0F172A] placeholder:text-[#9CA3AF] outline-none font-medium"
                         aria-label="Email address for newsletter"
@@ -391,7 +401,7 @@ export function NewsletterPopup() {
                         </>
                       ) : (
                         <>
-                          <span>Subscribe</span>
+                          <span>{data.ctaLabel}</span>
                           <ArrowRight size={14} />
                         </>
                       )}
@@ -412,7 +422,7 @@ export function NewsletterPopup() {
                       <Bell size={13} />
                     </div>
                     <span className="text-[10px] font-bold text-[#1E1B4B] leading-tight">
-                      Exclusive<br />Updates
+                      {data.badge1Title}<br />{data.badge1Subtitle}
                     </span>
                   </div>
 
@@ -421,7 +431,7 @@ export function NewsletterPopup() {
                       <Gift size={13} />
                     </div>
                     <span className="text-[10px] font-bold text-[#1E1B4B] leading-tight">
-                      Monthly<br />Giveaways
+                      {data.badge2Title}<br />{data.badge2Subtitle}
                     </span>
                   </div>
 
@@ -430,7 +440,7 @@ export function NewsletterPopup() {
                       <Tag size={13} />
                     </div>
                     <span className="text-[10px] font-bold text-[#1E1B4B] leading-tight">
-                      Special<br />Offers
+                      {data.badge3Title}<br />{data.badge3Subtitle}
                     </span>
                   </div>
                 </div>

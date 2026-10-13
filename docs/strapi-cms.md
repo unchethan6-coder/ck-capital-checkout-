@@ -18,6 +18,7 @@ types below exist.
 | Promo (offers strip, promo-code chip) | `promo` | ✅ live (JUN70) |
 | Announcement banner (top) | `banner` | ✅ live |
 | Challenge rules / prices / splits | `challenge-config` (single type) | ✅ live — seeded via API (2026-08-06) |
+| Newsletter Popup (VIP Modal) | `newsletter-popup` (single or collection) | ✅ live wired (with static fallback) |
 | Trader Feedback (Discord & testimonials) | `feedback` | ⏳ pending creation in CMS |
 
 ---
@@ -245,6 +246,42 @@ Fields:
 | `source` | Text (short) | no | e.g. `Discord` |
 | `amount` | Text (short) | no | Payout amount if mentioned (e.g. `$6,578.00`) |
 | `date` | Text (short) | no | e.g. `2025-06-24` |
+
+---
+
+## 6. Newsletter Popup — single type (or collection type)
+
+Controls the one-time VIP newsletter popup modal text, background mascot image, badges, and behavior. Supports either a Strapi **Single type** (`newsletter-popup`) or **Collection type** (`newsletter-popups`).
+
+| Setting | Value |
+|---|---|
+| Display name | `Newsletter Popup` |
+| Singular (API) name | `newsletter-popup` |
+| Plural (API) name (if collection) | `newsletter-popups` |
+| Draft & publish | **On** |
+
+### Fields
+
+| Name (exact) | Type | Required | Default / Example | Notes |
+|---|---|---|---|---|
+| `active` | Boolean | no | `true` | Turn modal ON/OFF sitewide from CMS |
+| `eyebrow` | Text (short) | no | `STAY AHEAD` | Small tracking uppercase header |
+| `title` | Text (short) | no | `Subscribe to our` | First part of headline |
+| `highlightedTitle` | Text (short) | no | `Newsletter` | Highlighted gradient keyword |
+| `subtitle` | Text (long) | no | `Get the latest updates, exclusive offers, trading news and be the first to know about upcoming events.` | Descriptive subcopy |
+| `placeholder` | Text (short) | no | `Enter your email address` | Input placeholder |
+| `ctaLabel` | Text (short) | no | `Subscribe` | Button label |
+| `image` | Media (single) | no | upload image | Mascot background image (overrides default artwork) |
+| `badge1Title` | Text (short) | no | `Exclusive` | Left badge line 1 |
+| `badge1Subtitle` | Text (short) | no | `Updates` | Left badge line 2 |
+| `badge2Title` | Text (short) | no | `Monthly` | Middle badge line 1 |
+| `badge2Subtitle` | Text (short) | no | `Giveaways` | Middle badge line 2 |
+| `badge3Title` | Text (short) | no | `Special` | Right badge line 1 |
+| `badge3Subtitle` | Text (short) | no | `Offers` | Right badge line 2 |
+| `delaySeconds` | Number (decimal) | no | `2.5` | Delay in seconds before popup appears on initial visit |
+| `dismissDays` | Number (integer) | no | `30` | Days cookie suppresses popup after user closes it |
+
+> **Graceful Fallback:** Any field omitted or empty automatically uses the premium built-in default artwork and text. If CMS is offline or the type does not exist, the popup functions without breaking.
 
 ---
 
