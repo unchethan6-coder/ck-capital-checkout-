@@ -415,6 +415,7 @@
     "stillQuestions": "Noch Fragen offen?",
     "supportAvailable": "Unser Support-Team ist 24/7 erreichbar – Antwortzeit unter 2 Minuten.",
     "chatSupport": "Mit Support chatten",
+    "exploreAll": "Alle FAQs entdecken",
     "items": {
       "payoutTime": {
         "q": "Wie schnell werden Auszahlungen bearbeitet?",
@@ -515,6 +516,10 @@
       "fundedReset": {
         "q": "Kann ich ein finanziertes Konto zurücksetzen?",
         "a": "Ja. Ein Reset für ein finanziertes Konto kostet das 4-fache des jeweiligen Challenge-Preises. Die Gewinnbeteiligung auf dem zurückgesetzten Konto wird auf 65 % angepasst und es gilt eine Konsistenzanforderung von 20 %."
+      },
+      "twoStepPro": {
+        "q": "Über 2-Step Pro",
+        "a": "Die 2-Step Pro Challenge ist eine zweistufige Evaluierung (10% Phase 1 Ziel, 5% Phase 2 Ziel) ohne Konsistenzbewertung, mit einem statischen maximalen Drawdown von 8% (4% täglicher Verlust) und bis zu 80% Gewinnbeteiligung. Bitte beachten Sie, dass News-Trading bei diesem Kontotyp nicht gestattet ist."
       }
     }
   },

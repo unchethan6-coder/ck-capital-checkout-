@@ -106,8 +106,8 @@ export default async function Home({
       {/* S10 — How It Works (moved down — traders know this, keep for new users): Light */}
       <HowItWorks />
 
-      {/* S11 — FAQ: Light (was Jet Black) */}
-      <FaqAccordion cmsFaqs={locale === "en" && ckFaqs.length ? ckFaqs : undefined} />
+      {/* S11 — FAQ: Light (was Jet Black) — Featured 4 questions near footer */}
+      <FaqAccordion featuredOnly cmsFaqs={locale === "en" && ckFaqs.length ? ckFaqs : undefined} />
 
       {/* S12 — Closing CTA: Light + warm glow */}
       <ClosingCta />

@@ -410,6 +410,7 @@
     "stillQuestions": "Still have questions?",
     "supportAvailable": "Our support team is available 24/7 — average response time under 2 minutes.",
     "chatSupport": "Chat with Support",
+    "exploreAll": "Explore All FAQs",
     "items": {
       "payoutTime": {
         "q": "How fast are payouts processed?",
@@ -432,8 +433,12 @@
         "a": "Our risk parameters are transparent: 4% maximum daily drawdown and 8% maximum overall drawdown based on starting balance."
       },
       "newsTrading": {
-        "q": "Can I trade news and hold over weekends?",
+        "q": "News Trading Allowed?",
         "a": "News trading is allowed on every programme that carries a consistency score — 1 Step Standard, 2 Step Standard and Instant Funding. It is not permitted on 2 Step Pro, which has no consistency requirement. Positions may be held overnight and over the weekend on all programmes."
+      },
+      "twoStepPro": {
+        "q": "About 2-Step Pro",
+        "a": "The 2-Step Pro Challenge is a two-stage evaluation (10% Phase 1 target, 5% Phase 2 target) featuring no consistency score requirement, a static 8% maximum loss limit (4% daily drawdown), and up to an 80% profit split once funded. Note that news trading is not permitted on this account type."
       },
       "consistency": {
         "q": "What is the consistency rule?",
@@ -488,7 +493,7 @@
         "a": "CK Propfirm accepts traders from most countries, including the United Arab Emirates. Traders in the United States and Canada trade exclusively on TradeLocker. A small number of jurisdictions remain restricted; if you are unsure, contact support before purchasing."
       },
       "copyTrading": {
-        "q": "Is copy trading allowed?",
+        "q": "Is Copy Trading Allowed?",
         "a": "Yes. Copy trading is permitted across all programmes. Accounts are still assessed individually against their own objectives, risk limits and consistency requirements."
       },
       "inactivity": {
@@ -504,7 +509,7 @@
         "a": "2 Step Standard allows up to $300,000 in allocation. All other programmes allow up to $500,000 combined across accounts. The total across a single household is capped at $750,000, with a maximum of five accounts per household."
       },
       "phase2Reset": {
-        "q": "Can I reset a Phase 2 account?",
+        "q": "Can I Reset Phase 2?",
         "a": "Yes. A Phase 2 reset costs 2.5 times the applicable discounted challenge price, and the profit split on the reset account is reduced to 65%."
       },
       "fundedReset": {

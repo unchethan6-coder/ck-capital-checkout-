@@ -411,6 +411,7 @@
     "stillQuestions": "Ainda tem dúvidas?",
     "supportAvailable": "Nossa equipe de suporte está disponível 24/7 com resposta em menos de 2 minutos.",
     "chatSupport": "Falar com o Suporte",
+    "exploreAll": "Explorar todas as perguntas frequentes",
     "items": {
       "payoutTime": {
         "q": "Com que rapidez os pagamentos são processados?",
@@ -511,6 +512,10 @@
       "fundedReset": {
         "q": "Posso resetar uma conta financiada?",
         "a": "Sim. O reset da conta financiada custa 4 vezes o preço aplicável do desafio. A divisão de lucros na conta resetada é reduzida para 65% e uma regra de consistência de 20% é aplicada."
+      },
+      "twoStepPro": {
+        "q": "Sobre o 2-Step Pro",
+        "a": "O 2-Step Pro Challenge é uma avaliação de duas etapas (meta de 10% na Fase 1, 5% na Fase 2) sem exigência de pontuação de consistência, com um drawdown estático máximo de 8% (limite de perda diária de 4%) e até 80% de divisão de lucros após a aprovação. Observe que o trading de notícias não é permitido neste modelo."
       }
     }
   },

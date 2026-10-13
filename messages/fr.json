@@ -415,6 +415,7 @@
     "stillQuestions": "Vous avez encore des questions ?",
     "supportAvailable": "Notre équipe est disponible 24/7 avec un temps de réponse moyen de moins de 2 minutes.",
     "chatSupport": "Discuter avec le Support",
+    "exploreAll": "Explorer toutes les FAQ",
     "items": {
       "payoutTime": {
         "q": "À quelle vitesse les paiements sont-ils traités ?",
@@ -515,6 +516,10 @@
       "fundedReset": {
         "q": "Puis-je réinitialiser un compte financé ?",
         "a": "Oui. La réinitialisation d'un compte financé coûte 4 fois le prix applicable du challenge. Le partage des profits sur le compte réinitialisé est ramené à 65 % et une exigence de cohérence de 20 % s'applique."
+      },
+      "twoStepPro": {
+        "q": "À propos du 2-Step Pro",
+        "a": "Le 2-Step Pro Challenge est une évaluation en deux étapes (objectif de 10% en Phase 1, 5% en Phase 2) sans règle de consistance, avec un drawdown statique maximal de 8% (perte quotidienne de 4%) et jusqu à 80% de partage des profits une fois financé. Le trading d annonces n est pas autorisé sur ce type de compte."
       }
     }
   },

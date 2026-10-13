@@ -411,6 +411,7 @@
     "stillQuestions": "¿Aún tienes preguntas?",
     "supportAvailable": "Nuestro equipo de soporte está disponible 24/7 — tiempo de respuesta promedio inferior a 2 minutos.",
     "chatSupport": "Chatear con Soporte",
+    "exploreAll": "Explorar todas las preguntas frecuentes",
     "items": {
       "payoutTime": {
         "q": "¿Con qué rapidez se procesan los retiros?",
@@ -511,6 +512,10 @@
       "fundedReset": {
         "q": "¿Puedo reiniciar una cuenta fondeada?",
         "a": "Sí. El reinicio de una cuenta fondeada cuesta 4 veces el precio aplicable del desafío. La división de ganancias en la cuenta reiniciada se reduce al 65% y se aplica un requisito de consistencia del 20%."
+      },
+      "twoStepPro": {
+        "q": "Acerca del 2-Step Pro",
+        "a": "El 2-Step Pro Challenge es una evaluación de dos etapas (objetivo del 10% en Fase 1, 5% en Fase 2) sin requisito de consistencia, con un límite de pérdida máxima estática del 8% (drawdown diario del 4%) y hasta un 80% de reparto de beneficios una vez financiado. Tenga en cuenta que no se permite operar durante noticias en este modelo."
       }
     }
   },
