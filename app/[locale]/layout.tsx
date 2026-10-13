@@ -9,6 +9,7 @@ import { TopNav } from "@/components/sections/TopNav";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { SupportWidget } from "@/components/support/SupportWidget";
+import { NewsletterPopup } from "@/components/shared/NewsletterPopup";
 import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { getActiveBanners, getActivePromo } from "@/lib/cms";
 import { routing } from "@/i18n/routing";
@@ -197,6 +198,7 @@ export default async function LocaleLayout({
           <SiteFooter />
           <CookieConsent />
           <SupportWidget />
+          <NewsletterPopup />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
