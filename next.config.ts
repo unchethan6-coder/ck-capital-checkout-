@@ -100,7 +100,11 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    formats: ["image/avif", "image/webp"],
+    // WebP only: the AVIF encoder stalls indefinitely on the self-hosted
+    // (Coolify) image optimizer for some image/width combos — e.g.
+    // whats-new-promo-70-v2.jpeg @ w=750 hangs forever, leaving the What's
+    // New slide black on phones. WebP encodes the same variants in ~1s.
+    formats: ["image/webp"],
     remotePatterns: [
       { protocol: "https", hostname: "img.youtube.com" },
       { protocol: "https", hostname: cmsHostname },
