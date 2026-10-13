@@ -9,18 +9,43 @@ import { Link, usePathname } from "@/i18n/navigation";
 export function SiteFooter() {
   const pathname = usePathname();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "error" | "success">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const trimmed = email.trim();
+    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
       setStatus("error");
+      setErrorMessage(t("errorEmail"));
       return;
     }
-    setStatus("success");
-    setEmail("");
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: trimmed }),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (res.ok && data?.success) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setErrorMessage(data?.error || t("errorEmail"));
+      }
+    } catch {
+      setStatus("error");
+      setErrorMessage(t("errorEmail"));
+    }
   }
 
   const handleLinkClick = (
@@ -148,12 +173,16 @@ export function SiteFooter() {
               <p className="mt-2 max-w-md text-[15px] leading-relaxed text-foreground/65">
                 {t("newsletterSubtitle")}
               </p>
-              <a
-                href="#newsletter"
-                className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#A98BFF] hover:underline cursor-pointer"
+              <button
+                type="button"
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent("open-newsletter-popup"));
+                  window.location.hash = "newsletter";
+                }}
+                className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-[#A98BFF] hover:underline cursor-pointer"
               >
                 Preview VIP Newsletter Pop-up <span>→</span>
-              </a>
+              </button>
             </div>
 
             <form
@@ -167,25 +196,27 @@ export function SiteFooter() {
                   id="footer-email"
                   type="email"
                   value={email}
+                  disabled={status === "loading"}
                   onChange={(e) => {
                     setEmail(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
                   placeholder={t("emailPlaceholder")}
-                  className="h-11 w-full rounded-xl border border-white/10 bg-[#080E24] px-4 text-sm text-foreground outline-none placeholder:text-foreground/65 focus:border-primary focus:ring-2 focus:ring-primary/30"
+                  className="h-11 w-full rounded-xl border border-white/10 bg-[#080E24] px-4 text-sm text-foreground outline-none placeholder:text-foreground/65 focus:border-primary focus:ring-2 focus:ring-primary/30 disabled:opacity-60"
                   aria-invalid={status === "error"}
                 />
                 <GoldButton
                   type="submit"
                   size="md"
-                  className="h-11 shrink-0 px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  disabled={status === "loading"}
+                  className="h-11 shrink-0 px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-60"
                   data-od-id="footer-subscribe"
                 >
-                  {t("subscribe")}
+                  {status === "loading" ? "Subscribing..." : t("subscribe")}
                 </GoldButton>
               </div>
               {status === "error" && (
-                <p className="mt-2 text-sm text-red-400">{t("errorEmail")}</p>
+                <p className="mt-2 text-sm text-red-400">{errorMessage || t("errorEmail")}</p>
               )}
               {status === "success" && (
                 <p className="mt-2 text-sm text-[#A98BFF]">{t("successEmail")}</p>

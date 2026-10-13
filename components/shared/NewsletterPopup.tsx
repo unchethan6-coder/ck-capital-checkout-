@@ -31,6 +31,7 @@ export function NewsletterPopup() {
     };
 
     if (checkUrlTrigger()) {
+      document.cookie = `${COOKIE_NAME}=; path=/; max-age=0`;
       setIsOpen(true);
       return;
     }
