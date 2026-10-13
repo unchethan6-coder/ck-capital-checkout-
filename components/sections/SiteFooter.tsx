@@ -148,6 +148,12 @@ export function SiteFooter() {
               <p className="mt-2 max-w-md text-[15px] leading-relaxed text-foreground/65">
                 {t("newsletterSubtitle")}
               </p>
+              <a
+                href="#newsletter"
+                className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#A98BFF] hover:underline cursor-pointer"
+              >
+                Preview VIP Newsletter Pop-up <span>→</span>
+              </a>
             </div>
 
             <form

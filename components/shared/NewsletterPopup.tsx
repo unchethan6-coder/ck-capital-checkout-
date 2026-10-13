@@ -16,35 +16,68 @@ export function NewsletterPopup() {
   const [errorMessage, setErrorMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Check cookie and show popup after delay
+  // Check cookie and show popup after delay or manual trigger
   useEffect(() => {
-    // Check if forced open via URL query (?popup=newsletter)
-    const urlParams = new URLSearchParams(window.location.search);
-    const forceOpen = urlParams.get("popup") === "newsletter";
+    const checkUrlTrigger = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hash = window.location.hash.toLowerCase();
+      return (
+        urlParams.get("popup") === "newsletter" ||
+        urlParams.has("newsletter") ||
+        urlParams.has("popup") ||
+        hash === "#newsletter" ||
+        hash === "#popup"
+      );
+    };
+
+    if (checkUrlTrigger()) {
+      setIsOpen(true);
+      return;
+    }
 
     const hasDismissed = document.cookie
       .split(";")
       .some((item) => item.trim().startsWith(`${COOKIE_NAME}=`));
 
-    if (forceOpen) {
-      setIsOpen(true);
-      return;
-    }
-
     if (!hasDismissed) {
-      // Unobtrusive 3.5s delay after page load
+      // 2.5s delay after initial page load
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 3500);
+      }, 2500);
       return () => clearTimeout(timer);
     }
   }, []);
 
-  // Listen for programmatic open trigger (e.g. from footer button or tests)
+  // Listen for programmatic triggers, URL hash changes, and window helper functions
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
+    const handleReset = () => {
+      document.cookie = `${COOKIE_NAME}=; path=/; max-age=0`;
+      setIsOpen(true);
+    };
+
+    // Global testing helpers attached to window
+    (window as any).openNewsletter = handleOpen;
+    (window as any).openNewsletterPopup = handleOpen;
+    (window as any).resetNewsletterPopup = handleReset;
+
     window.addEventListener("open-newsletter-popup", handleOpen);
-    return () => window.removeEventListener("open-newsletter-popup", handleOpen);
+    
+    const handleHashChange = () => {
+      const h = window.location.hash.toLowerCase();
+      if (h === "#newsletter" || h === "#popup") {
+        setIsOpen(true);
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("open-newsletter-popup", handleOpen);
+      window.removeEventListener("hashchange", handleHashChange);
+      delete (window as any).openNewsletter;
+      delete (window as any).openNewsletterPopup;
+      delete (window as any).resetNewsletterPopup;
+    };
   }, []);
 
   // Keyboard navigation & body scroll lock
