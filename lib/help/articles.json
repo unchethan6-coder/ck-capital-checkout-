@@ -743,9 +743,9 @@
           "t": "Email: "
          },
          {
-          "t": "support@ckpropfirm.com",
+          "t": "admin@ckpropfirm.com",
           "b": true,
-          "href": "mailto:support@ckpropfirm.com"
+          "href": "mailto:admin@ckpropfirm.com"
          }
         ]
        }
@@ -1527,8 +1527,8 @@
           "t": "Account rolling/churning, buying multiple accounts and failing in a short timeframe and simultaneously buying more as you fail. The failure of a funded account requires permission before you are able to start a new evaluation, send all requests to "
          },
          {
-          "t": "support@ckpropfirm.com",
-          "href": "mailto:support@ckpropfirm.com"
+          "t": "admin@ckpropfirm.com",
+          "href": "mailto:admin@ckpropfirm.com"
          }
         ]
        }
@@ -7994,8 +7994,8 @@
        "t": "Each payout request is reviewed individually by our Risk Team. If a violation or trading activity that falls outside our permitted conditions is identified, the payout may be denied. If your payout has been rejected and you believe this was done in error, please contact our Support Team or reach out at "
       },
       {
-       "t": "support@ckpropfirm.com",
-       "href": "mailto:support@ckpropfirm.com"
+       "t": "admin@ckpropfirm.com",
+       "href": "mailto:admin@ckpropfirm.com"
       },
       {
        "t": " so your case can be reviewed and clarified."
