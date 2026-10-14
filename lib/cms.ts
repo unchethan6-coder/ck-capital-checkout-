@@ -40,6 +40,19 @@ function mediaUrl(media: any): string | null {
   return `${BASE_URL.replace(/\/$/, "")}/${url.replace(/^\//, "")}`;
 }
 
+/**
+ * Append a cache-busting `v=` stamp derived from the file's last update.
+ * Replacing a file in place in Strapi keeps the same URL, which otherwise
+ * leaves the Next image optimizer and visitors' browsers serving stale
+ * per-width variants (up to 4h) — even different artwork per device.
+ * Every CMS media URL flows through `toMedia`, so this covers all of them.
+ */
+function withVersion(url: string | null | undefined, updatedAt?: string | null): string {
+  if (!url) return "";
+  if (!updatedAt) return url;
+  return `${url}${url.includes("?") ? "&" : "?"}v=${encodeURIComponent(updatedAt)}`;
+}
+
 /** Pick the largest usable format for a media object (for next/image density). */
 function mediaFormats(media: any): Record<string, { url: string; width?: number; height?: number }> | undefined {
   const raw = unwrapMedia(media);
@@ -55,14 +68,20 @@ function mediaFormats(media: any): Record<string, { url: string; width?: number;
 function toMedia(raw: any): CmsMedia | null {
   const m = unwrapMedia(raw);
   if (!m?.url) return null;
+  const version: string | null = m.updatedAt ?? null;
+  const formats = mediaFormats(m);
   return {
     id: m.id,
     documentId: m.documentId,
     name: m.name,
-    url: mediaUrl(m) as string,
+    url: withVersion(mediaUrl(m), version),
     width: m.width,
     height: m.height,
-    formats: mediaFormats(m),
+    formats: formats
+      ? Object.fromEntries(
+          Object.entries(formats).map(([k, v]) => [k, { ...v, url: withVersion(v.url, version) }])
+        )
+      : undefined,
   };
 }
 
@@ -391,32 +410,19 @@ export async function getWhatsNewSlides(): Promise<CmsWhatsNewSlide[]> {
   const res = await cmsFetch<any>(`whats-new-slides?${params.toString()}`);
   if (!res?.data) return [];
   return res.data
-    .map((s: any) => {
-      const rawImage = s.image ?? s.graphic ?? s.cover;
-      const media = toMedia(rawImage);
-      // Stamp the media's last update into the URL. Replacing a file in place
-      // in Strapi keeps the same URL, which leaves the Next image optimizer
-      // and browsers serving stale variants per width for up to 4h — desktop
-      // and mobile could even show different artwork. A changing `v` busts
-      // every cache tier the moment the file is replaced.
-      const version = rawImage?.updatedAt ? `v=${encodeURIComponent(rawImage.updatedAt)}` : "";
-      const imageSrc = media?.url
-        ? version
-          ? `${media.url}${media.url.includes("?") ? "&" : "?"}${version}`
-          : media.url
-        : "";
-      return {
-        id: s.id,
-        documentId: s.documentId,
-        tabLabel: String(s.tabLabel ?? s.text ?? s.title ?? "").trim(),
-        shortTabLabel: s.shortTabLabel ?? null,
-        imageSrc,
-        alt: s.alt ?? null,
-        link: s.link ?? null,
-        // Optional explicit ordering; entries without it keep creation order.
-        sortOrder: typeof s.sortOrder === "number" ? s.sortOrder : null,
-      };
-    })
+    .map((s: any) => ({
+      id: s.id,
+      documentId: s.documentId,
+      tabLabel: String(s.tabLabel ?? s.text ?? s.title ?? "").trim(),
+      shortTabLabel: s.shortTabLabel ?? null,
+      // `toMedia` appends a `v=` cache-buster from the file's updatedAt, so an
+      // in-place replacement in Strapi never serves stale per-width variants.
+      imageSrc: toMedia(s.image ?? s.graphic ?? s.cover)?.url ?? "",
+      alt: s.alt ?? null,
+      link: s.link ?? null,
+      // Optional explicit ordering; entries without it keep creation order.
+      sortOrder: typeof s.sortOrder === "number" ? s.sortOrder : null,
+    }))
     .filter((s: CmsWhatsNewSlide) => s.imageSrc && s.tabLabel)
     .sort((a: CmsWhatsNewSlide, b: CmsWhatsNewSlide) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
 }
