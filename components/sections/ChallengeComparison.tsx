@@ -259,9 +259,8 @@ export function ChallengeComparison({
 
   return (
     <section
-      id="start-challenge"
       className={cn(
-        "relative scroll-mt-28 py-16 transition-colors duration-300 md:py-24",
+        "relative py-16 transition-colors duration-300 md:py-24",
         viewMode === "cards" ? "bg-[#05060A] text-white" : "bg-white text-[#0A0A0C]"
       )}
       data-od-id="challenge-comparison"
@@ -273,8 +272,11 @@ export function ChallengeComparison({
             <WhatsNewBanner viewMode={viewMode} promo={promo} slides={slides} />
           </SectionReveal>
 
-          {/* Header */}
+          {/* Header — #start-challenge targets the title here (not the
+              What's New carousel above it), via a zero-height anchor that
+              keeps the sticky nav clear thanks to scroll-mt. */}
           <SectionReveal className="text-center">
+            <div id="start-challenge" className="scroll-mt-24" />
             <h2
               id="pricing-calculator"
               data-od-id="challenge-title"
