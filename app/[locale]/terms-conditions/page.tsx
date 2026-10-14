@@ -126,10 +126,10 @@ export default async function TermsPage() {
 
             <Section id="overview" title="Overview">
               <p className="font-semibold text-[#0A0A0C]">
-                Welcome to CK Capital Group LTD. The &quot;Company&quot; provides you
-                (&quot;You&quot; or the &quot;Trader&quot;) with a limited license to use
-                the services (the &quot;Services&quot;) offered by the Company subject to
-                the terms and conditions contained herein (the &quot;Agreement&quot;).
+                Welcome to CK Capital Group LTD. The “Company” provides you
+                (“You” or the “Trader”) with a limited license to use
+                the services (the “Services”) offered by the Company subject to
+                the terms and conditions contained herein (the “Agreement”).
               </p>
               <p>
                 This Agreement is a legally binding contract, and you have a duty to read
@@ -212,7 +212,7 @@ export default async function TermsPage() {
               <p>
                 You are also prohibited from using any trading strategy that is expressly
                 prohibited by the Company or the Brokers it uses. Such prohibited trading
-                (&quot;Prohibited Trading&quot;) shall include, but not be limited to:
+                (“Prohibited Trading”) shall include, but not be limited to:
               </p>
               <ul className="ml-5 list-disc space-y-2">
                 <li>Exploiting errors or latency in the pricing and/or platform(s) provided by the Broker</li>
@@ -346,7 +346,7 @@ export default async function TermsPage() {
               </p>
               <p>
                 There are no refunds on any Services purchased from the Company. If you, as
-                a purchaser, are deemed &quot;high risk&quot; by our payment processors we
+                a purchaser, are deemed “high risk” by our payment processors we
                 may require you to provide additional documentation or information in order
                 to proceed with the assessment. Failure to provide the requested
                 documentation and information within twenty-four (24) hours of said request
@@ -409,7 +409,7 @@ export default async function TermsPage() {
                 All materials, including images, text, illustrations, designs, icons,
                 photographs, programs, audio clips or downloads, video clips and written
                 and other materials that are part of this Website (collectively, the
-                &quot;Contents&quot;) are intended solely for personal, non-commercial use.
+                “Contents”) are intended solely for personal, non-commercial use.
                 No right, title or interest in any downloaded materials or software is
                 transferred to You as a result of any such downloading or copying. You may
                 not reproduce (except as noted above), publish, transmit, distribute,
@@ -480,7 +480,7 @@ export default async function TermsPage() {
               <div className="rounded-xl border border-primary/25 bg-primary/[0.06] p-5">
                 <p className="font-semibold text-foreground/85">
                   YOU ACKNOWLEDGE AND AGREE THAT THE SERVICE AND COMPANY WEBSITE ARE
-                  PROVIDED ON AN &quot;AS-IS&quot; BASIS AND WITHOUT WARRANTY OF ANY KIND,
+                  PROVIDED ON AN “AS-IS” BASIS AND WITHOUT WARRANTY OF ANY KIND,
                   INCLUDING, BUT NOT LIMITED TO WARRANTIES OF TITLE, MERCHANTABILITY,
                   ACCURACY, FITNESS FOR A PARTICULAR PURPOSE, SECURITY, AND
                   NON-INFRINGEMENT. WHEREVER PERMITTED BY LAW, YOU ACKNOWLEDGE THAT THE
