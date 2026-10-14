@@ -48,7 +48,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
     };
 
-    el.muted = false;
+    // Always start muted — most browsers block autoplay with sound, and
+    // some (especially on mobile) block the entire video if the first
+    // play() attempt fails. Start silent, then unmute after interaction.
+    el.muted = true;
     el.play().then(
       () => {
         if (disposed) return;
@@ -57,7 +60,6 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       },
       () => {
         if (disposed) return;
-        el.muted = true;
         el.play().catch(() => {});
         for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
       }
@@ -102,8 +104,14 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
           {/* Poster layer: the video fades in from a black first frame, so keep
               the bright poster underneath until playback truly starts. This is
               the visible hero for reduced-motion, Low Power Mode, Data Saver
-              and any autoplay-blocked visitor — never a black screen. */}
-          <div className="absolute inset-y-0 left-0 h-full w-full lg:w-[126%] lg:max-w-none">
+              and any autoplay-blocked visitor — never a black screen.
+              The background-image is a direct file request (not the image
+              optimizer), so the hero is never black even if /_next/image is
+              blocked, slow or optimising in the background. */}
+          <div
+            className="absolute inset-y-0 left-0 h-full w-full bg-[#030A1C] bg-cover bg-center lg:w-[126%] lg:max-w-none"
+            style={{ backgroundImage: "url('/images/hero-coin-poster.jpg')" }}
+          >
             <Image
               src={video.poster}
               alt=""
