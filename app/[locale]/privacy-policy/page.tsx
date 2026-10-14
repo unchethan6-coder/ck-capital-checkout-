@@ -43,7 +43,7 @@ function Subsection({ title, children }: { title: string; children: React.ReactN
   );
 }
 
-const MAILTO = "service@ckpropfirm.com";
+const MAILTO = "admin@ckpropfirm.com";
 const EmailLink = (
   <a
     href={`mailto:${MAILTO}`}

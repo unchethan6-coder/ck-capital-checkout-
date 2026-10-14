@@ -33,7 +33,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-const MAILTO = "service@ckpropfirm.com";
+const MAILTO = "admin@ckpropfirm.com";
 const EmailLink = (
   <a
     href={`mailto:${MAILTO}`}
