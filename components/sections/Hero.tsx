@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ArrowRight, Play, BarChart2, Coins, Zap } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 import type { HeroVideo } from "@/lib/heroTakeover";
 
 /** Interactions a browser accepts as permission to play sound. */
@@ -17,6 +18,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
+  // The video fades in from a black first frame, so it must not be shown until
+  // it is actually playing. Until then (and whenever playback is blocked —
+  // reduced motion, Low Power Mode, Data Saver) the bright poster stays up.
+  const [videoPlaying, setVideoPlaying] = useState(false);
   // Sound. Browsers refuse to start audio before the visitor has interacted with
   // the page, so: try with sound, and where that is refused keep the muted loop
   // running and switch the sound on at the first click, tap or key press.
@@ -94,6 +99,20 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     >
       {video ? (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden" data-od-id="hero-video">
+          {/* Poster layer: the video fades in from a black first frame, so keep
+              the bright poster underneath until playback truly starts. This is
+              the visible hero for reduced-motion, Low Power Mode, Data Saver
+              and any autoplay-blocked visitor — never a black screen. */}
+          <div className="absolute inset-y-0 left-0 h-full w-full lg:w-[126%] lg:max-w-none">
+            <Image
+              src={video.poster}
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 1024px) 126vw, 100vw"
+              className="object-cover"
+            />
+          </div>
           {/* Wider than the hero on desktop, so the coin at its centre clears the copy. */}
           <video
             ref={videoRef}
@@ -103,7 +122,11 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             loop
             playsInline
             preload="auto"
-            className="absolute inset-y-0 left-0 h-full w-full object-cover lg:w-[126%] lg:max-w-none"
+            onPlaying={() => setVideoPlaying(true)}
+            className={cn(
+              "absolute inset-y-0 left-0 h-full w-full object-cover transition-opacity duration-700 lg:w-[126%] lg:max-w-none",
+              videoPlaying ? "opacity-100" : "opacity-0"
+            )}
           >
             {video.sources.map((source) => (
               <source key={source.src} src={source.src} type={source.type} media={source.media} />
