@@ -125,7 +125,9 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             onPlaying={() => setVideoPlaying(true)}
             className={cn(
               "absolute inset-y-0 left-0 h-full w-full object-cover transition-opacity duration-700 lg:w-[126%] lg:max-w-none",
-              videoPlaying ? "opacity-100" : "opacity-0"
+              // `playing` can fire before the effect pauses the video for
+              // reduced-motion visitors, so gate on both.
+              videoPlaying && !reduceMotion ? "opacity-100" : "opacity-0"
             )}
           >
             {video.sources.map((source) => (
