@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { Container } from "@/components/shared/Container";
 import { pageSeo } from "@/lib/seo";
 
 type Params = Promise<{ locale: string }>;
@@ -30,11 +29,14 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mt-10 scroll-mt-28 border-t border-[#E5E7EB] pt-8">
-      <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-[#0A0A0C] md:text-2xl">
+    <section
+      id={id}
+      className="scroll-mt-28 border-t border-foreground/10 pt-8 pb-2 first:border-t-0 first:pt-0"
+    >
+      <h2 className="font-[family-name:var(--font-jakarta)] text-xl font-bold text-foreground md:text-2xl">
         {title}
       </h2>
-      <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#4B5563]">
+      <div className="mt-4 space-y-4 pb-6 text-[15px] leading-relaxed text-foreground/70">
         {children}
       </div>
     </section>
@@ -78,54 +80,104 @@ export default async function TermsPage() {
     <div className="min-h-screen bg-background" data-od-id="terms-page">
 
       {/* ─────────────── Hero ─────────────── */}
-      <section className="relative isolate -mt-[72px] md:-mt-[76px] overflow-hidden border-b border-gray-200 bg-white pt-28 md:pt-36 pb-14 md:pb-20 text-[#0A0A0C]" data-od-id="terms-hero">
-        <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
-          <div className="absolute -top-[30%] left-1/2 -translate-x-1/2 w-[140%] h-[80%] rounded-full opacity-70 fx-hero-glow-1" />
-          <div className="absolute top-[15%] -left-[10%] w-[60%] h-[70%] rounded-full opacity-60 fx-hero-glow-2" />
+      <section
+        className="relative isolate overflow-hidden border-b border-foreground/10"
+        data-od-id="terms-hero"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              'radial-gradient(60% 90% at 50% 0%, rgba(121,67,224,0.22), transparent 70%)',
+          }}
+        />
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center md:py-24">
+          <h1
+            className="font-[family-name:var(--font-jakarta)] text-4xl leading-[1.05] font-extrabold tracking-[-0.02em] text-balance text-foreground md:text-6xl"
+            data-od-id="terms-hero-title"
+          >
+            {t("termsTitle")}
+          </h1>
+          <p className="mt-4 text-sm text-foreground/55">Last updated: October 14, 2026</p>
         </div>
-        <Container className="relative z-10">
-          <div className="max-w-3xl">
-            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#A98BFF]">
-              {t("badgeLegal")}
-              <span className="text-violet-400">·</span>
-              {t("termsBadge")}
-            </span>
-            <h1
-              className="mt-5 font-[family-name:var(--font-jakarta)] text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#0A0A0C] md:text-5xl"
-              data-od-id="terms-hero-title"
-            >
-              {t("termsTitle")}
-            </h1>
-            <p className="mt-4 text-sm text-[#6B7280]">Last updated: October 14, 2026</p>
-          </div>
-        </Container>
       </section>
 
-      {/* ─────────────── Document (LIGHT) ─────────────── */}
-      <section className="bg-white py-12 md:py-20 text-[#111827]" data-od-id="terms-document">
-        <Container className="max-w-4xl">
-          <div className="rounded-2xl border border-[#E5E7EB] bg-white p-8 sm:p-12 shadow-sm text-[15px] leading-relaxed text-[#4B5563]">
-            {/* On this page */}
-            <nav aria-label="On this page" className="rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#6B7280]">
+      {/* ─────────────── Document ─────────────── */}
+      <div
+        className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-16"
+        data-od-id="terms-document"
+      >
+        <div className="grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-14">
+          <aside>
+            {/* Mobile accordion */}
+            <details
+              className="group rounded-xl border border-foreground/10 bg-foreground/[0.03] lg:hidden"
+              data-od-id="legal-toc-mobile"
+            >
+              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between px-4 text-xs font-bold tracking-[0.14em] text-foreground/70 uppercase">
+                On this page
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-chevron-down transition-transform group-open:rotate-180"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <nav
+                aria-label="On this page"
+                className="max-h-[60vh] overflow-y-auto px-2 pb-3"
+              >
+                <ol className="space-y-0.5">
+                  {TOC.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        href={`#${item.id}`}
+                        className="block rounded-lg border-l-2 border-transparent py-1.5 pr-2 pl-3 text-[13px] leading-snug text-foreground/55 transition-colors hover:text-foreground"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            </details>
+            {/* Desktop sticky nav */}
+            <nav
+              aria-label="On this page"
+              className="sticky top-28 hidden max-h-[calc(100dvh-8rem)] overflow-y-auto pr-2 lg:block"
+              data-od-id="legal-toc"
+            >
+              <p className="mb-3 pl-3 text-[11px] font-bold tracking-[0.16em] text-foreground/50 uppercase">
                 On this page
               </p>
-              <ul className="mt-3 grid gap-x-6 gap-y-1.5 sm:grid-cols-2">
+              <ol className="space-y-0.5">
                 {TOC.map((item) => (
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      className="text-[13.5px] text-[#4B5563] transition-colors hover:text-[#A98BFF]"
+                      className="block rounded-lg border-l-2 border-transparent py-1.5 pr-2 pl-3 text-[13px] leading-snug text-foreground/55 transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </nav>
+          </aside>
+          <div dir="ltr" lang="en" className="max-w-3xl">
 
             <Section id="overview" title="Overview">
-              <p className="font-semibold text-[#0A0A0C]">
+              <p className="font-semibold text-foreground">
                 Welcome to CK Capital Group LTD. The “Company” provides you
                 (“You” or the “Trader”) with a limited license to use
                 the services (the “Services”) offered by the Company subject to
@@ -236,7 +288,7 @@ export default async function TermsPage() {
               <p>
                 Additionally, the Company reserves the right to disallow or block any
                 Trader from participating in the program for any reason, in the
-                Company&apos;s sole and absolute discretion.
+                Company’s sole and absolute discretion.
               </p>
             </Section>
 
@@ -281,7 +333,7 @@ export default async function TermsPage() {
                 information, including, but not limited to your name, email address,
                 mailing address, phone number, date of birth and a username and password
                 for an account that is unique to you. The information provided is subject
-                to the Company&apos;s privacy policy.
+                to the Company’s privacy policy.
               </p>
               <p>
                 The account will be personal to You, and You cannot share it with anybody
@@ -330,7 +382,7 @@ export default async function TermsPage() {
             <Section id="purchases-and-refunds" title="6. Purchases and Refunds">
               <p>
                 The Company may provide products, services, subscriptions, or access to
-                certain portions to the Company&apos;s website at a monetary cost. Prices
+                certain portions to the Company’s website at a monetary cost. Prices
                 and availability are subject to change without notice. The Company may
                 allow for such purchases within its website or via a white label affiliate.
                 It is your responsibility to thoroughly read and understand any such terms
@@ -359,8 +411,8 @@ export default async function TermsPage() {
             <Section id="guidelines" title="7. Guidelines">
               <p>
                 The Company will display the guidelines associated with the Services on the
-                Company&apos;s website and via email, upon becoming a Trader. These
-                guidelines, which may change from time to time in The Company&apos;s sole
+                Company’s website and via email, upon becoming a Trader. These
+                guidelines, which may change from time to time in The Company’s sole
                 discretion, are incorporated in whole into this Agreement. The Company
                 makes absolutely no promise, guarantee, or warranty, express or implied, as
                 to any promise to future employment as a trader, monetary payments, or any
@@ -383,13 +435,13 @@ export default async function TermsPage() {
                 property of their respective owners.
               </p>
               <p>
-                You acknowledge and agree that the Company&apos;s website, its suppliers
+                You acknowledge and agree that the Company’s website, its suppliers
                 and licensors expressly reserve all intellectual property rights in all
                 text, programs, products, processes, technology, content and other
-                materials, which appear on the Company&apos;s website. Access to this
+                materials, which appear on the Company’s website. Access to this
                 website does not confer and shall not be considered as conferring upon
-                anyone any license under any of the Company&apos;s or any third
-                party&apos;s intellectual property rights. All rights, including copyright,
+                anyone any license under any of the Company’s or any third
+                party’s intellectual property rights. All rights, including copyright,
                 in this website are owned by or licensed to us or third-party suppliers.
                 Any use of this Website or its contents, including copying or storing it or
                 them in whole or part, other than for your own personal, non-commercial use is
@@ -489,11 +541,11 @@ export default async function TermsPage() {
                   THE WEBSITE AND YOUR USE OF OR ACCESS TO THE SERVICE OR THE COMPANY
                   WEBSITE, INCLUDING, BUT NOT LIMITED TO COMPENSATORY DAMAGES,
                   CONSEQUENTIAL DAMAGES, SPECIAL DAMAGES, INCIDENTAL DAMAGES, PUNITIVE
-                  DAMAGES, EXEMPLARY DAMAGES, COSTS AND ATTORNEYS&apos; FEES, DAMAGES
+                  DAMAGES, EXEMPLARY DAMAGES, COSTS AND ATTORNEYS’ FEES, DAMAGES
                   ARISING OUT OF ERRORS OR OMISSIONS, AND DAMAGES ARISING OUT OF THE
                   UNAVAILABILITY OF THE WEBSITE OR DOWNTIME. YOU ACKNOWLEDGE THAT YOUR USE
                   OF THE SERVICES AND/OR THE COMPANY WEBSITE IS AT YOUR SOLE RISK AND THAT
-                  THE COMPANY&apos;S LIABILITY IS LIMITED TO THE AMOUNT THAT YOU PAID TO
+                  THE COMPANY’S LIABILITY IS LIMITED TO THE AMOUNT THAT YOU PAID TO
                   USE THE SERVICES OR $1,000, WHICHEVER IS LESS.
                 </p>
               </div>
@@ -504,7 +556,7 @@ export default async function TermsPage() {
                 You agree to indemnify, defend, and hold harmless The Company, its
                 officers, shareholders, directors, employees, subsidiaries, affiliates,
                 white label users, and representatives from any and all losses, including,
-                but not limited to costs and attorneys&apos; fees arising out of or related
+                but not limited to costs and attorneys’ fees arising out of or related
                 to your use of the Website; your violation of any term or condition of this
                 Agreement; your violation of the rights of third parties, including but not
                 limited to intellectual property rights or other personal or proprietary
@@ -513,7 +565,7 @@ export default async function TermsPage() {
               </p>
               <p>
                 Your obligation to defend The Company will not provide you with the ability
-                to control The Company&apos;s defense, and The Company reserves the right
+                to control The Company’s defense, and The Company reserves the right
                 to control its defense, including its choice of counsel and whether to
                 litigate or settle a claim subject to indemnification.
               </p>
@@ -530,7 +582,7 @@ export default async function TermsPage() {
                 selected from a list of neutral arbitrators maintained by the AAA.
                 Judgement on any award rendered by the arbitrator may be entered in any
                 court of competent jurisdiction. The arbitrator will be provided with the
-                right to award costs and attorneys&apos; fees to the prevailing party. This
+                right to award costs and attorneys’ fees to the prevailing party. This
                 arbitration will be held in Quebec and both the Company and Trader agree
                 that they will be required to be present in Quebec for arbitration under
                 the terms of this Agreement and hereby submit to exclusive personal
@@ -542,10 +594,10 @@ export default async function TermsPage() {
             <Section id="force-majeure" title="14. Force Majeure">
               <p>
                 The Company shall not be liable to Trader for any claims, losses, damages,
-                costs or expenses, including attorneys&apos; fees, caused, directly or
+                costs or expenses, including attorneys’ fees, caused, directly or
                 indirectly, by any events, actions or omissions, including, without
                 limitation, claims, losses, damages, costs or expenses, including
-                attorneys&apos; fees, resulting from civil unrest, war, insurrection,
+                attorneys’ fees, resulting from civil unrest, war, insurrection,
                 international intervention, governmental action (including, without
                 limitation, exchange controls, forfeitures, nationalizations,
                 devaluations), natural disasters, acts of God, market conditions, inability
@@ -608,8 +660,8 @@ export default async function TermsPage() {
               </p>
             </Section>
           </div>
-        </Container>
-      </section>
+        </div>
+      </div>
     </div>
   )
 }
