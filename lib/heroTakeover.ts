@@ -28,7 +28,9 @@ const TAKEOVER = {
     // 1080p for large screens: HEVC where supported (same picture, 40% smaller), else H.264.
     { src: "/videos/hero-coin-1080-hevc.mp4", type: 'video/mp4; codecs="hvc1"', media: DESKTOP },
     { src: "/videos/hero-coin-1080.mp4", type: "video/mp4", media: DESKTOP },
-    // 720p for phones and tablets, where the extra pixels would not show.
+    // 540p for phones (38% smaller than 720p — the only variant that can
+    // sustain playback on slow mobile connections), 720p for tablets.
+    { src: "/videos/hero-coin-540.mp4", type: "video/mp4", media: "(max-width: 767px)" },
     { src: "/videos/hero-coin-720.mp4", type: "video/mp4" },
   ],
   poster: "/images/hero-coin-poster.webp",
