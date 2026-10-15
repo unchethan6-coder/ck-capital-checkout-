@@ -112,9 +112,36 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     // to skip an intro.)
     let stallTimer: ReturnType<typeof setTimeout> | null = null;
     const INTRO_END = 0.4;
-    const show = () => {
-      if (!disposed && el.currentTime > INTRO_END) setVideoVisible(true);
+    // `sustainable` flips once the loop is fully buffered (or the browser
+    // reports it can play through): on marginal networks the video must not
+    // show until it can play without rebuffering, otherwise it advances in
+    // fits with poster flashes in between. The 12s fallback shows it anyway
+    // if sustainability never confirms — motion with rare flashes beats a
+    // permanently static poster.
+    let sustainable = false;
+    const bufferedFull = () => {
+      try {
+        const d = el.duration;
+        if (!d || !isFinite(d)) return false;
+        const b = el.buffered;
+        for (let i = 0; i < b.length; i++) {
+          if (b.end(i) >= d - 0.15) return true;
+        }
+        return false;
+      } catch {
+        return false;
+      }
     };
+    const markReady = () => {
+      sustainable = true;
+      show();
+    };
+    const show = () => {
+      if (!disposed && sustainable && el.currentTime > INTRO_END) setVideoVisible(true);
+    };
+    const readyFallback = window.setTimeout(() => {
+      if (!disposed && el.readyState >= 2) markReady();
+    }, 12000);
     const onPlaying = () => {
       if (stallTimer) {
         clearTimeout(stallTimer);
@@ -124,6 +151,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     };
     const onTimeUpdate = () => show();
     const onCanPlay = () => show();
+    const onProgress = () => {
+      if (bufferedFull()) markReady();
+    };
+    const onCanPlayThrough = () => markReady();
     const onStall = () => {
       // Ignore `waiting` blips while frames are available (readyState 3+):
       // iOS fires these around seamless loop restarts, and treating them
@@ -137,6 +168,8 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     el.addEventListener("playing", onPlaying);
     el.addEventListener("timeupdate", onTimeUpdate);
     el.addEventListener("canplay", onCanPlay);
+    el.addEventListener("progress", onProgress);
+    el.addEventListener("canplaythrough", onCanPlayThrough);
     el.addEventListener("waiting", onStall);
     el.addEventListener("stalled", onStall);
 
@@ -145,11 +178,14 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       observer.disconnect();
       window.clearInterval(watchdog);
       window.clearTimeout(settleTimer);
+      window.clearTimeout(readyFallback);
       document.removeEventListener("visibilitychange", sync);
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
       el.removeEventListener("playing", onPlaying);
       el.removeEventListener("timeupdate", onTimeUpdate);
       el.removeEventListener("canplay", onCanPlay);
+      el.removeEventListener("progress", onProgress);
+      el.removeEventListener("canplaythrough", onCanPlayThrough);
       el.removeEventListener("waiting", onStall);
       el.removeEventListener("stalled", onStall);
       if (stallTimer) clearTimeout(stallTimer);

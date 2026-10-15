@@ -31,8 +31,8 @@ const TAKEOVER = {
     // 540p for phones (38% smaller than 720p — the only variant that can
     // sustain playback on slow mobile connections), 720p for tablets.
     // iPhones hardware-decode HEVC, so they get the smaller file.
-    { src: "/videos/hero-coin-540-hevc.mp4", type: 'video/mp4; codecs="hvc1"', media: "(max-width: 767px)" },
-    { src: "/videos/hero-coin-540.mp4", type: "video/mp4", media: "(max-width: 767px)" },
+    { src: "/videos/hero-coin-480-hevc.mp4", type: 'video/mp4; codecs="hvc1"', media: "(max-width: 767px)" },
+    { src: "/videos/hero-coin-480.mp4", type: "video/mp4", media: "(max-width: 767px)" },
     { src: "/videos/hero-coin-720.mp4", type: "video/mp4" },
   ],
   poster: "/images/hero-coin-poster.webp",
