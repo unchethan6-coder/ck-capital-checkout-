@@ -9,9 +9,6 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { HeroVideo } from "@/lib/heroTakeover";
 
-/** Interactions a browser accepts as permission to play sound. */
-const UNLOCK_EVENTS = ["pointerdown", "keydown", "touchend"] as const;
-
 /** With `video`, the hero plays it as a full background instead of showing the mascot. */
 export function Hero({ video = null }: { video?: HeroVideo | null }) {
   const t = useTranslations("hero");
@@ -24,9 +21,9 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
   // Until then (and whenever playback is blocked — reduced motion, Low
   // Power Mode, Data Saver) the bright poster stays up. Never a black hero.
   const [videoVisible, setVideoVisible] = useState(false);
-  // Sound. Browsers refuse to start audio before the visitor has interacted with
-  // the page, so: try with sound, and where that is refused keep the muted loop
-  // running and switch the sound on at the first click, tap or key press.
+  // Sound is permanently off for the hero loop. Muted autoplay is allowed
+  // everywhere (including strict iOS policies), so there is deliberately no
+  // unmute path anywhere in this component.
   const hasVideo = video !== null;
   useEffect(() => {
     const el = videoRef.current;
@@ -37,55 +34,13 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       return;
     }
 
-    let allowed = false; // the browser has let sound through
     let disposed = false;
     let inView = true;
-    const sync = () => {
-      el.muted = !(allowed && inView && !document.hidden);
-    };
-    // Gesture listeners stay armed for the whole session (they are
-    // idempotent): after a tab switch iOS pauses playback and demands a new
-    // user gesture to resume, so removing them after the first tap would
-    // leave no way back. Cleanup on unmount still removes them.
-    const unlock = () => {
-      allowed = true;
-      sync();
-      el.play().catch(() => {});
-    };
-
-    // Try with sound first: where the browser allows it (desktop with media
-    // engagement) we get audible autoplay immediately. Everywhere else the
-    // attempt is rejected and we fall back to silent playback, staying muted
-    // until a real user gesture — unmuting via script without a gesture is
-    // what pauses playback outright on iOS Safari, so `allowed` must never
-    // be set outside a gesture handler or a successful audible play().
-    // The 2.5s settle timer covers browsers where play() neither resolves
-    // nor rejects (hung attempt): without it there would be no fallback and
-    // no gesture listeners, i.e. a permanently stuck poster.
-    let settled = false;
-    const goMuted = () => {
-      if (disposed || settled) return;
-      settled = true;
-      el.muted = true;
-      el.play().catch(() => {});
-      for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
-    };
-    const settleTimer = window.setTimeout(goMuted, 2500);
-    el.muted = false;
-    el.play().then(
-      () => {
-        if (disposed || settled) return;
-        settled = true;
-        window.clearTimeout(settleTimer);
-        allowed = true;
-        sync();
-      },
-      () => {
-        if (disposed) return;
-        window.clearTimeout(settleTimer);
-        goMuted();
-      }
-    );
+    el.muted = true;
+    el.play().catch(() => {
+      // Autoplay blocked (e.g. Low Power Mode) — the watchdog below retries
+      // while the poster stays up.
+    });
 
     // Watchdog: if the video should be playing but isn't (iOS pausing it,
     // Low Power Mode lifting, tab refocus, decoder hiccup), restart it.
@@ -97,13 +52,12 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       if (el.paused && !el.ended) el.play().catch(() => {});
     }, 3000);
 
-    // The loop only has sound while the hero is on screen and the tab is in front.
+    // The watchdog only restarts playback while the hero is on screen and
+    // the tab is in front, so off-screen loops don't burn battery or data.
     const observer = new IntersectionObserver(([entry]) => {
       inView = entry.isIntersecting;
-      sync();
     }, { threshold: 0.25 });
     observer.observe(el);
-    document.addEventListener("visibilitychange", sync);
 
     // Show the video as soon as it is provably showing picture, and hide it
     // again if it stalls: a frozen frame must never sit on top of the bright
@@ -177,10 +131,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       disposed = true;
       observer.disconnect();
       window.clearInterval(watchdog);
-      window.clearTimeout(settleTimer);
       window.clearTimeout(readyFallback);
-      document.removeEventListener("visibilitychange", sync);
-      for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
       el.removeEventListener("playing", onPlaying);
       el.removeEventListener("timeupdate", onTimeUpdate);
       el.removeEventListener("canplay", onCanPlay);
