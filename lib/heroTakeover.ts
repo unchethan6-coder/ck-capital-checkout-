@@ -36,7 +36,8 @@ const TAKEOVER = {
     { src: "/videos/hero-coin-720.mp4", type: "video/mp4" },
   ],
   poster: "/images/hero-coin-poster.webp",
-  until: "2026-10-18T00:00:00Z",
+  // Takeover ended — the hero is back to the still mascot artwork.
+  until: "2026-10-14T00:00:00Z",
 };
 
 export function activeHeroVideo(now: number = Date.now()): HeroVideo | null {
