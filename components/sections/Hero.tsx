@@ -105,22 +105,14 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               the bright poster underneath until playback truly starts. This is
               the visible hero for reduced-motion, Low Power Mode, Data Saver
               and any autoplay-blocked visitor — never a black screen.
-              The background-image is a direct file request (not the image
-              optimizer), so the hero is never black even if /_next/image is
-              blocked, slow or optimising in the background. */}
+              Deliberately a plain CSS background on a direct file URL: no
+              /_next/image round-trip (that optimizer upscales this 1600px
+              poster to 1920-3840px on this box and takes ~3s, which is what
+              made the hero feel slow to paint). */}
           <div
             className="absolute inset-y-0 left-0 h-full w-full bg-[#030A1C] bg-cover bg-center lg:w-[126%] lg:max-w-none"
-            style={{ backgroundImage: "url('/images/hero-coin-poster.jpg')" }}
-          >
-            <Image
-              src={video.poster}
-              alt=""
-              fill
-              priority
-              sizes="(min-width: 1024px) 126vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+            style={{ backgroundImage: "url('/images/hero-coin-poster.webp')" }}
+          />
           {/* Wider than the hero on desktop, so the coin at its centre clears the copy. */}
           <video
             ref={videoRef}

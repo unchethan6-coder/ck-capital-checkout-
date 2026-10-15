@@ -31,7 +31,7 @@ const TAKEOVER = {
     // 720p for phones and tablets, where the extra pixels would not show.
     { src: "/videos/hero-coin-720.mp4", type: "video/mp4" },
   ],
-  poster: "/images/hero-coin-poster.jpg",
+  poster: "/images/hero-coin-poster.webp",
   until: "2026-10-18T00:00:00Z",
 };
 
