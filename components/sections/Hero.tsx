@@ -50,10 +50,13 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
     };
 
-    // Always start muted — most browsers block autoplay with sound, and
-    // some (especially on mobile) block the entire video if the first
-    // play() attempt fails. Start silent, then unmute after interaction.
-    el.muted = true;
+    // Try with sound first: where the browser allows it (desktop with media
+    // engagement) we get audible autoplay immediately. Everywhere else the
+    // attempt is rejected and we fall back to silent playback, staying muted
+    // until a real user gesture — unmuting via script without a gesture is
+    // what pauses playback outright on iOS Safari, so `allowed` must never
+    // be set outside a gesture handler or a successful audible play().
+    el.muted = false;
     el.play().then(
       () => {
         if (disposed) return;
@@ -62,10 +65,21 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       },
       () => {
         if (disposed) return;
+        el.muted = true;
         el.play().catch(() => {});
         for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
       }
     );
+
+    // Watchdog: if the video should be playing but isn't (iOS pausing it,
+    // Low Power Mode lifting, tab refocus, decoder hiccup), restart it.
+    // There is no intentional paused state besides reduced motion, so any
+    // pause here is a stuck state worth healing.
+    const watchdog = window.setInterval(() => {
+      if (disposed || reduceMotion) return;
+      if (document.hidden || !inView) return;
+      if (el.paused && !el.ended) el.play().catch(() => {});
+    }, 3000);
 
     // The loop only has sound while the hero is on screen and the tab is in front.
     const observer = new IntersectionObserver(([entry]) => {
@@ -109,6 +123,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     return () => {
       disposed = true;
       observer.disconnect();
+      window.clearInterval(watchdog);
       document.removeEventListener("visibilitychange", sync);
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
       el.removeEventListener("playing", onPlaying);
