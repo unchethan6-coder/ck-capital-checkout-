@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 import { routing, locales, defaultLocale } from "./i18n/routing";
 import { COUNTRY_TO_LOCALE } from "./i18n/countries";
+import { ATTRIBUTION_COOKIE_NAMES, attributionCookieToParam } from "./lib/analytics/attribution";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -119,6 +120,16 @@ export async function middleware(request: NextRequest) {
   if (cleanPath in authRedirects) {
     const dest = new URL(authRedirects[cleanPath]);
     dest.search = request.nextUrl.search;
+    // Carry captured ad-click IDs across to the portal: the client stores
+    // them as ck_* first-party cookies, which middleware can read even
+    // though localStorage is unavailable server-side. Existing query params
+    // win over cookie values.
+    for (const cookieName of ATTRIBUTION_COOKIE_NAMES) {
+      const param = attributionCookieToParam(cookieName);
+      if (!param || dest.searchParams.has(param)) continue;
+      const value = request.cookies.get(cookieName)?.value?.trim();
+      if (value && value.length <= 512) dest.searchParams.set(param, value);
+    }
     return NextResponse.redirect(dest, 307);
   }
 

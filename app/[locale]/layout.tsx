@@ -16,6 +16,7 @@ import { routing } from "@/i18n/routing";
 import { getLocaleMeta } from "@/i18n/locales";
 import { ScrollHandler } from "@/components/shared/ScrollHandler";
 import { MarketingPixels } from "@/components/analytics/MarketingPixels";
+import { PortalLinkDecorator } from "@/components/analytics/PortalLinkDecorator";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -191,6 +192,7 @@ export default async function LocaleLayout({
           />
         </noscript>
         <MarketingPixels />
+        <PortalLinkDecorator />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ScrollHandler />
           <TopNav />

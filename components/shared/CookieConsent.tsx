@@ -19,8 +19,10 @@ export function getCookieConsent(): CookieChoice | null {
 }
 
 /**
- * Cookie notice. Nothing beyond strictly necessary cookies may run until the
- * visitor accepts, so analytics/marketing scripts should listen for the
+ * Cookie notice. Google Consent Mode defaults to granted outside the UK/EEA
+ * and denied inside it (see lib/analytics/consent.ts); the banner records
+ * the visitor's explicit choice, which always wins over the regional
+ * default. Analytics/marketing scripts should listen for the
  * `ck:cookie-consent` event (or call getCookieConsent) before initialising.
  */
 export function CookieConsent() {

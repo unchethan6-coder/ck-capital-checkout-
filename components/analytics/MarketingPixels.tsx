@@ -5,6 +5,12 @@ import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { getCookieConsent, type CookieChoice } from "@/components/shared/CookieConsent";
 import { captureAttribution } from "@/lib/analytics/attribution";
+import {
+  STRICT_CONSENT_REGIONS,
+  CONSENT_GRANTED,
+  CONSENT_DENIED,
+  applyConsentChoice,
+} from "@/lib/analytics/consent";
 import { trackPageView } from "@/lib/analytics/events";
 
 // Official platform IDs registered in the CK Propfirm Implementation Guide
@@ -25,42 +31,42 @@ function PixelTrackerInner() {
     // Capture twclid, fbclid, gclid, ttclid, rdt_cid on landing
     captureAttribution();
 
-    // Check stored consent choice
+    // gtm-base (which defines window.gtag) loads afterInteractive, so a
+    // stored choice or a fast banner click can land before it exists.
+    // Retry until gtag appears so the explicit choice is never lost.
+    const retryTimers: number[] = [];
+    const applyWithRetry = (choice: CookieChoice) => {
+      applyConsentChoice(choice);
+      if (typeof window !== "undefined" && !(window as unknown as { gtag?: unknown }).gtag) {
+        const id = window.setInterval(() => {
+          if ((window as unknown as { gtag?: unknown }).gtag) {
+            applyConsentChoice(choice);
+            window.clearInterval(id);
+          }
+        }, 500);
+        retryTimers.push(id);
+        window.setTimeout(() => window.clearInterval(id), 10000);
+      }
+    };
+
+    // Check stored consent choice. An explicit choice always wins over the
+    // regional defaults via a consent update; with no stored choice the
+    // region-scoped defaults below apply (granted outside UK/EEA).
     const stored = getCookieConsent();
     setConsent(stored);
+    if (stored) applyWithRetry(stored);
 
     const onConsentChange = (event: Event) => {
       const custom = event as CustomEvent<CookieChoice>;
       setConsent(custom.detail);
-
-      // If user accepted all, update Google consent mode & pixel states
-      if (custom.detail === "all") {
-        if (typeof window !== "undefined" && window.gtag) {
-          window.gtag("consent", "update", {
-            ad_storage: "granted",
-            analytics_storage: "granted",
-            ad_user_data: "granted",
-            ad_personalization: "granted",
-          });
-        }
-        window.fbq?.("consent", "grant");
-        window.ttq?.grantConsent?.();
-      } else if (custom.detail === "essential") {
-        if (typeof window !== "undefined" && window.gtag) {
-          window.gtag("consent", "update", {
-            ad_storage: "denied",
-            analytics_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied",
-          });
-        }
-        window.fbq?.("consent", "revoke");
-        window.ttq?.revokeConsent?.();
-      }
+      applyWithRetry(custom.detail);
     };
 
     window.addEventListener("ck:cookie-consent", onConsentChange);
-    return () => window.removeEventListener("ck:cookie-consent", onConsentChange);
+    return () => {
+      window.removeEventListener("ck:cookie-consent", onConsentChange);
+      for (const id of retryTimers) window.clearInterval(id);
+    };
   }, []);
 
   // Track SPA route changes in Next.js
@@ -82,7 +88,11 @@ function PixelTrackerInner() {
 
   return (
     <>
-      {/* 1. Google Tag Manager (GTM-P5Q75TM2) with Consent Mode */}
+      {/* 1. Google Tag Manager (GTM-P5Q75TM2) with Consent Mode v2.
+          Defaults to granted everywhere EXCEPT the UK/EEA, where it
+          defaults to denied until the visitor accepts the cookie banner
+          (which dispatches a consent update). Google resolves the
+          visitor's region itself. */}
       <Script
         id="gtm-base"
         strategy="afterInteractive"
@@ -90,12 +100,8 @@ function PixelTrackerInner() {
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              'ad_storage': '${consent === "all" ? "granted" : "denied"}',
-              'analytics_storage': '${consent === "all" ? "granted" : "denied"}',
-              'ad_user_data': '${consent === "all" ? "granted" : "denied"}',
-              'ad_personalization': '${consent === "all" ? "granted" : "denied"}'
-            });
+            gtag('consent', 'default', ${JSON.stringify(CONSENT_GRANTED)});
+            gtag('consent', 'default', ${JSON.stringify(CONSENT_DENIED)}, { region: ${JSON.stringify(STRICT_CONSENT_REGIONS)} });
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

@@ -41,70 +41,10 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
-  async redirects() {
-    return [
-      {
-        source: "/portal",
-        destination: "https://my.ckpropfirm.com",
-        permanent: false,
-      },
-      {
-        source: "/dashboard",
-        destination: "https://my.ckpropfirm.com",
-        permanent: false,
-      },
-      {
-        source: "/signin",
-        destination: "https://my.ckpropfirm.com/auth/signin",
-        permanent: false,
-      },
-      {
-        source: "/login",
-        destination: "https://my.ckpropfirm.com/auth/signin",
-        permanent: false,
-      },
-      {
-        source: "/signup",
-        destination: "https://my.ckpropfirm.com/auth/signup",
-        permanent: false,
-      },
-      {
-        source: "/register",
-        destination: "https://my.ckpropfirm.com/auth/signup",
-        permanent: false,
-      },
-      {
-        source: "/:locale(en|es|pt|ar|de|fr|hi)/portal",
-        destination: "https://my.ckpropfirm.com",
-        permanent: false,
-      },
-      {
-        source: "/:locale(en|es|pt|ar|de|fr|hi)/dashboard",
-        destination: "https://my.ckpropfirm.com",
-        permanent: false,
-      },
-      {
-        source: "/:locale(en|es|pt|ar|de|fr|hi)/signin",
-        destination: "https://my.ckpropfirm.com/auth/signin",
-        permanent: false,
-      },
-      {
-        source: "/:locale(en|es|pt|ar|de|fr|hi)/login",
-        destination: "https://my.ckpropfirm.com/auth/signin",
-        permanent: false,
-      },
-      {
-        source: "/:locale(en|es|pt|ar|de|fr|hi)/signup",
-        destination: "https://my.ckpropfirm.com/auth/signup",
-        permanent: false,
-      },
-      {
-        source: "/:locale(en|es|pt|ar|de|fr|hi)/register",
-        destination: "https://my.ckpropfirm.com/auth/signup",
-        permanent: false,
-      },
-    ];
-  },
+  // NOTE: portal/auth redirects live in middleware.ts (not here) so that
+  // captured ad-click IDs from ck_* cookies can be forwarded to
+  // my.ckpropfirm.com. next.config redirects take precedence over middleware
+  // and would bypass that forwarding.
   images: {
     // WebP only: the AVIF encoder stalls indefinitely on the self-hosted
     // (Coolify) image optimizer for some image/width combos — e.g.

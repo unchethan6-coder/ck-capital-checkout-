@@ -11,6 +11,19 @@ type AttributionKey = (typeof ATTRIBUTION_KEYS)[number];
 
 const STORAGE_PREFIX = "ck_attr_";
 
+/**
+ * First-party cookie names mirroring ATTRIBUTION_KEYS, readable both
+ * client-side and in middleware (the HttpOnly twin shares the name).
+ */
+export const ATTRIBUTION_COOKIE_NAMES = ATTRIBUTION_KEYS.map((key) => `ck_${key}`);
+
+/** Map a `ck_<id>` cookie name back to its URL query parameter. */
+export function attributionCookieToParam(cookieName: string): string | null {
+  if (!cookieName.startsWith("ck_")) return null;
+  const key = cookieName.slice("ck_".length);
+  return (ATTRIBUTION_KEYS as readonly string[]).includes(key) ? key : null;
+}
+
 /** Safe client cookie setter */
 function setClientCookie(name: string, value: string, days = 90) {
   if (typeof document === "undefined") return;
