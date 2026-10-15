@@ -19,6 +19,12 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
+  // The proxy advertises HTTP/3 (`alt-svc: h3=":443"; ma=2592000`). On
+  // networks where UDP/QUIC is blocked, browsers stall 3–4s per connection
+  // before falling back to TCP — that was the black hero and the slow page
+  // load (every subresource paid the penalty). `clear` (RFC 7838 §3) tells
+  // browsers to drop the HTTP/3 hint for this origin.
+  { key: "Alt-Svc", value: "clear" },
 ];
 
 const nextConfig: NextConfig = {
