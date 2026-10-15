@@ -56,18 +56,31 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     // until a real user gesture — unmuting via script without a gesture is
     // what pauses playback outright on iOS Safari, so `allowed` must never
     // be set outside a gesture handler or a successful audible play().
+    // The 2.5s settle timer covers browsers where play() neither resolves
+    // nor rejects (hung attempt): without it there would be no fallback and
+    // no gesture listeners, i.e. a permanently stuck poster.
+    let settled = false;
+    const goMuted = () => {
+      if (disposed || settled) return;
+      settled = true;
+      el.muted = true;
+      el.play().catch(() => {});
+      for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
+    };
+    const settleTimer = window.setTimeout(goMuted, 2500);
     el.muted = false;
     el.play().then(
       () => {
-        if (disposed) return;
+        if (disposed || settled) return;
+        settled = true;
+        window.clearTimeout(settleTimer);
         allowed = true;
         sync();
       },
       () => {
         if (disposed) return;
-        el.muted = true;
-        el.play().catch(() => {});
-        for (const type of UNLOCK_EVENTS) window.addEventListener(type, unlock, { passive: true });
+        window.clearTimeout(settleTimer);
+        goMuted();
       }
     );
 
@@ -124,6 +137,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       disposed = true;
       observer.disconnect();
       window.clearInterval(watchdog);
+      window.clearTimeout(settleTimer);
       document.removeEventListener("visibilitychange", sync);
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
       el.removeEventListener("playing", onPlaying);
