@@ -75,12 +75,13 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     observer.observe(el);
     document.addEventListener("visibilitychange", sync);
 
-    // Show the video only once playback has moved past its dark opening
-    // (~1.5s in), and hide it again if it stalls: a frozen dark frame must
-    // never sit on top of the bright poster. The 1.2s grace period avoids
-    // flicker on micro-stalls.
+    // Show the video as soon as it is provably showing picture, and hide it
+    // again if it stalls: a frozen frame must never sit on top of the bright
+    // poster. The 1.2s grace period avoids flicker on micro-stalls. (The loop
+    // is cut to its bright passage, so frame 0 is already bright — no need
+    // to skip an intro.)
     let stallTimer: ReturnType<typeof setTimeout> | null = null;
-    const INTRO_END = 1.5;
+    const INTRO_END = 0.4;
     const show = () => {
       if (!disposed && el.currentTime > INTRO_END) setVideoVisible(true);
     };
@@ -92,6 +93,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       show();
     };
     const onTimeUpdate = () => show();
+    const onCanPlay = () => show();
     const onStall = () => {
       if (stallTimer) clearTimeout(stallTimer);
       stallTimer = setTimeout(() => {
@@ -100,6 +102,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     };
     el.addEventListener("playing", onPlaying);
     el.addEventListener("timeupdate", onTimeUpdate);
+    el.addEventListener("canplay", onCanPlay);
     el.addEventListener("waiting", onStall);
     el.addEventListener("stalled", onStall);
 
@@ -110,6 +113,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
       el.removeEventListener("playing", onPlaying);
       el.removeEventListener("timeupdate", onTimeUpdate);
+      el.removeEventListener("canplay", onCanPlay);
       el.removeEventListener("waiting", onStall);
       el.removeEventListener("stalled", onStall);
       if (stallTimer) clearTimeout(stallTimer);
