@@ -18,10 +18,12 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
-  // The video fades in from a black first frame, so it must not be shown until
-  // it is actually playing. Until then (and whenever playback is blocked —
-  // reduced motion, Low Power Mode, Data Saver) the bright poster stays up.
-  const [videoPlaying, setVideoPlaying] = useState(false);
+  // The video opens on dark frames and may stall on slow networks, so it
+  // must not cover the bright poster until it is provably showing picture
+  // past the dark intro — and if it ever stalls, the poster comes back.
+  // Until then (and whenever playback is blocked — reduced motion, Low
+  // Power Mode, Data Saver) the bright poster stays up. Never a black hero.
+  const [videoVisible, setVideoVisible] = useState(false);
   // Sound. Browsers refuse to start audio before the visitor has interacted with
   // the page, so: try with sound, and where that is refused keep the muted loop
   // running and switch the sound on at the first click, tap or key press.
@@ -73,11 +75,44 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     observer.observe(el);
     document.addEventListener("visibilitychange", sync);
 
+    // Show the video only once playback has moved past its dark opening
+    // (~1.5s in), and hide it again if it stalls: a frozen dark frame must
+    // never sit on top of the bright poster. The 1.2s grace period avoids
+    // flicker on micro-stalls.
+    let stallTimer: ReturnType<typeof setTimeout> | null = null;
+    const INTRO_END = 1.5;
+    const show = () => {
+      if (!disposed && el.currentTime > INTRO_END) setVideoVisible(true);
+    };
+    const onPlaying = () => {
+      if (stallTimer) {
+        clearTimeout(stallTimer);
+        stallTimer = null;
+      }
+      show();
+    };
+    const onTimeUpdate = () => show();
+    const onStall = () => {
+      if (stallTimer) clearTimeout(stallTimer);
+      stallTimer = setTimeout(() => {
+        if (!disposed) setVideoVisible(false);
+      }, 1200);
+    };
+    el.addEventListener("playing", onPlaying);
+    el.addEventListener("timeupdate", onTimeUpdate);
+    el.addEventListener("waiting", onStall);
+    el.addEventListener("stalled", onStall);
+
     return () => {
       disposed = true;
       observer.disconnect();
       document.removeEventListener("visibilitychange", sync);
       for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
+      el.removeEventListener("playing", onPlaying);
+      el.removeEventListener("timeupdate", onTimeUpdate);
+      el.removeEventListener("waiting", onStall);
+      el.removeEventListener("stalled", onStall);
+      if (stallTimer) clearTimeout(stallTimer);
     };
   }, [hasVideo, reduceMotion]);
 
@@ -109,6 +144,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               /_next/image round-trip (that optimizer upscales this 1600px
               poster to 1920-3840px on this box and takes ~3s, which is what
               made the hero feel slow to paint). */}
+          {/* Preload the poster: CSS backgrounds aren't discoverable by the
+              preload scanner, so without this the hero's first paint waits
+              for the stylesheet to be parsed and applied. */}
+          <link rel="preload" href="/images/hero-coin-poster.webp" as="image" fetchPriority="high" />
           <div
             className="absolute inset-y-0 left-0 h-full w-full bg-[#030A1C] bg-cover bg-center lg:w-[126%] lg:max-w-none"
             style={{ backgroundImage: "url('/images/hero-coin-poster.webp')" }}
@@ -122,12 +161,12 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             loop
             playsInline
             preload="auto"
-            onPlaying={() => setVideoPlaying(true)}
             className={cn(
               "absolute inset-y-0 left-0 h-full w-full object-cover transition-opacity duration-700 lg:w-[126%] lg:max-w-none",
-              // `playing` can fire before the effect pauses the video for
-              // reduced-motion visitors, so gate on both.
-              videoPlaying && !reduceMotion ? "opacity-100" : "opacity-0"
+              // `playing` can fire while the video is still on its dark
+              // opening frames, so visibility is driven by the effect's
+              // stall-aware logic (past the intro, hidden again on stall).
+              videoVisible && !reduceMotion ? "opacity-100" : "opacity-0"
             )}
           >
             {video.sources.map((source) => (
