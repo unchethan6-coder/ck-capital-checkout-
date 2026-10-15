@@ -43,11 +43,14 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     const sync = () => {
       el.muted = !(allowed && inView && !document.hidden);
     };
+    // Gesture listeners stay armed for the whole session (they are
+    // idempotent): after a tab switch iOS pauses playback and demands a new
+    // user gesture to resume, so removing them after the first tap would
+    // leave no way back. Cleanup on unmount still removes them.
     const unlock = () => {
       allowed = true;
       sync();
       el.play().catch(() => {});
-      for (const type of UNLOCK_EVENTS) window.removeEventListener(type, unlock);
     };
 
     // Try with sound first: where the browser allows it (desktop with media
@@ -122,6 +125,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
     const onTimeUpdate = () => show();
     const onCanPlay = () => show();
     const onStall = () => {
+      // Ignore `waiting` blips while frames are available (readyState 3+):
+      // iOS fires these around seamless loop restarts, and treating them
+      // as stalls flashes the poster on every loop.
+      if (el.readyState >= 3) return;
       if (stallTimer) clearTimeout(stallTimer);
       stallTimer = setTimeout(() => {
         if (!disposed) setVideoVisible(false);
