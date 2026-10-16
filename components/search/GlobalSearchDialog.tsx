@@ -145,9 +145,9 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
         }
       }
 
-      // 2. Ingest Help Center Articles
-      if (helpData?.articles && Array.isArray(helpData.articles)) {
-        for (const art of helpData.articles) {
+      // 2. Ingest Help Center Articles (same CMS-first source as the pages)
+      if (helpData?.data && Array.isArray(helpData.data)) {
+        for (const art of helpData.data) {
           if (!art.slug || !art.title) continue;
           const textRuns: string[] = [];
           if (Array.isArray(art.blocks)) {
