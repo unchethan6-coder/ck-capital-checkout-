@@ -7,6 +7,7 @@ import {
   Megaphone, Search, X, MessageSquare,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ALL_FAQ_KEYS, FAQ_COLLECTIONS, SUGGESTED_FAQ_KEYS } from "@/lib/support/faq";
 import type { NewsItem, OffersPayload } from "@/lib/offers/types";
@@ -40,6 +41,37 @@ export interface WidgetFaq {
   sortOrder?: number | null;
 }
 
+export interface WidgetArticle {
+  slug: string;
+  title: string;
+  text: string;
+}
+
+/** Flatten help-article blocks to searchable plain text (mirrors blocksToText). */
+function articleText(blocks: Array<{
+  type: string;
+  runs?: Array<{ t?: string }>;
+  items?: unknown[];
+  rows?: unknown[];
+}>): string {
+  const parts: string[] = [];
+  const walk = (list: unknown[]): void => {
+    for (const b of list) {
+      if (!b || typeof b !== "object") continue;
+      const blk = b as { type?: string; runs?: Array<{ t?: string; br?: boolean }>; items?: unknown[]; rows?: unknown[] };
+      if (blk.type === "p" || blk.type === "h") {
+        parts.push((blk.runs ?? []).map((r) => (r.br ? " " : (r.t ?? ""))).join(""));
+      } else if (blk.type === "list") {
+        for (const item of blk.items ?? []) walk(item as unknown[]);
+      } else if (blk.type === "table") {
+        for (const row of blk.rows ?? []) for (const cell of (row as unknown[]) ?? []) walk(cell as unknown[]);
+      }
+    }
+  };
+  walk(blocks as unknown[]);
+  return parts.join(" ").replace(/\s+/g, " ").trim();
+}
+
 function DiscordIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -60,6 +92,7 @@ export function SupportWidget() {
   const [offers, setOffers] = useState<OffersPayload | null>(null);
   const [newsIndex, setNewsIndex] = useState(0);
   const [cmsFaqs, setCmsFaqs] = useState<WidgetFaq[]>([]);
+  const [cmsArticles, setCmsArticles] = useState<WidgetArticle[]>([]);
 
   // Fetch CMS promos/offers lazily on open
   useEffect(() => {
@@ -99,6 +132,35 @@ export function SupportWidget() {
       cancelled = true;
     };
   }, [open, cmsFaqs.length]);
+
+  // Fetch rich help articles lazily on open (same trigger as FAQs)
+  useEffect(() => {
+    if (!open || cmsArticles.length > 0) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(`/api/help-articles`, { cache: "no-store" });
+        if (res.ok && !cancelled) {
+          const json = await res.json();
+          const list = Array.isArray(json?.data) ? json.data : [];
+          setCmsArticles(
+            list
+              .filter((a: { slug?: unknown; title?: unknown }) => typeof a.slug === "string" && typeof a.title === "string")
+              .map((a: { slug: string; title: string; blocks?: unknown }) => ({
+                slug: a.slug,
+                title: a.title,
+                text: articleText(Array.isArray(a.blocks) ? a.blocks : []),
+              }))
+          );
+        }
+      } catch {
+        // Help tab still works with FAQs alone
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [open, cmsArticles.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -155,6 +217,23 @@ export function SupportWidget() {
       return false;
     });
   }, [query, allFaqs]);
+
+  // Search matched rich articles (same matching semantics as FAQs, capped)
+  const articleResults = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    if (!needle) return [];
+    const tokens = needle.split(/\s+/).filter(Boolean);
+    return cmsArticles
+      .filter((a) => {
+        const hay = `${a.title} ${a.text}`.toLowerCase();
+        if (hay.includes(needle)) return true;
+        if (tokens.length > 1) {
+          return tokens.every((t) => hay.includes(t));
+        }
+        return false;
+      })
+      .slice(0, 8);
+  }, [query, cmsArticles]);
 
   const openWidget = () => {
     setOpen(true);
@@ -227,8 +306,10 @@ export function SupportWidget() {
                 query={query}
                 setQuery={setQuery}
                 results={searchResults}
+                articles={articleResults}
                 openFaq={openFaq}
                 setOpenFaq={setOpenFaq}
+                onClose={() => setOpen(false)}
               />
             )}
           </div>
@@ -465,20 +546,25 @@ function NewsPanel({
 }
 
 function HelpPanel({
-  t, query, setQuery, results, openFaq, setOpenFaq,
+  t, query, setQuery, results, articles, openFaq, setOpenFaq, onClose,
 }: {
   t: ReturnType<typeof useTranslations<"supportWidget">>;
   query: string;
   setQuery: (v: string) => void;
   results: WidgetFaq[];
+  articles: WidgetArticle[];
   openFaq: string | number | null;
   setOpenFaq: (k: string | number | null) => void;
+  onClose: () => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     const timer = setTimeout(() => inputRef.current?.focus(), 80);
     return () => clearTimeout(timer);
   }, []);
+
+  const hasQuery = query.trim().length > 0;
+  const total = results.length + (hasQuery ? articles.length : 0);
 
   return (
     <div className="p-4 sm:p-5 space-y-4">
@@ -497,10 +583,10 @@ function HelpPanel({
 
       <div className="rounded-2xl border border-[var(--ck-line)] bg-[var(--ck-surface)] p-4">
         <p className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
-          {query.trim() ? `Search Results (${results.length})` : `All Questions (${results.length})`}
+          {hasQuery ? `Search Results (${total})` : `All Questions (${results.length})`}
         </p>
 
-        {results.length === 0 ? (
+        {total === 0 ? (
           <div className="py-12 text-center">
             <p className="text-sm text-muted-foreground">No questions found matching &ldquo;{query}&rdquo;</p>
             <p className="mt-1 text-xs text-muted-foreground">Try searching for keywords like drawdown, payout, or EA.</p>
@@ -516,6 +602,48 @@ function HelpPanel({
                 onToggle={() => setOpenFaq(openFaq === faq.id ? null : faq.id)}
               />
             ))}
+          </div>
+        )}
+
+        {hasQuery && articles.length > 0 && (
+          <div className="mt-3 border-t border-[var(--ck-line)]/50 pt-3">
+            <p className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
+              Help articles ({articles.length})
+            </p>
+            <ul className="divide-y divide-[var(--ck-line)]/50">
+              {articles.map((a) => (
+                <li key={a.slug}>
+                  <Link
+                    href={`/faq/${a.slug}`}
+                    onClick={onClose}
+                    className="group flex w-full items-center justify-between gap-3 py-3 text-left"
+                  >
+                    <span className="min-w-0 pr-2 text-[14px] font-medium text-foreground/95 transition-colors group-hover:text-[#A98BFF]">
+                      {a.title}
+                    </span>
+                    <span className="flex shrink-0 items-center gap-1 text-[11px] font-bold text-[#A98BFF]">
+                      Read
+                      <ChevronRight size={16} aria-hidden className="text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-[#A98BFF]" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {!hasQuery && (
+          <div className="mt-3 border-t border-[var(--ck-line)]/50 pt-3">
+            <Link
+              href="/faq"
+              onClick={onClose}
+              className="group flex w-full items-center justify-between gap-3 py-3 text-left"
+            >
+              <span className="min-w-0 pr-2 text-[14px] font-medium text-foreground/95 transition-colors group-hover:text-[#A98BFF]">
+                Browse all 68 help articles
+              </span>
+              <ChevronRight size={16} aria-hidden className="shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-[#A98BFF]" />
+            </Link>
           </div>
         )}
       </div>
