@@ -10,8 +10,10 @@ import { routing } from "@/i18n/routing";
 import { HELP_ARTICLES, blocksToText, excerpt, getHelpArticleAsync, getHelpCollectionAsync, getHelpArticlesAsync } from "@/lib/help";
 import { pageSeo, SITE_URL } from "@/lib/seo";
 
-// Every article is known at build time; anything else is a 404, not a render.
-export const dynamicParams = false;
+// Articles render on demand so on-demand revalidation keeps working;
+// unknown slugs still 404 via notFound() below (dynamicParams=false breaks
+// revalidation for this route — the evicted params never re-render).
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const [staticSlugs, cmsArticles] = await Promise.all([

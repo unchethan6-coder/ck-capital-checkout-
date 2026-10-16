@@ -10,7 +10,7 @@ import { routing } from "@/i18n/routing";
 import { HELP_COLLECTIONS, getHelpCollectionAsync, getHelpCollectionsAsync, getHelpArticlesAsync } from "@/lib/help";
 import { pageSeo, SITE_URL } from "@/lib/seo";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const [staticSlugs, cmsCollections] = await Promise.all([
