@@ -23,6 +23,32 @@ export function getHelpCollection(slug: string): HelpCollection | undefined {
   return HELP_COLLECTIONS.find((c) => c.slug === slug);
 }
 
+/**
+ * Async CMS-first variants for server components, route handlers and the
+ * sitemap. Falls back to the bundled static snapshot whenever Strapi is
+ * unreachable or not yet populated, so the help centre never renders empty.
+ */
+export async function getHelpDataAsync(): Promise<HelpData> {
+  const { loadHelpData } = await import("./cms");
+  return (await loadHelpData()).data;
+}
+
+export async function getHelpArticlesAsync(): Promise<HelpArticle[]> {
+  return (await getHelpDataAsync()).articles;
+}
+
+export async function getHelpCollectionsAsync(): Promise<HelpCollection[]> {
+  return (await getHelpDataAsync()).collections;
+}
+
+export async function getHelpArticleAsync(slug: string): Promise<HelpArticle | undefined> {
+  return (await getHelpArticlesAsync()).find((a) => a.slug === slug);
+}
+
+export async function getHelpCollectionAsync(slug: string): Promise<HelpCollection | undefined> {
+  return (await getHelpCollectionsAsync()).find((c) => c.slug === slug);
+}
+
 /** Flattens blocks to plain text — for meta descriptions and JSON-LD. */
 export function blocksToText(blocks: Block[]): string {
   const parts: string[] = [];

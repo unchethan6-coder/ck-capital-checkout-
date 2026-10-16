@@ -30,8 +30,16 @@ export function HelpSearch() {
   const load = () => {
     if (loading.current) return;
     loading.current = true;
-    import("@/lib/help/articles.json")
-      .then((mod) => setIndex(buildIndex((mod.default as HelpData).articles)))
+    // CMS-first via API (same data as the pages); fall back to the bundled
+    // snapshot if the API is unreachable.
+    fetch("/api/help-articles", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error("bad status"))))
+      .then((json) => setIndex(buildIndex(json.data as HelpData["articles"])))
+      .catch(() =>
+        import("@/lib/help/articles.json").then((mod) =>
+          setIndex(buildIndex((mod.default as HelpData).articles))
+        )
+      )
       .catch(() => {
         // Let the next keystroke try again.
         loading.current = false;

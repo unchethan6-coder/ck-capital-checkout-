@@ -87,7 +87,7 @@ function toMedia(raw: any): CmsMedia | null {
 
 /* ─────────────────────────────── core fetch ─────────────────────────────── */
 
-async function cmsFetch<T>(path: string, revalidate = DEFAULT_REVALIDATE): Promise<T | null> {
+export async function cmsFetch<T>(path: string, revalidate = DEFAULT_REVALIDATE): Promise<T | null> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
   try {

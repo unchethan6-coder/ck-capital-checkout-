@@ -7,20 +7,31 @@ import { Container } from "@/components/shared/Container";
 import { COLLECTION_GLOW, CollectionIcon } from "@/components/help/CollectionIcon";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { HELP_COLLECTIONS, getHelpArticle, getHelpCollection } from "@/lib/help";
+import { HELP_COLLECTIONS, getHelpCollectionAsync, getHelpCollectionsAsync, getHelpArticlesAsync } from "@/lib/help";
 import { pageSeo, SITE_URL } from "@/lib/seo";
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return HELP_COLLECTIONS.map((c) => ({ collection: c.slug }));
+export async function generateStaticParams() {
+  const [staticSlugs, cmsCollections] = await Promise.all([
+    HELP_COLLECTIONS.map((c) => ({ collection: c.slug })),
+    getHelpCollectionsAsync().catch(() => []),
+  ]);
+  const seen = new Set(staticSlugs.map((s) => s.collection));
+  for (const c of cmsCollections) {
+    if (!seen.has(c.slug)) {
+      seen.add(c.slug);
+      staticSlugs.push({ collection: c.slug });
+    }
+  }
+  return staticSlugs;
 }
 
 type Params = Promise<{ locale: string; collection: string }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale, collection: slug } = await params;
-  const collection = getHelpCollection(slug);
+  const collection = await getHelpCollectionAsync(slug);
   if (!collection) return { title: "Collection Not Found" };
   return pageSeo({
     title: `${collection.name} — Help Center`,
@@ -33,8 +44,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function HelpCollectionPage({ params }: { params: Params }) {
   const { locale, collection: slug } = await params;
   setRequestLocale(locale);
-  const collection = getHelpCollection(slug);
+  const [collection, allArticles] = await Promise.all([
+    getHelpCollectionAsync(slug),
+    getHelpArticlesAsync(),
+  ]);
   if (!collection) notFound();
+  const titlesBySlug = new Map(allArticles.map((a) => [a.slug, a.title]));
 
   const t = await getTranslations("helpCenter");
   const count = collection.sections.reduce((n, s) => n + s.articles.length, 0);
@@ -105,7 +120,7 @@ export default async function HelpCollectionPage({ params }: { params: Params })
                         href={`/faq/${articleSlug}` as never}
                         className="flex min-h-12 items-center justify-between gap-3 px-4 py-3 text-sm font-medium text-foreground/85 transition-colors hover:bg-foreground/[0.05] hover:text-[#A98BFF] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--ring)]"
                       >
-                        <span className="min-w-0">{getHelpArticle(articleSlug)?.title}</span>
+                        <span className="min-w-0">{titlesBySlug.get(articleSlug) ?? articleSlug}</span>
                         <ChevronRight size={15} aria-hidden className="shrink-0 text-foreground/35" />
                       </Link>
                     </li>

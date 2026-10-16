@@ -7,7 +7,7 @@ import { COLLECTION_GLOW, CollectionIcon } from "@/components/help/CollectionIco
 import { HelpSearch } from "@/components/help/HelpSearch";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { HELP_ARTICLES, HELP_COLLECTIONS, blocksToText } from "@/lib/help";
+import { blocksToText, getHelpArticlesAsync, getHelpCollectionsAsync } from "@/lib/help";
 import { pageSeo } from "@/lib/seo";
 import { getFaqs } from "@/lib/cms";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
@@ -29,10 +29,12 @@ const JSON_LD_QUESTIONS = 20;
 export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const [t, tFaq, allCmsFaqs] = await Promise.all([
+  const [t, tFaq, allCmsFaqs, helpArticles, helpCollections] = await Promise.all([
     getTranslations("helpCenter"),
     getTranslations("faq"),
     getFaqs(),
+    getHelpArticlesAsync(),
+    getHelpCollectionsAsync(),
   ]);
 
   const ckFaqs = allCmsFaqs.filter(
@@ -42,7 +44,8 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: HELP_ARTICLES.filter((a) => a.title.trim().endsWith("?"))
+    mainEntity: helpArticles
+      .filter((a) => a.title.trim().endsWith("?"))
       .slice(0, JSON_LD_QUESTIONS)
       .map((a) => ({
         "@type": "Question",
@@ -88,7 +91,7 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
       <section className="bg-muted py-14 md:py-20" data-od-id="faq">
         <Container>
           <ul dir="ltr" className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {HELP_COLLECTIONS.map((collection) => {
+            {helpCollections.map((collection) => {
               const count = collection.sections.reduce((n, s) => n + s.articles.length, 0);
               return (
                 <li key={collection.slug}>

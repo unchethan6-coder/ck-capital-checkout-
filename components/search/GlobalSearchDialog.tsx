@@ -112,9 +112,15 @@ export function GlobalSearchDialog({ isOpen, onClose }: GlobalSearchDialogProps)
       fetch("/api/faqs")
         .then((r) => (r.ok ? r.json() : null))
         .catch(() => null),
-      import("@/lib/help/articles.json")
-        .then((m) => m.default)
-        .catch(() => null),
+      // CMS-first help articles (same source as the pages), with the bundled
+      // snapshot as fallback.
+      fetch("/api/help-articles", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error("bad status"))))
+        .catch(() =>
+          import("@/lib/help/articles.json")
+            .then((m) => m.default)
+            .catch(() => null)
+        ),
     ]).then(([faqsData, helpData]) => {
       const newItems: SearchItem[] = [];
 

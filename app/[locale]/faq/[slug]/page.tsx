@@ -7,21 +7,32 @@ import { Container } from "@/components/shared/Container";
 import { ArticleBody } from "@/components/help/ArticleBody";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { HELP_ARTICLES, blocksToText, excerpt, getHelpArticle, getHelpCollection } from "@/lib/help";
+import { HELP_ARTICLES, blocksToText, excerpt, getHelpArticleAsync, getHelpCollectionAsync, getHelpArticlesAsync } from "@/lib/help";
 import { pageSeo, SITE_URL } from "@/lib/seo";
 
 // Every article is known at build time; anything else is a 404, not a render.
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return HELP_ARTICLES.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const [staticSlugs, cmsArticles] = await Promise.all([
+    HELP_ARTICLES.map((a) => ({ slug: a.slug })),
+    getHelpArticlesAsync().catch(() => []),
+  ]);
+  const seen = new Set(staticSlugs.map((s) => s.slug));
+  for (const a of cmsArticles) {
+    if (!seen.has(a.slug)) {
+      seen.add(a.slug);
+      staticSlugs.push({ slug: a.slug });
+    }
+  }
+  return staticSlugs;
 }
 
 type Params = Promise<{ locale: string; slug: string }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const article = getHelpArticle(slug);
+  const article = await getHelpArticleAsync(slug);
   if (!article) return { title: "Article Not Found" };
   return pageSeo({
     title: article.title,
@@ -35,16 +46,20 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function HelpArticlePage({ params }: { params: Params }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const article = getHelpArticle(slug);
+  const article = await getHelpArticleAsync(slug);
   if (!article) notFound();
 
   const t = await getTranslations("helpCenter");
   const format = await getFormatter();
-  const collection = getHelpCollection(article.collection);
+  const [collection, allArticles] = await Promise.all([
+    getHelpCollectionAsync(article.collection),
+    getHelpArticlesAsync(),
+  ]);
+  const articlesBySlug = new Map(allArticles.map((a) => [a.slug, a]));
   const siblings = (collection?.sections ?? [])
     .flatMap((s) => s.articles)
     .filter((s) => s !== article.slug)
-    .map(getHelpArticle)
+    .map((s) => articlesBySlug.get(s))
     .filter((a) => a !== undefined);
 
   const breadcrumbItems = [

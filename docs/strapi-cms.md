@@ -349,7 +349,8 @@ All content types were seeded via API from the site's then-current static conten
 3. URL: `https://ckpropfirm.com/api/revalidate`
 4. Headers: key `x-strapi-webhook-secret`, value = the `REVALIDATE_SECRET` in `.env.local`.
 5. Events: tick **Publish / Unpublish** for: Article, Promo, Banner, Payout,
-   Firm Review, Video Review, Challenge Config, What's New Slide.
+   Firm Review, Video Review, Challenge Config, What's New Slide,
+   FAQ Article, FAQ Collection.
 6. Save. Pages also refresh on their own within ~5 minutes via ISR.
 
 ---
