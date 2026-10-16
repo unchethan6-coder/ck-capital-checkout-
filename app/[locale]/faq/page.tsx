@@ -9,8 +9,6 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { blocksToText, getHelpArticlesAsync, getHelpCollectionsAsync } from "@/lib/help";
 import { pageSeo } from "@/lib/seo";
-import { getFaqs } from "@/lib/cms";
-import { FaqAccordion } from "@/components/sections/FaqAccordion";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -29,17 +27,12 @@ const JSON_LD_QUESTIONS = 20;
 export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const [t, tFaq, allCmsFaqs, helpArticles, helpCollections] = await Promise.all([
+  const [t, tFaq, helpArticles, helpCollections] = await Promise.all([
     getTranslations("helpCenter"),
     getTranslations("faq"),
-    getFaqs(),
     getHelpArticlesAsync(),
     getHelpCollectionsAsync(),
   ]);
-
-  const ckFaqs = allCmsFaqs.filter(
-    (f) => f.scope === "firm-detail" || f.firmSlug === "ck-capital" || f.firmSlug === "ck-propfirm"
-  );
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -124,9 +117,6 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
           </ul>
         </Container>
       </section>
-
-      {/* ─────────────── Quick FAQ Accordion (Strapi / Localized) ─────────────── */}
-      <FaqAccordion cmsFaqs={locale === "en" && ckFaqs.length ? ckFaqs : undefined} />
 
       {/* ─────────────── CTA ─────────────── */}
       <section className="bg-background py-14 md:py-20" data-od-id="faq-cta">
