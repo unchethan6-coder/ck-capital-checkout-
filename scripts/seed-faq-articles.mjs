@@ -80,27 +80,28 @@ async function publish(type, documentId) {
 async function upsert(type, slug, data) {
   const existing = await findBySlug(type, slug);
   if (existing) {
-    const id = existing.documentId ?? existing.id;
+    const ids = { id: existing.id, documentId: existing.documentId ?? existing.id };
     if (DRY_RUN) {
       console.log(`  [dry-run] would UPDATE ${type}/${slug}`);
-      return id;
+      return ids;
     }
-    const { status } = await api(`/api/${type}/${id}`, { method: "PUT", body: { data } });
+    const key = existing.documentId ?? existing.id;
+    const { status } = await api(`/api/${type}/${key}`, { method: "PUT", body: { data } });
     if (status !== 200) throw new Error(`PUT ${type}/${slug} → ${status}`);
     console.log(`  updated ${type}/${slug}`);
-    return id;
+    return ids;
   }
   if (DRY_RUN) {
     console.log(`  [dry-run] would CREATE ${type}/${slug}`);
-    return `dry-run-${slug}`;
+    return { id: `dry-run-${slug}`, documentId: `dry-run-${slug}` };
   }
   const { status, json } = await api(`/api/${type}`, { method: "POST", body: { data } });
   if (status !== 200 && status !== 201) {
     throw new Error(`POST ${type}/${slug} → ${status}: ${JSON.stringify(json)?.slice(0, 200)}`);
   }
-  const id = json?.data?.documentId ?? json?.data?.id;
+  const ids = { id: json?.data?.id, documentId: json?.data?.documentId ?? json?.data?.id };
   console.log(`  created ${type}/${slug}`);
-  return id;
+  return ids;
 }
 
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, "lib", "help", "articles.json"), "utf-8"));
@@ -130,16 +131,18 @@ for (const c of collections) {
       console.warn(`  ⚠ collection ${c.slug} references unknown article ${slug}, skipping`);
       continue;
     }
+    // Relations connect by documentId (v5); publishing addresses the documentId too.
     const id = await upsert("faq-articles", slug, {
       title: a.title,
       slug: a.slug,
-      collection: collectionIds[c.slug],
+      collection: collectionIds[c.slug].documentId,
       body: a.blocks,
       sortOrder: i,
       displayDate: a.updated ?? null,
     });
-    if (!DRY_RUN && id && !String(id).startsWith("dry-run")) {
-      const ok = await publish("faq-articles", id);
+    const docId = id && !String(id.documentId).startsWith("dry-run") ? id.documentId : null;
+    if (!DRY_RUN && docId) {
+      const ok = await publish("faq-articles", docId);
       if (!ok) console.warn(`  ⚠ could not publish ${slug} — publish it manually in Strapi admin`);
     }
     done++;
@@ -150,7 +153,9 @@ for (const c of collections) {
 // Publish collections too (harmless if draft/publish is off).
 if (!DRY_RUN) {
   for (const c of collections) {
-    await publish("faq-collections", collectionIds[c.slug]).catch(() => false);
+    const ids = collectionIds[c.slug];
+    const docId = ids && !String(ids.documentId).startsWith("dry-run") ? ids.documentId : null;
+    if (docId) await publish("faq-collections", docId).catch(() => false);
   }
 }
 
