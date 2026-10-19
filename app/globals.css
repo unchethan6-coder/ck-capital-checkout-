@@ -1053,7 +1053,8 @@ main :where(h1, h2, h3, h4, h5, h6) {
 /* Hero mascot: the artwork is cropped hard at its left, right and bottom
    edges (the arms and base run straight off the canvas), which showed as a
    visible boundary against the hero background. These masks dissolve those
-   three edges; the top is left untouched so the ears stay intact. */
+   three edges; the top is left untouched so the ears stay intact. The bottom
+   stop is held until 89% so the 80% OFF badge is never dimmed. */
 .hero-mascot {
   --mascot-mask:
     linear-gradient(to right,
@@ -1071,10 +1072,9 @@ main :where(h1, h2, h3, h4, h5, h6) {
       transparent 0%,
       rgba(0, 0, 0, 0.4) 2%,
       #000 4%,
-      #000 58%,
-      rgba(0, 0, 0, 0.8) 75%,
-      rgba(0, 0, 0, 0.4) 88%,
-      rgba(0, 0, 0, 0.12) 95%,
+      #000 89%,
+      rgba(0, 0, 0, 0.85) 93%,
+      rgba(0, 0, 0, 0.45) 97%,
       transparent 100%);
   -webkit-mask-image: var(--mascot-mask);
   mask-image: var(--mascot-mask);

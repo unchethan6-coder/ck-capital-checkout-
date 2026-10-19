@@ -385,10 +385,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               className="flex w-full justify-center lg:justify-end"
             >
             <Image
-              src="/images/ck-purple-raccoon-v2.webp"
-              alt="CK Propfirm futuristic raccoon mascot holding the CK emblem"
-              width={1930}
-              height={1930}
+              src="/images/ck-purple-raccoon-80-off.webp"
+              alt="CK Propfirm futuristic raccoon mascot with an 80% off badge"
+              width={1254}
+              height={1254}
               priority
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 560px, (max-width: 1280px) 720px, 790px"
               className="hero-mascot relative ml-auto h-auto w-full max-w-[390px] object-contain sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"
@@ -397,7 +397,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             {/* Bottom fade: blends the artwork's hard edge into the section background */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -inset-x-[8%] bottom-0 z-10 h-[30%] bg-gradient-to-t from-[#030A1C] via-[#030A1C]/70 to-transparent"
+              className="pointer-events-none absolute -inset-x-[8%] bottom-0 z-10 h-[10%] bg-gradient-to-t from-[#030A1C] via-[#030A1C]/70 to-transparent"
             />
           </motion.div>
           )}
