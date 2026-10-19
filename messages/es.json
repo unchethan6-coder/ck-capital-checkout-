@@ -32,12 +32,12 @@
     "rulesToolsHeader": "Reglas y Directrices",
     "oneStepTitle": "Evaluación de 1 Paso",
     "oneStepDesc": "Objetivo de una sola fase, vía rápida a cuenta financiada.",
-    "oneStepPrice": "Desde $28",
+    "oneStepPrice": "Desde $22",
     "twoStepTitle": "Evaluación de 2 Pasos",
     "twoStepDesc": "Verificación tradicional en 2 fases con máximo reparto de beneficios.",
-    "twoStepPrice": "Desde $18",
+    "twoStepPrice": "Desde $15",
     "instantTitle": "Financiación Instantánea",
-    "instantPrice": "Desde $38",
+    "instantPrice": "Desde $30",
     "compareAllTitle": "Comparar Todos los Programas",
     "compareAllDesc": "Comparativa de drawdown, objetivos de beneficio y tarifas",
     "tradingObjectivesTitle": "Objetivos de Trading",
@@ -1153,10 +1153,10 @@
   },
   "offers": {
     "title": "Ofertas Disponibles",
-    "badge": "iniciar desafío · Desde $9",
+    "badge": "iniciar desafío · Desde $15",
     "hotOffer": "oferta destacada",
     "defaultHeadline": "Tu Primer Desafío, {discount} de Descuento",
-    "defaultSubcopy": "Disfruta de un 80% de descuento en modelos seleccionados hasta $100K. Solo nuevos usuarios.",
+    "defaultSubcopy": "Disfruta de un 80% de descuento en modelos seleccionados hasta $300K. Solo nuevos usuarios.",
     "useCode": "Usar Código: {code}"
   },
   "search": {

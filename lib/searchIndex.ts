@@ -183,11 +183,11 @@ export const SEARCH_INDEX: SearchItem[] = [
     id: "size-10k",
     category: "challenges",
     title: "$10,000 Account",
-    description: "Popular evaluation account size starting at $18.80 with generous drawdown buffers.",
+    description: "Popular evaluation account size starting at $15.04 with generous drawdown buffers.",
     keywords: ["10k", "$10,000", "10000", "size", "starter"],
     href: "/#start-challenge?type=standard&size=$10K",
     iconName: "DollarSign",
-    badge: "From $18.80",
+    badge: "From $15.04",
   },
   {
     id: "size-25k",
