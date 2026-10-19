@@ -28,9 +28,9 @@ export function EvaluationPrograms() {
       profitTarget: "$1,000",
       maxLoss: "$800",
       profitSplit: t("profitSplitValue"),
-      originalPrice: "$75.20",
+      originalPrice: "$94.00",
       discountedPrice: "$18.80",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
     },
     {
       id: "50k",
@@ -38,9 +38,9 @@ export function EvaluationPrograms() {
       profitTarget: "$5,000",
       maxLoss: "$4,000",
       profitSplit: t("profitSplitValue"),
-      originalPrice: "$475.20",
+      originalPrice: "$594.00",
       discountedPrice: "$118.80",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
       popular: true,
     },
     {
@@ -49,9 +49,9 @@ export function EvaluationPrograms() {
       profitTarget: "$10,000",
       maxLoss: "$8,000",
       profitSplit: t("profitSplitValue"),
-      originalPrice: "$712.80",
+      originalPrice: "$891.00",
       discountedPrice: "$178.20",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
     },
     {
       id: "200k",
@@ -59,9 +59,9 @@ export function EvaluationPrograms() {
       profitTarget: "$20,000",
       maxLoss: "$16,000",
       profitSplit: t("profitSplitValue"),
-      originalPrice: "$2,796.80",
+      originalPrice: "$3,496.00",
       discountedPrice: "$699.20",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
     },
   ];
 

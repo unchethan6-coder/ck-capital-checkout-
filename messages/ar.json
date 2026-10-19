@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "عرض لفترة محدودة",
-    "discount": "خصم 75%",
+    "discount": "خصم 80%",
     "allEvaluations": "جميع التقييمات",
     "codeLabel": "استخدم الرمز",
     "expiresIn": "ينتهي خلال",
-    "claimOffer": "احصل على خصم 75%"
+    "claimOffer": "احصل على خصم 80%"
   },
   "nav": {
     "evaluation": "التقييم",
@@ -55,10 +55,10 @@
     "support247": "دعم 24/7",
     "support247Desc": "مساعدة حية، دعم التذاكر والمساعدة المتخصصة",
     "blogTitle": "رؤى التداول والمدونة",
-    "featuredEvalBadge": "عرض محدود · خصم 75%",
+    "featuredEvalBadge": "عرض محدود · خصم 80%",
     "featuredEvalTitle": "تداول برأس مال يصل إلى 300 ألف دولار",
     "featuredEvalDesc": "تداول بأدوات احترافية وفروق أسعار ضيقة ونسبة أرباح 80% في الحسابات الافتراضية.",
-    "featuredEvalCta": "احصل على خصم 75%",
+    "featuredEvalCta": "احصل على خصم 80%",
     "featuredCommunityBadge": "مجتمع المتداولين",
     "featuredCommunityTitle": "انضم إلى أكثر من 20,000 متداول نشط",
     "featuredCommunityDesc": "تحليلات تداول حية، إثباتات سحب ودعم VIP مباشر على ديسكورد.",
@@ -135,7 +135,7 @@
     "startJourney": "ابدأ رحلتك اليوم.",
     "startChallenge": "ابدأ التحدي",
     "compareAll": "قارن كل البرامج",
-    "ctaFunded": "احصل على التمويل — خصم حتى 75%",
+    "ctaFunded": "احصل على التمويل — خصم حتى 80%",
     "programsBadge": "برامج الحسابات",
     "viewPlans": "عرض الخطط",
     "railFunded": "ممول",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "ما الجديد",
-    "tabPromo": "CK Propfirm • خصم 75%",
+    "tabPromo": "CK Propfirm • خصم 80%",
     "tabLeverage": "رافعة مالية 1:100 • أقصى تعرض",
     "tabLabs": "CK Labs • قريباً"
   },
@@ -896,10 +896,10 @@
     "hoursDesc": "من الإثنين إلى الجمعة: 8ص - 8م بتوقيت غرينتش. دعم المجتمع 24/7."
   },
   "evaluation": {
-    "badge": "عرض محدود · خصم 75% على التقييمات",
+    "badge": "عرض محدود · خصم 80% على التقييمات",
     "title": "تقييمات تداول مصممة للمحترفين.",
     "subtitle": "أثبت مهاراتك في بيئة محاكاة واحصل على حسابات ممولة حتى 1.2 مليون دولار.",
-    "claimOffer": "احصل على خصم 75%",
+    "claimOffer": "احصل على خصم 80%",
     "compareBtn": "قارن التحديات",
     "pathEyebrow": "كيف يعمل التقييم",
     "pathTitle": "طريقك نحو النجاح",
@@ -1233,10 +1233,10 @@
     "badge": "start challenge · From $9",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 75% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 80% off selected evaluation models up to $100K account sizes. New users only. Terms apply.",
     "useCode": "استخدم الرمز",
     "bannerTitle": "عرض ترويجي حصري",
-    "discountBadge": "خصم 75%",
+    "discountBadge": "خصم 80%",
     "expiresIn": "ينتهي قريباً"
   },
   "search": {

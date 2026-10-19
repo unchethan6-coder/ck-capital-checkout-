@@ -1017,10 +1017,17 @@ export function TradingObjectivesPageClient({
   const instantRule = size ? rules["instant"]?.[size] : undefined;
   const typeParam = pathToType(path, evalType);
 
-  // Dynamic pricing calculation for sticky summary
-  const priceData = size ? CHALLENGE_PRICES[typeParam]?.[size] : undefined;
+  // Dynamic pricing calculation for sticky summary (CMS is authoritative)
+  const prices = config?.prices ?? CHALLENGE_PRICES;
+  const priceData = size ? prices[typeParam]?.[size] : undefined;
   const activePrice = priceData ? priceData.price : "$18.80";
-  const activeOldPrice = priceData ? priceData.oldPrice : "$75.20";
+  const activeOldPrice = priceData ? priceData.oldPrice : "$94.00";
+  const priceNow = parseFloat(activePrice.replace(/[^0-9.]/g, ""));
+  const priceWas = parseFloat(activeOldPrice.replace(/[^0-9.]/g, ""));
+  const discountPct =
+    Number.isFinite(priceNow) && Number.isFinite(priceWas) && priceWas > priceNow
+      ? Math.round((1 - priceNow / priceWas) * 100)
+      : 80;
   const activeRule =
     path === "2step" ? step2Rule : path === "1step" ? step1Rule : instantRule;
 
@@ -1510,7 +1517,7 @@ export function TradingObjectivesPageClient({
                         {activePrice}
                       </span>
                       <span className="rounded bg-[#894CEF] px-2 py-0.5 text-[10.5px] font-black text-[#030A1C]">
-                        75% OFF
+                        {discountPct}% OFF
                       </span>
                     </div>
                     <p className="mt-1.5 text-xs font-medium text-[#6B7280]">
