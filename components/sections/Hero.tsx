@@ -385,8 +385,8 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               className="flex w-full justify-center lg:justify-end"
             >
             <Image
-              src="/images/ck-purple-raccoon-80-off.webp"
-              alt="CK Propfirm futuristic raccoon mascot with an 80% off badge"
+              src="/images/ck-purple-raccoon-witch-80-off.webp"
+              alt="CK Propfirm Halloween raccoon mascot holding a glowing 80% off pumpkin"
               width={1254}
               height={1254}
               priority
