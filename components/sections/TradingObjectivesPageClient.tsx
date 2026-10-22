@@ -656,7 +656,7 @@ function CompareModels({
       targetValue: "None (0%)",
       dailyLoss: "3% Daily",
       maxLoss: "5% Trailing",
-      profitSplit: "Flexible 50%",
+      profitSplit: "80%",
       features: [
         "Zero evaluation phases",
         "Immediate trading credentials",

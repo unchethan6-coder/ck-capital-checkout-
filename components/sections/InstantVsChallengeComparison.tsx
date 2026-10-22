@@ -91,7 +91,7 @@ export function InstantVsChallengeComparison() {
     },
     {
       feature: "Simulated Profit Split",
-      instant: "50% Payout Rate",
+      instant: "80% Payout Rate",
       challenge: "80% Payout Rate",
     },
     {
