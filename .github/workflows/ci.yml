@@ -1,9 +1,9 @@
 name: CI
 
+# Automatic runs are disabled while GitHub Actions billing is blocked.
+# Restore `pull_request` / `push` triggers after billing is resolved.
 on:
-  pull_request:
-  push:
-    branches: [main, staging]
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
