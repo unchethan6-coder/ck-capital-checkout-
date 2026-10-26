@@ -45,7 +45,7 @@ export const VIP_HERO = {
 export const VIP_STATS = [
   { art: "/images/stats/traders.png", value: "20,000+", label: "Active Traders" },
   { art: "/images/stats/worldwide.png", value: "Worldwide", label: "Global Reach" },
-  { art: "/images/stats/payouts.png", value: "$750K+", label: "Payouts Total" },
+  { art: "/images/stats/payouts.png", value: "$1.3M+", label: "Payouts Total" },
   { art: "/images/stats/secure.png", value: "100%", label: "Secure & Transparent" },
   { art: "/images/stats/support.png", value: "24/7", label: "Trader Support" },
 ];
@@ -82,12 +82,12 @@ export const VIP_VIDEOS = [
 ];
 
 export const VIP_PROOF = {
-  startingAt: "Starting at $18",
+  startingAt: "Starting at $7",
   readyRewardDesc:
     "Open your CK Capital dashboard, click request, then complete the required details.",
-  totalDisplay: "$1,200,000",
+  totalDisplay: "$1.3M+",
   summary: {
-    totalRewards: 1200000,
+    totalRewards: 1300000,
     analystsRewarded: 20000,
     countries: 120,
     maxRewardPercent: 100,

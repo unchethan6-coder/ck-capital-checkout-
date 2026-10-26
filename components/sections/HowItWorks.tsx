@@ -293,7 +293,7 @@ function VipHowItWorks({
     {
       title: t("steps.step1.title"),
       description:
-        "Choose a challenge type and an account size from $5K to $300K. One evaluation fee, paid once — no subscription.",
+        "Choose a challenge type and an account size from $10K to $300K. One evaluation fee, paid once — no subscription.",
     },
     { title: t("steps.step2.title"), description: t("steps.step2.description") },
     { title: t("steps.step3.title"), description: t("steps.step3.description") },
