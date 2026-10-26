@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { X } from "lucide-react";
 import { SITE_META } from "@/lib/content";
 
@@ -31,6 +31,8 @@ export function AnnouncementBar({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const t = useTranslations("announcement");
+  const pathname = usePathname();
+  const isVipOffer = /(?:^|\/)vip-offer\/?$/.test(pathname);
 
   // Normalize banners array into items with text and link
   const bannerList: AnnouncementBanner[] = (banners ?? [])
@@ -46,7 +48,7 @@ export function AnnouncementBar({
     return () => clearInterval(timer);
   }, [bannerList.length, isPaused]);
 
-  if (!visible) return null;
+  if (!visible || isVipOffer) return null;
 
   const currentBanner = bannerList.length > 0 ? bannerList[currentIndex] : null;
 

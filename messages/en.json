@@ -1400,5 +1400,19 @@
     "updated": "Updated {date}",
     "moreIn": "More in {collection}",
     "englishOnly": "Help articles are currently available in English only."
+  },
+  "vipHero": {
+    "badge": "CK CAPITAL PROP FIRM",
+    "headlineLine1": "Transforming Traders",
+    "headlineLine2": "into Winners globally.",
+    "subcopy": "Prove your skills in a simulated environment on MT5 & TradeLocker. No time limits, news trading allowed, transparent rules, and no hidden fees.",
+    "startChallenge": "Start Challenge",
+    "comparePlans": "Compare Plans",
+    "imageAlt": "CK Capital raccoon in electric armour holding a glowing 90% OFF sign",
+    "pillProfitLabel": "Profit Split",
+    "pillAllocationValue": "Scale to $750K",
+    "pillAllocationLabel": "Simulated Allocation",
+    "pillPayoutValue": "Flexible",
+    "pillPayoutLabel": "Payouts"
   }
 }

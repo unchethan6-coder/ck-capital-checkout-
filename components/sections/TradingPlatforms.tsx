@@ -8,7 +8,7 @@ import { fadeUp, stagger } from "@/components/fx/reveal";
 import { Check } from "lucide-react";
 import { PORTAL_SIGNUP_URL } from "@/lib/portal";
 
-export function TradingPlatforms() {
+export function TradingPlatforms({ subtitle }: { subtitle?: string } = {}) {
   const t = useTranslations("platforms");
 
   const platforms = [
@@ -45,7 +45,7 @@ export function TradingPlatforms() {
             {t("title")}
           </h2>
           <p className="mt-3 text-[#4B5563] max-w-xl mx-auto">
-            {t("subtitle")}
+            {subtitle ?? t("subtitle")}
           </p>
         </SectionReveal>
 

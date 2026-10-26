@@ -1481,5 +1481,19 @@
     "updated": "آخر تحديث {date}",
     "moreIn": "المزيد في {collection}",
     "englishOnly": "مقالات المساعدة متاحة حالياً باللغة الإنجليزية فقط."
+  },
+  "vipHero": {
+    "badge": "CK CAPITAL PROP FIRM",
+    "headlineLine1": "نحوّل المتداولين",
+    "headlineLine2": "إلى فائزين عالميًا.",
+    "subcopy": "أثبت مهاراتك في بيئة تداول محاكاة على MT5 وTradeLocker. بدون حدود زمنية، وتداول الأخبار مسموح، وقواعد شفافة وبدون رسوم خفية.",
+    "startChallenge": "ابدأ التحدي",
+    "comparePlans": "قارن الخطط",
+    "imageAlt": "راكون CK Capital بدرع كهربائي يحمل لافتة مضيئة بخصم 90%",
+    "pillProfitLabel": "تقسيم الأرباح",
+    "pillAllocationValue": "توسّع حتى $750K",
+    "pillAllocationLabel": "تخصيص محاكى",
+    "pillPayoutValue": "مرن",
+    "pillPayoutLabel": "المدفوعات"
   }
 }

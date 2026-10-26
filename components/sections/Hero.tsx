@@ -9,9 +9,46 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { HeroVideo } from "@/lib/heroTakeover";
 
+export interface HeroContent {
+  badge: string;
+  headlineLine1: string;
+  headlineLine2: string;
+  subcopy: string;
+  startChallenge: string;
+  comparePlans: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  pills: Array<{ key: string; value: string; label: string }>;
+}
+
 /** With `video`, the hero plays it as a full background instead of showing the mascot. */
-export function Hero({ video = null }: { video?: HeroVideo | null }) {
+export function Hero({
+  video = null,
+  content = null,
+}: {
+  video?: HeroVideo | null;
+  content?: HeroContent | null;
+}) {
   const t = useTranslations("hero");
+  const copy: HeroContent = content ?? {
+    badge: t("badge"),
+    headlineLine1: t("headlineLine1"),
+    headlineLine2: t("headlineLine2"),
+    subcopy: t("subcopy"),
+    startChallenge: t("startChallenge"),
+    comparePlans: t("exploreObjectives"),
+    imageSrc: "/images/ck-purple-raccoon-witch-80-off.webp",
+    imageAlt: "CK Propfirm Halloween raccoon mascot holding a glowing 80% off pumpkin",
+    imageWidth: 1254,
+    imageHeight: 1254,
+    pills: [
+      { key: "profit", value: "80%", label: "Profit Split" },
+      { key: "allocation", value: "Scale to $750K", label: "Simulated Allocation" },
+      { key: "payout", value: "Flexible", label: "Payouts" },
+    ],
+  };
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
@@ -229,7 +266,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
             >
               <span className="h-2 w-2 rounded-full bg-[#894CEF] shadow-[0_0_8px_#894CEF]" />
               <span className="text-[11px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#999BA3]">
-                {t("badge")}
+                {copy.badge}
               </span>
             </motion.div>
 
@@ -239,9 +276,9 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               transition={{ duration: 0.6, delay: 0.08 }}
               className="font-[family-name:var(--font-jakarta)] text-3xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-black uppercase leading-[1.08] tracking-tight text-white"
             >
-              {t("headlineLine1")}
+              {copy.headlineLine1}
               <br />
-              <span className="text-white">{t("headlineLine2")}</span>
+              <span className="text-white">{copy.headlineLine2}</span>
             </motion.h1>
 
             <motion.p
@@ -250,7 +287,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               transition={{ duration: 0.5, delay: 0.16 }}
               className="mt-3.5 sm:mt-4 text-sm sm:text-base font-medium leading-relaxed text-[#999BA3] max-w-lg"
             >
-              {t("subcopy")}
+              {copy.subcopy}
             </motion.p>
 
             {/* 3 Key Feature Chips */}
@@ -260,62 +297,30 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               transition={{ duration: 0.5, delay: 0.24 }}
               className="mt-6 sm:mt-7 flex flex-wrap items-center gap-2 sm:gap-3"
             >
-              {/* Feature 1 */}
-              <motion.div
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
-              >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
-                  <BarChart2 size={15} strokeWidth={2.5} />
-                </div>
-                <div className="text-left leading-tight">
-                  <span className="block text-[11px] sm:text-[12px] font-extrabold text-white">
-                    80%
-                  </span>
-                  <span className="text-[9.5px] sm:text-[10px] font-medium text-[#999BA3]">
-                    Profit Split
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Feature 2 */}
-              <motion.div
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
-              >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
-                  <Coins size={15} strokeWidth={2.5} />
-                </div>
-                <div className="text-left leading-tight">
-                  <span className="block text-[11px] sm:text-[12px] font-extrabold text-white">
-                    Scale to $750K
-                  </span>
-                  <span className="text-[9.5px] sm:text-[10px] font-medium text-[#999BA3]">
-                    Simulated Allocation
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Feature 3 */}
-              <motion.div
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
-              >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
-                  <Zap size={15} strokeWidth={2.5} />
-                </div>
-                <div className="text-left leading-tight">
-                  <span className="block text-[11px] sm:text-[12px] font-extrabold text-white">
-                    Flexible
-                  </span>
-                  <span className="text-[9.5px] sm:text-[10px] font-medium text-[#999BA3]">
-                    Payouts
-                  </span>
-                </div>
-              </motion.div>
+              {copy.pills.map((pill, i) => {
+                const Icon =
+                  pill.key === "profit" ? BarChart2 : pill.key === "allocation" ? Coins : Zap;
+                return (
+                  <motion.div
+                    key={`${pill.key}-${i}`}
+                    whileHover={{ y: -3 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#080E24]/80 pl-1.5 pr-3 sm:pr-4 py-1 sm:py-1.5 shadow-sm hover:border-[#894CEF]/40 hover:shadow-[0_0_16px_rgba(1,162,239,0.15)] transition-all duration-200 cursor-default"
+                  >
+                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#894CEF]/15 text-[#A98BFF] group-hover:bg-[#894CEF] group-hover:text-black transition-colors duration-200">
+                      <Icon size={15} strokeWidth={2.5} />
+                    </div>
+                    <div className="text-left leading-tight">
+                      <span className="block text-[11px] sm:text-[12px] font-extrabold text-white">
+                        {pill.value}
+                      </span>
+                      <span className="text-[9.5px] sm:text-[10px] font-medium text-[#999BA3]">
+                        {pill.label}
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             {/* Standardized CTA Buttons */}
@@ -326,7 +331,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
             >
               <Link
-                href="/#start-challenge"
+                href={content ? "#start-challenge" : "/#start-challenge"}
                 onClick={(e) => {
                   const el = document.getElementById("start-challenge");
                   if (el) {
@@ -337,18 +342,19 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
                 }}
                 className="group inline-flex items-center justify-center gap-2 rounded-xl brand-gradient-btn px-6 py-3.5 text-sm sm:text-base font-bold text-[#1A1030] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 text-center shadow-lg hover:shadow-cyan-500/25"
               >
-                <span>{t("startChallenge")}</span>
+                <span>{copy.startChallenge}</span>
                 <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
 
               <a
-                href="#how-it-works"
+                href={content ? "#start-challenge" : "#how-it-works"}
                 onClick={(e) => {
-                  const el = document.getElementById("how-it-works");
+                  const targetId = content ? "start-challenge" : "how-it-works";
+                  const el = document.getElementById(targetId);
                   if (el) {
                     e.preventDefault();
                     el.scrollIntoView({ behavior: "smooth", block: "start" });
-                    window.history.replaceState(null, "", `${window.location.pathname}#how-it-works`);
+                    window.history.replaceState(null, "", `${window.location.pathname}#${targetId}`);
                   }
                 }}
                 className="group inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/20 bg-white/[0.04] px-4 py-3 text-sm sm:text-base font-extrabold text-white hover:border-[#894CEF] hover:bg-white/[0.08] hover:text-white active:translate-y-0 active:scale-[0.98] transition-all duration-200 shadow-sm text-center"
@@ -356,7 +362,7 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
                 <div className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-white/80 text-white group-hover:border-[#894CEF] group-hover:bg-[#894CEF] group-hover:text-black transition-all duration-200 shrink-0">
                   <Play size={11} className="ml-0.5 fill-current" />
                 </div>
-                <span>{t("exploreObjectives")}</span>
+                <span>{copy.comparePlans}</span>
               </a>
             </motion.div>
           </motion.div>
@@ -385,10 +391,10 @@ export function Hero({ video = null }: { video?: HeroVideo | null }) {
               className="flex w-full justify-center lg:justify-end"
             >
             <Image
-              src="/images/ck-purple-raccoon-witch-80-off.webp"
-              alt="CK Propfirm Halloween raccoon mascot holding a glowing 80% off pumpkin"
-              width={1254}
-              height={1254}
+              src={copy.imageSrc}
+              alt={copy.imageAlt}
+              width={copy.imageWidth}
+              height={copy.imageHeight}
               priority
               sizes="(max-width: 640px) 92vw, (max-width: 1024px) 560px, (max-width: 1280px) 720px, 790px"
               className="hero-mascot relative ml-auto h-auto w-full max-w-[390px] object-contain sm:max-w-[560px] lg:max-w-[720px] xl:max-w-[790px]"

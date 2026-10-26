@@ -1481,5 +1481,19 @@
     "updated": "{date} को अपडेट किया गया",
     "moreIn": "{collection} में और",
     "englishOnly": "हेल्प लेख फ़िलहाल केवल अंग्रेज़ी में उपलब्ध हैं।"
+  },
+  "vipHero": {
+    "badge": "CK CAPITAL PROP FIRM",
+    "headlineLine1": "ट्रेडर्स को बदल रहे हैं",
+    "headlineLine2": "वैश्विक विजेताओं में।",
+    "subcopy": "MT5 और TradeLocker पर सिम्युलेटेड वातावरण में अपनी स्किल साबित करें। कोई समय सीमा नहीं, न्यूज़ ट्रेडिंग की अनुमति, पारदर्शी नियम और कोई छिपी फीस नहीं।",
+    "startChallenge": "चैलेंज शुरू करें",
+    "comparePlans": "प्लान्स की तुलना करें",
+    "imageAlt": "इलेक्ट्रिक आर्मर में CK Capital रैकून, चमकता हुआ 90% OFF साइन पकड़े हुए",
+    "pillProfitLabel": "प्रॉफिट स्प्लिट",
+    "pillAllocationValue": "Scale to $750K",
+    "pillAllocationLabel": "सिम्युलेटेड एलोकेशन",
+    "pillPayoutValue": "फ्लेक्सिबल",
+    "pillPayoutLabel": "पेआउट्स"
   }
 }

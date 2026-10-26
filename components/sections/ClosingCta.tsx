@@ -47,7 +47,7 @@ const STAGES = [
   { key: "stage3" as const, icon: Crown, accent: "bg-[#0A0A0C] border-[#0A0A0C] text-white" },
 ] as const;
 
-export function ClosingCta() {
+export function ClosingCta({ primaryUrl }: { primaryUrl?: string } = {}) {
   const t = useTranslations("closingCta");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [active, setActive] = useState(0);
@@ -65,7 +65,7 @@ export function ClosingCta() {
 
   const handlePrimary = () => {
     fireConfetti();
-    setTimeout(() => window.open(getPortalSignupUrl(), "_blank", "noopener,noreferrer"), 320);
+    setTimeout(() => window.open(primaryUrl ?? getPortalSignupUrl(), "_blank", "noopener,noreferrer"), 320);
   };
 
   // 3D tilt for card

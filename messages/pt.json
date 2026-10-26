@@ -1406,5 +1406,19 @@
     "updated": "Atualizado em {date}",
     "moreIn": "Mais em {collection}",
     "englishOnly": "Os artigos de ajuda estão disponíveis apenas em inglês no momento."
+  },
+  "vipHero": {
+    "badge": "CK CAPITAL PROP FIRM",
+    "headlineLine1": "Transformando Traders",
+    "headlineLine2": "em Vencedores globalmente.",
+    "subcopy": "Prove suas habilidades em um ambiente simulado na MT5 e TradeLocker. Sem limites de tempo, negociação de notícias permitida, regras transparentes e sem taxas ocultas.",
+    "startChallenge": "Começar Desafio",
+    "comparePlans": "Comparar Planos",
+    "imageAlt": "Guaxinim da CK Capital com armadura elétrica segurando uma placa luminosa de 90% OFF",
+    "pillProfitLabel": "Divisão de Lucros",
+    "pillAllocationValue": "Escala até $750K",
+    "pillAllocationLabel": "Alocação Simulada",
+    "pillPayoutValue": "Flexível",
+    "pillPayoutLabel": "Pagamentos"
   }
 }

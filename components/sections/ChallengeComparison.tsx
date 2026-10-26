@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import React, { useCallback, useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Check, LayoutGrid, Percent, Table2 } from "lucide-react";
+import { ArrowRight, ChevronDown, Check, Copy, LayoutGrid, Percent, Table2 } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 import {
@@ -49,16 +49,25 @@ const PAYMENT_METHODS = [
   { name: "Crypto", src: "/payments/crypto.svg" },
 ] as const;
 
+export interface VipPricingConfig {
+  code: string;
+  checkoutUrl: string;
+  discountLabel?: string;
+}
+
 export function ChallengeComparison({
   config,
   promo,
   slides,
+  vip = null,
 }: {
   config?: ChallengeConfig | null;
   promo?: WhatsNewPromo | null;
   slides?: WhatsNewSlide[] | null;
+  vip?: VipPricingConfig | null;
 }) {
   const t = useTranslations("challenge");
+  const vipMode = Boolean(vip);
 
   const accountSizes = useMemo(() => {
     if (config?.sizes?.length) {
@@ -75,12 +84,24 @@ export function ChallengeComparison({
   const [viewMode, setViewMode] = useState<"cards" | "table">("cards");
   const [quantity, setQuantity] = useState<number>(1);
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [copiedCode, setCopiedCode] = useState<boolean>(false);
 
   const currencyDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const copyVipCode = useCallback(async () => {
+    if (!vip?.code || typeof navigator === "undefined" || !navigator.clipboard) return;
+    try {
+      await navigator.clipboard.writeText(vip.code);
+      setCopiedCode(true);
+      window.setTimeout(() => setCopiedCode(false), 2000);
+    } catch {
+      // The checkout still opens even when clipboard access is denied.
+    }
+  }, [vip?.code]);
 
 
 
@@ -204,6 +225,12 @@ export function ChallengeComparison({
     return Math.round((1 - current / original) * 100);
   };
 
+  // VIP has a single-account offer: never apply the quantity ladder or expose
+  // the 80% campaign's multi-account controls.
+  const checkoutTotal = vipMode
+    ? parseFloat((activePlan?.disc || "$0").replace(/[$,]/g, "")) || 0
+    : orderTotal(quantity);
+
   const formatValue = (valStr?: string, accountSize = selectedSize) => {
     if (!valStr) return "-";
     if (!isPercentage || !valStr.startsWith("$")) return valStr;
@@ -267,10 +294,13 @@ export function ChallengeComparison({
     >
       <Container>
         <div className="max-w-[1200px] mx-auto flex flex-col gap-10 sm:gap-14 md:gap-16">
-          {/* What's New Tabbed Promo Carousel */}
-          <SectionReveal className="w-full">
-            <WhatsNewBanner viewMode={viewMode} promo={promo} slides={slides} />
-          </SectionReveal>
+          {/* What's New Tabbed Promo Carousel — intentionally omitted on VIP,
+              which has its own hardcoded 90% sale bar. */}
+          {!vipMode && (
+            <SectionReveal className="w-full">
+              <WhatsNewBanner viewMode={viewMode} promo={promo} slides={slides} />
+            </SectionReveal>
+          )}
 
           {/* Header — #start-challenge targets the title here (not the
               What's New carousel above it), via a zero-height anchor that
@@ -499,9 +529,25 @@ export function ChallengeComparison({
               <div className="min-w-0">
                 <p className="truncate text-[10px] font-bold uppercase tracking-wider text-white/80">Selected plan</p>
                 <p className="truncate text-sm font-extrabold text-white">{activeTypeName} ${selectedSize}</p>
-                <p className="text-sm font-black text-emerald-400">{formatAmount(orderTotal(quantity))}<span className="ml-1 text-[10px] font-bold text-white/65">{quantity > 1 ? `· ${quantity} accounts` : ""}</span></p>
+                <p className="text-sm font-black text-emerald-400">{formatAmount(checkoutTotal)}<span className="ml-1 text-[10px] font-bold text-white/65">{!vipMode && quantity > 1 ? `· ${quantity} accounts` : ""}</span></p>
               </div>
-              <a href={signupUrl} target="_blank" rel="noopener noreferrer" className="brand-gradient-btn inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl px-4 text-xs font-bold text-[#1A1030]">
+              <a
+                href={vipMode ? vip?.checkoutUrl ?? signupUrl : signupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (!vipMode) return;
+                  void copyVipCode();
+                  trackBeginCheckout({
+                    planId: `${selectedType}_${selectedSize}`,
+                    planName: `${activeTypeName} $${selectedSize}`,
+                    value: checkoutTotal,
+                    currency: selectedCurrency,
+                    quantity: 1,
+                  });
+                }}
+                className="brand-gradient-btn inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl px-4 text-xs font-bold text-[#1A1030]"
+              >
                 Start challenge <ArrowRight className="ml-1.5 h-4 w-4" />
               </a>
             </div>
@@ -610,15 +656,16 @@ export function ChallengeComparison({
                     </div>
                     <div className="text-right">
                       <div className="text-3xl font-extrabold text-emerald-400 sm:text-4xl">
-                        {formatAmount(orderTotal(quantity))}
+                        {formatAmount(checkoutTotal)}
                       </div>
                       <div className="text-xs text-white/45 font-normal">
                         <span className="line-through">
                           {formatAmount(
-                            parseFloat((activePlan?.orig || "$0").replace(/[$,]/g, "")) * quantity
+                            parseFloat((activePlan?.orig || "$0").replace(/[$,]/g, "")) *
+                              (vipMode ? 1 : quantity)
                           )}
                         </span>
-                        {quantity > 1 && (
+                        {!vipMode && quantity > 1 && (
                           <span className="ml-1.5 font-bold text-white/80">{quantity} accounts</span>
                         )}
                       </div>
@@ -637,102 +684,147 @@ export function ChallengeComparison({
                     </div>
                   </div>
 
-                  {/* Quantity — each additional account is discounted */}
-                  <div className="mt-3 border-t border-white/10 pt-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white/65">
-                      {t("quantity") || "Quantity"}
-                    </span>
-                    <div className="mt-1.5 flex flex-col gap-0.5" aria-label="Number of accounts">
-                      {QUANTITY_TIERS.map((tier) => {
-                        const isActive = tier.n <= quantity;
-                        return (
-                          <button
-                            key={tier.n}
-                            type="button"
-                            aria-pressed={isActive}
-                            onClick={() => setQuantity(tier.n)}
-                            className={cn(
-                              "flex min-h-9 w-full items-center gap-2 rounded-lg px-2.5 py-1 text-left transition-colors",
-                              isActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"
-                            )}
-                          >
-                            <Check
-                              size={12}
-                              strokeWidth={3}
-                              className={cn("shrink-0", isActive ? "text-emerald-400" : "text-white/30")}
-                            />
-                            <span className={cn("text-xs font-bold", isActive ? "text-white" : "text-white/55")}>
-                              {tier.label}
-                            </span>
-                            <span className="ml-auto flex items-center gap-2">
-                              {tier.off > 0 && (
-                                <span className="rounded bg-amber-400/15 px-1.5 py-px text-[9px] font-bold uppercase tracking-wider text-amber-300">
-                                  {tier.off}% off
-                                </span>
-                              )}
-                              <span className={cn("text-xs font-bold tabular-nums", isActive ? "text-white" : "text-white/55")}>
-                                {formatAmount(tierPrice(tier.n))}
-                              </span>
-                            </span>
-                          </button>
-                        );
-                      })}
+                  {vipMode ? (
+                    <div className="mt-3 border-t border-white/10 pt-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white/65">
+                        Coupon code
+                      </span>
+                      <div className="mt-1.5 flex items-center justify-between gap-2 rounded-lg border border-dashed border-[#E7C66B]/50 bg-[#E7C66B]/[0.06] px-3 py-2">
+                        <span className="font-mono text-sm font-black tracking-[0.14em] text-[#E7C66B]">
+                          {vip?.code}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => void copyVipCode()}
+                          className="inline-flex items-center gap-1.5 rounded-md bg-[#E7C66B] px-2.5 py-1.5 text-[10px] font-bold text-[#1A1030] transition-opacity hover:opacity-90"
+                        >
+                          {copiedCode ? <Check size={11} strokeWidth={3} /> : <Copy size={11} />}
+                          {copiedCode ? "Copied" : "Copy"}
+                        </button>
+                      </div>
+                      <p className="mt-1.5 text-[10px] leading-[1.45] text-white/55">
+                        Apply <span className="font-bold text-white">{vip?.code}</span> at checkout for{" "}
+                        {vip?.discountLabel ?? "90%"} off. Start Challenge copies it for you.
+                      </p>
                     </div>
-                    <p className="mt-1.5 text-[9px] leading-[1.4] text-white/55">
-                      Discount applies per account when you buy more than one in the same order.
-                    </p>
-                  </div>
+                  ) : (
+                    <div className="mt-3 border-t border-white/10 pt-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white/65">
+                        {t("quantity") || "Quantity"}
+                      </span>
+                      <div className="mt-1.5 flex flex-col gap-0.5" aria-label="Number of accounts">
+                        {QUANTITY_TIERS.map((tier) => {
+                          const isActive = tier.n <= quantity;
+                          return (
+                            <button
+                              key={tier.n}
+                              type="button"
+                              aria-pressed={isActive}
+                              onClick={() => setQuantity(tier.n)}
+                              className={cn(
+                                "flex min-h-9 w-full items-center gap-2 rounded-lg px-2.5 py-1 text-left transition-colors",
+                                isActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"
+                              )}
+                            >
+                              <Check
+                                size={12}
+                                strokeWidth={3}
+                                className={cn("shrink-0", isActive ? "text-emerald-400" : "text-white/30")}
+                              />
+                              <span className={cn("text-xs font-bold", isActive ? "text-white" : "text-white/55")}>
+                                {tier.label}
+                              </span>
+                              <span className="ml-auto flex items-center gap-2">
+                                {tier.off > 0 && (
+                                  <span className="rounded bg-amber-400/15 px-1.5 py-px text-[9px] font-bold uppercase tracking-wider text-amber-300">
+                                    {tier.off}% off
+                                  </span>
+                                )}
+                                <span className={cn("text-xs font-bold tabular-nums", isActive ? "text-white" : "text-white/55")}>
+                                  {formatAmount(tierPrice(tier.n))}
+                                </span>
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <p className="mt-1.5 text-[9px] leading-[1.4] text-white/55">
+                        Discount applies per account when you buy more than one in the same order.
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="space-y-4">
-                  {/* Quantity stepper + CTA */}
-                  <div className="flex items-stretch gap-2.5">
-                    <div className="flex shrink-0 items-center rounded-full border border-[#E7C66B]/60 bg-white/[0.04]">
-                      <button
-                        type="button"
-                        aria-label="Decrease quantity"
-                        disabled={quantity <= 1}
-                        onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                        className="grid h-11 w-9 place-items-center rounded-l-full text-lg font-bold text-white/80 transition-colors hover:text-white disabled:cursor-not-allowed disabled:text-white/25"
-                      >
-                        −
-                      </button>
-                      <span aria-live="polite" className="w-6 text-center text-sm font-extrabold tabular-nums text-white">
-                        {quantity}
-                      </span>
-                      <button
-                        type="button"
-                        aria-label="Increase quantity"
-                        disabled={quantity >= QUANTITY_TIERS.length}
-                        onClick={() => setQuantity((q) => Math.min(QUANTITY_TIERS.length, q + 1))}
-                        className="grid h-11 w-9 place-items-center rounded-r-full text-lg font-bold text-white/80 transition-colors hover:text-white disabled:cursor-not-allowed disabled:text-white/25"
-                      >
-                        +
-                      </button>
-                    </div>
+                  {vipMode ? (
                     <a
-                      href={signupUrl}
+                      href={vip?.checkoutUrl ?? "#start-challenge"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block min-w-0 flex-1"
-                      onClick={(e) => {
-                        const targetUrl = enrichUrlWithAttribution((e.currentTarget as HTMLAnchorElement).href);
-                        (e.currentTarget as HTMLAnchorElement).href = targetUrl;
+                      className="brand-pill-btn flex w-full items-center justify-center gap-2 font-bold text-[#1A1030] shadow-[0_4px_22px_rgba(231,198,107,0.4)] transition-all hover:brightness-105 hover:shadow-amber-400/50"
+                      onClick={() => {
+                        void copyVipCode();
                         trackBeginCheckout({
                           planId: `${selectedType}_${selectedSize}`,
                           planName: `${activeTypeName} $${selectedSize}`,
-                          value: orderTotal(quantity),
+                          value: checkoutTotal,
                           currency: selectedCurrency,
-                          quantity,
+                          quantity: 1,
                         });
                       }}
                     >
-                      <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-[0_4px_22px_rgba(231,198,107,0.4)] hover:shadow-amber-400/50 hover:brightness-105 transition-all">
-                        <span>{t("startChallenge") || "Start Challenge"}</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
+                      <span>{t("startChallenge") || "Start Challenge"}</span>
+                      <ArrowRight className="h-4 w-4" />
                     </a>
-                  </div>
+                  ) : (
+                    <div className="flex items-stretch gap-2.5">
+                      <div className="flex shrink-0 items-center rounded-full border border-[#E7C66B]/60 bg-white/[0.04]">
+                        <button
+                          type="button"
+                          aria-label="Decrease quantity"
+                          disabled={quantity <= 1}
+                          onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                          className="grid h-11 w-9 place-items-center rounded-l-full text-lg font-bold text-white/80 transition-colors hover:text-white disabled:cursor-not-allowed disabled:text-white/25"
+                        >
+                          −
+                        </button>
+                        <span aria-live="polite" className="w-6 text-center text-sm font-extrabold tabular-nums text-white">
+                          {quantity}
+                        </span>
+                        <button
+                          type="button"
+                          aria-label="Increase quantity"
+                          disabled={quantity >= QUANTITY_TIERS.length}
+                          onClick={() => setQuantity((q) => Math.min(QUANTITY_TIERS.length, q + 1))}
+                          className="grid h-11 w-9 place-items-center rounded-r-full text-lg font-bold text-white/80 transition-colors hover:text-white disabled:cursor-not-allowed disabled:text-white/25"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <a
+                        href={signupUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block min-w-0 flex-1"
+                        onClick={(e) => {
+                          const targetUrl = enrichUrlWithAttribution((e.currentTarget as HTMLAnchorElement).href);
+                          (e.currentTarget as HTMLAnchorElement).href = targetUrl;
+                          trackBeginCheckout({
+                            planId: `${selectedType}_${selectedSize}`,
+                            planName: `${activeTypeName} $${selectedSize}`,
+                            value: orderTotal(quantity),
+                            currency: selectedCurrency,
+                            quantity,
+                          });
+                        }}
+                      >
+                        <button type="button" className="brand-pill-btn w-full gap-2 font-bold text-[#1A1030] shadow-[0_4px_22px_rgba(231,198,107,0.4)] hover:shadow-amber-400/50 hover:brightness-105 transition-all">
+                          <span>{t("startChallenge") || "Start Challenge"}</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </a>
+                    </div>
+                  )}
 
                   {/* Add-ons */}
                   <div className="flex flex-col gap-2">
@@ -863,11 +955,12 @@ export function ChallengeComparison({
                         <div key={`cta-${size}`} className={cn("rounded-b-xl border-x border-b border-[#D9D9D9] bg-white p-2.5 shadow-sm", selectedSize === size && "bg-violet-50")}>
                           {plan ? (
                             <a
-                              href={signupUrlForSize(size)}
+                              href={vipMode ? vip?.checkoutUrl ?? signupUrlForSize(size) : signupUrlForSize(size)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="brand-gradient-btn flex min-h-9 items-center justify-center rounded-lg px-2 text-[10px] font-bold text-[#1A1030] shadow-sm transition-transform hover:-translate-y-0.5"
                               onClick={() => {
+                                if (vipMode) void copyVipCode();
                                 const priceVal = parseFloat((plan.disc || "$0").replace(/[$,]/g, ""));
                                 trackBeginCheckout({
                                   planId: `${selectedType}_${size}`,

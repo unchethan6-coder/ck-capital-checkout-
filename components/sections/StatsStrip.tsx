@@ -5,10 +5,16 @@ import { motion } from "framer-motion";
 import { CountUp } from "@/components/fx/CountUp";
 import { cn } from "@/lib/utils";
 
-export function StatsStrip() {
+export interface StatItem {
+  art: string;
+  value: string;
+  label: string;
+}
+
+export function StatsStrip({ stats: statsOverride }: { stats?: StatItem[] } = {}) {
   const t = useTranslations("trustStats");
 
-  const stats = [
+  const stats: StatItem[] = statsOverride ?? [
     { art: "/images/stats/traders.png", value: "20,000+", label: t("activeTraders") },
     { art: "/images/stats/worldwide.png", value: t("worldwide"), label: t("globalReach") },
     { art: "/images/stats/payouts.png", value: "$1,385,127.63", label: t("payoutsTotal") },

@@ -1481,5 +1481,19 @@
     "updated": "Mis à jour le {date}",
     "moreIn": "Plus dans {collection}",
     "englishOnly": "Les articles d’aide sont pour l’instant disponibles uniquement en anglais."
+  },
+  "vipHero": {
+    "badge": "CK CAPITAL PROP FIRM",
+    "headlineLine1": "Nous transformons les traders",
+    "headlineLine2": "en gagnants à l’international.",
+    "subcopy": "Prouvez vos compétences dans un environnement simulé sur MT5 et TradeLocker. Sans limite de temps, trading sur les news autorisé, règles transparentes et sans frais cachés.",
+    "startChallenge": "Commencer le challenge",
+    "comparePlans": "Comparer les plans",
+    "imageAlt": "Raton laveur CK Capital en armure électrique tenant une pancarte lumineuse 90% OFF",
+    "pillProfitLabel": "Répartition des profits",
+    "pillAllocationValue": "Jusqu’à $750K",
+    "pillAllocationLabel": "Allocation simulée",
+    "pillPayoutValue": "Flexible",
+    "pillPayoutLabel": "Paiements"
   }
 }

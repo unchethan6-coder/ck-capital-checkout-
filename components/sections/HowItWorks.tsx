@@ -7,7 +7,15 @@ import { SectionReveal } from "@/components/shared/SectionReveal";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, ArrowUpRight, Layers, Rocket, Zap } from "lucide-react";
 
-export function HowItWorks() {
+export function HowItWorks({
+  variant = "default",
+  ctaLabel,
+  startHref = "#start-challenge",
+}: {
+  variant?: "default" | "vip";
+  ctaLabel?: string;
+  startHref?: string;
+} = {}) {
   const t = useTranslations("howItWorks");
 
   const steps = [
@@ -62,6 +70,15 @@ export function HowItWorks() {
       rail: [t("programs.instant.railStart")],
     },
   ];
+
+  if (variant === "vip") {
+    return (
+      <VipHowItWorks
+        ctaLabel={ctaLabel ?? "Get funded — up to 90% off"}
+        startHref={startHref}
+      />
+    );
+  }
 
   return (
     <section
@@ -251,6 +268,205 @@ export function HowItWorks() {
                       </div>
                     </Link>
                   </motion.div>
+                );
+              })}
+            </div>
+          </SectionReveal>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/** VIP-only rendering of the process/programmes section. Keeping this variant
+ *  here means the homepage timeline stays byte-for-byte unchanged. */
+function VipHowItWorks({
+  ctaLabel,
+  startHref,
+}: {
+  ctaLabel: string;
+  startHref: string;
+}) {
+  const t = useTranslations("howItWorks");
+
+  const steps = [
+    {
+      title: t("steps.step1.title"),
+      description:
+        "Choose a challenge type and an account size from $5K to $300K. One evaluation fee, paid once — no subscription.",
+    },
+    { title: t("steps.step2.title"), description: t("steps.step2.description") },
+    { title: t("steps.step3.title"), description: t("steps.step3.description") },
+    { title: t("steps.step4.title"), description: t("steps.step4.description") },
+  ];
+
+  const programmes = [
+    {
+      icon: Layers,
+      accent: "#A98BFF",
+      surface:
+        "border-[#894CEF]/30 bg-[linear-gradient(135deg,rgba(137,76,239,0.24),rgba(10,15,32,0.98)_58%)]",
+      title: t("programs.oneStep.title"),
+      description: t("programs.oneStep.description"),
+      tag: t("programs.oneStep.tag"),
+      rail: [t("programs.oneStep.railStart"), t("railFunded")],
+    },
+    {
+      icon: Rocket,
+      accent: "#E7C66B",
+      surface:
+        "border-[#E7C66B]/30 bg-[linear-gradient(135deg,rgba(231,198,107,0.20),rgba(10,15,32,0.98)_58%)]",
+      title: t("programs.twoStep.title"),
+      description: t("programs.twoStep.description"),
+      tag: t("programs.twoStep.tag"),
+      rail: [t("programs.twoStep.railStart"), t("programs.twoStep.railMid"), t("railFunded")],
+    },
+    {
+      icon: Zap,
+      accent: "#34D399",
+      surface:
+        "border-[#10B981]/30 bg-[linear-gradient(135deg,rgba(16,185,129,0.18),rgba(10,15,32,0.98)_58%)]",
+      title: t("programs.instant.title"),
+      description: t("programs.instant.description"),
+      tag: t("programs.instant.tag"),
+      rail: [t("programs.instant.railStart")],
+    },
+  ];
+
+  return (
+    <section
+      id="how-it-works"
+      className="relative scroll-mt-24 overflow-hidden bg-[#030A1C] py-16 text-white md:py-24"
+      data-od-id="how-it-works"
+    >
+      <Container>
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <SectionReveal>
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
+              [ // Process ]
+            </p>
+            <h2 className="mt-4 max-w-xl font-[family-name:var(--font-jakarta)] text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-[42px]">
+              {t("title")}
+            </h2>
+
+            <div className="mt-9" data-od-id="how-it-works-steps">
+              {steps.map((step, i) => (
+                <motion.div
+                  key={step.title}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                  className="border-b border-white/10 py-5 first:pt-0 last:border-b-0"
+                >
+                  <div className="flex items-start gap-5">
+                    <span className="pt-0.5 font-mono text-xs font-black text-[#A98BFF]">
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-[family-name:var(--font-jakarta)] text-base font-bold text-white sm:text-lg">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1.5 max-w-md text-sm leading-relaxed text-[#AEB8CB]">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                href="/trading-objectives"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/[0.04] px-5 text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:border-[#A98BFF] hover:bg-white/[0.08]"
+              >
+                {t("compareAll")} <ArrowUpRight size={14} />
+              </Link>
+              <a
+                href={startHref}
+                className="brand-gradient-btn inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-6 text-sm font-bold text-[#1A1030] shadow-[0_4px_20px_rgba(231,198,107,0.3)]"
+              >
+                {ctaLabel} <ArrowRight size={15} />
+              </a>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal delay={0.1}>
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#A98BFF]">
+              [ // Account Programmes ]
+            </p>
+            <div className="mt-5 flex flex-col gap-4" data-od-id="how-it-works-programs">
+              {programmes.map((p, i) => {
+                const Icon = p.icon;
+                return (
+                  <motion.a
+                    key={p.title}
+                    href={startHref}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    className={`group relative block overflow-hidden rounded-2xl border p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:-translate-y-1 sm:p-7 ${p.surface}`}
+                    data-od-id={`how-program-${i + 1}`}
+                  >
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full opacity-25 blur-3xl"
+                      style={{ background: p.accent }}
+                    />
+                    <div className="relative z-10">
+                      <div className="flex items-start justify-between gap-4">
+                        <div
+                          className="flex h-14 w-14 items-center justify-center rounded-full border"
+                          style={{
+                            background: `${p.accent}18`,
+                            color: p.accent,
+                            borderColor: `${p.accent}38`,
+                          }}
+                        >
+                          <Icon size={23} strokeWidth={2.1} />
+                        </div>
+                        <div aria-hidden="true" className="hidden shrink-0 items-center gap-1.5 pt-1 sm:flex">
+                          {p.rail.map((label, ri) => (
+                            <span key={label} className="flex items-center gap-1.5">
+                              {ri > 0 && <span className="h-px w-6 bg-white/20" />}
+                              <span className="flex flex-col items-center gap-1">
+                                <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-white/50">
+                                  {label}
+                                </span>
+                                <span
+                                  className="h-2 w-2 rounded-full"
+                                  style={{ background: p.accent, boxShadow: `0 0 0 3px ${p.accent}24` }}
+                                />
+                              </span>
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <h3 className="mt-5 font-[family-name:var(--font-jakarta)] text-xl font-bold tracking-tight text-white sm:text-2xl">
+                        {p.title}
+                      </h3>
+                      <p className="mt-2 max-w-lg text-sm leading-relaxed text-[#AEB8CB]">
+                        {p.description}
+                      </p>
+
+                      <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/10 pt-4">
+                        <span
+                          className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.14em]"
+                          style={{ color: p.accent }}
+                        >
+                          <span className="h-1.5 w-1.5 rounded-full" style={{ background: p.accent }} />
+                          {p.tag}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-xs font-bold text-white">
+                          {t("viewPlans")}
+                          <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </motion.a>
                 );
               })}
             </div>

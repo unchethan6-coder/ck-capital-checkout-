@@ -23,9 +23,13 @@ export interface FaqItem {
 export function FaqAccordion({
   cmsFaqs,
   featuredOnly = false,
+  items: itemsOverride,
+  subtitle,
 }: {
   cmsFaqs?: FaqItem[];
   featuredOnly?: boolean;
+  items?: FaqItem[];
+  subtitle?: string;
 } = {}) {
   const t = useTranslations("faq");
 
@@ -59,6 +63,9 @@ export function FaqAccordion({
   ] as const;
 
   const items = useMemo<FaqItem[]>(() => {
+    if (itemsOverride && itemsOverride.length > 0) {
+      return itemsOverride;
+    }
     if (featuredOnly) {
       return [
         {
@@ -112,7 +119,7 @@ export function FaqAccordion({
       question: t(`items.${key}.q` as any),
       answer: t(`items.${key}.a` as any),
     }));
-  }, [cmsFaqs, featuredOnly, t]);
+  }, [cmsFaqs, featuredOnly, itemsOverride, t]);
 
   return (
     <section id="faqs" className="bg-white text-[#0A0A0C] py-16 md:py-24" data-od-id="faq">
@@ -125,7 +132,7 @@ export function FaqAccordion({
             {t("title")}
           </h2>
           <p className="mt-3 text-[#4B5563] font-medium max-w-xl mx-auto">
-            {t("subtitle")}
+            {subtitle ?? t("subtitle")}
           </p>
         </SectionReveal>
 

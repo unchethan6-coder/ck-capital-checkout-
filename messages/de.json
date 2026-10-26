@@ -1481,5 +1481,19 @@
     "updated": "Aktualisiert am {date}",
     "moreIn": "Mehr in {collection}",
     "englishOnly": "Hilfeartikel sind derzeit nur auf Englisch verfügbar."
+  },
+  "vipHero": {
+    "badge": "CK CAPITAL PROP FIRM",
+    "headlineLine1": "Wir verwandeln Trader",
+    "headlineLine2": "in globale Gewinner.",
+    "subcopy": "Beweise dein Können in einer simulierten Umgebung auf MT5 und TradeLocker. Keine Zeitlimits, News-Trading erlaubt, transparente Regeln und keine versteckten Gebühren.",
+    "startChallenge": "Challenge starten",
+    "comparePlans": "Pläne vergleichen",
+    "imageAlt": "CK Capital-Waschbär in Elektrorüstung mit einem leuchtenden 90% OFF-Schild",
+    "pillProfitLabel": "Gewinnbeteiligung",
+    "pillAllocationValue": "Skalierung bis $750K",
+    "pillAllocationLabel": "Simulierte Zuweisung",
+    "pillPayoutValue": "Flexibel",
+    "pillPayoutLabel": "Auszahlungen"
   }
 }

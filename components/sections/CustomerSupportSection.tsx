@@ -6,8 +6,9 @@ import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionReveal } from "@/components/shared/SectionReveal";
 
-export function CustomerSupportSection() {
+export function CustomerSupportSection({ supportBrand }: { supportBrand?: string } = {}) {
   const t = useTranslations("support");
+  const brandLabel = supportBrand ?? t("supportBrand");
 
   return (
     <section className="bg-white text-[#111827] py-16 md:py-24" data-od-id="customer-support">
@@ -39,7 +40,7 @@ export function CustomerSupportSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
-                <p className="rounded-full border border-white/15 bg-black/70 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm">{t("supportBrand")}</p>
+                <p className="rounded-full border border-white/15 bg-black/70 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm">{brandLabel}</p>
                 <span className="rounded-full border border-white/20 bg-black/70 px-3 py-1.5 text-xs font-semibold text-white">
                   24/7
                 </span>
@@ -98,7 +99,7 @@ export function CustomerSupportSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
             <div className="absolute bottom-7 left-7 right-7 flex items-end justify-between gap-4">
               <div>
-                <p className="rounded-full border border-secondary/35 bg-background/80 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#A98BFF] backdrop-blur-sm">{t("supportBrand")}</p>
+                <p className="rounded-full border border-secondary/35 bg-background/80 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#A98BFF] backdrop-blur-sm">{brandLabel}</p>
               </div>
               <span className="rounded-full border border-secondary/35 bg-background/70 px-3 py-1.5 text-xs font-semibold text-[#A98BFF]">
                 24/7

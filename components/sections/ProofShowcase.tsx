@@ -38,9 +38,17 @@ function formatMoney(value: number | null, currency = "USD") {
 export function ProofShowcase({
   payouts,
   summary,
+  startingAt,
+  readyRewardDesc,
+  totalDisplay,
+  compareHref,
 }: {
   payouts: CmsPayout[];
   summary: CmsRewardsSummary | null;
+  startingAt?: string;
+  readyRewardDesc?: string;
+  totalDisplay?: string;
+  compareHref?: string;
 }) {
   const t = useTranslations("proof");
 
@@ -48,7 +56,7 @@ export function ProofShowcase({
     { label: t("benefitFlexible"), icon: RefreshCw },
     { label: t("benefitAllocation"), icon: Wallet },
     { label: t("benefitNoHidden"), icon: ShieldCheck },
-    { label: t("benefitStarting"), icon: DollarSign },
+    { label: startingAt ?? t("benefitStarting"), icon: DollarSign },
   ];
 
   const verified = useMemo(() => payouts.filter(isVerified), [payouts]);
@@ -148,7 +156,7 @@ export function ProofShowcase({
                   data-od-id="proof-showcase-cta"
                 >
                   <a
-                    href="/evaluation"
+                    href={compareHref ?? "/evaluation"}
                     className="inline-flex min-h-12 items-center rounded-xl border border-gray-300 bg-white px-7 text-sm font-bold text-[#0A0A0C] shadow-sm transition-colors hover:border-[#703AD7] hover:bg-[#F0F7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#703AD7]"
                   >
                     {t("viewEvaluations")}
@@ -161,7 +169,12 @@ export function ProofShowcase({
                 className="relative flex items-end px-5 py-8 sm:px-10 sm:py-10 lg:px-0 lg:py-16 lg:pr-12"
                 data-od-id="proof-showcase-visual"
               >
-                <BrowserWindow rows={rows} total={total} />
+                <BrowserWindow
+                  rows={rows}
+                  total={total}
+                  totalDisplay={totalDisplay}
+                  readyRewardDesc={readyRewardDesc}
+                />
               </div>
             </div>
           </div>
@@ -187,9 +200,13 @@ const SAMPLE_PROOF_ROWS: CmsPayout[] = [
 function BrowserWindow({
   rows,
   total,
+  totalDisplay,
+  readyRewardDesc,
 }: {
   rows: CmsPayout[];
   total: number | null;
+  totalDisplay?: string;
+  readyRewardDesc?: string;
 }) {
   const t = useTranslations("proof");
   const [offset, setOffset] = useState(0);
@@ -252,7 +269,7 @@ function BrowserWindow({
               {t("readyReward")}
             </p>
             <p className="mt-1.5 text-[11px] leading-5 text-gray-500">
-              {t("readyRewardDesc")}
+              {readyRewardDesc ?? t("readyRewardDesc")}
             </p>
             <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
               <motion.span
@@ -319,7 +336,7 @@ function BrowserWindow({
               {t("totalPayouts")}
             </p>
             <p className="mt-1 font-[family-name:var(--font-jakarta)] text-xl xs:text-2xl sm:text-[26px] lg:text-[28px] font-black leading-tight tracking-tight text-white tabular-nums whitespace-nowrap">
-              {formatMoney(total ?? 1385127.63)}
+              {totalDisplay ?? formatMoney(total ?? 1385127.63)}
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}

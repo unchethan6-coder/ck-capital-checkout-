@@ -10,7 +10,15 @@ import { FALLBACK_VIDEOS, VIDEO_META, type VideoItem } from "@/components/sectio
  * with full-card frosted glass hover overlay (backdrop blur), hover pause,
  * 1-to-1 video metadata alignment, arrow controls, and a YouTube lightbox.
  */
-export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem[] }) {
+export function TraderStories({
+  videos = FALLBACK_VIDEOS,
+  brand = "CK PROPFIRM",
+  useProvidedMeta = false,
+}: {
+  videos?: VideoItem[];
+  brand?: string;
+  useProvidedMeta?: boolean;
+}) {
   const t = useTranslations("stories");
   const [playing, setPlaying] = useState<string | null>(null);
   const rowRef = useRef<HTMLDivElement>(null);
@@ -23,9 +31,12 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
     const fallbackThumb = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
     return {
       ...v,
-      title: meta?.title || v.title || "Trader Success Story",
+      title: (useProvidedMeta ? v.title : meta?.title) || v.title || "Trader Success Story",
       reward: v.reward || meta?.reward || null,
-      desc: meta?.desc || v.desc || "Verified Trader • CK Propfirm",
+      desc:
+        (useProvidedMeta ? v.desc : meta?.desc) ||
+        v.desc ||
+        `Verified Trader • ${brand === "CK PROPFIRM" ? "CK Propfirm" : brand}`,
       thumbnail: meta?.thumbnail || v.thumbnail || fallbackThumb,
     };
   });
@@ -134,7 +145,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
                     {/* Idle State: Clean view with subtle top tag */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 group-hover:opacity-0" />
                     <p className="absolute left-4 top-3.5 text-[11px] font-black tracking-[0.18em] text-white/90 drop-shadow transition-opacity duration-300 group-hover:opacity-0">
-                      CK PROPFIRM
+                      {brand}
                     </p>
 
                     {/* Hover State: Full-card Frosted Glass Overlay (Backdrop Blur) */}
@@ -145,7 +156,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
                           {t("successStory")}
                         </span>
                         <span className="text-[10.5px] font-black tracking-[0.18em] text-white/90">
-                          CK PROPFIRM
+                          {brand}
                         </span>
                       </div>
 
@@ -162,7 +173,7 @@ export function TraderStories({ videos = FALLBACK_VIDEOS }: { videos?: VideoItem
                           {v.title}
                         </p>
                         <p className="mt-1 text-[11px] font-medium text-white/70 line-clamp-1">
-                          {v.desc || "Verified Trader • CK Propfirm"}
+                          {v.desc || `Verified Trader • ${brand}`}
                         </p>
                       </div>
                     </div>
