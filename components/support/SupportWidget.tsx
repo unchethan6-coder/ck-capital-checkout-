@@ -7,7 +7,7 @@ import {
   Megaphone, Search, X, MessageSquare,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ALL_FAQ_KEYS, FAQ_COLLECTIONS, SUGGESTED_FAQ_KEYS } from "@/lib/support/faq";
 import type { NewsItem, OffersPayload } from "@/lib/offers/types";
@@ -84,10 +84,7 @@ export function SupportWidget() {
   const t = useTranslations("supportWidget");
   const tFaq = useTranslations("faq");
   const locale = useLocale();
-  const pathname = usePathname();
-  // The VIP pricing card has a bottom-full CTA on phones. Keep the floating
-  // support mark from covering it; desktop has enough clearance.
-  const hideOnVipMobile = /(?:^|\/)vip-offer\/?$/.test(pathname);
+  const [liftedAboveCta, setLiftedAboveCta] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<Tab>("home");
@@ -97,6 +94,47 @@ export function SupportWidget() {
   const [newsIndex, setNewsIndex] = useState(0);
   const [cmsFaqs, setCmsFaqs] = useState<WidgetFaq[]>([]);
   const [cmsArticles, setCmsArticles] = useState<WidgetArticle[]>([]);
+
+  // The challenge selector has a sticky mobile checkout bar. Lift the support
+  // mark above it while that bar is on screen so the primary CTA stays tappable.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const bar = document.querySelector<HTMLElement>('[data-od-id="mobile-checkout-bar"]');
+      if (!bar) {
+        setLiftedAboveCta(false);
+        return;
+      }
+      const style = window.getComputedStyle(bar);
+      if (style.display === "none" || bar.getBoundingClientRect().height === 0) {
+        setLiftedAboveCta(false);
+        return;
+      }
+      const rect = bar.getBoundingClientRect();
+      const widgetTop = window.innerHeight - 12 - 70;
+      const overlaps =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0 &&
+        rect.bottom > widgetTop;
+      setLiftedAboveCta(overlaps);
+    };
+    const schedule = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    const observer = new MutationObserver(schedule);
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      observer.disconnect();
+    };
+  }, []);
 
   // Fetch CMS promos/offers lazily on open
   useEffect(() => {
@@ -256,8 +294,8 @@ export function SupportWidget() {
           onClick={openWidget}
           aria-label={t("launcher")}
           className={cn(
-            "fixed right-3 bottom-3 z-40 flex h-[70px] w-[70px] sm:h-[76px] sm:w-[76px] items-center justify-center rounded-2xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:right-6 sm:bottom-6 shadow-2xl",
-            hideOnVipMobile && "hidden sm:flex"
+            "fixed right-3 z-40 flex h-[70px] w-[70px] sm:h-[76px] sm:w-[76px] items-center justify-center rounded-2xl transition-[bottom,transform] duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:right-6 shadow-2xl",
+            liftedAboveCta ? "bottom-28" : "bottom-3 sm:bottom-6"
           )}
         >
           <Image src="/ck-support-mark.svg" alt="" width={76} height={76} priority className="h-full w-full drop-shadow-xl" />
