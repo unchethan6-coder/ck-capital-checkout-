@@ -7,7 +7,7 @@ import {
   Megaphone, Search, X, MessageSquare,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import { ALL_FAQ_KEYS, FAQ_COLLECTIONS, SUGGESTED_FAQ_KEYS } from "@/lib/support/faq";
 import type { NewsItem, OffersPayload } from "@/lib/offers/types";
@@ -84,6 +84,10 @@ export function SupportWidget() {
   const t = useTranslations("supportWidget");
   const tFaq = useTranslations("faq");
   const locale = useLocale();
+  const pathname = usePathname();
+  // The VIP pricing card has a bottom-full CTA on phones. Keep the floating
+  // support mark from covering it; desktop has enough clearance.
+  const hideOnVipMobile = /(?:^|\/)vip-offer\/?$/.test(pathname);
 
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<Tab>("home");
@@ -251,7 +255,10 @@ export function SupportWidget() {
           data-od-id="support-launcher"
           onClick={openWidget}
           aria-label={t("launcher")}
-          className="fixed right-3 bottom-3 z-40 flex h-[70px] w-[70px] sm:h-[76px] sm:w-[76px] items-center justify-center rounded-2xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:right-6 sm:bottom-6 shadow-2xl"
+          className={cn(
+            "fixed right-3 bottom-3 z-40 flex h-[70px] w-[70px] sm:h-[76px] sm:w-[76px] items-center justify-center rounded-2xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)] sm:right-6 sm:bottom-6 shadow-2xl",
+            hideOnVipMobile && "hidden sm:flex"
+          )}
         >
           <Image src="/ck-support-mark.svg" alt="" width={76} height={76} priority className="h-full w-full drop-shadow-xl" />
         </button>
