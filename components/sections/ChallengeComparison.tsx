@@ -21,6 +21,7 @@ import { WhatsNewBanner, type WhatsNewPromo, type WhatsNewSlide } from "@/compon
 import { getPortalSignupUrl } from "@/lib/portal";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 import { enrichUrlWithAttribution } from "@/lib/analytics/attribution";
+import { SELECT_CHALLENGE_EVENT } from "@/components/sections/ChallengeTypeCards";
 
 const DEFAULT_ACCOUNT_SIZES = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
@@ -171,6 +172,22 @@ export function ChallengeComparison({
   const rawData: Record<string, Record<string, PlanDetails | null>> = useMemo(() => {
     return config?.fundingPlans ?? FUNDING_PLAN_RAW_DATA;
   }, [config]);
+
+  const rawDataRef = useRef(rawData);
+  rawDataRef.current = rawData;
+
+  // Switch model tab when card CTA above is clicked
+  useEffect(() => {
+    const onSelect = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail;
+      if (["standard", "1step", "pro", "instant"].includes(id)) {
+        setSelectedType(id);
+        setSelectedSize((size) => (rawDataRef.current[size]?.[id] ? size : "100K"));
+      }
+    };
+    window.addEventListener(SELECT_CHALLENGE_EVENT, onSelect);
+    return () => window.removeEventListener(SELECT_CHALLENGE_EVENT, onSelect);
+  }, []);
 
   const currencies: CurrencyOption[] = useMemo(() => {
     return config?.currencies ?? CURRENCIES;

@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Hero } from "@/components/sections/Hero";
 import { StatsStrip } from "@/components/sections/StatsStrip";
+import { ChallengeTypeCards } from "@/components/sections/ChallengeTypeCards";
 import { ChallengeComparison } from "@/components/sections/ChallengeComparison";
 import { FeatureStrip } from "@/components/sections/FeatureStrip";
 import { TradingPlatforms } from "@/components/sections/TradingPlatforms";
@@ -83,6 +84,9 @@ export default async function Home({
 
       {/* S2 — Stats Strip: Light (was Jet Black) */}
       <StatsStrip />
+
+      {/* S2.5 — Explore Your Options */}
+      <ChallengeTypeCards plans={challengeConfig?.fundingPlans ?? undefined} />
 
       {/* S3 — Challenge Selector (evals) */}
       <ChallengeComparison config={challengeConfig} promo={activePromo} slides={whatsNewSlides} />

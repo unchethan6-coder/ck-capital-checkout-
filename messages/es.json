@@ -1415,5 +1415,20 @@
     "pillAllocationLabel": "Asignación Simulada",
     "pillPayoutValue": "Flexible",
     "pillPayoutLabel": "Pagos"
+  },
+  "challengeTypes": {
+    "title": "Explora tus opciones",
+    "subtitle": "Cuatro formas de conseguir fondeo. Elige el desafío que encaje con tu forma de operar y luego el tamaño de cuenta abajo.",
+    "market": "Plan CFDs",
+    "summaryTwo": "Desafío de dos fases. Alcanza {p1} y luego {p2} de objetivo y obtén una cuenta fondeada.",
+    "summaryOne": "Una sola fase. Alcanza {p1} de objetivo y obtén una cuenta fondeada.",
+    "summaryInstant": "Sin evaluación. Una cuenta fondeada simulada desde el primer día.",
+    "pointSkip": "Sin ninguna evaluación",
+    "pointFastest": "El camino más rápido al fondeo",
+    "pointSplit": "Reparto de beneficios del {split}",
+    "pointConsistency": "Regla de consistencia del {pct} en el pago",
+    "pointNoConsistency": "Sin puntuación de consistencia",
+    "pointNoTimeLimit": "Sin límite de tiempo para aprobar",
+    "choose": "Elegir {name}"
   }
 }

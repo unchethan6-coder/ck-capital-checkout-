@@ -1414,5 +1414,20 @@
     "pillAllocationLabel": "Simulated Allocation",
     "pillPayoutValue": "Flexible",
     "pillPayoutLabel": "Payouts"
+  },
+  "challengeTypes": {
+    "title": "Explore Your Options",
+    "subtitle": "Four ways to get funded. Pick the challenge that fits how you trade, then choose your account size below.",
+    "market": "CFDs Plan",
+    "summaryTwo": "Two phase challenge. Reach {p1} then {p2} profit target and get a funded account.",
+    "summaryOne": "Single phase. Reach {p1} profit target and get a funded account.",
+    "summaryInstant": "No evaluation. A simulated funded account from day one.",
+    "pointSkip": "Skip the evaluation entirely",
+    "pointFastest": "Fastest road to funding",
+    "pointSplit": "{split} profit split",
+    "pointConsistency": "{pct} consistency rule on payout",
+    "pointNoConsistency": "No consistency score",
+    "pointNoTimeLimit": "No time limit to pass",
+    "choose": "Choose {name}"
   }
 }

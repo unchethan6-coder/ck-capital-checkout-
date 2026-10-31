@@ -1495,5 +1495,20 @@
     "pillAllocationLabel": "Allocation simulée",
     "pillPayoutValue": "Flexible",
     "pillPayoutLabel": "Paiements"
+  },
+  "challengeTypes": {
+    "title": "Explorez vos options",
+    "subtitle": "Quatre façons d’être financé. Choisissez le challenge adapté à votre trading, puis la taille de compte ci-dessous.",
+    "market": "Plan CFDs",
+    "summaryTwo": "Challenge en deux phases. Atteignez {p1} puis {p2} d’objectif et obtenez un compte financé.",
+    "summaryOne": "Une seule phase. Atteignez {p1} d’objectif et obtenez un compte financé.",
+    "summaryInstant": "Sans évaluation. Un compte financé simulé dès le premier jour.",
+    "pointSkip": "Aucune évaluation",
+    "pointFastest": "Le chemin le plus rapide vers le financement",
+    "pointSplit": "Partage des profits de {split}",
+    "pointConsistency": "Règle de consistance de {pct} au retrait",
+    "pointNoConsistency": "Aucun score de consistance",
+    "pointNoTimeLimit": "Aucune limite de temps pour réussir",
+    "choose": "Choisir {name}"
   }
 }

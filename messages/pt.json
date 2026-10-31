@@ -1420,5 +1420,20 @@
     "pillAllocationLabel": "Alocação Simulada",
     "pillPayoutValue": "Flexível",
     "pillPayoutLabel": "Pagamentos"
+  },
+  "challengeTypes": {
+    "title": "Explore as suas opções",
+    "subtitle": "Quatro formas de ser financiado. Escolha o desafio que combina com o seu jeito de operar e depois o tamanho da conta abaixo.",
+    "market": "Plano CFDs",
+    "summaryTwo": "Desafio de duas fases. Atinja {p1} e depois {p2} de meta e receba uma conta financiada.",
+    "summaryOne": "Fase única. Atinja {p1} de meta e receba uma conta financiada.",
+    "summaryInstant": "Sem avaliação. Uma conta financiada simulada desde o primeiro día.",
+    "pointSkip": "Sem nenhuma avaliação",
+    "pointFastest": "O caminho mais rápido para o financiamento",
+    "pointSplit": "Divisão de lucros de {split}",
+    "pointConsistency": "Regra de consistência de {pct} no saque",
+    "pointNoConsistency": "Sem pontuação de consistência",
+    "pointNoTimeLimit": "Sem prazo para ser aprovado",
+    "choose": "Escolher {name}"
   }
 }

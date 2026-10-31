@@ -1495,5 +1495,20 @@
     "pillAllocationLabel": "تخصيص محاكى",
     "pillPayoutValue": "مرن",
     "pillPayoutLabel": "المدفوعات"
+  },
+  "challengeTypes": {
+    "title": "استكشف خياراتك",
+    "subtitle": "أربع طرق للحصول على التمويل. اختر التحدي المناسب لأسلوب تداولك، ثم اختر حجم الحساب أدناه.",
+    "market": "خطة العقود مقابل الفروقات",
+    "summaryTwo": "تحدٍ من مرحلتين. حقق هدف ربح {p1} ثم {p2} واحصل على حساب ممول.",
+    "summaryOne": "مرحلة واحدة. حقق هدف ربح {p1} واحصل على حساب ممول.",
+    "summaryInstant": "بدون تقييم. حساب ممول محاكى من اليوم الأول.",
+    "pointSkip": "تخطَّ التقييم بالكامل",
+    "pointFastest": "أسرع طريق إلى التمويل",
+    "pointSplit": "تقسيم أرباح {split}",
+    "pointConsistency": "قاعدة اتساق {pct} عند السحب",
+    "pointNoConsistency": "بدون درجة اتساق",
+    "pointNoTimeLimit": "بدون حد زمني للنجاح",
+    "choose": "اختر {name}"
   }
 }

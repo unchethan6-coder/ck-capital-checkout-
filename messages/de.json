@@ -1495,5 +1495,20 @@
     "pillAllocationLabel": "Simulierte Zuweisung",
     "pillPayoutValue": "Flexibel",
     "pillPayoutLabel": "Auszahlungen"
+  },
+  "challengeTypes": {
+    "title": "Entdecke deine Optionen",
+    "subtitle": "Vier Wege zum Funding. Wähle die Challenge, die zu deinem Trading passt, und dann unten deine Kontogröße.",
+    "market": "CFD-Plan",
+    "summaryTwo": "Zweiphasige Challenge. Erreiche {p1} und dann {p2} Gewinnziel und erhalte ein Funded-Konto.",
+    "summaryOne": "Eine Phase. Erreiche {p1} Gewinnziel und erhalte ein Funded-Konto.",
+    "summaryInstant": "Keine Evaluierung. Ein simuliertes Funded-Konto ab dem ersten Tag.",
+    "pointSkip": "Ganz ohne Evaluierung",
+    "pointFastest": "Der schnellste Weg zum Funding",
+    "pointSplit": "{split} Gewinnbeteiligung",
+    "pointConsistency": "{pct} Konsistenzregel bei Auszahlung",
+    "pointNoConsistency": "Kein Konsistenz-Score",
+    "pointNoTimeLimit": "Kein Zeitlimit zum Bestehen",
+    "choose": "{name} wählen"
   }
 }
