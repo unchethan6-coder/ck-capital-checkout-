@@ -313,18 +313,18 @@ export function ChallengeComparison({
     >
       <Container>
         <div className="max-w-[1200px] mx-auto flex flex-col gap-10 sm:gap-14 md:gap-16">
+          {/* Explore Your Options: one card per funding model with its ship */}
+          {showExplore && (
+            <SectionReveal className="w-full">
+              <ChallengeTypeCards plans={rawData} />
+            </SectionReveal>
+          )}
+
           {/* What's New Tabbed Promo Carousel — intentionally omitted on VIP,
               which has its own hardcoded 90% sale bar. */}
           {!vipMode && (
             <SectionReveal className="w-full">
               <WhatsNewBanner viewMode={viewMode} promo={promo} slides={slides} />
-            </SectionReveal>
-          )}
-
-          {/* Explore Your Options: one card per funding model with its ship */}
-          {showExplore && (
-            <SectionReveal className="w-full">
-              <ChallengeTypeCards plans={rawData} />
             </SectionReveal>
           )}
 

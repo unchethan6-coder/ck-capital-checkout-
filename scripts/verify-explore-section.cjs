@@ -23,7 +23,7 @@ async function main() {
 
   const page = await context.newPage();
 
-  const url = process.env.BASE_URL || "http://127.0.0.1:3000/en";
+  const url = process.env.BASE_URL || "http://127.0.0.1:3001/en";
   console.log(`Navigating to ${url}...`);
   await page.goto(url, { waitUntil: "networkidle" });
 
@@ -39,7 +39,7 @@ async function main() {
   await page.waitForTimeout(500);
   await section.screenshot({ path: path.join(outDir, "explore-desktop.png") });
 
-  // Also capture the combined section (What's New + Explore + Challenge Selection)
+  // Also capture the combined section (Explore + What's New + Challenge Selection)
   const compSection = page.locator('[data-od-id="challenge-comparison"]');
   await compSection.screenshot({ path: path.join(outDir, "combined-desktop.png") });
 
