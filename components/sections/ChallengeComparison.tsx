@@ -21,7 +21,7 @@ import { WhatsNewBanner, type WhatsNewPromo, type WhatsNewSlide } from "@/compon
 import { getPortalSignupUrl } from "@/lib/portal";
 import { trackBeginCheckout } from "@/lib/analytics/events";
 import { enrichUrlWithAttribution } from "@/lib/analytics/attribution";
-import { SELECT_CHALLENGE_EVENT } from "@/components/sections/ChallengeTypeCards";
+import { ChallengeTypeCards, SELECT_CHALLENGE_EVENT } from "@/components/sections/ChallengeTypeCards";
 
 const DEFAULT_ACCOUNT_SIZES = ["10K", "25K", "50K", "100K", "200K", "300K"];
 
@@ -61,11 +61,13 @@ export function ChallengeComparison({
   promo,
   slides,
   vip = null,
+  showExplore = true,
 }: {
   config?: ChallengeConfig | null;
   promo?: WhatsNewPromo | null;
   slides?: WhatsNewSlide[] | null;
   vip?: VipPricingConfig | null;
+  showExplore?: boolean;
 }) {
   const t = useTranslations("challenge");
   const vipMode = Boolean(vip);
@@ -316,6 +318,13 @@ export function ChallengeComparison({
           {!vipMode && (
             <SectionReveal className="w-full">
               <WhatsNewBanner viewMode={viewMode} promo={promo} slides={slides} />
+            </SectionReveal>
+          )}
+
+          {/* Explore Your Options: one card per funding model with its ship */}
+          {showExplore && (
+            <SectionReveal className="w-full">
+              <ChallengeTypeCards plans={rawData} />
             </SectionReveal>
           )}
 

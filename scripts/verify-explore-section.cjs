@@ -11,7 +11,7 @@ async function main() {
     {
       name: "ck_newsletter_popup_dismissed",
       value: "true",
-      domain: "localhost",
+      domain: "127.0.0.1",
       path: "/",
     },
   ]);
@@ -23,11 +23,11 @@ async function main() {
 
   const page = await context.newPage();
 
-  const url = process.env.BASE_URL || "http://localhost:3000/en";
+  const url = process.env.BASE_URL || "http://127.0.0.1:3000/en";
   console.log(`Navigating to ${url}...`);
   await page.goto(url, { waitUntil: "networkidle" });
 
-  const section = page.locator('section[data-od-id="challenge-types"]');
+  const section = page.locator('[data-od-id="challenge-types"]');
   await section.waitFor({ state: "visible", timeout: 15000 });
   await section.scrollIntoViewIfNeeded();
 
@@ -38,6 +38,10 @@ async function main() {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.waitForTimeout(500);
   await section.screenshot({ path: path.join(outDir, "explore-desktop.png") });
+
+  // Also capture the combined section (What's New + Explore + Challenge Selection)
+  const compSection = page.locator('[data-od-id="challenge-comparison"]');
+  await compSection.screenshot({ path: path.join(outDir, "combined-desktop.png") });
 
   // 2. Tablet (768x1024)
   await page.setViewportSize({ width: 768, height: 1024 });
@@ -52,7 +56,7 @@ async function main() {
   // 4. Arabic RTL Test
   await page.goto(url.replace("/en", "/ar"), { waitUntil: "networkidle" });
   await page.setViewportSize({ width: 1440, height: 900 });
-  const arSection = page.locator('section[data-od-id="challenge-types"]');
+  const arSection = page.locator('[data-od-id="challenge-types"]');
   await arSection.waitFor({ state: "visible", timeout: 15000 });
   await arSection.scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
