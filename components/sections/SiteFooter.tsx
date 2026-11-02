@@ -298,11 +298,15 @@ export function SiteFooter() {
             <p className="max-w-4xl text-xs font-medium leading-relaxed text-foreground/65 sm:text-[12.5px]">
               {t("disclaimerSimulated")}
             </p>
-            <details open className="group mt-4 rounded-xl border border-foreground/[0.08] bg-foreground/[0.02]">
-              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-foreground/65 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
+            {/* Static, non-collapsible disclosure: compliance text must always
+                be visible, so there is deliberately no toggle or dismiss control. */}
+            <div
+              className="mt-4 rounded-xl border border-foreground/[0.08] bg-foreground/[0.02]"
+              data-od-id="footer-disclaimer"
+            >
+              <h2 className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-foreground/65">
                 {t("disclaimerImportantTitle")}
-                <span aria-hidden="true" className="text-lg font-bold leading-none text-[#A98BFF] transition-transform duration-200 group-open:rotate-45">+</span>
-              </summary>
+              </h2>
               <div className="space-y-6 border-t border-foreground/[0.08] px-4 py-5 text-xs leading-relaxed text-foreground/65 sm:text-[12.5px]">
               <p className="font-bold text-foreground/80 sm:text-[13px] leading-relaxed">
                 {t("disclaimerSimulated")}
@@ -348,7 +352,7 @@ export function SiteFooter() {
 
               <p>{t("disclaimerJurisdiction")}</p>
               </div>
-            </details>
+            </div>
           </div>
         </Container>
       </div>
