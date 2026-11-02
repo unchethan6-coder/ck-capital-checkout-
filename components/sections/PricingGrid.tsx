@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { PRICING_PLANS, CURRENCIES } from "@/lib/content";
 import { GoldButton } from "@/components/shared/GoldButton";
@@ -8,7 +8,7 @@ import { SectionReveal } from "@/components/shared/SectionReveal";
 import { Check, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getPortalSignupUrl } from "@/lib/portal";
-import { trackBeginCheckout } from "@/lib/analytics/events";
+import { trackBeginCheckout, trackViewContent } from "@/lib/analytics/events";
 
 const FX: Record<string, number> = { USD: 1, GBP: 0.79, EUR: 0.92 };
 
@@ -16,6 +16,16 @@ export function PricingGrid() {
   const [currency, setCurrency] = useState("USD");
   const fx = FX[currency];
   const sym = CURRENCIES.find((c) => c.code === currency)?.symbol ?? "$";
+
+  // ViewContent for Meta funnel: pricing plans viewed (fires once per mount).
+  useEffect(() => {
+    trackViewContent({
+      content_ids: PRICING_PLANS.map((p) => p.id),
+      content_name: "pricing_plans",
+      currency,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section className="py-16 md:py-24" data-od-id="pricing">

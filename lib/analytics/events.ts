@@ -126,6 +126,92 @@ export function trackBeginCheckout(params: BeginCheckoutParams): void {
 }
 
 /**
+ * Dispatch ViewContent event (product / pricing view) across dataLayer + pixels.
+ * fbq('track') fans out to both Meta Pixel IDs initialized in MarketingPixels.
+ */
+export function trackViewContent(params?: {
+  content_ids?: string[];
+  content_name?: string;
+  value?: number;
+  currency?: string;
+}): void {
+  if (typeof window === "undefined") return;
+  try {
+    const currency = (params?.currency || "USD").toUpperCase();
+    pushDataLayer({
+      event: "view_item",
+      ecommerce: {
+        currency,
+        value: params?.value,
+        items: (params?.content_ids || []).map((id) => ({
+          item_id: id,
+          item_name: params?.content_name || id,
+        })),
+      },
+    });
+    window.fbq?.("track", "ViewContent", {
+      content_ids: params?.content_ids,
+      content_name: params?.content_name,
+      content_type: "product",
+      ...(typeof params?.value === "number" ? { value: params.value, currency } : {}),
+    });
+    if (params?.content_ids?.length) {
+      window.ttq?.track("ViewContent", {
+        content_id: params.content_ids[0],
+        content_name: params.content_name,
+        ...(typeof params?.value === "number" ? { value: params.value, currency } : {}),
+      });
+    }
+  } catch {
+    // Non-blocking
+  }
+}
+
+/**
+ * Dispatch Lead event (newsletter signup, affiliate interest) across dataLayer + pixels.
+ */
+export function trackLead(params?: { content_name?: string; value?: number; currency?: string }): void {
+  if (typeof window === "undefined") return;
+  try {
+    const currency = (params?.currency || "USD").toUpperCase();
+    pushDataLayer({
+      event: "generate_lead",
+      content_name: params?.content_name,
+      value: params?.value,
+      currency,
+    });
+    window.fbq?.("track", "Lead", {
+      ...(params?.content_name ? { content_name: params.content_name } : {}),
+      ...(typeof params?.value === "number" ? { value: params.value, currency } : {}),
+    });
+    window.ttq?.track("SubmitForm", {
+      ...(params?.content_name ? { content_name: params.content_name } : {}),
+    });
+    window.rdt?.("track", "Lead");
+  } catch {
+    // Non-blocking
+  }
+}
+
+/**
+ * Dispatch Contact event (contact intent: Discord join from /contact, support click).
+ */
+export function trackContact(params?: { content_name?: string }): void {
+  if (typeof window === "undefined") return;
+  try {
+    pushDataLayer({ event: "contact", content_name: params?.content_name });
+    window.fbq?.("track", "Contact", {
+      ...(params?.content_name ? { content_name: params.content_name } : {}),
+    });
+    window.ttq?.track("Contact", {
+      ...(params?.content_name ? { content_name: params.content_name } : {}),
+    });
+  } catch {
+    // Non-blocking
+  }
+}
+
+/**
  * Dispatch verified Purchase event across dataLayer and all pixel platforms
  * Spec Section 8:
  * - Checks order is paid and has non-empty ID

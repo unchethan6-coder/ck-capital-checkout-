@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, ArrowRight, Bell, Gift, Tag, CheckCircle2, Loader2 } from "lucide-react";
 import { DEFAULT_NEWSLETTER_POPUP, type CmsNewsletterPopup } from "@/lib/cms";
+import { trackLead } from "@/lib/analytics/events";
 
 const COOKIE_NAME = "ck_newsletter_popup_dismissed";
 const DISMISS_DAYS = 30;
@@ -148,6 +149,7 @@ export function NewsletterPopup({ content }: NewsletterPopupProps = {}) {
       if (res.ok && resData?.success) {
         setStatus("success");
         setCookie(SUBSCRIBE_DAYS);
+        trackLead({ content_name: "newsletter_popup" });
         // Automatically close after displaying celebration
         setTimeout(() => {
           setIsOpen(false);

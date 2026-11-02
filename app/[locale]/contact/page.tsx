@@ -8,6 +8,7 @@ import { GoldButton } from '@/components/shared/GoldButton'
 import { Aurora } from '@/components/fx/Aurora'
 import { SectionReveal } from '@/components/shared/SectionReveal'
 import { ContactHeroVisual } from '@/components/shared/ContactHeroVisual'
+import { trackContact } from '@/lib/analytics/events'
 
 export default function ContactPage() {
   const t = useTranslations('contact')
@@ -83,7 +84,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.5, delay: 0.36 }}
                 className="mt-9 flex flex-wrap items-center gap-4"
               >
-                <a href="https://discord.com/invite/hGSVx9CmS2" target="_blank" rel="noopener noreferrer">
+                <a href="https://discord.com/invite/hGSVx9CmS2" target="_blank" rel="noopener noreferrer" onClick={() => trackContact({ content_name: "discord_hero" })}>
                   <GoldButton size="lg">
                     Join Discord Server <ArrowRight size={16} />
                   </GoldButton>
@@ -176,7 +177,7 @@ export default function ContactPage() {
               Join our global Discord trader community for market discussions, announcement drops, support ticketing, and weekly giveaways.
             </p>
             <div className="mt-8">
-              <a href="https://discord.com/invite/hGSVx9CmS2" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.com/invite/hGSVx9CmS2" target="_blank" rel="noopener noreferrer" onClick={() => trackContact({ content_name: "discord_community_cta" })}>
                 <GoldButton size="lg">
                   Join Discord Community <ArrowRight size={16} />
                 </GoldButton>

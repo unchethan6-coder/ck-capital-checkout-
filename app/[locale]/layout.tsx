@@ -181,13 +181,22 @@ export default async function LocaleLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* Meta Pixel (noscript) */}
+        {/* Meta Pixel (noscript) - dual pixels */}
         <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1102958381163703&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1771596324072142&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
