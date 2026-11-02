@@ -34,9 +34,9 @@ export const BUNDLED_NEWS: NewsItem[] = [
     title: "What is the ckpropfirm October Starter Offer?",
     author: "ckpropfirm",
     summary:
-      "Everything you need to know about our October offer — 70% off every 2-Step Standard evaluation, from $10K through to $300K.",
+      "Everything you need to know about our October offer — 75% off every 2-Step Standard evaluation, from $10K through to $300K.",
     body: [
-      "ckpropfirm is offering 70% off our 2-Step Standard evaluations. The offer is open to new and existing traders worldwide.",
+      "ckpropfirm is offering 75% off our 2-Step Standard evaluations. The offer is open to new and existing traders worldwide.",
       "Use the code at checkout to claim your discount. There is no announced closing date — this is a limited-time offer and may close at any point without advance notice, so redeem it while it is live.",
     ],
     image: null,

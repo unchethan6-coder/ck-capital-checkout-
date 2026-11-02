@@ -24,10 +24,10 @@ const SLIDES: BannerSlide[] = [
   {
     id: "promo-75",
     tabLabelKey: "tabPromo",
-    defaultTabLabel: "CK Propfirm • 70% Off",
-    shortTabLabel: "70% Off",
-    imageSrc: "/images/banners/whats-new-promo-70-v2.jpeg",
-    alt: "CK Propfirm 70% Off Promo - Get Started",
+    defaultTabLabel: "CK Propfirm • 75% Off",
+    shortTabLabel: "75% Off",
+    imageSrc: "/images/banners/whats-new-promo-75.jpeg",
+    alt: "CK Propfirm 75% Off Promo - Get Started",
     targetId: "pricing-calculator",
     glowColor: "amber",
   },
@@ -69,7 +69,7 @@ export interface WhatsNewPromo {
  */
 export interface WhatsNewSlide {
   id?: string | number;
-  /** Desktop tab pill, e.g. "CK Propfirm • 70% Off". */
+  /** Desktop tab pill, e.g. "CK Propfirm • 75% Off". */
   tabLabel: string;
   /** Mobile tab pill; falls back to `tabLabel`. */
   shortTabLabel?: string | null;
@@ -111,7 +111,7 @@ export function WhatsNewBanner({
     }
     return SLIDES.map((s, idx) => {
       if (idx === 0 && promo) {
-        const discount = promo.discountLabel || "70% Off";
+        const discount = promo.discountLabel || "75% Off";
         return {
           ...s,
           defaultTabLabel: promo.title ? promo.title : `CK Propfirm • ${discount}`,

@@ -51,7 +51,7 @@ Fields:
 | Name (exact) | Type | Required | Notes |
 |---|---|---|---|
 | `code` | Text (short) | yes | e.g. `JUN70` — shown in the offers strip button and the challenge table copy-code chip |
-| `title` | Text (short) | no | offer headline, e.g. `Your First Challenge, 70% Off` |
+| `title` | Text (short) | no | offer headline, e.g. `Your First Challenge, 75% Off` |
 | `subtitle` | Text (long) | no | offer subcopy, used verbatim |
 | `ctaLabel` | Text (short) | no | button label, e.g. `Use Code: JUN70` |
 | `discountLabel` | Text (short) | no | e.g. `70%` |
@@ -301,8 +301,8 @@ Controls the "What's New" carousel under the challenge selector (home + `/evalua
 
 | Name (exact) | Type | Required | Notes |
 |---|---|---|---|
-| `tabLabel` | Text (short) | yes | Desktop tab pill, e.g. `CK Propfirm • 70% Off` |
-| `shortTabLabel` | Text (short) | no | Mobile tab pill, e.g. `70% Off` (falls back to `tabLabel`) |
+| `tabLabel` | Text (short) | yes | Desktop tab pill, e.g. `CK Propfirm • 75% Off` |
+| `shortTabLabel` | Text (short) | no | Mobile tab pill, e.g. `75% Off` (falls back to `tabLabel`) |
 | `image` | Media (single, image only) | yes | The slide graphic. Landscape ~1981×793 (2.5:1) fills the card; other ratios are cover-cropped |
 | `alt` | Text (short) | no | Accessibility alt text (falls back to `tabLabel`) |
 | `link` | Text (short) | no | `#pricing-calculator` scrolls on the page; `/evaluation` (or any path) navigates with the locale prefix; `https://…` opens in a new tab. Defaults to `#pricing-calculator` when empty |
@@ -326,7 +326,7 @@ All content types were seeded via API from the site's then-current static conten
 
 - **Promo** — `JUN70` (active, sortOrder 0). Offer title/subtitle/cta mirror the
   offers strip; edit or re-add entries in Content Manager to change them.
-- **Banner** — "🏆 Join Now & Get JUN70 Code for 70% Off" (active).
+- **Banner** — "🏆 Join Now & Get NOV75 Code for 75% Off" (active).
 - **Payouts** — 5 entries linked to uploaded copies of `public/images/payouts/cert-1..5.png`.
 - **Firm reviews** — 6 entries (`summary` = review text, `rating` 5).
 - **Video reviews** — 4 entries (youtube IDs + titles from the testimonials carousel).
