@@ -1020,14 +1020,14 @@ export function TradingObjectivesPageClient({
   // Dynamic pricing calculation for sticky summary (CMS is authoritative)
   const prices = config?.prices ?? CHALLENGE_PRICES;
   const priceData = size ? prices[typeParam]?.[size] : undefined;
-  const activePrice = priceData ? priceData.price : "$15.04";
+  const activePrice = priceData ? priceData.price : "$22.56";
   const activeOldPrice = priceData ? priceData.oldPrice : "$75.20";
   const priceNow = parseFloat(activePrice.replace(/[^0-9.]/g, ""));
   const priceWas = parseFloat(activeOldPrice.replace(/[^0-9.]/g, ""));
   const discountPct =
     Number.isFinite(priceNow) && Number.isFinite(priceWas) && priceWas > priceNow
       ? Math.round((1 - priceNow / priceWas) * 100)
-      : 80;
+      : 70;
   const activeRule =
     path === "2step" ? step2Rule : path === "1step" ? step1Rule : instantRule;
 

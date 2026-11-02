@@ -301,8 +301,8 @@ Controls the "What's New" carousel under the challenge selector (home + `/evalua
 
 | Name (exact) | Type | Required | Notes |
 |---|---|---|---|
-| `tabLabel` | Text (short) | yes | Desktop tab pill, e.g. `CK Propfirm • 80% Off` |
-| `shortTabLabel` | Text (short) | no | Mobile tab pill, e.g. `80% Off` (falls back to `tabLabel`) |
+| `tabLabel` | Text (short) | yes | Desktop tab pill, e.g. `CK Propfirm • 70% Off` |
+| `shortTabLabel` | Text (short) | no | Mobile tab pill, e.g. `70% Off` (falls back to `tabLabel`) |
 | `image` | Media (single, image only) | yes | The slide graphic. Landscape ~1981×793 (2.5:1) fills the card; other ratios are cover-cropped |
 | `alt` | Text (short) | no | Accessibility alt text (falls back to `tabLabel`) |
 | `link` | Text (short) | no | `#pricing-calculator` scrolls on the page; `/evaluation` (or any path) navigates with the locale prefix; `https://…` opens in a new tab. Defaults to `#pricing-calculator` when empty |

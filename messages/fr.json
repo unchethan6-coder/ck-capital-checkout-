@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "OFFRE À DURÉE LIMITÉE",
-    "discount": "80% DE RÉDUCTION",
+    "discount": "70% DE RÉDUCTION",
     "allEvaluations": "TOUTES LES ÉVALUATIONS",
     "codeLabel": "UTILISER LE CODE",
     "expiresIn": "EXPIRE DANS",
-    "claimOffer": "PROFITER DE 80% DE RÉDUCTION"
+    "claimOffer": "PROFITER DE 70% DE RÉDUCTION"
   },
   "nav": {
     "evaluation": "Évaluation",
@@ -55,10 +55,10 @@
     "support247": "Support 24/7",
     "support247Desc": "Assistance en direct, support par ticket et aide dédiée",
     "blogTitle": "Analyses de Trading & Blog",
-    "featuredEvalBadge": "OFFRE LIMITÉE · 80 % DE RÉDUCTION",
+    "featuredEvalBadge": "OFFRE LIMITÉE · 70 % DE RÉDUCTION",
     "featuredEvalTitle": "Tradez jusqu'à 300K $ de Capital",
     "featuredEvalDesc": "Tradez avec des outils institutionnels, des spreads serrés et 80 % de partage de profit sur comptes simulés.",
-    "featuredEvalCta": "Profiter de 80 % de Réduction",
+    "featuredEvalCta": "Profiter de 70 % de Réduction",
     "featuredCommunityBadge": "COMMUNAUTÉ DE TRADERS",
     "featuredCommunityTitle": "Rejoignez plus de 20 000 Traders Actifs",
     "featuredCommunityDesc": "Analyses de trading en direct, preuves de paiement et support VIP sur Discord.",
@@ -135,7 +135,7 @@
     "startJourney": "Commencez votre parcours aujourd'hui.",
     "startChallenge": "Démarrer le Challenge",
     "compareAll": "Comparer tous les programmes",
-    "ctaFunded": "Être financé — jusqu'à 80% de remise",
+    "ctaFunded": "Être financé — jusqu'à 70% de remise",
     "programsBadge": "Programmes de compte",
     "viewPlans": "Voir les offres",
     "railFunded": "Financé",
@@ -204,7 +204,7 @@
   },
   "whatsNew": {
     "title": "Nouveautés",
-    "tabPromo": "CK Propfirm • 80% de Réduction",
+    "tabPromo": "CK Propfirm • 70% de Réduction",
     "tabLeverage": "Effet de Levier 1:100 • Exposition Maximale",
     "tabLabs": "CK Labs • Bientôt Disponible"
   },
@@ -896,10 +896,10 @@
     "hoursDesc": "Du lundi au vendredi : 8h00 - 20h00 GMT. Support communautaire 24/7."
   },
   "evaluation": {
-    "badge": "Offre Limitée · 80% de Réduction sur les Évaluations",
+    "badge": "Offre Limitée · 70% de Réduction sur les Évaluations",
     "title": "Des évaluations de trading taillées pour les experts.",
     "subtitle": "Prouvez vos compétences et débloquez des comptes financés jusqu'à 750K$.",
-    "claimOffer": "Profiter de 80% OFF",
+    "claimOffer": "Profiter de 70% OFF",
     "compareBtn": "Comparer les Challenges",
     "pathEyebrow": "Comment Ça Fonctionne",
     "pathTitle": "Votre Chemin Vers le Succès",
@@ -1233,10 +1233,10 @@
     "badge": "start challenge · From $15",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 80% off selected evaluation models up to $300K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 70% off selected evaluation models up to $300K account sizes. New users only. Terms apply.",
     "useCode": "UTILISER LE CODE",
     "bannerTitle": "Offre Exclusive Printemps",
-    "discountBadge": "80 % de Réduction",
+    "discountBadge": "70 % de Réduction",
     "expiresIn": "Expire bientôt"
   },
   "search": {

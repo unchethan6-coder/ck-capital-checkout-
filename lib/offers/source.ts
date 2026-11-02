@@ -98,7 +98,7 @@ const asPriceRows = (v: unknown): OfferPrice[] =>
 
 function fromPromoRow(raw: any): NewsItem | null {
   if (!raw.code && !raw.title) return null;
-  const code = raw.code || "OCT80";
+  const code = raw.code || "NOV70";
   const title = raw.title || `Special Offer — Code ${code}`;
   const subtitle = raw.subtitle || `Use code ${code} at checkout to claim your discount.`;
   const discountLabel = raw.discountLabel || "Special Offer";

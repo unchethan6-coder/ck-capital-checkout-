@@ -31,10 +31,10 @@ export default function InstantPage() {
   ]
 
   const pricing = [
-    { amount: '$10K', price: '$30.56', orig: '$152.80', urlCode: '30' },
-    { amount: '$25K', price: '$62.56', orig: '$312.80', urlCode: '31' },
-    { amount: '$50K', price: '$158.56', orig: '$792.80', urlCode: '32' },
-    { amount: '$100K', price: '$311.36', orig: '$1,556.80', urlCode: '33' },
+    { amount: '$10K', price: '$45.84', orig: '$152.80', urlCode: '30' },
+    { amount: '$25K', price: '$93.84', orig: '$312.80', urlCode: '31' },
+    { amount: '$50K', price: '$237.84', orig: '$792.80', urlCode: '32' },
+    { amount: '$100K', price: '$467.04', orig: '$1,556.80', urlCode: '33' },
   ]
 
   const instantFaqs = [
