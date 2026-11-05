@@ -5,7 +5,8 @@
     "allEvaluations": "सभी मूल्यांकन पर",
     "codeLabel": "कोड का उपयोग करें",
     "expiresIn": "समाप्त होने में",
-    "claimOffer": "75% छूट प्राप्त करें"
+    "claimOffer": "75% छूट प्राप्त करें",
+    "endsOn": "{date} को समाप्त"
   },
   "nav": {
     "evaluation": "मूल्यांकन (इवैल्यूएशन)",
@@ -1510,5 +1511,10 @@
     "pointNoConsistency": "कोई कंसिस्टेंसी स्कोर नहीं",
     "pointNoTimeLimit": "पास करने की कोई समय सीमा नहीं",
     "choose": "{name} चुनें"
+  },
+  "adLanding": {
+    "featuredTitle": "$300K तक के सिम्युलेटेड मूल्यांकन अकाउंट",
+    "featuredDesc": "सिम्युलेटेड अकाउंट पर 80% प्रॉफिट स्प्लिट।",
+    "navFrom": "{price} से"
   }
 }

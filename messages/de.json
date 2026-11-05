@@ -5,7 +5,8 @@
     "allEvaluations": "ALLE EVALUIERUNGEN",
     "codeLabel": "CODE NUTZEN",
     "expiresIn": "ENDET IN",
-    "claimOffer": "75% RABATT SICHERN"
+    "claimOffer": "75% RABATT SICHERN",
+    "endsOn": "Endet am {date}"
   },
   "nav": {
     "evaluation": "Evaluierung",
@@ -1510,5 +1511,10 @@
     "pointNoConsistency": "Kein Konsistenz-Score",
     "pointNoTimeLimit": "Kein Zeitlimit zum Bestehen",
     "choose": "{name} wählen"
+  },
+  "adLanding": {
+    "featuredTitle": "Simulierte Evaluierungskonten bis $300K",
+    "featuredDesc": "80% Gewinnbeteiligung auf simulierten Konten.",
+    "navFrom": "Ab {price}"
   }
 }

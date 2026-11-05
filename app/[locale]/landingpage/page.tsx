@@ -6,7 +6,7 @@ import LandingClient from "./landing-client";
 
 const TITLE = "Simulated Trading Evaluations | CK PropFirm";
 const DESCRIPTION =
-  "Prove your skills in a simulated environment on MT5 & TradeLocker. 75% OFF evaluations with code NOV75.";
+  "Prove your trading skills in a simulated evaluation. No time limits, transparent rules, no hidden fees.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

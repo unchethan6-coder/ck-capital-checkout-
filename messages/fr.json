@@ -5,7 +5,8 @@
     "allEvaluations": "TOUTES LES ÉVALUATIONS",
     "codeLabel": "UTILISER LE CODE",
     "expiresIn": "EXPIRE DANS",
-    "claimOffer": "PROFITER DE 75% DE RÉDUCTION"
+    "claimOffer": "PROFITER DE 75% DE RÉDUCTION",
+    "endsOn": "Se termine le {date}"
   },
   "nav": {
     "evaluation": "Évaluation",
@@ -1510,5 +1511,10 @@
     "pointNoConsistency": "Aucun score de consistance",
     "pointNoTimeLimit": "Aucune limite de temps pour réussir",
     "choose": "Choisir {name}"
+  },
+  "adLanding": {
+    "featuredTitle": "Comptes d’évaluation simulés jusqu’à 300 000 $",
+    "featuredDesc": "Partage des profits de 80 % sur les comptes simulés.",
+    "navFrom": "Dès {price}"
   }
 }

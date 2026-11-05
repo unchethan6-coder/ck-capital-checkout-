@@ -5,7 +5,8 @@
     "allEvaluations": "جميع التقييمات",
     "codeLabel": "استخدم الرمز",
     "expiresIn": "ينتهي خلال",
-    "claimOffer": "احصل على خصم 75%"
+    "claimOffer": "احصل على خصم 75%",
+    "endsOn": "ينتهي في {date}"
   },
   "nav": {
     "evaluation": "التقييم",
@@ -1510,5 +1511,10 @@
     "pointNoConsistency": "بدون درجة اتساق",
     "pointNoTimeLimit": "بدون حد زمني للنجاح",
     "choose": "اختر {name}"
+  },
+  "adLanding": {
+    "featuredTitle": "حسابات تقييم محاكاة حتى 300 ألف دولار",
+    "featuredDesc": "تقسيم أرباح 80% على الحسابات المحاكاة.",
+    "navFrom": "ابتداءً من {price}"
   }
 }

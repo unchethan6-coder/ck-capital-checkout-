@@ -30,6 +30,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { PORTAL_SIGNIN_URL } from "@/lib/portal";
 import { GlobalSearchDialog } from "@/components/search/GlobalSearchDialog";
+import { isAdLandingPath, navFromPrice } from "@/lib/adLanding";
 
 interface NavColumnItem {
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -52,7 +53,17 @@ export function TopNav() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const t = useTranslations("nav");
   const tSearch = useTranslations("search");
+  const tAd = useTranslations("adLanding");
   const pathname = usePathname();
+  // The Meta ad landing page: exact prices, no affiliate pitch, simulated wording.
+  const adLanding = isAdLandingPath(pathname);
+  const priceLabel = (key: string) => {
+    if (adLanding) {
+      const from = navFromPrice(key);
+      return from ? tAd("navFrom", { price: from }) : t(key as any);
+    }
+    return t(key as any);
+  };
 
   // Programs / Objectives Menu Data (Matching Company 2-column icon grid format)
   const programColumns: NavColumn[] = [
@@ -174,6 +185,14 @@ export function TopNav() {
       ],
     },
   ];
+
+  // The landing page leaves the affiliate pitch out of the menu; the footer still links to it.
+  const visibleCompanyColumns = adLanding
+    ? companyColumns.map((col) => ({
+        ...col,
+        items: col.items.filter((item) => item.titleKey !== "affiliateProgram"),
+      }))
+    : companyColumns;
 
   useEffect(() => {
     let ticking = false;
@@ -435,7 +454,7 @@ export function TopNav() {
                                   <div className="flex items-center gap-1.5 pl-2 shrink-0">
                                     {item.priceKey && (
                                       <span className="text-[11px] xl:text-[11.5px] font-bold text-foreground/75 group-hover/citem:text-[#A98BFF]">
-                                        {t(item.priceKey as any)}
+                                        {priceLabel(item.priceKey as any)}
                                       </span>
                                     )}
                                     <ArrowUpRight size={13} className="text-foreground/65 group-hover/citem:text-[#A98BFF] transition-colors" />
@@ -455,7 +474,7 @@ export function TopNav() {
                         <div className="w-full h-[125px] xl:h-[135px] rounded-xl overflow-hidden mb-3.5 border border-white/10 relative group-hover/featured:border-primary/40 transition-colors shadow-lg">
                           <img
                             src="/images/placeholders/eval-banner-placeholder.svg"
-                            alt={t("featuredEvalTitle" as any)}
+                            alt={adLanding ? tAd("featuredTitle") : t("featuredEvalTitle" as any)}
                             className="w-full h-full object-cover group-hover/featured:scale-105 transition-transform duration-500"
                           />
                         </div>
@@ -465,10 +484,10 @@ export function TopNav() {
                           {t("featuredEvalBadge" as any)}
                         </span>
                         <div className="font-bold text-white text-[14.5px] leading-tight mt-0.5">
-                          {t("featuredEvalTitle" as any)}
+                          {adLanding ? tAd("featuredTitle") : t("featuredEvalTitle" as any)}
                         </div>
                         <p className="text-[11.5px] text-white/65 mt-1.5 leading-relaxed line-clamp-2">
-                          {t("featuredEvalDesc" as any)}
+                          {adLanding ? tAd("featuredDesc") : t("featuredEvalDesc" as any)}
                         </p>
                       </div>
 
@@ -556,7 +575,7 @@ export function TopNav() {
                   <div className="w-full bg-[#030A1C] border border-white/[0.12] rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.9)] flex overflow-hidden">
                     {/* Left 2 Columns: Company & Connect (Spacious Grid) */}
                     <div className="flex-1 pt-9 pb-7 px-7 xl:pt-10 xl:pb-8 xl:px-9 grid grid-cols-2 gap-6 xl:gap-8">
-                      {companyColumns.map((col, cIdx) => (
+                      {visibleCompanyColumns.map((col, cIdx) => (
                         <div key={col.titleKey} className="flex flex-col">
                           <span className="block text-[11px] font-extrabold uppercase tracking-wider text-white/45 px-1 pt-1 pb-3 mb-2.5 border-b border-white/[0.08]">
                             {t(col.titleKey as any)}
@@ -846,7 +865,7 @@ export function TopNav() {
                               <span>{t(item.titleKey as any)}</span>
                             </div>
                             {item.priceKey ? (
-                              <span className="text-xs font-semibold text-foreground/65">{t(item.priceKey as any)}</span>
+                              <span className="text-xs font-semibold text-foreground/65">{priceLabel(item.priceKey as any)}</span>
                             ) : (
                               <ArrowRight size={13} className="opacity-40" />
                             )}
@@ -894,7 +913,7 @@ export function TopNav() {
                   </button>
                   {mobileExpanded === "company" && (
                     <div className="flex flex-col pl-3 border-l-2 border-primary/20 ml-3 gap-1 py-1" data-od-id="mobile-dropdown-company">
-                      {companyColumns.flatMap((col) => col.items).map((item) => {
+                      {visibleCompanyColumns.flatMap((col) => col.items).map((item) => {
                         const isExt = item.external || item.href.startsWith("http");
                         const itemKey = item.titleKey === "aboutUs" ? "aboutUs" : item.titleKey === "payoutsProof" ? "payouts" : item.titleKey === "affiliateProgram" ? "affiliates" : item.titleKey === "support247" ? "contact" : item.titleKey === "blogTitle" ? "blog" : "faq";
 

@@ -74,10 +74,8 @@ const PAYMENT_METHODS = [
 ] as const;
 
 const CONDITION_CHIPS = [
-  "80% profit split",
-  "Flexible payout cycle",
-  "Leverage 1:100",
-  "48-hour payout guarantee",
+  "Simulated trading environment",
+  "One-time evaluation fee",
 ];
 
 const fmt = (v: number) =>
@@ -197,13 +195,12 @@ export default function LandingClient() {
               </h1>
 
               <p className="mt-3.5 sm:mt-4 text-sm sm:text-base font-medium leading-relaxed text-[#999BA3] max-w-lg">
-                Prove your skills in a simulated environment on MT5 &amp; TradeLocker. No time
-                limits, news trading allowed, transparent rules, and no hidden fees.
+                No time limits, transparent rules, no hidden fees.
               </p>
 
               <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-2 sm:gap-3">
                 {[
-                  { value: "MT5 & TradeLocker", label: "Trading platforms" },
+                  { value: "One-time fee", label: "No subscription" },
                   { value: "No time limits", label: "Trade at your pace" },
                   { value: "News trading", label: "Allowed" },
                 ].map((pill) => (
@@ -524,10 +521,6 @@ export default function LandingClient() {
                         <span>Access Level</span>
                         <span className="font-bold text-white">Direct Evaluation Access</span>
                       </div>
-                      <div className="flex items-center justify-between py-1 text-xs text-white/70">
-                        <span>Scaling Ceiling</span>
-                        <span className="font-bold text-white">Up to $750,000</span>
-                      </div>
                     </div>
 
                     <div className="mt-3 border-t border-white/10 pt-3">
@@ -784,132 +777,7 @@ export default function LandingClient() {
         </div>
       </section>
 
-      {/* ============ C. PLATFORMS ============ */}
-      <section
-        id="platforms"
-        className="scroll-mt-28 bg-white text-[#0A0A0C] py-14 md:py-24"
-        data-od-id="trading-platforms"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 md:mb-14">
-            <p className="text-xs text-[#A98BFF] uppercase tracking-widest font-bold mb-3">
-              Platforms
-            </p>
-            <h2 className="font-[family-name:var(--font-jakarta)] text-3xl font-extrabold text-[#0A0A0C] md:text-4xl">
-              Trade on the platform that suits you
-            </h2>
-            <p className="mt-3 text-[#4B5563] max-w-xl mx-auto">
-              Both MT5 and TradeLocker are available across all CK Propfirm challenge types.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm flex flex-col gap-5 transition-all duration-200 hover:-translate-y-1 hover:border-gray-300 hover:shadow-md"
-              data-od-id="platform-mt5"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0 border border-gray-200">
-                  <Image
-                    src="/images/logos/tradelocker.jpeg"
-                    alt="MT5 logo"
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-extrabold text-[#0A0A0C]">
-                    MT5
-                  </h3>
-                  <p className="text-xs font-medium text-[#6B7280]">MetaTrader 5</p>
-                </div>
-              </div>
-
-              <p className="text-sm text-[#4B5563] leading-relaxed">
-                The industry-standard platform trusted by professional traders worldwide.
-                Advanced charting, one-click trading, and EA support.
-              </p>
-
-              <ul className="grid grid-cols-2 gap-1.5 text-xs text-[#4B5563]">
-                {[
-                  "Advanced charting",
-                  "Expert Advisors (EA)",
-                  "One-click trading",
-                  "20+ order types",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-1.5">
-                    <CheckIcon className="h-3 w-3 text-emerald-600 shrink-0" /> {f}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://my.ckpropfirm.com/auth/signup"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-od-id="platform-cta-mt5"
-                className="w-full sm:w-auto self-stretch sm:self-start mt-auto pt-2 inline-flex items-center justify-center rounded-xl border border-[#E7C66B] bg-transparent px-6 py-3 text-sm font-bold text-[#0A0A0C] transition-all hover:bg-[#E7C66B]/10"
-              >
-                Get MT5
-              </a>
-            </div>
-
-            <div
-              className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm flex flex-col gap-5 transition-all duration-200 hover:-translate-y-1 hover:border-gray-300 hover:shadow-md"
-              data-od-id="platform-tradelocker"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0 border border-gray-200">
-                  <Image
-                    src="/images/logos/mt5.png"
-                    alt="TradeLocker logo"
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-jakarta)] text-xl font-extrabold text-[#0A0A0C]">
-                    TradeLocker
-                  </h3>
-                  <p className="text-xs font-medium text-[#6B7280]">TradeLocker</p>
-                </div>
-              </div>
-
-              <p className="text-sm text-[#4B5563] leading-relaxed">
-                A modern, web-based platform built for speed and simplicity. Clean UI, real-time
-                data, and built-in risk management tools.
-              </p>
-
-              <ul className="grid grid-cols-2 gap-1.5 text-xs text-[#4B5563]">
-                {[
-                  "Web & mobile native",
-                  "Real-time analytics",
-                  "Built-in risk tools",
-                  "Clean modern UI",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-1.5">
-                    <CheckIcon className="h-3 w-3 text-emerald-600 shrink-0" /> {f}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://my.ckpropfirm.com/auth/signup"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-od-id="platform-cta-tradelocker"
-                className="w-full sm:w-auto self-stretch sm:self-start mt-auto pt-2 inline-flex items-center justify-center rounded-xl border border-[#E7C66B] bg-transparent px-6 py-3 text-sm font-bold text-[#0A0A0C] transition-all hover:bg-[#E7C66B]/10"
-              >
-                Get TradeLocker
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ D. SUPPORT ============ */}
+      {/* ============ C. SUPPORT ============ */}
       <section className="bg-white text-[#111827] py-16 md:py-24" data-od-id="customer-support">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
@@ -1004,7 +872,7 @@ export default function LandingClient() {
         </div>
       </section>
 
-      {/* ============ E. RISK BLOCK ============ */}
+      {/* ============ D. RISK BLOCK ============ */}
       <section className="bg-[#05060A] text-white py-14 md:py-20" data-od-id="ad-landing-risk">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-[family-name:var(--font-jakarta)] text-2xl font-extrabold tracking-tight text-white sm:text-3xl">

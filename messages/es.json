@@ -5,7 +5,8 @@
     "allEvaluations": "TODAS LAS EVALUACIONES",
     "codeLabel": "USA EL CÓDIGO",
     "expiresIn": "TERMINA EN",
-    "claimOffer": "OBTENER 75% DTO"
+    "claimOffer": "OBTENER 75% DTO",
+    "endsOn": "Termina el {date}"
   },
   "nav": {
     "evaluation": "Evaluación",
@@ -1430,5 +1431,10 @@
     "pointNoConsistency": "Sin puntuación de consistencia",
     "pointNoTimeLimit": "Sin límite de tiempo para aprobar",
     "choose": "Elegir {name}"
+  },
+  "adLanding": {
+    "featuredTitle": "Cuentas de evaluación simuladas de hasta $300K",
+    "featuredDesc": "Reparto de beneficios del 80% en cuentas simuladas.",
+    "navFrom": "Desde {price}"
   }
 }

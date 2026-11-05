@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { X } from "lucide-react";
 import { SITE_META } from "@/lib/content";
+import { AD_BANNER_ENDS_AT, isAdLandingPath } from "@/lib/adLanding";
 
 export interface AnnouncementBanner {
   id?: number;
@@ -33,6 +34,20 @@ export function AnnouncementBar({
   const t = useTranslations("announcement");
   const pathname = usePathname();
   const isVipOffer = /(?:^|\/)vip-offer\/?$/.test(pathname);
+  const format = useFormatter();
+  // On the ad landing page the offer carries an end date and the bar goes once it passes.
+  const endsAt =
+    isAdLandingPath(pathname) && AD_BANNER_ENDS_AT ? new Date(AD_BANNER_ENDS_AT) : null;
+  const [expired, setExpired] = useState(false);
+  const endsAtMs = endsAt?.getTime() ?? null;
+
+  useEffect(() => {
+    if (!endsAtMs) return;
+    const check = () => setExpired(Date.now() >= endsAtMs);
+    check();
+    const id = window.setInterval(check, 60_000);
+    return () => window.clearInterval(id);
+  }, [endsAtMs]);
 
   // Normalize banners array into items with text and link
   const bannerList: AnnouncementBanner[] = (banners ?? [])
@@ -48,7 +63,7 @@ export function AnnouncementBar({
     return () => clearInterval(timer);
   }, [bannerList.length, isPaused]);
 
-  if (!visible || isVipOffer) return null;
+  if (!visible || isVipOffer || expired) return null;
 
   const currentBanner = bannerList.length > 0 ? bannerList[currentIndex] : null;
 
@@ -65,6 +80,13 @@ export function AnnouncementBar({
             <span className="font-semibold text-white/95 tracking-wide">
               {currentBanner.text}
             </span>
+            {endsAt && (
+              <span className="text-white/70">
+                {t("endsOn", {
+                  date: format.dateTime(endsAt, { dateStyle: "medium", timeZone: "UTC" }),
+                })}
+              </span>
+            )}
             <Link
               href={currentBanner.link || "/#start-challenge"}
               onClick={(e) => {
@@ -115,6 +137,13 @@ export function AnnouncementBar({
             <span className="inline-flex items-center rounded border border-[#894CEF]/40 bg-[#894CEF]/10 px-2 py-0.5 font-mono text-[11px] sm:text-xs font-bold text-[#A98BFF]">
               {t("codeLabel")}: {promo?.code ?? SITE_META.promoCode}
             </span>
+            {endsAt && (
+              <span className="text-white/70">
+                {t("endsOn", {
+                  date: format.dateTime(endsAt, { dateStyle: "medium", timeZone: "UTC" }),
+                })}
+              </span>
+            )}
             <Link
               href="/#start-challenge"
               onClick={(e) => {

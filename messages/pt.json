@@ -5,7 +5,8 @@
     "allEvaluations": "TODAS AS AVALIAÇÕES",
     "codeLabel": "USE O CÓDIGO",
     "expiresIn": "TERMINA EM",
-    "claimOffer": "OBTER 75% DE DESCONTO"
+    "claimOffer": "OBTER 75% DE DESCONTO",
+    "endsOn": "Termina em {date}"
   },
   "nav": {
     "evaluation": "Avaliação",
@@ -1435,5 +1436,10 @@
     "pointNoConsistency": "Sem pontuação de consistência",
     "pointNoTimeLimit": "Sem prazo para ser aprovado",
     "choose": "Escolher {name}"
+  },
+  "adLanding": {
+    "featuredTitle": "Contas de avaliação simuladas de até $300K",
+    "featuredDesc": "Divisão de lucros de 80% em contas simuladas.",
+    "navFrom": "A partir de {price}"
   }
 }

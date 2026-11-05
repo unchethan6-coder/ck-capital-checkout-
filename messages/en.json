@@ -5,7 +5,8 @@
     "allEvaluations": "ALL EVALUATIONS",
     "codeLabel": "USE CODE",
     "expiresIn": "EXPIRES IN",
-    "claimOffer": "CLAIM 75% OFF"
+    "claimOffer": "CLAIM 75% OFF",
+    "endsOn": "Ends {date}"
   },
   "nav": {
     "programs": "Programs",
@@ -1429,5 +1430,10 @@
     "pointNoConsistency": "No consistency score",
     "pointNoTimeLimit": "No time limit to pass",
     "choose": "Choose {name}"
+  },
+  "adLanding": {
+    "featuredTitle": "Simulated evaluation accounts up to $300K",
+    "featuredDesc": "An 80% profit split on simulated accounts.",
+    "navFrom": "From {price}"
   }
 }
