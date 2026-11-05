@@ -137,7 +137,7 @@ export async function sendMetaConversion(input: ServerConversionInput) {
     return { skipped: true, reason: "META_CAPI_ENABLED is not true" };
   }
 
-  const datasetId = process.env.META_DATASET_ID || "1102958381163703";
+  const datasetId = process.env.META_DATASET_ID || "1771596324072142";
   const token = process.env.META_CAPI_ACCESS_TOKEN;
   const version = process.env.META_GRAPH_API_VERSION || "v19.0";
 

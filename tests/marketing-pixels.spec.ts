@@ -8,7 +8,7 @@ test.describe("Marketing Tracking Pixels & Attribution", () => {
     // Check noscript fallbacks exist in raw page content
     const pageHtml = await page.content();
     expect(pageHtml).toContain("https://www.googletagmanager.com/ns.html?id=GTM-P5Q75TM2");
-    expect(pageHtml).toContain("facebook.com/tr?id=1102958381163703");
+    expect(pageHtml).toContain("facebook.com/tr?id=1771596324072142");
 
     // Accept cookies if consent banner is visible
     const acceptCookiesBtn = page.locator('button:has-text("Accept all cookies")');
@@ -25,7 +25,7 @@ test.describe("Marketing Tracking Pixels & Attribution", () => {
     const metaScript = page.locator('script#meta-pixel');
     await expect(metaScript).toHaveCount(1);
     const metaContent = await metaScript.innerHTML();
-    expect(metaContent).toContain("1102958381163703");
+    expect(metaContent).toContain("1771596324072142");
 
     const tiktokScript = page.locator('script#tiktok-pixel');
     await expect(tiktokScript).toHaveCount(1);

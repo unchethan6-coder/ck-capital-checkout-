@@ -15,10 +15,12 @@ import { trackPageView } from "@/lib/analytics/events";
 
 // Official platform IDs registered in the CK Propfirm Implementation Guide
 export const GTM_ID = "GTM-P5Q75TM2";
-export const META_PIXEL_ID = "1102958381163703";
-export const META_PIXEL_ID_SECONDARY = "1771596324072142";
-/** All Meta Pixel IDs fired on every PageView / standard event via dual fbq init. */
-export const META_PIXEL_IDS = [META_PIXEL_ID, META_PIXEL_ID_SECONDARY];
+// CK Propfirm Meta Pixel (from "ckpropfirm pixel id" doc)
+export const META_PIXEL_ID = "1771596324072142";
+/** @deprecated Old pixel 1102958381163703 retired — alias kept to avoid breaking imports. */
+export const META_PIXEL_ID_SECONDARY = META_PIXEL_ID;
+/** All Meta Pixel IDs fired on every PageView / standard event via fbq init. */
+export const META_PIXEL_IDS = [META_PIXEL_ID];
 export const TIKTOK_PIXEL_ID = "D9L0M8BC77U349A6OIL0";
 export const X_PIXEL_ID = "qs40m";
 export const REDDIT_PIXEL_ID = "a2_jsyccfi50kgl";
@@ -117,7 +119,7 @@ function PixelTrackerInner() {
       {/* Direct Base Pixels load when user has not opted out */}
       {canLoadMarketing && (
         <>
-          {/* 2. Meta (Facebook) Pixel (dual init: 1102958381163703 + 1771596324072142) */}
+          {/* 2. Meta (Facebook) Pixel (1771596324072142) */}
           <Script
             id="meta-pixel"
             strategy="afterInteractive"
@@ -141,7 +143,6 @@ function PixelTrackerInner() {
                 }(window, document, 'script',
                   'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '${META_PIXEL_ID}');
-                fbq('init', '${META_PIXEL_ID_SECONDARY}');
                 fbq('track', 'PageView');
               `,
             }}

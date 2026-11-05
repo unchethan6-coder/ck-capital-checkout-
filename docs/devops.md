@@ -26,6 +26,10 @@ Both apps: build pack **dockerfile**, port `3000`, auto-deploy enabled (push to 
 | `STRAPI_BASE_URL` | `https://cms.fundedproptraders.com` |
 | `STRAPI_API_TOKEN` | read-only Strapi token (rotate separately per env if desired) |
 | `REVALIDATE_SECRET` | strong random value; must match the Strapi webhook header |
+| `META_CAPI_ENABLED` | `true` to enable server-side Meta Conversions API |
+| `META_DATASET_ID` | `1771596324072142` (CK Propfirm pixel) |
+| `META_CAPI_ACCESS_TOKEN` | Dataset Quality API token from the "ckpropfirm pixel id" doc (Coolify env only, never commit) |
+| `META_TEST_EVENT_CODE` | `TEST61340` for non-production testing (omit/empty in production) |
 
 Never commit env files — `.env*` is gitignored and excluded from the Docker build.
 
