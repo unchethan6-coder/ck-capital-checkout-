@@ -181,7 +181,7 @@ export async function sendMetaConversion(input: ServerConversionInput) {
     data: [eventPayload],
   };
 
-  if (process.env.NODE_ENV !== "production" && process.env.META_TEST_EVENT_CODE) {
+  if (process.env.META_TEST_EVENT_CODE) {
     body.test_event_code = process.env.META_TEST_EVENT_CODE;
   }
 
