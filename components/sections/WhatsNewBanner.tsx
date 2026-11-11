@@ -24,10 +24,10 @@ const SLIDES: BannerSlide[] = [
   {
     id: "promo-75",
     tabLabelKey: "tabPromo",
-    defaultTabLabel: "CK Propfirm • 75% Off",
-    shortTabLabel: "75% Off",
+    defaultTabLabel: "CK Propfirm • 80% Off",
+    shortTabLabel: "80% Off",
     imageSrc: "/images/banners/whats-new-promo-75.jpeg",
-    alt: "CK Propfirm 75% Off Promo - Get Started",
+    alt: "CK Propfirm 80% Off Promo - Get Started",
     targetId: "pricing-calculator",
     glowColor: "amber",
   },
@@ -111,7 +111,7 @@ export function WhatsNewBanner({
     }
     return SLIDES.map((s, idx) => {
       if (idx === 0 && promo) {
-        const discount = promo.discountLabel || "75% Off";
+        const discount = promo.discountLabel || "80% Off";
         return {
           ...s,
           defaultTabLabel: promo.title ? promo.title : `CK Propfirm • ${discount}`,
