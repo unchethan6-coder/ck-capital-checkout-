@@ -1,11 +1,11 @@
 {
   "announcement": {
     "badge": "ZEITLICH BEGRENZTES ANGEBOT",
-    "discount": "75% RABATT",
+    "discount": "80% RABATT",
     "allEvaluations": "ALLE EVALUIERUNGEN",
     "codeLabel": "CODE NUTZEN",
     "expiresIn": "ENDET IN",
-    "claimOffer": "75% RABATT SICHERN",
+    "claimOffer": "80% RABATT SICHERN",
     "endsOn": "Endet am {date}"
   },
   "nav": {
@@ -56,10 +56,10 @@
     "support247": "24/7 Support",
     "support247Desc": "Live-Hilfe, Ticket-Support und persönliche Betreuung",
     "blogTitle": "Trading-Einblicke & Blog",
-    "featuredEvalBadge": "LIMITIERTES ANGEBOT · 75% RABATT",
+    "featuredEvalBadge": "LIMITIERTES ANGEBOT · 80% RABATT",
     "featuredEvalTitle": "Handeln Sie mit bis zu $300K Kapital",
     "featuredEvalDesc": "Nutzen Sie professionelle Tools, enge Spreads und 80% Gewinnbeteiligung auf simulierten Konten.",
-    "featuredEvalCta": "75% Rabatt Sichern",
+    "featuredEvalCta": "80% Rabatt Sichern",
     "featuredCommunityBadge": "TRADER-COMMUNITY",
     "featuredCommunityTitle": "Über 20.000 Aktiven Tradern Beitreten",
     "featuredCommunityDesc": "Live-Trading-Analysen, Auszahlungsnachweise und direkter VIP-Support auf Discord.",
@@ -136,7 +136,7 @@
     "startJourney": "Starten Sie noch heute Ihre Reise.",
     "startChallenge": "Challenge Starten",
     "compareAll": "Alle Programme vergleichen",
-    "ctaFunded": "Funding sichern — bis zu 75% Rabatt",
+    "ctaFunded": "Funding sichern — bis zu 80% Rabatt",
     "programsBadge": "Kontoprogramme",
     "viewPlans": "Pläne ansehen",
     "railFunded": "Funded",
@@ -205,7 +205,7 @@
   },
   "whatsNew": {
     "title": "Neuigkeiten",
-    "tabPromo": "CK Propfirm • 75% Rabatt",
+    "tabPromo": "CK Propfirm • 80% Rabatt",
     "tabLeverage": "1:100 Hebel • Maximale Exposition",
     "tabLabs": "CK Labs • Bald Verfügbar"
   },
@@ -897,10 +897,10 @@
     "hoursDesc": "Montag - Freitag: 8:00 - 20:00 Uhr GMT. 24/7 Community-Support."
   },
   "evaluation": {
-    "badge": "Limitiertes Angebot · 75% Rabatt auf alle Evaluierungen",
+    "badge": "Limitiertes Angebot · 80% Rabatt auf alle Evaluierungen",
     "title": "Trading-Evaluierungen für ambitionierte Trader.",
     "subtitle": "Beweise deine Fähigkeiten und schalte geförderte Konten bis zu $750K frei.",
-    "claimOffer": "75% Rabatt Sichern",
+    "claimOffer": "80% Rabatt Sichern",
     "compareBtn": "Challenges Vergleichen",
     "pathEyebrow": "So Funktioniert Es",
     "pathTitle": "Dein Weg zum Erfolg",
@@ -1234,10 +1234,10 @@
     "badge": "start challenge · From $15",
     "hotOffer": "hot offer",
     "defaultHeadline": "Your First Challenge, {discount} Off",
-    "defaultSubcopy": "Enjoy 75% off selected evaluation models up to $300K account sizes. New users only. Terms apply.",
+    "defaultSubcopy": "Enjoy 80% off selected evaluation models up to $300K account sizes. New users only. Terms apply.",
     "useCode": "CODE VERWENDEN",
     "bannerTitle": "Exklusives Frühlingsangebot",
-    "discountBadge": "75% Rabatt",
+    "discountBadge": "80% Rabatt",
     "expiresIn": "Endet in Kürze"
   },
   "search": {
