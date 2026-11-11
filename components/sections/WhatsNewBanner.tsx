@@ -69,7 +69,7 @@ export interface WhatsNewPromo {
  */
 export interface WhatsNewSlide {
   id?: string | number;
-  /** Desktop tab pill, e.g. "CK Propfirm • 75% Off". */
+  /** Desktop tab pill, e.g. "CK Propfirm • 80% Off". */
   tabLabel: string;
   /** Mobile tab pill; falls back to `tabLabel`. */
   shortTabLabel?: string | null;

@@ -30,7 +30,7 @@ export function EvaluationPrograms() {
       profitSplit: t("profitSplitValue"),
       originalPrice: "$75.20",
       discountedPrice: "$18.80",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
     },
     {
       id: "50k",
@@ -40,7 +40,7 @@ export function EvaluationPrograms() {
       profitSplit: t("profitSplitValue"),
       originalPrice: "$475.20",
       discountedPrice: "$118.80",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
       popular: true,
     },
     {
@@ -51,7 +51,7 @@ export function EvaluationPrograms() {
       profitSplit: t("profitSplitValue"),
       originalPrice: "$712.80",
       discountedPrice: "$178.20",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
     },
     {
       id: "200k",
@@ -61,7 +61,7 @@ export function EvaluationPrograms() {
       profitSplit: t("profitSplitValue"),
       originalPrice: "$2,796.80",
       discountedPrice: "$699.20",
-      discountBadge: "75% OFF",
+      discountBadge: "80% OFF",
     },
   ];
 

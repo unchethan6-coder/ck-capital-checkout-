@@ -395,7 +395,7 @@ export default function LandingClient() {
                           </span>
                           <span className="text-[10px] font-normal text-white/60">
                             was <span className="line-through">{fmt(data.orig)}</span>
-                            <span className="ml-1.5 font-bold text-amber-300">Save 75%</span>
+                            <span className="ml-1.5 font-bold text-amber-300">Save 80%</span>
                           </span>
                         </div>
                       </div>
@@ -700,7 +700,7 @@ export default function LandingClient() {
                               </span>
                               <span className="block text-[9px] font-normal text-gray-400">
                                 was <span className="line-through">{fmt(plan.orig)}</span>
-                                <span className="ml-1 font-bold text-amber-600">Save 75%</span>
+                                <span className="ml-1 font-bold text-amber-600">Save 80%</span>
                               </span>
                             </th>
                           );
